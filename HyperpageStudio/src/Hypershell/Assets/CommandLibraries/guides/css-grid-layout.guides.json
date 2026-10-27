@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "css-grid-layout",
+  "guides": [
+    {
+      "entryId": "css.grid-layout",
+      "definition": "Grid provides two-dimensional layout. repeat(), auto-fit, and minmax() can create as many columns as fit while retaining a useful minimum size.",
+      "parameters": [
+        {
+          "name": "className",
+          "displayName": "Container class",
+          "placeholder": "className",
+          "description": "The class applied to the grid container.",
+          "typeName": "CSS identifier",
+          "defaultValue": "cards",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "minimum",
+          "displayName": "Minimum column",
+          "placeholder": "minimum",
+          "description": "The smallest desired track size.",
+          "typeName": "Track size",
+          "defaultValue": "14rem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "gap",
+          "displayName": "Gap",
+          "placeholder": "gap",
+          "description": "Space between rows and columns.",
+          "typeName": "Length",
+          "defaultValue": "1rem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Lay out responsive cards",
+          "code": ".cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));\n  gap: 1rem;\n}",
+          "explanation": "The browser adds or removes equal-width columns as the container changes size without a fixed column count."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "projectId": "a778fb0ab3a643c0badc5a6c6727d13c",
+  "name": "Course Notebook",
+  "rootNamespace": "HyperLib.Work",
+  "generatorVersion": "1.0.0",
+  "revision": "",
+  "razorProjectPath": "src/Pages/Pages.csproj",
+  "localHostProjectPath": "src/Host/Host.csproj",
+  "foundation": {
+    "markupLanguage": "RazorPages",
+    "hostingTarget": "Local",
+    "siteStructure": "FixedPages",
+    "plannedPageCount": 1,
+    "usesTemplates": true,
+    "codingMode": "Manual",
+    "aiProvider": "None"
+  },
+  "pages": [
+    {
+      "pageId": "20f1ae739c7d4882a707646907f805b7",
+      "name": "Presentation",
+      "route": "/presentation",
+      "slug": "presentation",
+      "fileType": "RazorPage",
+      "documentPath": "Pages/presentation.visual-page.json",
+      "componentPath": "src/Pages/Generated/WorkPage.razor",
+      "revision": ""
+    }
+  ],
+  "theme": {
+    "tokens": {},
+    "additionalCssPath": "Shared/theme.css"
+  },
+  "hyperlibPackageId": "group-course-notebook",
+  "hyperlibAuthoringPath": "authoring.template.json"
+}

@@ -1,0 +1,29 @@
+@* Source: common.element.pagination.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-75b47f60959e" data-vp-id="75b47f60959ec519c341b090b053df58">
+    <nav aria-label="Pagination" class="vp-a35335bc6dfe" data-vp-id="a35335bc6dfe7d6d695991839aea02a7">
+        <a class="vp-2cee901ed866" data-field="text-2" data-vp-id="2cee901ed8669faaa6e5c0c90b40c70a" href="@(Link(Context.Text("href-2")))">
+            @(Context.Text("text-2"))
+        </a>
+        <a class="vp-14660ffabcb7" data-field="text-3" data-vp-id="14660ffabcb734271122b38b349551a9" href="@(Link(Context.Text("href-3")))">
+            @(Context.Text("text-3"))
+        </a>
+        <a class="vp-da797c21d2c9" data-field="text-4" data-vp-id="da797c21d2c9b058d2c4f9266c51cf8c" href="@(Link(Context.Text("href-4")))">
+            @(Context.Text("text-4"))
+        </a>
+        <a class="vp-b378eeb2efe0" data-field="text-5" data-vp-id="b378eeb2efe06a044c2457a5539844d2" href="@(Link(Context.Text("href-5")))">
+            @(Context.Text("text-5"))
+        </a>
+        <a class="vp-c52aeb2721b5" data-field="text-6" data-vp-id="c52aeb2721b51473486fde08a4be0bb4" href="@(Link(Context.Text("href-6")))">
+            @(Context.Text("text-6"))
+        </a>
+    </nav>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

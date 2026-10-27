@@ -1,0 +1,55 @@
+@* Source: common.section.feature-grid.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-3c482048042a" data-vp-id="3c482048042ac8cb8ad33b0bffa221c6">
+    <section class="vp-47be7c063a83" data-vp-id="47be7c063a83c925c058b82083627bfb">
+        <h2 class="vp-6f0ad6448227" data-field="text-2">
+            @(Context.Text("text-2"))
+        </h2>
+        <p class="vp-2af0ae9a2406" data-field="text-3" data-vp-id="2af0ae9a2406ee2192b585f1c7d28b97">
+            @(Context.Text("text-3"))
+        </p>
+        <div class="vp-e9bc61b40651" data-vp-id="e9bc61b40651b074139aebf09449db7b">
+            <div class="vp-7e1d357fa927" data-vp-id="7e1d357fa9270dd4656d1ac4928d24c2">
+                <span class="vp-059ec27325f3" data-field="text-6" data-vp-id="059ec27325f37e0a1b51a9f2507a483b">
+                    @(Context.Text("text-6"))
+                </span>
+                <h3 class="vp-470a8d7f0c79" data-field="text-7">
+                    @(Context.Text("text-7"))
+                </h3>
+                <p class="vp-bd9c01be3df8" data-field="text-8" data-vp-id="bd9c01be3df86daab44c44b447e36af4">
+                    @(Context.Text("text-8"))
+                </p>
+            </div>
+            <div class="vp-d3938ef33147" data-vp-id="d3938ef331471cf33ac0701d2bce36d3">
+                <span class="vp-2c4efe544252" data-field="text-10" data-vp-id="2c4efe544252072989c794385d13fe05">
+                    @(Context.Text("text-10"))
+                </span>
+                <h3 class="vp-5e0e7aa6dde4" data-field="text-11">
+                    @(Context.Text("text-11"))
+                </h3>
+                <p class="vp-00ea202b0714" data-field="text-12" data-vp-id="00ea202b0714477e4e7d7362f838c9cd">
+                    @(Context.Text("text-12"))
+                </p>
+            </div>
+            <div class="vp-fb4521241c8e" data-vp-id="fb4521241c8e7997f4501af38b50cd08">
+                <span class="vp-f3f3069dc045" data-field="text-14" data-vp-id="f3f3069dc045109fb2d01d6dc8302688">
+                    @(Context.Text("text-14"))
+                </span>
+                <h3 class="vp-a3befb6c159c" data-field="text-15">
+                    @(Context.Text("text-15"))
+                </h3>
+                <p class="vp-6bbefd1c8ee2" data-field="text-16" data-vp-id="6bbefd1c8ee2bf35ee12fc11559a5534">
+                    @(Context.Text("text-16"))
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

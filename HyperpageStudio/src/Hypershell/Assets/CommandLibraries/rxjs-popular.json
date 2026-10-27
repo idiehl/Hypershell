@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "rxjs-popular",
+  "displayName": "RxJS",
+  "description": "Curated RxJS starter recipes for the TypeScript Command Builder. The dependency is referenced, not bundled.",
+  "language": "TypeScript",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "RxJS",
+  "ecosystem": "npm",
+  "targetVersion": "7.8",
+  "sourceVersion": "7.8 documentation · curated 2026-08-17",
+  "sourceUrl": "https://rxjs.dev/guide/overview",
+  "license": "Apache-2.0",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Requires RxJS in the active TypeScript/Node.js project; Hypershell does not install it.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "typescript",
+    "popular library",
+    "rxjs",
+    "observable",
+    "stream",
+    "reactive",
+    "operators"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/rxjs-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/rxjs-popular.guides.json"
+  ],
+  "legacyIds": []
+}

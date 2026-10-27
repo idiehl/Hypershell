@@ -1,0 +1,28 @@
+@inject RendererOptions Options
+
+@if (Site is { } site)
+{
+    <nav class="hl-work-nav" aria-label="Work navigation">
+        <a class="hl-work-home" href="@WorkSiteModel.Href(Options, site.Work)" data-hyperlib-navigate="@site.Work.Id"
+           aria-current="@(site.Current.Id == site.Work.Id ? "page" : null)">@site.Work.Title</a>
+        <div class="hl-work-nav-actions">
+            @if (site.Pages.Count > 0)
+            {
+                <details class="hl-work-menu">
+                    <summary>Contents <span aria-hidden="true">⌄</span></summary>
+                    <div class="hl-work-menu-body">
+                        <WorkContents Items="site.Contents" CurrentId="@site.Current.Id" />
+                    </div>
+                </details>
+            }
+            @if (site.LibraryTarget is { } target)
+            {
+                <a class="hl-work-return" href="@WorkSiteModel.LibraryHref(Options, target)" data-hyperlib-navigate="@target.Id">
+                    <span aria-hidden="true">←</span> Back to library
+                </a>
+            }
+        </div>
+    </nav>
+}
+
+@code { [Parameter] public WorkSiteModel? Site { get; set; } }

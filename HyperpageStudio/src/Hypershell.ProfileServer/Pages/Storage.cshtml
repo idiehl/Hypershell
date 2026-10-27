@@ -1,0 +1,27 @@
+@page "/Admin/storage"
+@model StorageModel
+@{
+    ViewData["Title"] = "Storage";
+}
+
+<section class="page-heading compact">
+    <a class="back-link" href="/">← Overview</a>
+    <h1>Storage</h1>
+    <p class="muted">Live capacity reserve, SQLite health, and bounded logical inventory.</p>
+</section>
+
+<section class="status-strip four-up">
+    <div><span>Available</span><strong>@Model.FormatBytes(Model.Capacity.AvailableBytes)</strong></div>
+    <div><span>Reserved</span><strong>@Model.FormatBytes(Model.Capacity.ReservedBytes)</strong></div>
+    <div><span>Metadata</span><strong>Schema @Model.Metadata.SchemaVersion</strong></div>
+    <div><span>SQLite WAL</span><strong>@(Model.Metadata.WriteAheadLoggingEnabled ? "Ready" : "Unavailable")</strong></div>
+</section>
+
+<section class="inventory-section">
+@foreach (var area in Model.Areas)
+{
+    <article class="inventory-row">
+        <div><h3>@area.Name</h3><p>@Model.FormatBytes(area.Bytes)</p><small>@area.Files file(s)@(area.IsTruncated ? " · bounded estimate" : "")</small></div>
+    </article>
+}
+</section>

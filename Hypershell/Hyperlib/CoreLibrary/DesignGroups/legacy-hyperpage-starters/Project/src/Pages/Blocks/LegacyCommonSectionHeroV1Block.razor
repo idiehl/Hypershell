@@ -1,0 +1,34 @@
+@* Source: common.section.hero.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-c1ce6c073023" data-vp-id="c1ce6c073023517054d991fd1b9f3d74">
+    <section aria-label="Page introduction" class="vp-264f5325213f" data-vp-id="264f5325213f0221baf56e50299dd5a8">
+        <div class="vp-e92cdfde5168" data-vp-id="e92cdfde5168e7503d47ed8574c49a55">
+            <span class="vp-7bce35e1ce6c" data-field="text-3" data-vp-id="7bce35e1ce6cea390184d75c5f73f68e">
+                @(Context.Text("text-3"))
+            </span>
+            <h1 class="vp-b83289fec0c4" data-field="text-4">
+                @(Context.Text("text-4"))
+            </h1>
+            <p class="vp-f0f878b281a5" data-field="text-5" data-vp-id="f0f878b281a56669bb981fa7e32b2e47">
+                @(Context.Text("text-5"))
+            </p>
+            <div aria-label="Page actions" class="vp-d1a2d84f5bbb" data-vp-id="d1a2d84f5bbbec33d4b880b17efd2394" role="group">
+                <button class="vp-1bd1379c7237" data-field="text-7" data-vp-id="1bd1379c72374ee3d5f6b25116fee51c">
+                    @(Context.Text("text-7"))
+                </button>
+                <a class="vp-11064cf73808" data-field="text-8" data-vp-id="11064cf73808d3e22996822eda10414b" href="@(Link(Context.Text("href-8")))">
+                    @(Context.Text("text-8"))
+                </a>
+            </div>
+        </div>
+        <div aria-label="Replace with a relevant visual" class="vp-044c143676c6" data-vp-id="044c143676c691b8c4caab3b41e5a7e6" role="img"></div>
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

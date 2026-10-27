@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "css-flexible-box-layout",
+  "guides": [
+    {
+      "entryId": "css.flex-layout",
+      "definition": "A flex container lays out direct children as flex items. justify-content works along the main axis and align-items works along the cross axis.",
+      "parameters": [
+        {
+          "name": "className",
+          "displayName": "Container class",
+          "placeholder": "className",
+          "description": "The class applied to the flex container.",
+          "typeName": "CSS identifier",
+          "defaultValue": "toolbar",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "wrap",
+          "displayName": "Wrapping",
+          "placeholder": "wrap",
+          "description": "Whether items remain on one line or wrap.",
+          "typeName": "Flex wrap value",
+          "defaultValue": "wrap",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "gap",
+          "displayName": "Gap",
+          "placeholder": "gap",
+          "description": "Space inserted between flex items.",
+          "typeName": "Length",
+          "defaultValue": "0.75rem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "align",
+          "displayName": "Cross-axis alignment",
+          "placeholder": "align",
+          "description": "How items align across the main axis.",
+          "typeName": "align-items value",
+          "defaultValue": "center",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "justify",
+          "displayName": "Main-axis alignment",
+          "placeholder": "justify",
+          "description": "How free space is distributed along the main axis.",
+          "typeName": "justify-content value",
+          "defaultValue": "space-between",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a responsive toolbar row",
+          "code": ".toolbar {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 0.75rem;\n  align-items: center;\n  justify-content: space-between;\n}",
+          "explanation": "Items share a row when space permits, wrap when needed, and keep consistent spacing and alignment."
+        }
+      ]
+    }
+  ]
+}

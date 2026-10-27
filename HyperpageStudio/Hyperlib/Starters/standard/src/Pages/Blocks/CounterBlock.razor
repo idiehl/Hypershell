@@ -1,0 +1,10 @@
+@implements IAsyncDisposable
+@inject IJSRuntime JS
+<section class="hl-counter" @ref="_element"><span data-field="label">@Context.Text("label", "Observations")</span><button type="button" data-action="subtract" aria-label="Decrease">−</button><output>@Context.Number("start")</output><button type="button" data-action="add" aria-label="Increase">+</button><small>JavaScript component</small></section>
+@code {
+    [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+    private ElementReference _element;
+    private IJSObjectReference? _module;
+    protected override async Task OnAfterRenderAsync(bool firstRender) { if(firstRender) { _module = await JS.InvokeAsync<IJSObjectReference>("import", "./_content/HyperLib.Work/blocks/counter.js"); await _module.InvokeVoidAsync("mount", _element, Context.Number("start")); } else if(_module is not null) await _module.InvokeVoidAsync("update", _element, Context.Number("start")); }
+    public async ValueTask DisposeAsync() { if(_module is null) return; try { await _module.InvokeVoidAsync("dispose", _element); await _module.DisposeAsync(); } catch(JSDisconnectedException) { } }
+}

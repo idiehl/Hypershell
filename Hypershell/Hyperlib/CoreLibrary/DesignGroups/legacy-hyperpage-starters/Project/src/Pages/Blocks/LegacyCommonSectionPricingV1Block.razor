@@ -1,0 +1,89 @@
+@* Source: common.section.pricing.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-4f9c6e9c3603" data-vp-id="4f9c6e9c3603dc976d7e057767a7ee51">
+    <section aria-label="Pricing plans" class="vp-81010b631d34" data-vp-id="81010b631d3418c7c31bfd2fbeb1811e">
+        <div class="vp-83228daa9fd1" data-vp-id="83228daa9fd1839ea746115220dcc083">
+            <h3 class="vp-16a5a5de9c70" data-field="text-3">
+                @(Context.Text("text-3"))
+            </h3>
+            <p class="vp-956019b55cbf" data-field="text-4" data-vp-id="956019b55cbf4abc72dca0edca1e6520">
+                @(Context.Text("text-4"))
+            </p>
+            <p class="vp-6cfcb8a7b959" data-field="text-5" data-vp-id="6cfcb8a7b9595c5215e9668d72faed50">
+                @(Context.Text("text-5"))
+            </p>
+            <ul class="vp-0da881c1fefd" data-vp-id="0da881c1fefd77cf219176ee5acdac1a">
+                <li class="vp-d3c5a8a601d4" data-field="text-7" data-vp-id="d3c5a8a601d43ee90c8f81f43cd9c8ee">
+                    @(Context.Text("text-7"))
+                </li>
+                <li class="vp-ce69f96c4d5d" data-field="text-8" data-vp-id="ce69f96c4d5da8a542e10d192d6bbfa9">
+                    @(Context.Text("text-8"))
+                </li>
+                <li class="vp-b508356b6922" data-field="text-9" data-vp-id="b508356b692253576d6ad5b7c765177b">
+                    @(Context.Text("text-9"))
+                </li>
+            </ul>
+            <button class="vp-582e6b878859" data-field="text-10" data-vp-id="582e6b878859960fe9e08000681ebe1f">
+                @(Context.Text("text-10"))
+            </button>
+        </div>
+        <div class="vp-5553bb6fd78c" data-vp-id="5553bb6fd78c2870198ec6da05b0cc07">
+            <h3 class="vp-028c86759c68" data-field="text-12">
+                @(Context.Text("text-12"))
+            </h3>
+            <p class="vp-bda025e282e8" data-field="text-13" data-vp-id="bda025e282e8ba3888046321c34e4e81">
+                @(Context.Text("text-13"))
+            </p>
+            <p class="vp-86f1ed77a29e" data-field="text-14" data-vp-id="86f1ed77a29ee30102251807b99ab7b7">
+                @(Context.Text("text-14"))
+            </p>
+            <ul class="vp-0efe6595e9ca" data-vp-id="0efe6595e9caa4509bd89b161940f553">
+                <li class="vp-5a7560d1f5e2" data-field="text-16" data-vp-id="5a7560d1f5e224d36048a4b7218e2735">
+                    @(Context.Text("text-16"))
+                </li>
+                <li class="vp-6da19597a957" data-field="text-17" data-vp-id="6da19597a957913cfce69b62303051b1">
+                    @(Context.Text("text-17"))
+                </li>
+                <li class="vp-b38f63934e3d" data-field="text-18" data-vp-id="b38f63934e3d726e84e011345aa6e8cf">
+                    @(Context.Text("text-18"))
+                </li>
+            </ul>
+            <button class="vp-1efa86e787c0" data-field="text-19" data-vp-id="1efa86e787c09ec0296861e1614edc3e">
+                @(Context.Text("text-19"))
+            </button>
+        </div>
+        <div class="vp-b595b9ecddab" data-vp-id="b595b9ecddabf7113453b65ef9953c72">
+            <h3 class="vp-52c54b89533d" data-field="text-21">
+                @(Context.Text("text-21"))
+            </h3>
+            <p class="vp-a4e11ddc2d8d" data-field="text-22" data-vp-id="a4e11ddc2d8d9a9fe9c8729750340b20">
+                @(Context.Text("text-22"))
+            </p>
+            <p class="vp-6bf6c87f9bd9" data-field="text-23" data-vp-id="6bf6c87f9bd97ad72b6e00f05a961401">
+                @(Context.Text("text-23"))
+            </p>
+            <ul class="vp-50c62f758200" data-vp-id="50c62f7582008c11b2447c54c295e7e3">
+                <li class="vp-bb7a7fa50a0e" data-field="text-25" data-vp-id="bb7a7fa50a0ef0a5d4c9f10ca98c4de0">
+                    @(Context.Text("text-25"))
+                </li>
+                <li class="vp-88ab55c809af" data-field="text-26" data-vp-id="88ab55c809af64df7219fb3a31637bd0">
+                    @(Context.Text("text-26"))
+                </li>
+                <li class="vp-bdf53ffb56f4" data-field="text-27" data-vp-id="bdf53ffb56f4ad1cc93775fc6d19edc9">
+                    @(Context.Text("text-27"))
+                </li>
+            </ul>
+            <button class="vp-fdf671110a1e" data-field="text-28" data-vp-id="fdf671110a1e8683ab1900470ae1d2a8">
+                @(Context.Text("text-28"))
+            </button>
+        </div>
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

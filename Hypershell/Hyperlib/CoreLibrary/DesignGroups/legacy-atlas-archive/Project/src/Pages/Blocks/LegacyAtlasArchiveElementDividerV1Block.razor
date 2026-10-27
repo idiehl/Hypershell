@@ -1,0 +1,13 @@
+@* Source: atlas.archive.element.divider.v1 (Atlas Archive). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-67395c5fff5b" data-vp-id="67395c5fff5b9add2dd6d9f286599194">
+    <hr class="vp-660ae06d6bbb" data-vp-id="660ae06d6bbbb0d16d69344f85521bd6" />
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "podcast-studio",
+  "title": "Podcast Studio",
+  "description": "Cover art beside episode notes, a large audio player, transcript, and listening recommendations.",
+  "category": "Audio",
+  "sourceTemplateId": "podcast-studio"
+}

@@ -1,0 +1,62 @@
+@page "/Admin/profiles"
+@model ProfilesModel
+@{
+    ViewData["Title"] = "Profiles";
+}
+
+<section class="page-heading compact">
+    <a class="back-link" href="/">← Overview</a>
+    <h1>Profiles</h1>
+    <p class="muted">Portable workspace state, roaming adjuncts, conversations, and private Hyperlib inventory.</p>
+</section>
+
+<section class="status-strip four-up">
+    <div><span>Portable</span><strong>@Model.PortableProfiles.Count</strong></div>
+    <div><span>Roaming</span><strong>@Model.WorkspaceProfiles.Count</strong></div>
+    <div><span>Conversations</span><strong>@Model.Conversations.Count@(Model.ConversationsTruncated ? "+" : "")</strong></div>
+    <div><span>Packages</span><strong>@Model.Packages.Count</strong></div>
+</section>
+
+<section class="inventory-section">
+    <p class="eyebrow">PORTABLE PROFILES</p>
+    @foreach (var profile in Model.PortableProfiles)
+    {
+        <article class="inventory-row @(profile.IsDeleted ? "disabled" : "")">
+            <div><h3>@profile.DisplayName</h3><p>@profile.Id · revision @profile.ServerRevision</p><small>Updated @profile.UpdatedAtUtc.ToLocalTime().ToString("g")</small></div>
+        </article>
+    }
+    @if (Model.PortableProfiles.Count == 0) { <p class="muted">No portable profile has been uploaded.</p> }
+</section>
+
+<section class="inventory-section">
+    <p class="eyebrow">WORKSPACE PROFILES</p>
+    @foreach (var profile in Model.WorkspaceProfiles)
+    {
+        <article class="inventory-row @(profile.IsDeleted ? "disabled" : "")">
+            <div><h3>@profile.DisplayName</h3><p>@profile.ProfileId · revision @profile.ServerRevision</p><small>Updated @profile.UpdatedAtUtc.ToLocalTime().ToString("g")</small></div>
+        </article>
+    }
+    @if (Model.WorkspaceProfiles.Count == 0) { <p class="muted">No roaming workspace profile has been uploaded.</p> }
+</section>
+
+<section class="inventory-section">
+    <p class="eyebrow">AI CONVERSATIONS</p>
+    @foreach (var conversation in Model.Conversations)
+    {
+        <article class="inventory-row @(conversation.IsDeleted ? "disabled" : "")">
+            <div><h3>@conversation.Title</h3><p>@conversation.ProfileId · @conversation.LastSequence items</p><small>Updated @conversation.UpdatedAtUtc.ToLocalTime().ToString("g")</small></div>
+        </article>
+    }
+    @if (Model.Conversations.Count == 0) { <p class="muted">No conversation history has been uploaded.</p> }
+</section>
+
+<section class="inventory-section">
+    <p class="eyebrow">PRIVATE HYPERLIB PACKAGES</p>
+    @foreach (var package in Model.Packages)
+    {
+        <article class="inventory-row">
+            <div><h3>@package.PackageId</h3><p>Version @package.Version · @Model.FormatBytes(package.ByteLength)@(package.IsOfficial ? " · official" : "")</p><small>Stored @package.CreatedAtUtc.ToLocalTime().ToString("g")</small></div>
+        </article>
+    }
+    @if (Model.Packages.Count == 0) { <p class="muted">No private Hyperlib package has been uploaded.</p> }
+</section>

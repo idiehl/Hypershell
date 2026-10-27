@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "projectId": "669ad776f09643ee8c4ecb959f2b2f12",
+  "name": "Gallery Wall",
+  "rootNamespace": "HyperLib.Work",
+  "generatorVersion": "1.0.0",
+  "revision": "",
+  "razorProjectPath": "src/Pages/Pages.csproj",
+  "localHostProjectPath": "src/Host/Host.csproj",
+  "foundation": {
+    "markupLanguage": "RazorPages",
+    "hostingTarget": "Local",
+    "siteStructure": "FixedPages",
+    "plannedPageCount": 1,
+    "usesTemplates": true,
+    "codingMode": "Manual",
+    "aiProvider": "None"
+  },
+  "pages": [
+    {
+      "pageId": "6526597044a54df084a5df55c6c34a02",
+      "name": "Presentation",
+      "route": "/presentation",
+      "slug": "presentation",
+      "fileType": "RazorPage",
+      "documentPath": "Pages/presentation.visual-page.json",
+      "componentPath": "src/Pages/Generated/WorkPage.razor",
+      "revision": ""
+    }
+  ],
+  "theme": {
+    "tokens": {},
+    "additionalCssPath": "Shared/theme.css"
+  },
+  "hyperlibPackageId": "template-gallery-wall",
+  "hyperlibAuthoringPath": "authoring.template.json"
+}

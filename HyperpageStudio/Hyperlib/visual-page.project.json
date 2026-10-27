@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "projectId": "e62aef212e8d4bd9897ae31d4f50acd6",
+  "name": "HyperLib",
+  "rootNamespace": "HyperLib.Work",
+  "generatorVersion": "1.0.0",
+  "revision": "",
+  "razorProjectPath": "src/Pages/Pages.csproj",
+  "localHostProjectPath": "src/Host/Host.csproj",
+  "foundation": {
+    "markupLanguage": "RazorPages",
+    "hostingTarget": "Local",
+    "siteStructure": "FixedPages",
+    "plannedPageCount": 1,
+    "usesTemplates": true,
+    "codingMode": "Manual",
+    "aiProvider": "None"
+  },
+  "pages": [
+    {
+      "pageId": "20140836887844d0b9a929ee5dff9995",
+      "name": "Presentation",
+      "route": "/presentation",
+      "slug": "presentation",
+      "fileType": "RazorPage",
+      "documentPath": "Pages/presentation.visual-page.json",
+      "componentPath": "src/Pages/Generated/WorkPage.razor",
+      "revision": ""
+    }
+  ],
+  "theme": {
+    "tokens": {},
+    "additionalCssPath": "Shared/theme.css"
+  },
+  "hyperlibPackageId": "library",
+  "hyperlibAuthoringPath": "Presentation/authoring.template.json"
+}

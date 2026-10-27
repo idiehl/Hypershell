@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-alphabet-index">
+<nav class="alphabet" aria-label="Alphabetical index">@foreach(var letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"){<a href="@($"#index-{char.ToLowerInvariant(letter)}")">@letter</a>}</nav>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

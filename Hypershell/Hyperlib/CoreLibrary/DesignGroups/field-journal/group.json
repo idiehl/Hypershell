@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "field-journal",
+  "title": "Field Journal",
+  "description": "A literary publication with an opening spread, narrow margin notes, and a reading-column rhythm.",
+  "category": "Publication",
+  "sourceTemplateId": "field-journal"
+}

@@ -1,0 +1,912 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "id": "csharp-streams",
+  "displayName": ".NET streams and archives",
+  "description": "Dependency-free .NET 8 APIs for binary files, streams, readers and writers, compression, storage, and file-system observation.",
+  "language": "C#",
+  "category": "Files and storage",
+  "kind": "Extension",
+  "parentLibraryId": "csharp-dotnet-8",
+  "frameworkName": ".NET",
+  "frameworkVersion": "8",
+  "targetFramework": "net8.0",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Compatible with the built-in .NET 10 C# runner; authored against .NET 8.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "csharp",
+    "dotnet",
+    "net8",
+    "io",
+    "streams",
+    "binary",
+    "compression",
+    "filesystem"
+  ],
+  "executionTarget": "CSharp",
+  "actionDescriptions": {
+    "Compress": "Encodes data into a smaller representation using a compression algorithm.",
+    "Convert": "Changes a value into another representation or data type.",
+    "Copy": "Copies bytes, values, or resources to another destination.",
+    "Create": "Constructs a new object, resource, or language structure.",
+    "Decompress": "Restores compressed data to its uncompressed representation.",
+    "Format": "Creates a particular textual or binary representation of a value.",
+    "Get": "Retrieves information without intentionally changing the source.",
+    "Read": "Reads text, bytes, messages, or values from a source.",
+    "Write": "Writes text, bytes, messages, or values to a destination."
+  },
+  "objectDescriptions": {
+    "Binary file": "A binary file stores bytes whose interpretation is defined by an image, archive, executable, protocol, or application-specific format.",
+    "Binary value": "A binary value is a typed primitive or string represented as bytes in a documented byte order and encoding.",
+    "Directory": "A directory is a file-system container that can contain files and nested directories.",
+    "Directory archive": "A directory archive stores a directory tree and its file contents inside one compressed container.",
+    "Directory watcher": "A directory watcher subscribes to operating-system notifications for matching file-system changes.",
+    "Drive": "A drive represents a mounted or logical storage volume visible to the operating system.",
+    "File attributes": "File attributes are bit flags describing file-system traits such as hidden, read-only, directory, archive, or reparse-point state.",
+    "File stream": "A FileStream provides seekable or sequential byte access backed by an operating-system file handle.",
+    "Memory stream": "A MemoryStream provides seekable byte access backed by managed memory instead of a file or network resource.",
+    "Path": "A path is text identifying a file-system location; Path helpers transform that text without opening the target.",
+    "Stream": "A Stream is the .NET abstraction for reading, writing, and seeking through a sequence of bytes.",
+    "Text stream": "A text stream decodes or encodes characters over an underlying byte stream with a selected text encoding."
+  },
+  "commands": [
+    {
+      "name": "File.ReadAllBytesAsync",
+      "displayName": "File.ReadAllBytesAsync",
+      "description": "Read an entire file into a byte array asynchronously.",
+      "definition": "Opens a file, asynchronously reads all of its bytes, closes the file, and returns the completed byte array. Large files are usually better processed as streams.",
+      "moduleName": "System.IO.File",
+      "action": "Read",
+      "object": "Binary file",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "ReadAllBytesAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var bytes = await File.ReadAllBytesAsync({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.readallbytesasync",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The file path to read.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Calculate a binary file size",
+          "code": "var bytes = await File.ReadAllBytesAsync(\"icon.png\");\nConsole.WriteLine($\"Loaded {bytes.Length:N0} bytes.\");",
+          "explanation": "The complete file is available in memory after the awaited operation finishes."
+        }
+      ],
+      "keywords": [
+        "bytes",
+        "binary",
+        "file",
+        "async"
+      ]
+    },
+    {
+      "name": "File.WriteAllBytesAsync",
+      "displayName": "File.WriteAllBytesAsync",
+      "description": "Write a complete byte array to a file asynchronously.",
+      "definition": "Creates or overwrites a file, asynchronously writes the supplied bytes, and closes the file when the operation completes.",
+      "moduleName": "System.IO.File",
+      "action": "Write",
+      "object": "Binary file",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "WriteAllBytesAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await File.WriteAllBytesAsync({path}, {bytes});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.writeallbytesasync",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The destination file path.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "bytes",
+          "displayName": "bytes",
+          "placeholder": "bytes",
+          "description": "The byte array or compatible memory to write.",
+          "typeName": "byte[]",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Persist decoded data",
+          "code": "var bytes = Convert.FromBase64String(\"SHlwZXJzaGVsbA==\");\nawait File.WriteAllBytesAsync(\"payload.bin\", bytes);",
+          "explanation": "The decoded bytes replace payload.bin, creating it when necessary."
+        }
+      ],
+      "keywords": [
+        "bytes",
+        "binary",
+        "file",
+        "async"
+      ]
+    },
+    {
+      "name": "File.OpenRead",
+      "displayName": "File.OpenRead",
+      "description": "Open an existing file as a read-only stream.",
+      "definition": "Opens a FileStream for reading with sharing that permits other readers. The returned stream must be disposed.",
+      "moduleName": "System.IO.File",
+      "action": "Read",
+      "object": "File stream",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "OpenRead",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "using var stream = File.OpenRead({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.openread",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The existing file path to open.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a file header",
+          "code": "using var stream = File.OpenRead(\"payload.bin\");\nvar header = new byte[Math.Min(16, stream.Length)];\nawait stream.ReadExactlyAsync(header);\nConsole.WriteLine(Convert.ToHexString(header));",
+          "explanation": "Only the first bytes are loaded, and the using declaration closes the file reliably."
+        }
+      ],
+      "keywords": [
+        "FileStream",
+        "stream",
+        "open",
+        "read"
+      ]
+    },
+    {
+      "name": "File.OpenWrite",
+      "displayName": "File.OpenWrite",
+      "description": "Open or create a file as a writable stream.",
+      "definition": "Opens an existing file or creates a new one for writing. The stream begins at position zero but does not automatically truncate existing trailing content.",
+      "moduleName": "System.IO.File",
+      "action": "Write",
+      "object": "File stream",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "OpenWrite",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "using var stream = File.OpenWrite({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.openwrite",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The file path to open or create.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Write a compact binary header",
+          "code": "using var stream = File.OpenWrite(\"payload.bin\");\nstream.SetLength(0);\nawait stream.WriteAsync(new byte[] { 0x48, 0x59, 0x50, 0x45, 0x52 });",
+          "explanation": "SetLength removes old trailing bytes before the new header is written."
+        }
+      ],
+      "keywords": [
+        "FileStream",
+        "stream",
+        "open",
+        "write"
+      ]
+    },
+    {
+      "name": "Stream.CopyToAsync",
+      "displayName": "Stream.CopyToAsync",
+      "description": "Asynchronously copy all remaining bytes between streams.",
+      "definition": "Reads from the source stream's current position and writes to the destination until the source reaches its end. Neither stream is disposed by the operation.",
+      "moduleName": "System.IO.Stream",
+      "action": "Copy",
+      "object": "Stream",
+      "namespaceName": "System.IO",
+      "typeName": "Stream",
+      "memberName": "CopyToAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await {source}.CopyToAsync({destination});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync",
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "A readable source stream.",
+          "typeName": "Stream",
+          "isRequired": true
+        },
+        {
+          "name": "destination",
+          "displayName": "destination",
+          "placeholder": "destination",
+          "description": "A writable destination stream.",
+          "typeName": "Stream",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Copy one file to another through streams",
+          "code": "await using var source = File.OpenRead(\"input.bin\");\nawait using var destination = File.Create(\"copy.bin\");\nawait source.CopyToAsync(destination);",
+          "explanation": "The copy is streamed instead of loading the complete input into memory."
+        }
+      ],
+      "keywords": [
+        "stream",
+        "copy",
+        "bytes",
+        "async"
+      ]
+    },
+    {
+      "name": "Stream.ReadExactlyAsync",
+      "displayName": "Stream.ReadExactlyAsync",
+      "description": "Fill a buffer asynchronously or fail at end of stream.",
+      "definition": "Repeatedly reads until the requested buffer is full. It throws EndOfStreamException when the source ends before all requested bytes arrive.",
+      "moduleName": "System.IO.Stream",
+      "action": "Read",
+      "object": "Stream",
+      "namespaceName": "System.IO",
+      "typeName": "Stream",
+      "memberName": "ReadExactlyAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await {stream}.ReadExactlyAsync({buffer});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.stream.readexactlyasync",
+      "parameters": [
+        {
+          "name": "stream",
+          "displayName": "stream",
+          "placeholder": "stream",
+          "description": "A readable stream.",
+          "typeName": "Stream",
+          "isRequired": true
+        },
+        {
+          "name": "buffer",
+          "displayName": "buffer",
+          "placeholder": "buffer",
+          "description": "The buffer that must be completely filled.",
+          "typeName": "Memory<byte>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a fixed-size protocol header",
+          "code": "await using var stream = File.OpenRead(\"packet.bin\");\nvar header = new byte[8];\nawait stream.ReadExactlyAsync(header);\nConsole.WriteLine(Convert.ToHexString(header));",
+          "explanation": "The call either fills all eight bytes or reports a truncated input instead of returning a partial header."
+        }
+      ],
+      "keywords": [
+        "stream",
+        "buffer",
+        "exact",
+        "protocol"
+      ]
+    },
+    {
+      "name": "StreamReader.ReadLineAsync",
+      "displayName": "StreamReader.ReadLineAsync",
+      "description": "Asynchronously read the next text line.",
+      "definition": "Reads characters through the next line terminator and returns the line without that terminator. It returns null after the final line.",
+      "moduleName": "System.IO.StreamReader",
+      "action": "Read",
+      "object": "Text stream",
+      "namespaceName": "System.IO",
+      "typeName": "StreamReader",
+      "memberName": "ReadLineAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var line = await {reader}.ReadLineAsync();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.streamreader.readlineasync",
+      "parameters": [
+        {
+          "name": "reader",
+          "displayName": "reader",
+          "placeholder": "reader",
+          "description": "An open StreamReader.",
+          "typeName": "StreamReader",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Process a text file line by line",
+          "code": "using var reader = File.OpenText(\"events.log\");\nwhile (await reader.ReadLineAsync() is { } line)\n{\n    if (!string.IsNullOrWhiteSpace(line))\n    {\n        Console.WriteLine(line);\n    }\n}",
+          "explanation": "Only one line is retained at a time, and the null pattern ends the loop at end of file."
+        }
+      ],
+      "keywords": [
+        "StreamReader",
+        "line",
+        "text",
+        "async"
+      ]
+    },
+    {
+      "name": "StreamReader.ReadToEndAsync",
+      "displayName": "StreamReader.ReadToEndAsync",
+      "description": "Asynchronously read all remaining text.",
+      "definition": "Reads from the current position through the end of the text stream and returns one string. Streaming is preferable when the remaining content may be large.",
+      "moduleName": "System.IO.StreamReader",
+      "action": "Read",
+      "object": "Text stream",
+      "namespaceName": "System.IO",
+      "typeName": "StreamReader",
+      "memberName": "ReadToEndAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var text = await {reader}.ReadToEndAsync();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.streamreader.readtoendasync",
+      "parameters": [
+        {
+          "name": "reader",
+          "displayName": "reader",
+          "placeholder": "reader",
+          "description": "An open StreamReader.",
+          "typeName": "StreamReader",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Decode UTF-8 text from a stream",
+          "code": "await using var stream = File.OpenRead(\"notes.txt\");\nusing var reader = new StreamReader(stream, Encoding.UTF8);\nvar text = await reader.ReadToEndAsync();\nConsole.WriteLine(text);",
+          "explanation": "StreamReader handles byte-to-character decoding while the awaited call collects the remaining characters."
+        }
+      ],
+      "keywords": [
+        "StreamReader",
+        "text",
+        "async",
+        "encoding"
+      ]
+    },
+    {
+      "name": "StreamWriter.WriteLineAsync",
+      "displayName": "StreamWriter.WriteLineAsync",
+      "description": "Asynchronously write text followed by a line terminator.",
+      "definition": "Writes the supplied text and the writer's line terminator without synchronously blocking for the underlying destination.",
+      "moduleName": "System.IO.StreamWriter",
+      "action": "Write",
+      "object": "Text stream",
+      "namespaceName": "System.IO",
+      "typeName": "StreamWriter",
+      "memberName": "WriteLineAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await {writer}.WriteLineAsync({value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.streamwriter.writelineasync",
+      "parameters": [
+        {
+          "name": "writer",
+          "displayName": "writer",
+          "placeholder": "writer",
+          "description": "An open StreamWriter.",
+          "typeName": "StreamWriter",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The text to write.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Append a timestamped log line",
+          "code": "await using var writer = new StreamWriter(\"events.log\", append: true);\nawait writer.WriteLineAsync($\"{DateTimeOffset.UtcNow:O} build completed\");",
+          "explanation": "Disposing the writer flushes its encoding buffer after the asynchronous write."
+        }
+      ],
+      "keywords": [
+        "StreamWriter",
+        "line",
+        "text",
+        "async"
+      ]
+    },
+    {
+      "name": "MemoryStream.ToArray",
+      "displayName": "MemoryStream.ToArray",
+      "description": "Copy a memory stream's contents into a byte array.",
+      "definition": "Returns a new byte array containing the bytes written to the stream, regardless of its current Position. The returned array is independent of the stream.",
+      "moduleName": "System.IO.MemoryStream",
+      "action": "Convert",
+      "object": "Memory stream",
+      "namespaceName": "System.IO",
+      "typeName": "MemoryStream",
+      "memberName": "ToArray",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var bytes = {stream}.ToArray();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.memorystream.toarray",
+      "parameters": [
+        {
+          "name": "stream",
+          "displayName": "stream",
+          "placeholder": "stream",
+          "description": "A MemoryStream instance.",
+          "typeName": "MemoryStream",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a binary payload in memory",
+          "code": "using var stream = new MemoryStream();\nawait stream.WriteAsync(Encoding.UTF8.GetBytes(\"Hypershell\"));\nvar payload = stream.ToArray();\nConsole.WriteLine(Convert.ToBase64String(payload));",
+          "explanation": "ToArray returns every written byte even though the stream position is at its end."
+        }
+      ],
+      "keywords": [
+        "MemoryStream",
+        "buffer",
+        "byte array",
+        "in memory"
+      ]
+    },
+    {
+      "name": "BinaryReader.ReadInt32",
+      "displayName": "BinaryReader.ReadInt32",
+      "description": "Read a little-endian 32-bit integer from a stream.",
+      "definition": "Reads four bytes from the underlying stream and interprets them as a signed Int32 using BinaryReader's fixed binary representation.",
+      "moduleName": "System.IO.BinaryReader",
+      "action": "Read",
+      "object": "Binary value",
+      "namespaceName": "System.IO",
+      "typeName": "BinaryReader",
+      "memberName": "ReadInt32",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var number = {reader}.ReadInt32();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.binaryreader.readint32",
+      "parameters": [
+        {
+          "name": "reader",
+          "displayName": "reader",
+          "placeholder": "reader",
+          "description": "An open BinaryReader.",
+          "typeName": "BinaryReader",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a binary record count",
+          "code": "using var stream = new MemoryStream(\n    new byte[] { 0x03, 0x00, 0x00, 0x00 });\nusing var reader = new BinaryReader(stream);\nConsole.WriteLine(reader.ReadInt32());",
+          "explanation": "The four little-endian bytes are interpreted as the integer 3."
+        }
+      ],
+      "keywords": [
+        "BinaryReader",
+        "int",
+        "binary",
+        "little endian"
+      ]
+    },
+    {
+      "name": "BinaryWriter.Write",
+      "displayName": "BinaryWriter.Write",
+      "description": "Write a typed primitive or string in binary form.",
+      "definition": "Writes a supported primitive, byte sequence, character sequence, or string to the underlying stream using BinaryWriter's documented representation.",
+      "moduleName": "System.IO.BinaryWriter",
+      "action": "Write",
+      "object": "Binary value",
+      "namespaceName": "System.IO",
+      "typeName": "BinaryWriter",
+      "memberName": "Write",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{writer}.Write({value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.binarywriter.write",
+      "parameters": [
+        {
+          "name": "writer",
+          "displayName": "writer",
+          "placeholder": "writer",
+          "description": "An open BinaryWriter.",
+          "typeName": "BinaryWriter",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The strongly typed value to encode.",
+          "typeName": "C# expression",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a small binary record",
+          "code": "using var stream = new MemoryStream();\nusing (var writer = new BinaryWriter(stream, Encoding.UTF8, leaveOpen: true))\n{\n    writer.Write(3);\n    writer.Write(\"Hypershell\");\n}\nConsole.WriteLine(Convert.ToHexString(stream.ToArray()));",
+          "explanation": "The writer encodes the integer and length-prefixed string into the same memory stream."
+        }
+      ],
+      "keywords": [
+        "BinaryWriter",
+        "binary",
+        "primitive",
+        "serialize"
+      ]
+    },
+    {
+      "name": "ZipFile.CreateFromDirectory",
+      "displayName": "ZipFile.CreateFromDirectory",
+      "description": "Create a ZIP archive from a directory tree.",
+      "definition": "Recursively compresses a source directory into a new ZIP archive. The destination archive must not already exist unless the caller removes or replaces it first.",
+      "moduleName": "System.IO.Compression.ZipFile",
+      "action": "Compress",
+      "object": "Directory archive",
+      "namespaceName": "System.IO.Compression",
+      "typeName": "ZipFile",
+      "memberName": "CreateFromDirectory",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "ZipFile.CreateFromDirectory({sourceDirectory}, {archivePath});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.compression.zipfile.createfromdirectory",
+      "parameters": [
+        {
+          "name": "sourceDirectory",
+          "displayName": "sourceDirectory",
+          "placeholder": "sourceDirectory",
+          "description": "The directory whose contents will be archived.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "archivePath",
+          "displayName": "archivePath",
+          "placeholder": "archivePath",
+          "description": "The new ZIP file path.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Archive a build output directory",
+          "code": "var archivePath = \"release.zip\";\nif (File.Exists(archivePath)) File.Delete(archivePath);\nZipFile.CreateFromDirectory(\"bin/Release\", archivePath);\nConsole.WriteLine(Path.GetFullPath(archivePath));",
+          "explanation": "An existing archive is removed explicitly before the directory tree is compressed."
+        }
+      ],
+      "keywords": [
+        "zip",
+        "archive",
+        "directory",
+        "compression"
+      ]
+    },
+    {
+      "name": "ZipFile.ExtractToDirectory",
+      "displayName": "ZipFile.ExtractToDirectory",
+      "description": "Extract a ZIP archive into a directory.",
+      "definition": "Expands archive entries beneath a destination directory. An overload can overwrite existing files; untrusted archives require additional policy around paths, size, and content.",
+      "moduleName": "System.IO.Compression.ZipFile",
+      "action": "Decompress",
+      "object": "Directory archive",
+      "namespaceName": "System.IO.Compression",
+      "typeName": "ZipFile",
+      "memberName": "ExtractToDirectory",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "ZipFile.ExtractToDirectory({archivePath}, {destinationDirectory});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.compression.zipfile.extracttodirectory",
+      "parameters": [
+        {
+          "name": "archivePath",
+          "displayName": "archivePath",
+          "placeholder": "archivePath",
+          "description": "The ZIP file to extract.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "destinationDirectory",
+          "displayName": "destinationDirectory",
+          "placeholder": "destinationDirectory",
+          "description": "The output directory.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Extract into a fresh temporary directory",
+          "code": "var destination = Path.Combine(\n    Path.GetTempPath(),\n    $\"hypershell-{Guid.NewGuid():N}\");\nZipFile.ExtractToDirectory(\"release.zip\", destination);\nConsole.WriteLine(destination);",
+          "explanation": "A unique destination avoids collisions with files from an earlier extraction."
+        }
+      ],
+      "keywords": [
+        "zip",
+        "archive",
+        "extract",
+        "decompression"
+      ]
+    },
+    {
+      "name": "GZipStream.Compress",
+      "displayName": "GZipStream.Compress",
+      "description": "Compress one stream into GZip format.",
+      "definition": "A GZipStream in Compress mode writes a GZip-formatted byte stream to its destination. Disposing it finalizes the compression footer.",
+      "moduleName": "System.IO.Compression.GZipStream",
+      "action": "Compress",
+      "object": "Stream",
+      "namespaceName": "System.IO.Compression",
+      "typeName": "GZipStream",
+      "memberName": "Compress",
+      "memberKind": "Constructor",
+      "overloadSignature": "",
+      "template": "await using var gzip = new GZipStream({destination}, CompressionLevel.Optimal, leaveOpen: true);\nawait {source}.CopyToAsync(gzip);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.compression.gzipstream",
+      "parameters": [
+        {
+          "name": "destination",
+          "displayName": "destination",
+          "placeholder": "destination",
+          "description": "The writable destination stream.",
+          "typeName": "Stream",
+          "isRequired": true
+        },
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The readable uncompressed stream.",
+          "typeName": "Stream",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Compress a file",
+          "code": "await using var source = File.OpenRead(\"events.log\");\nawait using var destination = File.Create(\"events.log.gz\");\nawait using (var gzip = new GZipStream(\n    destination,\n    CompressionLevel.Optimal,\n    leaveOpen: true))\n{\n    await source.CopyToAsync(gzip);\n}",
+          "explanation": "The nested using scope finalizes GZip metadata before the destination file is closed."
+        }
+      ],
+      "keywords": [
+        "gzip",
+        "compression",
+        "stream"
+      ]
+    },
+    {
+      "name": "GZipStream.Decompress",
+      "displayName": "GZipStream.Decompress",
+      "description": "Decompress a GZip stream.",
+      "definition": "A GZipStream in Decompress mode exposes the uncompressed bytes read from an underlying GZip-formatted source.",
+      "moduleName": "System.IO.Compression.GZipStream",
+      "action": "Decompress",
+      "object": "Stream",
+      "namespaceName": "System.IO.Compression",
+      "typeName": "GZipStream",
+      "memberName": "Decompress",
+      "memberKind": "Constructor",
+      "overloadSignature": "",
+      "template": "await using var gzip = new GZipStream({source}, CompressionMode.Decompress, leaveOpen: true);\nawait gzip.CopyToAsync({destination});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.compression.gzipstream",
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The readable GZip source stream.",
+          "typeName": "Stream",
+          "isRequired": true
+        },
+        {
+          "name": "destination",
+          "displayName": "destination",
+          "placeholder": "destination",
+          "description": "The writable uncompressed destination stream.",
+          "typeName": "Stream",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Restore a compressed file",
+          "code": "await using var source = File.OpenRead(\"events.log.gz\");\nawait using var gzip = new GZipStream(\n    source,\n    CompressionMode.Decompress);\nawait using var destination = File.Create(\"events-restored.log\");\nawait gzip.CopyToAsync(destination);",
+          "explanation": "Copying from the decompression stream writes restored bytes to the destination."
+        }
+      ],
+      "keywords": [
+        "gzip",
+        "decompression",
+        "stream"
+      ]
+    },
+    {
+      "name": "FileSystemWatcher.Create",
+      "displayName": "FileSystemWatcher.Create",
+      "description": "Watch a directory for selected file-system changes.",
+      "definition": "FileSystemWatcher raises events for matching changes reported by the operating system. Event bursts, duplicate events, buffer overflow, and race conditions must be handled by production consumers.",
+      "moduleName": "System.IO.FileSystemWatcher",
+      "action": "Create",
+      "object": "Directory watcher",
+      "namespaceName": "System.IO",
+      "typeName": "FileSystemWatcher",
+      "memberName": "Create",
+      "memberKind": "Constructor",
+      "overloadSignature": "",
+      "template": "using var watcher = new FileSystemWatcher({path}, {filter})\n{\n    NotifyFilter = NotifyFilters.FileName | NotifyFilters.LastWrite,\n    EnableRaisingEvents = true\n};",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.filesystemwatcher",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The directory to monitor.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "filter",
+          "displayName": "filter",
+          "placeholder": "filter",
+          "description": "A file-name filter such as *.json.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Observe JSON changes briefly",
+          "code": "using var watcher = new FileSystemWatcher(\".\", \"*.json\")\n{\n    NotifyFilter = NotifyFilters.FileName | NotifyFilters.LastWrite\n};\nwatcher.Changed += (_, change) =>\n    Console.WriteLine($\"{change.ChangeType}: {change.Name}\");\nwatcher.EnableRaisingEvents = true;\nawait Task.Delay(TimeSpan.FromSeconds(10));",
+          "explanation": "The watcher remains alive for ten seconds; real applications normally tie its lifetime to a longer-running service."
+        }
+      ],
+      "keywords": [
+        "watch",
+        "directory",
+        "file changes",
+        "events"
+      ]
+    },
+    {
+      "name": "DriveInfo.GetDrives",
+      "displayName": "DriveInfo.GetDrives",
+      "description": "Get the logical drives visible to the current machine.",
+      "definition": "Returns DriveInfo objects for mounted or logical drives. Some properties can throw when a drive is unavailable or not ready.",
+      "moduleName": "System.IO.DriveInfo",
+      "action": "Get",
+      "object": "Drive",
+      "namespaceName": "System.IO",
+      "typeName": "DriveInfo",
+      "memberName": "GetDrives",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var drives = DriveInfo.GetDrives();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.driveinfo.getdrives",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Report ready drive space",
+          "code": "foreach (var drive in DriveInfo.GetDrives().Where(item => item.IsReady))\n{\n    Console.WriteLine(\n        $\"{drive.Name} {drive.DriveFormat} {drive.AvailableFreeSpace:N0} bytes free\");\n}",
+          "explanation": "IsReady is checked before querying format and capacity properties."
+        }
+      ],
+      "keywords": [
+        "drive",
+        "disk",
+        "capacity",
+        "storage"
+      ]
+    },
+    {
+      "name": "Path.GetRelativePath",
+      "displayName": "Path.GetRelativePath",
+      "description": "Calculate a relative path between two absolute path contexts.",
+      "definition": "Resolves both inputs and returns a path that reaches the target from the base path according to platform path-comparison rules.",
+      "moduleName": "System.IO.Path",
+      "action": "Format",
+      "object": "Path",
+      "namespaceName": "System.IO",
+      "typeName": "Path",
+      "memberName": "GetRelativePath",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var relative = Path.GetRelativePath({relativeTo}, {path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.path.getrelativepath",
+      "parameters": [
+        {
+          "name": "relativeTo",
+          "displayName": "relativeTo",
+          "placeholder": "relativeTo",
+          "description": "The base directory path.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The target path.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a project-relative label",
+          "code": "var root = Path.GetFullPath(\".\");\nvar file = Path.Combine(root, \"src\", \"Hypershell\", \"App.xaml\");\nConsole.WriteLine(Path.GetRelativePath(root, file));",
+          "explanation": "The result describes the target beneath the project root without retaining the absolute prefix."
+        }
+      ],
+      "keywords": [
+        "path",
+        "relative",
+        "filesystem"
+      ]
+    },
+    {
+      "name": "File.GetAttributes",
+      "displayName": "File.GetAttributes",
+      "description": "Read a file or directory's attribute flags.",
+      "definition": "Returns a bitwise FileAttributes value describing flags such as Directory, Hidden, ReadOnly, Archive, and ReparsePoint.",
+      "moduleName": "System.IO.File",
+      "action": "Get",
+      "object": "File attributes",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "GetAttributes",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var attributes = File.GetAttributes({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.getattributes",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The file or directory path.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Test whether a path is hidden",
+          "code": "var attributes = File.GetAttributes(\"settings.json\");\nvar isHidden = attributes.HasFlag(FileAttributes.Hidden);\nConsole.WriteLine(isHidden);",
+          "explanation": "FileAttributes is a flags enum, so HasFlag tests one bit without discarding the others."
+        }
+      ],
+      "keywords": [
+        "attributes",
+        "hidden",
+        "readonly",
+        "flags"
+      ]
+    }
+  ]
+}

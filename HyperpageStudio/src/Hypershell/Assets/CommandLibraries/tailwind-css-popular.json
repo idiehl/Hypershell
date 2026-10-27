@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "tailwind-css-popular",
+  "displayName": "Tailwind CSS",
+  "description": "Curated Tailwind CSS starter recipes for the CSS Command Builder. The dependency is referenced, not bundled.",
+  "language": "CSS",
+  "category": "Popular libraries",
+  "kind": "Framework",
+  "canonicalName": "Tailwind CSS",
+  "ecosystem": "npm / PostCSS",
+  "targetVersion": "4",
+  "sourceVersion": "4 documentation · curated 2026-08-17",
+  "sourceUrl": "https://tailwindcss.com/docs/installation/tailwind-cli",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Editor/build-tool content: configure Tailwind CSS 4 in the target project; Hypershell does not run the Tailwind compiler.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "css",
+    "popular library",
+    "tailwindcss",
+    "utility css",
+    "design tokens",
+    "responsive",
+    "postcss"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/tailwind-css-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/tailwind-css-popular.guides.json"
+  ],
+  "legacyIds": []
+}

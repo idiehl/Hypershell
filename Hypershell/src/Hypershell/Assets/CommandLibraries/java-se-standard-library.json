@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "java-se-standard-library",
+  "displayName": "Java SE Standard Library",
+  "description": "Java SE modules and public APIs organized by module, package, type, and member.",
+  "language": "Java",
+  "category": "Official reference",
+  "kind": "StandardLibrary",
+  "canonicalName": "Java Platform, Standard Edition API",
+  "ecosystem": "Java SE",
+  "targetVersion": "Java SE 25",
+  "sourceVersion": "Java SE 25 · Javadoc search indexes 7b08459233ad/a1d2e7c5217c/22bb10f3e4e3/a80689888aae",
+  "sourceUrl": "https://docs.oracle.com/en/java/javase/",
+  "license": "Oracle documentation terms",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Runs through the matching installed Hypershell terminal adapter.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "java",
+    "java se",
+    "standard library",
+    "modules"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 52238,
+  "declaredIndexedCount": 52229,
+  "declaredGuidedCount": 0,
+  "declaredVerifiedCount": 9,
+  "entryFiles": [
+    "entries/java-se-standard-library.001.entries.json",
+    "entries/java-se-standard-library.002.entries.json",
+    "entries/java-se-standard-library.003.entries.json",
+    "entries/java-se-standard-library.004.entries.json",
+    "entries/java-se-standard-library.005.entries.json",
+    "entries/java-se-standard-library.006.entries.json",
+    "entries/java-se-standard-library.007.entries.json",
+    "entries/java-se-standard-library.008.entries.json",
+    "entries/java-se-standard-library.009.entries.json",
+    "entries/java-se-standard-library.010.entries.json",
+    "entries/java-se-standard-library.011.entries.json"
+  ],
+  "declaredGuideCount": 9,
+  "guideFiles": [
+    "guides/java-se-standard-library.guides.json"
+  ],
+  "legacyIds": []
+}

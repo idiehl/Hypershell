@@ -1,0 +1,98 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "Seeing in Systems",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "lesson-header",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "LESSON 01 / SYSTEMS THINKING",
+        "title": "Seeing in Systems",
+        "text": "Notice connections, test assumptions, and make a small model."
+      }
+    },
+    {
+      "id": "learning-goal",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "What you will practice",
+        "text": "Identify a boundary, trace one feedback loop, and explain a useful change.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "duration",
+      "type": "counter",
+      "region": "main",
+      "values": {
+        "label": "Minutes explored",
+        "start": 0,
+        "span": "third"
+      }
+    },
+    {
+      "id": "lesson",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Start with a familiar system\n\nChoose a garden, a kitchen, or a shared calendar. List the parts and draw connections between them.\n\n**A connection matters when changing one part changes another.**",
+        "span": "full"
+      }
+    },
+    {
+      "id": "exercise",
+      "type": "tool",
+      "region": "main",
+      "values": {
+        "title": "Your first model",
+        "mode": "checklist",
+        "initial": 0,
+        "items": "Name the purpose\nDraw a boundary\nConnect three parts\nFind one feedback loop",
+        "span": "half"
+      }
+    },
+    {
+      "id": "worked-example",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Try the garden",
+        "text": "Sunlight supports growth. Growth changes shade. Shade changes what can grow next.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "reflection-heading",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "REFLECT",
+        "style": "line"
+      }
+    },
+    {
+      "id": "reflection",
+      "type": "form",
+      "region": "main",
+      "values": {
+        "title": "Explain it in your own words",
+        "description": "Use the message field as a local reflection preview. Nothing is submitted."
+      }
+    },
+    {
+      "id": "lesson-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Course notebook / Continue when you can explain one connection"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

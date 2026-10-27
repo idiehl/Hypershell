@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "projectId": "fccdc22a94f14e6ab718d069bfd4bf85",
+  "name": "Recipe Kitchen",
+  "rootNamespace": "HyperLib.Work",
+  "generatorVersion": "1.0.0",
+  "revision": "",
+  "razorProjectPath": "src/Pages/Pages.csproj",
+  "localHostProjectPath": "src/Host/Host.csproj",
+  "foundation": {
+    "markupLanguage": "RazorPages",
+    "hostingTarget": "Local",
+    "siteStructure": "FixedPages",
+    "plannedPageCount": 1,
+    "usesTemplates": true,
+    "codingMode": "Manual",
+    "aiProvider": "None"
+  },
+  "pages": [
+    {
+      "pageId": "8f67f7e14bd84c5ba5c7916d14535013",
+      "name": "Presentation",
+      "route": "/presentation",
+      "slug": "presentation",
+      "fileType": "RazorPage",
+      "documentPath": "Pages/presentation.visual-page.json",
+      "componentPath": "src/Pages/Generated/WorkPage.razor",
+      "revision": ""
+    }
+  ],
+  "theme": {
+    "tokens": {},
+    "additionalCssPath": "Shared/theme.css"
+  },
+  "hyperlibPackageId": "group-recipe-kitchen",
+  "hyperlibAuthoringPath": "authoring.template.json"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "psscriptanalyzer-popular",
+  "displayName": "PSScriptAnalyzer",
+  "description": "Curated PSScriptAnalyzer starter recipes for the PowerShell Command Builder. The dependency is referenced, not bundled.",
+  "language": "PowerShell",
+  "category": "Popular libraries",
+  "kind": "Module",
+  "canonicalName": "PSScriptAnalyzer",
+  "ecosystem": "PowerShell Gallery",
+  "targetVersion": "1.25.0",
+  "sourceVersion": "1.25.0 documentation · curated 2026-08-17",
+  "sourceUrl": "https://learn.microsoft.com/powershell/utility-modules/psscriptanalyzer/overview",
+  "license": "MIT",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Requires PSScriptAnalyzer in the active PowerShell environment; Hypershell does not install it.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "powershell",
+    "popular library",
+    "psscriptanalyzer",
+    "lint",
+    "static analysis",
+    "quality",
+    "powershell gallery"
+  ],
+  "executionTarget": "PowerShell",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/psscriptanalyzer-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/psscriptanalyzer-popular.guides.json"
+  ],
+  "legacyIds": []
+}

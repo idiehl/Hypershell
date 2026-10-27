@@ -1,0 +1,5902 @@
+{
+  "schemaVersion": 1,
+  "templateId": "standard",
+  "title": "Hyperpage starters \u00B7 Hyperpage collection",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Page content",
+      "allowedBlocks": []
+    }
+  ],
+  "blocks": [
+    {
+      "id": "legacy-common-page-landing-v1",
+      "title": "Conversion landing page",
+      "component": "LegacyCommonPageLandingV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Brand link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Site name",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Brand link \u00B7 href",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Features link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Features",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Features link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Resources link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Resources",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Resources link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Primary navigation action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A useful category label",
+          "options": []
+        },
+        {
+          "id": "text-11",
+          "title": "Hero heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A strong reason to choose this",
+          "options": []
+        },
+        {
+          "id": "text-12",
+          "title": "Hero summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explain the outcome in plain language and help the right visitor understand the next step.",
+          "options": []
+        },
+        {
+          "id": "text-14",
+          "title": "Primary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Primary action",
+          "options": []
+        },
+        {
+          "id": "text-15",
+          "title": "Secondary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Learn more",
+          "options": []
+        },
+        {
+          "id": "href-15",
+          "title": "Secondary action \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-18",
+          "title": "Feature heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Why this works",
+          "options": []
+        },
+        {
+          "id": "text-19",
+          "title": "Feature introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Group the most important benefits into a small number of distinct, scannable ideas.",
+          "options": []
+        },
+        {
+          "id": "text-22",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "01",
+          "options": []
+        },
+        {
+          "id": "text-23",
+          "title": "Feature 1 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Distinct benefit 1",
+          "options": []
+        },
+        {
+          "id": "text-24",
+          "title": "Feature 1 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the benefit in terms of a real visitor need or outcome.",
+          "options": []
+        },
+        {
+          "id": "text-26",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "02",
+          "options": []
+        },
+        {
+          "id": "text-27",
+          "title": "Feature 2 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Distinct benefit 2",
+          "options": []
+        },
+        {
+          "id": "text-28",
+          "title": "Feature 2 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the benefit in terms of a real visitor need or outcome.",
+          "options": []
+        },
+        {
+          "id": "text-30",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "03",
+          "options": []
+        },
+        {
+          "id": "text-31",
+          "title": "Feature 3 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Distinct benefit 3",
+          "options": []
+        },
+        {
+          "id": "text-32",
+          "title": "Feature 3 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the benefit in terms of a real visitor need or outcome.",
+          "options": []
+        },
+        {
+          "id": "text-35",
+          "title": "Quotation \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A concise, authentic statement about the result or experience.",
+          "options": []
+        },
+        {
+          "id": "text-36",
+          "title": "Attribution \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Customer name \u00B7 Role",
+          "options": []
+        },
+        {
+          "id": "text-38",
+          "title": "Quotation \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A second approved quotation that supports a different benefit.",
+          "options": []
+        },
+        {
+          "id": "text-39",
+          "title": "Attribution \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Customer name \u00B7 Organization",
+          "options": []
+        },
+        {
+          "id": "text-42",
+          "title": "Action heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Ready to take the next step?",
+          "options": []
+        },
+        {
+          "id": "text-43",
+          "title": "Action summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Give the visitor one clear reason to continue now.",
+          "options": []
+        },
+        {
+          "id": "text-44",
+          "title": "Primary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-46",
+          "title": "Copyright \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00A9 Site name. Add the correct year and rights statement.",
+          "options": []
+        },
+        {
+          "id": "text-48",
+          "title": "Privacy link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Privacy",
+          "options": []
+        },
+        {
+          "id": "href-48",
+          "title": "Privacy link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-49",
+          "title": "Terms link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Terms",
+          "options": []
+        },
+        {
+          "id": "href-49",
+          "title": "Terms link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-50",
+          "title": "Contact link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact",
+          "options": []
+        },
+        {
+          "id": "href-50",
+          "title": "Contact link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-PAGE-LANDING-V1",
+      "category": "Page layouts",
+      "description": "A complete campaign or product landing page with navigation, hero, benefits, proof, and a final action. Use when one audience should be guided toward one primary outcome.",
+      "sourceTemplateId": "common.page.landing.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-page-directory-v1",
+      "title": "Indexed directory",
+      "component": "LegacyCommonPageDirectoryV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Brand link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Site name",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Brand link \u00B7 href",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Features link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Features",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Features link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Resources link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Resources",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Resources link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Primary navigation action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-9",
+          "title": "Page heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Browse the collection",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Page introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Help visitors find the right item quickly.",
+          "options": []
+        },
+        {
+          "id": "text-13",
+          "title": "Search label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Search",
+          "options": []
+        },
+        {
+          "id": "placeholder-14",
+          "title": "Search input \u00B7 placeholder",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Search by keyword",
+          "options": []
+        },
+        {
+          "id": "text-16",
+          "title": "Category label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-18",
+          "title": "All categories \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "All categories",
+          "options": []
+        },
+        {
+          "id": "text-19",
+          "title": "First category \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "First category",
+          "options": []
+        },
+        {
+          "id": "text-20",
+          "title": "Apply filters \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Apply",
+          "options": []
+        },
+        {
+          "id": "text-24",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-25",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-26",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-27",
+          "title": "Card 1 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Collection item 1",
+          "options": []
+        },
+        {
+          "id": "text-28",
+          "title": "Card 1 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add enough context for a visitor to decide whether this item is relevant.",
+          "options": []
+        },
+        {
+          "id": "text-29",
+          "title": "View details link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View details",
+          "options": []
+        },
+        {
+          "id": "href-29",
+          "title": "View details link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-32",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-33",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-34",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-35",
+          "title": "Card 2 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Collection item 2",
+          "options": []
+        },
+        {
+          "id": "text-36",
+          "title": "Card 2 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add enough context for a visitor to decide whether this item is relevant.",
+          "options": []
+        },
+        {
+          "id": "text-37",
+          "title": "View details link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View details",
+          "options": []
+        },
+        {
+          "id": "href-37",
+          "title": "View details link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-40",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-41",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-42",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-43",
+          "title": "Card 3 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Collection item 3",
+          "options": []
+        },
+        {
+          "id": "text-44",
+          "title": "Card 3 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add enough context for a visitor to decide whether this item is relevant.",
+          "options": []
+        },
+        {
+          "id": "text-45",
+          "title": "View details link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View details",
+          "options": []
+        },
+        {
+          "id": "href-45",
+          "title": "View details link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-48",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-49",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-50",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-51",
+          "title": "Card 4 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Collection item 4",
+          "options": []
+        },
+        {
+          "id": "text-52",
+          "title": "Card 4 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add enough context for a visitor to decide whether this item is relevant.",
+          "options": []
+        },
+        {
+          "id": "text-53",
+          "title": "View details link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View details",
+          "options": []
+        },
+        {
+          "id": "href-53",
+          "title": "View details link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-56",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-57",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-58",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-59",
+          "title": "Card 5 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Collection item 5",
+          "options": []
+        },
+        {
+          "id": "text-60",
+          "title": "Card 5 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add enough context for a visitor to decide whether this item is relevant.",
+          "options": []
+        },
+        {
+          "id": "text-61",
+          "title": "View details link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View details",
+          "options": []
+        },
+        {
+          "id": "href-61",
+          "title": "View details link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-64",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-65",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-66",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-67",
+          "title": "Card 6 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Collection item 6",
+          "options": []
+        },
+        {
+          "id": "text-68",
+          "title": "Card 6 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add enough context for a visitor to decide whether this item is relevant.",
+          "options": []
+        },
+        {
+          "id": "text-69",
+          "title": "View details link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View details",
+          "options": []
+        },
+        {
+          "id": "href-69",
+          "title": "View details link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-71",
+          "title": "Previous link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Previous",
+          "options": []
+        },
+        {
+          "id": "href-71",
+          "title": "Previous link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-72",
+          "title": "1 link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "1",
+          "options": []
+        },
+        {
+          "id": "href-72",
+          "title": "1 link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-73",
+          "title": "2 link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "2",
+          "options": []
+        },
+        {
+          "id": "href-73",
+          "title": "2 link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-74",
+          "title": "3 link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "3",
+          "options": []
+        },
+        {
+          "id": "href-74",
+          "title": "3 link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-75",
+          "title": "Next link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Next",
+          "options": []
+        },
+        {
+          "id": "href-75",
+          "title": "Next link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-77",
+          "title": "Copyright \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00A9 Site name. Add the correct year and rights statement.",
+          "options": []
+        },
+        {
+          "id": "text-79",
+          "title": "Privacy link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Privacy",
+          "options": []
+        },
+        {
+          "id": "href-79",
+          "title": "Privacy link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-80",
+          "title": "Terms link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Terms",
+          "options": []
+        },
+        {
+          "id": "href-80",
+          "title": "Terms link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-81",
+          "title": "Contact link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact",
+          "options": []
+        },
+        {
+          "id": "href-81",
+          "title": "Contact link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-PAGE-DIRECTORY-V1",
+      "category": "Page layouts",
+      "description": "Searchable collection page with an introduction, filters, responsive result cards, and pagination. Use for resources, people, products, articles, locations, or any growing collection.",
+      "sourceTemplateId": "common.page.directory.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-page-detail-v1",
+      "title": "Content detail page",
+      "component": "LegacyCommonPageDetailV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Brand link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Site name",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Brand link \u00B7 href",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Features link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Features",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Features link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Resources link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Resources",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Resources link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Primary navigation action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-9",
+          "title": "Home link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Home",
+          "options": []
+        },
+        {
+          "id": "href-9",
+          "title": "Home link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Separator 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-11",
+          "title": "Parent link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Parent",
+          "options": []
+        },
+        {
+          "id": "href-11",
+          "title": "Parent link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-12",
+          "title": "Separator 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-13",
+          "title": "Current page \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Current page",
+          "options": []
+        },
+        {
+          "id": "text-16",
+          "title": "Main content heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A specific, descriptive page title",
+          "options": []
+        },
+        {
+          "id": "text-18",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-19",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-20",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-21",
+          "title": "Main content introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Open with the essential context and establish what the reader will learn or accomplish.",
+          "options": []
+        },
+        {
+          "id": "text-22",
+          "title": "Main content body \u00B7 Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Add clear, well-structured content here. Use descriptive headings and short paragraphs to make the page easy to scan.",
+          "options": []
+        },
+        {
+          "id": "text-23",
+          "title": "First section heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "First important idea",
+          "options": []
+        },
+        {
+          "id": "text-24",
+          "title": "First section content \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Develop the idea with concise paragraphs, evidence, examples, and useful links.",
+          "options": []
+        },
+        {
+          "id": "text-25",
+          "title": "Second section heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Supporting detail",
+          "options": []
+        },
+        {
+          "id": "text-26",
+          "title": "Second section content \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explain the next part of the subject and make the relationship to the main idea clear.",
+          "options": []
+        },
+        {
+          "id": "text-28",
+          "title": "Supporting heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "At a glance",
+          "options": []
+        },
+        {
+          "id": "text-30",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-31",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-32",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Value",
+          "options": []
+        },
+        {
+          "id": "text-34",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Status",
+          "options": []
+        },
+        {
+          "id": "text-35",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-36",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Current",
+          "options": []
+        },
+        {
+          "id": "text-38",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated",
+          "options": []
+        },
+        {
+          "id": "text-39",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-40",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Recently",
+          "options": []
+        },
+        {
+          "id": "text-41",
+          "title": "Related resource link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Related resource",
+          "options": []
+        },
+        {
+          "id": "href-41",
+          "title": "Related resource link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-44",
+          "title": "Action heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Ready to take the next step?",
+          "options": []
+        },
+        {
+          "id": "text-45",
+          "title": "Action summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Give the visitor one clear reason to continue now.",
+          "options": []
+        },
+        {
+          "id": "text-46",
+          "title": "Primary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-48",
+          "title": "Copyright \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00A9 Site name. Add the correct year and rights statement.",
+          "options": []
+        },
+        {
+          "id": "text-50",
+          "title": "Privacy link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Privacy",
+          "options": []
+        },
+        {
+          "id": "href-50",
+          "title": "Privacy link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-51",
+          "title": "Terms link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Terms",
+          "options": []
+        },
+        {
+          "id": "href-51",
+          "title": "Terms link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-52",
+          "title": "Contact link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact",
+          "options": []
+        },
+        {
+          "id": "href-52",
+          "title": "Contact link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-PAGE-DETAIL-V1",
+      "category": "Page layouts",
+      "description": "Focused sub-page with breadcrumbs, an article body, supporting facts, related links, and a next action. Use for an article, service, product, case study, profile, or other single record.",
+      "sourceTemplateId": "common.page.detail.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-page-documentation-v1",
+      "title": "Documentation page",
+      "component": "LegacyCommonPageDocumentationV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Brand link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Site name",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Brand link \u00B7 href",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Features link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Features",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Features link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Resources link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Resources",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Resources link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Primary navigation action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Side panel heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Documentation topics",
+          "options": []
+        },
+        {
+          "id": "text-11",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-11",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-12",
+          "title": "First topic link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "First topic",
+          "options": []
+        },
+        {
+          "id": "href-12",
+          "title": "First topic link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-13",
+          "title": "Second topic link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Second topic",
+          "options": []
+        },
+        {
+          "id": "href-13",
+          "title": "Second topic link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-14",
+          "title": "Next steps link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Next steps",
+          "options": []
+        },
+        {
+          "id": "href-14",
+          "title": "Next steps link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-16",
+          "title": "Main content heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Getting started",
+          "options": []
+        },
+        {
+          "id": "text-18",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-19",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-20",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-21",
+          "title": "Main content introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explain the goal, prerequisites, and the shortest successful path.",
+          "options": []
+        },
+        {
+          "id": "text-22",
+          "title": "Main content body \u00B7 Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Add clear, well-structured content here. Use descriptive headings and short paragraphs to make the page easy to scan.",
+          "options": []
+        },
+        {
+          "id": "text-24",
+          "title": "Callout heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Important information",
+          "options": []
+        },
+        {
+          "id": "text-25",
+          "title": "Callout message \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add concise guidance, status, or context that should not be missed.",
+          "options": []
+        },
+        {
+          "id": "text-27",
+          "title": "Copyright \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00A9 Site name. Add the correct year and rights statement.",
+          "options": []
+        },
+        {
+          "id": "text-29",
+          "title": "Privacy link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Privacy",
+          "options": []
+        },
+        {
+          "id": "href-29",
+          "title": "Privacy link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-30",
+          "title": "Terms link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Terms",
+          "options": []
+        },
+        {
+          "id": "href-30",
+          "title": "Terms link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-31",
+          "title": "Contact link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact",
+          "options": []
+        },
+        {
+          "id": "href-31",
+          "title": "Contact link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-PAGE-DOCUMENTATION-V1",
+      "category": "Page layouts",
+      "description": "Documentation shell with top navigation, a persistent topic list, readable main content, and an on-page callout. Use for guides, product documentation, policies, onboarding, or reference material.",
+      "sourceTemplateId": "common.page.documentation.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-page-dashboard-v1",
+      "title": "Dashboard overview",
+      "component": "LegacyCommonPageDashboardV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Brand link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Site name",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Brand link \u00B7 href",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Features link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Features",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Features link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Resources link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Resources",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Resources link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Primary navigation action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-9",
+          "title": "Page heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Dashboard",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Page introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A concise view of what needs attention.",
+          "options": []
+        },
+        {
+          "id": "text-13",
+          "title": "Metric value \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "24",
+          "options": []
+        },
+        {
+          "id": "text-14",
+          "title": "Metric label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Open items",
+          "options": []
+        },
+        {
+          "id": "text-16",
+          "title": "Metric value \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "8",
+          "options": []
+        },
+        {
+          "id": "text-17",
+          "title": "Metric label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Completed today",
+          "options": []
+        },
+        {
+          "id": "text-19",
+          "title": "Metric value \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "96%",
+          "options": []
+        },
+        {
+          "id": "text-20",
+          "title": "Metric label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "On schedule",
+          "options": []
+        },
+        {
+          "id": "text-22",
+          "title": "Metric value \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "4",
+          "options": []
+        },
+        {
+          "id": "text-23",
+          "title": "Metric label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Need attention",
+          "options": []
+        },
+        {
+          "id": "text-26",
+          "title": "Main content heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Recent activity",
+          "options": []
+        },
+        {
+          "id": "text-28",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-29",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-30",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-31",
+          "title": "Main content introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Summarize recent changes, events, or updates.",
+          "options": []
+        },
+        {
+          "id": "text-32",
+          "title": "Main content body \u00B7 Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Add clear, well-structured content here. Use descriptive headings and short paragraphs to make the page easy to scan.",
+          "options": []
+        },
+        {
+          "id": "text-34",
+          "title": "Main content heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Next actions",
+          "options": []
+        },
+        {
+          "id": "text-36",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-37",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-38",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-39",
+          "title": "Main content introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "List the most useful tasks the user can complete now.",
+          "options": []
+        },
+        {
+          "id": "text-40",
+          "title": "Main content body \u00B7 Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Add clear, well-structured content here. Use descriptive headings and short paragraphs to make the page easy to scan.",
+          "options": []
+        },
+        {
+          "id": "text-42",
+          "title": "Main content heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Health and status",
+          "options": []
+        },
+        {
+          "id": "text-44",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-45",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-46",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-47",
+          "title": "Main content introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explain the current state and identify anything needing attention.",
+          "options": []
+        },
+        {
+          "id": "text-48",
+          "title": "Main content body \u00B7 Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Add clear, well-structured content here. Use descriptive headings and short paragraphs to make the page easy to scan.",
+          "options": []
+        },
+        {
+          "id": "text-50",
+          "title": "Copyright \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00A9 Site name. Add the correct year and rights statement.",
+          "options": []
+        },
+        {
+          "id": "text-52",
+          "title": "Privacy link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Privacy",
+          "options": []
+        },
+        {
+          "id": "href-52",
+          "title": "Privacy link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-53",
+          "title": "Terms link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Terms",
+          "options": []
+        },
+        {
+          "id": "href-53",
+          "title": "Terms link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-54",
+          "title": "Contact link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact",
+          "options": []
+        },
+        {
+          "id": "href-54",
+          "title": "Contact link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-PAGE-DASHBOARD-V1",
+      "category": "Page layouts",
+      "description": "Application overview with navigation, status metrics, recent activity, and task panels. Use for signed-in product areas, operations views, or internal tools.",
+      "sourceTemplateId": "common.page.dashboard.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-page-pricing-v1",
+      "title": "Pricing and plans",
+      "component": "LegacyCommonPagePricingV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Brand link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Site name",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Brand link \u00B7 href",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Features link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Features",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Features link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Resources link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Resources",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Resources link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Primary navigation action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-9",
+          "title": "Page heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Plans that scale with you",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Page introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Choose the level that fits your current needs.",
+          "options": []
+        },
+        {
+          "id": "text-13",
+          "title": "Plan name \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Starter",
+          "options": []
+        },
+        {
+          "id": "text-14",
+          "title": "Plan price \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "$19",
+          "options": []
+        },
+        {
+          "id": "text-15",
+          "title": "Plan summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "For an individual or small project.",
+          "options": []
+        },
+        {
+          "id": "text-17",
+          "title": "Included feature 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Important included feature",
+          "options": []
+        },
+        {
+          "id": "text-18",
+          "title": "Included feature 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Another included feature",
+          "options": []
+        },
+        {
+          "id": "text-19",
+          "title": "Included feature 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Support or service level",
+          "options": []
+        },
+        {
+          "id": "text-20",
+          "title": "Choose plan \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Choose plan",
+          "options": []
+        },
+        {
+          "id": "text-22",
+          "title": "Plan name \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Professional",
+          "options": []
+        },
+        {
+          "id": "text-23",
+          "title": "Plan price \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "$49",
+          "options": []
+        },
+        {
+          "id": "text-24",
+          "title": "Plan summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "For a growing team with shared work.",
+          "options": []
+        },
+        {
+          "id": "text-26",
+          "title": "Included feature 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Important included feature",
+          "options": []
+        },
+        {
+          "id": "text-27",
+          "title": "Included feature 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Another included feature",
+          "options": []
+        },
+        {
+          "id": "text-28",
+          "title": "Included feature 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Support or service level",
+          "options": []
+        },
+        {
+          "id": "text-29",
+          "title": "Choose plan \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Choose plan",
+          "options": []
+        },
+        {
+          "id": "text-31",
+          "title": "Plan name \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Organization",
+          "options": []
+        },
+        {
+          "id": "text-32",
+          "title": "Plan price \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Let\u0027s talk",
+          "options": []
+        },
+        {
+          "id": "text-33",
+          "title": "Plan summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "For advanced support and governance.",
+          "options": []
+        },
+        {
+          "id": "text-35",
+          "title": "Included feature 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Important included feature",
+          "options": []
+        },
+        {
+          "id": "text-36",
+          "title": "Included feature 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Another included feature",
+          "options": []
+        },
+        {
+          "id": "text-37",
+          "title": "Included feature 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Support or service level",
+          "options": []
+        },
+        {
+          "id": "text-38",
+          "title": "Choose plan \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Choose plan",
+          "options": []
+        },
+        {
+          "id": "text-40",
+          "title": "FAQ heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Frequently asked questions",
+          "options": []
+        },
+        {
+          "id": "text-42",
+          "title": "Question 1 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Common question 1?",
+          "options": []
+        },
+        {
+          "id": "text-43",
+          "title": "Answer 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Answer directly, then add only the context needed to help the reader act.",
+          "options": []
+        },
+        {
+          "id": "text-45",
+          "title": "Question 2 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Common question 2?",
+          "options": []
+        },
+        {
+          "id": "text-46",
+          "title": "Answer 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Answer directly, then add only the context needed to help the reader act.",
+          "options": []
+        },
+        {
+          "id": "text-48",
+          "title": "Question 3 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Common question 3?",
+          "options": []
+        },
+        {
+          "id": "text-49",
+          "title": "Answer 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Answer directly, then add only the context needed to help the reader act.",
+          "options": []
+        },
+        {
+          "id": "text-52",
+          "title": "Action heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Ready to take the next step?",
+          "options": []
+        },
+        {
+          "id": "text-53",
+          "title": "Action summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Give the visitor one clear reason to continue now.",
+          "options": []
+        },
+        {
+          "id": "text-54",
+          "title": "Primary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-56",
+          "title": "Copyright \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00A9 Site name. Add the correct year and rights statement.",
+          "options": []
+        },
+        {
+          "id": "text-58",
+          "title": "Privacy link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Privacy",
+          "options": []
+        },
+        {
+          "id": "href-58",
+          "title": "Privacy link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-59",
+          "title": "Terms link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Terms",
+          "options": []
+        },
+        {
+          "id": "href-59",
+          "title": "Terms link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-60",
+          "title": "Contact link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact",
+          "options": []
+        },
+        {
+          "id": "href-60",
+          "title": "Contact link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-PAGE-PRICING-V1",
+      "category": "Page layouts",
+      "description": "Plan comparison page with a clear introduction, three tiers, common questions, and a final action. Use when visitors need to compare packages or service levels.",
+      "sourceTemplateId": "common.page.pricing.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-page-portfolio-v1",
+      "title": "Portfolio and gallery",
+      "component": "LegacyCommonPagePortfolioV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Brand link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Site name",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Brand link \u00B7 href",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Features link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Features",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Features link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Resources link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Resources",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Resources link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Primary navigation action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A useful category label",
+          "options": []
+        },
+        {
+          "id": "text-11",
+          "title": "Hero heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Selected work, clearly presented",
+          "options": []
+        },
+        {
+          "id": "text-12",
+          "title": "Hero summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Introduce the point of view behind the collection.",
+          "options": []
+        },
+        {
+          "id": "text-14",
+          "title": "Primary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Primary action",
+          "options": []
+        },
+        {
+          "id": "text-15",
+          "title": "Secondary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Learn more",
+          "options": []
+        },
+        {
+          "id": "href-15",
+          "title": "Secondary action \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-21",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Project type",
+          "options": []
+        },
+        {
+          "id": "text-22",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-23",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Year",
+          "options": []
+        },
+        {
+          "id": "text-24",
+          "title": "Project 1 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Selected project 1",
+          "options": []
+        },
+        {
+          "id": "text-25",
+          "title": "Project 1 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the challenge, contribution, and most meaningful result.",
+          "options": []
+        },
+        {
+          "id": "text-26",
+          "title": "View project link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View project",
+          "options": []
+        },
+        {
+          "id": "href-26",
+          "title": "View project link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-30",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Project type",
+          "options": []
+        },
+        {
+          "id": "text-31",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-32",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Year",
+          "options": []
+        },
+        {
+          "id": "text-33",
+          "title": "Project 2 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Selected project 2",
+          "options": []
+        },
+        {
+          "id": "text-34",
+          "title": "Project 2 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the challenge, contribution, and most meaningful result.",
+          "options": []
+        },
+        {
+          "id": "text-35",
+          "title": "View project link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View project",
+          "options": []
+        },
+        {
+          "id": "href-35",
+          "title": "View project link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-39",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Project type",
+          "options": []
+        },
+        {
+          "id": "text-40",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-41",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Year",
+          "options": []
+        },
+        {
+          "id": "text-42",
+          "title": "Project 3 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Selected project 3",
+          "options": []
+        },
+        {
+          "id": "text-43",
+          "title": "Project 3 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the challenge, contribution, and most meaningful result.",
+          "options": []
+        },
+        {
+          "id": "text-44",
+          "title": "View project link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View project",
+          "options": []
+        },
+        {
+          "id": "href-44",
+          "title": "View project link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-48",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Project type",
+          "options": []
+        },
+        {
+          "id": "text-49",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-50",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Year",
+          "options": []
+        },
+        {
+          "id": "text-51",
+          "title": "Project 4 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Selected project 4",
+          "options": []
+        },
+        {
+          "id": "text-52",
+          "title": "Project 4 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the challenge, contribution, and most meaningful result.",
+          "options": []
+        },
+        {
+          "id": "text-53",
+          "title": "View project link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View project",
+          "options": []
+        },
+        {
+          "id": "href-53",
+          "title": "View project link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-55",
+          "title": "Feature heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Capabilities",
+          "options": []
+        },
+        {
+          "id": "text-56",
+          "title": "Feature introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Summarize the services or disciplines represented in the work.",
+          "options": []
+        },
+        {
+          "id": "text-59",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "01",
+          "options": []
+        },
+        {
+          "id": "text-60",
+          "title": "Feature 1 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Distinct benefit 1",
+          "options": []
+        },
+        {
+          "id": "text-61",
+          "title": "Feature 1 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the benefit in terms of a real visitor need or outcome.",
+          "options": []
+        },
+        {
+          "id": "text-63",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "02",
+          "options": []
+        },
+        {
+          "id": "text-64",
+          "title": "Feature 2 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Distinct benefit 2",
+          "options": []
+        },
+        {
+          "id": "text-65",
+          "title": "Feature 2 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the benefit in terms of a real visitor need or outcome.",
+          "options": []
+        },
+        {
+          "id": "text-67",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "03",
+          "options": []
+        },
+        {
+          "id": "text-68",
+          "title": "Feature 3 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Distinct benefit 3",
+          "options": []
+        },
+        {
+          "id": "text-69",
+          "title": "Feature 3 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the benefit in terms of a real visitor need or outcome.",
+          "options": []
+        },
+        {
+          "id": "text-72",
+          "title": "Action heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Have a project in mind?",
+          "options": []
+        },
+        {
+          "id": "text-73",
+          "title": "Action summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Give the visitor one clear reason to continue now.",
+          "options": []
+        },
+        {
+          "id": "text-74",
+          "title": "Primary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Start a conversation",
+          "options": []
+        },
+        {
+          "id": "text-76",
+          "title": "Copyright \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00A9 Site name. Add the correct year and rights statement.",
+          "options": []
+        },
+        {
+          "id": "text-78",
+          "title": "Privacy link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Privacy",
+          "options": []
+        },
+        {
+          "id": "href-78",
+          "title": "Privacy link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-79",
+          "title": "Terms link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Terms",
+          "options": []
+        },
+        {
+          "id": "href-79",
+          "title": "Terms link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-80",
+          "title": "Contact link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact",
+          "options": []
+        },
+        {
+          "id": "href-80",
+          "title": "Contact link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-PAGE-PORTFOLIO-V1",
+      "category": "Page layouts",
+      "description": "Image-led portfolio with an introduction, project gallery, services summary, and contact action. Use for creative work, project showcases, case studies, or visual collections.",
+      "sourceTemplateId": "common.page.portfolio.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-page-contact-v1",
+      "title": "Contact and inquiry",
+      "component": "LegacyCommonPageContactV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Brand link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Site name",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Brand link \u00B7 href",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Features link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Features",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Features link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Resources link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Resources",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Resources link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Primary navigation action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "text-9",
+          "title": "Page heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Let\u0027s talk",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Page introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Set expectations for response time and the information you need.",
+          "options": []
+        },
+        {
+          "id": "text-13",
+          "title": "Contact details heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact details",
+          "options": []
+        },
+        {
+          "id": "text-14",
+          "title": "Response time \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Typical response: one to two business days.",
+          "options": []
+        },
+        {
+          "id": "text-15",
+          "title": "hello@example.com link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "hello@example.com",
+          "options": []
+        },
+        {
+          "id": "href-15",
+          "title": "hello@example.com link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-16",
+          "title": "Office hours \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Monday\u2013Friday \u00B7 9:00\u201317:00",
+          "options": []
+        },
+        {
+          "id": "text-18",
+          "title": "Form heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Tell us about your project",
+          "options": []
+        },
+        {
+          "id": "text-20",
+          "title": "Name label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Name",
+          "options": []
+        },
+        {
+          "id": "text-23",
+          "title": "Email label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Email",
+          "options": []
+        },
+        {
+          "id": "text-25",
+          "title": "Message label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Message",
+          "options": []
+        },
+        {
+          "id": "text-27",
+          "title": "Submit inquiry \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Send inquiry",
+          "options": []
+        },
+        {
+          "id": "text-29",
+          "title": "Copyright \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00A9 Site name. Add the correct year and rights statement.",
+          "options": []
+        },
+        {
+          "id": "text-31",
+          "title": "Privacy link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Privacy",
+          "options": []
+        },
+        {
+          "id": "href-31",
+          "title": "Privacy link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-32",
+          "title": "Terms link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Terms",
+          "options": []
+        },
+        {
+          "id": "href-32",
+          "title": "Terms link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-33",
+          "title": "Contact link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact",
+          "options": []
+        },
+        {
+          "id": "href-33",
+          "title": "Contact link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-PAGE-CONTACT-V1",
+      "category": "Page layouts",
+      "description": "Contact page with expectations, direct contact details, and an accessible inquiry form. Use when visitors need a clear route to a person, team, or support channel.",
+      "sourceTemplateId": "common.page.contact.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-top-navigation-v1",
+      "title": "Top navigation bar",
+      "component": "LegacyCommonSectionTopNavigationV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Brand link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Site name",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Brand link \u00B7 href",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Features link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Features",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Features link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Resources link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Resources",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Resources link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Primary navigation action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-TOP-NAVIGATION-V1",
+      "category": "Navigation",
+      "description": "Responsive brand, primary links, and one emphasized action. Place near the top of a standalone page.",
+      "sourceTemplateId": "common.section.top-navigation.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-sidebar-shell-v1",
+      "title": "Sidebar content shell",
+      "component": "LegacyCommonSectionSidebarShellV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-3",
+          "title": "Side panel heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Section navigation",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Overview link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Overview",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Overview link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "First topic link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "First topic",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "First topic link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Second topic link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Second topic",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Second topic link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Next steps link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Next steps",
+          "options": []
+        },
+        {
+          "id": "href-7",
+          "title": "Next steps link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-9",
+          "title": "Main content heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Main content heading",
+          "options": []
+        },
+        {
+          "id": "text-11",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-12",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-13",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-14",
+          "title": "Main content introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Introduce the purpose of this content area and give the reader the context they need.",
+          "options": []
+        },
+        {
+          "id": "text-15",
+          "title": "Main content body \u00B7 Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Add clear, well-structured content here. Use descriptive headings and short paragraphs to make the page easy to scan.",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-SIDEBAR-SHELL-V1",
+      "category": "Layout \u0026 structure",
+      "description": "Responsive two-column shell with a labeled side panel and a primary content region. Use for documentation, filters, account navigation, or related information.",
+      "sourceTemplateId": "common.section.sidebar-shell.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-main-content-panel-v1",
+      "title": "Main content box",
+      "component": "LegacyCommonSectionMainContentPanelV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Main content heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Main content heading",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Main content introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Introduce the purpose of this content area and give the reader the context they need.",
+          "options": []
+        },
+        {
+          "id": "text-8",
+          "title": "Main content body \u00B7 Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Add clear, well-structured content here. Use descriptive headings and short paragraphs to make the page easy to scan.",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-MAIN-CONTENT-PANEL-V1",
+      "category": "Layout \u0026 structure",
+      "description": "Readable, centered content surface with heading, introduction, and supporting body copy. Use as the main reading or task area inside a page shell.",
+      "sourceTemplateId": "common.section.main-content-panel.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-hero-v1",
+      "title": "Universal hero",
+      "component": "LegacyCommonSectionHeroV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-3",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A useful category label",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Hero heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A strong reason to choose this",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Hero summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explain the outcome in plain language and help the right visitor understand the next step.",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Primary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Primary action",
+          "options": []
+        },
+        {
+          "id": "text-8",
+          "title": "Secondary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Learn more",
+          "options": []
+        },
+        {
+          "id": "href-8",
+          "title": "Secondary action \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-HERO-V1",
+      "category": "Content blocks",
+      "description": "Responsive introductory section with headline, supporting copy, actions, and a media placeholder. Use once near the beginning of a landing or overview page.",
+      "sourceTemplateId": "common.section.hero.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-search-filter-v1",
+      "title": "Search and filter bar",
+      "component": "LegacyCommonSectionSearchFilterV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-3",
+          "title": "Search label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Search",
+          "options": []
+        },
+        {
+          "id": "placeholder-4",
+          "title": "Search input \u00B7 placeholder",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Search by keyword",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Category label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-8",
+          "title": "All categories \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "All categories",
+          "options": []
+        },
+        {
+          "id": "text-9",
+          "title": "First category \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "First category",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Apply filters \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Apply",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-SEARCH-FILTER-V1",
+      "category": "Discovery \u0026 collections",
+      "description": "Accessible search field, category selector, and apply action in a responsive toolbar. Place above a list, table, gallery, or directory.",
+      "sourceTemplateId": "common.section.search-filter.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-feature-grid-v1",
+      "title": "Feature grid",
+      "component": "LegacyCommonSectionFeatureGridV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Feature heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Why this works",
+          "options": []
+        },
+        {
+          "id": "text-3",
+          "title": "Feature introduction \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Group the most important benefits into a small number of distinct, scannable ideas.",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "01",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Feature 1 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Distinct benefit 1",
+          "options": []
+        },
+        {
+          "id": "text-8",
+          "title": "Feature 1 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the benefit in terms of a real visitor need or outcome.",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "02",
+          "options": []
+        },
+        {
+          "id": "text-11",
+          "title": "Feature 2 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Distinct benefit 2",
+          "options": []
+        },
+        {
+          "id": "text-12",
+          "title": "Feature 2 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the benefit in terms of a real visitor need or outcome.",
+          "options": []
+        },
+        {
+          "id": "text-14",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "03",
+          "options": []
+        },
+        {
+          "id": "text-15",
+          "title": "Feature 3 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Distinct benefit 3",
+          "options": []
+        },
+        {
+          "id": "text-16",
+          "title": "Feature 3 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Describe the benefit in terms of a real visitor need or outcome.",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-FEATURE-GRID-V1",
+      "category": "Content blocks",
+      "description": "Three concise benefit or capability cards in a responsive grid. Use to make a small set of benefits easy to scan.",
+      "sourceTemplateId": "common.section.feature-grid.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-statistics-v1",
+      "title": "Statistics strip",
+      "component": "LegacyCommonSectionStatisticsV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-3",
+          "title": "Metric value \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "24",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Metric label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Open items",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Metric value \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "8",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Metric label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Completed today",
+          "options": []
+        },
+        {
+          "id": "text-9",
+          "title": "Metric value \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "96%",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Metric label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "On schedule",
+          "options": []
+        },
+        {
+          "id": "text-12",
+          "title": "Metric value \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "4",
+          "options": []
+        },
+        {
+          "id": "text-13",
+          "title": "Metric label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Need attention",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-STATISTICS-V1",
+      "category": "Data display",
+      "description": "Four responsive metric cards with values and plain-language labels. Use for a small, meaningful set of headline measures.",
+      "sourceTemplateId": "common.section.statistics.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-testimonials-v1",
+      "title": "Testimonials and proof",
+      "component": "LegacyCommonSectionTestimonialsV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-3",
+          "title": "Quotation \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A concise, authentic statement about the result or experience.",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Attribution \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Customer name \u00B7 Role",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Quotation \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A second approved quotation that supports a different benefit.",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Attribution \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Customer name \u00B7 Organization",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-TESTIMONIALS-V1",
+      "category": "Identity \u0026 people",
+      "description": "Two accessible quotations with concise attribution. Use only with authentic, approved quotations and attribution.",
+      "sourceTemplateId": "common.section.testimonials.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-pricing-v1",
+      "title": "Pricing cards",
+      "component": "LegacyCommonSectionPricingV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-3",
+          "title": "Plan name \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Starter",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Plan price \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "$19",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Plan summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "For an individual or small project.",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Included feature 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Important included feature",
+          "options": []
+        },
+        {
+          "id": "text-8",
+          "title": "Included feature 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Another included feature",
+          "options": []
+        },
+        {
+          "id": "text-9",
+          "title": "Included feature 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Support or service level",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Choose plan \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Choose plan",
+          "options": []
+        },
+        {
+          "id": "text-12",
+          "title": "Plan name \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Professional",
+          "options": []
+        },
+        {
+          "id": "text-13",
+          "title": "Plan price \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "$49",
+          "options": []
+        },
+        {
+          "id": "text-14",
+          "title": "Plan summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "For a growing team with shared work.",
+          "options": []
+        },
+        {
+          "id": "text-16",
+          "title": "Included feature 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Important included feature",
+          "options": []
+        },
+        {
+          "id": "text-17",
+          "title": "Included feature 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Another included feature",
+          "options": []
+        },
+        {
+          "id": "text-18",
+          "title": "Included feature 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Support or service level",
+          "options": []
+        },
+        {
+          "id": "text-19",
+          "title": "Choose plan \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Choose plan",
+          "options": []
+        },
+        {
+          "id": "text-21",
+          "title": "Plan name \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Organization",
+          "options": []
+        },
+        {
+          "id": "text-22",
+          "title": "Plan price \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Let\u0027s talk",
+          "options": []
+        },
+        {
+          "id": "text-23",
+          "title": "Plan summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "For advanced support and governance.",
+          "options": []
+        },
+        {
+          "id": "text-25",
+          "title": "Included feature 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Important included feature",
+          "options": []
+        },
+        {
+          "id": "text-26",
+          "title": "Included feature 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Another included feature",
+          "options": []
+        },
+        {
+          "id": "text-27",
+          "title": "Included feature 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Support or service level",
+          "options": []
+        },
+        {
+          "id": "text-28",
+          "title": "Choose plan \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Choose plan",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-PRICING-V1",
+      "category": "Marketing \u0026 conversion",
+      "description": "Three plan cards with price, included items, and an action. Use when plan differences can be expressed in a short comparison.",
+      "sourceTemplateId": "common.section.pricing.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-faq-v1",
+      "title": "Common questions",
+      "component": "LegacyCommonSectionFaqV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "FAQ heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Frequently asked questions",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Question 1 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Common question 1?",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Answer 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Answer directly, then add only the context needed to help the reader act.",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Question 2 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Common question 2?",
+          "options": []
+        },
+        {
+          "id": "text-8",
+          "title": "Answer 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Answer directly, then add only the context needed to help the reader act.",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Question 3 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Common question 3?",
+          "options": []
+        },
+        {
+          "id": "text-11",
+          "title": "Answer 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Answer directly, then add only the context needed to help the reader act.",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-FAQ-V1",
+      "category": "Content blocks",
+      "description": "Heading and three native disclosure rows for concise answers. Use for questions that otherwise interrupt the main page flow.",
+      "sourceTemplateId": "common.section.faq.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-action-banner-v1",
+      "title": "Action banner",
+      "component": "LegacyCommonSectionActionBannerV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-3",
+          "title": "Action heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Ready to take the next step?",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Action summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Give the visitor one clear reason to continue now.",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Primary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-ACTION-BANNER-V1",
+      "category": "Marketing \u0026 conversion",
+      "description": "High-contrast heading, supporting copy, and one primary action. Use when the page has one clear next step.",
+      "sourceTemplateId": "common.section.action-banner.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-section-footer-v1",
+      "title": "Site footer",
+      "component": "LegacyCommonSectionFooterV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Copyright \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00A9 Site name. Add the correct year and rights statement.",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Privacy link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Privacy",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Privacy link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Terms link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Terms",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Terms link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Contact link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Contact link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-SECTION-FOOTER-V1",
+      "category": "Navigation",
+      "description": "Site name, utility links, and a concise copyright placeholder. Place once at the end of a standalone page.",
+      "sourceTemplateId": "common.section.footer.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-element-content-card-v1",
+      "title": "Content card",
+      "component": "LegacyCommonElementContentCardV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-3",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Card 1 heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Collection item 1",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Card 1 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add enough context for a visitor to decide whether this item is relevant.",
+          "options": []
+        },
+        {
+          "id": "text-8",
+          "title": "View details link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View details",
+          "options": []
+        },
+        {
+          "id": "href-8",
+          "title": "View details link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-ELEMENT-CONTENT-CARD-V1",
+      "category": "Content blocks",
+      "description": "Reusable title, summary, metadata, and link card. Use inside a responsive grid or related-content list.",
+      "sourceTemplateId": "common.element.content-card.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-element-alert-v1",
+      "title": "Information callout",
+      "component": "LegacyCommonElementAlertV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Callout heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Important information",
+          "options": []
+        },
+        {
+          "id": "text-3",
+          "title": "Callout message \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add concise guidance, status, or context that should not be missed.",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-ELEMENT-ALERT-V1",
+      "category": "Feedback \u0026 status",
+      "description": "Labeled status or guidance box with accessible alert semantics. Use for important context, status, warnings, or next steps.",
+      "sourceTemplateId": "common.element.alert.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-element-button-group-v1",
+      "title": "Button group",
+      "component": "LegacyCommonElementButtonGroupV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Primary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Primary action",
+          "options": []
+        },
+        {
+          "id": "text-3",
+          "title": "Secondary action \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Learn more",
+          "options": []
+        },
+        {
+          "id": "href-3",
+          "title": "Secondary action \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-ELEMENT-BUTTON-GROUP-V1",
+      "category": "Marketing \u0026 conversion",
+      "description": "Primary and secondary actions with responsive wrapping. Use when one action is primary and one is a lower-priority alternative.",
+      "sourceTemplateId": "common.element.button-group.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-element-badge-v1",
+      "title": "Status badge",
+      "component": "LegacyCommonElementBadgeV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-1",
+          "title": "Status badge \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Status",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-ELEMENT-BADGE-V1",
+      "category": "Feedback \u0026 status",
+      "description": "Compact status or category label. Use for short metadata; do not rely on color alone.",
+      "sourceTemplateId": "common.element.badge.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-element-pagination-v1",
+      "title": "Pagination controls",
+      "component": "LegacyCommonElementPaginationV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Previous link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Previous",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Previous link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-3",
+          "title": "1 link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "1",
+          "options": []
+        },
+        {
+          "id": "href-3",
+          "title": "1 link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "2 link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "2",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "2 link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "3 link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "3",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "3 link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Next link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Next",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Next link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-ELEMENT-PAGINATION-V1",
+      "category": "Navigation",
+      "description": "Previous, numbered-page, and next links with an accessible label. Use for a collection split into stable pages.",
+      "sourceTemplateId": "common.element.pagination.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-element-breadcrumb-v1",
+      "title": "Breadcrumb trail",
+      "component": "LegacyCommonElementBreadcrumbV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Home link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Home",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Home link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-3",
+          "title": "Separator 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Parent link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Parent",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Parent link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Separator 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Current page \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Current page",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-ELEMENT-BREADCRUMB-V1",
+      "category": "Navigation",
+      "description": "Compact hierarchy trail with an accessible navigation label. Use on deeper pages where the parent hierarchy helps orientation.",
+      "sourceTemplateId": "common.element.breadcrumb.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-element-metadata-v1",
+      "title": "Content metadata row",
+      "component": "LegacyCommonElementMetadataV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "First metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Category",
+          "options": []
+        },
+        {
+          "id": "text-3",
+          "title": "Metadata separator \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\u00B7",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Second metadata item \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Updated recently",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-ELEMENT-METADATA-V1",
+      "category": "Content \u0026 publishing",
+      "description": "Responsive row for date, author, category, or reading-time labels. Use directly below an article or detail-page heading.",
+      "sourceTemplateId": "common.element.metadata.v1",
+      "sourceLibrary": "Hyperpage starters"
+    },
+    {
+      "id": "legacy-common-element-profile-v1",
+      "title": "Profile summary",
+      "component": "LegacyCommonElementProfileV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-4",
+          "title": "Profile name \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Person name",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Profile role \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Role or specialty",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Profile biography \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add a short biography focused on relevant experience or contribution.",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "View profile link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "View profile",
+          "options": []
+        },
+        {
+          "id": "href-7",
+          "title": "View profile link \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-COMMON-ELEMENT-PROFILE-V1",
+      "category": "Identity \u0026 people",
+      "description": "Avatar placeholder, name, role, short biography, and profile link. Use for authors, team members, speakers, or directory entries.",
+      "sourceTemplateId": "common.element.profile.v1",
+      "sourceLibrary": "Hyperpage starters"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#36617c",
+      "options": []
+    },
+    {
+      "id": "background",
+      "title": "Full page background",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#ffffff",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#202124",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panels",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#f5f6f7",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#687078",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "system",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "system",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    },
+    {
+      "id": "variant",
+      "title": "Layout design",
+      "type": "select",
+      "required": false,
+      "defaultValue": "woodland-editorial",
+      "options": [
+        "woodland-editorial",
+        "wave-laboratory",
+        "portfolio-grid",
+        "field-journal",
+        "architecture-studio",
+        "course-notebook",
+        "recipe-kitchen",
+        "event-poster",
+        "travel-atlas",
+        "product-launch",
+        "podcast-studio",
+        "gallery-wall",
+        "documentation-desk",
+        "nonprofit-story",
+        "wellness-retreat",
+        "maker-workbench",
+        "insight-dashboard"
+      ]
+    }
+  ],
+  "defaultBlocks": [],
+  "emptyPageDefault": true
+}

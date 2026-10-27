@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "templateId": "atlas-website-home",
+  "title": "Atlas \u00B7 Home \u0026 identity",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Page",
+      "allowedBlocks": [
+        "navigation",
+        "hero",
+        "starfield",
+        "map-grid",
+        "emblem",
+        "section-heading",
+        "principles",
+        "principle-card",
+        "services",
+        "service-card",
+        "action-banner",
+        "button-bar",
+        "footer"
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "navigation",
+      "title": "Atlas navigation",
+      "component": "AtlasNavigationBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Brand",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas Universalis",
+          "options": []
+        },
+        {
+          "id": "home",
+          "title": "Home link",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "links",
+          "title": "Links \u00B7 label | address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Home|#\nPrinciples|#principles\nServices|#services\nBio|#bio\nProject Lab|#projects\nArchives|#archives",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-NAVIGATION",
+      "category": "Structure \u0026 navigation",
+      "description": "Portable Atlas navigation. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Shared/_Layout.cshtml:24; site.css:93",
+      "sourceTemplateId": "atlas.website.navigation.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "hero",
+      "title": "Atlas celestial hero",
+      "component": "AtlasHeroBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "ATLAS UNIVERSALIS",
+          "options": []
+        },
+        {
+          "id": "kicker",
+          "title": "Kicker",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Custom software strategy \u0026 delivery",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Introduction",
+          "type": "text",
+          "required": false,
+          "defaultValue": "We build custom solutions around the unique challenges our clients face.",
+          "options": []
+        },
+        {
+          "id": "href",
+          "title": "Next section",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#principles",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-HERO",
+      "category": "Headers \u0026 heroes",
+      "description": "Portable Atlas celestial hero. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Index.cshtml:7; site.css:226",
+      "sourceTemplateId": "atlas.website.hero.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "starfield",
+      "title": "Atlas animated starfield",
+      "component": "AtlasStarfieldBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Overline",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Celestial field",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Foreground text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A little room for wonder.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-STARFIELD",
+      "category": "Decoration",
+      "description": "Portable Atlas animated starfield. Editable content, local behavior and Atlas styling. Source: Atlas.Web/wwwroot/css/site.css:292-336",
+      "sourceTemplateId": "atlas.website.starfield.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "map-grid",
+      "title": "Atlas cartographic backdrop",
+      "component": "AtlasMapGridBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Overline",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Maps \u0026 connections",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Foreground text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Find the shape of an idea.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-MAP-GRID",
+      "category": "Decoration",
+      "description": "Portable Atlas cartographic backdrop. Editable content, local behavior and Atlas styling. Source: Atlas.Web/wwwroot/css/site.css:243-290; Admin/admin.css:84",
+      "sourceTemplateId": "atlas.website.map-grid.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "emblem",
+      "title": "Atlas emblem",
+      "component": "AtlasEmblemBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Caption",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas Universalis",
+          "options": []
+        },
+        {
+          "id": "alt",
+          "title": "Image description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas Universalis emblem",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-EMBLEM",
+      "category": "Identity \u0026 people",
+      "description": "Portable Atlas emblem. Editable content, local behavior and Atlas styling. Source: Atlas.Web/wwwroot/brand/icon-512.png; _Layout.cshtml:31",
+      "sourceTemplateId": "atlas.website.emblem.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "section-heading",
+      "title": "Atlas editorial heading",
+      "component": "AtlasSectionHeadingBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "kicker",
+          "title": "Kicker",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Explore Atlas",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Precision, creativity, and execution.",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Introduction",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A clear point of view, with space to explore the details.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-SECTION-HEADING",
+      "category": "Text \u0026 content",
+      "description": "Portable Atlas editorial heading. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Services.cshtml:8; Bio.cshtml:9; ProjectLab.cshtml:10",
+      "sourceTemplateId": "atlas.website.section-heading.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "principles",
+      "title": "Atlas principles grid",
+      "component": "AtlasPrinciplesBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "kicker",
+          "title": "Kicker",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Core values",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Many challenges. One solution mindset.",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Introduction",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Research, insight, analysis, and close observation of the problem itself.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Principles \u00B7 title | description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Precision|Understand the problem before choosing the tools.\nCreativity|Look beyond the obvious answer.\nExecution|Build a useful result, then refine it.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-PRINCIPLES",
+      "category": "Content blocks",
+      "description": "Portable Atlas principles grid. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Index.cshtml:39-59; site.css:497",
+      "sourceTemplateId": "atlas.website.principles.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "principle-card",
+      "title": "Atlas principle card",
+      "component": "AtlasPrincipleCardBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "kicker",
+          "title": "Number or label",
+          "type": "text",
+          "required": false,
+          "defaultValue": "01",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Start with understanding",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Observe the real problem and the people working with it.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-PRINCIPLE-CARD",
+      "category": "Cards \u0026 collections",
+      "description": "Portable Atlas principle card. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Index.cshtml:47; site.css:550",
+      "sourceTemplateId": "atlas.website.principle-card.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "services",
+      "title": "Atlas services grid",
+      "component": "AtlasServicesBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Systems that fit reality",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Services \u00B7 title | description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Software strategy|Translate an operating challenge into a focused technical plan.\nCustom applications|Build software around the way your team works.\nWorkflow automation|Connect the repeated steps that consume time.\nData \u0026 insight|Make complex information useful and understandable.\nInfrastructure|Create a reliable foundation for delivery.\nLong-term support|Keep improving as the work evolves.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-SERVICES",
+      "category": "Cards \u0026 collections",
+      "description": "Portable Atlas services grid. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Services.cshtml:17-59; site.css:933",
+      "sourceTemplateId": "atlas.website.services.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "service-card",
+      "title": "Atlas service card",
+      "component": "AtlasServiceCardBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Custom applications",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Purpose-built tools for the way your team actually works.",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link label",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Explore the service",
+          "options": []
+        },
+        {
+          "id": "href",
+          "title": "Link",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#services",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-SERVICE-CARD",
+      "category": "Cards \u0026 collections",
+      "description": "Portable Atlas service card. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Services.cshtml:18; site.css:939",
+      "sourceTemplateId": "atlas.website.service-card.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "action-banner",
+      "title": "Atlas action banner",
+      "component": "AtlasActionBannerBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Bring us the challenge.",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Start with the outcome you need and the constraints you face.",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Action",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Start a conversation",
+          "options": []
+        },
+        {
+          "id": "href",
+          "title": "Address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#contact",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-ACTION-BANNER",
+      "category": "Actions \u0026 conversion",
+      "description": "Portable Atlas action banner. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Services.cshtml:62-69; site.css:961",
+      "sourceTemplateId": "atlas.website.action-banner.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "button-bar",
+      "title": "Atlas action pair",
+      "component": "AtlasButtonBarBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Primary label",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Explore",
+          "options": []
+        },
+        {
+          "id": "href",
+          "title": "Primary address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#content",
+          "options": []
+        },
+        {
+          "id": "secondary",
+          "title": "Secondary label",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Learn more",
+          "options": []
+        },
+        {
+          "id": "secondaryHref",
+          "title": "Secondary address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#details",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-BUTTON-BAR",
+      "category": "Actions \u0026 conversion",
+      "description": "Portable Atlas action pair. Editable content, local behavior and Atlas styling. Source: Atlas.Web/wwwroot/css/site.css:172-212; LaunchScope.cshtml:81",
+      "sourceTemplateId": "atlas.website.button-bar.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "footer",
+      "title": "Atlas page footer",
+      "component": "AtlasFooterBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Name",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas Universalis",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Footer note",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Created in Hyperlib. Shared with the world.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-FOOTER",
+      "category": "Structure \u0026 navigation",
+      "description": "Portable Atlas page footer. Editable content, local behavior and Atlas styling. Source: HyperLib.Archives/wwwroot/index.html:65; archives.css:264",
+      "sourceTemplateId": "atlas.website.footer.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "background",
+      "title": "Page color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#070d1a",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panel color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#101b35",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#e8ecf1",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#bcc5d0",
+      "options": []
+    },
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#c8963e",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "geometric",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "geometric",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    }
+  ],
+  "defaultBlocks": [
+    {
+      "id": "atlas-section-0",
+      "type": "navigation",
+      "region": "main",
+      "values": {
+        "title": "Atlas Universalis",
+        "home": "#",
+        "links": "Home|#\nPrinciples|#principles\nServices|#services\nBio|#bio\nProject Lab|#projects\nArchives|#archives"
+      }
+    },
+    {
+      "id": "atlas-section-1",
+      "type": "hero",
+      "region": "main",
+      "values": {
+        "title": "ATLAS UNIVERSALIS",
+        "kicker": "Custom software strategy \u0026 delivery",
+        "text": "We build custom solutions around the unique challenges our clients face.",
+        "href": "#principles"
+      }
+    },
+    {
+      "id": "atlas-section-2",
+      "type": "principles",
+      "region": "main",
+      "values": {
+        "kicker": "Core values",
+        "title": "Many challenges. One solution mindset.",
+        "text": "Research, insight, analysis, and close observation of the problem itself.",
+        "items": "Precision|Understand the problem before choosing the tools.\nCreativity|Look beyond the obvious answer.\nExecution|Build a useful result, then refine it."
+      }
+    },
+    {
+      "id": "atlas-section-3",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "title": "Atlas Universalis",
+        "text": "Created in Hyperlib. Shared with the world."
+      }
+    }
+  ],
+  "emptyPageDefault": false
+}

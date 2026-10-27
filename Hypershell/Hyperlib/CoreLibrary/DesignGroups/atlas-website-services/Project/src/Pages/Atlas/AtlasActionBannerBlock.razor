@@ -1,0 +1,12 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<aside class="action-banner"><div><h2 data-field="title">@T("title")</h2><p data-field="text">@T("text")</p></div><a class="primary" href="@Link(T("href"))" data-field="label">@T("label")</a></aside>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+
+}

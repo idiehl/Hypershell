@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "wave-laboratory",
+  "title": "Wave Laboratory",
+  "description": "The original dark science workspace, with a wave experiment and playable media.",
+  "category": "Originals",
+  "sourceTemplateId": "wave-laboratory"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "express-popular",
+  "displayName": "Express",
+  "description": "Curated Express starter recipes for the JavaScript Command Builder. The dependency is referenced, not bundled.",
+  "language": "JavaScript",
+  "category": "Popular libraries",
+  "kind": "Framework",
+  "canonicalName": "Express",
+  "ecosystem": "npm",
+  "targetVersion": "5.2",
+  "sourceVersion": "5.2 documentation · curated 2026-08-17",
+  "sourceUrl": "https://expressjs.com/en/5x/api.html",
+  "license": "MIT",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Requires Express in the active Node.js project; Hypershell does not install it.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "javascript",
+    "popular library",
+    "express",
+    "http server",
+    "routing",
+    "middleware",
+    "node"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/express-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/express-popular.guides.json"
+  ],
+  "legacyIds": []
+}

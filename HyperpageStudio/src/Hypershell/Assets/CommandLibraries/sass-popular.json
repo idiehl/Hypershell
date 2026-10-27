@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "sass-popular",
+  "displayName": "Dart Sass",
+  "description": "Curated Dart Sass starter recipes for the CSS Command Builder. The dependency is referenced, not bundled.",
+  "language": "CSS",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "Sass",
+  "ecosystem": "npm / Sass",
+  "targetVersion": "1.102",
+  "sourceVersion": "1.102 documentation · curated 2026-08-17",
+  "sourceUrl": "https://sass-lang.com/documentation/",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Editor/build-tool content: insert into an SCSS document and compile with Dart Sass; Hypershell does not run a Sass compiler.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "css",
+    "popular library",
+    "sass",
+    "scss",
+    "mixin",
+    "variables",
+    "stylesheet compiler"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/sass-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/sass-popular.guides.json"
+  ],
+  "legacyIds": []
+}

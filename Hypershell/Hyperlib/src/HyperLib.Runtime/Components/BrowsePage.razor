@@ -1,0 +1,60 @@
+@page "/browse/{NodeId}"
+@page "/browse"
+@rendermode InteractiveServer
+@inject RendererOptions Options
+@inject RendererContentClient Content
+@inject IJSRuntime JS
+
+@if (_site is { } site && _state is { } state)
+{
+    var cover = site.Cover(state, Options);
+    <main class="hl-document hl-work-site hl-work-landing @Options.VariantClass(state, _node ?? site.Work)" style="@AppearanceStyle">
+        <WorkNavigation Site="site" />
+        @if (Options.ShellComponent is { } workShell) { <DynamicComponent Type="workShell" /> }
+        <header class="hl-work-hero hl-banner @(cover is null ? "hl-banner-text-only" : "")">
+            <div class="hl-banner-copy">
+                <h1>@site.Current.Title</h1>
+                <p class="hl-deck">@site.Description(state, Options)</p>
+                @if (site.Start is { } start)
+                {
+                    <div class="hl-work-start">
+                        <a class="hl-button" href="@WorkSiteModel.Href(Options, start)" data-hyperlib-navigate="@start.Id">Start reading <span aria-hidden="true">→</span></a>
+                        <a class="hl-work-contents-jump" href="@(WorkSiteModel.Href(Options, site.Current) + "?edit=0#work-contents")"
+                           data-work-contents-jump data-enhance-nav="false">View contents</a>
+                    </div>
+                }
+            </div>
+            @if (cover is not null)
+            {
+                <img class="hl-banner-image hl-work-cover" src="@cover" alt="" />
+            }
+        </header>
+        <section id="work-contents" class="hl-work-contents" aria-label="Contents">
+            <h2>Contents</h2>
+            @if (site.CurrentContents.Count > 0)
+            {
+                <WorkContents Items="site.CurrentContents" CurrentId="@site.Current.Id" />
+            }
+            else { <p class="hl-work-empty">New pages will appear here.</p> }
+        </section>
+    </main>
+}
+else
+{
+    <section class="hl-browse" style="@AppearanceStyle">
+        @if (Options.ShellComponent is { } shell) { <DynamicComponent Type="shell" /> }
+        <p class="hl-kicker">@(_node?.Type ?? "Personal library")</p>
+        <h1>@(_node?.Title ?? "A place for your curiosity.")</h1>
+        <p class="hl-intro">@(Options.Appearance("subtitle", _state, _node))</p>
+    </section>
+}
+
+@code {
+    [Parameter] public string? NodeId { get; set; }
+    private LibraryState? _state;
+    private LibraryNode? _node;
+    private WorkSiteModel? _site;
+    private string AppearanceStyle => Options.AppearanceStyle(_state, _node);
+    protected override async Task OnParametersSetAsync() { _state = await Content.GetStateAsync(); _node = _state.Nodes.FirstOrDefault(n => n.Id == NodeId); _site = WorkSiteModel.Create(_state, _node); }
+    protected override async Task OnAfterRenderAsync(bool firstRender) { await JS.InvokeVoidAsync("hyperlibRenderer.ready", Options.GenerationId, NodeId ?? ""); }
+}

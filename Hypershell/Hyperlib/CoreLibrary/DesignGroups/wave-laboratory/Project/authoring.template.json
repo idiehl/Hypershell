@@ -1,0 +1,1613 @@
+{
+  "schemaVersion": 1,
+  "templateId": "standard",
+  "title": "Wave Laboratory",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Page content",
+      "allowedBlocks": [
+        "text",
+        "richtext",
+        "image",
+        "gallery",
+        "audio",
+        "video",
+        "wave",
+        "callout",
+        "counter",
+        "citation",
+        "header",
+        "footer",
+        "banner",
+        "divider",
+        "form",
+        "map",
+        "embed",
+        "tool"
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "text",
+      "title": "Text",
+      "component": "TextBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text",
+          "title": "Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Write something worth exploring.",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "richtext",
+      "title": "Rich text",
+      "component": "RichTextBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text",
+          "title": "Markdown",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Write **something** worth exploring.",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "image",
+      "title": "Image",
+      "component": "ImageBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "src",
+          "title": "Image",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "alt",
+          "title": "Description",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "caption",
+          "title": "Caption",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "width",
+          "title": "Width (%)",
+          "type": "number",
+          "required": false,
+          "defaultValue": 100,
+          "options": [],
+          "min": 40,
+          "max": 100
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "title": "Gallery",
+      "component": "GalleryBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "src1",
+          "title": "First image",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "src2",
+          "title": "Second image",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "caption",
+          "title": "Caption",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "title": "Audio",
+      "component": "AudioBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "src",
+          "title": "Audio",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "caption",
+          "title": "Caption",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "title": "Video",
+      "component": "VideoBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "src",
+          "title": "Video",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "caption",
+          "title": "Caption",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "wave",
+      "title": "Wave experiment",
+      "component": "WaveBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "frequency",
+          "title": "Frequency",
+          "type": "number",
+          "required": false,
+          "defaultValue": 2,
+          "options": [],
+          "min": 0.1,
+          "max": 10
+        },
+        {
+          "id": "amplitude",
+          "title": "Amplitude",
+          "type": "number",
+          "required": false,
+          "defaultValue": 0.7,
+          "options": [],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "callout",
+      "title": "Callout",
+      "component": "CalloutBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Worth noticing",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Add a useful observation.",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "counter",
+      "title": "Interactive counter",
+      "component": "CounterBlock",
+      "kind": "javascript",
+      "fields": [
+        {
+          "id": "label",
+          "title": "Label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Observations",
+          "options": []
+        },
+        {
+          "id": "start",
+          "title": "Starting value",
+          "type": "number",
+          "required": false,
+          "defaultValue": 0,
+          "options": [],
+          "min": -1000000,
+          "max": 1000000
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "citation",
+      "title": "Source citation",
+      "component": "CitationBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "url",
+          "title": "Source URL",
+          "type": "url",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Source title",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Source",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Note",
+          "type": "text",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "header",
+      "title": "Page header",
+      "component": "HeaderBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "eyebrow",
+          "title": "Eyebrow",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A new chapter",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Introduction",
+          "type": "text",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "title": "Page footer",
+      "component": "FooterBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text",
+          "title": "Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Link",
+          "type": "url",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "banner",
+      "title": "Feature banner",
+      "component": "BannerBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "eyebrow",
+          "title": "Eyebrow",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Something worth discovering",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "src",
+          "title": "Image",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "alt",
+          "title": "Image description",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Link",
+          "type": "url",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "divider",
+      "title": "Divider",
+      "component": "DividerBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "label",
+          "title": "Label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "style",
+          "title": "Style",
+          "type": "select",
+          "required": false,
+          "defaultValue": "line",
+          "options": [
+            "line",
+            "space",
+            "dots"
+          ]
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "form",
+      "title": "Contact form",
+      "component": "FormBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Start a conversation",
+          "options": []
+        },
+        {
+          "id": "description",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A local form demonstration. Nothing is sent.",
+          "options": []
+        },
+        {
+          "id": "nameLabel",
+          "title": "Name label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Name",
+          "options": []
+        },
+        {
+          "id": "emailLabel",
+          "title": "Email label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Email",
+          "options": []
+        },
+        {
+          "id": "messageLabel",
+          "title": "Message label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Message",
+          "options": []
+        },
+        {
+          "id": "submitLabel",
+          "title": "Button label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Preview message",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "map",
+      "title": "Location map",
+      "component": "MapBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "string",
+          "required": false,
+          "defaultValue": "A place to explore",
+          "options": []
+        },
+        {
+          "id": "latitude",
+          "title": "Latitude",
+          "type": "number",
+          "required": false,
+          "defaultValue": 45.52,
+          "options": [],
+          "min": -85,
+          "max": 85
+        },
+        {
+          "id": "longitude",
+          "title": "Longitude",
+          "type": "number",
+          "required": false,
+          "defaultValue": -122.68,
+          "options": [],
+          "min": -180,
+          "max": 180
+        },
+        {
+          "id": "zoom",
+          "title": "Zoom",
+          "type": "number",
+          "required": false,
+          "defaultValue": 11,
+          "options": [],
+          "min": 1,
+          "max": 18
+        },
+        {
+          "id": "caption",
+          "title": "Caption",
+          "type": "text",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "embed",
+      "title": "External embed",
+      "component": "EmbedBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "url",
+          "title": "URL",
+          "type": "url",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "string",
+          "required": false,
+          "defaultValue": "External resource",
+          "options": []
+        },
+        {
+          "id": "caption",
+          "title": "Caption",
+          "type": "text",
+          "required": false,
+          "defaultValue": "External content opens only when requested.",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "tool",
+      "title": "Interactive tool",
+      "component": "ToolBlock",
+      "kind": "javascript",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Focus timer",
+          "options": []
+        },
+        {
+          "id": "mode",
+          "title": "Tool",
+          "type": "select",
+          "required": false,
+          "defaultValue": "timer",
+          "options": [
+            "timer",
+            "calculator",
+            "checklist"
+          ]
+        },
+        {
+          "id": "initial",
+          "title": "Initial value",
+          "type": "number",
+          "required": false,
+          "defaultValue": 300,
+          "options": [],
+          "min": 0,
+          "max": 3600
+        },
+        {
+          "id": "items",
+          "title": "Checklist items",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Choose a task\nMake a first attempt\nReview what changed",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ]
+    }
+  ],
+  "appearance": [
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#7fa7ee",
+      "options": []
+    },
+    {
+      "id": "background",
+      "title": "Full page background",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#101a21",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#e9f1fc",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panels",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#192b38",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#a9bdcf",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "system",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "monospace",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "variant",
+      "title": "Layout design",
+      "type": "select",
+      "required": false,
+      "defaultValue": "wave-laboratory",
+      "options": [
+        "woodland-editorial",
+        "wave-laboratory",
+        "portfolio-grid",
+        "field-journal",
+        "architecture-studio",
+        "course-notebook",
+        "recipe-kitchen",
+        "event-poster",
+        "travel-atlas",
+        "product-launch",
+        "podcast-studio",
+        "gallery-wall",
+        "documentation-desk",
+        "nonprofit-story",
+        "wellness-retreat",
+        "maker-workbench",
+        "insight-dashboard"
+      ]
+    }
+  ],
+  "defaultBlocks": [
+    {
+      "id": "page-header",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "SCIENCE LAB / EXPERIMENT",
+        "title": "Exploring a Wave",
+        "text": "A small experiment in patterns, motion, and sound."
+      }
+    },
+    {
+      "id": "wave-intro",
+      "type": "text",
+      "region": "main",
+      "values": {
+        "text": "A wave describes a repeating disturbance. Amplitude controls the size of the variation; frequency describes how often it repeats. This simplified experiment lets you change both and inspect the shape. It is a visual model, not an audio synthesizer."
+      }
+    },
+    {
+      "id": "wave-experiment",
+      "type": "wave",
+      "region": "main",
+      "values": {
+        "frequency": 2,
+        "amplitude": 0.7
+      }
+    },
+    {
+      "id": "wave-note",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Change one thing at a time",
+        "text": "Keep amplitude fixed and increase frequency. Then restore frequency and change amplitude. Describe the difference in your own words."
+      }
+    },
+    {
+      "id": "wave-audio",
+      "type": "audio",
+      "region": "main",
+      "values": {
+        "src": "/media/sample-tone.wav",
+        "caption": "A short reference tone. Use the player to listen when you are ready."
+      }
+    },
+    {
+      "id": "wave-video",
+      "type": "video",
+      "region": "main",
+      "values": {
+        "src": "/media/sample-motion.webm",
+        "caption": "A short motion study: follow the repeating shape."
+      }
+    },
+    {
+      "id": "wave-citation",
+      "type": "citation",
+      "region": "main",
+      "values": {
+        "url": "https://openstax.org/books/college-physics-2e/pages/16-9-waves",
+        "title": "OpenStax: Waves",
+        "text": "A starting reference for further reading; this seeded reference has not been fetched by the research assistant."
+      }
+    },
+    {
+      "id": "page-divider",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "",
+        "style": "line"
+      }
+    },
+    {
+      "id": "page-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Wave Laboratory / Observe, adjust, compare"
+      }
+    }
+  ],
+  "emptyPageDefault": false
+}

@@ -1,0 +1,36 @@
+@* Source: common.section.search-filter.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-080706244eb1" data-vp-id="080706244eb1c26fda536cd799696061">
+    <form @onsubmit:preventDefault aria-label="Search and filter the collection" class="vp-b215264c0c84" data-vp-id="b215264c0c84e5eb12d4c96869cb8615" method="get">
+        <div class="vp-41303f9a044e" data-vp-id="41303f9a044e11ced12b131845ebb287">
+            <label class="vp-578e5279ce26" data-field="text-3" data-vp-id="578e5279ce2623a2aed27ca6926b2763" for="@(LocalIds("directory-search"))">
+                @(Context.Text("text-3"))
+            </label>
+            <input aria-label="Search" class="vp-c9f330938f9e" data-vp-id="c9f330938f9ebab04b762c3415105e87" name="query" id="@(LocalIds("directory-search"))" placeholder="@(Context.Text("placeholder-4"))" />
+        </div>
+        <div class="vp-612fcf49bddf" data-vp-id="612fcf49bddf5ad4a3ab6d74577487bc">
+            <label class="vp-85b44b0a12d2" data-field="text-6" data-vp-id="85b44b0a12d2b38851a23c8d664c9a8e" for="@(LocalIds("directory-category"))">
+                @(Context.Text("text-6"))
+            </label>
+            <select aria-label="Category" class="vp-614256d6caa6" data-vp-id="614256d6caa6fed7af342475e6f993ba" name="category" id="@(LocalIds("directory-category"))">
+                <option class="vp-5f8d660fd3e9" data-field="text-8" data-vp-id="5f8d660fd3e9f7ae1d61570120448f8c" value="">
+                    @(Context.Text("text-8"))
+                </option>
+                <option class="vp-9e52f5759d76" data-field="text-9" data-vp-id="9e52f5759d76c074685e1a44293f402b" value="first">
+                    @(Context.Text("text-9"))
+                </option>
+            </select>
+        </div>
+        <button class="vp-c5a718663db6" data-field="text-10" data-vp-id="c5a718663db652ceecf8570ce6b03847">
+            @(Context.Text("text-10"))
+        </button>
+    </form>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

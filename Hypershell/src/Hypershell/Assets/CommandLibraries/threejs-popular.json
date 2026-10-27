@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "threejs-popular",
+  "displayName": "three.js",
+  "description": "Curated three.js starter recipes for the Web APIs Command Builder. The dependency is referenced, not bundled.",
+  "language": "Web APIs",
+  "category": "Popular libraries",
+  "kind": "Framework",
+  "canonicalName": "three.js",
+  "ecosystem": "npm / Browser",
+  "targetVersion": "current release",
+  "sourceVersion": "current release documentation · curated 2026-08-17",
+  "sourceUrl": "https://threejs.org/manual/en/creating-a-scene.html",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Browser/editor content: import three.js in the target page or bundle and serve it over HTTP; the Web APIs surface is editor-only.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "web apis",
+    "popular library",
+    "three",
+    "3d",
+    "webgl",
+    "webgpu",
+    "scene"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/threejs-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/threejs-popular.guides.json"
+  ],
+  "legacyIds": []
+}

@@ -1,0 +1,40 @@
+@implements IAsyncDisposable
+@inject IJSRuntime JS
+<section class="hl-tool" @ref="_element" data-tool-mode="@Mode">
+    <h2 data-field="title">@Context.Text("title", "A useful little tool")</h2>
+    @if (Mode == "timer")
+    {
+        <output class="hl-timer-output" aria-live="off">@TimeDisplay</output>
+        <div class="hl-widget-bar"><button class="hl-button" type="button" data-action="toggle">Start</button><button class="hl-button hl-button-quiet" type="button" data-action="reset">Reset</button><span class="hl-tool-status" role="status">Ready</span></div>
+    }
+    else if (Mode == "checklist")
+    {
+        <div class="hl-checklist">@foreach (var item in Items) { <label><input type="checkbox" /><span>@item</span></label> }</div>
+        <output class="hl-tool-status" role="status">0 of @Items.Length complete</output>
+    }
+    else
+    {
+        <div class="hl-calculator"><label>First number<input type="number" step="any" data-number="a" value="0" /></label><label>Operation<select data-operation><option value="add">Add +</option><option value="subtract">Subtract −</option><option value="multiply">Multiply ×</option><option value="divide">Divide ÷</option></select></label><label>Second number<input type="number" step="any" data-number="b" value="0" /></label></div>
+        <output class="hl-tool-result" aria-live="polite">0</output>
+    }
+    <p class="hl-note">Runs locally in this page. Tool state resets when the page is reopened.</p>
+</section>
+@code {
+    [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+    private ElementReference _element;
+    private IJSObjectReference? _module;
+    private string Mode => Context.Text("mode") is "timer" or "checklist" ? Context.Text("mode") : "calculator";
+    private int Initial => (int)Math.Clamp(Context.Number("initial", 300), 0, 3600);
+    private string TimeDisplay => $"{Initial / 60:00}:{Initial % 60:00}";
+    private string[] Items => Context.Text("items", "First step\nSecond step\nFinish").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        _module ??= await JS.InvokeAsync<IJSObjectReference>("import", "./_content/HyperLib.Work/blocks/tool.js");
+        await _module.InvokeVoidAsync("mount", _element, Mode, Initial, Context.Text("items"));
+    }
+    public async ValueTask DisposeAsync()
+    {
+        if (_module is null) return;
+        try { await _module.InvokeVoidAsync("dispose", _element); await _module.DisposeAsync(); } catch (JSDisconnectedException) { }
+    }
+}

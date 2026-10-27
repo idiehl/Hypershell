@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "nonprofit-story",
+  "title": "Nonprofit Story",
+  "description": "A people-first banner, impact cards, project story, local map, and volunteer form.",
+  "category": "Community",
+  "sourceTemplateId": "nonprofit-story"
+}

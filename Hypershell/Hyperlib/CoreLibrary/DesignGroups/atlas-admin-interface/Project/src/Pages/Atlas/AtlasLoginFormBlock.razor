@@ -1,0 +1,12 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<section class="login-card"><p class="eyebrow" data-field="kicker">@T("kicker")</p><h2 data-field="title">@T("title")</h2><p data-field="text">@T("text")</p><form class="form-stack" @onsubmit="Validate" @onsubmit:preventDefault><label>Email<input type="email" required autocomplete="off" @bind="_email" /></label><label>Password<input type="password" required minlength="8" autocomplete="off" @bind="_password" /></label><button type="submit" class="primary">Check form</button></form>@if(_message.Length > 0) { <p role="status" class="notice">@_message</p> }</section>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+private string _email = "", _password = "", _message = ""; private void Validate() { _message = _email.Contains('@') && _password.Length >= 8 ? "The sample fields are valid. Connect your own authentication handler to use this form." : "Enter an email and a password with at least eight characters."; _password = string.Empty; }
+}

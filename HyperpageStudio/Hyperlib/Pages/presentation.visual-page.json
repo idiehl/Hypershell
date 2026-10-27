@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "projectId": "e62aef212e8d4bd9897ae31d4f50acd6",
+  "pageId": "20140836887844d0b9a929ee5dff9995",
+  "name": "Presentation",
+  "componentName": "WorkPage",
+  "route": "/presentation",
+  "slug": "presentation",
+  "fileType": "RazorPage",
+  "title": "HyperLib",
+  "description": "Studio-owned presentation shell. Author page content in HyperLib.",
+  "revision": "",
+  "generatorVersion": "1.0.0",
+  "root": {
+    "elementId": "a8cf0cd904324dc6b4b02f72e628f6f6",
+    "descriptorId": "core.page",
+    "name": "Page shell",
+    "children": [
+      {
+        "elementId": "c4ffb3f5eaa8492a86af89c727f8d7c1",
+        "descriptorId": "core.paragraph",
+        "name": "Identity",
+        "text": "HYPERLIB",
+        "attributes": {
+          "class": "hl-kicker"
+        }
+      }
+    ]
+  },
+  "generatedFiles": [
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.razor",
+      "sha256": "95a3012732bd7aa51265a875b18fb97d328c0de7dca72318363bb828d7256729"
+    },
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.razor.css",
+      "sha256": "4d9d56b89496b41363a18282c19a576ed64ff2093f3846b9ddf2543405d4e649"
+    },
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.designer.g.cs",
+      "sha256": "898257adf51112f60e6d880501234d03d09fcd7187ff6fdcfc86e94cbd8c8ab6"
+    },
+    {
+      "relativePath": "src/Pages/wwwroot/visual-page-theme.css",
+      "sha256": "546a0f4a9c49690f265d7abac7ee191bdba19f88f954c8b2f5a2fc66fb4be144"
+    }
+  ]
+}

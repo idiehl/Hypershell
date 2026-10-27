@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "java-se-standard-library",
+  "guides": [
+    {
+      "entryId": "java.println",
+      "definition": "System.out is the process standard-output PrintStream. println converts its argument to text, writes it, and terminates the line.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "A Java expression to display.",
+          "typeName": "Java expression",
+          "defaultValue": "\"Hello from Hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Display a greeting",
+          "code": "System.out.println(\"Hello from Hypershell\");",
+          "explanation": "The string is compiled into the temporary program and written to standard output."
+        }
+      ]
+    },
+    {
+      "entryId": "java.formatted-string",
+      "definition": "String.formatted applies Formatter-style substitutions to the receiving string and returns the resulting text.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The local variable receiving the formatted string.",
+          "typeName": "Java identifier",
+          "defaultValue": "message",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "format",
+          "displayName": "Format",
+          "placeholder": "format",
+          "description": "A Formatter-compatible string without surrounding quotes.",
+          "typeName": "Format text",
+          "defaultValue": "Result: %d",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "arguments",
+          "displayName": "Arguments",
+          "placeholder": "arguments",
+          "description": "One or more comma-separated format arguments.",
+          "typeName": "Java expressions",
+          "defaultValue": "6 * 7",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Format a calculation",
+          "code": "var message = \"Result: %d\".formatted(6 * 7);\nSystem.out.println(message);",
+          "explanation": "The integer substitution produces Result: 42."
+        }
+      ]
+    },
+    {
+      "entryId": "java.array-list",
+      "definition": "ArrayList implements List with a resizable array. Its generic element type is checked at compile time.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The list variable name.",
+          "typeName": "Java identifier",
+          "defaultValue": "items",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "type",
+          "displayName": "Element type",
+          "placeholder": "type",
+          "description": "The compile-time list element type.",
+          "typeName": "Java type",
+          "defaultValue": "String",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "first",
+          "displayName": "First value",
+          "placeholder": "first",
+          "description": "The first compatible value.",
+          "typeName": "Java expression",
+          "defaultValue": "\"alpha\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "second",
+          "displayName": "Second value",
+          "placeholder": "second",
+          "description": "The second compatible value.",
+          "typeName": "Java expression",
+          "defaultValue": "\"beta\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Collect two labels",
+          "code": "var items = new ArrayList<String>();\nitems.add(\"alpha\");\nitems.add(\"beta\");\nSystem.out.println(items);",
+          "explanation": "The mutable list accepts two strings and prints them in insertion order."
+        }
+      ]
+    },
+    {
+      "entryId": "java.map-of",
+      "definition": "Map.of returns an unmodifiable map that rejects null keys and values and duplicate keys.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The map variable name.",
+          "typeName": "Java identifier",
+          "defaultValue": "status",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstKey",
+          "displayName": "First key",
+          "placeholder": "firstKey",
+          "description": "The first non-null key.",
+          "typeName": "Java expression",
+          "defaultValue": "\"ready\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstValue",
+          "displayName": "First value",
+          "placeholder": "firstValue",
+          "description": "The first non-null value.",
+          "typeName": "Java expression",
+          "defaultValue": "true",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondKey",
+          "displayName": "Second key",
+          "placeholder": "secondKey",
+          "description": "The second unique key.",
+          "typeName": "Java expression",
+          "defaultValue": "\"count\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondValue",
+          "displayName": "Second value",
+          "placeholder": "secondValue",
+          "description": "The second value.",
+          "typeName": "Java expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "lookupKey",
+          "displayName": "Lookup key",
+          "placeholder": "lookupKey",
+          "description": "The key whose value is printed.",
+          "typeName": "Java expression",
+          "defaultValue": "\"count\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a map value",
+          "code": "var status = Map.of(\"ready\", true, \"count\", 42);\nSystem.out.println(status.get(\"count\"));",
+          "explanation": "The immutable map returns 42 for the count key."
+        }
+      ]
+    },
+    {
+      "entryId": "java.lambda-function",
+      "definition": "A lambda supplies the implementation of a functional interface. Function<T,R> accepts one value and returns one result through apply.",
+      "parameters": [
+        {
+          "name": "inputType",
+          "displayName": "Input type",
+          "placeholder": "inputType",
+          "description": "The function input reference type.",
+          "typeName": "Java type",
+          "defaultValue": "Integer",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "outputType",
+          "displayName": "Output type",
+          "placeholder": "outputType",
+          "description": "The function result reference type.",
+          "typeName": "Java type",
+          "defaultValue": "Integer",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "name",
+          "displayName": "Function variable",
+          "placeholder": "name",
+          "description": "The local function name.",
+          "typeName": "Java identifier",
+          "defaultValue": "doubleValue",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterName",
+          "displayName": "Lambda parameter",
+          "placeholder": "parameterName",
+          "description": "The lambda input name.",
+          "typeName": "Java identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Expression",
+          "placeholder": "expression",
+          "description": "The result expression.",
+          "typeName": "Java expression",
+          "defaultValue": "value * 2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample input",
+          "placeholder": "sample",
+          "description": "The value passed to apply.",
+          "typeName": "Java expression",
+          "defaultValue": "21",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Double an integer",
+          "code": "Function<Integer, Integer> doubleValue = value -> value * 2;\nSystem.out.println(doubleValue.apply(21));",
+          "explanation": "The typed lambda returns 42."
+        }
+      ]
+    },
+    {
+      "entryId": "java.stream-pipeline",
+      "definition": "Stream intermediate operations such as filter and map are lazy. A terminal operation such as toList initiates traversal and produces the result.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Result variable",
+          "placeholder": "name",
+          "description": "The collected result list.",
+          "typeName": "Java identifier",
+          "defaultValue": "squares",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "Comma-separated stream source values.",
+          "typeName": "Java expressions",
+          "defaultValue": "1, 2, 3, 4",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item variable",
+          "placeholder": "item",
+          "description": "The lambda parameter name.",
+          "typeName": "Java identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "predicate",
+          "displayName": "Predicate",
+          "placeholder": "predicate",
+          "description": "The Boolean filter expression.",
+          "typeName": "Java expression",
+          "defaultValue": "number % 2 == 0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Mapping",
+          "placeholder": "expression",
+          "description": "The transformed result expression.",
+          "typeName": "Java expression",
+          "defaultValue": "number * number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Square even numbers",
+          "code": "var squares = List.of(1, 2, 3, 4).stream()\n    .filter(number -> number % 2 == 0)\n    .map(number -> number * number)\n    .toList();\nSystem.out.println(squares);",
+          "explanation": "The terminal toList operation produces [4, 16]."
+        }
+      ]
+    },
+    {
+      "entryId": "java.optional",
+      "definition": "Optional models a value that may be absent. map transforms a present value without a null check, and orElse supplies a fallback.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Result variable",
+          "placeholder": "name",
+          "description": "The unwrapped result variable.",
+          "typeName": "Java identifier",
+          "defaultValue": "label",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Nullable value",
+          "placeholder": "value",
+          "description": "The possibly null source expression.",
+          "typeName": "Java expression",
+          "defaultValue": "\"hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item variable",
+          "placeholder": "item",
+          "description": "The map lambda parameter.",
+          "typeName": "Java identifier",
+          "defaultValue": "text",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Mapping",
+          "placeholder": "expression",
+          "description": "The expression applied when present.",
+          "typeName": "Java expression",
+          "defaultValue": "text.toUpperCase()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fallback",
+          "displayName": "Fallback",
+          "placeholder": "fallback",
+          "description": "The value used when absent.",
+          "typeName": "Java expression",
+          "defaultValue": "\"UNKNOWN\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Normalize a present label",
+          "code": "var label = Optional.ofNullable(\"hypershell\")\n    .map(text -> text.toUpperCase())\n    .orElse(\"UNKNOWN\");\nSystem.out.println(label);",
+          "explanation": "The present string is transformed to HYPERSHELL."
+        }
+      ]
+    },
+    {
+      "entryId": "java.files-read-string",
+      "definition": "Files.writeString and Files.readString provide compact text-file operations. Their no-charset overloads use UTF-8.",
+      "parameters": [
+        {
+          "name": "pathName",
+          "displayName": "Path variable",
+          "placeholder": "pathName",
+          "description": "The temporary Path variable.",
+          "typeName": "Java identifier",
+          "defaultValue": "path",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "prefix",
+          "displayName": "File prefix",
+          "placeholder": "prefix",
+          "description": "At least three filename characters without surrounding quotes.",
+          "typeName": "Text",
+          "defaultValue": "hypershell",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The Java string written to the file.",
+          "typeName": "Java string expression",
+          "defaultValue": "\"ready\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Round-trip temporary text",
+          "code": "var path = Files.createTempFile(\"hypershell\", \".txt\");\ntry {\n    Files.writeString(path, \"ready\");\n    System.out.println(Files.readString(path));\n} finally {\n    Files.deleteIfExists(path);\n}",
+          "explanation": "The example prints ready and removes its temporary file even if reading fails."
+        }
+      ]
+    },
+    {
+      "entryId": "java.completable-future",
+      "definition": "CompletableFuture represents a value completed later. supplyAsync starts a supplier, thenApply transforms its result, and join waits while rethrowing failure as an unchecked completion exception.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Future variable",
+          "placeholder": "name",
+          "description": "The CompletableFuture variable.",
+          "typeName": "Java identifier",
+          "defaultValue": "future",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "source",
+          "displayName": "Supplier result",
+          "placeholder": "source",
+          "description": "The value produced asynchronously.",
+          "typeName": "Java expression",
+          "defaultValue": "21",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Result variable",
+          "placeholder": "item",
+          "description": "The transformation lambda parameter.",
+          "typeName": "Java identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Transformation",
+          "placeholder": "expression",
+          "description": "The result transformation.",
+          "typeName": "Java expression",
+          "defaultValue": "value * 2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Double an asynchronous value",
+          "code": "var future = CompletableFuture.supplyAsync(() -> 21)\n    .thenApply(value -> value * 2);\nSystem.out.println(future.join());",
+          "explanation": "The asynchronous pipeline completes with 42 before join returns."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2d13fb7df21a46c1a5a2f1efd85d94a3",
+  "pageId": "1086b8aa5a7641619e55c7948007030f",
+  "name": "Presentation",
+  "componentName": "WorkPage",
+  "route": "/presentation",
+  "slug": "presentation",
+  "fileType": "RazorPage",
+  "title": "Atlas \u00B7 Forms \u0026 planning",
+  "description": "Studio-owned presentation shell. Author page content in HyperLib.",
+  "revision": "",
+  "generatorVersion": "1.0.0",
+  "root": {
+    "elementId": "6cadb9a51823400f8a542ac51977532c",
+    "descriptorId": "core.page",
+    "name": "Page shell",
+    "children": []
+  },
+  "generatedFiles": [
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.razor",
+      "sha256": "88bf3b937b4ac6712c86f83e0eb8116fe00bc50e3bb8b81d92a884d4c0b93a0d"
+    },
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.razor.css",
+      "sha256": "4d9d56b89496b41363a18282c19a576ed64ff2093f3846b9ddf2543405d4e649"
+    },
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.designer.g.cs",
+      "sha256": "898257adf51112f60e6d880501234d03d09fcd7187ff6fdcfc86e94cbd8c8ab6"
+    },
+    {
+      "relativePath": "src/Pages/wwwroot/visual-page-theme.css",
+      "sha256": "546a0f4a9c49690f265d7abac7ee191bdba19f88f954c8b2f5a2fc66fb4be144"
+    }
+  ]
+}

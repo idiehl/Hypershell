@@ -1,0 +1,20 @@
+@* Source: common.element.alert.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-59f1324fe7f9" data-vp-id="59f1324fe7f9a43e051cc0bcb33bcbad">
+    <div aria-label="Important information" class="vp-e47b94680d90" data-vp-id="e47b94680d90cacdd453dd5f59fddc83" role="status">
+        <h3 class="vp-915f83e6fc38" data-field="text-2">
+            @(Context.Text("text-2"))
+        </h3>
+        <p class="vp-3010d5d86d7d" data-field="text-3" data-vp-id="3010d5d86d7da45e0ebc3ee8764c2688">
+            @(Context.Text("text-3"))
+        </p>
+    </div>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

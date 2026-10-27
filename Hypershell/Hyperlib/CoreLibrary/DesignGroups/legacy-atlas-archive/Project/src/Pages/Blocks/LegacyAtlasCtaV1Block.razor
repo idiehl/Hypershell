@@ -1,0 +1,25 @@
+@* Source: atlas.cta.v1 (Atlas Archive). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-41f3f91b2004" data-vp-id="41f3f91b2004a733f6ec9f2991e4db0c">
+    <section class="vp-d305f95c8247" data-vp-id="d305f95c8247b19cc6aed6b7aaee5d63">
+        <div class="vp-53fae908ba51" data-vp-id="53fae908ba51d66088dbfed4e904b055">
+            <h2 class="vp-3eae477b3808" data-field="text-3">
+                @(Context.Text("text-3"))
+            </h2>
+            <p class="vp-32ef48cfeb4d" data-field="text-4" data-vp-id="32ef48cfeb4d342ce5d20faf76dede2e">
+                @(Context.Text("text-4"))
+            </p>
+        </div>
+        <button class="vp-07619338a519" data-field="text-5" data-vp-id="07619338a519ec2afc81655afbd1d310">
+            @(Context.Text("text-5"))
+        </button>
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

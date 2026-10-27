@@ -1,0 +1,2872 @@
+{
+  "schemaVersion": 1,
+  "sourceVersion": "WHATWG HTML Living Standard index",
+  "sourceUrl": "https://html.spec.whatwg.org/multipage/indices.html",
+  "sourceSha256": "96f70aa6a8461b19c8ae25e80370cce01523255a447dec1d583967a442237b87",
+  "license": "WHATWG Living Standard",
+  "entryCount": 286,
+  "elementCount": 107,
+  "attributeCount": 179,
+  "entries": [
+    {
+      "id": "html.core.attribute.abbr.99e865109002",
+      "name": "abbr",
+      "displayName": "abbr",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "abbr=\"\"",
+      "description": "Alternative label to use for the header cell when referencing the cell in other contexts Applies to: th.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#attr-th-abbr"
+    },
+    {
+      "id": "html.core.attribute.accept.1aa376b487f5",
+      "name": "accept",
+      "displayName": "accept",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "accept=\"\"",
+      "description": "Hint for expected file type in file upload controls Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-accept"
+    },
+    {
+      "id": "html.core.attribute.accept-charset.49d13ea2bfad",
+      "name": "accept-charset",
+      "displayName": "accept-charset",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "accept-charset=\"\"",
+      "description": "Character encodings to use for form submission Applies to: form.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/forms.html#attr-form-accept-charset"
+    },
+    {
+      "id": "html.core.attribute.action.235e4fd138da",
+      "name": "action",
+      "displayName": "action",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "action=\"\"",
+      "description": "URL to use for form submission Applies to: form.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-action"
+    },
+    {
+      "id": "html.core.attribute.allow.588a49c4c3f3",
+      "name": "allow",
+      "displayName": "allow",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "allow=\"\"",
+      "description": "Permissions policy to be applied to the iframe 's contents Applies to: iframe.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-allow"
+    },
+    {
+      "id": "html.core.attribute.allowfullscreen.2453c33ad16a",
+      "name": "allowfullscreen",
+      "displayName": "allowfullscreen",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "allowfullscreen=\"\"",
+      "description": "Whether to allow the iframe 's contents to use requestFullscreen() Applies to: iframe.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-allowfullscreen"
+    },
+    {
+      "id": "html.core.attribute.alpha.f2179f149d9a",
+      "name": "alpha",
+      "displayName": "alpha",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "alpha=\"\"",
+      "description": "Allow the color's alpha component to be set Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-alpha"
+    },
+    {
+      "id": "html.core.attribute.alt.e9cdc2502293",
+      "name": "alt",
+      "displayName": "alt",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "alt=\"\"",
+      "description": "Replacement text for use when images are not available Applies to: area ; img ; input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/image-maps.html#attr-area-alt"
+    },
+    {
+      "id": "html.core.attribute.as.e757c139cd5b",
+      "name": "as",
+      "displayName": "as",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "as=\"\"",
+      "description": "Destination for a preload request (for rel =\" preload \" and rel =\" modulepreload \") Applies to: link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-as"
+    },
+    {
+      "id": "html.core.attribute.async.3999929b9c01",
+      "name": "async",
+      "displayName": "async",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "async=\"\"",
+      "description": "Execute script when available, without blocking while fetching Applies to: script.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-async"
+    },
+    {
+      "id": "html.core.attribute.autocomplete.0139d98fa756",
+      "name": "autocomplete",
+      "displayName": "autocomplete",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "autocomplete=\"\"",
+      "description": "Default setting for autofill feature for controls in the form Applies to: form.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/forms.html#attr-form-autocomplete"
+    },
+    {
+      "id": "html.core.attribute.autocomplete.d88c95a974d8",
+      "name": "autocomplete",
+      "displayName": "autocomplete",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "autocomplete=\"\"",
+      "description": "Hint for form autofill feature Applies to: input ; select ; textarea.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-autocomplete"
+    },
+    {
+      "id": "html.core.attribute.autoplay.cbc159174927",
+      "name": "autoplay",
+      "displayName": "autoplay",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "autoplay=\"\"",
+      "description": "Hint that the media resource can be started automatically when the page is loaded Applies to: audio ; video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-media-autoplay"
+    },
+    {
+      "id": "html.core.attribute.blocking.719d9bf9e92b",
+      "name": "blocking",
+      "displayName": "blocking",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "blocking=\"\"",
+      "description": "Whether the element is potentially render-blocking Applies to: link ; script ; style.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-blocking"
+    },
+    {
+      "id": "html.core.attribute.charset.368fc4b314d8",
+      "name": "charset",
+      "displayName": "charset",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "charset=\"\"",
+      "description": "Character encoding declaration Applies to: meta.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-charset"
+    },
+    {
+      "id": "html.core.attribute.checked.341b7e9ed8df",
+      "name": "checked",
+      "displayName": "checked",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "checked=\"\"",
+      "description": "Whether the control is checked Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-checked"
+    },
+    {
+      "id": "html.core.attribute.cite.fe780177a51a",
+      "name": "cite",
+      "displayName": "cite",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "cite=\"\"",
+      "description": "Link to the source of the quotation or more information about the edit Applies to: blockquote ; del ; ins ; q.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#attr-blockquote-cite"
+    },
+    {
+      "id": "html.core.attribute.closedby.a86f601fd9df",
+      "name": "closedby",
+      "displayName": "closedby",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "closedby=\"\"",
+      "description": "Which user actions will close the dialog Applies to: dialog.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interactive-elements.html#attr-dialog-closedby"
+    },
+    {
+      "id": "html.core.attribute.color.1a57849e53a8",
+      "name": "color",
+      "displayName": "color",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "color=\"\"",
+      "description": "Color to use when customizing a site's icon (for rel =\" mask-icon \") Applies to: link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-color"
+    },
+    {
+      "id": "html.core.attribute.colorspace.065a9fc2b185",
+      "name": "colorspace",
+      "displayName": "colorspace",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "colorspace=\"\"",
+      "description": "The color space of the serialized color Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-colorspace"
+    },
+    {
+      "id": "html.core.attribute.cols.02aa2e933d87",
+      "name": "cols",
+      "displayName": "cols",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "cols=\"\"",
+      "description": "Maximum number of characters per line Applies to: textarea.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-cols"
+    },
+    {
+      "id": "html.core.attribute.colspan.16f345d43593",
+      "name": "colspan",
+      "displayName": "colspan",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "colspan=\"\"",
+      "description": "Number of columns that the cell is to span Applies to: td ; th.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-colspan"
+    },
+    {
+      "id": "html.core.attribute.command.f1f7967c901a",
+      "name": "command",
+      "displayName": "command",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "command=\"\"",
+      "description": "Indicates to the targeted element which action to take. Applies to: button.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-command"
+    },
+    {
+      "id": "html.core.attribute.commandfor.c0b038a0f326",
+      "name": "commandfor",
+      "displayName": "commandfor",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "commandfor=\"\"",
+      "description": "Targets another element to be invoked. Applies to: button.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-commandfor"
+    },
+    {
+      "id": "html.core.attribute.content.14aa5cbe8c4e",
+      "name": "content",
+      "displayName": "content",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "content=\"\"",
+      "description": "Value of the element Applies to: meta.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-content"
+    },
+    {
+      "id": "html.core.attribute.controls.3925f9b64e9f",
+      "name": "controls",
+      "displayName": "controls",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "controls=\"\"",
+      "description": "Show user agent controls Applies to: audio ; video img ;.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-media-controls"
+    },
+    {
+      "id": "html.core.attribute.coords.9037c7d8006b",
+      "name": "coords",
+      "displayName": "coords",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "coords=\"\"",
+      "description": "Coordinates for the shape to be created in an image map Applies to: area.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/image-maps.html#attr-area-coords"
+    },
+    {
+      "id": "html.core.attribute.crossorigin.01667d1fad01",
+      "name": "crossorigin",
+      "displayName": "crossorigin",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "crossorigin=\"\"",
+      "description": "How the element handles crossorigin requests Applies to: audio ; img ; link ; script ; video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-media-crossorigin"
+    },
+    {
+      "id": "html.core.attribute.data.a02e238567d8",
+      "name": "data",
+      "displayName": "data",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "data=\"\"",
+      "description": "Address of the resource Applies to: object.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-data"
+    },
+    {
+      "id": "html.core.attribute.datetime.740a84181d28",
+      "name": "datetime",
+      "displayName": "datetime",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "datetime=\"\"",
+      "description": "Date and (optionally) time of the change Applies to: del ; ins.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/edits.html#attr-mod-datetime"
+    },
+    {
+      "id": "html.core.attribute.datetime.80232ca17049",
+      "name": "datetime",
+      "displayName": "datetime",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "datetime=\"\"",
+      "description": "Machine-readable value Applies to: time.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-time-datetime"
+    },
+    {
+      "id": "html.core.attribute.decoding.5bb42ee75e76",
+      "name": "decoding",
+      "displayName": "decoding",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "decoding=\"\"",
+      "description": "Decoding hint to use when processing this image for presentation Applies to: img.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-decoding"
+    },
+    {
+      "id": "html.core.attribute.default.f74cc2acc71f",
+      "name": "default",
+      "displayName": "default",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "default=\"\"",
+      "description": "Enable the track if no other text track is more suitable Applies to: track.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-track-default"
+    },
+    {
+      "id": "html.core.attribute.defer.9ad1c8cb1de9",
+      "name": "defer",
+      "displayName": "defer",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "defer=\"\"",
+      "description": "Defer script execution Applies to: script.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-defer"
+    },
+    {
+      "id": "html.core.attribute.dir.afcb755c313b",
+      "name": "dir",
+      "displayName": "dir",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "dir=\"\"",
+      "description": "The text directionality of the element Applies to: bdo.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"
+    },
+    {
+      "id": "html.core.attribute.dirname.f31d893393d0",
+      "name": "dirname",
+      "displayName": "dirname",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "dirname=\"\"",
+      "description": "Name of form control to use for sending the element's directionality in form submission Applies to: input ; textarea.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-dirname"
+    },
+    {
+      "id": "html.core.attribute.disabled.df7af22b1a2b",
+      "name": "disabled",
+      "displayName": "disabled",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "disabled=\"\"",
+      "description": "Whether the form control is disabled Applies to: button ; input ; optgroup ; option ; select ; textarea ; form-associated custom elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-disabled"
+    },
+    {
+      "id": "html.core.attribute.disabled.f43ca18ea90f",
+      "name": "disabled",
+      "displayName": "disabled",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "disabled=\"\"",
+      "description": "Whether the descendant form controls, except any inside legend , are disabled Applies to: fieldset.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-fieldset-disabled"
+    },
+    {
+      "id": "html.core.attribute.disabled.3f01764542bd",
+      "name": "disabled",
+      "displayName": "disabled",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "disabled=\"\"",
+      "description": "Whether the link is disabled Applies to: link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-disabled"
+    },
+    {
+      "id": "html.core.attribute.download.0354d9a7a3b5",
+      "name": "download",
+      "displayName": "download",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "download=\"\"",
+      "description": "Whether to download the resource instead of navigating to it, and its filename if so Applies to: a ; area.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-download"
+    },
+    {
+      "id": "html.core.attribute.enctype.8a42ca9806d2",
+      "name": "enctype",
+      "displayName": "enctype",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "enctype=\"\"",
+      "description": "Entry list encoding type to use for form submission Applies to: form.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype"
+    },
+    {
+      "id": "html.core.attribute.fetchpriority.07d7e6c33b45",
+      "name": "fetchpriority",
+      "displayName": "fetchpriority",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "fetchpriority=\"\"",
+      "description": "Sets the priority for fetches initiated by the element Applies to: img ; link ; script.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-fetchpriority"
+    },
+    {
+      "id": "html.core.attribute.for.6c0ae740e76b",
+      "name": "for",
+      "displayName": "for",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "for=\"\"",
+      "description": "Associate the label with form control Applies to: label.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/forms.html#attr-label-for"
+    },
+    {
+      "id": "html.core.attribute.for.fa998e3eabb5",
+      "name": "for",
+      "displayName": "for",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "for=\"\"",
+      "description": "Specifies controls from which the output was calculated Applies to: output.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-output-for"
+    },
+    {
+      "id": "html.core.attribute.form.4dbeaadd56a4",
+      "name": "form",
+      "displayName": "form",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "form=\"\"",
+      "description": "Associates the element with a form element Applies to: button ; fieldset ; input ; object ; output ; select ; textarea ; form-associated custom elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fae-form"
+    },
+    {
+      "id": "html.core.attribute.formaction.c5c45c1a17c1",
+      "name": "formaction",
+      "displayName": "formaction",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "formaction=\"\"",
+      "description": "URL to use for form submission Applies to: button ; input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formaction"
+    },
+    {
+      "id": "html.core.attribute.formenctype.b7eb4c056052",
+      "name": "formenctype",
+      "displayName": "formenctype",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "formenctype=\"\"",
+      "description": "Entry list encoding type to use for form submission Applies to: button ; input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formenctype"
+    },
+    {
+      "id": "html.core.attribute.formmethod.c0ff6f087052",
+      "name": "formmethod",
+      "displayName": "formmethod",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "formmethod=\"\"",
+      "description": "Variant to use for form submission Applies to: button ; input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formmethod"
+    },
+    {
+      "id": "html.core.attribute.formnovalidate.6a29f3b0016f",
+      "name": "formnovalidate",
+      "displayName": "formnovalidate",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "formnovalidate=\"\"",
+      "description": "Bypass form control validation for form submission Applies to: button ; input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formnovalidate"
+    },
+    {
+      "id": "html.core.attribute.formtarget.60938417c598",
+      "name": "formtarget",
+      "displayName": "formtarget",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "formtarget=\"\"",
+      "description": "Navigable for form submission Applies to: button ; input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget"
+    },
+    {
+      "id": "html.core.attribute.headers.8cba1df5e550",
+      "name": "headers",
+      "displayName": "headers",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "headers=\"\"",
+      "description": "The header cells for this cell Applies to: td ; th.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-headers"
+    },
+    {
+      "id": "html.core.attribute.height.3703c36186ef",
+      "name": "height",
+      "displayName": "height",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "height=\"\"",
+      "description": "Vertical dimension Applies to: canvas ; embed ; iframe ; img ; input ; object ; source (in picture ); video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/canvas.html#attr-canvas-height"
+    },
+    {
+      "id": "html.core.attribute.high.6a85c88ea67e",
+      "name": "high",
+      "displayName": "high",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "high=\"\"",
+      "description": "Low limit of high range Applies to: meter.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-meter-high"
+    },
+    {
+      "id": "html.core.attribute.href.59071c3c0bc3",
+      "name": "href",
+      "displayName": "href",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "href=\"\"",
+      "description": "Address of the hyperlink Applies to: a ; area.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href"
+    },
+    {
+      "id": "html.core.attribute.href.a3d6693dd288",
+      "name": "href",
+      "displayName": "href",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "href=\"\"",
+      "description": "Address of the hyperlink Applies to: link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-href"
+    },
+    {
+      "id": "html.core.attribute.href.731c6c0312bb",
+      "name": "href",
+      "displayName": "href",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "href=\"\"",
+      "description": "Document base URL Applies to: base.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-base-href"
+    },
+    {
+      "id": "html.core.attribute.hreflang.5c32727cbdfb",
+      "name": "hreflang",
+      "displayName": "hreflang",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "hreflang=\"\"",
+      "description": "Language of the linked resource Applies to: a ; link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-hreflang"
+    },
+    {
+      "id": "html.core.attribute.http-equiv.ee1ad336546e",
+      "name": "http-equiv",
+      "displayName": "http-equiv",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "http-equiv=\"\"",
+      "description": "Pragma directive Applies to: meta.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv"
+    },
+    {
+      "id": "html.core.attribute.imagesizes.2537a2c72aa6",
+      "name": "imagesizes",
+      "displayName": "imagesizes",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "imagesizes=\"\"",
+      "description": "Image sizes for different page layouts (for rel =\" preload \") Applies to: link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-imagesizes"
+    },
+    {
+      "id": "html.core.attribute.imagesrcset.8512532d6519",
+      "name": "imagesrcset",
+      "displayName": "imagesrcset",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "imagesrcset=\"\"",
+      "description": "Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for rel =\" preload \") Applies to: link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-imagesrcset"
+    },
+    {
+      "id": "html.core.attribute.integrity.1d7e39fe2b59",
+      "name": "integrity",
+      "displayName": "integrity",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "integrity=\"\"",
+      "description": "Integrity metadata used in Subresource Integrity checks [SRI] Applies to: link ; script.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-integrity"
+    },
+    {
+      "id": "html.core.attribute.ismap.c63cfdd58a94",
+      "name": "ismap",
+      "displayName": "ismap",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "ismap=\"\"",
+      "description": "Whether the image is a server-side image map Applies to: img.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-ismap"
+    },
+    {
+      "id": "html.core.attribute.kind.8da4fe251f67",
+      "name": "kind",
+      "displayName": "kind",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "kind=\"\"",
+      "description": "The type of text track Applies to: track.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-track-kind"
+    },
+    {
+      "id": "html.core.attribute.label.5b4d2f1ece80",
+      "name": "label",
+      "displayName": "label",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "label=\"\"",
+      "description": "User-visible label Applies to: optgroup ; option ; track.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-optgroup-label"
+    },
+    {
+      "id": "html.core.attribute.list.fe9cf7a451ce",
+      "name": "list",
+      "displayName": "list",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "list=\"\"",
+      "description": "List of autocomplete options Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-list"
+    },
+    {
+      "id": "html.core.attribute.loading.7c3cee3c4d4f",
+      "name": "loading",
+      "displayName": "loading",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "loading=\"\"",
+      "description": "Used when determining loading deferral Applies to: iframe ; img ; audio ; video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-loading"
+    },
+    {
+      "id": "html.core.attribute.loop.b3e708e3ab41",
+      "name": "loop",
+      "displayName": "loop",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "loop=\"\"",
+      "description": "Whether to loop the media resource Applies to: audio ; video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-media-loop"
+    },
+    {
+      "id": "html.core.attribute.low.a4fbe5b6fe3a",
+      "name": "low",
+      "displayName": "low",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "low=\"\"",
+      "description": "High limit of low range Applies to: meter.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-meter-low"
+    },
+    {
+      "id": "html.core.attribute.max.c1955a4b35ef",
+      "name": "max",
+      "displayName": "max",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "max=\"\"",
+      "description": "Maximum value Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-max"
+    },
+    {
+      "id": "html.core.attribute.max.4105f972dde3",
+      "name": "max",
+      "displayName": "max",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "max=\"\"",
+      "description": "Upper bound of range Applies to: meter ; progress.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-meter-max"
+    },
+    {
+      "id": "html.core.attribute.maxlength.4f04e8757d4f",
+      "name": "maxlength",
+      "displayName": "maxlength",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "maxlength=\"\"",
+      "description": "Maximum length of value Applies to: input ; textarea.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-maxlength"
+    },
+    {
+      "id": "html.core.attribute.media.97d3ac1c9c63",
+      "name": "media",
+      "displayName": "media",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "media=\"\"",
+      "description": "Applicable media Applies to: link ; meta ; source ; style.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-media"
+    },
+    {
+      "id": "html.core.attribute.method.975130b82b7c",
+      "name": "method",
+      "displayName": "method",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "method=\"\"",
+      "description": "Variant to use for form submission Applies to: form.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method"
+    },
+    {
+      "id": "html.core.attribute.min.91f0b90fdc5c",
+      "name": "min",
+      "displayName": "min",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "min=\"\"",
+      "description": "Minimum value Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-min"
+    },
+    {
+      "id": "html.core.attribute.min.a58e3af90c16",
+      "name": "min",
+      "displayName": "min",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "min=\"\"",
+      "description": "Lower bound of range Applies to: meter.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-meter-min"
+    },
+    {
+      "id": "html.core.attribute.minlength.feead548e378",
+      "name": "minlength",
+      "displayName": "minlength",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "minlength=\"\"",
+      "description": "Minimum length of value Applies to: input ; textarea.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-minlength"
+    },
+    {
+      "id": "html.core.attribute.multiple.73f845ee5b5d",
+      "name": "multiple",
+      "displayName": "multiple",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "multiple=\"\"",
+      "description": "Whether to allow multiple values Applies to: input ; select.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-multiple"
+    },
+    {
+      "id": "html.core.attribute.muted.5381d55894b7",
+      "name": "muted",
+      "displayName": "muted",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "muted=\"\"",
+      "description": "Whether to mute the media resource by default Applies to: audio ; video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-media-muted"
+    },
+    {
+      "id": "html.core.attribute.name.f8f2d5e905a1",
+      "name": "name",
+      "displayName": "name",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "name=\"\"",
+      "description": "Name of the element to use for form submission and in the form.elements API Applies to: button ; fieldset ; input ; output ; select ; textarea ; form-associated custom elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-name"
+    },
+    {
+      "id": "html.core.attribute.name.12e530851e8b",
+      "name": "name",
+      "displayName": "name",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "name=\"\"",
+      "description": "Name of group of mutually-exclusive details elements Applies to: details.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interactive-elements.html#attr-details-name"
+    },
+    {
+      "id": "html.core.attribute.name.b49b5dfdd211",
+      "name": "name",
+      "displayName": "name",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "name=\"\"",
+      "description": "Name of form to use in the document.forms API Applies to: form.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/forms.html#attr-form-name"
+    },
+    {
+      "id": "html.core.attribute.name.bfeca9799bf6",
+      "name": "name",
+      "displayName": "name",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "name=\"\"",
+      "description": "Name of content navigable Applies to: iframe ; object.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-name"
+    },
+    {
+      "id": "html.core.attribute.name.488a9e00afc2",
+      "name": "name",
+      "displayName": "name",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "name=\"\"",
+      "description": "Name of image map to reference from the usemap attribute Applies to: map.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/image-maps.html#attr-map-name"
+    },
+    {
+      "id": "html.core.attribute.name.6a9f997d9d88",
+      "name": "name",
+      "displayName": "name",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "name=\"\"",
+      "description": "Metadata name Applies to: meta.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-name"
+    },
+    {
+      "id": "html.core.attribute.name.f1cf80e238c5",
+      "name": "name",
+      "displayName": "name",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "name=\"\"",
+      "description": "Name of shadow tree slot Applies to: slot.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-slot-name"
+    },
+    {
+      "id": "html.core.attribute.nomodule.d0325d81be11",
+      "name": "nomodule",
+      "displayName": "nomodule",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "nomodule=\"\"",
+      "description": "Prevents execution in user agents that support module scripts Applies to: script.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-nomodule"
+    },
+    {
+      "id": "html.core.attribute.novalidate.f0ba0b94c490",
+      "name": "novalidate",
+      "displayName": "novalidate",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "novalidate=\"\"",
+      "description": "Bypass form control validation for form submission Applies to: form.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-novalidate"
+    },
+    {
+      "id": "html.core.attribute.open.4ab107d268fc",
+      "name": "open",
+      "displayName": "open",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "open=\"\"",
+      "description": "Whether the details are visible Applies to: details.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interactive-elements.html#attr-details-open"
+    },
+    {
+      "id": "html.core.attribute.open.03607fccceca",
+      "name": "open",
+      "displayName": "open",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "open=\"\"",
+      "description": "Whether the dialog box is showing Applies to: dialog.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interactive-elements.html#attr-dialog-open"
+    },
+    {
+      "id": "html.core.attribute.optimum.b06e522fa55a",
+      "name": "optimum",
+      "displayName": "optimum",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "optimum=\"\"",
+      "description": "Optimum value in gauge Applies to: meter.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-meter-optimum"
+    },
+    {
+      "id": "html.core.attribute.pattern.9c813990e377",
+      "name": "pattern",
+      "displayName": "pattern",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "pattern=\"\"",
+      "description": "Pattern to be matched by the form control's value Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-pattern"
+    },
+    {
+      "id": "html.core.attribute.ping.01c39bc88375",
+      "name": "ping",
+      "displayName": "ping",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "ping=\"\"",
+      "description": "URLs to ping Applies to: a ; area.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/links.html#ping"
+    },
+    {
+      "id": "html.core.attribute.placeholder.5d695f337804",
+      "name": "placeholder",
+      "displayName": "placeholder",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "placeholder=\"\"",
+      "description": "User-visible label to be placed within the form control Applies to: input ; textarea.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-placeholder"
+    },
+    {
+      "id": "html.core.attribute.playsinline.75462b5ebf41",
+      "name": "playsinline",
+      "displayName": "playsinline",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "playsinline=\"\"",
+      "description": "Encourage the user agent to display video content within the element's playback area Applies to: video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-video-playsinline"
+    },
+    {
+      "id": "html.core.attribute.popovertarget.5e9a7319d90d",
+      "name": "popovertarget",
+      "displayName": "popovertarget",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "popovertarget=\"\"",
+      "description": "Targets a popover element to toggle, show, or hide Applies to: button ; input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/popover.html#attr-popovertarget"
+    },
+    {
+      "id": "html.core.attribute.popovertargetaction.d4d18c59c8d6",
+      "name": "popovertargetaction",
+      "displayName": "popovertargetaction",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "popovertargetaction=\"\"",
+      "description": "Indicates whether a targeted popover element is to be toggled, shown, or hidden Applies to: button ; input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/popover.html#attr-popovertargetaction"
+    },
+    {
+      "id": "html.core.attribute.poster.cd2c0a4ed0db",
+      "name": "poster",
+      "displayName": "poster",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "poster=\"\"",
+      "description": "Poster frame to show prior to video playback Applies to: video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-video-poster"
+    },
+    {
+      "id": "html.core.attribute.preload.2873d57dcab7",
+      "name": "preload",
+      "displayName": "preload",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "preload=\"\"",
+      "description": "Hints how much buffering the media resource will likely need Applies to: audio ; video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-media-preload"
+    },
+    {
+      "id": "html.core.attribute.readonly.23024ca7b4f6",
+      "name": "readonly",
+      "displayName": "readonly",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "readonly=\"\"",
+      "description": "Whether to allow the value to be edited by the user Applies to: input ; textarea.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-readonly"
+    },
+    {
+      "id": "html.core.attribute.readonly.0f14fae3a5ca",
+      "name": "readonly",
+      "displayName": "readonly",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "readonly=\"\"",
+      "description": "Affects willValidate , plus any behavior added by the custom element author Applies to: form-associated custom elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/custom-elements.html#attr-face-readonly"
+    },
+    {
+      "id": "html.core.attribute.referrerpolicy.e60c3e29149c",
+      "name": "referrerpolicy",
+      "displayName": "referrerpolicy",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "referrerpolicy=\"\"",
+      "description": "Referrer policy for fetches initiated by the element Applies to: a ; area ; iframe ; img ; link ; script.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-referrerpolicy"
+    },
+    {
+      "id": "html.core.attribute.rel.740bc1700636",
+      "name": "rel",
+      "displayName": "rel",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "rel=\"\"",
+      "description": "Relationship between the location in the document containing the hyperlink and the destination resource Applies to: a ; area.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-rel"
+    },
+    {
+      "id": "html.core.attribute.rel.7bff21f75ab7",
+      "name": "rel",
+      "displayName": "rel",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "rel=\"\"",
+      "description": "Relationship between the document containing the hyperlink and the destination resource Applies to: link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel"
+    },
+    {
+      "id": "html.core.attribute.required.eb6b7113ad36",
+      "name": "required",
+      "displayName": "required",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "required=\"\"",
+      "description": "Whether the control is required for form submission Applies to: input ; select ; textarea.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-required"
+    },
+    {
+      "id": "html.core.attribute.reversed.3e6149296b5f",
+      "name": "reversed",
+      "displayName": "reversed",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "reversed=\"\"",
+      "description": "Number the list backwards Applies to: ol.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#attr-ol-reversed"
+    },
+    {
+      "id": "html.core.attribute.rows.7e1f76b776a7",
+      "name": "rows",
+      "displayName": "rows",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "rows=\"\"",
+      "description": "Number of lines to show Applies to: textarea.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-rows"
+    },
+    {
+      "id": "html.core.attribute.rowspan.1f348f45ee0d",
+      "name": "rowspan",
+      "displayName": "rowspan",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "rowspan=\"\"",
+      "description": "Number of rows that the cell is to span Applies to: td ; th.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-rowspan"
+    },
+    {
+      "id": "html.core.attribute.sandbox.a9dec74d9cb8",
+      "name": "sandbox",
+      "displayName": "sandbox",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "sandbox=\"\"",
+      "description": "Security rules for nested content Applies to: iframe.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-sandbox"
+    },
+    {
+      "id": "html.core.attribute.scope.8ad2cab6b3de",
+      "name": "scope",
+      "displayName": "scope",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "scope=\"\"",
+      "description": "Specifies which cells the header cell applies to Applies to: th.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#attr-th-scope"
+    },
+    {
+      "id": "html.core.attribute.selected.27b9a77b7971",
+      "name": "selected",
+      "displayName": "selected",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "selected=\"\"",
+      "description": "Whether the option is selected by default Applies to: option.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-option-selected"
+    },
+    {
+      "id": "html.core.attribute.shadowrootclonable.291635fba353",
+      "name": "shadowrootclonable",
+      "displayName": "shadowrootclonable",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "shadowrootclonable=\"\"",
+      "description": "Sets clonable on a declarative shadow root Applies to: template.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootclonable"
+    },
+    {
+      "id": "html.core.attribute.shadowrootcustomelementregistry.05822ca8a378",
+      "name": "shadowrootcustomelementregistry",
+      "displayName": "shadowrootcustomelementregistry",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "shadowrootcustomelementregistry=\"\"",
+      "description": "Enables declarative shadow roots to indicate they will use a custom element registry Applies to: template.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootcustomelementregistry"
+    },
+    {
+      "id": "html.core.attribute.shadowrootdelegatesfocus.41fb4272ae50",
+      "name": "shadowrootdelegatesfocus",
+      "displayName": "shadowrootdelegatesfocus",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "shadowrootdelegatesfocus=\"\"",
+      "description": "Sets delegates focus on a declarative shadow root Applies to: template.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootdelegatesfocus"
+    },
+    {
+      "id": "html.core.attribute.shadowrootmode.7c21779b8db0",
+      "name": "shadowrootmode",
+      "displayName": "shadowrootmode",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "shadowrootmode=\"\"",
+      "description": "Enables streaming declarative shadow roots Applies to: template.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootmode"
+    },
+    {
+      "id": "html.core.attribute.shadowrootserializable.8a9079119da0",
+      "name": "shadowrootserializable",
+      "displayName": "shadowrootserializable",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "shadowrootserializable=\"\"",
+      "description": "Sets serializable on a declarative shadow root Applies to: template.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootserializable"
+    },
+    {
+      "id": "html.core.attribute.shadowrootslotassignment.2df5393db80b",
+      "name": "shadowrootslotassignment",
+      "displayName": "shadowrootslotassignment",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "shadowrootslotassignment=\"\"",
+      "description": "Sets slot assignment on a declarative shadow root Applies to: template.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootslotassignment"
+    },
+    {
+      "id": "html.core.attribute.shape.0ee9a9102a47",
+      "name": "shape",
+      "displayName": "shape",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "shape=\"\"",
+      "description": "The kind of shape to be created in an image map Applies to: area.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/image-maps.html#attr-area-shape"
+    },
+    {
+      "id": "html.core.attribute.size.d6f6bea79b9e",
+      "name": "size",
+      "displayName": "size",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "size=\"\"",
+      "description": "Size of the control Applies to: input ; select.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-size"
+    },
+    {
+      "id": "html.core.attribute.sizes.b34168ec6b1d",
+      "name": "sizes",
+      "displayName": "sizes",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "sizes=\"\"",
+      "description": "Sizes of the icons (for rel =\" icon \") Applies to: link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-sizes"
+    },
+    {
+      "id": "html.core.attribute.sizes.0af17c21a1f4",
+      "name": "sizes",
+      "displayName": "sizes",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "sizes=\"\"",
+      "description": "Image sizes for different page layouts Applies to: img ; source.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-sizes"
+    },
+    {
+      "id": "html.core.attribute.span.a1c811184da2",
+      "name": "span",
+      "displayName": "span",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "span=\"\"",
+      "description": "Number of columns spanned by the element Applies to: col ; colgroup.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#attr-col-span"
+    },
+    {
+      "id": "html.core.attribute.src.d0f3fef3ccf4",
+      "name": "src",
+      "displayName": "src",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "src=\"\"",
+      "description": "Address of the resource Applies to: audio ; embed ; iframe ; img ; input ; script ; source (in video or audio ); track ; video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-media-src"
+    },
+    {
+      "id": "html.core.attribute.srcdoc.15a7dca95582",
+      "name": "srcdoc",
+      "displayName": "srcdoc",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "srcdoc=\"\"",
+      "description": "A document to render in the iframe Applies to: iframe.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-srcdoc"
+    },
+    {
+      "id": "html.core.attribute.srclang.437b064fbb0f",
+      "name": "srclang",
+      "displayName": "srclang",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "srclang=\"\"",
+      "description": "Language of the text track Applies to: track.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#attr-track-srclang"
+    },
+    {
+      "id": "html.core.attribute.srcset.eb6f9f2db0e0",
+      "name": "srcset",
+      "displayName": "srcset",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "srcset=\"\"",
+      "description": "Images to use in different situations, e.g., high-resolution displays, small monitors, etc. Applies to: img ; source.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset"
+    },
+    {
+      "id": "html.core.attribute.start.1725f7e07207",
+      "name": "start",
+      "displayName": "start",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "start=\"\"",
+      "description": "Starting value of the list Applies to: ol.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#attr-ol-start"
+    },
+    {
+      "id": "html.core.attribute.step.4cdc4235bc23",
+      "name": "step",
+      "displayName": "step",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "step=\"\"",
+      "description": "Granularity to be matched by the form control's value Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-step"
+    },
+    {
+      "id": "html.core.attribute.target.8e11a3b5747f",
+      "name": "target",
+      "displayName": "target",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "target=\"\"",
+      "description": "Navigable for hyperlink navigation Applies to: a ; area.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-target"
+    },
+    {
+      "id": "html.core.attribute.target.ac158e0946d4",
+      "name": "target",
+      "displayName": "target",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "target=\"\"",
+      "description": "Default navigable for hyperlink navigation and form submission Applies to: base.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-base-target"
+    },
+    {
+      "id": "html.core.attribute.target.d3487615428e",
+      "name": "target",
+      "displayName": "target",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "target=\"\"",
+      "description": "Navigable for form submission Applies to: form.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-target"
+    },
+    {
+      "id": "html.core.attribute.title.7981ea0ee15a",
+      "name": "title",
+      "displayName": "title",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "title=\"\"",
+      "description": "Full term or expansion of abbreviation Applies to: abbr ; dfn.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title"
+    },
+    {
+      "id": "html.core.attribute.title.cb6d58f72f2b",
+      "name": "title",
+      "displayName": "title",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "title=\"\"",
+      "description": "Description of pattern (when used with pattern attribute) Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-title"
+    },
+    {
+      "id": "html.core.attribute.title.5ee165428591",
+      "name": "title",
+      "displayName": "title",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "title=\"\"",
+      "description": "Title of the link Applies to: link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-title"
+    },
+    {
+      "id": "html.core.attribute.title.a27c15c9ad29",
+      "name": "title",
+      "displayName": "title",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "title=\"\"",
+      "description": "CSS style sheet set name Applies to: link ; style.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-title"
+    },
+    {
+      "id": "html.core.attribute.type.dc9d670f36bd",
+      "name": "type",
+      "displayName": "type",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "type=\"\"",
+      "description": "Hint for the type of the referenced resource Applies to: a ; link.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-type"
+    },
+    {
+      "id": "html.core.attribute.type.d8b0a99db2f2",
+      "name": "type",
+      "displayName": "type",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "type=\"\"",
+      "description": "Type of button Applies to: button.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-type"
+    },
+    {
+      "id": "html.core.attribute.type.9f349a27f8ae",
+      "name": "type",
+      "displayName": "type",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "type=\"\"",
+      "description": "Type of embedded resource Applies to: embed ; object ; source.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-embed-type"
+    },
+    {
+      "id": "html.core.attribute.type.b0093c2ba1cd",
+      "name": "type",
+      "displayName": "type",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "type=\"\"",
+      "description": "Type of form control Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-type"
+    },
+    {
+      "id": "html.core.attribute.type.21a5764a9d7e",
+      "name": "type",
+      "displayName": "type",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "type=\"\"",
+      "description": "Kind of list marker Applies to: ol.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#attr-ol-type"
+    },
+    {
+      "id": "html.core.attribute.type.d87196fe2112",
+      "name": "type",
+      "displayName": "type",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "type=\"\"",
+      "description": "Type of script Applies to: script.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-type"
+    },
+    {
+      "id": "html.core.attribute.usemap.2152cb91a327",
+      "name": "usemap",
+      "displayName": "usemap",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "usemap=\"\"",
+      "description": "Name of image map to use Applies to: img.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/image-maps.html#attr-hyperlink-usemap"
+    },
+    {
+      "id": "html.core.attribute.value.9a2fe717370a",
+      "name": "value",
+      "displayName": "value",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "value=\"\"",
+      "description": "Value to be used for form submission Applies to: button ; option.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-value"
+    },
+    {
+      "id": "html.core.attribute.value.29394e99f4ea",
+      "name": "value",
+      "displayName": "value",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "value=\"\"",
+      "description": "Machine-readable value Applies to: data.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-data-value"
+    },
+    {
+      "id": "html.core.attribute.value.f73a10abde11",
+      "name": "value",
+      "displayName": "value",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "value=\"\"",
+      "description": "Value of the form control Applies to: input.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#attr-input-value"
+    },
+    {
+      "id": "html.core.attribute.value.f4498fcc1473",
+      "name": "value",
+      "displayName": "value",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "value=\"\"",
+      "description": "Ordinal value of the list item Applies to: li.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#attr-li-value"
+    },
+    {
+      "id": "html.core.attribute.value.c79a8f82738d",
+      "name": "value",
+      "displayName": "value",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "value=\"\"",
+      "description": "Current value of the element Applies to: meter ; progress.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-meter-value"
+    },
+    {
+      "id": "html.core.attribute.width.928c115496d6",
+      "name": "width",
+      "displayName": "width",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "width=\"\"",
+      "description": "Horizontal dimension Applies to: canvas ; embed ; iframe ; img ; input ; object ; source (in picture ); video.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/canvas.html#attr-canvas-width"
+    },
+    {
+      "id": "html.core.attribute.wrap.82ebcc7d1409",
+      "name": "wrap",
+      "displayName": "wrap",
+      "symbolKind": "Attribute",
+      "category": "Element-specific attributes",
+      "signature": "wrap=\"\"",
+      "description": "How the value of the form control is to be wrapped for form submission Applies to: textarea.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap"
+    },
+    {
+      "id": "html.core.attribute.accesskey.22d2adc1965c",
+      "name": "accesskey",
+      "displayName": "accesskey",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "accesskey=\"\"",
+      "description": "Keyboard shortcut to activate or focus element Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute"
+    },
+    {
+      "id": "html.core.attribute.autocapitalize.179cd4405604",
+      "name": "autocapitalize",
+      "displayName": "autocapitalize",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "autocapitalize=\"\"",
+      "description": "Recommended autocapitalization behavior (for supported input methods) Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-autocapitalize"
+    },
+    {
+      "id": "html.core.attribute.autocorrect.05f9f30273c6",
+      "name": "autocorrect",
+      "displayName": "autocorrect",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "autocorrect=\"\"",
+      "description": "Recommended autocorrection behavior (for supported input methods) Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-autocorrect"
+    },
+    {
+      "id": "html.core.attribute.autofocus.9f475dc0ae2a",
+      "name": "autofocus",
+      "displayName": "autofocus",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "autofocus=\"\"",
+      "description": "Automatically focus the element when the page is loaded Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-fe-autofocus"
+    },
+    {
+      "id": "html.core.attribute.class.9e497b3d3b19",
+      "name": "class",
+      "displayName": "class",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "class=\"\"",
+      "description": "Classes to which the element belongs Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/dom.html#classes"
+    },
+    {
+      "id": "html.core.attribute.contenteditable.fc7e95948bb0",
+      "name": "contenteditable",
+      "displayName": "contenteditable",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "contenteditable=\"\"",
+      "description": "Whether the element is editable Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-contenteditable"
+    },
+    {
+      "id": "html.core.attribute.dir.36372cb1569b",
+      "name": "dir",
+      "displayName": "dir",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "dir=\"\"",
+      "description": "The text directionality of the element Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/dom.html#attr-dir"
+    },
+    {
+      "id": "html.core.attribute.draggable.105689ea8f1d",
+      "name": "draggable",
+      "displayName": "draggable",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "draggable=\"\"",
+      "description": "Whether the element is draggable Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/dnd.html#attr-draggable"
+    },
+    {
+      "id": "html.core.attribute.enterkeyhint.dd0bdd4ed7cd",
+      "name": "enterkeyhint",
+      "displayName": "enterkeyhint",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "enterkeyhint=\"\"",
+      "description": "Hint for selecting an enter key action Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-enterkeyhint"
+    },
+    {
+      "id": "html.core.attribute.headingoffset.fee21e40c91a",
+      "name": "headingoffset",
+      "displayName": "headingoffset",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "headingoffset=\"\"",
+      "description": "Offsets heading levels for descendants Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-tabindex"
+    },
+    {
+      "id": "html.core.attribute.headingreset.48c9bb4af67d",
+      "name": "headingreset",
+      "displayName": "headingreset",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "headingreset=\"\"",
+      "description": "Prevents a heading offset computation from traversing beyond the element with the attribute Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-tabindex"
+    },
+    {
+      "id": "html.core.attribute.hidden.83962ccee987",
+      "name": "hidden",
+      "displayName": "hidden",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "hidden=\"\"",
+      "description": "Whether the element is relevant Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-hidden"
+    },
+    {
+      "id": "html.core.attribute.id.d6e65e3ee1cd",
+      "name": "id",
+      "displayName": "id",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "id=\"\"",
+      "description": "The element's ID Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute"
+    },
+    {
+      "id": "html.core.attribute.inert.51d7bc820d70",
+      "name": "inert",
+      "displayName": "inert",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "inert=\"\"",
+      "description": "Whether the element is inert . Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#the-inert-attribute"
+    },
+    {
+      "id": "html.core.attribute.inputmode.57c27dd634ae",
+      "name": "inputmode",
+      "displayName": "inputmode",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "inputmode=\"\"",
+      "description": "Hint for selecting an input modality Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode"
+    },
+    {
+      "id": "html.core.attribute.is.221d64aa9e72",
+      "name": "is",
+      "displayName": "is",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "is=\"\"",
+      "description": "Creates a customized built-in element Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is"
+    },
+    {
+      "id": "html.core.attribute.itemid.4fa834255fd4",
+      "name": "itemid",
+      "displayName": "itemid",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "itemid=\"\"",
+      "description": "Global identifier for a microdata item Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/microdata.html#attr-itemid"
+    },
+    {
+      "id": "html.core.attribute.itemprop.0073d8dbadb7",
+      "name": "itemprop",
+      "displayName": "itemprop",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "itemprop=\"\"",
+      "description": "Property names of a microdata item Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/microdata.html#names:-the-itemprop-attribute"
+    },
+    {
+      "id": "html.core.attribute.itemref.38d5a236c847",
+      "name": "itemref",
+      "displayName": "itemref",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "itemref=\"\"",
+      "description": "Referenced elements Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/microdata.html#attr-itemref"
+    },
+    {
+      "id": "html.core.attribute.itemscope.ef62cc56daed",
+      "name": "itemscope",
+      "displayName": "itemscope",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "itemscope=\"\"",
+      "description": "Introduces a microdata item Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/microdata.html#attr-itemscope"
+    },
+    {
+      "id": "html.core.attribute.itemtype.dd1eb98efe3a",
+      "name": "itemtype",
+      "displayName": "itemtype",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "itemtype=\"\"",
+      "description": "Item types of a microdata item Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/microdata.html#attr-itemtype"
+    },
+    {
+      "id": "html.core.attribute.lang.ea74ee70732f",
+      "name": "lang",
+      "displayName": "lang",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "lang=\"\"",
+      "description": "Language of the element Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/dom.html#attr-lang"
+    },
+    {
+      "id": "html.core.attribute.nonce.de1514d96531",
+      "name": "nonce",
+      "displayName": "nonce",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "nonce=\"\"",
+      "description": "Cryptographic nonce used in Content Security Policy checks [CSP] Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#attr-nonce"
+    },
+    {
+      "id": "html.core.attribute.popover.aabe09eedce2",
+      "name": "popover",
+      "displayName": "popover",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "popover=\"\"",
+      "description": "Makes the element a popover element Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/popover.html#attr-popover"
+    },
+    {
+      "id": "html.core.attribute.slot.57019c3342ea",
+      "name": "slot",
+      "displayName": "slot",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "slot=\"\"",
+      "description": "The element's desired slot Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute"
+    },
+    {
+      "id": "html.core.attribute.spellcheck.68c0bcabacea",
+      "name": "spellcheck",
+      "displayName": "spellcheck",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "spellcheck=\"\"",
+      "description": "Whether the element is to have its spelling and grammar checked Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-spellcheck"
+    },
+    {
+      "id": "html.core.attribute.style.271bff27ee5f",
+      "name": "style",
+      "displayName": "style",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "style=\"\"",
+      "description": "Presentational and formatting instructions Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/dom.html#attr-style"
+    },
+    {
+      "id": "html.core.attribute.tabindex.3e90bd11a91a",
+      "name": "tabindex",
+      "displayName": "tabindex",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "tabindex=\"\"",
+      "description": "Whether the element is focusable and sequentially focusable , and the relative order of the element for the purposes of sequential focus navigation Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-tabindex"
+    },
+    {
+      "id": "html.core.attribute.title.67ee9830e94a",
+      "name": "title",
+      "displayName": "title",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "title=\"\"",
+      "description": "Advisory information for the element Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/dom.html#attr-title"
+    },
+    {
+      "id": "html.core.attribute.translate.4caac11c9c8b",
+      "name": "translate",
+      "displayName": "translate",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "translate=\"\"",
+      "description": "Whether the element is to be translated when the page is localized Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/dom.html#attr-translate"
+    },
+    {
+      "id": "html.core.attribute.writingsuggestions.7104ef305a6b",
+      "name": "writingsuggestions",
+      "displayName": "writingsuggestions",
+      "symbolKind": "Attribute",
+      "category": "Global attributes",
+      "signature": "writingsuggestions=\"\"",
+      "description": "Whether the element can offer writing suggestions or not. Applies to: HTML elements.",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interaction.html#attr-writingsuggestions"
+    },
+    {
+      "id": "html.core.element.body.46e506b32e8e",
+      "name": "body",
+      "displayName": "<body>",
+      "symbolKind": "Element",
+      "category": "Document structure",
+      "signature": "<body></body>",
+      "description": "Document body",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/sections.html#the-body-element"
+    },
+    {
+      "id": "html.core.element.head.479f9fcf2ebb",
+      "name": "head",
+      "displayName": "<head>",
+      "symbolKind": "Element",
+      "category": "Document structure",
+      "signature": "<head></head>",
+      "description": "Container for document metadata",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#the-head-element"
+    },
+    {
+      "id": "html.core.element.html.58eadb73a542",
+      "name": "html",
+      "displayName": "<html>",
+      "symbolKind": "Element",
+      "category": "Document structure",
+      "signature": "<html></html>",
+      "description": "Root element",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#the-html-element"
+    },
+    {
+      "id": "html.core.element.audio.d0debbfdcc8a",
+      "name": "audio",
+      "displayName": "<audio>",
+      "symbolKind": "Element",
+      "category": "Embedded content",
+      "signature": "<audio></audio>",
+      "description": "Audio player",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#the-audio-element"
+    },
+    {
+      "id": "html.core.element.canvas.dc609b3e2a45",
+      "name": "canvas",
+      "displayName": "<canvas>",
+      "symbolKind": "Element",
+      "category": "Embedded content",
+      "signature": "<canvas></canvas>",
+      "description": "Scriptable bitmap canvas",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element"
+    },
+    {
+      "id": "html.core.element.embed.9d2199667eb3",
+      "name": "embed",
+      "displayName": "<embed>",
+      "symbolKind": "Element",
+      "category": "Embedded content",
+      "signature": "<embed>",
+      "description": "Plugin",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-embed-element"
+    },
+    {
+      "id": "html.core.element.iframe.e55e905bdc80",
+      "name": "iframe",
+      "displayName": "<iframe>",
+      "symbolKind": "Element",
+      "category": "Embedded content",
+      "signature": "<iframe></iframe>",
+      "description": "Child navigable",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"
+    },
+    {
+      "id": "html.core.element.img.dbfc095ca4f8",
+      "name": "img",
+      "displayName": "<img>",
+      "symbolKind": "Element",
+      "category": "Embedded content",
+      "signature": "<img>",
+      "description": "Image",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"
+    },
+    {
+      "id": "html.core.element.object.b59328e7ca4c",
+      "name": "object",
+      "displayName": "<object>",
+      "symbolKind": "Element",
+      "category": "Embedded content",
+      "signature": "<object></object>",
+      "description": "Image, child navigable , or plugin",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element"
+    },
+    {
+      "id": "html.core.element.picture.f71bb82a0ed5",
+      "name": "picture",
+      "displayName": "<picture>",
+      "symbolKind": "Element",
+      "category": "Embedded content",
+      "signature": "<picture></picture>",
+      "description": "Image",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element"
+    },
+    {
+      "id": "html.core.element.video.934b5fa6bf67",
+      "name": "video",
+      "displayName": "<video>",
+      "symbolKind": "Element",
+      "category": "Embedded content",
+      "signature": "<video></video>",
+      "description": "Video player",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#the-video-element"
+    },
+    {
+      "id": "html.core.element.address.9675df84e0f0",
+      "name": "address",
+      "displayName": "<address>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<address></address>",
+      "description": "Contact information for a page or article element",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/sections.html#the-address-element"
+    },
+    {
+      "id": "html.core.element.blockquote.fa64584c184e",
+      "name": "blockquote",
+      "displayName": "<blockquote>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<blockquote></blockquote>",
+      "description": "A section quoted from another source",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element"
+    },
+    {
+      "id": "html.core.element.dialog.8e4f19ad90b4",
+      "name": "dialog",
+      "displayName": "<dialog>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<dialog></dialog>",
+      "description": "Dialog box or window",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element"
+    },
+    {
+      "id": "html.core.element.div.f4063b14ddf9",
+      "name": "div",
+      "displayName": "<div>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<div></div>",
+      "description": "Generic flow container, or container for name-value groups in dl elements",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"
+    },
+    {
+      "id": "html.core.element.dl.1315be704595",
+      "name": "dl",
+      "displayName": "<dl>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<dl></dl>",
+      "description": "Association list consisting of zero or more name-value groups",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"
+    },
+    {
+      "id": "html.core.element.fieldset.ec2b33c8bbfb",
+      "name": "fieldset",
+      "displayName": "<fieldset>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<fieldset></fieldset>",
+      "description": "Group of form controls",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"
+    },
+    {
+      "id": "html.core.element.figure.143d25c3b0bf",
+      "name": "figure",
+      "displayName": "<figure>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<figure></figure>",
+      "description": "Figure with optional caption",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element"
+    },
+    {
+      "id": "html.core.element.footer.2fed1970073b",
+      "name": "footer",
+      "displayName": "<footer>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<footer></footer>",
+      "description": "Footer for a page or section",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"
+    },
+    {
+      "id": "html.core.element.form.ada82eb4bb6f",
+      "name": "form",
+      "displayName": "<form>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<form></form>",
+      "description": "User-submittable form",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/forms.html#the-form-element"
+    },
+    {
+      "id": "html.core.element.header.b15acd90c0a5",
+      "name": "header",
+      "displayName": "<header>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<header></header>",
+      "description": "Introductory or navigational aids for a page or section",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/sections.html#the-header-element"
+    },
+    {
+      "id": "html.core.element.hgroup.833a4a9536e2",
+      "name": "hgroup",
+      "displayName": "<hgroup>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<hgroup></hgroup>",
+      "description": "Heading container",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"
+    },
+    {
+      "id": "html.core.element.hr.462ba91adc56",
+      "name": "hr",
+      "displayName": "<hr>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<hr>",
+      "description": "Thematic break",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"
+    },
+    {
+      "id": "html.core.element.main.497c67314e57",
+      "name": "main",
+      "displayName": "<main>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<main></main>",
+      "description": "Container for the dominant contents of the document",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"
+    },
+    {
+      "id": "html.core.element.menu.81e58550c201",
+      "name": "menu",
+      "displayName": "<menu>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<menu></menu>",
+      "description": "Menu of commands",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element"
+    },
+    {
+      "id": "html.core.element.ol.d18b853e2747",
+      "name": "ol",
+      "displayName": "<ol>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<ol></ol>",
+      "description": "Ordered list",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"
+    },
+    {
+      "id": "html.core.element.p.06a4cb947f69",
+      "name": "p",
+      "displayName": "<p>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<p></p>",
+      "description": "Paragraph",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element"
+    },
+    {
+      "id": "html.core.element.pre.a159a79235f8",
+      "name": "pre",
+      "displayName": "<pre>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<pre></pre>",
+      "description": "Block of preformatted text",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element"
+    },
+    {
+      "id": "html.core.element.search.9a71822d9a21",
+      "name": "search",
+      "displayName": "<search>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<search></search>",
+      "description": "Container for search controls",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-search-element"
+    },
+    {
+      "id": "html.core.element.table.63b7f94b87c5",
+      "name": "table",
+      "displayName": "<table>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<table></table>",
+      "description": "Table",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#the-table-element"
+    },
+    {
+      "id": "html.core.element.ul.42072d3f877a",
+      "name": "ul",
+      "displayName": "<ul>",
+      "symbolKind": "Element",
+      "category": "Flow content",
+      "signature": "<ul></ul>",
+      "description": "List",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"
+    },
+    {
+      "id": "html.core.element.a.5cb8be5e72d2",
+      "name": "a",
+      "displayName": "<a>",
+      "symbolKind": "Element",
+      "category": "Interactive content",
+      "signature": "<a></a>",
+      "description": "Hyperlink",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"
+    },
+    {
+      "id": "html.core.element.button.c1e5f8852e3a",
+      "name": "button",
+      "displayName": "<button>",
+      "symbolKind": "Element",
+      "category": "Interactive content",
+      "signature": "<button></button>",
+      "description": "Button control",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element"
+    },
+    {
+      "id": "html.core.element.details.7eb701fad754",
+      "name": "details",
+      "displayName": "<details>",
+      "symbolKind": "Element",
+      "category": "Interactive content",
+      "signature": "<details></details>",
+      "description": "Disclosure control for hiding details",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"
+    },
+    {
+      "id": "html.core.element.input.636392c00a97",
+      "name": "input",
+      "displayName": "<input>",
+      "symbolKind": "Element",
+      "category": "Interactive content",
+      "signature": "<input>",
+      "description": "Form control",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/input.html#the-input-element"
+    },
+    {
+      "id": "html.core.element.label.b4bce8e7a898",
+      "name": "label",
+      "displayName": "<label>",
+      "symbolKind": "Element",
+      "category": "Interactive content",
+      "signature": "<label></label>",
+      "description": "Caption for a form control",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/forms.html#the-label-element"
+    },
+    {
+      "id": "html.core.element.select.d0c8eda9b18c",
+      "name": "select",
+      "displayName": "<select>",
+      "symbolKind": "Element",
+      "category": "Interactive content",
+      "signature": "<select></select>",
+      "description": "List box control",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"
+    },
+    {
+      "id": "html.core.element.textarea.e4098c87dc8f",
+      "name": "textarea",
+      "displayName": "<textarea>",
+      "symbolKind": "Element",
+      "category": "Interactive content",
+      "signature": "<textarea></textarea>",
+      "description": "Multiline text controls",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element"
+    },
+    {
+      "id": "html.core.element.th.7f97125e4590",
+      "name": "th",
+      "displayName": "<th>",
+      "symbolKind": "Element",
+      "category": "Interactive content",
+      "signature": "<th></th>",
+      "description": "Table header cell",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#the-th-element"
+    },
+    {
+      "id": "html.core.element.base.9be9ae5d2e54",
+      "name": "base",
+      "displayName": "<base>",
+      "symbolKind": "Element",
+      "category": "Metadata",
+      "signature": "<base>",
+      "description": "Base URL and default target navigable for hyperlinks and forms",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#the-base-element"
+    },
+    {
+      "id": "html.core.element.link.4f5f5cc8a8dc",
+      "name": "link",
+      "displayName": "<link>",
+      "symbolKind": "Element",
+      "category": "Metadata",
+      "signature": "<link>",
+      "description": "Link metadata",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#the-link-element"
+    },
+    {
+      "id": "html.core.element.meta.eec112625be4",
+      "name": "meta",
+      "displayName": "<meta>",
+      "symbolKind": "Element",
+      "category": "Metadata",
+      "signature": "<meta>",
+      "description": "Text metadata",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element"
+    },
+    {
+      "id": "html.core.element.noscript.2266673c402e",
+      "name": "noscript",
+      "displayName": "<noscript>",
+      "symbolKind": "Element",
+      "category": "Metadata",
+      "signature": "<noscript></noscript>",
+      "description": "Fallback content for script",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element"
+    },
+    {
+      "id": "html.core.element.script.8f4a48a59f05",
+      "name": "script",
+      "displayName": "<script>",
+      "symbolKind": "Element",
+      "category": "Metadata",
+      "signature": "<script></script>",
+      "description": "Embedded script",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#the-script-element"
+    },
+    {
+      "id": "html.core.element.style.c2049ad9d61b",
+      "name": "style",
+      "displayName": "<style>",
+      "symbolKind": "Element",
+      "category": "Metadata",
+      "signature": "<style></style>",
+      "description": "Embedded styling information",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#the-style-element"
+    },
+    {
+      "id": "html.core.element.template.68dc6e65685a",
+      "name": "template",
+      "displayName": "<template>",
+      "symbolKind": "Element",
+      "category": "Metadata",
+      "signature": "<template></template>",
+      "description": "Template",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#the-template-element"
+    },
+    {
+      "id": "html.core.element.title.813e2859640c",
+      "name": "title",
+      "displayName": "<title>",
+      "symbolKind": "Element",
+      "category": "Metadata",
+      "signature": "<title></title>",
+      "description": "Document title",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/semantics.html#the-title-element"
+    },
+    {
+      "id": "html.core.element.caption.cc7504246c30",
+      "name": "caption",
+      "displayName": "<caption>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<caption></caption>",
+      "description": "Table caption",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#the-caption-element"
+    },
+    {
+      "id": "html.core.element.col.a34ff318e635",
+      "name": "col",
+      "displayName": "<col>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<col>",
+      "description": "Table column",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#the-col-element"
+    },
+    {
+      "id": "html.core.element.colgroup.226d99a4aa94",
+      "name": "colgroup",
+      "displayName": "<colgroup>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<colgroup></colgroup>",
+      "description": "Group of columns in a table",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#the-colgroup-element"
+    },
+    {
+      "id": "html.core.element.dd.645631728667",
+      "name": "dd",
+      "displayName": "<dd>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<dd></dd>",
+      "description": "Content for corresponding dt element(s)",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element"
+    },
+    {
+      "id": "html.core.element.dt.8c4c8ceade2b",
+      "name": "dt",
+      "displayName": "<dt>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<dt></dt>",
+      "description": "Legend for corresponding dd element(s)",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element"
+    },
+    {
+      "id": "html.core.element.figcaption.1f3ca61d91f8",
+      "name": "figcaption",
+      "displayName": "<figcaption>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<figcaption></figcaption>",
+      "description": "Caption for figure",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element"
+    },
+    {
+      "id": "html.core.element.legend.3fac902f29b0",
+      "name": "legend",
+      "displayName": "<legend>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<legend></legend>",
+      "description": "Caption for fieldset",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element"
+    },
+    {
+      "id": "html.core.element.li.afd35ac5f1b7",
+      "name": "li",
+      "displayName": "<li>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<li></li>",
+      "description": "List item",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element"
+    },
+    {
+      "id": "html.core.element.optgroup.9539110e6e57",
+      "name": "optgroup",
+      "displayName": "<optgroup>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<optgroup></optgroup>",
+      "description": "Group of options in a list box",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element"
+    },
+    {
+      "id": "html.core.element.option.5d0bee00bf56",
+      "name": "option",
+      "displayName": "<option>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<option></option>",
+      "description": "Option in a list box or combo box control",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element"
+    },
+    {
+      "id": "html.core.element.rp.89edf6b7667a",
+      "name": "rp",
+      "displayName": "<rp>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<rp></rp>",
+      "description": "Parenthesis for ruby annotation text",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element"
+    },
+    {
+      "id": "html.core.element.rt.2dbfc6a0bd97",
+      "name": "rt",
+      "displayName": "<rt>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<rt></rt>",
+      "description": "Ruby annotation text",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element"
+    },
+    {
+      "id": "html.core.element.selectedcontent.9ee9bfe9461a",
+      "name": "selectedcontent",
+      "displayName": "<selectedcontent>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<selectedcontent></selectedcontent>",
+      "description": "Mirrors content from an option",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-selectedcontent-element"
+    },
+    {
+      "id": "html.core.element.source.600b83d96524",
+      "name": "source",
+      "displayName": "<source>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<source>",
+      "description": "Image source for img or media source for video or audio",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element"
+    },
+    {
+      "id": "html.core.element.summary.91da3348cbba",
+      "name": "summary",
+      "displayName": "<summary>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<summary></summary>",
+      "description": "Caption for details",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element"
+    },
+    {
+      "id": "html.core.element.tbody.fbefcc0fa7a8",
+      "name": "tbody",
+      "displayName": "<tbody>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<tbody></tbody>",
+      "description": "Group of rows in a table",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#the-tbody-element"
+    },
+    {
+      "id": "html.core.element.td.1f59b21aa3c3",
+      "name": "td",
+      "displayName": "<td>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<td></td>",
+      "description": "Table cell",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#the-td-element"
+    },
+    {
+      "id": "html.core.element.tfoot.3d46ffcc3146",
+      "name": "tfoot",
+      "displayName": "<tfoot>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<tfoot></tfoot>",
+      "description": "Group of footer rows in a table",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#the-tfoot-element"
+    },
+    {
+      "id": "html.core.element.thead.55e55f116255",
+      "name": "thead",
+      "displayName": "<thead>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<thead></thead>",
+      "description": "Group of heading rows in a table",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#the-thead-element"
+    },
+    {
+      "id": "html.core.element.tr.d685fd715192",
+      "name": "tr",
+      "displayName": "<tr>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<tr></tr>",
+      "description": "Table row",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/tables.html#the-tr-element"
+    },
+    {
+      "id": "html.core.element.track.19967123a05e",
+      "name": "track",
+      "displayName": "<track>",
+      "symbolKind": "Element",
+      "category": "Other elements",
+      "signature": "<track>",
+      "description": "Timed text track",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/media.html#the-track-element"
+    },
+    {
+      "id": "html.core.element.abbr.dbb761c57563",
+      "name": "abbr",
+      "displayName": "<abbr>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<abbr></abbr>",
+      "description": "Abbreviation",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"
+    },
+    {
+      "id": "html.core.element.area.72796e9d321f",
+      "name": "area",
+      "displayName": "<area>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<area>",
+      "description": "Hyperlink or dead area on an image map",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element"
+    },
+    {
+      "id": "html.core.element.b.575482683f79",
+      "name": "b",
+      "displayName": "<b>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<b></b>",
+      "description": "Keywords",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"
+    },
+    {
+      "id": "html.core.element.bdi.293a3e4ec3bd",
+      "name": "bdi",
+      "displayName": "<bdi>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<bdi></bdi>",
+      "description": "Text directionality isolation",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element"
+    },
+    {
+      "id": "html.core.element.bdo.7c742792996e",
+      "name": "bdo",
+      "displayName": "<bdo>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<bdo></bdo>",
+      "description": "Text directionality formatting",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"
+    },
+    {
+      "id": "html.core.element.br.693124ea087a",
+      "name": "br",
+      "displayName": "<br>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<br>",
+      "description": "Line break, e.g. in poem or postal address",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element"
+    },
+    {
+      "id": "html.core.element.cite.05888657abde",
+      "name": "cite",
+      "displayName": "<cite>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<cite></cite>",
+      "description": "Title of a work",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"
+    },
+    {
+      "id": "html.core.element.code.1cef113a4637",
+      "name": "code",
+      "displayName": "<code>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<code></code>",
+      "description": "Computer code",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"
+    },
+    {
+      "id": "html.core.element.data.581280c00938",
+      "name": "data",
+      "displayName": "<data>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<data></data>",
+      "description": "Machine-readable equivalent",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element"
+    },
+    {
+      "id": "html.core.element.datalist.50f57f0b70b6",
+      "name": "datalist",
+      "displayName": "<datalist>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<datalist></datalist>",
+      "description": "Container for options for combo box control",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element"
+    },
+    {
+      "id": "html.core.element.del.6c0ee7787932",
+      "name": "del",
+      "displayName": "<del>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<del></del>",
+      "description": "A removal from the document",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/edits.html#the-del-element"
+    },
+    {
+      "id": "html.core.element.dfn.3f59a2900804",
+      "name": "dfn",
+      "displayName": "<dfn>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<dfn></dfn>",
+      "description": "Defining instance",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"
+    },
+    {
+      "id": "html.core.element.em.dfb8e1d80e47",
+      "name": "em",
+      "displayName": "<em>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<em></em>",
+      "description": "Stress emphasis",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element"
+    },
+    {
+      "id": "html.core.element.i.3df6daf6b736",
+      "name": "i",
+      "displayName": "<i>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<i></i>",
+      "description": "Alternate voice",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"
+    },
+    {
+      "id": "html.core.element.ins.936e9cd57ee9",
+      "name": "ins",
+      "displayName": "<ins>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<ins></ins>",
+      "description": "An addition to the document",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/edits.html#the-ins-element"
+    },
+    {
+      "id": "html.core.element.kbd.f31302634d72",
+      "name": "kbd",
+      "displayName": "<kbd>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<kbd></kbd>",
+      "description": "User input",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"
+    },
+    {
+      "id": "html.core.element.map.dfbe0a12870e",
+      "name": "map",
+      "displayName": "<map>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<map></map>",
+      "description": "Image map",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/image-maps.html#the-map-element"
+    },
+    {
+      "id": "html.core.element.mark.1b1bff0c9e82",
+      "name": "mark",
+      "displayName": "<mark>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<mark></mark>",
+      "description": "Highlight",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"
+    },
+    {
+      "id": "html.core.element.meter.861b9bf3c63b",
+      "name": "meter",
+      "displayName": "<meter>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<meter></meter>",
+      "description": "Gauge",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-meter-element"
+    },
+    {
+      "id": "html.core.element.output.d7ae14f98a48",
+      "name": "output",
+      "displayName": "<output>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<output></output>",
+      "description": "Calculated output value",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element"
+    },
+    {
+      "id": "html.core.element.progress.6209d4e2505a",
+      "name": "progress",
+      "displayName": "<progress>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<progress></progress>",
+      "description": "Progress bar",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element"
+    },
+    {
+      "id": "html.core.element.q.319dc35d7cfb",
+      "name": "q",
+      "displayName": "<q>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<q></q>",
+      "description": "Quotation",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"
+    },
+    {
+      "id": "html.core.element.ruby.1f455ca672dc",
+      "name": "ruby",
+      "displayName": "<ruby>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<ruby></ruby>",
+      "description": "Ruby annotation(s)",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element"
+    },
+    {
+      "id": "html.core.element.s.4fdf467516a1",
+      "name": "s",
+      "displayName": "<s>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<s></s>",
+      "description": "Inaccurate text",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"
+    },
+    {
+      "id": "html.core.element.samp.ed1d4969b820",
+      "name": "samp",
+      "displayName": "<samp>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<samp></samp>",
+      "description": "Computer output",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"
+    },
+    {
+      "id": "html.core.element.slot.056e430c2eff",
+      "name": "slot",
+      "displayName": "<slot>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<slot></slot>",
+      "description": "Shadow tree slot",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element"
+    },
+    {
+      "id": "html.core.element.small.1654d858188f",
+      "name": "small",
+      "displayName": "<small>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<small></small>",
+      "description": "Side comment",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"
+    },
+    {
+      "id": "html.core.element.span.3154df244b9f",
+      "name": "span",
+      "displayName": "<span>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<span></span>",
+      "description": "Generic phrasing container",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element"
+    },
+    {
+      "id": "html.core.element.strong.b90dab9b1d7c",
+      "name": "strong",
+      "displayName": "<strong>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<strong></strong>",
+      "description": "Importance",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element"
+    },
+    {
+      "id": "html.core.element.sub.f30eaa419d7c",
+      "name": "sub",
+      "displayName": "<sub>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<sub></sub>",
+      "description": "Subscript",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"
+    },
+    {
+      "id": "html.core.element.sup.83d652928589",
+      "name": "sup",
+      "displayName": "<sup>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<sup></sup>",
+      "description": "Superscript",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"
+    },
+    {
+      "id": "html.core.element.time.903675dd0d06",
+      "name": "time",
+      "displayName": "<time>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<time></time>",
+      "description": "Machine-readable equivalent of date- or time-related data",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element"
+    },
+    {
+      "id": "html.core.element.u.a42d6e6cb809",
+      "name": "u",
+      "displayName": "<u>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<u></u>",
+      "description": "Unarticulated annotation",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element"
+    },
+    {
+      "id": "html.core.element.var.282abd97f706",
+      "name": "var",
+      "displayName": "<var>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<var></var>",
+      "description": "Variable",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"
+    },
+    {
+      "id": "html.core.element.wbr.d348c93763bb",
+      "name": "wbr",
+      "displayName": "<wbr>",
+      "symbolKind": "Element",
+      "category": "Phrasing content",
+      "signature": "<wbr>",
+      "description": "Line breaking opportunity",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element"
+    },
+    {
+      "id": "html.core.element.article.51c4477aee7e",
+      "name": "article",
+      "displayName": "<article>",
+      "symbolKind": "Element",
+      "category": "Sectioning",
+      "signature": "<article></article>",
+      "description": "Self-contained syndicatable or reusable composition",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/sections.html#the-article-element"
+    },
+    {
+      "id": "html.core.element.aside.e45eadc19059",
+      "name": "aside",
+      "displayName": "<aside>",
+      "symbolKind": "Element",
+      "category": "Sectioning",
+      "signature": "<aside></aside>",
+      "description": "Sidebar for tangentially related content",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"
+    },
+    {
+      "id": "html.core.element.nav.1369ce2d0f38",
+      "name": "nav",
+      "displayName": "<nav>",
+      "symbolKind": "Element",
+      "category": "Sectioning",
+      "signature": "<nav></nav>",
+      "description": "Section with navigational links",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/sections.html#the-nav-element"
+    },
+    {
+      "id": "html.core.element.section.5cffe56944a6",
+      "name": "section",
+      "displayName": "<section>",
+      "symbolKind": "Element",
+      "category": "Sectioning",
+      "signature": "<section></section>",
+      "description": "Generic document or application section",
+      "documentationUrl": "https://html.spec.whatwg.org/multipage/sections.html#the-section-element"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+@* Source: common.section.top-navigation.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-9c44c12c6ba0" data-vp-id="9c44c12c6ba0a11c3fd5c1d4892999d7">
+    <header class="vp-ee4449d8c15e" data-vp-id="ee4449d8c15eaf009cc9e4c3d83d4018">
+        <a aria-label="Home" class="vp-64a26463e425" data-field="text-2" data-vp-id="64a26463e425a47790ea505272899f00" href="@(Link(Context.Text("href-2")))">
+            @(Context.Text("text-2"))
+        </a>
+        <nav aria-label="Primary navigation" class="vp-5e64a6c37f9f" data-vp-id="5e64a6c37f9ff080e83b5f6aca6a61d4">
+            <a class="vp-6963872550f2" data-field="text-4" data-vp-id="6963872550f27dcda82ed5f3e3965eef" href="@(Link(Context.Text("href-4")))">
+                @(Context.Text("text-4"))
+            </a>
+            <a class="vp-ead565c4eb08" data-field="text-5" data-vp-id="ead565c4eb08011ffd0790c3ede35947" href="@(Link(Context.Text("href-5")))">
+                @(Context.Text("text-5"))
+            </a>
+            <a class="vp-136b7f136aab" data-field="text-6" data-vp-id="136b7f136aabd2d3a7ea36e30173afa3" href="@(Link(Context.Text("href-6")))">
+                @(Context.Text("text-6"))
+            </a>
+            <button class="vp-23c0d168e4d0" data-field="text-7" data-vp-id="23c0d168e4d0bc0938bac87bece3e42d">
+                @(Context.Text("text-7"))
+            </button>
+        </nav>
+    </header>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

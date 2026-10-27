@@ -1,0 +1,85 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "A Slow Weekend in Portland",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "destination",
+      "type": "banner",
+      "region": "main",
+      "values": {
+        "eyebrow": "THE SLOW ROUTE / CITY 01",
+        "title": "A Slow Weekend in Portland",
+        "text": "A small itinerary built around walking, resting, and one good view.",
+        "src": "/media/base-templates/travel-atlas.svg",
+        "alt": "A weekend without rushing",
+        "span": "full"
+      }
+    },
+    {
+      "id": "city-map",
+      "type": "map",
+      "region": "main",
+      "values": {
+        "title": "Portland / Start here",
+        "latitude": 45.52,
+        "longitude": -122.68,
+        "zoom": 12,
+        "caption": "A location reference, not a live itinerary or opening-hours guide.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "pocket-guide",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "In your pocket",
+        "text": "Comfortable shoes\nA reusable bottle\nA flexible plan\nRoom for a detour",
+        "span": "third"
+      }
+    },
+    {
+      "id": "morning",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Morning / Walk and notice\n\nBegin near the river. Let a short walk introduce the city before choosing the next stop.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "afternoon",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Afternoon / Make room\n\nChoose one neighborhood and give it time. A park bench can be part of the itinerary.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "route",
+      "type": "tool",
+      "region": "main",
+      "values": {
+        "title": "Your unhurried route",
+        "mode": "checklist",
+        "initial": 0,
+        "items": "Take a riverside walk\nFind a neighborhood caf\u00E9\nVisit a green space\nWrite one memory",
+        "span": "full"
+      }
+    },
+    {
+      "id": "travel-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Illustrative travel notebook / Check current access and opening details before visiting"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

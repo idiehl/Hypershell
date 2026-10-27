@@ -1,0 +1,87 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "The Shape of a Quiet Morning",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "masthead",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "FIELD NOTES / VOLUME 01",
+        "title": "The Shape of a Quiet Morning",
+        "text": "An illustrated journal about paying attention."
+      }
+    },
+    {
+      "id": "opening-image",
+      "type": "image",
+      "region": "main",
+      "values": {
+        "src": "/media/base-templates/field-journal.svg",
+        "alt": "An abstract landscape study",
+        "caption": "Light changes the familiar into something worth seeing again.",
+        "width": 100,
+        "span": "full"
+      }
+    },
+    {
+      "id": "essay",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Begin with what is nearby\n\nA room has its own weather. Light collects on the edge of a table; a small sound briefly interrupts the ordinary. Good notes start here, with something concrete.\n\nTry naming what you can see before deciding what it means.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "margin-note",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "In the margin",
+        "text": "Observe first. Interpret second. Leave room for uncertainty.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "second-column",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## A practice of noticing\n\n- Return to one place.\n- Record one precise detail.\n- Compare it with yesterday.\n\nA repeated observation can become a story.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "reading-column",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## A question to carry\n\nWhat changed while you were looking elsewhere? Keep that question open as you walk home.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "end-mark",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "END NOTE",
+        "style": "dots"
+      }
+    },
+    {
+      "id": "colophon",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "A small publication / Written slowly / Issue 01"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

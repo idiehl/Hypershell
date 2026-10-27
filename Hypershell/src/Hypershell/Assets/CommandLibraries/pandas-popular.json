@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "pandas-popular",
+  "displayName": "pandas",
+  "description": "Curated pandas starter recipes for the Python Command Builder. The dependency is referenced, not bundled.",
+  "language": "Python",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "pandas",
+  "ecosystem": "PyPI",
+  "targetVersion": "3.0.4",
+  "sourceVersion": "3.0.4 documentation · curated 2026-08-17",
+  "sourceUrl": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
+  "license": "BSD-3-Clause",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Requires pandas and any file-format engine used by the snippet in the selected Python environment; Hypershell does not install them.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "python",
+    "popular library",
+    "pandas",
+    "dataframe",
+    "data analysis",
+    "csv",
+    "tabular"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/pandas-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/pandas-popular.guides.json"
+  ],
+  "legacyIds": []
+}

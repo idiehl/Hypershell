@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "documentation-desk",
+  "title": "Documentation Desk",
+  "description": "A monospace guide with overview, quick-start steps, reference sidebars, and an interactive checklist.",
+  "category": "Reference",
+  "sourceTemplateId": "documentation-desk"
+}

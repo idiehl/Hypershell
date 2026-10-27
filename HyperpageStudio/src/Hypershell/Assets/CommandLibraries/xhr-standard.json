@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "xhr-standard",
+  "displayName": "XMLHttpRequest and FormData",
+  "description": "XMLHttpRequest and FormData interfaces and browser-platform operations.",
+  "language": "Web APIs",
+  "category": "Official reference",
+  "kind": "PlatformApi",
+  "canonicalName": "XMLHttpRequest and FormData",
+  "ecosystem": "Web Platform",
+  "targetVersion": "Living Standard inventory",
+  "sourceVersion": "Web declarations from TypeScript 5.9.3 · 080941d9f9ff/6d08cde2bfb6",
+  "sourceUrl": "https://xhr.spec.whatwg.org/",
+  "license": "WHATWG Living Standard",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Web API entries target compatible JavaScript or TypeScript editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "web api",
+    "browser",
+    "XMLHttpRequest and FormData"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 66,
+  "declaredIndexedCount": 65,
+  "declaredGuidedCount": 1,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/xhr-standard.entries.json"
+  ],
+  "declaredGuideCount": 1,
+  "guideFiles": [
+    "guides/xhr-standard.guides.json"
+  ],
+  "legacyIds": []
+}

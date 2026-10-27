@@ -1,0 +1,26 @@
+@* Source: atlas.hero.split.v1 (Atlas Archive). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-d623433f91b8" data-vp-id="d623433f91b8a591b52b3632211f668e">
+    <section aria-label="Page introduction" class="vp-5fb02d4f1159 atlas-hero" data-vp-id="5fb02d4f11598c72cbbc1e3b5e2846b0">
+        <div class="vp-6288c59d7990" data-vp-id="6288c59d7990e33bc6c8fde1cd99b7da">
+            <h1 class="vp-dd69cd3dae60" data-field="text-3">
+                @(Context.Text("text-3"))
+            </h1>
+            <p class="vp-fecba285b805" data-field="text-4" data-vp-id="fecba285b805055eeeeeee452ef184a1">
+                @(Context.Text("text-4"))
+            </p>
+            <button class="vp-84f9f8b38139" data-field="text-5" data-vp-id="84f9f8b38139e977717cc7f77260d842">
+                @(Context.Text("text-5"))
+            </button>
+        </div>
+        <img class="vp-5296808a44c4" data-vp-id="5296808a44c4ab6ed0d1cf91f54d9588" loading="eager" alt="@(Context.Text("alt-6"))" src="@(Asset(Context.Text("src-6")))" />
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

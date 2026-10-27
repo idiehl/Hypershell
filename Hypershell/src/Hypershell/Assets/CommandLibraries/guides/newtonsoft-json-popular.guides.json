@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "newtonsoft-json-popular",
+  "guides": [
+    {
+      "entryId": "newtonsoft-json-popular.serialize-indented",
+      "definition": "Serializes a C# value with Newtonsoft.Json and stores readable JSON text. Project dependency only: add Newtonsoft.Json to a project and insert the snippet there; the isolated C# runner does not restore packages.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value expression",
+          "placeholder": "value",
+          "description": "Object or expression to serialize.",
+          "typeName": "C# expression",
+          "defaultValue": "new { Id = 42, Name = \"Atlas\" }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Serialize an anonymous object",
+          "code": "var json = JsonConvert.SerializeObject(new { Id = 42, Name = \"Atlas\" }, Formatting.Indented);",
+          "explanation": "JsonConvert handles the object graph while Formatting.Indented produces review-friendly output."
+        }
+      ]
+    },
+    {
+      "entryId": "newtonsoft-json-popular.deserialize-generic",
+      "definition": "Deserializes JSON into the selected C# type and rejects a null result. Project dependency only: add Newtonsoft.Json to a project and insert the snippet there; the isolated C# runner does not restore packages.",
+      "parameters": [
+        {
+          "name": "modelType",
+          "displayName": "Model type",
+          "placeholder": "modelType",
+          "description": "C# type that matches the expected JSON shape.",
+          "typeName": "C# type",
+          "defaultValue": "User",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "jsonText",
+          "displayName": "JSON expression",
+          "placeholder": "jsonText",
+          "description": "String expression containing JSON.",
+          "typeName": "C# expression",
+          "defaultValue": "jsonText",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Deserialize a record",
+          "code": "var model = JsonConvert.DeserializeObject<User>(jsonText)\n    ?? throw new JsonSerializationException(\"Expected JSON value.\");",
+          "explanation": "The generic type controls object materialization; the null guard makes the absence of a value explicit."
+        }
+      ]
+    },
+    {
+      "entryId": "newtonsoft-json-popular.query-jobject",
+      "definition": "Parses JSON into JObject and selects a token by JSONPath. Project dependency only: add Newtonsoft.Json to a project and insert the snippet there; the isolated C# runner does not restore packages.",
+      "parameters": [
+        {
+          "name": "jsonText",
+          "displayName": "JSON expression",
+          "placeholder": "jsonText",
+          "description": "String expression containing a JSON object.",
+          "typeName": "C# expression",
+          "defaultValue": "jsonText",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "jsonPath",
+          "displayName": "JSONPath",
+          "placeholder": "jsonPath",
+          "description": "Quoted JSONPath expression to select.",
+          "typeName": "C# string",
+          "defaultValue": "\"users[0].name\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read the first user name",
+          "code": "var document = JObject.Parse(jsonText);\nvar value = document.SelectToken(\"users[0].name\");",
+          "explanation": "JObject supports dynamic tree inspection; SelectToken returns null when the path is absent unless errorWhenNoMatch is requested."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-edition-seal">
+<div class="edition-seal"><span>✦</span><strong>@Context.Text("title")</strong><small>@Cell(Rows.FirstOrDefault() ?? "EST. 2026",0)</small></div>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

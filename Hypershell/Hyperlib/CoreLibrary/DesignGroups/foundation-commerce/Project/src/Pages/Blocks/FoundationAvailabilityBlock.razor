@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-availability">
+<aside class="availability panel"><span class="status-dot" aria-hidden="true"></span><div><h3>@Context.Text("title")</h3><p>@Context.Text("text")</p></div><a class="action" href="@Context.Text("url")">@Context.Text("label") <span aria-hidden="true">↗</span></a></aside>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

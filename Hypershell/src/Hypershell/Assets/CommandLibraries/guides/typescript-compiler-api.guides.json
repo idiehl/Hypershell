@@ -1,0 +1,1194 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "typescript-compiler-api",
+  "guides": [
+    {
+      "entryId": "typescript.compiler-api.create-source-file",
+      "definition": "Creates a SourceFile syntax tree from TypeScript or JavaScript text.",
+      "parameters": [
+        {
+          "name": "fileName",
+          "displayName": "File name",
+          "placeholder": "fileName",
+          "description": "The logical source-file name and extension.",
+          "typeName": "String expression",
+          "defaultValue": "\"example.ts\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sourceText",
+          "displayName": "Source text",
+          "placeholder": "sourceText",
+          "description": "The text to parse.",
+          "typeName": "String expression",
+          "defaultValue": "\"const answer: number = 42;\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "target",
+          "displayName": "Script target",
+          "placeholder": "target",
+          "description": "The ScriptTarget enum member used by the parser.",
+          "typeName": "Enum member",
+          "defaultValue": "Latest",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "setParents",
+          "displayName": "Set parents",
+          "placeholder": "setParents",
+          "description": "Whether parsed nodes receive parent links.",
+          "typeName": "Boolean expression",
+          "defaultValue": "true",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse a typed binding",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst source = ts.createSourceFile(\"example.ts\", \"const answer: number = 42;\", ts.ScriptTarget.Latest, true);\nconsole.log(ts.SyntaxKind[source.statements[0].kind]);",
+          "explanation": "The returned SourceFile owns the parsed statement tree and optional parent links."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.create-program",
+      "definition": "Builds the compiler's whole-project view from root files, options, and an optional host.",
+      "parameters": [
+        {
+          "name": "rootNames",
+          "displayName": "Root files",
+          "placeholder": "rootNames",
+          "description": "An array of source file paths.",
+          "typeName": "String array expression",
+          "defaultValue": "[\"index.ts\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Compiler options",
+          "placeholder": "options",
+          "description": "CompilerOptions controlling resolution, checking, and emit.",
+          "typeName": "CompilerOptions expression",
+          "defaultValue": "{ noEmit: true, strict: true }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a strict no-emit program",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst program = ts.createProgram([\"index.ts\"], { noEmit: true, strict: true });\nconsole.log(program.getRootFileNames());",
+          "explanation": "Program coordinates source loading, binding, type checking, module resolution, and emit state."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.for-each-child",
+      "definition": "Visits a node's syntactic children in source order through the supported traversal API.",
+      "parameters": [
+        {
+          "name": "node",
+          "displayName": "Node",
+          "placeholder": "node",
+          "description": "The AST node whose children are visited.",
+          "typeName": "ts.Node expression",
+          "defaultValue": "source",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "statement",
+          "displayName": "Visitor body",
+          "placeholder": "statement",
+          "description": "Work performed for each child.",
+          "typeName": "TypeScript statement",
+          "defaultValue": "console.log(ts.SyntaxKind[child.kind]);",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "List source-file child kinds",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst source = ts.createSourceFile(\"example.ts\", \"const answer = 42;\", ts.ScriptTarget.Latest);\nts.forEachChild(source, child => console.log(ts.SyntaxKind[child.kind]));",
+          "explanation": "forEachChild exposes the public syntactic tree without relying on internal node arrays."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.factory-identifier",
+      "definition": "Creates a synthesized Identifier through the supported node factory.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "Identifier text",
+          "placeholder": "text",
+          "description": "The identifier's source spelling.",
+          "typeName": "String expression",
+          "defaultValue": "\"answer\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create an answer identifier",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst identifier = ts.factory.createIdentifier(\"answer\");\nconsole.log(identifier.text);",
+          "explanation": "Using ts.factory keeps synthesized nodes compatible with the active compiler version."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.transpile-module",
+      "definition": "Performs syntactic transformation and emit for one source string without creating a complete Program.",
+      "parameters": [
+        {
+          "name": "sourceText",
+          "displayName": "Source text",
+          "placeholder": "sourceText",
+          "description": "The isolated TypeScript source to transpile.",
+          "typeName": "String expression",
+          "defaultValue": "\"const answer: number = 42;\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "target",
+          "displayName": "Target",
+          "placeholder": "target",
+          "description": "The emitted JavaScript language level.",
+          "typeName": "ScriptTarget member",
+          "defaultValue": "ES2022",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "moduleKind",
+          "displayName": "Module kind",
+          "placeholder": "moduleKind",
+          "description": "The emitted module format.",
+          "typeName": "ModuleKind member",
+          "defaultValue": "ESNext",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Strip a number annotation",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst result = ts.transpileModule(\"const answer: number = 42;\", { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext } });\nconsole.log(result.outputText);",
+          "explanation": "transpileModule emits JavaScript but does not perform whole-program semantic checking."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.create-printer",
+      "definition": "Creates a Printer that converts parsed or synthesized nodes back into source text.",
+      "parameters": [
+        {
+          "name": "options",
+          "displayName": "Printer options",
+          "placeholder": "options",
+          "description": "Formatting and newline settings for emitted text.",
+          "typeName": "ts.PrinterOptions expression",
+          "defaultValue": "{ newLine: ts.NewLineKind.LineFeed }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a line-feed printer",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed });\nconsole.log(typeof printer.printNode);",
+          "explanation": "The printer can render individual nodes, node lists, or complete files with consistent formatting options."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.printer-print-node",
+      "definition": "Renders a node to source text using an emit hint and source-file context.",
+      "parameters": [
+        {
+          "name": "printer",
+          "displayName": "Printer",
+          "placeholder": "printer",
+          "description": "A ts.Printer expression.",
+          "typeName": "ts.Printer expression",
+          "defaultValue": "ts.createPrinter()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "hint",
+          "displayName": "Emit hint",
+          "placeholder": "hint",
+          "description": "How the printer should interpret the node's syntactic role.",
+          "typeName": "EmitHint member",
+          "defaultValue": "Unspecified",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "node",
+          "displayName": "Node",
+          "placeholder": "node",
+          "description": "The AST node to render.",
+          "typeName": "ts.Node expression",
+          "defaultValue": "ts.factory.createIdentifier(\"answer\")",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sourceFile",
+          "displayName": "Source file",
+          "placeholder": "sourceFile",
+          "description": "The source context used by the printer.",
+          "typeName": "ts.SourceFile expression",
+          "defaultValue": "ts.createSourceFile(\"example.ts\", \"\", ts.ScriptTarget.Latest)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Print a synthesized identifier",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst printer = ts.createPrinter();\nconst source = ts.createSourceFile(\"example.ts\", \"\", ts.ScriptTarget.Latest);\nconsole.log(printer.printNode(ts.EmitHint.Unspecified, ts.factory.createIdentifier(\"answer\"), source));",
+          "explanation": "The printer renders the factory-created identifier as valid source text."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.transform",
+      "definition": "Applies one or more transformer factories to a node or node array and returns transformed roots.",
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "Source",
+          "placeholder": "source",
+          "description": "The node or node array to transform.",
+          "typeName": "ts.Node expression",
+          "defaultValue": "sourceFile",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "transformer",
+          "displayName": "Transformer",
+          "placeholder": "transformer",
+          "description": "A TransformerFactory compatible with the source node type.",
+          "typeName": "TransformerFactory expression",
+          "defaultValue": "context => root => ts.visitEachChild(root, node => node, context)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "statement",
+          "displayName": "Result use",
+          "placeholder": "statement",
+          "description": "Work performed with result.transformed.",
+          "typeName": "TypeScript statement",
+          "defaultValue": "console.log(result.transformed.length);",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Run an identity transform",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst source = ts.createSourceFile(\"example.ts\", \"const answer = 42;\", ts.ScriptTarget.Latest);\nconst result = ts.transform(source, [context => root => ts.visitEachChild(root, node => node, context)]);\ntry { console.log(result.transformed.length); } finally { result.dispose(); }",
+          "explanation": "TransformationResult owns disposable compiler resources and exposes the transformed roots."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.visit-each-child",
+      "definition": "Visits child nodes through a transformer context and rebuilds parents only when descendants change.",
+      "parameters": [
+        {
+          "name": "context",
+          "displayName": "Context",
+          "placeholder": "context",
+          "description": "The active TransformationContext supplied to a transformer factory.",
+          "typeName": "ts.TransformationContext expression",
+          "defaultValue": "context",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Define a recursive transformer visitor",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst transformer: ts.TransformerFactory<ts.SourceFile> = context => {\n  const visit = (node: ts.Node): ts.VisitResult<ts.Node> => ts.visitEachChild(node, visit, context);\n  return source => ts.visitNode(source, visit) as ts.SourceFile;\n};\nconsole.log(typeof transformer);",
+          "explanation": "visitEachChild preserves unchanged nodes and uses the transformation context for safe tree updates."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.create-compiler-host",
+      "definition": "Builds the file-system and output callbacks a Program uses for source loading and emit.",
+      "parameters": [
+        {
+          "name": "options",
+          "displayName": "Compiler options",
+          "placeholder": "options",
+          "description": "Options shared by the host and Program.",
+          "typeName": "ts.CompilerOptions expression",
+          "defaultValue": "{ strict: true, noEmit: true }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "setParents",
+          "displayName": "Set parents",
+          "placeholder": "setParents",
+          "description": "Whether host-created source files should include parent links.",
+          "typeName": "Boolean expression",
+          "defaultValue": "true",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a strict analysis host",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst options: ts.CompilerOptions = { strict: true, noEmit: true };\nconst host = ts.createCompilerHost(options, true);\nconsole.log(host.getCurrentDirectory());",
+          "explanation": "The returned host can be wrapped to customize source reads, module resolution, or emitted outputs."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.program-get-type-checker",
+      "definition": "Returns the semantic engine used to resolve symbols and inspect types within a Program.",
+      "parameters": [
+        {
+          "name": "program",
+          "displayName": "Program",
+          "placeholder": "program",
+          "description": "The compiler Program that owns semantic state.",
+          "typeName": "ts.Program expression",
+          "defaultValue": "program",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Access semantic analysis",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst program = ts.createProgram([\"index.ts\"], { noEmit: true });\nconst checker = program.getTypeChecker();\nconsole.log(typeof checker.getTypeAtLocation);",
+          "explanation": "A TypeChecker is tied to its Program and should be used with nodes from that same program."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.checker-get-type-at-location",
+      "definition": "Returns the semantic Type associated with a node in the current Program.",
+      "parameters": [
+        {
+          "name": "checker",
+          "displayName": "Type checker",
+          "placeholder": "checker",
+          "description": "The Program's TypeChecker.",
+          "typeName": "ts.TypeChecker expression",
+          "defaultValue": "checker",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "node",
+          "displayName": "Node",
+          "placeholder": "node",
+          "description": "A node belonging to the checker's Program.",
+          "typeName": "ts.Node expression",
+          "defaultValue": "node",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect a declaration type",
+          "code": "const type = checker.getTypeAtLocation(node);\nconsole.log(checker.typeToString(type));",
+          "explanation": "The Type object represents the checker's semantic interpretation at that source location."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.checker-get-symbol-at-location",
+      "definition": "Finds the declaration symbol referenced or introduced at a node when one exists.",
+      "parameters": [
+        {
+          "name": "checker",
+          "displayName": "Type checker",
+          "placeholder": "checker",
+          "description": "The Program's TypeChecker.",
+          "typeName": "ts.TypeChecker expression",
+          "defaultValue": "checker",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "node",
+          "displayName": "Node",
+          "placeholder": "node",
+          "description": "An identifier or other symbol-bearing node.",
+          "typeName": "ts.Node expression",
+          "defaultValue": "node",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "statement",
+          "displayName": "Symbol use",
+          "placeholder": "statement",
+          "description": "Work performed when resolution succeeds.",
+          "typeName": "TypeScript statement",
+          "defaultValue": "console.log(symbol.getName());",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a resolved symbol name",
+          "code": "const symbol = checker.getSymbolAtLocation(node);\nif (symbol) console.log(symbol.getName());",
+          "explanation": "Symbols represent the type system's view of declarations and references, not JavaScript Symbol values."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.checker-type-to-string",
+      "definition": "Converts a Type object into a readable TypeScript type expression.",
+      "parameters": [
+        {
+          "name": "checker",
+          "displayName": "Type checker",
+          "placeholder": "checker",
+          "description": "The TypeChecker that owns the Type.",
+          "typeName": "ts.TypeChecker expression",
+          "defaultValue": "checker",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "type",
+          "displayName": "Type",
+          "placeholder": "type",
+          "description": "The semantic Type to format.",
+          "typeName": "ts.Type expression",
+          "defaultValue": "type",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "enclosingNode",
+          "displayName": "Enclosing node",
+          "placeholder": "enclosingNode",
+          "description": "Optional context for accessible names.",
+          "typeName": "ts.Node or undefined",
+          "defaultValue": "undefined",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "flags",
+          "displayName": "Format flags",
+          "placeholder": "flags",
+          "description": "TypeFormatFlags controlling detail and spelling.",
+          "typeName": "ts.TypeFormatFlags expression",
+          "defaultValue": "ts.TypeFormatFlags.NoTruncation",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Print a complete type",
+          "code": "const text = checker.typeToString(type, undefined, ts.TypeFormatFlags.NoTruncation);\nconsole.log(text);",
+          "explanation": "Formatting through the owning checker respects aliases, scope, and requested detail flags."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.get-pre-emit-diagnostics",
+      "definition": "Combines configuration, syntactic, options, global, and semantic diagnostics for a Program.",
+      "parameters": [
+        {
+          "name": "program",
+          "displayName": "Program",
+          "placeholder": "program",
+          "description": "The Program to diagnose.",
+          "typeName": "ts.Program expression",
+          "defaultValue": "program",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Collect project diagnostics",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst diagnostics = ts.getPreEmitDiagnostics(program);\nconsole.log(diagnostics.length);",
+          "explanation": "The helper gathers the standard diagnostic phases typically checked before calling emit."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.flatten-diagnostic-message",
+      "definition": "Converts nested diagnostic message chains into one readable string with a chosen newline.",
+      "parameters": [
+        {
+          "name": "messageText",
+          "displayName": "Message text",
+          "placeholder": "messageText",
+          "description": "A diagnostic string or DiagnosticMessageChain.",
+          "typeName": "Diagnostic message expression",
+          "defaultValue": "diagnostic.messageText",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "newLine",
+          "displayName": "Newline",
+          "placeholder": "newLine",
+          "description": "The separator used between nested messages.",
+          "typeName": "String expression",
+          "defaultValue": "\"\\n\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Format a compiler diagnostic",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconsole.log(ts.flattenDiagnosticMessageText(diagnostic.messageText, \"\\n\"));",
+          "explanation": "Nested explanatory branches become a stable multiline message suitable for a console or problem list."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.get-line-character",
+      "definition": "Maps a zero-based source offset to its zero-based line and character coordinates.",
+      "parameters": [
+        {
+          "name": "sourceFile",
+          "displayName": "Source file",
+          "placeholder": "sourceFile",
+          "description": "The SourceFileLike containing the position.",
+          "typeName": "ts.SourceFileLike expression",
+          "defaultValue": "sourceFile",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "position",
+          "displayName": "Position",
+          "placeholder": "position",
+          "description": "A zero-based character offset.",
+          "typeName": "Number expression",
+          "defaultValue": "diagnostic.start ?? 0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Locate a diagnostic",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst location = ts.getLineAndCharacterOfPosition(sourceFile, diagnostic.start ?? 0);\nconsole.log(location.line + 1, location.character + 1);",
+          "explanation": "Adding one produces the one-based coordinates commonly shown to users."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.program-emit",
+      "definition": "Writes JavaScript, declaration, and source-map outputs according to compiler options and callbacks.",
+      "parameters": [
+        {
+          "name": "program",
+          "displayName": "Program",
+          "placeholder": "program",
+          "description": "The Program to emit.",
+          "typeName": "ts.Program expression",
+          "defaultValue": "program",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sourceFile",
+          "displayName": "Source file",
+          "placeholder": "sourceFile",
+          "description": "A specific SourceFile or undefined for the entire Program.",
+          "typeName": "ts.SourceFile or undefined",
+          "defaultValue": "undefined",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "writeFile",
+          "displayName": "Write callback",
+          "placeholder": "writeFile",
+          "description": "An optional callback that receives generated outputs.",
+          "typeName": "ts.WriteFileCallback or undefined",
+          "defaultValue": "undefined",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Emit all program outputs",
+          "code": "const emitResult = program.emit();\nconsole.log(emitResult.emitSkipped, emitResult.diagnostics.length);",
+          "explanation": "EmitResult reports whether output was skipped and includes diagnostics produced during emit."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.find-config-file",
+      "definition": "Walks upward from a search path until a named configuration file is found.",
+      "parameters": [
+        {
+          "name": "searchPath",
+          "displayName": "Search path",
+          "placeholder": "searchPath",
+          "description": "The file or directory where the upward search begins.",
+          "typeName": "String expression",
+          "defaultValue": "process.cwd()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "configName",
+          "displayName": "Config name",
+          "placeholder": "configName",
+          "description": "The configuration filename to locate.",
+          "typeName": "String expression",
+          "defaultValue": "\"tsconfig.json\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Locate tsconfig.json",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst configPath = ts.findConfigFile(process.cwd(), ts.sys.fileExists, \"tsconfig.json\");\nconsole.log(configPath);",
+          "explanation": "The search uses the compiler system's fileExists callback and returns undefined when no config is found."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.read-config-file",
+      "definition": "Loads JSON configuration text and reports a structured config value or a diagnostic.",
+      "parameters": [
+        {
+          "name": "fileName",
+          "displayName": "Config path",
+          "placeholder": "fileName",
+          "description": "The tsconfig or jsconfig file to read.",
+          "typeName": "String expression",
+          "defaultValue": "\"tsconfig.json\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read tsconfig.json",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst result = ts.readConfigFile(\"tsconfig.json\", ts.sys.readFile);\nif (result.error) console.error(ts.flattenDiagnosticMessageText(result.error.messageText, \"\\n\"));\nelse console.log(result.config);",
+          "explanation": "readConfigFile handles comments and compiler JSON syntax while preserving parse errors as diagnostics."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.parse-json-config",
+      "definition": "Expands a config object into file names, normalized compiler options, project references, and diagnostics.",
+      "parameters": [
+        {
+          "name": "config",
+          "displayName": "Config object",
+          "placeholder": "config",
+          "description": "The value returned by readConfigFile or another JSON source.",
+          "typeName": "Configuration object expression",
+          "defaultValue": "configResult.config",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "basePath",
+          "displayName": "Base path",
+          "placeholder": "basePath",
+          "description": "The directory used to resolve relative paths and include patterns.",
+          "typeName": "String expression",
+          "defaultValue": "process.cwd()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Resolve a configuration object",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst parsed = ts.parseJsonConfigFileContent({ compilerOptions: { strict: true }, files: [\"index.ts\"] }, ts.sys, process.cwd());\nconsole.log(parsed.fileNames, parsed.options.strict);",
+          "explanation": "The returned ParsedCommandLine contains normalized options and the resolved project file list."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.get-parsed-command-line",
+      "definition": "Reads a config file and resolves its options and file graph through a ParseConfigFileHost.",
+      "parameters": [
+        {
+          "name": "configPath",
+          "displayName": "Config path",
+          "placeholder": "configPath",
+          "description": "The configuration file to load.",
+          "typeName": "String expression",
+          "defaultValue": "\"tsconfig.json\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Extended options",
+          "placeholder": "options",
+          "description": "Compiler options that override or extend the config.",
+          "typeName": "ts.CompilerOptions expression",
+          "defaultValue": "{}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "host",
+          "displayName": "Config host",
+          "placeholder": "host",
+          "description": "A ParseConfigFileHost used for filesystem access and error reporting.",
+          "typeName": "ts.ParseConfigFileHost expression",
+          "defaultValue": "{ ...ts.sys, onUnRecoverableConfigFileDiagnostic: diagnostic => console.error(diagnostic.messageText) }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load tsconfig through a host",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst host: ts.ParseConfigFileHost = { ...ts.sys, onUnRecoverableConfigFileDiagnostic: diagnostic => console.error(diagnostic.messageText) };\nconst parsed = ts.getParsedCommandLineOfConfigFile(\"tsconfig.json\", {}, host);\nconsole.log(parsed?.fileNames.length);",
+          "explanation": "This higher-level helper combines config reading, extends resolution, path expansion, and option conversion."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.resolve-module-name",
+      "definition": "Runs TypeScript's module-resolution algorithm for a specifier and containing file.",
+      "parameters": [
+        {
+          "name": "moduleName",
+          "displayName": "Module name",
+          "placeholder": "moduleName",
+          "description": "The import specifier to resolve.",
+          "typeName": "String expression",
+          "defaultValue": "\"./dependency\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "containingFile",
+          "displayName": "Containing file",
+          "placeholder": "containingFile",
+          "description": "The absolute or project-relative source file issuing the import.",
+          "typeName": "String expression",
+          "defaultValue": "\"/project/index.ts\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Compiler options",
+          "placeholder": "options",
+          "description": "Module and path settings used by resolution.",
+          "typeName": "ts.CompilerOptions expression",
+          "defaultValue": "{ moduleResolution: ts.ModuleResolutionKind.NodeNext }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Resolve a relative dependency",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst resolution = ts.resolveModuleName(\"./dependency\", \"/project/index.ts\", { moduleResolution: ts.ModuleResolutionKind.NodeNext }, ts.sys);\nconsole.log(resolution.resolvedModule?.resolvedFileName);",
+          "explanation": "The result includes the resolved module when successful and failed lookup locations for diagnostics or tracing."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.create-incremental-program",
+      "definition": "Creates a builder that can reuse semantic and emit state between related compilations.",
+      "parameters": [
+        {
+          "name": "rootNames",
+          "displayName": "Root files",
+          "placeholder": "rootNames",
+          "description": "The source files entering the project graph.",
+          "typeName": "String array expression",
+          "defaultValue": "[\"index.ts\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Compiler options",
+          "placeholder": "options",
+          "description": "Incremental compiler options, commonly including incremental and tsBuildInfoFile.",
+          "typeName": "ts.CompilerOptions expression",
+          "defaultValue": "{ incremental: true, noEmit: true }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create an incremental analysis build",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst builder = ts.createIncrementalProgram({ rootNames: [\"index.ts\"], options: { incremental: true, noEmit: true } });\nconsole.log(builder.getProgram().getRootFileNames());",
+          "explanation": "Builder programs expose the underlying Program and reuse prior work when supplied compatible state."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.create-emit-builder",
+      "definition": "Tracks affected files so semantic diagnostics and emit can be updated incrementally.",
+      "parameters": [
+        {
+          "name": "rootNames",
+          "displayName": "Root files",
+          "placeholder": "rootNames",
+          "description": "The source files entering the builder graph.",
+          "typeName": "String array expression",
+          "defaultValue": "[\"index.ts\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Compiler options",
+          "placeholder": "options",
+          "description": "Options shared across builder updates.",
+          "typeName": "ts.CompilerOptions expression",
+          "defaultValue": "{ incremental: true }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "host",
+          "displayName": "Compiler host",
+          "placeholder": "host",
+          "description": "An optional CompilerHost or BuilderProgramHost.",
+          "typeName": "Compiler host expression",
+          "defaultValue": "ts.createIncrementalCompilerHost({ incremental: true })",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create an affected-file builder",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst options: ts.CompilerOptions = { incremental: true, noEmit: true };\nconst host = ts.createIncrementalCompilerHost(options);\nconst builder = ts.createEmitAndSemanticDiagnosticsBuilderProgram([\"index.ts\"], options, host);\nconsole.log(builder.getProgram().getRootFileNames());",
+          "explanation": "The builder can report and emit only files affected by changes when reused by a watch or incremental workflow."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.create-watch-host",
+      "definition": "Creates the host callbacks and builder strategy used to monitor a TypeScript project configuration.",
+      "parameters": [
+        {
+          "name": "configPath",
+          "displayName": "Config path",
+          "placeholder": "configPath",
+          "description": "The tsconfig file to watch.",
+          "typeName": "String expression",
+          "defaultValue": "\"tsconfig.json\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Extended options",
+          "placeholder": "options",
+          "description": "Compiler options layered over the configuration.",
+          "typeName": "ts.CompilerOptions expression",
+          "defaultValue": "{}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Prepare a semantic watch host",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst host = ts.createWatchCompilerHost(\"tsconfig.json\", {}, ts.sys, ts.createSemanticDiagnosticsBuilderProgram);\nconsole.log(typeof host.watchFile);",
+          "explanation": "The host can be customized before it is passed to createWatchProgram."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.create-watch-program",
+      "definition": "Starts file watching and rebuilds a project through the supplied watch host.",
+      "parameters": [
+        {
+          "name": "host",
+          "displayName": "Watch host",
+          "placeholder": "host",
+          "description": "A host created or customized for the watched project.",
+          "typeName": "WatchCompilerHost expression",
+          "defaultValue": "host",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Start a config watch",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst host = ts.createWatchCompilerHost(\"tsconfig.json\", {}, ts.sys, ts.createSemanticDiagnosticsBuilderProgram);\nconst watch = ts.createWatchProgram(host);\nconsole.log(watch.getProgram().getProgram().getRootFileNames());",
+          "explanation": "The returned watch owns file watchers and the current builder program and should be closed when no longer needed."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.is-identifier",
+      "definition": "Tests a Node's syntax kind and exposes Identifier-specific members to TypeScript.",
+      "parameters": [
+        {
+          "name": "node",
+          "displayName": "Node",
+          "placeholder": "node",
+          "description": "The AST node to test.",
+          "typeName": "ts.Node expression",
+          "defaultValue": "node",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "statement",
+          "displayName": "Identifier use",
+          "placeholder": "statement",
+          "description": "Work performed with the narrowed Identifier.",
+          "typeName": "TypeScript statement",
+          "defaultValue": "console.log(node.text);",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read identifier text",
+          "code": "import * as ts from \"@typescript/typescript6\";\nif (ts.isIdentifier(node)) console.log(node.text);",
+          "explanation": "The predicate narrows node to ts.Identifier inside the branch."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.is-function-declaration",
+      "definition": "Tests whether a Node is a function declaration and enables access to its name, parameters, and body.",
+      "parameters": [
+        {
+          "name": "node",
+          "displayName": "Node",
+          "placeholder": "node",
+          "description": "The AST node to test.",
+          "typeName": "ts.Node expression",
+          "defaultValue": "node",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "statement",
+          "displayName": "Declaration use",
+          "placeholder": "statement",
+          "description": "Work performed with the narrowed function declaration.",
+          "typeName": "TypeScript statement",
+          "defaultValue": "console.log(node.name?.text);",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a function name",
+          "code": "import * as ts from \"@typescript/typescript6\";\nif (ts.isFunctionDeclaration(node)) console.log(node.name?.text);",
+          "explanation": "The supported predicate is safer than manually comparing SyntaxKind and casting."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.is-class-declaration",
+      "definition": "Tests whether a Node is a class declaration and exposes its class-specific syntax members.",
+      "parameters": [
+        {
+          "name": "node",
+          "displayName": "Node",
+          "placeholder": "node",
+          "description": "The AST node to test.",
+          "typeName": "ts.Node expression",
+          "defaultValue": "node",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "statement",
+          "displayName": "Declaration use",
+          "placeholder": "statement",
+          "description": "Work performed with the narrowed class declaration.",
+          "typeName": "TypeScript statement",
+          "defaultValue": "console.log(node.name?.text, node.members.length);",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect a class declaration",
+          "code": "import * as ts from \"@typescript/typescript6\";\nif (ts.isClassDeclaration(node)) console.log(node.name?.text, node.members.length);",
+          "explanation": "The predicate narrows node to ts.ClassDeclaration for safe member access."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.get-combined-modifier-flags",
+      "definition": "Returns a bitmask containing the modifier flags associated with a declaration.",
+      "parameters": [
+        {
+          "name": "declaration",
+          "displayName": "Declaration",
+          "placeholder": "declaration",
+          "description": "The declaration whose modifiers are inspected.",
+          "typeName": "ts.Declaration expression",
+          "defaultValue": "node",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Check whether a declaration is exported",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst flags = ts.getCombinedModifierFlags(node);\nconsole.log((flags & ts.ModifierFlags.Export) !== 0);",
+          "explanation": "Bitwise checks test individual ModifierFlags without depending on modifier-array layout."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.get-jsdoc-comments-tags",
+      "definition": "Returns JSDoc blocks and tags associated with a host syntax node.",
+      "parameters": [
+        {
+          "name": "node",
+          "displayName": "Host node",
+          "placeholder": "node",
+          "description": "The syntax node whose documentation is requested.",
+          "typeName": "ts.Node expression",
+          "defaultValue": "node",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Count documentation nodes",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconst jsDoc = ts.getJSDocCommentsAndTags(node);\nconsole.log(jsDoc.length);",
+          "explanation": "The helper handles JSDoc attachment rules and returns syntax nodes for structured inspection."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.compiler-api.get-default-lib-file-path",
+      "definition": "Returns the compiler installation path to the default lib declaration selected by compiler options.",
+      "parameters": [
+        {
+          "name": "options",
+          "displayName": "Compiler options",
+          "placeholder": "options",
+          "description": "Options whose target influences the selected default library.",
+          "typeName": "ts.CompilerOptions expression",
+          "defaultValue": "{ target: ts.ScriptTarget.ES2022 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Locate the ES2022 default library",
+          "code": "import * as ts from \"@typescript/typescript6\";\nconsole.log(ts.getDefaultLibFilePath({ target: ts.ScriptTarget.ES2022 }));",
+          "explanation": "The returned path points into the active TypeScript package rather than the user's project source tree."
+        }
+      ]
+    }
+  ]
+}

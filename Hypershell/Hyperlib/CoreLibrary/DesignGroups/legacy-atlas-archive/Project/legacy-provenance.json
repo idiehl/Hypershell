@@ -1,0 +1,210 @@
+[
+  {
+    "sourceTemplateId": "atlas.archive.page.longform.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-PAGE-LONGFORM-V1",
+    "title": "Atlas Archive long-form article",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchivePageLongformV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.page.history.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-PAGE-HISTORY-V1",
+    "title": "History chronicle",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchivePageHistoryV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.page.language-culture.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-PAGE-LANGUAGE-CULTURE-V1",
+    "title": "Language and culture field guide",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchivePageLanguageCultureV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.page.evolution.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-PAGE-EVOLUTION-V1",
+    "title": "Evolution and science explainer",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchivePageEvolutionV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.page.coding.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-PAGE-CODING-V1",
+    "title": "Coding tutorial and technical guide",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchivePageCodingV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.page.media-dossier.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-PAGE-MEDIA-DOSSIER-V1",
+    "title": "Media-rich research dossier",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchivePageMediaDossierV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.section.lead.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-SECTION-LEAD-V1",
+    "title": "Archive article introduction",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveSectionLeadV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.section.chapter.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-SECTION-CHAPTER-V1",
+    "title": "Archive long-form chapter",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveSectionChapterV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.section.timeline.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-SECTION-TIMELINE-V1",
+    "title": "Atlas historical timeline",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveSectionTimelineV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.section.gallery.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-SECTION-GALLERY-V1",
+    "title": "Atlas image gallery",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveSectionGalleryV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.section.audio.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-SECTION-AUDIO-V1",
+    "title": "Atlas audio with transcript",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveSectionAudioV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.section.video.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-SECTION-VIDEO-V1",
+    "title": "Atlas video feature",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveSectionVideoV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.section.data.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-SECTION-DATA-V1",
+    "title": "Atlas graph and data table",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveSectionDataV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.section.sources.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-SECTION-SOURCES-V1",
+    "title": "Atlas sources and further reading",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveSectionSourcesV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.element.heading.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-ELEMENT-HEADING-V1",
+    "title": "Atlas kicker and heading",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveElementHeadingV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.element.card.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-ELEMENT-CARD-V1",
+    "title": "Atlas editorial card",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveElementCardV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.element.callout.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-ELEMENT-CALLOUT-V1",
+    "title": "Atlas fact callout",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveElementCalloutV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.element.figure.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-ELEMENT-FIGURE-V1",
+    "title": "Atlas image and caption",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveElementFigureV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.element.quote.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-ELEMENT-QUOTE-V1",
+    "title": "Atlas pull quote",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveElementQuoteV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.element.glossary.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-ELEMENT-GLOSSARY-V1",
+    "title": "Atlas glossary entry",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveElementGlossaryV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.element.code.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-ELEMENT-CODE-V1",
+    "title": "Atlas code listing",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveElementCodeV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.element.citation.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-ELEMENT-CITATION-V1",
+    "title": "Atlas source citation",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveElementCitationV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.archive.element.divider.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-ARCHIVE-ELEMENT-DIVIDER-V1",
+    "title": "Atlas section divider",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasArchiveElementDividerV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.hero.split.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-HERO-SPLIT-V1",
+    "title": "Atlas split hero",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasHeroSplitV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.card-grid.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-CARD-GRID-V1",
+    "title": "Atlas card grid",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasCardGridV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "atlas.cta.v1",
+    "catalogId": "HLC-LEGACY-ATLAS-CTA-V1",
+    "title": "Atlas call to action",
+    "sourceLibrary": "Atlas Archive",
+    "component": "LegacyAtlasCtaV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  }
+]

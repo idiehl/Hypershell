@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-poll">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><fieldset><legend>Choose your next topic</legend>@foreach(var row in Rows){var value=Cell(row,0);<label class="inline"><input type="radio" name="@(Context.Id+"-poll")" @onchange="()=>choice=value" /> @value</label>}</fieldset><output aria-live="polite">@(choice.Length==0 ? "Select an option" : $"Your local selection: {choice}")</output>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private string choice="";
+}

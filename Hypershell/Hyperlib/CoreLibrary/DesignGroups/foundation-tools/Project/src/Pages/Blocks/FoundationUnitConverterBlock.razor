@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-unit-converter">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><label>Kilometers<input type="number" min="0" step="0.1" @bind="kilometers" @bind:event="oninput" /></label><output class="tool-result">@((kilometers*0.621371m).ToString("0.###")) miles</output>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private decimal kilometers=10;
+}

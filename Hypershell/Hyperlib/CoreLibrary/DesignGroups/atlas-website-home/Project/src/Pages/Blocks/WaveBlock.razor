@@ -1,0 +1,15 @@
+@using System.Globalization
+<section class="hl-wave">
+    <div class="hl-widget-bar"><strong>C# wave explorer</strong><label>Frequency <input type="range" min="0.1" max="10" step="0.1" value="@_frequency.ToString(CultureInfo.InvariantCulture)" @oninput="ChangeFrequency" /></label><button @onclick="Shift">Shift phase</button><output>@_frequency.ToString("0.0", CultureInfo.InvariantCulture) Hz · @_clicks shifts</output></div>
+    <svg viewBox="0 0 720 160" role="img" aria-label="Interactive wave calculated by C sharp"><line x1="0" y1="80" x2="720" y2="80" stroke="#d5dfd8"/><path d="@PathData" fill="none" stroke="var(--hl-accent)" stroke-width="2.5"/></svg>
+</section>
+@code {
+    [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+    private double _frequency = 2, _amplitude = 0.65, _phase;
+    private int _clicks;
+    private double _inputFrequency = double.NaN;
+    protected override void OnParametersSet() { var f = Context.Number("frequency", 2); if(f != _inputFrequency) { _inputFrequency = f; _frequency = f; } _amplitude = Context.Number("amplitude", 0.65); }
+    private string PathData => string.Join(' ', Enumerable.Range(0, 181).Select(i => $"{(i == 0 ? "M" : "L")}{i * 4},{(80 - Math.Sin(i / 180.0 * Math.PI * 2 * _frequency + _phase) * 70 * _amplitude).ToString("0.##", CultureInfo.InvariantCulture)}"));
+    private void Shift() { _phase += Math.PI / 4; _clicks++; }
+    private void ChangeFrequency(ChangeEventArgs e) { if(double.TryParse(e.Value?.ToString(), CultureInfo.InvariantCulture, out var f)) _frequency = f; }
+}

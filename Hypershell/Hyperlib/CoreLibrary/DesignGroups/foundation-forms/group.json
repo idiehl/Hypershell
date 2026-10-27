@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "foundation-forms",
+  "title": "Forms essentials",
+  "description": "Editable forms modules. Native controls and local C# interactions; no third-party service required.",
+  "category": "Forms",
+  "sourceTemplateId": "foundation-forms"
+}

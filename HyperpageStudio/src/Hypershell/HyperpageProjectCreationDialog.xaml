@@ -1,0 +1,326 @@
+<Window x:Class="Hypershell.HyperpageProjectCreationDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Project"
+        Width="900"
+        Height="780"
+        MinWidth="760"
+        MinHeight="620"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        FontFamily="{StaticResource UiFontFamily}"
+        Foreground="{StaticResource ForegroundBrush}"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType">
+  <Window.Resources>
+    <Style x:Key="FoundationCardStyle" TargetType="{x:Type Border}">
+      <Setter Property="Background" Value="{StaticResource PanelRaisedBrush}" />
+      <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="7" />
+      <Setter Property="Padding" Value="15,13" />
+      <Setter Property="Margin" Value="0,0,0,10" />
+    </Style>
+    <Style x:Key="StepNumberStyle" TargetType="{x:Type Border}">
+      <Setter Property="Width" Value="28" />
+      <Setter Property="Height" Value="28" />
+      <Setter Property="CornerRadius" Value="14" />
+      <Setter Property="Background" Value="{StaticResource SecondaryTintBrush}" />
+      <Setter Property="BorderBrush" Value="{StaticResource SecondaryBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="Margin" Value="0,0,10,0" />
+    </Style>
+    <Style x:Key="QuestionStyle" TargetType="{x:Type TextBlock}">
+      <Setter Property="FontSize" Value="15" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="ChoiceStyle" TargetType="{x:Type RadioButton}">
+      <Setter Property="Margin" Value="0,9,22,3" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+  </Window.Resources>
+
+  <Border Background="{StaticResource PanelBrush}"
+          BorderBrush="#2E5D86"
+          BorderThickness="1"
+          CornerRadius="10"
+          ClipToBounds="True">
+    <Border.Effect>
+      <DropShadowEffect BlurRadius="24" ShadowDepth="8" Opacity="0.58" Color="#000000" />
+    </Border.Effect>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="64" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="64" />
+      </Grid.RowDefinitions>
+
+      <Border Background="#10151B"
+              BorderBrush="{StaticResource BorderBrush}"
+              BorderThickness="0,0,0,1"
+              MouseLeftButtonDown="TitleBarMouseLeftButtonDown">
+        <Grid Margin="18,0,9,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <Border Width="38" Height="38" CornerRadius="8"
+                  Background="{StaticResource SecondaryTintBrush}"
+                  BorderBrush="{StaticResource SecondaryBrush}"
+                  BorderThickness="1"
+                  Margin="0,0,12,0">
+            <TextBlock Text="&#xE943;" FontFamily="Segoe Fluent Icons"
+                       FontSize="19" Foreground="{StaticResource SecondaryVividBrush}"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+          </Border>
+          <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock Text="Project" FontSize="18" FontWeight="SemiBold" />
+            <TextBlock Text="Choose foundation"
+                       FontSize="11" Foreground="{StaticResource MutedForegroundBrush}" />
+          </StackPanel>
+          <Button Grid.Column="2" Click="CancelClick"
+                  Style="{StaticResource HeaderIconButtonStyle}"
+                  Width="36" Height="36"
+                  AutomationProperties.Name="Cancel project creation"
+                  ToolTip="Cancel">
+            <Path Data="M 3 3 L 13 13 M 13 3 L 3 13"
+                  Stroke="{StaticResource ForegroundBrush}" StrokeThickness="1.5" />
+          </Button>
+        </Grid>
+      </Border>
+
+      <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="22,18,22,16">
+          <Border Style="{StaticResource FoundationCardStyle}" Padding="15">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+              </Grid.ColumnDefinitions>
+              <StackPanel Margin="0,0,18,0">
+                <TextBlock Text="PROJECT NAME" FontSize="10" FontWeight="Bold"
+                           Foreground="{StaticResource SecondaryVividBrush}" />
+                <TextBox x:Name="ProjectNameTextBox" MinHeight="34" Margin="0,5,0,0"
+                         Text="Hyperpage Project" TextChanged="ProjectNameChanged" />
+              </StackPanel>
+              <StackPanel Grid.Column="1">
+                <TextBlock Text="PROJECT LOCATION" FontSize="10" FontWeight="Bold"
+                           Foreground="{StaticResource SecondaryVividBrush}" />
+                <TextBlock Text="{Binding ProjectDirectoryPreview}" Margin="0,8,0,0"
+                           FontFamily="{StaticResource CodeFontFamily}" FontSize="12"
+                           Foreground="{StaticResource MutedForegroundBrush}"
+                           TextTrimming="CharacterEllipsis" ToolTip="{Binding ProjectDirectoryPreview}" />
+                <TextBlock Text="New child folder"
+                           Margin="0,3,0,0" FontSize="10"
+                           Foreground="{StaticResource MutedForegroundBrush}" />
+              </StackPanel>
+            </Grid>
+          </Border>
+
+          <Border Style="{StaticResource FoundationCardStyle}">
+            <StackPanel>
+              <DockPanel>
+                <Border Style="{StaticResource StepNumberStyle}">
+                  <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Foreground="{StaticResource SecondaryVividBrush}" FontWeight="Bold" />
+                </Border>
+                <TextBlock Text="Language" Style="{StaticResource QuestionStyle}" />
+              </DockPanel>
+              <StackPanel Orientation="Horizontal" Margin="38,0,0,0">
+                <RadioButton x:Name="HtmlRadio" GroupName="Markup" Content="HTML"
+                             Style="{StaticResource ChoiceStyle}" />
+                <RadioButton x:Name="RazorRadio" GroupName="Markup" Content="Razor Pages"
+                             IsChecked="True" Style="{StaticResource ChoiceStyle}" />
+              </StackPanel>
+              <TextBlock Margin="38,2,0,0" TextWrapping="Wrap"
+                         Foreground="{StaticResource MutedForegroundBrush}"
+                         Text="HTML or Razor" />
+            </StackPanel>
+          </Border>
+
+          <Border Style="{StaticResource FoundationCardStyle}">
+            <StackPanel>
+              <DockPanel>
+                <Border Style="{StaticResource StepNumberStyle}">
+                  <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Foreground="{StaticResource SecondaryVividBrush}" FontWeight="Bold" />
+                </Border>
+                <TextBlock Text="Hosting" Style="{StaticResource QuestionStyle}" />
+              </DockPanel>
+              <StackPanel Orientation="Horizontal" Margin="38,0,0,0">
+                <RadioButton x:Name="LocalHostingRadio" GroupName="Hosting" Content="Local"
+                             IsChecked="True" Style="{StaticResource ChoiceStyle}" />
+                <RadioButton x:Name="WebServerHostingRadio" GroupName="Hosting" Content="Web server"
+                             Style="{StaticResource ChoiceStyle}" />
+              </StackPanel>
+              <TextBlock Margin="38,2,0,0" TextWrapping="Wrap"
+                         Foreground="{StaticResource MutedForegroundBrush}"
+                         Text="Preview stays local." />
+            </StackPanel>
+          </Border>
+
+          <Border Style="{StaticResource FoundationCardStyle}">
+            <StackPanel>
+              <DockPanel>
+                <Border Style="{StaticResource StepNumberStyle}">
+                  <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Foreground="{StaticResource SecondaryVividBrush}" FontWeight="Bold" />
+                </Border>
+                <TextBlock Text="Pages" Style="{StaticResource QuestionStyle}" />
+              </DockPanel>
+              <WrapPanel Margin="38,0,0,0">
+                <RadioButton x:Name="FixedPagesRadio" GroupName="Structure" Content="Set page count"
+                             IsChecked="True" Checked="StructureChanged"
+                             Style="{StaticResource ChoiceStyle}" />
+                <TextBox x:Name="PageCountTextBox" Width="58" MinHeight="32" Margin="0,6,22,0"
+                         Text="1" TextChanged="PageCountChanged"
+                         AutomationProperties.Name="Initial page count" />
+                <RadioButton x:Name="DynamicSiteRadio" GroupName="Structure" Content="Dynamic site"
+                             Checked="StructureChanged" Style="{StaticResource ChoiceStyle}" />
+              </WrapPanel>
+              <TextBlock x:Name="StructureHelpText" Margin="38,2,0,0" TextWrapping="Wrap"
+                         Foreground="{StaticResource MutedForegroundBrush}"
+                         Text="Choose 1–20." />
+            </StackPanel>
+          </Border>
+
+          <Border Style="{StaticResource FoundationCardStyle}">
+            <StackPanel>
+              <DockPanel>
+                <Border Style="{StaticResource StepNumberStyle}">
+                  <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Foreground="{StaticResource SecondaryVividBrush}" FontWeight="Bold" />
+                </Border>
+                <TextBlock Text="Templates" Style="{StaticResource QuestionStyle}" />
+              </DockPanel>
+              <StackPanel Orientation="Horizontal" Margin="38,0,0,0">
+                <RadioButton x:Name="TemplatesNoRadio" GroupName="Templates" Content="No — blank pages"
+                             IsChecked="True" Checked="TemplateChoiceChanged"
+                             Style="{StaticResource ChoiceStyle}" />
+                <RadioButton x:Name="TemplatesYesRadio" GroupName="Templates" Content="Choose pages"
+                             Checked="TemplateChoiceChanged" Style="{StaticResource ChoiceStyle}" />
+              </StackPanel>
+
+              <Border Margin="38,8,0,0" Padding="10" CornerRadius="5"
+                      Background="{StaticResource AppBackgroundBrush}"
+                      BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+                <StackPanel>
+                  <Grid Margin="0,0,0,5">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="1.1*" />
+                      <ColumnDefinition Width="1.2*" />
+                      <ColumnDefinition Width="1.7*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Page" FontSize="10" FontWeight="Bold"
+                               Foreground="{StaticResource SecondaryVividBrush}" />
+                    <TextBlock Grid.Column="1" Text="Route" FontSize="10" FontWeight="Bold"
+                               Foreground="{StaticResource SecondaryVividBrush}" Margin="8,0" />
+                    <TextBlock Grid.Column="2" Text="Starter template" FontSize="10" FontWeight="Bold"
+                               Foreground="{StaticResource SecondaryVividBrush}" Margin="8,0" />
+                  </Grid>
+                  <ItemsControl ItemsSource="{Binding PageDrafts}">
+                    <ItemsControl.ItemTemplate>
+                      <DataTemplate>
+                        <Grid Margin="0,3">
+                          <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.1*" />
+                            <ColumnDefinition Width="1.2*" />
+                            <ColumnDefinition Width="1.7*" />
+                          </Grid.ColumnDefinitions>
+                          <TextBox Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                   MinHeight="32" />
+                          <TextBox Grid.Column="1"
+                                   Text="{Binding Route, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                   MinHeight="32" Margin="8,0" />
+                          <ComboBox Grid.Column="2"
+                                    ItemsSource="{Binding DataContext.PageTemplates, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    SelectedItem="{Binding SelectedTemplate, Mode=TwoWay}"
+                                    IsEnabled="{Binding DataContext.UseTemplates, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    MinHeight="32" Margin="8,0,0,0">
+                            <ComboBox.ItemTemplate>
+                              <DataTemplate>
+                                <StackPanel>
+                                  <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                                  <TextBlock Text="{Binding Category}" FontSize="10"
+                                             Foreground="{StaticResource MutedForegroundBrush}" />
+                                </StackPanel>
+                              </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                          </ComboBox>
+                        </Grid>
+                      </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                  </ItemsControl>
+                </StackPanel>
+              </Border>
+            </StackPanel>
+          </Border>
+
+          <Border Style="{StaticResource FoundationCardStyle}" Margin="0">
+            <StackPanel>
+              <DockPanel>
+                <Border Style="{StaticResource StepNumberStyle}">
+                  <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Foreground="{StaticResource SecondaryVividBrush}" FontWeight="Bold" />
+                </Border>
+                <TextBlock Text="Mode" Style="{StaticResource QuestionStyle}" />
+              </DockPanel>
+              <StackPanel Orientation="Horizontal" Margin="38,0,0,0">
+                <RadioButton x:Name="ManualCodingRadio" GroupName="Coding" Content="Manual coding"
+                             IsChecked="True" Checked="CodingModeChanged"
+                             Style="{StaticResource ChoiceStyle}" />
+                <RadioButton x:Name="AiCodingRadio" GroupName="Coding" Content="AI-assisted coding"
+                             Checked="CodingModeChanged" Style="{StaticResource ChoiceStyle}" />
+              </StackPanel>
+              <Border x:Name="AiProviderPanel" Margin="38,8,0,0" Padding="11"
+                      CornerRadius="5" Background="{StaticResource AppBackgroundBrush}"
+                      BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
+                      IsEnabled="False" Opacity="0.55">
+                <StackPanel>
+                  <TextBlock Text="INITIAL AI PROVIDER" FontSize="10" FontWeight="Bold"
+                             Foreground="{StaticResource SecondaryVividBrush}" />
+                  <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="OpenAiProviderRadio" GroupName="AiProvider"
+                                 Content="OpenAI" IsChecked="True"
+                                 Style="{StaticResource ChoiceStyle}" />
+                    <RadioButton x:Name="LocalAiProviderRadio" GroupName="AiProvider"
+                                 Content="Local model" Style="{StaticResource ChoiceStyle}" />
+                  </StackPanel>
+                  <TextBlock TextWrapping="Wrap" Foreground="{StaticResource MutedForegroundBrush}"
+                             Text="Assistant opens below." />
+                </StackPanel>
+              </Border>
+            </StackPanel>
+          </Border>
+        </StackPanel>
+      </ScrollViewer>
+
+      <Border Grid.Row="2" Background="#10151B"
+              BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
+        <Grid Margin="18,10">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock x:Name="StatusText" Foreground="#FFFF7B72"
+                     VerticalAlignment="Center" TextWrapping="Wrap" />
+          <Button Grid.Column="1" Content="Cancel" Click="CancelClick"
+                  Padding="16,7" Margin="8,0" />
+          <Button Grid.Column="2" Content="Create" Click="CreateClick"
+                  Padding="18,7" Background="{StaticResource AccentHoverBrush}"
+                  IsDefault="True" />
+        </Grid>
+      </Border>
+    </Grid>
+  </Border>
+</Window>

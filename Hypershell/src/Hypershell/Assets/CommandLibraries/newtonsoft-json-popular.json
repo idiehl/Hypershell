@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "newtonsoft-json-popular",
+  "displayName": "Newtonsoft.Json",
+  "description": "Curated Newtonsoft.Json starter recipes for the C# Command Builder. The dependency is referenced, not bundled.",
+  "language": "C#",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "Newtonsoft.Json",
+  "ecosystem": "NuGet",
+  "targetVersion": "13.0.4",
+  "sourceVersion": "13.0.4 documentation · curated 2026-08-17",
+  "sourceUrl": "https://www.newtonsoft.com/json/help/html/Introduction.htm",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Project dependency only: add Newtonsoft.Json to a project and insert the snippet there; the isolated C# runner does not restore packages.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "c#",
+    "popular library",
+    "newtonsoft.json",
+    "json",
+    "serialization",
+    "linq to json",
+    "nuget"
+  ],
+  "executionTarget": "CSharp",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/newtonsoft-json-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/newtonsoft-json-popular.guides.json"
+  ],
+  "legacyIds": []
+}

@@ -1,0 +1,514 @@
+<Window x:Class="Hypershell.GitRepositoryOperationsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Repository Operations"
+        Width="980"
+        Height="720"
+        MinWidth="820"
+        MinHeight="600"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        FontFamily="{StaticResource UiFontFamily}">
+  <Window.Resources>
+    <Style x:Key="GitSectionLabelStyle" TargetType="{x:Type TextBlock}">
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}" />
+      <Setter Property="Margin" Value="0,0,0,4" />
+    </Style>
+    <Style x:Key="GitIconButtonStyle"
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource {x:Type Button}}">
+      <Setter Property="MinWidth" Value="34" />
+      <Setter Property="Height" Value="31" />
+      <Setter Property="Padding" Value="6,0" />
+      <Setter Property="Margin" Value="4,0,0,0" />
+      <Setter Property="FontFamily" Value="{StaticResource CodeFontFamily}" />
+      <Setter Property="FontSize" Value="15" />
+    </Style>
+  </Window.Resources>
+
+  <Border Background="{StaticResource PanelBrush}"
+          BorderBrush="#2E5D86"
+          BorderThickness="1"
+          CornerRadius="10"
+          ClipToBounds="True">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="56" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="54" />
+      </Grid.RowDefinitions>
+
+      <Border Background="#10151B"
+              BorderBrush="{StaticResource BorderBrush}"
+              BorderThickness="0,0,0,1"
+              MouseLeftButtonDown="TitleBarMouseLeftButtonDown">
+        <Grid Margin="16,0,8,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="⑂"
+                     FontFamily="{StaticResource CodeFontFamily}"
+                     FontSize="24"
+                     Foreground="{StaticResource SecondaryBrush}"
+                     VerticalAlignment="Center"
+                     Margin="0,0,12,0" />
+          <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock Text="Repository Operations"
+                       FontSize="17"
+                       FontWeight="SemiBold" />
+            <TextBlock Text="{Binding RepositoryRoot}"
+                       FontSize="9.5"
+                       Foreground="{StaticResource MutedForegroundBrush}"
+                       TextTrimming="CharacterEllipsis" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Click="CloseClick"
+                  Style="{StaticResource HeaderIconButtonStyle}"
+                  Width="34"
+                  Height="34"
+                  ToolTip="Close">
+            <Path Data="M 3 3 L 13 13 M 13 3 L 3 13"
+                  Stroke="{StaticResource ForegroundBrush}"
+                  StrokeThickness="1.5" />
+          </Button>
+        </Grid>
+      </Border>
+
+      <TabControl x:Name="OperationsTabs"
+                  Grid.Row="1"
+                  Margin="14">
+        <TabItem Header="BRANCHES">
+          <Grid Margin="14">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1.05*" />
+              <ColumnDefinition Width="18" />
+              <ColumnDefinition Width="1.25*" />
+            </Grid.ColumnDefinitions>
+            <ListBox ItemsSource="{Binding Branches}"
+                     SelectedItem="{Binding SelectedBranch, Mode=TwoWay}">
+              <ListBox.ItemTemplate>
+                <DataTemplate>
+                  <Grid Margin="4,3">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="24" />
+                      <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="⑂"
+                               Foreground="{StaticResource SecondaryBrush}" />
+                    <StackPanel Grid.Column="1">
+                      <TextBlock Text="{Binding Name}" />
+                      <TextBlock Text="{Binding Upstream}"
+                                 FontSize="9"
+                                 Foreground="{StaticResource MutedForegroundBrush}" />
+                    </StackPanel>
+                  </Grid>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+
+            <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto">
+              <StackPanel>
+                <TextBlock Text="NEW BRANCH" Style="{StaticResource GitSectionLabelStyle}" />
+                <TextBox x:Name="NewBranchNameTextBox" />
+                <TextBlock Text="START POINT" Style="{StaticResource GitSectionLabelStyle}" Margin="0,10,0,4" />
+                <TextBox x:Name="BranchStartPointTextBox" Text="HEAD" />
+                <Button Content="＋"
+                        Click="CreateBranchClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        HorizontalAlignment="Right"
+                        Margin="0,6,0,0"
+                        ToolTip="Create and check out branch" />
+
+                <Separator Margin="0,15" />
+                <TextBlock Text="SELECTED BRANCH" Style="{StaticResource GitSectionLabelStyle}" />
+                <TextBox x:Name="RenameBranchTextBox"
+                         Text="{Binding SelectedBranch.Name, Mode=OneWay}" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,6,0,0">
+                  <Button Content="↪"
+                          Command="{Binding CheckoutBranchCommand}"
+                          Style="{StaticResource GitIconButtonStyle}"
+                          ToolTip="Check out selected branch" />
+                  <Button Content="≡"
+                          Click="RenameBranchClick"
+                          Style="{StaticResource GitIconButtonStyle}"
+                          ToolTip="Rename selected branch" />
+                  <Button Content="×"
+                          Click="DeleteBranchClick"
+                          Style="{StaticResource GitIconButtonStyle}"
+                          Foreground="{StaticResource AttentionBrush}"
+                          ToolTip="Delete selected branch" />
+                </StackPanel>
+
+                <Separator Margin="0,15" />
+                <TextBlock Text="INTEGRATE SELECTED BRANCH" Style="{StaticResource GitSectionLabelStyle}" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                  <Button Content="⋈"
+                          Click="MergeBranchClick"
+                          Style="{StaticResource GitIconButtonStyle}"
+                          ToolTip="Merge selected branch into the current branch" />
+                  <Button Content="⇄"
+                          Click="RebaseBranchClick"
+                          Style="{StaticResource GitIconButtonStyle}"
+                          ToolTip="Rebase the current branch onto the selected branch" />
+                </StackPanel>
+              </StackPanel>
+            </ScrollViewer>
+          </Grid>
+        </TabItem>
+
+        <TabItem Header="TAGS">
+          <Grid Margin="14">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1.05*" />
+              <ColumnDefinition Width="18" />
+              <ColumnDefinition Width="1.25*" />
+            </Grid.ColumnDefinitions>
+            <ListBox ItemsSource="{Binding Tags}"
+                     SelectedItem="{Binding SelectedTag, Mode=TwoWay}">
+              <ListBox.ItemTemplate>
+                <DataTemplate>
+                  <StackPanel Margin="4,3">
+                    <TextBlock Text="{Binding Name}" />
+                    <TextBlock Text="{Binding Subject}"
+                               FontSize="9"
+                               Foreground="{StaticResource MutedForegroundBrush}"
+                               TextTrimming="CharacterEllipsis" />
+                  </StackPanel>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Grid.Column="2">
+              <TextBlock Text="TAG NAME" Style="{StaticResource GitSectionLabelStyle}" />
+              <TextBox x:Name="TagNameTextBox" />
+              <TextBlock Text="TARGET" Style="{StaticResource GitSectionLabelStyle}" Margin="0,10,0,4" />
+              <TextBox x:Name="TagTargetTextBox" Text="HEAD" />
+              <TextBlock Text="ANNOTATION (OPTIONAL)" Style="{StaticResource GitSectionLabelStyle}" Margin="0,10,0,4" />
+              <TextBox x:Name="TagMessageTextBox"
+                       AcceptsReturn="True"
+                       TextWrapping="Wrap"
+                       MinHeight="80" />
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,7,0,0">
+                <Button Content="＋"
+                        Click="CreateTagClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        ToolTip="Create tag" />
+                <Button Content="×"
+                        Click="DeleteTagClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        Foreground="{StaticResource AttentionBrush}"
+                        ToolTip="Delete selected tag" />
+              </StackPanel>
+            </StackPanel>
+          </Grid>
+        </TabItem>
+
+        <TabItem Header="REMOTES">
+          <Grid Margin="14">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1.05*" />
+              <ColumnDefinition Width="18" />
+              <ColumnDefinition Width="1.25*" />
+            </Grid.ColumnDefinitions>
+            <ListBox ItemsSource="{Binding Remotes}"
+                     SelectedItem="{Binding SelectedRemote, Mode=TwoWay}">
+              <ListBox.ItemTemplate>
+                <DataTemplate>
+                  <StackPanel Margin="4,3">
+                    <TextBlock Text="{Binding Name}" />
+                    <TextBlock Text="{Binding FetchUrl}"
+                               FontSize="9"
+                               Foreground="{StaticResource MutedForegroundBrush}"
+                               TextTrimming="CharacterEllipsis" />
+                  </StackPanel>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+            <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto">
+              <StackPanel>
+                <TextBlock Text="REMOTE NAME" Style="{StaticResource GitSectionLabelStyle}" />
+                <TextBox x:Name="RemoteNameTextBox" Text="origin" />
+                <TextBlock Text="URL" Style="{StaticResource GitSectionLabelStyle}" Margin="0,10,0,4" />
+                <TextBox x:Name="RemoteUrlTextBox" />
+                <CheckBox x:Name="PushUrlCheckBox"
+                          Content="Update push URL only"
+                          Margin="0,8,0,0" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,7,0,0">
+                  <Button Content="＋"
+                          Click="AddRemoteClick"
+                          Style="{StaticResource GitIconButtonStyle}"
+                          ToolTip="Add remote" />
+                  <Button Content="≡"
+                          Click="UpdateRemoteClick"
+                          Style="{StaticResource GitIconButtonStyle}"
+                          ToolTip="Update selected remote URL" />
+                  <Button Content="×"
+                          Click="RemoveRemoteClick"
+                          Style="{StaticResource GitIconButtonStyle}"
+                          Foreground="{StaticResource AttentionBrush}"
+                          ToolTip="Remove selected remote" />
+                </StackPanel>
+
+                <Separator Margin="0,15" />
+                <TextBlock Text="FORCE WITH LEASE" Style="{StaticResource GitSectionLabelStyle}" />
+                <TextBox x:Name="ForceBranchTextBox"
+                         Text="{Binding BranchName, Mode=OneWay}" />
+                <Button Content="⇡!"
+                        Click="ForcePushClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        HorizontalAlignment="Right"
+                        Margin="0,7,0,0"
+                        Foreground="{StaticResource AttentionBrush}"
+                        ToolTip="Force-push current branch with lease" />
+                <Separator Margin="0,15" />
+                <TextBlock Text="CREDENTIALS" Style="{StaticResource GitSectionLabelStyle}" />
+                <TextBlock Text="{Binding GitCredentialStatus}"
+                           FontSize="9"
+                           Foreground="{StaticResource MutedForegroundBrush}"
+                           TextWrapping="Wrap" />
+              </StackPanel>
+            </ScrollViewer>
+          </Grid>
+        </TabItem>
+
+        <TabItem Header="STASHES">
+          <Grid Margin="14">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1.05*" />
+              <ColumnDefinition Width="18" />
+              <ColumnDefinition Width="1.25*" />
+            </Grid.ColumnDefinitions>
+            <ListBox ItemsSource="{Binding Stashes}"
+                     SelectedItem="{Binding SelectedStash, Mode=TwoWay}">
+              <ListBox.ItemTemplate>
+                <DataTemplate>
+                  <StackPanel Margin="4,3">
+                    <TextBlock Text="{Binding Reference}" />
+                    <TextBlock Text="{Binding Message}"
+                               FontSize="9"
+                               Foreground="{StaticResource MutedForegroundBrush}"
+                               TextTrimming="CharacterEllipsis" />
+                  </StackPanel>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Grid.Column="2">
+              <TextBlock Text="STASH MESSAGE" Style="{StaticResource GitSectionLabelStyle}" />
+              <TextBox x:Name="StashMessageTextBox" />
+              <CheckBox x:Name="IncludeUntrackedCheckBox"
+                        Content="Include untracked files"
+                        IsChecked="True"
+                        Margin="0,8,0,0" />
+              <Button Content="＋"
+                      Click="CreateStashClick"
+                      Style="{StaticResource GitIconButtonStyle}"
+                      HorizontalAlignment="Right"
+                      Margin="0,7,0,0"
+                      ToolTip="Create stash" />
+              <Separator Margin="0,15" />
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="↓"
+                        Click="ApplyStashClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        ToolTip="Apply selected stash" />
+                <Button Content="⇣"
+                        Click="PopStashClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        ToolTip="Pop selected stash" />
+                <Button Content="×"
+                        Click="DropStashClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        Foreground="{StaticResource AttentionBrush}"
+                        ToolTip="Delete selected stash" />
+              </StackPanel>
+            </StackPanel>
+          </Grid>
+        </TabItem>
+
+        <TabItem Header="HISTORY">
+          <Grid Margin="14">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1.2*" />
+              <ColumnDefinition Width="18" />
+              <ColumnDefinition Width="1.05*" />
+            </Grid.ColumnDefinitions>
+            <ListBox ItemsSource="{Binding History}"
+                     SelectedItem="{Binding SelectedCommit, Mode=TwoWay}">
+              <ListBox.ItemTemplate>
+                <DataTemplate>
+                  <StackPanel Margin="4,3">
+                    <TextBlock Text="{Binding Subject}" />
+                    <TextBlock FontSize="9"
+                               FontFamily="{StaticResource CodeFontFamily}"
+                               Foreground="{StaticResource MutedForegroundBrush}">
+                      <Run Text="{Binding CommitId}" />
+                      <Run Text="  " />
+                      <Run Text="{Binding AuthorName}" />
+                    </TextBlock>
+                  </StackPanel>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Grid.Column="2">
+              <TextBlock Text="SELECTED COMMIT" Style="{StaticResource GitSectionLabelStyle}" />
+              <TextBlock Text="{Binding SelectedCommit.Subject}"
+                         TextWrapping="Wrap"
+                         Margin="0,0,0,4" />
+              <TextBlock Text="{Binding SelectedCommit.CommitId}"
+                         FontFamily="{StaticResource CodeFontFamily}"
+                         FontSize="9"
+                         Foreground="{StaticResource MutedForegroundBrush}"
+                         TextWrapping="Wrap" />
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,8,0,0">
+                <Button Content="≠"
+                        Command="{Binding OpenCommitDiffCommand}"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        ToolTip="Open commit patch" />
+                <Button Content="↶"
+                        Click="RevertCommitClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        ToolTip="Revert selected commit" />
+                <Button Content="♧"
+                        Click="CherryPickClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        ToolTip="Cherry-pick selected commit" />
+              </StackPanel>
+              <Separator Margin="0,15" />
+              <TextBlock Text="RESET TO SELECTED COMMIT" Style="{StaticResource GitSectionLabelStyle}" />
+              <ComboBox x:Name="ResetModeComboBox" />
+              <Button Content="↺!"
+                      Click="ResetClick"
+                      Style="{StaticResource GitIconButtonStyle}"
+                      HorizontalAlignment="Right"
+                      Margin="0,7,0,0"
+                      Foreground="{StaticResource AttentionBrush}"
+                      ToolTip="Reset repository to selected commit" />
+            </StackPanel>
+          </Grid>
+        </TabItem>
+
+        <TabItem Header="RECOVERY">
+          <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="18" MaxWidth="620">
+              <TextBlock Text="MERGE" Style="{StaticResource GitSectionLabelStyle}" />
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="▶"
+                        Click="ContinueMergeClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        ToolTip="Continue merge after resolved files are staged" />
+                <Button Content="×"
+                        Click="AbortMergeClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        Foreground="{StaticResource AttentionBrush}"
+                        ToolTip="Abort merge" />
+              </StackPanel>
+              <Separator Margin="0,15" />
+              <TextBlock Text="REBASE" Style="{StaticResource GitSectionLabelStyle}" />
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="▶"
+                        Click="ContinueRebaseClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        ToolTip="Continue rebase" />
+                <Button Content="≫"
+                        Click="SkipRebaseClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        ToolTip="Skip current rebase commit" />
+                <Button Content="×"
+                        Click="AbortRebaseClick"
+                        Style="{StaticResource GitIconButtonStyle}"
+                        Foreground="{StaticResource AttentionBrush}"
+                        ToolTip="Abort rebase" />
+              </StackPanel>
+              <Separator Margin="0,15" />
+              <TextBlock Text="CHERRY-PICK" Style="{StaticResource GitSectionLabelStyle}" />
+              <Button Content="×"
+                      Click="AbortCherryPickClick"
+                      Style="{StaticResource GitIconButtonStyle}"
+                      HorizontalAlignment="Right"
+                      Foreground="{StaticResource AttentionBrush}"
+                      ToolTip="Abort cherry-pick" />
+            </StackPanel>
+          </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="REPOSITORY">
+          <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="18" MaxWidth="700">
+              <TextBlock Text="CLONE SOURCE" Style="{StaticResource GitSectionLabelStyle}" />
+              <TextBox x:Name="CloneSourceTextBox" />
+              <TextBlock Text="DESTINATION WORKSPACE URI OR LOCAL PATH"
+                         Style="{StaticResource GitSectionLabelStyle}"
+                         Margin="0,10,0,4" />
+              <TextBox x:Name="CloneDestinationTextBox" />
+              <TextBlock Text="Use a new or empty child directory, such as ssh://host-id/srv/work/project."
+                         Foreground="{StaticResource MutedForegroundBrush}"
+                         FontSize="9"
+                         TextWrapping="Wrap"
+                         Margin="1,4,0,0" />
+              <TextBlock Text="BRANCH (OPTIONAL)"
+                         Style="{StaticResource GitSectionLabelStyle}"
+                         Margin="0,10,0,4" />
+              <TextBox x:Name="CloneBranchTextBox" />
+              <Button Content="⇩"
+                      Click="CloneClick"
+                      Style="{StaticResource GitIconButtonStyle}"
+                      HorizontalAlignment="Right"
+                      Margin="0,7,0,0"
+                      ToolTip="Clone repository" />
+              <Separator Margin="0,18" />
+              <TextBlock Text="BARE REPOSITORY DESTINATION"
+                         Style="{StaticResource GitSectionLabelStyle}" />
+              <TextBox x:Name="BareDestinationTextBox" />
+              <Button Content="＋"
+                      Click="InitializeBareClick"
+                      Style="{StaticResource GitIconButtonStyle}"
+                      HorizontalAlignment="Right"
+                      Margin="0,7,0,0"
+                      ToolTip="Initialize a bare origin repository" />
+              <Separator Margin="0,18" />
+              <TextBlock Text="TOOLING" Style="{StaticResource GitSectionLabelStyle}" />
+              <TextBlock Text="{Binding GitToolStatus}"
+                         FontSize="9"
+                         Foreground="{StaticResource MutedForegroundBrush}"
+                         TextWrapping="Wrap" />
+              <TextBlock Text="{Binding GitCredentialStatus}"
+                         FontSize="9"
+                         Foreground="{StaticResource MutedForegroundBrush}"
+                         TextWrapping="Wrap"
+                         Margin="0,4,0,0" />
+            </StackPanel>
+          </ScrollViewer>
+        </TabItem>
+      </TabControl>
+
+      <Border Grid.Row="2"
+              Background="#10151B"
+              BorderBrush="{StaticResource BorderBrush}"
+              BorderThickness="0,1,0,0">
+        <Grid Margin="16,8">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock x:Name="DialogStatusText"
+                     Text="{Binding StatusMessage}"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     TextTrimming="CharacterEllipsis"
+                     VerticalAlignment="Center" />
+          <Button Grid.Column="1"
+                  Command="{Binding RefreshCommand}"
+                  Content="↻"
+                  Style="{StaticResource GitIconButtonStyle}"
+                  ToolTip="Refresh repository" />
+        </Grid>
+      </Border>
+    </Grid>
+  </Border>
+</Window>

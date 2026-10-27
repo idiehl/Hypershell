@@ -1,0 +1,24 @@
+@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Sign in";
+}
+
+<section class="login-shell">
+    <div class="login-card">
+        <p class="eyebrow">ATLAS UNIVERSALIS</p>
+        <h1>Hypershell Admin</h1>
+        <p class="muted">Private account access.</p>
+        <form method="post">
+            <input asp-for="ReturnUrl" type="hidden" />
+            <div asp-validation-summary="ModelOnly" class="validation"></div>
+            <label asp-for="Input.AccountId">Account</label>
+            <input asp-for="Input.AccountId" autocomplete="username" autofocus />
+            <label asp-for="Input.Password">Password</label>
+            <input asp-for="Input.Password" autocomplete="current-password" />
+            <label asp-for="Input.SecondFactor">Authenticator or recovery code</label>
+            <input asp-for="Input.SecondFactor" autocomplete="one-time-code" />
+            <button class="primary" type="submit">Sign in</button>
+        </form>
+    </div>
+</section>

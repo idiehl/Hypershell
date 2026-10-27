@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "css-fonts",
+  "guides": [
+    {
+      "entryId": "css.typography",
+      "definition": "Font family selects available typefaces, line-height controls line box spacing, and logical measure units can prevent prose from becoming difficult to scan.",
+      "parameters": [
+        {
+          "name": "className",
+          "displayName": "Text class",
+          "placeholder": "className",
+          "description": "The class applied to a prose region.",
+          "typeName": "CSS identifier",
+          "defaultValue": "prose",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "measure",
+          "displayName": "Line measure",
+          "placeholder": "measure",
+          "description": "The maximum inline line length.",
+          "typeName": "Length",
+          "defaultValue": "70ch",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "font",
+          "displayName": "Font stack",
+          "placeholder": "font",
+          "description": "A prioritized CSS font-family list.",
+          "typeName": "Font family",
+          "defaultValue": "system-ui, sans-serif",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "size",
+          "displayName": "Font size",
+          "placeholder": "size",
+          "description": "The base text size.",
+          "typeName": "Length",
+          "defaultValue": "1rem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "lineHeight",
+          "displayName": "Line height",
+          "placeholder": "lineHeight",
+          "description": "A unitless line-height multiplier.",
+          "typeName": "Number",
+          "defaultValue": "1.6",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a readable prose column",
+          "code": ".prose {\n  max-inline-size: 70ch;\n  font-family: system-ui, sans-serif;\n  font-size: 1rem;\n  line-height: 1.6;\n}",
+          "explanation": "The text uses installed system UI fonts, comfortable line spacing, and a bounded line measure."
+        }
+      ]
+    }
+  ]
+}

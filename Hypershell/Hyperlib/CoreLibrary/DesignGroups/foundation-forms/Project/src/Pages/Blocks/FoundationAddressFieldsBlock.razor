@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-address-fields">
+<fieldset><legend>@Context.Text("title")</legend><label>Full name<input autocomplete="name" /></label><label>Street address<input autocomplete="street-address" /></label><div class="parallel"><label>City<input autocomplete="address-level2" /></label><label>Postal code<input autocomplete="postal-code" /></label></div><label>Country<input autocomplete="country-name" /></label></fieldset>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

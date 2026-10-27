@@ -1,0 +1,117 @@
+{
+  "recordedOn": "2026-10-22",
+  "examples": [
+    "EX-006",
+    "EX-007"
+  ],
+  "userApproval": {
+    "EX006": "The first screenshot is an example of using variable scaling to take advantage of space very effectively.",
+    "EX007": "The 2nd screenshot is similar. It demonstrates that it should always be possible to open all the sub-nodes of a branch without overlapping or interfering with other nodes."
+  },
+  "identity": {
+    "origin": "http://127.0.0.1:5240",
+    "methods": [
+      "GET"
+    ],
+    "retrievedAt": "2026-10-22T08:37:18.242Z",
+    "catalogSHA256": "7c24347ecb6344f56af030cbb4fc3bc25e6084037d9015ad0e99049e471f91ba",
+    "projectResponseSHA256": "a16e312aa7d24ee5cbe43de5ebddb873ab449a708e8c41e5d1fa983e4a85b1ed",
+    "catalogEntry": {
+      "id": "2a9aa31d-b13c-4d0b-9192-b1a94b7c0fce",
+      "title": "C++ · Language & Layout Atlas",
+      "revision": 23,
+      "updatedAt": "2026-10-22T08:27:40.8028180+00:00",
+      "work": {
+        "id": "6bdf2562-d8db-44ae-af8e-31cfc3d738f7",
+        "rootId": "fd5f4a6d-7ad1-4811-a7bb-b7ddd4d8b9ae",
+        "title": "C++ classes and types",
+        "nodeCount": 2131
+      }
+    },
+    "project": {
+      "id": "2a9aa31d-b13c-4d0b-9192-b1a94b7c0fce",
+      "title": "C++ · Language & Layout Atlas",
+      "revision": 23
+    },
+    "work": {
+      "id": "6bdf2562-d8db-44ae-af8e-31cfc3d738f7",
+      "title": "C++ classes and types",
+      "rootId": "fd5f4a6d-7ad1-4811-a7bb-b7ddd4d8b9ae"
+    },
+    "nodes": [
+      {
+        "id": "0014465b-5a77-4e0b-a1ae-62488ab9d1ea",
+        "title": "Text, formatting & patterns",
+        "tag": "C++ · Text, formatting & patterns",
+        "parentId": "62cb8e93-fca9-441b-8a9e-2f34804396b0",
+        "kind": "media"
+      },
+      {
+        "id": "29223eee-d0dd-4a11-9d62-74373dfcf6e7",
+        "title": "Regular expressions",
+        "tag": "C++ · Text, formatting & patterns · Regular expressions",
+        "parentId": "0014465b-5a77-4e0b-a1ae-62488ab9d1ea",
+        "kind": "media"
+      },
+      {
+        "id": "3784dbf0-6e00-4698-9f6a-cf05614dfd5c",
+        "title": "Files, streams & locales",
+        "tag": "C++ · Files, streams & locales",
+        "parentId": "62cb8e93-fca9-441b-8a9e-2f34804396b0",
+        "kind": "media"
+      },
+      {
+        "id": "076b313e-7b94-42ea-b4ba-f08feba7ad22",
+        "title": "String & span streams",
+        "tag": "C++ · Files, streams & locales · String & span streams",
+        "parentId": "3784dbf0-6e00-4698-9f6a-cf05614dfd5c",
+        "kind": "media"
+      },
+      {
+        "id": "d0a38a9e-ed19-4a72-96de-dc21dd2e37c6",
+        "title": "Concurrency & asynchronous work",
+        "tag": "C++ · Concurrency & asynchronous work",
+        "parentId": "62cb8e93-fca9-441b-8a9e-2f34804396b0",
+        "kind": "media"
+      }
+    ],
+    "identityQualification": "Live GET metadata corroborates titles and hierarchy visible in the screenshots; the screenshots do not establish their saved revision or certify all expansion states.",
+    "endpoints": [
+      "/api/library/catalog",
+      "/api/projects/2a9aa31d-b13c-4d0b-9192-b1a94b7c0fce"
+    ]
+  },
+  "scope": "Approval applies to variable scale and unobstructed full branch expansion. It does not certify this entire Work, its text, typography, palette, all saved expansion states, or later revisions.",
+  "liveProjectMutations": false,
+  "attachments": [
+    {
+      "example": "EX-006",
+      "originalPath": "C:/Users/ihigg/AppData/Local/Temp/codex-clipboard-a96fa569-c474-4d8f-9ac4-75bb04b98d16.png",
+      "retainedPath": "docs/authoring-examples/2026-10-22/06-variable-scale-space.png",
+      "sha256": "2d7dd67df4497ff5b8d6cdd332994070134068f7fcefdd66e099eaf7c17097dd",
+      "copiedWithoutModification": true,
+      "width": 2549,
+      "height": 1525,
+      "bytes": 256520
+    },
+    {
+      "example": "EX-007",
+      "originalPath": "C:/Users/ihigg/AppData/Local/Temp/codex-clipboard-2851eaea-8ef0-4435-8993-d10ec95d9410.png",
+      "retainedPath": "docs/authoring-examples/2026-10-22/07-unobstructed-branch-expansion.png",
+      "sha256": "a956a02c1ac87ea9e465028f9d4b36809abf2dec1621bd48ad1ba869ef4ac795",
+      "copiedWithoutModification": true,
+      "width": 1705,
+      "height": 1197,
+      "bytes": 142624
+    }
+  ],
+  "verification": {
+    "byteExactCopies": true,
+    "pngHeadersAndDimensionsChecked": true,
+    "originalAndCopySHA256Match": true,
+    "quotedApprovalExact": true,
+    "ruleIdsUnique": true,
+    "relativeLinksExist": true,
+    "scopeLimitedToApprovedProperties": true
+  }
+}

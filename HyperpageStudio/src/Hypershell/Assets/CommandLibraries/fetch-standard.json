@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "fetch-standard",
+  "displayName": "Fetch Standard",
+  "description": "Fetch Standard interfaces and browser-platform operations.",
+  "language": "Web APIs",
+  "category": "Official reference",
+  "kind": "PlatformApi",
+  "canonicalName": "Fetch Standard",
+  "ecosystem": "Web Platform",
+  "targetVersion": "Living Standard inventory",
+  "sourceVersion": "Web declarations from TypeScript 5.9.3 · 080941d9f9ff/6d08cde2bfb6",
+  "sourceUrl": "https://fetch.spec.whatwg.org/",
+  "license": "WHATWG Living Standard",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Web API entries target compatible JavaScript or TypeScript editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "web api",
+    "browser",
+    "Fetch Standard"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 43,
+  "declaredIndexedCount": 42,
+  "declaredGuidedCount": 1,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/fetch-standard.entries.json"
+  ],
+  "declaredGuideCount": 1,
+  "guideFiles": [
+    "guides/fetch-standard.guides.json"
+  ],
+  "legacyIds": []
+}

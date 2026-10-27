@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "lodash-popular",
+  "displayName": "Lodash",
+  "description": "Curated Lodash starter recipes for the JavaScript Command Builder. The dependency is referenced, not bundled.",
+  "language": "JavaScript",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "Lodash",
+  "ecosystem": "npm",
+  "targetVersion": "4.18",
+  "sourceVersion": "4.18 documentation · curated 2026-08-17",
+  "sourceUrl": "https://lodash.com/docs/",
+  "license": "MIT",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Requires Lodash in the active Node.js project; Hypershell does not install it.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "javascript",
+    "popular library",
+    "lodash",
+    "utility",
+    "collections",
+    "object",
+    "function"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/lodash-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/lodash-popular.guides.json"
+  ],
+  "legacyIds": []
+}

@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "pester-popular",
+  "guides": [
+    {
+      "entryId": "pester-popular.describe-it",
+      "definition": "Creates a Pester Describe/It test with one explicit expected value. Requires the Pester module in the active PowerShell environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "suiteName",
+          "displayName": "Suite name",
+          "placeholder": "suiteName",
+          "description": "Quoted name for the behavior group.",
+          "typeName": "PowerShell string",
+          "defaultValue": "'Calculator'",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "behavior",
+          "displayName": "Behavior",
+          "placeholder": "behavior",
+          "description": "Quoted sentence describing the expected behavior.",
+          "typeName": "PowerShell string",
+          "defaultValue": "'adds two values'",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "actual",
+          "displayName": "Actual expression",
+          "placeholder": "actual",
+          "description": "Expression whose result should be checked.",
+          "typeName": "PowerShell expression",
+          "defaultValue": "(20 + 22)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expected",
+          "displayName": "Expected value",
+          "placeholder": "expected",
+          "description": "Expected PowerShell value or expression.",
+          "typeName": "PowerShell value",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Verify a calculated value",
+          "code": "Describe 'Calculator' {\n  It 'adds two values' {\n    (20 + 22) | Should -Be 42\n  }\n}",
+          "explanation": "Describe groups related behavior, It names the observable behavior, and Should performs the assertion."
+        }
+      ]
+    },
+    {
+      "entryId": "pester-popular.fixture-lifecycle",
+      "definition": "Adds Pester BeforeAll and AfterAll hooks around shared test state. Requires the Pester module in the active PowerShell environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "setup",
+          "displayName": "Setup statements",
+          "placeholder": "setup",
+          "description": "Statements that establish shared test state.",
+          "typeName": "PowerShell statements",
+          "defaultValue": "$value = 42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "teardown",
+          "displayName": "Cleanup statements",
+          "placeholder": "teardown",
+          "description": "Statements that release or reset shared state.",
+          "typeName": "PowerShell statements",
+          "defaultValue": "$value = $null",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Manage a temporary test directory",
+          "code": "BeforeAll {\n  $testRoot = Join-Path $TestDrive 'sample'\n  New-Item -ItemType Directory -Path $testRoot | Out-Null\n}\n\nAfterAll {\n  Remove-Item $testRoot -Recurse -Force -ErrorAction SilentlyContinue\n}",
+          "explanation": "BeforeAll runs once before the tests in its block; AfterAll performs matching cleanup once the block finishes."
+        }
+      ]
+    },
+    {
+      "entryId": "pester-popular.mock-and-verify",
+      "definition": "Replaces a command in Pester scope and verifies how often it was invoked. Requires the Pester module in the active PowerShell environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "commandName",
+          "displayName": "Command name",
+          "placeholder": "commandName",
+          "description": "Command that Pester should replace and observe.",
+          "typeName": "PowerShell command",
+          "defaultValue": "Get-Service",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "mockBody",
+          "displayName": "Mock body",
+          "placeholder": "mockBody",
+          "description": "Value or statements returned by the mock.",
+          "typeName": "PowerShell expression",
+          "defaultValue": "[pscustomobject]@{ Status = 'Running' }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "times",
+          "displayName": "Expected calls",
+          "placeholder": "times",
+          "description": "Exact number of expected invocations.",
+          "typeName": "Int32",
+          "defaultValue": "1",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Mock a service lookup",
+          "code": "Mock Get-Service { [pscustomobject]@{ Status = 'Running' } }\nGet-Service\nShould -Invoke Get-Service -Times 1",
+          "explanation": "Mock supplies a controlled implementation while Should -Invoke checks the interaction contract."
+        }
+      ]
+    }
+  ]
+}

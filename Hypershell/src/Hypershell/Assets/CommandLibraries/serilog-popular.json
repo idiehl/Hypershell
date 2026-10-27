@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "serilog-popular",
+  "displayName": "Serilog",
+  "description": "Curated Serilog starter recipes for the C# Command Builder. The dependency is referenced, not bundled.",
+  "language": "C#",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "Serilog",
+  "ecosystem": "NuGet",
+  "targetVersion": "4.4.0",
+  "sourceVersion": "4.4.0 documentation · curated 2026-08-17",
+  "sourceUrl": "https://github.com/serilog/serilog/wiki/Getting-Started",
+  "license": "Apache-2.0",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Project dependency only: add Serilog and the desired sinks to a project; the isolated C# runner does not restore packages.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "c#",
+    "popular library",
+    "serilog",
+    "logging",
+    "structured events",
+    "diagnostics",
+    "nuget"
+  ],
+  "executionTarget": "CSharp",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/serilog-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/serilog-popular.guides.json"
+  ],
+  "legacyIds": []
+}

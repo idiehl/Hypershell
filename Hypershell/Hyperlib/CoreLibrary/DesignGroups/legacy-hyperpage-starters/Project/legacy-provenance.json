@@ -1,0 +1,226 @@
+[
+  {
+    "sourceTemplateId": "common.page.landing.v1",
+    "catalogId": "HLC-LEGACY-COMMON-PAGE-LANDING-V1",
+    "title": "Conversion landing page",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonPageLandingV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.page.directory.v1",
+    "catalogId": "HLC-LEGACY-COMMON-PAGE-DIRECTORY-V1",
+    "title": "Indexed directory",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonPageDirectoryV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.page.detail.v1",
+    "catalogId": "HLC-LEGACY-COMMON-PAGE-DETAIL-V1",
+    "title": "Content detail page",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonPageDetailV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.page.documentation.v1",
+    "catalogId": "HLC-LEGACY-COMMON-PAGE-DOCUMENTATION-V1",
+    "title": "Documentation page",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonPageDocumentationV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.page.dashboard.v1",
+    "catalogId": "HLC-LEGACY-COMMON-PAGE-DASHBOARD-V1",
+    "title": "Dashboard overview",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonPageDashboardV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.page.pricing.v1",
+    "catalogId": "HLC-LEGACY-COMMON-PAGE-PRICING-V1",
+    "title": "Pricing and plans",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonPagePricingV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.page.portfolio.v1",
+    "catalogId": "HLC-LEGACY-COMMON-PAGE-PORTFOLIO-V1",
+    "title": "Portfolio and gallery",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonPagePortfolioV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.page.contact.v1",
+    "catalogId": "HLC-LEGACY-COMMON-PAGE-CONTACT-V1",
+    "title": "Contact and inquiry",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonPageContactV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.top-navigation.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-TOP-NAVIGATION-V1",
+    "title": "Top navigation bar",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionTopNavigationV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.sidebar-shell.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-SIDEBAR-SHELL-V1",
+    "title": "Sidebar content shell",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionSidebarShellV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.main-content-panel.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-MAIN-CONTENT-PANEL-V1",
+    "title": "Main content box",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionMainContentPanelV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.hero.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-HERO-V1",
+    "title": "Universal hero",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionHeroV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.search-filter.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-SEARCH-FILTER-V1",
+    "title": "Search and filter bar",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionSearchFilterV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.feature-grid.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-FEATURE-GRID-V1",
+    "title": "Feature grid",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionFeatureGridV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.statistics.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-STATISTICS-V1",
+    "title": "Statistics strip",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionStatisticsV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.testimonials.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-TESTIMONIALS-V1",
+    "title": "Testimonials and proof",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionTestimonialsV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.pricing.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-PRICING-V1",
+    "title": "Pricing cards",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionPricingV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.faq.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-FAQ-V1",
+    "title": "Common questions",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionFaqV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.action-banner.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-ACTION-BANNER-V1",
+    "title": "Action banner",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionActionBannerV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.section.footer.v1",
+    "catalogId": "HLC-LEGACY-COMMON-SECTION-FOOTER-V1",
+    "title": "Site footer",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonSectionFooterV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.element.content-card.v1",
+    "catalogId": "HLC-LEGACY-COMMON-ELEMENT-CONTENT-CARD-V1",
+    "title": "Content card",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonElementContentCardV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.element.alert.v1",
+    "catalogId": "HLC-LEGACY-COMMON-ELEMENT-ALERT-V1",
+    "title": "Information callout",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonElementAlertV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.element.button-group.v1",
+    "catalogId": "HLC-LEGACY-COMMON-ELEMENT-BUTTON-GROUP-V1",
+    "title": "Button group",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonElementButtonGroupV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.element.badge.v1",
+    "catalogId": "HLC-LEGACY-COMMON-ELEMENT-BADGE-V1",
+    "title": "Status badge",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonElementBadgeV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.element.pagination.v1",
+    "catalogId": "HLC-LEGACY-COMMON-ELEMENT-PAGINATION-V1",
+    "title": "Pagination controls",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonElementPaginationV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.element.breadcrumb.v1",
+    "catalogId": "HLC-LEGACY-COMMON-ELEMENT-BREADCRUMB-V1",
+    "title": "Breadcrumb trail",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonElementBreadcrumbV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.element.metadata.v1",
+    "catalogId": "HLC-LEGACY-COMMON-ELEMENT-METADATA-V1",
+    "title": "Content metadata row",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonElementMetadataV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "common.element.profile.v1",
+    "catalogId": "HLC-LEGACY-COMMON-ELEMENT-PROFILE-V1",
+    "title": "Profile summary",
+    "sourceLibrary": "Hyperpage starters",
+    "component": "LegacyCommonElementProfileV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  }
+]

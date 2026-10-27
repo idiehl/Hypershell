@@ -1,0 +1,1127 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "id": "csharp-runtime",
+  "displayName": ".NET text, runtime, and security",
+  "description": "Dependency-free .NET 8 APIs for encoding, buffers, cryptography, timing, reflection, platform inspection, and managed-memory diagnostics.",
+  "language": "C#",
+  "category": "Runtime and security",
+  "kind": "Extension",
+  "parentLibraryId": "csharp-dotnet-8",
+  "frameworkName": ".NET",
+  "frameworkVersion": "8",
+  "targetFramework": "net8.0",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Compatible with the built-in .NET 10 C# runner; authored against .NET 8.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "csharp",
+    "dotnet",
+    "net8",
+    "text",
+    "encoding",
+    "cryptography",
+    "reflection",
+    "buffers"
+  ],
+  "executionTarget": "CSharp",
+  "actionDescriptions": {
+    "Add": "Adds a value, item, header, or contribution to an existing object.",
+    "Allocate": "Obtains reusable memory or another finite runtime resource for temporary work.",
+    "Compare": "Compares values and reports their ordering or equality relationship.",
+    "Convert": "Changes a value into another representation or data type.",
+    "Create": "Constructs a new object, resource, or language structure.",
+    "Decode": "Converts an encoded representation back into its original form.",
+    "Encode": "Converts data into a representation suitable for storage or transport.",
+    "Enumerate": "Traverses a sequence of values or members one item at a time.",
+    "Get": "Retrieves information without intentionally changing the source.",
+    "Hash": "Calculates a fixed-size digest from input data.",
+    "Inspect": "Examines runtime metadata, state, or structure.",
+    "Parse": "Interprets text or bytes as a structured value.",
+    "Protect": "Applies a security-sensitive transformation or comparison.",
+    "Release": "Returns or frees a resource previously acquired by the program.",
+    "Slice": "Creates a bounded view over part of an existing value or memory region.",
+    "Test": "Evaluates a condition and returns whether it is satisfied."
+  },
+  "objectDescriptions": {
+    "Assembly": "An Assembly represents a deployed .NET code and metadata unit containing modules, types, resources, and identity information.",
+    "Data": "Data is an ordered byte sequence whose representation and interpretation are defined by the producing application or protocol.",
+    "Elapsed time": "Elapsed time is a duration calculated from a monotonic high-resolution timer rather than the wall clock.",
+    "Elapsed timer": "An elapsed timer records monotonic timestamps for performance measurement and duration tracking.",
+    "Enum": "An enum is a value type whose named constants represent a closed set of integral values.",
+    "Hexadecimal": "Hexadecimal is a base-16 text representation that uses two characters per byte.",
+    "Managed allocation": "A managed allocation reserves garbage-collected heap storage for a new object, array, string, or runtime structure.",
+    "Memory": "Memory<T> is a heap-storable view over a contiguous region of typed elements.",
+    "Message": "A message is the byte sequence whose integrity and authenticity are being protected or verified.",
+    "Method metadata": "MethodInfo describes a runtime method's name, signature, declaring type, attributes, and invocation behavior.",
+    "Operating system": "The operating system is the platform hosting the current .NET process.",
+    "Pooled buffer": "A pooled buffer is a reusable array temporarily leased from an ArrayPool<T> to reduce allocation pressure.",
+    "Primitive bytes": "Primitive bytes are the machine representation of a numeric, Boolean, character, or related built-in value.",
+    "Property metadata": "PropertyInfo describes a runtime property's type, accessors, declaring type, index parameters, and attributes.",
+    "Runtime object": "A runtime object is an instance whose concrete Type may have been selected dynamically rather than through a compile-time constructor expression.",
+    "Runtime type": "A System.Type describes a .NET type's identity, members, inheritance, generic shape, and runtime metadata.",
+    "Secret data": "Secret data includes keys, authentication tags, tokens, and other bytes whose disclosure or comparison behavior affects security.",
+    "Secure random data": "Secure random data is produced by a cryptographically strong operating-system random source suitable for security-sensitive values.",
+    "Secure random number": "A secure random number is sampled without predictable state or range bias for security-sensitive selection.",
+    "Text buffer": "A StringBuilder is a mutable buffer optimized for incrementally constructing text.",
+    "UTF-8 text": "UTF-8 is a variable-width Unicode encoding compatible with ASCII for its first 128 code points."
+  },
+  "commands": [
+    {
+      "name": "StringBuilder.Append",
+      "displayName": "StringBuilder.Append",
+      "description": "Append text or a value to a mutable character buffer.",
+      "definition": "Adds the text representation of a value to the end of a StringBuilder and returns the same builder for fluent chaining.",
+      "moduleName": "System.Text.StringBuilder",
+      "action": "Add",
+      "object": "Text buffer",
+      "namespaceName": "System.Text",
+      "typeName": "StringBuilder",
+      "memberName": "Append",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{builder}.Append({value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.stringbuilder.append",
+      "parameters": [
+        {
+          "name": "builder",
+          "displayName": "builder",
+          "placeholder": "builder",
+          "description": "A StringBuilder instance.",
+          "typeName": "StringBuilder",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The value or text to append.",
+          "typeName": "C# expression",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a status line incrementally",
+          "code": "var builder = new StringBuilder();\nbuilder.Append(\"Files: \").Append(12);\nbuilder.Append(\"; Errors: \").Append(1);\nConsole.WriteLine(builder.ToString());",
+          "explanation": "Each Append mutates and returns the same buffer, avoiding a chain of temporary strings."
+        }
+      ],
+      "keywords": [
+        "StringBuilder",
+        "text",
+        "append",
+        "buffer"
+      ]
+    },
+    {
+      "name": "StringBuilder.AppendLine",
+      "displayName": "StringBuilder.AppendLine",
+      "description": "Append text followed by a line terminator.",
+      "definition": "Adds text and the current environment's line terminator to a StringBuilder, returning the same builder.",
+      "moduleName": "System.Text.StringBuilder",
+      "action": "Add",
+      "object": "Text buffer",
+      "namespaceName": "System.Text",
+      "typeName": "StringBuilder",
+      "memberName": "AppendLine",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{builder}.AppendLine({value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.stringbuilder.appendline",
+      "parameters": [
+        {
+          "name": "builder",
+          "displayName": "builder",
+          "placeholder": "builder",
+          "description": "A StringBuilder instance.",
+          "typeName": "StringBuilder",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The line text.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a multiline report",
+          "code": "var report = new StringBuilder()\n    .AppendLine(\"BUILD REPORT\")\n    .AppendLine(\"Status: passed\")\n    .AppendLine(\"Tests: 128\");\nConsole.Write(report.ToString());",
+          "explanation": "AppendLine uses the current platform's line ending for every report row."
+        }
+      ],
+      "keywords": [
+        "StringBuilder",
+        "line",
+        "text",
+        "buffer"
+      ]
+    },
+    {
+      "name": "Encoding.UTF8.GetBytes",
+      "displayName": "Encoding.UTF8.GetBytes",
+      "description": "Encode Unicode text as UTF-8 bytes.",
+      "definition": "Converts UTF-16 .NET characters into the corresponding UTF-8 byte sequence. Invalid surrogate input is handled by the encoding's configured fallback.",
+      "moduleName": "System.Text.Encoding",
+      "action": "Encode",
+      "object": "UTF-8 text",
+      "namespaceName": "System.Text.Encoding",
+      "typeName": "Encoding.UTF8",
+      "memberName": "GetBytes",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var bytes = Encoding.UTF8.GetBytes({text});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.encoding.getbytes",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The string to encode.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect a UTF-8 representation",
+          "code": "var bytes = Encoding.UTF8.GetBytes(\"turtle 🐢\");\nConsole.WriteLine(Convert.ToHexString(bytes));",
+          "explanation": "ASCII characters occupy one byte each while the turtle emoji uses a multibyte UTF-8 sequence."
+        }
+      ],
+      "keywords": [
+        "UTF8",
+        "encoding",
+        "bytes",
+        "Unicode"
+      ]
+    },
+    {
+      "name": "Encoding.UTF8.GetString",
+      "displayName": "Encoding.UTF8.GetString",
+      "description": "Decode UTF-8 bytes into a .NET string.",
+      "definition": "Interprets the supplied bytes as UTF-8 and returns UTF-16 .NET text. Invalid byte sequences use the encoding's configured fallback behavior.",
+      "moduleName": "System.Text.Encoding",
+      "action": "Decode",
+      "object": "UTF-8 text",
+      "namespaceName": "System.Text.Encoding",
+      "typeName": "Encoding.UTF8",
+      "memberName": "GetString",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var text = Encoding.UTF8.GetString({bytes});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.encoding.getstring",
+      "parameters": [
+        {
+          "name": "bytes",
+          "displayName": "bytes",
+          "placeholder": "bytes",
+          "description": "The UTF-8 encoded bytes.",
+          "typeName": "byte[]",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Restore UTF-8 text",
+          "code": "var bytes = Convert.FromHexString(\"48797065727368656C6C\");\nConsole.WriteLine(Encoding.UTF8.GetString(bytes));",
+          "explanation": "The hexadecimal bytes decode to the original Hypershell text."
+        }
+      ],
+      "keywords": [
+        "UTF8",
+        "decoding",
+        "bytes",
+        "Unicode"
+      ]
+    },
+    {
+      "name": "Convert.ToHexString",
+      "displayName": "Convert.ToHexString",
+      "description": "Encode bytes as uppercase hexadecimal text.",
+      "definition": "Converts each byte to two hexadecimal characters and concatenates the result without separators.",
+      "moduleName": "System.Convert",
+      "action": "Encode",
+      "object": "Hexadecimal",
+      "namespaceName": "System",
+      "typeName": "Convert",
+      "memberName": "ToHexString",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var hex = Convert.ToHexString({bytes});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.convert.tohexstring",
+      "parameters": [
+        {
+          "name": "bytes",
+          "displayName": "bytes",
+          "placeholder": "bytes",
+          "description": "The binary data to encode.",
+          "typeName": "byte[]",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Display a compact byte signature",
+          "code": "var signature = SHA256.HashData(\n    Encoding.UTF8.GetBytes(\"Hypershell\"));\nConsole.WriteLine(Convert.ToHexString(signature));",
+          "explanation": "Every hash byte becomes two uppercase hexadecimal characters."
+        }
+      ],
+      "keywords": [
+        "hex",
+        "bytes",
+        "encode",
+        "base16"
+      ]
+    },
+    {
+      "name": "Convert.FromHexString",
+      "displayName": "Convert.FromHexString",
+      "description": "Decode hexadecimal text into bytes.",
+      "definition": "Converts pairs of hexadecimal characters into their byte values. Invalid characters or an odd character count cause FormatException.",
+      "moduleName": "System.Convert",
+      "action": "Decode",
+      "object": "Hexadecimal",
+      "namespaceName": "System",
+      "typeName": "Convert",
+      "memberName": "FromHexString",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var bytes = Convert.FromHexString({hex});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.convert.fromhexstring",
+      "parameters": [
+        {
+          "name": "hex",
+          "displayName": "hex",
+          "placeholder": "hex",
+          "description": "An even-length hexadecimal string.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Decode a protocol marker",
+          "code": "var marker = Convert.FromHexString(\"4859504552\");\nConsole.WriteLine(Encoding.ASCII.GetString(marker));",
+          "explanation": "Each character pair restores one byte, producing the ASCII text HYPER."
+        }
+      ],
+      "keywords": [
+        "hex",
+        "bytes",
+        "decode",
+        "base16"
+      ]
+    },
+    {
+      "name": "SHA256.HashData",
+      "displayName": "SHA256.HashData",
+      "description": "Calculate a SHA-256 digest.",
+      "definition": "Computes the 256-bit SHA-2 digest of supplied bytes or a stream. A cryptographic hash detects changes but does not encrypt data or authenticate an unkeyed message.",
+      "moduleName": "System.Security.Cryptography",
+      "action": "Hash",
+      "object": "Data",
+      "namespaceName": "System.Security.Cryptography",
+      "typeName": "SHA256",
+      "memberName": "HashData",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var hash = SHA256.HashData({data});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.security.cryptography.sha256.hashdata",
+      "parameters": [
+        {
+          "name": "data",
+          "displayName": "data",
+          "placeholder": "data",
+          "description": "The bytes or readable stream to hash.",
+          "typeName": "byte[]",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Hash text deterministically",
+          "code": "var data = Encoding.UTF8.GetBytes(\"Hypershell\");\nvar hash = SHA256.HashData(data);\nConsole.WriteLine(Convert.ToHexString(hash));",
+          "explanation": "The same input bytes always produce the same 32-byte digest."
+        }
+      ],
+      "keywords": [
+        "SHA256",
+        "hash",
+        "digest",
+        "integrity"
+      ]
+    },
+    {
+      "name": "HMACSHA256.HashData",
+      "displayName": "HMACSHA256.HashData",
+      "description": "Calculate a keyed SHA-256 authentication code.",
+      "definition": "Computes an HMAC-SHA-256 value from a secret key and message. Unlike a plain hash, a valid HMAC demonstrates knowledge of the shared key.",
+      "moduleName": "System.Security.Cryptography",
+      "action": "Protect",
+      "object": "Message",
+      "namespaceName": "System.Security.Cryptography",
+      "typeName": "HMACSHA256",
+      "memberName": "HashData",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var tag = HMACSHA256.HashData({key}, {data});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.security.cryptography.hmacsha256.hashdata",
+      "parameters": [
+        {
+          "name": "key",
+          "displayName": "key",
+          "placeholder": "key",
+          "description": "The secret HMAC key bytes.",
+          "typeName": "byte[]",
+          "isRequired": true
+        },
+        {
+          "name": "data",
+          "displayName": "data",
+          "placeholder": "data",
+          "description": "The message bytes.",
+          "typeName": "byte[]",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Authenticate an in-memory message",
+          "code": "var key = RandomNumberGenerator.GetBytes(32);\nvar message = Encoding.UTF8.GetBytes(\"deploy:production\");\nvar tag = HMACSHA256.HashData(key, message);\nConsole.WriteLine(Convert.ToHexString(tag));",
+          "explanation": "The random key must be retained securely by any party that later verifies the message tag."
+        }
+      ],
+      "keywords": [
+        "HMAC",
+        "SHA256",
+        "authentication",
+        "keyed hash"
+      ]
+    },
+    {
+      "name": "RandomNumberGenerator.GetBytes",
+      "displayName": "RandomNumberGenerator.GetBytes",
+      "description": "Generate cryptographically strong random bytes.",
+      "definition": "Fills or returns bytes produced by the operating system's cryptographic random-number generator. It is appropriate for keys, salts, nonces, and security tokens.",
+      "moduleName": "System.Security.Cryptography",
+      "action": "Create",
+      "object": "Secure random data",
+      "namespaceName": "System.Security.Cryptography",
+      "typeName": "RandomNumberGenerator",
+      "memberName": "GetBytes",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var bytes = RandomNumberGenerator.GetBytes({count});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.security.cryptography.randomnumbergenerator.getbytes",
+      "parameters": [
+        {
+          "name": "count",
+          "displayName": "count",
+          "placeholder": "count",
+          "description": "The number of random bytes to return.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a random token",
+          "code": "var token = Convert.ToBase64String(\n    RandomNumberGenerator.GetBytes(32));\nConsole.WriteLine(token);",
+          "explanation": "Thirty-two unpredictable bytes are encoded for text-safe storage or transport."
+        }
+      ],
+      "keywords": [
+        "CSPRNG",
+        "random",
+        "token",
+        "key",
+        "nonce"
+      ]
+    },
+    {
+      "name": "RandomNumberGenerator.GetInt32",
+      "displayName": "RandomNumberGenerator.GetInt32",
+      "description": "Generate an unbiased secure random integer in a range.",
+      "definition": "Returns a cryptographically strong integer at least as large as the inclusive lower bound and smaller than the exclusive upper bound without modulo bias.",
+      "moduleName": "System.Security.Cryptography",
+      "action": "Create",
+      "object": "Secure random number",
+      "namespaceName": "System.Security.Cryptography",
+      "typeName": "RandomNumberGenerator",
+      "memberName": "GetInt32",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var number = RandomNumberGenerator.GetInt32({minValue}, {maxValue});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.security.cryptography.randomnumbergenerator.getint32",
+      "parameters": [
+        {
+          "name": "minValue",
+          "displayName": "minValue",
+          "placeholder": "minValue",
+          "description": "The inclusive lower bound.",
+          "typeName": "int",
+          "isRequired": true
+        },
+        {
+          "name": "maxValue",
+          "displayName": "maxValue",
+          "placeholder": "maxValue",
+          "description": "The exclusive upper bound.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Choose a secure six-digit code",
+          "code": "var code = RandomNumberGenerator.GetInt32(100000, 1000000);\nConsole.WriteLine(code);",
+          "explanation": "The exclusive upper bound keeps every result at exactly six decimal digits."
+        }
+      ],
+      "keywords": [
+        "CSPRNG",
+        "random",
+        "integer",
+        "unbiased"
+      ]
+    },
+    {
+      "name": "CryptographicOperations.FixedTimeEquals",
+      "displayName": "CryptographicOperations.FixedTimeEquals",
+      "description": "Compare secret byte sequences without early-exit timing.",
+      "definition": "Tests equal-length byte sequences using work that does not depend on where their first mismatch occurs, reducing timing leakage during tag or token verification.",
+      "moduleName": "System.Security.Cryptography",
+      "action": "Compare",
+      "object": "Secret data",
+      "namespaceName": "System.Security.Cryptography",
+      "typeName": "CryptographicOperations",
+      "memberName": "FixedTimeEquals",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var equal = CryptographicOperations.FixedTimeEquals({left}, {right});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptographicoperations.fixedtimeequals",
+      "parameters": [
+        {
+          "name": "left",
+          "displayName": "left",
+          "placeholder": "left",
+          "description": "The first byte sequence.",
+          "typeName": "ReadOnlySpan<byte>",
+          "isRequired": true
+        },
+        {
+          "name": "right",
+          "displayName": "right",
+          "placeholder": "right",
+          "description": "The second byte sequence.",
+          "typeName": "ReadOnlySpan<byte>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Verify an HMAC tag",
+          "code": "var key = Encoding.UTF8.GetBytes(\"development-only-key\");\nvar message = Encoding.UTF8.GetBytes(\"payload\");\nvar expected = HMACSHA256.HashData(key, message);\nvar supplied = HMACSHA256.HashData(key, message);\nConsole.WriteLine(\n    CryptographicOperations.FixedTimeEquals(expected, supplied));",
+          "explanation": "FixedTimeEquals is suitable for comparing authentication tags after their lengths and encodings are validated."
+        }
+      ],
+      "keywords": [
+        "constant time",
+        "secret",
+        "compare",
+        "timing attack"
+      ]
+    },
+    {
+      "name": "Stopwatch.StartNew",
+      "displayName": "Stopwatch.StartNew",
+      "description": "Start measuring elapsed time immediately.",
+      "definition": "Creates and starts a high-resolution Stopwatch using the best timing source available on the current platform.",
+      "moduleName": "System.Diagnostics.Stopwatch",
+      "action": "Create",
+      "object": "Elapsed timer",
+      "namespaceName": "System.Diagnostics",
+      "typeName": "Stopwatch",
+      "memberName": "StartNew",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var stopwatch = Stopwatch.StartNew();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.diagnostics.stopwatch.startnew",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Measure an operation",
+          "code": "var stopwatch = Stopwatch.StartNew();\nawait Task.Delay(75);\nstopwatch.Stop();\nConsole.WriteLine($\"{stopwatch.Elapsed.TotalMilliseconds:N1} ms\");",
+          "explanation": "Elapsed time includes the asynchronous delay until Stop freezes the measurement."
+        }
+      ],
+      "keywords": [
+        "Stopwatch",
+        "timing",
+        "performance",
+        "elapsed"
+      ]
+    },
+    {
+      "name": "Stopwatch.GetElapsedTime",
+      "displayName": "Stopwatch.GetElapsedTime",
+      "description": "Calculate elapsed time from Stopwatch timestamps.",
+      "definition": "Converts one or two raw Stopwatch timestamps into a TimeSpan using the current platform's high-resolution timer frequency.",
+      "moduleName": "System.Diagnostics.Stopwatch",
+      "action": "Get",
+      "object": "Elapsed time",
+      "namespaceName": "System.Diagnostics",
+      "typeName": "Stopwatch",
+      "memberName": "GetElapsedTime",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var elapsed = Stopwatch.GetElapsedTime({startTimestamp});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.diagnostics.stopwatch.getelapsedtime",
+      "parameters": [
+        {
+          "name": "startTimestamp",
+          "displayName": "startTimestamp",
+          "placeholder": "startTimestamp",
+          "description": "A value returned by Stopwatch.GetTimestamp.",
+          "typeName": "long",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Measure without allocating a Stopwatch",
+          "code": "var started = Stopwatch.GetTimestamp();\nvar total = Enumerable.Range(1, 10000).Sum();\nvar elapsed = Stopwatch.GetElapsedTime(started);\nConsole.WriteLine($\"{total}; {elapsed.TotalMicroseconds:N1} µs\");",
+          "explanation": "Raw timestamps provide a compact timing path for small measured regions."
+        }
+      ],
+      "keywords": [
+        "Stopwatch",
+        "timestamp",
+        "timing",
+        "performance"
+      ]
+    },
+    {
+      "name": "Assembly.GetExecutingAssembly",
+      "displayName": "Assembly.GetExecutingAssembly",
+      "description": "Get metadata for the assembly containing the running code.",
+      "definition": "Returns the Assembly whose code is currently executing, enabling inspection of its name, version, attributes, resources, and defined types.",
+      "moduleName": "System.Reflection.Assembly",
+      "action": "Inspect",
+      "object": "Assembly",
+      "namespaceName": "System.Reflection",
+      "typeName": "Assembly",
+      "memberName": "GetExecutingAssembly",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var assembly = Assembly.GetExecutingAssembly();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.reflection.assembly.getexecutingassembly",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Report the generated snippet assembly",
+          "code": "var assembly = Assembly.GetExecutingAssembly();\nvar name = assembly.GetName();\nConsole.WriteLine($\"{name.Name} {name.Version}\");",
+          "explanation": "The Hypershell C# runner compiles snippets into a temporary HypershellSnippet assembly."
+        }
+      ],
+      "keywords": [
+        "reflection",
+        "assembly",
+        "metadata",
+        "runtime"
+      ]
+    },
+    {
+      "name": "Assembly.GetTypes",
+      "displayName": "Assembly.GetTypes",
+      "description": "Get every type defined in an assembly.",
+      "definition": "Returns Type objects for modules defined in the assembly. Type loading can fail partially when dependencies are missing, producing ReflectionTypeLoadException.",
+      "moduleName": "System.Reflection.Assembly",
+      "action": "Enumerate",
+      "object": "Runtime type",
+      "namespaceName": "System.Reflection",
+      "typeName": "Assembly",
+      "memberName": "GetTypes",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var types = {assembly}.GetTypes();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.reflection.assembly.gettypes",
+      "parameters": [
+        {
+          "name": "assembly",
+          "displayName": "assembly",
+          "placeholder": "assembly",
+          "description": "The Assembly to inspect.",
+          "typeName": "Assembly",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "List types declared by the snippet",
+          "code": "var types = Assembly.GetExecutingAssembly()\n    .GetTypes()\n    .OrderBy(type => type.FullName);\nforeach (var type in types)\n{\n    Console.WriteLine(type.FullName);\n}",
+          "explanation": "The generated Program type and any types declared in the snippet appear in the assembly metadata."
+        }
+      ],
+      "keywords": [
+        "reflection",
+        "types",
+        "assembly",
+        "metadata"
+      ]
+    },
+    {
+      "name": "Type.GetProperties",
+      "displayName": "Type.GetProperties",
+      "description": "Inspect properties exposed by a runtime type.",
+      "definition": "Returns PropertyInfo metadata matching the requested public/non-public, static/instance, and declared/inherited binding rules.",
+      "moduleName": "System.Type",
+      "action": "Inspect",
+      "object": "Property metadata",
+      "namespaceName": "System",
+      "typeName": "Type",
+      "memberName": "GetProperties",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var properties = {type}.GetProperties();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.type.getproperties",
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "A System.Type instance.",
+          "typeName": "Type",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "List DateTime property types",
+          "code": "foreach (var property in typeof(DateTime).GetProperties())\n{\n    Console.WriteLine($\"{property.PropertyType.Name} {property.Name}\");\n}",
+          "explanation": "Reflection reports metadata rather than reading any particular DateTime instance."
+        }
+      ],
+      "keywords": [
+        "reflection",
+        "properties",
+        "Type",
+        "PropertyInfo"
+      ]
+    },
+    {
+      "name": "Type.GetMethods",
+      "displayName": "Type.GetMethods",
+      "description": "Inspect methods exposed by a runtime type.",
+      "definition": "Returns MethodInfo metadata for methods matching the requested binding rules, including overloads and inherited members.",
+      "moduleName": "System.Type",
+      "action": "Inspect",
+      "object": "Method metadata",
+      "namespaceName": "System",
+      "typeName": "Type",
+      "memberName": "GetMethods",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var methods = {type}.GetMethods();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.type.getmethods",
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "A System.Type instance.",
+          "typeName": "Type",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find string methods with one parameter",
+          "code": "var methods = typeof(string)\n    .GetMethods()\n    .Where(method => method.GetParameters().Length == 1)\n    .Select(method => method.Name)\n    .Distinct()\n    .OrderBy(name => name);\nConsole.WriteLine(string.Join(\", \", methods));",
+          "explanation": "MethodInfo metadata can be filtered by signature before any method is invoked."
+        }
+      ],
+      "keywords": [
+        "reflection",
+        "methods",
+        "Type",
+        "MethodInfo"
+      ]
+    },
+    {
+      "name": "Activator.CreateInstance",
+      "displayName": "Activator.CreateInstance",
+      "description": "Create an object from its runtime Type.",
+      "definition": "Invokes a matching constructor for a Type selected at runtime. The result is object-typed and may be null for Nullable<T>; constructor and accessibility errors can throw.",
+      "moduleName": "System.Activator",
+      "action": "Create",
+      "object": "Runtime object",
+      "namespaceName": "System",
+      "typeName": "Activator",
+      "memberName": "CreateInstance",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var instance = Activator.CreateInstance({type}, {arguments});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.activator.createinstance",
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "The runtime Type to construct.",
+          "typeName": "Type",
+          "isRequired": true
+        },
+        {
+          "name": "arguments",
+          "displayName": "arguments",
+          "placeholder": "arguments",
+          "description": "An object array containing constructor arguments.",
+          "typeName": "object?[]?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Construct a generic list dynamically",
+          "code": "var listType = typeof(List<>).MakeGenericType(typeof(string));\nvar instance = Activator.CreateInstance(listType)\n    ?? throw new InvalidOperationException(\"Construction failed.\");\nConsole.WriteLine(instance.GetType());",
+          "explanation": "The concrete List<string> type is formed and instantiated entirely from runtime metadata."
+        }
+      ],
+      "keywords": [
+        "reflection",
+        "constructor",
+        "dynamic",
+        "runtime type"
+      ]
+    },
+    {
+      "name": "RuntimeInformation.IsOSPlatform",
+      "displayName": "RuntimeInformation.IsOSPlatform",
+      "description": "Test the current operating-system platform.",
+      "definition": "Compares the current runtime platform with a supplied OSPlatform value so platform-specific behavior can be guarded explicitly.",
+      "moduleName": "System.Runtime.InteropServices",
+      "action": "Test",
+      "object": "Operating system",
+      "namespaceName": "System.Runtime.InteropServices",
+      "typeName": "RuntimeInformation",
+      "memberName": "IsOSPlatform",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var matches = RuntimeInformation.IsOSPlatform({platform});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.runtime.interopservices.runtimeinformation.isosplatform",
+      "parameters": [
+        {
+          "name": "platform",
+          "displayName": "platform",
+          "placeholder": "platform",
+          "description": "An OSPlatform value such as OSPlatform.Windows.",
+          "typeName": "OSPlatform",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Choose a platform-specific path separator",
+          "code": "var platform = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)\n    ? \"Windows\"\n    : RuntimeInformation.IsOSPlatform(OSPlatform.Linux)\n        ? \"Linux\"\n        : \"Other\";\nConsole.WriteLine(platform);",
+          "explanation": "RuntimeInformation identifies the platform without parsing an operating-system description string."
+        }
+      ],
+      "keywords": [
+        "OS",
+        "platform",
+        "Windows",
+        "Linux",
+        "macOS"
+      ]
+    },
+    {
+      "name": "ArrayPool<T>.Rent",
+      "displayName": "ArrayPool<T>.Rent",
+      "description": "Rent a reusable array of at least the requested length.",
+      "definition": "Obtains an array from a shared or custom pool to reduce repeated large-array allocation. The returned array may be longer than requested and must be returned exactly once.",
+      "moduleName": "System.Buffers.ArrayPool<T>",
+      "action": "Allocate",
+      "object": "Pooled buffer",
+      "namespaceName": "System.Buffers",
+      "typeName": "ArrayPool<T>",
+      "memberName": "Rent",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var buffer = ArrayPool<{type}>.Shared.Rent({minimumLength});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.buffers.arraypool-1.rent",
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "The pooled element type.",
+          "typeName": "type name",
+          "isRequired": true
+        },
+        {
+          "name": "minimumLength",
+          "displayName": "minimumLength",
+          "placeholder": "minimumLength",
+          "description": "The minimum acceptable array length.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Use and return a temporary byte buffer",
+          "code": "var buffer = ArrayPool<byte>.Shared.Rent(4096);\ntry\n{\n    RandomNumberGenerator.Fill(buffer.AsSpan(0, 4096));\n    Console.WriteLine(Convert.ToHexString(buffer.AsSpan(0, 8)));\n}\nfinally\n{\n    ArrayPool<byte>.Shared.Return(buffer, clearArray: true);\n}",
+          "explanation": "The requested region is used and the array is returned in finally; clearing prevents residual bytes from being exposed to a later renter."
+        }
+      ],
+      "keywords": [
+        "ArrayPool",
+        "buffer",
+        "allocation",
+        "performance"
+      ]
+    },
+    {
+      "name": "ArrayPool<T>.Return",
+      "displayName": "ArrayPool<T>.Return",
+      "description": "Return a rented array to its pool.",
+      "definition": "Makes an array previously obtained from the same pool available for reuse. The caller must stop accessing the array after it is returned.",
+      "moduleName": "System.Buffers.ArrayPool<T>",
+      "action": "Release",
+      "object": "Pooled buffer",
+      "namespaceName": "System.Buffers",
+      "typeName": "ArrayPool<T>",
+      "memberName": "Return",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "ArrayPool<{type}>.Shared.Return({array}, clearArray: {clearArray});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.buffers.arraypool-1.return",
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "The pooled element type.",
+          "typeName": "type name",
+          "isRequired": true
+        },
+        {
+          "name": "array",
+          "displayName": "array",
+          "placeholder": "array",
+          "description": "The exact rented array to return.",
+          "typeName": "T[]",
+          "isRequired": true
+        },
+        {
+          "name": "clearArray",
+          "displayName": "clearArray",
+          "placeholder": "clearArray",
+          "description": "Whether the pool should clear elements before reuse.",
+          "typeName": "bool",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Return a sensitive character buffer",
+          "code": "var characters = ArrayPool<char>.Shared.Rent(256);\ntry\n{\n    \"temporary-secret\".AsSpan().CopyTo(characters);\n}\nfinally\n{\n    ArrayPool<char>.Shared.Return(characters, clearArray: true);\n}",
+          "explanation": "clearArray trades extra work for reducing the chance that a later renter observes old character data."
+        }
+      ],
+      "keywords": [
+        "ArrayPool",
+        "return",
+        "buffer",
+        "cleanup"
+      ]
+    },
+    {
+      "name": "Memory<T>.Slice",
+      "displayName": "Memory<T>.Slice",
+      "description": "Create a bounded memory view without copying elements.",
+      "definition": "Returns a Memory<T> view over part of the same underlying storage. Changes through either writable view affect the shared elements.",
+      "moduleName": "System.Memory<T>",
+      "action": "Slice",
+      "object": "Memory",
+      "namespaceName": "System",
+      "typeName": "Memory<T>",
+      "memberName": "Slice",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var slice = {memory}.Slice({start}, {length});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.memory-1.slice",
+      "parameters": [
+        {
+          "name": "memory",
+          "displayName": "memory",
+          "placeholder": "memory",
+          "description": "The original Memory<T> value.",
+          "typeName": "Memory<T>",
+          "isRequired": true
+        },
+        {
+          "name": "start",
+          "displayName": "start",
+          "placeholder": "start",
+          "description": "The zero-based slice start.",
+          "typeName": "int",
+          "isRequired": true
+        },
+        {
+          "name": "length",
+          "displayName": "length",
+          "placeholder": "length",
+          "description": "The number of elements in the slice.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Fill one region of an array",
+          "code": "var data = new byte[12];\nMemory<byte> middle = data.AsMemory().Slice(4, 4);\nmiddle.Span.Fill(0xFF);\nConsole.WriteLine(Convert.ToHexString(data));",
+          "explanation": "The Memory<byte> view refers to indexes 4 through 7 of the original array without allocating another array."
+        }
+      ],
+      "keywords": [
+        "Memory",
+        "slice",
+        "buffer",
+        "zero copy"
+      ]
+    },
+    {
+      "name": "Enum.TryParse<TEnum>",
+      "displayName": "Enum.TryParse<TEnum>",
+      "description": "Try to parse an enum name or numeric value.",
+      "definition": "Attempts to convert text into a specified enum type without throwing for invalid text. An overload controls case sensitivity.",
+      "moduleName": "System.Enum",
+      "action": "Parse",
+      "object": "Enum",
+      "namespaceName": "System",
+      "typeName": "Enum",
+      "memberName": "TryParse",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var valid = Enum.TryParse<{enumType}>({text}, ignoreCase: true, out var value);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.enum.tryparse",
+      "parameters": [
+        {
+          "name": "enumType",
+          "displayName": "enumType",
+          "placeholder": "enumType",
+          "description": "The enum type to parse.",
+          "typeName": "enum type",
+          "isRequired": true
+        },
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The candidate enum name or number.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse a day name case-insensitively",
+          "code": "if (Enum.TryParse<DayOfWeek>(\n        \"friday\",\n        ignoreCase: true,\n        out var day))\n{\n    Console.WriteLine(day);\n}",
+          "explanation": "The generic type fixes the allowed enum values while ignoreCase accepts lowercase input."
+        }
+      ],
+      "keywords": [
+        "enum",
+        "parse",
+        "TryParse",
+        "generic"
+      ]
+    },
+    {
+      "name": "BitConverter.GetBytes",
+      "displayName": "BitConverter.GetBytes",
+      "description": "Convert a primitive value into machine-endian bytes.",
+      "definition": "Returns the in-memory byte representation of a supported primitive. The byte order follows the current architecture and should be normalized explicitly for portable protocols.",
+      "moduleName": "System.BitConverter",
+      "action": "Convert",
+      "object": "Primitive bytes",
+      "namespaceName": "System",
+      "typeName": "BitConverter",
+      "memberName": "GetBytes",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var bytes = BitConverter.GetBytes({value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.bitconverter.getbytes",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "A supported primitive value.",
+          "typeName": "primitive",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect an integer representation",
+          "code": "var bytes = BitConverter.GetBytes(0x12345678);\nConsole.WriteLine(Convert.ToHexString(bytes));\nConsole.WriteLine($\"Little endian: {BitConverter.IsLittleEndian}\");",
+          "explanation": "The output order depends on the architecture, which IsLittleEndian reports explicitly."
+        }
+      ],
+      "keywords": [
+        "BitConverter",
+        "bytes",
+        "endian",
+        "primitive"
+      ]
+    },
+    {
+      "name": "GC.GetTotalAllocatedBytes",
+      "displayName": "GC.GetTotalAllocatedBytes",
+      "description": "Read the process-wide managed allocation counter.",
+      "definition": "Returns an estimate of the total bytes allocated by managed code since process start. It is a cumulative diagnostic counter, not the current live heap size.",
+      "moduleName": "System.GC",
+      "action": "Inspect",
+      "object": "Managed allocation",
+      "namespaceName": "System",
+      "typeName": "GC",
+      "memberName": "GetTotalAllocatedBytes",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var allocatedBytes = GC.GetTotalAllocatedBytes({precise});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.gc.gettotalallocatedbytes",
+      "parameters": [
+        {
+          "name": "precise",
+          "displayName": "precise",
+          "placeholder": "precise",
+          "description": "Whether to synchronize for a more precise value.",
+          "typeName": "bool",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Measure allocations around a small operation",
+          "code": "var before = GC.GetTotalAllocatedBytes(precise: true);\nvar values = Enumerable.Range(1, 1000).Select(value => value.ToString()).ToArray();\nvar after = GC.GetTotalAllocatedBytes(precise: true);\nConsole.WriteLine($\"Approximate allocated bytes: {after - before:N0}\");",
+          "explanation": "The difference includes managed allocations made by the measured code and relevant runtime activity."
+        }
+      ],
+      "keywords": [
+        "GC",
+        "allocation",
+        "memory",
+        "diagnostics"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "gallery-wall",
+  "title": "Gallery Wall",
+  "description": "A quiet exhibition label, full-width image pair, offset captions, and a visitor note.",
+  "category": "Art",
+  "sourceTemplateId": "gallery-wall"
+}

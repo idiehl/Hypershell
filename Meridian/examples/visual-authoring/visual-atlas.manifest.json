@@ -1,0 +1,38 @@
+{
+  "title": "Greek Mythology · Expanded reference atlas",
+  "projectId": "fac621f7-534a-4d6c-b456-d8b664850389",
+  "canvases": 242,
+  "nodes": 3487,
+  "links": 1486,
+  "assets": 214,
+  "imagePlacements": 18,
+  "containers": 92,
+  "epicBooks": 48,
+  "persons": 529,
+  "namedIndividuals": 515,
+  "collectiveRecords": 9,
+  "romanComparisons": 21,
+  "zeusChildren": 98,
+  "zeusIndividualRecords": 94,
+  "zeusCollectiveRecords": 4,
+  "originalCollectionHash": "0ad99ca088666a177179cca65be911a00c89cfaf62a6cd883f44e45f6327cdca",
+  "sourceTexts": [
+    "https://www.gutenberg.org/ebooks/2199",
+    "https://www.gutenberg.org/ebooks/1727",
+    "https://www.gutenberg.org/ebooks/348"
+  ],
+  "scopeNotes": [
+    "This is a broad, explicitly bounded ancient-source catalog, not “all Greek mythology” and not a single canonical family tree. Local variants, lost works, inscriptions, unnamed collectives and later reception make a universally exhaustive list impossible.",
+    "Selected parentage is the main display path; it does not mean earliest, most popular, historical, biologically plausible, or universally authoritative. Alternative parent sets retain their own witnesses. Combining all edges into a single chronological pedigree would misrepresent the data.",
+    "The Zeus register includes named individuals and clearly labeled collectives. Its count is a catalog-record count, not a scientifically or historically established number of biological children. Mothers with no individual name remain descriptive unnamed records.",
+    "Ancient narration includes rape, disguise, abduction, incest and enslavement. A grouping called union or a parent pair is a navigational convenience, never an assertion of marriage or consent. Summaries identify coercion when material to the chosen account.",
+    "Divine, mortal, transformed, collective and historical-with-legend figures are distinguished. Genealogical ancestors who explain cities or peoples are mythic origin claims, not modern ethnic or population history.",
+    "Athena, Artemis and Hestia have no biological children in the principal sources used here. Athena’s fostering of Erichthonius and Demeter’s care of mortal children do not create biological edges.",
+    "Titans: twelve original named children of Earth and Sky are distinguished from their descendants. Hesiod’s Nereid catalogue calls the group fifty but the transmitted list in Evelyn-White’s linked edition supplies fifty-one distinct names; the atlas retains the text rather than deleting a name to enforce the count.",
+    "Theoi family indexes are finding aids, not a new ancient canon. Every relationship has an ancient-author locator; direct primary-text pages are preferred when present. Modern translations and site commentary are not reproduced. Brief original paraphrases are used throughout.",
+    "The Catalogue of Women and Great Ehoiai fragment numbers follow the linked 1914 Evelyn-White edition; they differ from modern critical numbering. Fragments do not form a complete surviving sequential work.",
+    "Late Orphic material, Nonnus, late-antique local history and the Byzantine Suda are explicitly differentiated from archaic epic. An early-sounding deity is not proof that a particular genealogy survives from the earliest period.",
+    "The early Libyan Sibyl is distinguished from Herophile in Pausanias 10.12.1–2. Diodorus 5.49.2 makes Corybas the son of Iasion and Cybele, not Demeter; no Demeter–Corybas edge has been inferred from a modern index.",
+    "Greek–Roman comparisons concern particular literary and cult contexts. Jupiter, Juno, Mars, Venus and the other Roman figures are not merely renamed Greek characters; parent names alone cannot capture their civic, ritual and historical differences."
+  ]
+}

@@ -1,0 +1,47 @@
+@* Source: atlas.card-grid.v1 (Atlas Archive). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-8737a41b3efa" data-vp-id="8737a41b3efa3218d77ffcf67fa6291b">
+    <section aria-label="Featured content" class="vp-51b78f801f9f atlas-card-grid" data-vp-id="51b78f801f9f46bb1f966ca54c18ce4d">
+        <article class="vp-0d41983ece41" data-vp-id="0d41983ece41e3d7d083db4f3848e5f1">
+            <h3 class="vp-3040fa26e3a4" data-field="text-3">
+                @(Context.Text("text-3"))
+            </h3>
+            <p class="vp-00c07be68bdb" data-field="text-4" data-vp-id="00c07be68bdb2904839b201917712e4b">
+                @(Context.Text("text-4"))
+            </p>
+            <a class="vp-2223714f154b" data-field="text-5" data-vp-id="2223714f154b8525043317b32304f2fd" href="@(Link(Context.Text("href-5")))">
+                @(Context.Text("text-5"))
+            </a>
+        </article>
+        <article class="vp-2b31081f9805" data-vp-id="2b31081f98050e56a1915b3f4d269b29">
+            <h3 class="vp-9b6f2d0aa6b8" data-field="text-7">
+                @(Context.Text("text-7"))
+            </h3>
+            <p class="vp-50c6f7a66b60" data-field="text-8" data-vp-id="50c6f7a66b60b23662ce9a1282b55684">
+                @(Context.Text("text-8"))
+            </p>
+            <a class="vp-89017bad8f7a" data-field="text-9" data-vp-id="89017bad8f7a072fb37084a3696edc59" href="@(Link(Context.Text("href-9")))">
+                @(Context.Text("text-9"))
+            </a>
+        </article>
+        <article class="vp-fc0c981d5007" data-vp-id="fc0c981d500729d0e24fbc639ab7a431">
+            <h3 class="vp-158ee48d17f9" data-field="text-11">
+                @(Context.Text("text-11"))
+            </h3>
+            <p class="vp-9b34c154b49f" data-field="text-12" data-vp-id="9b34c154b49fb36cd9fe1d29ab60d670">
+                @(Context.Text("text-12"))
+            </p>
+            <a class="vp-6845628d9a83" data-field="text-13" data-vp-id="6845628d9a839dd9f216e48a5b36b3f0" href="@(Link(Context.Text("href-13")))">
+                @(Context.Text("text-13"))
+            </a>
+        </article>
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

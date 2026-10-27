@@ -1,0 +1,703 @@
+{
+  "schemaVersion": 1,
+  "templateId": "atlas-admin-interface",
+  "title": "Atlas \u00B7 Admin workspace",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Page",
+      "allowedBlocks": [
+        "admin-header",
+        "status-strip",
+        "metric",
+        "module-card",
+        "inventory",
+        "inventory-row",
+        "notice",
+        "empty-state",
+        "login-form",
+        "code-entry",
+        "approval",
+        "inline-editor",
+        "download-card",
+        "footer"
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "admin-header",
+      "title": "Atlas Admin header",
+      "component": "AtlasAdminHeaderBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Brand",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas Universalis",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Workspace",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Control room",
+          "options": []
+        },
+        {
+          "id": "status",
+          "title": "State",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Local workspace",
+          "options": []
+        },
+        {
+          "id": "href",
+          "title": "Home link",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-ADMIN-HEADER",
+      "category": "Structure \u0026 navigation",
+      "description": "Portable Atlas Admin header. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/Shared/_Layout.cshtml:20",
+      "sourceTemplateId": "atlas.website.admin-header.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "status-strip",
+      "title": "Atlas status strip",
+      "component": "AtlasStatusStripBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "items",
+          "title": "Metrics \u00B7 label | value",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Workspace|Ready\nCollections|12\nPages|48\nLast update|Today",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-STATUS-STRIP",
+      "category": "Data display",
+      "description": "Portable Atlas status strip. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/Index.cshtml:13; Storage.cshtml:13; admin.css:257",
+      "sourceTemplateId": "atlas.website.status-strip.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "metric",
+      "title": "Atlas metric panel",
+      "component": "AtlasMetricBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Label",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Published pages",
+          "options": []
+        },
+        {
+          "id": "value",
+          "title": "Value",
+          "type": "text",
+          "required": false,
+          "defaultValue": "48",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Context",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Across the selected collections",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-METRIC",
+      "category": "Data display",
+      "description": "Portable Atlas metric panel. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/wwwroot/css/admin.css:277",
+      "sourceTemplateId": "atlas.website.metric.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "module-card",
+      "title": "Atlas module launcher",
+      "component": "AtlasModuleCardBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "icon",
+          "title": "Symbol",
+          "type": "text",
+          "required": false,
+          "defaultValue": "\u25C7",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Collections",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Organize Works and Pages into a useful library.",
+          "options": []
+        },
+        {
+          "id": "href",
+          "title": "Address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#collections",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-MODULE-CARD",
+      "category": "Cards \u0026 collections",
+      "description": "Portable Atlas module launcher. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/Index.cshtml:19; admin.css:320",
+      "sourceTemplateId": "atlas.website.module-card.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "inventory",
+      "title": "Atlas editable inventory",
+      "component": "AtlasInventoryBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Workspace inventory",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items \u00B7 name | description | metadata | status",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Field journal|Notes and observations|Updated today|Ready\nProject atlas|A collection of ideas|Updated yesterday|Draft\nReference desk|Useful sources|12 entries|Ready",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-INVENTORY",
+      "category": "Data display",
+      "description": "Portable Atlas editable inventory. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/Profiles.cshtml:20-62; admin.css:675",
+      "sourceTemplateId": "atlas.website.inventory.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "inventory-row",
+      "title": "Atlas inventory row",
+      "component": "AtlasInventoryRowBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Name",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Research notebook",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A collection of current observations.",
+          "options": []
+        },
+        {
+          "id": "metadata",
+          "title": "Metadata",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Revision 4 \u00B7 Updated today",
+          "options": []
+        },
+        {
+          "id": "status",
+          "title": "Status",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Ready",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-INVENTORY-ROW",
+      "category": "Data display",
+      "description": "Portable Atlas inventory row. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/ClientDevices.cshtml:27; admin.css:680",
+      "sourceTemplateId": "atlas.website.inventory-row.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "notice",
+      "title": "Atlas notice",
+      "component": "AtlasNoticeBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Ready to continue",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Message",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Your local changes are ready to review.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-NOTICE",
+      "category": "Feedback \u0026 status",
+      "description": "Portable Atlas notice. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/wwwroot/css/admin.css:541",
+      "sourceTemplateId": "atlas.website.notice.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "empty-state",
+      "title": "Atlas empty state",
+      "component": "AtlasEmptyStateBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "icon",
+          "title": "Symbol",
+          "type": "text",
+          "required": false,
+          "defaultValue": "\u25C7",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A fresh space",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Message",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Add the first item to begin building this collection.",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Action",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Get started",
+          "options": []
+        },
+        {
+          "id": "href",
+          "title": "Address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#start",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-EMPTY-STATE",
+      "category": "Feedback \u0026 status",
+      "description": "Portable Atlas empty state. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/Downloads.cshtml:15; admin.css:769",
+      "sourceTemplateId": "atlas.website.empty-state.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "login-form",
+      "title": "Atlas sign-in form pattern",
+      "component": "AtlasLoginFormBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "kicker",
+          "title": "Kicker",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Account form pattern",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Welcome back",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Help",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Local validation preview. Use sample details; this template does not authenticate or store credentials.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-LOGIN-FORM",
+      "category": "Forms \u0026 input",
+      "description": "Portable Atlas sign-in form pattern. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/Account/Login.cshtml; admin.css:377",
+      "sourceTemplateId": "atlas.website.login-form.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "code-entry",
+      "title": "Atlas one-time code entry",
+      "component": "AtlasCodeEntryBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Enter a code",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Help",
+          "type": "text",
+          "required": false,
+          "defaultValue": "This local pattern checks the four-letter, hyphen, four-letter format.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-CODE-ENTRY",
+      "category": "Forms \u0026 input",
+      "description": "Portable Atlas one-time code entry. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/Device.cshtml:24; admin.css:559",
+      "sourceTemplateId": "atlas.website.code-entry.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "approval",
+      "title": "Atlas decision panel",
+      "component": "AtlasApprovalBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "kicker",
+          "title": "Kicker",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Review a request",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Choose the next step",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Explanation",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A local decision pattern. No account, device, or credential is changed.",
+          "options": []
+        },
+        {
+          "id": "subject",
+          "title": "Request title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Example workspace",
+          "options": []
+        },
+        {
+          "id": "detail",
+          "title": "Request details",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Review the details before making a choice.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-APPROVAL",
+      "category": "Widgets \u0026 tools",
+      "description": "Portable Atlas decision panel. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/CredentialRelease.cshtml:45-70; admin.css:571",
+      "sourceTemplateId": "atlas.website.approval.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "inline-editor",
+      "title": "Atlas expandable editor",
+      "component": "AtlasInlineEditorBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Disclosure label",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Edit supporting details",
+          "options": []
+        },
+        {
+          "id": "placeholder",
+          "title": "Placeholder",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Write a short note\u2026",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-INLINE-EDITOR",
+      "category": "Forms \u0026 input",
+      "description": "Portable Atlas expandable editor. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/AdminSection.cshtml:102-116; admin.css:744",
+      "sourceTemplateId": "atlas.website.inline-editor.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "download-card",
+      "title": "Atlas release card",
+      "component": "AtlasDownloadCardBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Release title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Project release",
+          "options": []
+        },
+        {
+          "id": "version",
+          "title": "Version \u0026 channel",
+          "type": "text",
+          "required": false,
+          "defaultValue": "1.0 \u00B7 Stable",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Release notes",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Describe what is included and who the release is for.",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link label",
+          "type": "text",
+          "required": false,
+          "defaultValue": "View release",
+          "options": []
+        },
+        {
+          "id": "href",
+          "title": "Release address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#release",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-DOWNLOAD-CARD",
+      "category": "Cards \u0026 collections",
+      "description": "Portable Atlas release card. Editable content, local behavior and Atlas styling. Source: Hypershell.ProfileServer/Pages/Downloads.cshtml:23-40",
+      "sourceTemplateId": "atlas.website.download-card.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "footer",
+      "title": "Atlas page footer",
+      "component": "AtlasFooterBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Name",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas Universalis",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Footer note",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Created in Hyperlib. Shared with the world.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-FOOTER",
+      "category": "Structure \u0026 navigation",
+      "description": "Portable Atlas page footer. Editable content, local behavior and Atlas styling. Source: HyperLib.Archives/wwwroot/index.html:65; archives.css:264",
+      "sourceTemplateId": "atlas.website.footer.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "background",
+      "title": "Page color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#070d1a",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panel color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#101b35",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#e8ecf1",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#bcc5d0",
+      "options": []
+    },
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#c8963e",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "geometric",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "geometric",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    }
+  ],
+  "defaultBlocks": [
+    {
+      "id": "atlas-section-0",
+      "type": "admin-header",
+      "region": "main",
+      "values": {
+        "title": "Atlas Universalis",
+        "text": "Control room",
+        "status": "Local workspace",
+        "href": "#"
+      }
+    },
+    {
+      "id": "atlas-section-1",
+      "type": "status-strip",
+      "region": "main",
+      "values": {
+        "items": "Workspace|Ready\nCollections|12\nPages|48\nLast update|Today"
+      }
+    },
+    {
+      "id": "atlas-section-2",
+      "type": "module-card",
+      "region": "main",
+      "values": {
+        "icon": "\u25C7",
+        "title": "Collections",
+        "text": "Organize Works and Pages into a useful library.",
+        "href": "#collections"
+      }
+    },
+    {
+      "id": "atlas-section-3",
+      "type": "inventory",
+      "region": "main",
+      "values": {
+        "title": "Workspace inventory",
+        "items": "Field journal|Notes and observations|Updated today|Ready\nProject atlas|A collection of ideas|Updated yesterday|Draft\nReference desk|Useful sources|12 entries|Ready"
+      }
+    },
+    {
+      "id": "atlas-section-4",
+      "type": "notice",
+      "region": "main",
+      "values": {
+        "title": "Ready to continue",
+        "text": "Your local changes are ready to review."
+      }
+    },
+    {
+      "id": "atlas-section-5",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "title": "Atlas Universalis",
+        "text": "Created in Hyperlib. Shared with the world."
+      }
+    }
+  ],
+  "emptyPageDefault": false
+}

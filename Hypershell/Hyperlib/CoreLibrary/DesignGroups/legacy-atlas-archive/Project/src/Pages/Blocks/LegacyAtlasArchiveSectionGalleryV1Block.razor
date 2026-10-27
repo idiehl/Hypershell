@@ -1,0 +1,45 @@
+@* Source: atlas.archive.section.gallery.v1 (Atlas Archive). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-218e1493da8f" data-vp-id="218e1493da8f96d6889f857b193a7860">
+    <section aria-label="Image gallery" class="vp-6395dabb98af" data-vp-id="6395dabb98afa67a46fa31ab9add9ca5" id="@(LocalIds("images"))">
+        <div class="vp-ff5ec7b76f9d" data-vp-id="ff5ec7b76f9d1d923084d96a7232830b">
+            <p class="vp-2a41be9e85ed" data-field="text-3" data-vp-id="2a41be9e85ed4cb60d5793cd2b34ed69">
+                @(Context.Text("text-3"))
+            </p>
+            <h2 class="vp-e70a04ba2aec" data-field="text-4">
+                @(Context.Text("text-4"))
+            </h2>
+            <p class="vp-8e8e345482ea" data-field="text-5" data-vp-id="8e8e345482ea8c22192ae8d3ef1aea51">
+                @(Context.Text("text-5"))
+            </p>
+        </div>
+        <div class="vp-c383d63361d0" data-vp-id="c383d63361d0c67d5b2b16caf6078d0e">
+            <figure class="vp-f12244173dfb" data-vp-id="f12244173dfbe539f406d090ae3ba005">
+                <img class="vp-117348dc5756" data-vp-id="117348dc57567128d137c51c3104755e" loading="lazy" alt="@(Context.Text("alt-8"))" src="@(Asset(Context.Text("src-8")))" />
+                <figcaption class="vp-6c7ae01bb7ec" data-field="text-9" data-vp-id="6c7ae01bb7ecbcb51b87a044557d30b8">
+                    @(Context.Text("text-9"))
+                </figcaption>
+            </figure>
+            <figure class="vp-2149b9d20a8c" data-vp-id="2149b9d20a8ceff93dedf8b785d473ae">
+                <img class="vp-844966b7a6a8" data-vp-id="844966b7a6a821f9cdfaf64f0f5f1a58" loading="lazy" alt="@(Context.Text("alt-11"))" src="@(Asset(Context.Text("src-11")))" />
+                <figcaption class="vp-4acb7ef5bd91" data-field="text-12" data-vp-id="4acb7ef5bd91b7b763c6625ff474e276">
+                    @(Context.Text("text-12"))
+                </figcaption>
+            </figure>
+            <figure class="vp-0ce24b349d63" data-vp-id="0ce24b349d63e27d3166b85882ea3ffd">
+                <img class="vp-a05c24986343" data-vp-id="a05c2498634389244ff70b47b2c80318" loading="lazy" alt="@(Context.Text("alt-14"))" src="@(Asset(Context.Text("src-14")))" />
+                <figcaption class="vp-9bbb57fbb7f1" data-field="text-15" data-vp-id="9bbb57fbb7f112041882b7ab9210fdae">
+                    @(Context.Text("text-15"))
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

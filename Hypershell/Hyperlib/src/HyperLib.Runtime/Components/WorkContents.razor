@@ -1,0 +1,22 @@
+@inject RendererOptions Options
+
+<ol class="hl-work-contents-list">
+    @foreach (var entry in Items)
+    {
+        <li class="@(entry.Node.Type == "page" ? "hl-work-page-link" : "hl-work-section-link")">
+            <a href="@WorkSiteModel.Href(Options, entry.Node)" data-hyperlib-navigate="@entry.Node.Id"
+               aria-current="@(entry.Node.Id == CurrentId ? "page" : null)">
+                <span>@entry.Node.Title</span><span class="hl-work-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            @if (entry.Children.Count > 0)
+            {
+                <WorkContents Items="entry.Children" CurrentId="@CurrentId" />
+            }
+        </li>
+    }
+</ol>
+
+@code {
+    [Parameter, EditorRequired] public IReadOnlyList<WorkContentsItem> Items { get; set; } = [];
+    [Parameter] public string? CurrentId { get; set; }
+}

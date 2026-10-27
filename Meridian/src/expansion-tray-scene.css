@@ -1,0 +1,32 @@
+/* Trays use an ordinary empty enclosure surface. Real child cards paint above
+   the blank background; source tethers cross enclosing fills and borders. */
+.ms-expansion-tethers{position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:2}
+.ms-expansion-tether{fill:none;stroke:#76aa9b;stroke-width:1;stroke-opacity:.85;pointer-events:none}
+.ms-expansion-tray-backdrop{position:absolute;box-sizing:border-box;z-index:0;border-radius:var(--ms-tray-radius,0px);background:var(--ms-tray-fill,#17283e55);pointer-events:auto;outline:none;touch-action:none;user-select:none}
+.ms-expansion-tray{position:absolute;box-sizing:border-box;z-index:4;border:var(--ms-tray-border-width,1px) solid var(--ms-tray-border,#314c6c);border-radius:var(--ms-tray-radius,0px);background:transparent;pointer-events:none}
+.ms-expansion-tray[hidden],.ms-expansion-tray-backdrop[hidden]{display:none!important}
+.ms-expansion-tray-backdrop.ms-tray-draggable{cursor:default}
+.ms-expansion-tray-backdrop.ms-tray-dragging{cursor:grabbing}
+.ms-expansion-tray.ms-tray-highlighted,.ms-expansion-tray.ms-tray-dragging,.ms-expansion-tray.ms-tray-resizing{border-color:#658199}
+.ms-expansion-tray.ms-selected{border-color:#57dbc4;box-shadow:0 0 0 calc(2px / var(--ms-camera-scale,1)) #57dbc433}
+.ms-expansion-tray-backdrop:focus-visible{box-shadow:0 0 0 calc(2px / var(--ms-camera-scale,1)) #57dbc4}
+.ms-expansion-tether.ms-tray-highlighted{stroke:#9ee4cf;stroke-opacity:1}
+.ms-tray-source.ms-tray-highlighted:not(.ms-selected)>.ms-node-outline{display:block}
+.ms-tray-source.ms-tray-highlighted:not(.ms-selected)>.ms-node-outline path{stroke:#90ddc3;stroke-width:calc(1px / var(--ms-camera-scale,1));fill:none}
+.ms-expansion-tray-resize{position:absolute;display:block;pointer-events:auto;touch-action:none;z-index:3;--ms-tray-edge:calc(12px / var(--ms-camera-scale,1));--ms-tray-corner:calc(16px / var(--ms-camera-scale,1))}
+.ms-expansion-tray-resize[data-tray-resize=n],.ms-expansion-tray-resize[data-tray-resize=s]{left:calc(var(--ms-tray-corner) / 2);right:calc(var(--ms-tray-corner) / 2);height:var(--ms-tray-edge);cursor:ns-resize}
+.ms-expansion-tray-resize[data-tray-resize=n]{top:calc(-10px / var(--ms-camera-scale,1) - var(--ms-tray-border-width,1px))}
+.ms-expansion-tray-resize[data-tray-resize=s]{bottom:calc(-10px / var(--ms-camera-scale,1) - var(--ms-tray-border-width,1px))}
+.ms-expansion-tray-resize[data-tray-resize=e],.ms-expansion-tray-resize[data-tray-resize=w]{top:calc(var(--ms-tray-corner) / 2);bottom:calc(var(--ms-tray-corner) / 2);width:var(--ms-tray-edge);cursor:ew-resize}
+.ms-expansion-tray-resize[data-tray-resize=e]{right:calc(-10px / var(--ms-camera-scale,1) - var(--ms-tray-border-width,1px))}
+.ms-expansion-tray-resize[data-tray-resize=w]{left:calc(-10px / var(--ms-camera-scale,1) - var(--ms-tray-border-width,1px))}
+.ms-expansion-tray-resize[data-tray-resize=ne],.ms-expansion-tray-resize[data-tray-resize=nw],.ms-expansion-tray-resize[data-tray-resize=se],.ms-expansion-tray-resize[data-tray-resize=sw]{width:var(--ms-tray-corner);height:var(--ms-tray-corner);z-index:4}
+.ms-expansion-tray-resize[data-tray-resize=ne],.ms-expansion-tray-resize[data-tray-resize=nw]{top:calc(var(--ms-tray-corner) / -2)}
+.ms-expansion-tray-resize[data-tray-resize=se],.ms-expansion-tray-resize[data-tray-resize=sw]{bottom:calc(var(--ms-tray-corner) / -2)}
+.ms-expansion-tray-resize[data-tray-resize=ne],.ms-expansion-tray-resize[data-tray-resize=se]{right:calc(var(--ms-tray-corner) / -2)}
+.ms-expansion-tray-resize[data-tray-resize=nw],.ms-expansion-tray-resize[data-tray-resize=sw]{left:calc(var(--ms-tray-corner) / -2)}
+.ms-expansion-tray-resize[data-tray-resize=nw],.ms-expansion-tray-resize[data-tray-resize=se]{cursor:nwse-resize}
+.ms-expansion-tray-resize[data-tray-resize=ne],.ms-expansion-tray-resize[data-tray-resize=sw]{cursor:nesw-resize}
+.ms-tray-snap-receiver>.ms-node-outline{display:block}
+.ms-tray-snap-receiver>.ms-node-outline path{stroke:#90ddc3;stroke-width:calc(2px / var(--ms-camera-scale,1));stroke-opacity:.85;fill:none}
+@media(prefers-reduced-motion:no-preference){.ms-expansion-tray,.ms-expansion-tether{transition:border-color .12s,stroke .12s,stroke-opacity .12s}}

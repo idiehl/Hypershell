@@ -1,0 +1,92 @@
+/* The Work inspector stays left; the selected object's Hub occupies the right. */
+.workspace.is-node-hub-layout {
+  --hub-width: 350px;
+  grid-template-columns: var(--inspector-width, 310px) minmax(0, 1fr);
+  position: relative;
+}
+.workspace.is-node-hub-layout.has-node-hub {
+  grid-template-columns: var(--inspector-width, 310px) minmax(0, 1fr) var(--hub-width);
+}
+.workspace.is-node-hub-layout > .inspector {
+  grid-column: 1;
+  grid-row: 3;
+  display: flex;
+  min-width: 0;
+  border-left: 0;
+  border-right: 1px solid var(--line, #304251);
+}
+.workspace.is-node-hub-layout > .canvas-column {
+  grid-column: 2;
+  grid-row: 3;
+  min-width: 0;
+}
+.workspace.is-node-hub-layout > .node-hub {
+  grid-column: 3;
+  grid-row: 3;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  border-left: 1px solid var(--line, #304251);
+  background: #171f2a;
+}
+.workspace.is-node-hub-layout > .inspector-divider {
+  left: calc(var(--inspector-width, 310px) - 3px);
+  right: auto;
+}
+.workspace.is-node-hub-layout.is-inspector-closed {
+  grid-template-columns: minmax(0, 1fr);
+}
+.workspace.is-node-hub-layout.is-inspector-closed.has-node-hub {
+  grid-template-columns: minmax(0, 1fr) var(--hub-width);
+}
+.workspace.is-node-hub-layout.is-inspector-closed > .inspector {
+  display: none;
+}
+.workspace.is-node-hub-layout.is-inspector-closed > .canvas-column {
+  grid-column: 1;
+}
+.workspace.is-node-hub-layout.is-inspector-closed > .node-hub {
+  grid-column: 2;
+}
+.workspace.is-node-hub-layout .canvas-toolbar {
+  justify-content: flex-start;
+}
+
+@media (max-width: 1100px) and (min-width: 1001px) {
+  .workspace.is-node-hub-layout { --hub-width: 310px; }
+}
+
+@media (max-width: 1000px) {
+  .workspace.is-node-hub-layout,
+  .workspace.is-node-hub-layout.has-node-hub,
+  .workspace.is-node-hub-layout.is-inspector-closed,
+  .workspace.is-node-hub-layout.is-inspector-closed.has-node-hub {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .workspace.is-node-hub-layout > .canvas-column {
+    grid-column: 1;
+  }
+  .workspace.is-node-hub-layout > .inspector.is-open {
+    position: absolute;
+    top: calc(var(--application-bar-height, 0px) + var(--workspace-header-height, 76px));
+    bottom: 0;
+    left: 0;
+    right: auto;
+    width: min(var(--inspector-width, 310px), calc(100vw - 56px));
+    z-index: 40;
+    box-shadow: 12px 0 30px #0005;
+  }
+  .workspace.is-node-hub-layout > .node-hub {
+    position: absolute;
+    top: calc(var(--application-bar-height, 0px) + var(--workspace-header-height, 76px));
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: min(var(--hub-width), calc(100vw - 56px));
+    z-index: 45;
+    box-shadow: -12px 0 30px #0005;
+  }
+  .workspace.is-node-hub-layout > .inspector-divider {
+    display: none;
+  }
+}

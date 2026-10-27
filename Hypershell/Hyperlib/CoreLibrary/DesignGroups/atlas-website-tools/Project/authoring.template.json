@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "templateId": "atlas-website-tools",
+  "title": "Atlas \u00B7 Forms \u0026 planning",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Page",
+      "allowedBlocks": [
+        "navigation",
+        "scope-planner",
+        "risk-badge",
+        "result-summary",
+        "form-field",
+        "contact-form",
+        "footer"
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "navigation",
+      "title": "Atlas navigation",
+      "component": "AtlasNavigationBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Brand",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas Universalis",
+          "options": []
+        },
+        {
+          "id": "home",
+          "title": "Home link",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "links",
+          "title": "Links \u00B7 label | address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Home|#\nPrinciples|#principles\nServices|#services\nBio|#bio\nProject Lab|#projects\nArchives|#archives",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-NAVIGATION",
+      "category": "Structure \u0026 navigation",
+      "description": "Portable Atlas navigation. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Shared/_Layout.cshtml:24; site.css:93",
+      "sourceTemplateId": "atlas.website.navigation.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "scope-planner",
+      "title": "Atlas launch scope planner",
+      "component": "AtlasScopePlannerBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Turn one useful idea into a focused launch.",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Introduction",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Choose the smallest complete workflow that gives a visitor a useful result.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-SCOPE-PLANNER",
+      "category": "Widgets \u0026 tools",
+      "description": "Portable Atlas launch scope planner. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/LaunchScope.cshtml; LaunchScope.cshtml.cs:33-155",
+      "sourceTemplateId": "atlas.website.scope-planner.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "risk-badge",
+      "title": "Atlas risk status",
+      "component": "AtlasRiskBadgeBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Status",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Low delivery risk",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Explanation",
+          "type": "text",
+          "required": false,
+          "defaultValue": "One clear input, one useful result, and one next action.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-RISK-BADGE",
+      "category": "Feedback \u0026 status",
+      "description": "Portable Atlas risk status. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/LaunchScope.cshtml:113; site.css:1141",
+      "sourceTemplateId": "atlas.website.risk-badge.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "result-summary",
+      "title": "Atlas result summary",
+      "component": "AtlasResultSummaryBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Your next step",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Results \u00B7 label | value",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Audience|One clearly defined group\nInput|The smallest useful set of information\nOutput|A clear recommendation\nScope|One complete workflow",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Next action",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Test the workflow with someone who needs it.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-RESULT-SUMMARY",
+      "category": "Data display",
+      "description": "Portable Atlas result summary. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/LaunchScope.cshtml:118-174",
+      "sourceTemplateId": "atlas.website.result-summary.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "form-field",
+      "title": "Atlas labeled input",
+      "component": "AtlasFormFieldBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Label",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Project name",
+          "options": []
+        },
+        {
+          "id": "placeholder",
+          "title": "Placeholder",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A short, memorable name",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Help",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Use the name people will recognize.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-FORM-FIELD",
+      "category": "Forms \u0026 input",
+      "description": "Portable Atlas labeled input. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/LaunchScope.cshtml:22-77; Admin/admin.css:395",
+      "sourceTemplateId": "atlas.website.form-field.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "contact-form",
+      "title": "Atlas inquiry draft",
+      "component": "AtlasContactFormBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Start a conversation",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Introduction",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Prepare a concise inquiry. This local form previews your draft without sending it.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-CONTACT-FORM",
+      "category": "Forms \u0026 input",
+      "description": "Portable Atlas inquiry draft. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Account/Create.cshtml:17; LaunchScope form styling",
+      "sourceTemplateId": "atlas.website.contact-form.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "footer",
+      "title": "Atlas page footer",
+      "component": "AtlasFooterBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Name",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas Universalis",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Footer note",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Created in Hyperlib. Shared with the world.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-FOOTER",
+      "category": "Structure \u0026 navigation",
+      "description": "Portable Atlas page footer. Editable content, local behavior and Atlas styling. Source: HyperLib.Archives/wwwroot/index.html:65; archives.css:264",
+      "sourceTemplateId": "atlas.website.footer.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "background",
+      "title": "Page color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#070d1a",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panel color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#101b35",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#e8ecf1",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#bcc5d0",
+      "options": []
+    },
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#c8963e",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "geometric",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "geometric",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    }
+  ],
+  "defaultBlocks": [
+    {
+      "id": "atlas-section-0",
+      "type": "navigation",
+      "region": "main",
+      "values": {
+        "title": "Atlas Universalis",
+        "home": "#",
+        "links": "Home|#\nPrinciples|#principles\nServices|#services\nBio|#bio\nProject Lab|#projects\nArchives|#archives"
+      }
+    },
+    {
+      "id": "atlas-section-1",
+      "type": "scope-planner",
+      "region": "main",
+      "values": {
+        "title": "Turn one useful idea into a focused launch.",
+        "text": "Choose the smallest complete workflow that gives a visitor a useful result."
+      }
+    },
+    {
+      "id": "atlas-section-2",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "title": "Atlas Universalis",
+        "text": "Created in Hyperlib. Shared with the world."
+      }
+    }
+  ],
+  "emptyPageDefault": false
+}

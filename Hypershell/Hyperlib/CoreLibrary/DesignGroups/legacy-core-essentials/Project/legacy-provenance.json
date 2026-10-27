@@ -1,0 +1,34 @@
+[
+  {
+    "sourceTemplateId": "core.navigation.header.v1",
+    "catalogId": "HLC-LEGACY-CORE-NAVIGATION-HEADER-V1",
+    "title": "Responsive navigation header",
+    "sourceLibrary": "Core essentials",
+    "component": "LegacyCoreNavigationHeaderV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "core.contact.form.v1",
+    "catalogId": "HLC-LEGACY-CORE-CONTACT-FORM-V1",
+    "title": "Accessible contact form",
+    "sourceLibrary": "Core essentials",
+    "component": "LegacyCoreContactFormV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "core.faq.disclosure.v1",
+    "catalogId": "HLC-LEGACY-CORE-FAQ-DISCLOSURE-V1",
+    "title": "FAQ disclosures",
+    "sourceLibrary": "Core essentials",
+    "component": "LegacyCoreFaqDisclosureV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  },
+  {
+    "sourceTemplateId": "core.accessible.table.v1",
+    "catalogId": "HLC-LEGACY-CORE-ACCESSIBLE-TABLE-V1",
+    "title": "Accessible data table",
+    "sourceLibrary": "Core essentials",
+    "component": "LegacyCoreAccessibleTableV1Block",
+    "source": "Hyperpage built-in VisualPageTemplateDocument; generated with VisualPageGenerator"
+  }
+]

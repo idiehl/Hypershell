@@ -1,0 +1,19 @@
+<Project Sdk="WixToolset.Sdk/4.0.6">
+  <PropertyGroup>
+    <OutputType>Package</OutputType>
+    <Platform>x64</Platform>
+    <ProductVersion Condition="'$(ProductVersion)' == ''">0.1.0</ProductVersion>
+    <OutputName>Hypershell-$(ComponentName)-$(ProductVersion)-win-x64</OutputName>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <DefineConstants>ProductVersion=$(ProductVersion);ComponentName=$(ComponentName)</DefineConstants>
+    <SuppressIces>ICE60;ICE61</SuppressIces>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Component.wxs" />
+    <Compile Include="$(GeneratedFilesPath)" Condition="'$(GeneratedFilesPath)' != ''" />
+  </ItemGroup>
+  <Target Name="ValidateComponentInputs" BeforeTargets="BeforeBuild">
+    <Error Condition="'$(ComponentName)' != 'Authoring' And '$(ComponentName)' != 'Meridian'" Text="ComponentName must be Authoring or Meridian." />
+    <Error Condition="!Exists('$(GeneratedFilesPath)')" Text="Generate the verified component file fragment before building this MSI." />
+  </Target>
+</Project>

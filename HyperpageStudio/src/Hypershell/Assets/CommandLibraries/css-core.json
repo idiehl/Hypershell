@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "css-core",
+  "displayName": "CSS Core",
+  "description": "CSS syntax and foundational cascade, selector, box, custom-property, and media-query features.",
+  "language": "CSS",
+  "category": "Language core",
+  "kind": "Core",
+  "canonicalName": "CSS Core",
+  "ecosystem": "CSS",
+  "targetVersion": "Living specification inventory",
+  "sourceVersion": "mdn-data 2.31.0 · properties 004ebcb0d571b2e1cf42c4793e05c99de19c2b1bddae739638acbcb855721f8e",
+  "sourceUrl": "https://www.w3.org/Style/CSS/",
+  "license": "W3C document license",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "CSS entries insert into compatible editor documents; CSS is not a terminal runtime.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "css",
+    "core",
+    "cascade",
+    "selectors"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 45,
+  "declaredIndexedCount": 40,
+  "declaredGuidedCount": 5,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/css-core.entries.json"
+  ],
+  "declaredGuideCount": 5,
+  "guideFiles": [
+    "guides/css-core.guides.json"
+  ],
+  "legacyIds": [
+    "css-essentials"
+  ]
+}

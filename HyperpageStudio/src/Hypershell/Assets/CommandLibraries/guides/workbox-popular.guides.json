@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "workbox-popular",
+  "guides": [
+    {
+      "entryId": "workbox-popular.cache-route",
+      "definition": "Registers a Workbox runtime route with a named caching strategy. Browser/build-tool content: configure Workbox in a service worker or build pipeline and serve over a secure context; the Web APIs surface is editor-only.",
+      "parameters": [
+        {
+          "name": "strategy",
+          "displayName": "Strategy",
+          "placeholder": "strategy",
+          "description": "Imported strategy class such as CacheFirst or NetworkFirst.",
+          "typeName": "Workbox strategy",
+          "defaultValue": "CacheFirst",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "destination",
+          "displayName": "Request destination",
+          "placeholder": "destination",
+          "description": "Fetch request destination matched by the route.",
+          "typeName": "JavaScript string",
+          "defaultValue": "\"image\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "cacheName",
+          "displayName": "Cache name",
+          "placeholder": "cacheName",
+          "description": "Versioned runtime cache name.",
+          "typeName": "JavaScript string",
+          "defaultValue": "\"images-v1\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Cache images on demand",
+          "code": "import { registerRoute } from \"workbox-routing\";\nimport { CacheFirst } from \"workbox-strategies\";\n\nregisterRoute(\n  ({request}) => request.destination === \"image\",\n  new CacheFirst({ cacheName: \"images-v1\" }),\n);",
+          "explanation": "CacheFirst is appropriate for versioned or slow-changing assets; pair runtime caches with expiration policies in production."
+        }
+      ]
+    },
+    {
+      "entryId": "workbox-popular.precache-manifest",
+      "definition": "Routes the Workbox-generated precache manifest from an injected service worker. Browser/build-tool content: configure Workbox in a service worker or build pipeline and serve over a secure context; the Web APIs surface is editor-only.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Use an injected precache manifest",
+          "code": "import { cleanupOutdatedCaches, precacheAndRoute } from \"workbox-precaching\";\n\ncleanupOutdatedCaches();\nprecacheAndRoute(self.__WB_MANIFEST);",
+          "explanation": "injectManifest replaces __WB_MANIFEST during the build; do not hand-edit the generated revision list."
+        }
+      ]
+    },
+    {
+      "entryId": "workbox-popular.register-window",
+      "definition": "Uses workbox-window to register a service worker and observe an installed update. Browser/build-tool content: configure Workbox in a service worker or build pipeline and serve over a secure context; the Web APIs surface is editor-only.",
+      "parameters": [
+        {
+          "name": "serviceWorkerUrl",
+          "displayName": "Service worker URL",
+          "placeholder": "serviceWorkerUrl",
+          "description": "URL of the built service worker.",
+          "typeName": "JavaScript string",
+          "defaultValue": "\"/service-worker.js\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "waitingHandler",
+          "displayName": "Waiting handler",
+          "placeholder": "waitingHandler",
+          "description": "Action performed when an update waits for activation.",
+          "typeName": "JavaScript statement",
+          "defaultValue": "console.info(\"An update is ready.\");",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Notify when an update is waiting",
+          "code": "import { Workbox } from \"workbox-window\";\n\nif (\"serviceWorker\" in navigator) {\n  const workbox = new Workbox(\"/service-worker.js\");\n  workbox.addEventListener(\"waiting\", () => {\n    console.info(\"An update is ready.\");\n  });\n  workbox.register();\n}",
+          "explanation": "The waiting event lets the application choose a user-friendly update policy instead of unexpectedly replacing an active page's service worker."
+        }
+      ]
+    }
+  ]
+}

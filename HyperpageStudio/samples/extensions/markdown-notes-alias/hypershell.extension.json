@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../doc/schemas/hypershell-extension.schema.json",
+  "schemaVersion": 1,
+  "id": "community.markdown-notes-alias",
+  "displayName": "Markdown Notes Alias",
+  "publisher": "Hypershell Community Sample",
+  "version": "1.0.0",
+  "description": "Maps .hnote files to Hypershell's host-owned Markdown editor and exporter without loading extension code.",
+  "runtime": "ContentOnly",
+  "requestedCapabilities": [
+    "DocumentProvider"
+  ],
+  "contributions": {
+    "documentFormats": [
+      {
+        "id": "markdownNotes",
+        "displayName": "Markdown Notes",
+        "kind": "TextEditor",
+        "fileExtensions": [".hnote"],
+        "languageId": "markdown"
+      }
+    ]
+  }
+}

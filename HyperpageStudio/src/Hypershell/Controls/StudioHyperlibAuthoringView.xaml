@@ -1,0 +1,17 @@
+<UserControl x:Class="Hypershell.Controls.StudioHyperlibAuthoringView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Loaded="ViewLoaded">
+    <Grid Background="{DynamicResource AppBackgroundBrush}">
+        <Grid x:Name="BrowserHost" />
+        <Border x:Name="LoadingPanel" Padding="24" Background="{DynamicResource AppBackgroundBrush}">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="580">
+                <TextBlock Text="Write your Work" FontSize="24" FontWeight="SemiBold" Margin="0,0,0,12" />
+                <TextBlock x:Name="LoadingText" Text="Opening this project’s content tools…"
+                           TextWrapping="Wrap" Margin="0,0,0,16" />
+                <Button x:Name="RetryButton" Content="Try again" Click="RetryClick"
+                        HorizontalAlignment="Left" Visibility="Collapsed" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

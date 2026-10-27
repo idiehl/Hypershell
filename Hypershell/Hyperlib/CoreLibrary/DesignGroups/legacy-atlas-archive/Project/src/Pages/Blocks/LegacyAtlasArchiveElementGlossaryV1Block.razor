@@ -1,0 +1,20 @@
+@* Source: atlas.archive.element.glossary.v1 (Atlas Archive). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-3392a3a68e64" data-vp-id="3392a3a68e64a5a74db1b2765ca332ab">
+    <div class="vp-a71d78b38817" data-vp-id="a71d78b38817f646cb13b02205302d86">
+        <dt class="vp-3d330259c461" data-field="text-2" data-vp-id="3d330259c461a1da22e53ed5fc2c4690">
+            @(Context.Text("text-2"))
+        </dt>
+        <dd class="vp-c749af0e3ae5" data-field="text-3" data-vp-id="c749af0e3ae57ee3a4feec990185f6eb">
+            @(Context.Text("text-3"))
+        </dd>
+    </div>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

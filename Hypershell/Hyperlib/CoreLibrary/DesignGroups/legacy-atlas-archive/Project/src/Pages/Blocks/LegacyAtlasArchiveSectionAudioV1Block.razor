@@ -1,0 +1,39 @@
+@* Source: atlas.archive.section.audio.v1 (Atlas Archive). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-dd6ec5dd282f" data-vp-id="dd6ec5dd282faa2679f138e4979e7e2b">
+    <section aria-label="Audio and transcript" class="vp-a65948a276f8" data-vp-id="a65948a276f8c230915af7898fac0fd4" id="@(LocalIds("audio"))">
+        <div class="vp-0fa30f6af6b2" data-vp-id="0fa30f6af6b201df3a0077c6d716a6c2">
+            <p class="vp-90c7b52b6c60" data-field="text-3" data-vp-id="90c7b52b6c607c8b7e378ec6f8e4b60c">
+                @(Context.Text("text-3"))
+            </p>
+            <h2 class="vp-7744e70e2ad4" data-field="text-4">
+                @(Context.Text("text-4"))
+            </h2>
+            <p class="vp-51ac7b1ba064" data-field="text-5" data-vp-id="51ac7b1ba06496abd06922e356b0c7a0">
+                @(Context.Text("text-5"))
+            </p>
+        </div>
+        <figure class="vp-eb9b752b8f5b" data-vp-id="eb9b752b8f5b88ecb616fc3876c4b961">
+            <audio class="vp-5ff400912999" controls data-vp-id="5ff4009129998b18bf28662f303771cf" preload="metadata"></audio>
+            <figcaption class="vp-aacf9f3fd287" data-field="text-8" data-vp-id="aacf9f3fd28751203ab321f7495ab294">
+                @(Context.Text("text-8"))
+            </figcaption>
+        </figure>
+        <details class="vp-a73dcc4ff529" data-vp-id="a73dcc4ff5292fefef6e6b78e34d79f9">
+            <summary class="vp-a774b440495d" data-field="text-10" data-vp-id="a774b440495db7fcbf452e2dd3a0c277">
+                @(Context.Text("text-10"))
+            </summary>
+            <p class="vp-69a297cc4575" data-field="text-11" data-vp-id="69a297cc4575b539041866230788ab71">
+                @(Context.Text("text-11"))
+            </p>
+        </details>
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "travel-atlas",
+  "title": "Travel Atlas",
+  "description": "A destination feature, interactive route checklist, location map, and practical side notes.",
+  "category": "Travel",
+  "sourceTemplateId": "travel-atlas"
+}

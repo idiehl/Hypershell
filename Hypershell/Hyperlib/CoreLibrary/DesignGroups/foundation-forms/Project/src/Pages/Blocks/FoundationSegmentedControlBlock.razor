@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-segmented-control">
+<div class="pills" role="group" aria-label="@Context.Text("title")">@foreach(var row in Rows){var value=Cell(row,0);<button type="button" aria-pressed="@(selection==value)" @onclick="()=>selection=value">@value</button>}</div><output aria-live="polite">@(selection.Length>0 ? selection : "Choose a view")</output>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private string selection="";
+}

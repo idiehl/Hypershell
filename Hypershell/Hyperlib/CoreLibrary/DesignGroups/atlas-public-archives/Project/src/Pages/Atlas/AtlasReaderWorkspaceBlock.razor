@@ -1,0 +1,12 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<section class="reader-workspace"><div class="archive-toolbar"><span class="eyebrow" data-field="kicker">@T("kicker")</span><button type="button" class="quiet" @onclick="() => _showTree = !_showTree" aria-expanded="@_showTree">@(_showTree ? "Hide library" : "Show library")</button></div><div class="reader-columns @(_showTree ? "" : "tree-hidden")">@if(_showTree) { <aside class="panel"><label class="search-field">Find a page<input type="search" @bind="_query" @bind:event="oninput" placeholder="Search the library…" /></label><nav class="archive-tree" aria-label="Local pages">@foreach(var line in Lines("items").Where(line => line.Contains(_query, StringComparison.OrdinalIgnoreCase))) { <button class="tree-item" type="button" @onclick="() => _selected = line">@Part(line,0)</button> }</nav></aside> }<article class="reader-body"><p class="eyebrow">@(_selected is null ? T("kicker") : "Page")</p><h2>@(_selected is null ? T("title") : Part(_selected,0))</h2><p class="reader-text">@(_selected is null ? T("text") : Part(_selected,1))</p>@if(_selected is not null) { <button class="secondary" type="button" @onclick="() => _selected = null">Back to introduction</button> }</article></div></section>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+private string _query = string.Empty; private string? _selected; private bool _showTree = true;
+}

@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 1,
+  "templateId": "foundation-commerce",
+  "title": "Commerce essentials",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Main content",
+      "allowedBlocks": []
+    }
+  ],
+  "blocks": [
+    {
+      "id": "product-card",
+      "title": "Product card",
+      "component": "FoundationProductCardBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Product card",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A product summary with a price, description, and destination link.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Edition 01|$24",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-PRODUCT-CARD",
+      "category": "Commerce",
+      "description": "A product summary with a price, description, and destination link.",
+      "sourceTemplateId": "foundation-commerce",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "pricing-tier",
+      "title": "Pricing tier",
+      "component": "FoundationPricingTierBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Pricing tier",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "One plan with a transparent feature list and a single call to action.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Unlimited notes\nPrivate collections\nExport your work\nCommunity support",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-PRICING-TIER",
+      "category": "Commerce",
+      "description": "One plan with a transparent feature list and a single call to action.",
+      "sourceTemplateId": "foundation-commerce",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "cart-line",
+      "title": "Cart item",
+      "component": "FoundationCartLineBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Cart item",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "An item, quantity, and unit price with a local total calculation.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-CART-LINE",
+      "category": "Commerce",
+      "description": "An item, quantity, and unit price with a local total calculation.",
+      "sourceTemplateId": "foundation-commerce",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "order-summary",
+      "title": "Order summary",
+      "component": "FoundationOrderSummaryBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Order summary",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A clearly labeled breakdown of subtotal, delivery, and total.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Subtotal|$24.00\nDelivery|$5.00\nTaxes|Included",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-ORDER-SUMMARY",
+      "category": "Commerce",
+      "description": "A clearly labeled breakdown of subtotal, delivery, and total.",
+      "sourceTemplateId": "foundation-commerce",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "receipt",
+      "title": "Receipt",
+      "component": "FoundationReceiptBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Receipt",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A concise transaction record for a completed order or donation.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Reference|DEMO-0042\nItem|Field notes, volume I\nAmount|$24.00",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-RECEIPT",
+      "category": "Commerce",
+      "description": "A concise transaction record for a completed order or donation.",
+      "sourceTemplateId": "foundation-commerce",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "availability",
+      "title": "Availability notice",
+      "component": "FoundationAvailabilityBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Availability notice",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Display a clear stock or capacity status alongside an action.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-AVAILABILITY",
+      "category": "Commerce",
+      "description": "Display a clear stock or capacity status alongside an action.",
+      "sourceTemplateId": "foundation-commerce",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "feature-checklist",
+      "title": "Feature checklist",
+      "component": "FoundationFeatureChecklistBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Feature checklist",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A concise, scannable set of included capabilities.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Yours to keep|Export your source and content\nMade to adapt|Choose the elements you need\nPrivate by default|Work locally at your own pace",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-FEATURE-CHECKLIST",
+      "category": "Commerce",
+      "description": "A concise, scannable set of included capabilities.",
+      "sourceTemplateId": "foundation-commerce",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "testimonial-card",
+      "title": "Testimonial card",
+      "component": "FoundationTestimonialCardBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Testimonial card",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "An attributed quote with a clear person and role.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Independent designer",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-TESTIMONIAL-CARD",
+      "category": "Commerce",
+      "description": "An attributed quote with a clear person and role.",
+      "sourceTemplateId": "foundation-commerce",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "faq-list",
+      "title": "Purchase questions",
+      "component": "FoundationFaqListBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Purchase questions",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Native expandable answers reduce clutter while keeping details available.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "What is included?|The complete digital edition and its source files.\nCan I use it offline?|Yes. Download the edition to keep a local copy.\nHow do updates work?|New editions are listed in your library.",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-FAQ-LIST",
+      "category": "Commerce",
+      "description": "Native expandable answers reduce clutter while keeping details available.",
+      "sourceTemplateId": "foundation-commerce",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "donation-options",
+      "title": "Contribution selector",
+      "component": "FoundationDonationOptionsBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contribution selector",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Choose a suggested amount locally before connecting a payment provider.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-DONATION-OPTIONS",
+      "category": "Commerce",
+      "description": "Choose a suggested amount locally before connecting a payment provider.",
+      "sourceTemplateId": "foundation-commerce",
+      "sourceLibrary": "Hyperlib Foundations"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#376954",
+      "options": []
+    },
+    {
+      "id": "background",
+      "title": "Full page background",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#f5f3ed",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#202b26",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panels",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#ffffff",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#647069",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "system",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "serif",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    },
+    {
+      "id": "variant",
+      "title": "Layout design",
+      "type": "select",
+      "required": false,
+      "defaultValue": "woodland-editorial",
+      "options": [
+        "woodland-editorial",
+        "wave-laboratory",
+        "portfolio-grid",
+        "field-journal",
+        "architecture-studio",
+        "course-notebook",
+        "recipe-kitchen",
+        "event-poster",
+        "travel-atlas",
+        "product-launch",
+        "podcast-studio",
+        "gallery-wall",
+        "documentation-desk",
+        "nonprofit-story",
+        "wellness-retreat",
+        "maker-workbench",
+        "insight-dashboard"
+      ]
+    }
+  ],
+  "defaultBlocks": [],
+  "emptyPageDefault": true
+}

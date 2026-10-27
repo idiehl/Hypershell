@@ -1,0 +1,2 @@
+<figure><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px"><img src="@Context.Text("src1")" alt="@Context.Text("caption")" loading="lazy"/><img src="@Context.Text("src2")" alt="@Context.Text("caption")" loading="lazy"/></div><figcaption data-field="caption">@Context.Text("caption")</figcaption></figure>
+@code { [Parameter, EditorRequired] public BlockContext Context { get; set; } = new(); }

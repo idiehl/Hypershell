@@ -1,0 +1,2724 @@
+{
+  "schemaVersion": 1,
+  "sourceVersion": "cppreference C++20 language and keyword inventory",
+  "sourceUrl": "https://en.cppreference.com/w/cpp/language",
+  "sourceHashes": {
+    "https://en.cppreference.com/w/cpp/language": "d3007617ba10cde77bce7adfce1d2962a25871abb7286139c2b0865d90fc0cad",
+    "https://en.cppreference.com/w/cpp/keyword": "d46a2649366833df5bb24340639950f6ef2380198eed2e9f3c95d16ea85177fa"
+  },
+  "sourceSha256": "1af2a15b01d2dbf69175b58a775d19b7b2b772e0848e90e5c634113a875c7cee",
+  "license": "CC-BY-SA-3.0 inventory; ISO C++ remains the canonical specification",
+  "entryCount": 271,
+  "entries": [
+    {
+      "id": "cpp.core.keyword.alignas.e36d54e9f8ce",
+      "category": "Keywords",
+      "name": "alignas",
+      "displayName": "alignas",
+      "symbolKind": "Keyword",
+      "signature": "alignas",
+      "description": "alignas is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/alignas"
+    },
+    {
+      "id": "cpp.core.keyword.alignof.651e333c2138",
+      "category": "Keywords",
+      "name": "alignof",
+      "displayName": "alignof",
+      "symbolKind": "Keyword",
+      "signature": "alignof",
+      "description": "alignof is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/alignof"
+    },
+    {
+      "id": "cpp.core.keyword.and.929ea2586e7e",
+      "category": "Keywords",
+      "name": "and",
+      "displayName": "and",
+      "symbolKind": "Keyword",
+      "signature": "and",
+      "description": "and is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/and"
+    },
+    {
+      "id": "cpp.core.keyword.and_eq.c35c8bdc51ab",
+      "category": "Keywords",
+      "name": "and_eq",
+      "displayName": "and_eq",
+      "symbolKind": "Keyword",
+      "signature": "and_eq",
+      "description": "and_eq is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/and_eq"
+    },
+    {
+      "id": "cpp.core.keyword.asm.8528312e4a04",
+      "category": "Keywords",
+      "name": "asm",
+      "displayName": "asm",
+      "symbolKind": "Keyword",
+      "signature": "asm",
+      "description": "asm is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/asm"
+    },
+    {
+      "id": "cpp.core.keyword.auto.17b2c6af8174",
+      "category": "Keywords",
+      "name": "auto",
+      "displayName": "auto",
+      "symbolKind": "Keyword",
+      "signature": "auto",
+      "description": "auto is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/auto"
+    },
+    {
+      "id": "cpp.core.keyword.bitand.c14e7baba99f",
+      "category": "Keywords",
+      "name": "bitand",
+      "displayName": "bitand",
+      "symbolKind": "Keyword",
+      "signature": "bitand",
+      "description": "bitand is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/bitand"
+    },
+    {
+      "id": "cpp.core.keyword.bitor.208e24cf6963",
+      "category": "Keywords",
+      "name": "bitor",
+      "displayName": "bitor",
+      "symbolKind": "Keyword",
+      "signature": "bitor",
+      "description": "bitor is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/bitor"
+    },
+    {
+      "id": "cpp.core.keyword.bool.2de2961c8970",
+      "category": "Keywords",
+      "name": "bool",
+      "displayName": "bool",
+      "symbolKind": "Keyword",
+      "signature": "bool",
+      "description": "bool is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/bool"
+    },
+    {
+      "id": "cpp.core.keyword.break.31e38e645f30",
+      "category": "Keywords",
+      "name": "break",
+      "displayName": "break",
+      "symbolKind": "Keyword",
+      "signature": "break",
+      "description": "break is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/break"
+    },
+    {
+      "id": "cpp.core.keyword.case.b9fd40e96318",
+      "category": "Keywords",
+      "name": "case",
+      "displayName": "case",
+      "symbolKind": "Keyword",
+      "signature": "case",
+      "description": "case is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/case"
+    },
+    {
+      "id": "cpp.core.keyword.catch.14a0df92d12b",
+      "category": "Keywords",
+      "name": "catch",
+      "displayName": "catch",
+      "symbolKind": "Keyword",
+      "signature": "catch",
+      "description": "catch is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/catch"
+    },
+    {
+      "id": "cpp.core.keyword.char.74405c7fb10e",
+      "category": "Keywords",
+      "name": "char",
+      "displayName": "char",
+      "symbolKind": "Keyword",
+      "signature": "char",
+      "description": "char is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/char"
+    },
+    {
+      "id": "cpp.core.keyword.char16_t.71f2fe4c3842",
+      "category": "Keywords",
+      "name": "char16_t",
+      "displayName": "char16_t",
+      "symbolKind": "Keyword",
+      "signature": "char16_t",
+      "description": "char16_t is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/char16_t"
+    },
+    {
+      "id": "cpp.core.keyword.char32_t.26f0a4838e79",
+      "category": "Keywords",
+      "name": "char32_t",
+      "displayName": "char32_t",
+      "symbolKind": "Keyword",
+      "signature": "char32_t",
+      "description": "char32_t is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/char32_t"
+    },
+    {
+      "id": "cpp.core.keyword.char8_t.0228396324a5",
+      "category": "Keywords",
+      "name": "char8_t",
+      "displayName": "char8_t",
+      "symbolKind": "Keyword",
+      "signature": "char8_t",
+      "description": "char8_t is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/char8_t"
+    },
+    {
+      "id": "cpp.core.keyword.class.a9b1c1a15462",
+      "category": "Keywords",
+      "name": "class",
+      "displayName": "class",
+      "symbolKind": "Keyword",
+      "signature": "class",
+      "description": "class is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/class"
+    },
+    {
+      "id": "cpp.core.keyword.co_await.12e2b26e7c01",
+      "category": "Keywords",
+      "name": "co_await",
+      "displayName": "co_await",
+      "symbolKind": "Keyword",
+      "signature": "co_await",
+      "description": "co_await is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/co_await"
+    },
+    {
+      "id": "cpp.core.keyword.co_return.1c9a13624585",
+      "category": "Keywords",
+      "name": "co_return",
+      "displayName": "co_return",
+      "symbolKind": "Keyword",
+      "signature": "co_return",
+      "description": "co_return is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/co_return"
+    },
+    {
+      "id": "cpp.core.keyword.co_yield.9631ebe37095",
+      "category": "Keywords",
+      "name": "co_yield",
+      "displayName": "co_yield",
+      "symbolKind": "Keyword",
+      "signature": "co_yield",
+      "description": "co_yield is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/co_yield"
+    },
+    {
+      "id": "cpp.core.keyword.compl.5929e277d7dd",
+      "category": "Keywords",
+      "name": "compl",
+      "displayName": "compl",
+      "symbolKind": "Keyword",
+      "signature": "compl",
+      "description": "compl is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/compl"
+    },
+    {
+      "id": "cpp.core.keyword.concept.58b47146c422",
+      "category": "Keywords",
+      "name": "concept",
+      "displayName": "concept",
+      "symbolKind": "Keyword",
+      "signature": "concept",
+      "description": "concept is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/concept"
+    },
+    {
+      "id": "cpp.core.keyword.const.06fa5b562a62",
+      "category": "Keywords",
+      "name": "const",
+      "displayName": "const",
+      "symbolKind": "Keyword",
+      "signature": "const",
+      "description": "const is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/const"
+    },
+    {
+      "id": "cpp.core.keyword.const_cast.2062a942f38a",
+      "category": "Keywords",
+      "name": "const_cast",
+      "displayName": "const_cast",
+      "symbolKind": "Keyword",
+      "signature": "const_cast",
+      "description": "const_cast is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/const_cast"
+    },
+    {
+      "id": "cpp.core.keyword.consteval.84aae8da3798",
+      "category": "Keywords",
+      "name": "consteval",
+      "displayName": "consteval",
+      "symbolKind": "Keyword",
+      "signature": "consteval",
+      "description": "consteval is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/consteval"
+    },
+    {
+      "id": "cpp.core.keyword.constexpr.d19dbb15e8fc",
+      "category": "Keywords",
+      "name": "constexpr",
+      "displayName": "constexpr",
+      "symbolKind": "Keyword",
+      "signature": "constexpr",
+      "description": "constexpr is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/constexpr"
+    },
+    {
+      "id": "cpp.core.keyword.constinit.d7abdb3560f7",
+      "category": "Keywords",
+      "name": "constinit",
+      "displayName": "constinit",
+      "symbolKind": "Keyword",
+      "signature": "constinit",
+      "description": "constinit is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/constinit"
+    },
+    {
+      "id": "cpp.core.keyword.continue.522e34100c30",
+      "category": "Keywords",
+      "name": "continue",
+      "displayName": "continue",
+      "symbolKind": "Keyword",
+      "signature": "continue",
+      "description": "continue is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/continue"
+    },
+    {
+      "id": "cpp.core.keyword.decltype.901588139f6d",
+      "category": "Keywords",
+      "name": "decltype",
+      "displayName": "decltype",
+      "symbolKind": "Keyword",
+      "signature": "decltype",
+      "description": "decltype is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/decltype"
+    },
+    {
+      "id": "cpp.core.keyword.default.1ce9f03216f0",
+      "category": "Keywords",
+      "name": "default",
+      "displayName": "default",
+      "symbolKind": "Keyword",
+      "signature": "default",
+      "description": "default is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/default"
+    },
+    {
+      "id": "cpp.core.keyword.delete.9ebc69bc0078",
+      "category": "Keywords",
+      "name": "delete",
+      "displayName": "delete",
+      "symbolKind": "Keyword",
+      "signature": "delete",
+      "description": "delete is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/delete"
+    },
+    {
+      "id": "cpp.core.keyword.do.ccb56dafb0fa",
+      "category": "Keywords",
+      "name": "do",
+      "displayName": "do",
+      "symbolKind": "Keyword",
+      "signature": "do",
+      "description": "do is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/do"
+    },
+    {
+      "id": "cpp.core.keyword.double.f0cbe39a70a0",
+      "category": "Keywords",
+      "name": "double",
+      "displayName": "double",
+      "symbolKind": "Keyword",
+      "signature": "double",
+      "description": "double is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/double"
+    },
+    {
+      "id": "cpp.core.keyword.dynamic_cast.a7863014d89c",
+      "category": "Keywords",
+      "name": "dynamic_cast",
+      "displayName": "dynamic_cast",
+      "symbolKind": "Keyword",
+      "signature": "dynamic_cast",
+      "description": "dynamic_cast is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/dynamic_cast"
+    },
+    {
+      "id": "cpp.core.keyword.else.cf0a62e13fae",
+      "category": "Keywords",
+      "name": "else",
+      "displayName": "else",
+      "symbolKind": "Keyword",
+      "signature": "else",
+      "description": "else is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/else"
+    },
+    {
+      "id": "cpp.core.keyword.enum.549b51a85aec",
+      "category": "Keywords",
+      "name": "enum",
+      "displayName": "enum",
+      "symbolKind": "Keyword",
+      "signature": "enum",
+      "description": "enum is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/enum"
+    },
+    {
+      "id": "cpp.core.keyword.explicit.e76e28acb7ca",
+      "category": "Keywords",
+      "name": "explicit",
+      "displayName": "explicit",
+      "symbolKind": "Keyword",
+      "signature": "explicit",
+      "description": "explicit is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/explicit"
+    },
+    {
+      "id": "cpp.core.keyword.export.da24b7ea94ae",
+      "category": "Keywords",
+      "name": "export",
+      "displayName": "export",
+      "symbolKind": "Keyword",
+      "signature": "export",
+      "description": "export is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/export"
+    },
+    {
+      "id": "cpp.core.keyword.extern.f6939c48157d",
+      "category": "Keywords",
+      "name": "extern",
+      "displayName": "extern",
+      "symbolKind": "Keyword",
+      "signature": "extern",
+      "description": "extern is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/extern"
+    },
+    {
+      "id": "cpp.core.keyword.false.8fb83e937bda",
+      "category": "Keywords",
+      "name": "false",
+      "displayName": "false",
+      "symbolKind": "Keyword",
+      "signature": "false",
+      "description": "false is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/false"
+    },
+    {
+      "id": "cpp.core.keyword.float.814ea7189350",
+      "category": "Keywords",
+      "name": "float",
+      "displayName": "float",
+      "symbolKind": "Keyword",
+      "signature": "float",
+      "description": "float is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/float"
+    },
+    {
+      "id": "cpp.core.keyword.for.a2873e1a254d",
+      "category": "Keywords",
+      "name": "for",
+      "displayName": "for",
+      "symbolKind": "Keyword",
+      "signature": "for",
+      "description": "for is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/for"
+    },
+    {
+      "id": "cpp.core.keyword.friend.db940185a589",
+      "category": "Keywords",
+      "name": "friend",
+      "displayName": "friend",
+      "symbolKind": "Keyword",
+      "signature": "friend",
+      "description": "friend is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/friend"
+    },
+    {
+      "id": "cpp.core.keyword.goto.8c7d332bf135",
+      "category": "Keywords",
+      "name": "goto",
+      "displayName": "goto",
+      "symbolKind": "Keyword",
+      "signature": "goto",
+      "description": "goto is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/goto"
+    },
+    {
+      "id": "cpp.core.keyword.if.7f917090ce59",
+      "category": "Keywords",
+      "name": "if",
+      "displayName": "if",
+      "symbolKind": "Keyword",
+      "signature": "if",
+      "description": "if is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/if"
+    },
+    {
+      "id": "cpp.core.keyword.inline.82d3eb29a6ef",
+      "category": "Keywords",
+      "name": "inline",
+      "displayName": "inline",
+      "symbolKind": "Keyword",
+      "signature": "inline",
+      "description": "inline is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/inline"
+    },
+    {
+      "id": "cpp.core.keyword.int.72730c712485",
+      "category": "Keywords",
+      "name": "int",
+      "displayName": "int",
+      "symbolKind": "Keyword",
+      "signature": "int",
+      "description": "int is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/int"
+    },
+    {
+      "id": "cpp.core.keyword.long.f3746417e197",
+      "category": "Keywords",
+      "name": "long",
+      "displayName": "long",
+      "symbolKind": "Keyword",
+      "signature": "long",
+      "description": "long is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/long"
+    },
+    {
+      "id": "cpp.core.keyword.mutable.14596a9ad5fa",
+      "category": "Keywords",
+      "name": "mutable",
+      "displayName": "mutable",
+      "symbolKind": "Keyword",
+      "signature": "mutable",
+      "description": "mutable is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/mutable"
+    },
+    {
+      "id": "cpp.core.keyword.namespace.c29058ca7756",
+      "category": "Keywords",
+      "name": "namespace",
+      "displayName": "namespace",
+      "symbolKind": "Keyword",
+      "signature": "namespace",
+      "description": "namespace is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/namespace"
+    },
+    {
+      "id": "cpp.core.keyword.new.5a910eae1d2b",
+      "category": "Keywords",
+      "name": "new",
+      "displayName": "new",
+      "symbolKind": "Keyword",
+      "signature": "new",
+      "description": "new is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/new"
+    },
+    {
+      "id": "cpp.core.keyword.noexcept.e27dc46c3a1d",
+      "category": "Keywords",
+      "name": "noexcept",
+      "displayName": "noexcept",
+      "symbolKind": "Keyword",
+      "signature": "noexcept",
+      "description": "noexcept is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/noexcept"
+    },
+    {
+      "id": "cpp.core.keyword.not.9ec9f896f864",
+      "category": "Keywords",
+      "name": "not",
+      "displayName": "not",
+      "symbolKind": "Keyword",
+      "signature": "not",
+      "description": "not is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/not"
+    },
+    {
+      "id": "cpp.core.keyword.not_eq.9125c0f874ab",
+      "category": "Keywords",
+      "name": "not_eq",
+      "displayName": "not_eq",
+      "symbolKind": "Keyword",
+      "signature": "not_eq",
+      "description": "not_eq is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/not_eq"
+    },
+    {
+      "id": "cpp.core.keyword.nullptr.ef4fce56bd75",
+      "category": "Keywords",
+      "name": "nullptr",
+      "displayName": "nullptr",
+      "symbolKind": "Keyword",
+      "signature": "nullptr",
+      "description": "nullptr is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/nullptr"
+    },
+    {
+      "id": "cpp.core.keyword.operator.375b3385041d",
+      "category": "Keywords",
+      "name": "operator",
+      "displayName": "operator",
+      "symbolKind": "Keyword",
+      "signature": "operator",
+      "description": "operator is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/operator"
+    },
+    {
+      "id": "cpp.core.keyword.or.cd1ae7765603",
+      "category": "Keywords",
+      "name": "or",
+      "displayName": "or",
+      "symbolKind": "Keyword",
+      "signature": "or",
+      "description": "or is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/or"
+    },
+    {
+      "id": "cpp.core.keyword.or_eq.dc736a038547",
+      "category": "Keywords",
+      "name": "or_eq",
+      "displayName": "or_eq",
+      "symbolKind": "Keyword",
+      "signature": "or_eq",
+      "description": "or_eq is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/or_eq"
+    },
+    {
+      "id": "cpp.core.keyword.private.b0ef6efdd542",
+      "category": "Keywords",
+      "name": "private",
+      "displayName": "private",
+      "symbolKind": "Keyword",
+      "signature": "private",
+      "description": "private is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/private"
+    },
+    {
+      "id": "cpp.core.keyword.protected.fb2587c27cd6",
+      "category": "Keywords",
+      "name": "protected",
+      "displayName": "protected",
+      "symbolKind": "Keyword",
+      "signature": "protected",
+      "description": "protected is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/protected"
+    },
+    {
+      "id": "cpp.core.keyword.public.0332d9f0101b",
+      "category": "Keywords",
+      "name": "public",
+      "displayName": "public",
+      "symbolKind": "Keyword",
+      "signature": "public",
+      "description": "public is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/public"
+    },
+    {
+      "id": "cpp.core.keyword.register.94b52eadb2b4",
+      "category": "Keywords",
+      "name": "register",
+      "displayName": "register",
+      "symbolKind": "Keyword",
+      "signature": "register",
+      "description": "register is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/register"
+    },
+    {
+      "id": "cpp.core.keyword.reinterpret_cast.618b0d192061",
+      "category": "Keywords",
+      "name": "reinterpret_cast",
+      "displayName": "reinterpret_cast",
+      "symbolKind": "Keyword",
+      "signature": "reinterpret_cast",
+      "description": "reinterpret_cast is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/reinterpret_cast"
+    },
+    {
+      "id": "cpp.core.keyword.requires.b7e93cd094a0",
+      "category": "Keywords",
+      "name": "requires",
+      "displayName": "requires",
+      "symbolKind": "Keyword",
+      "signature": "requires",
+      "description": "requires is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/requires"
+    },
+    {
+      "id": "cpp.core.keyword.return.9329346951fa",
+      "category": "Keywords",
+      "name": "return",
+      "displayName": "return",
+      "symbolKind": "Keyword",
+      "signature": "return",
+      "description": "return is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/return"
+    },
+    {
+      "id": "cpp.core.keyword.short.fc07fe6cfdfd",
+      "category": "Keywords",
+      "name": "short",
+      "displayName": "short",
+      "symbolKind": "Keyword",
+      "signature": "short",
+      "description": "short is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/short"
+    },
+    {
+      "id": "cpp.core.keyword.signed.364a0c3de5f1",
+      "category": "Keywords",
+      "name": "signed",
+      "displayName": "signed",
+      "symbolKind": "Keyword",
+      "signature": "signed",
+      "description": "signed is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/signed"
+    },
+    {
+      "id": "cpp.core.keyword.sizeof.bf459da77107",
+      "category": "Keywords",
+      "name": "sizeof",
+      "displayName": "sizeof",
+      "symbolKind": "Keyword",
+      "signature": "sizeof",
+      "description": "sizeof is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/sizeof"
+    },
+    {
+      "id": "cpp.core.keyword.static.f55d0b6eabe3",
+      "category": "Keywords",
+      "name": "static",
+      "displayName": "static",
+      "symbolKind": "Keyword",
+      "signature": "static",
+      "description": "static is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/static"
+    },
+    {
+      "id": "cpp.core.keyword.static_assert.d25faabb6575",
+      "category": "Keywords",
+      "name": "static_assert",
+      "displayName": "static_assert",
+      "symbolKind": "Keyword",
+      "signature": "static_assert",
+      "description": "static_assert is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/static_assert"
+    },
+    {
+      "id": "cpp.core.keyword.static_cast.93435a16e3ff",
+      "category": "Keywords",
+      "name": "static_cast",
+      "displayName": "static_cast",
+      "symbolKind": "Keyword",
+      "signature": "static_cast",
+      "description": "static_cast is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/static_cast"
+    },
+    {
+      "id": "cpp.core.keyword.struct.a8e015d0c7ba",
+      "category": "Keywords",
+      "name": "struct",
+      "displayName": "struct",
+      "symbolKind": "Keyword",
+      "signature": "struct",
+      "description": "struct is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/struct"
+    },
+    {
+      "id": "cpp.core.keyword.switch.f90f28641628",
+      "category": "Keywords",
+      "name": "switch",
+      "displayName": "switch",
+      "symbolKind": "Keyword",
+      "signature": "switch",
+      "description": "switch is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/switch"
+    },
+    {
+      "id": "cpp.core.keyword.template.968843ecdea7",
+      "category": "Keywords",
+      "name": "template",
+      "displayName": "template",
+      "symbolKind": "Keyword",
+      "signature": "template",
+      "description": "template is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/template"
+    },
+    {
+      "id": "cpp.core.keyword.this.93c60734c14b",
+      "category": "Keywords",
+      "name": "this",
+      "displayName": "this",
+      "symbolKind": "Keyword",
+      "signature": "this",
+      "description": "this is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/this"
+    },
+    {
+      "id": "cpp.core.keyword.thread_local.7176087ffda1",
+      "category": "Keywords",
+      "name": "thread_local",
+      "displayName": "thread_local",
+      "symbolKind": "Keyword",
+      "signature": "thread_local",
+      "description": "thread_local is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/thread_local"
+    },
+    {
+      "id": "cpp.core.keyword.throw.02fc49bce20d",
+      "category": "Keywords",
+      "name": "throw",
+      "displayName": "throw",
+      "symbolKind": "Keyword",
+      "signature": "throw",
+      "description": "throw is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/throw"
+    },
+    {
+      "id": "cpp.core.keyword.true.533d7577540f",
+      "category": "Keywords",
+      "name": "true",
+      "displayName": "true",
+      "symbolKind": "Keyword",
+      "signature": "true",
+      "description": "true is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/true"
+    },
+    {
+      "id": "cpp.core.keyword.try.f0cc12c8a9bb",
+      "category": "Keywords",
+      "name": "try",
+      "displayName": "try",
+      "symbolKind": "Keyword",
+      "signature": "try",
+      "description": "try is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/try"
+    },
+    {
+      "id": "cpp.core.keyword.typedef.c051b92b6ff4",
+      "category": "Keywords",
+      "name": "typedef",
+      "displayName": "typedef",
+      "symbolKind": "Keyword",
+      "signature": "typedef",
+      "description": "typedef is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/typedef"
+    },
+    {
+      "id": "cpp.core.keyword.typeid.e9ac03175e47",
+      "category": "Keywords",
+      "name": "typeid",
+      "displayName": "typeid",
+      "symbolKind": "Keyword",
+      "signature": "typeid",
+      "description": "typeid is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/typeid"
+    },
+    {
+      "id": "cpp.core.keyword.typename.6439dd0a9641",
+      "category": "Keywords",
+      "name": "typename",
+      "displayName": "typename",
+      "symbolKind": "Keyword",
+      "signature": "typename",
+      "description": "typename is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/typename"
+    },
+    {
+      "id": "cpp.core.keyword.union.83564a2d09f2",
+      "category": "Keywords",
+      "name": "union",
+      "displayName": "union",
+      "symbolKind": "Keyword",
+      "signature": "union",
+      "description": "union is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/union"
+    },
+    {
+      "id": "cpp.core.keyword.unsigned.0f03a4e2bd4c",
+      "category": "Keywords",
+      "name": "unsigned",
+      "displayName": "unsigned",
+      "symbolKind": "Keyword",
+      "signature": "unsigned",
+      "description": "unsigned is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/unsigned"
+    },
+    {
+      "id": "cpp.core.keyword.using.be369c5cde51",
+      "category": "Keywords",
+      "name": "using",
+      "displayName": "using",
+      "symbolKind": "Keyword",
+      "signature": "using",
+      "description": "using is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/using"
+    },
+    {
+      "id": "cpp.core.keyword.virtual.0f1bf35cdef6",
+      "category": "Keywords",
+      "name": "virtual",
+      "displayName": "virtual",
+      "symbolKind": "Keyword",
+      "signature": "virtual",
+      "description": "virtual is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/virtual"
+    },
+    {
+      "id": "cpp.core.keyword.void.e4ddd411b9ea",
+      "category": "Keywords",
+      "name": "void",
+      "displayName": "void",
+      "symbolKind": "Keyword",
+      "signature": "void",
+      "description": "void is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/void"
+    },
+    {
+      "id": "cpp.core.keyword.volatile.c854e88ceee5",
+      "category": "Keywords",
+      "name": "volatile",
+      "displayName": "volatile",
+      "symbolKind": "Keyword",
+      "signature": "volatile",
+      "description": "volatile is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/volatile"
+    },
+    {
+      "id": "cpp.core.keyword.wchar_t.e6e6c45d9b9c",
+      "category": "Keywords",
+      "name": "wchar_t",
+      "displayName": "wchar_t",
+      "symbolKind": "Keyword",
+      "signature": "wchar_t",
+      "description": "wchar_t is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/wchar_t"
+    },
+    {
+      "id": "cpp.core.keyword.while.4f7b8d15b637",
+      "category": "Keywords",
+      "name": "while",
+      "displayName": "while",
+      "symbolKind": "Keyword",
+      "signature": "while",
+      "description": "while is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/while"
+    },
+    {
+      "id": "cpp.core.keyword.xor.837e83daf5a3",
+      "category": "Keywords",
+      "name": "xor",
+      "displayName": "xor",
+      "symbolKind": "Keyword",
+      "signature": "xor",
+      "description": "xor is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/xor"
+    },
+    {
+      "id": "cpp.core.keyword.xor_eq.81ea0af8eaed",
+      "category": "Keywords",
+      "name": "xor_eq",
+      "displayName": "xor_eq",
+      "symbolKind": "Keyword",
+      "signature": "xor_eq",
+      "description": "xor_eq is part of the C++20 keywords surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/keyword/xor_eq"
+    },
+    {
+      "id": "cpp.core.language.abstract_class.9dce67d72823",
+      "category": "Language Reference",
+      "name": "Abstract class (ABC)",
+      "displayName": "Abstract class (ABC)",
+      "symbolKind": "Class",
+      "signature": "Abstract class (ABC)",
+      "description": "Abstract class (ABC) is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/abstract_class"
+    },
+    {
+      "id": "cpp.core.language.acronyms.a05fd34338f3",
+      "category": "Language Reference",
+      "name": "Acronyms",
+      "displayName": "Acronyms",
+      "symbolKind": "Other",
+      "signature": "Acronyms",
+      "description": "Acronyms is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/acronyms"
+    },
+    {
+      "id": "cpp.core.language.overloaded_address.3526ee8a48eb",
+      "category": "Language Reference",
+      "name": "Address of an overload set",
+      "displayName": "Address of an overload set",
+      "symbolKind": "Operator",
+      "signature": "Address of an overload set",
+      "description": "Address of an overload set is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/overloaded_address"
+    },
+    {
+      "id": "cpp.core.language.adl.dd93699454c9",
+      "category": "Language Reference",
+      "name": "ADL",
+      "displayName": "ADL",
+      "symbolKind": "Other",
+      "signature": "ADL",
+      "description": "ADL is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/adl"
+    },
+    {
+      "id": "cpp.core.language.aggregate_initialization.0318c1bf84a0",
+      "category": "Language Reference",
+      "name": "Aggregate initialization",
+      "displayName": "Aggregate initialization",
+      "symbolKind": "Other",
+      "signature": "Aggregate initialization",
+      "description": "Aggregate initialization is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/aggregate_initialization"
+    },
+    {
+      "id": "cpp.core.language.alignas.c5ef8cf32c3c",
+      "category": "Language Reference",
+      "name": "alignas",
+      "displayName": "alignas",
+      "symbolKind": "Other",
+      "signature": "alignas",
+      "description": "alignas is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/alignas"
+    },
+    {
+      "id": "cpp.core.language.alignof.d4c1c1a6ba30",
+      "category": "Language Reference",
+      "name": "alignof",
+      "displayName": "alignof",
+      "symbolKind": "Other",
+      "signature": "alignof",
+      "description": "alignof is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/alignof"
+    },
+    {
+      "id": "cpp.core.language.operator_alternative.3d4a94297e5e",
+      "category": "Language Reference",
+      "name": "alternative representation",
+      "displayName": "alternative representation",
+      "symbolKind": "Operator",
+      "signature": "alternative representation",
+      "description": "alternative representation is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/operator_alternative"
+    },
+    {
+      "id": "cpp.core.language.operator_arithmetic.94c4c505a976",
+      "category": "Language Reference",
+      "name": "arithmetic",
+      "displayName": "arithmetic",
+      "symbolKind": "Operator",
+      "signature": "arithmetic",
+      "description": "arithmetic is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/operator_arithmetic"
+    },
+    {
+      "id": "cpp.core.language.array.6b2d36216ef2",
+      "category": "Language Reference",
+      "name": "Arrays",
+      "displayName": "Arrays",
+      "symbolKind": "Other",
+      "signature": "Arrays",
+      "description": "Arrays is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/array"
+    },
+    {
+      "id": "cpp.core.language.as_if.bb4756de381e",
+      "category": "Language Reference",
+      "name": "As-if rule",
+      "displayName": "As-if rule",
+      "symbolKind": "Other",
+      "signature": "As-if rule",
+      "description": "As-if rule is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/as_if"
+    },
+    {
+      "id": "cpp.core.language.ascii.bcf1a6173991",
+      "category": "Language Reference",
+      "name": "ASCII chart",
+      "displayName": "ASCII chart",
+      "symbolKind": "Other",
+      "signature": "ASCII chart",
+      "description": "ASCII chart is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/ascii"
+    },
+    {
+      "id": "cpp.core.language.operator_assignment.2c105570d6a2",
+      "category": "Language Reference",
+      "name": "assignment",
+      "displayName": "assignment",
+      "symbolKind": "Operator",
+      "signature": "assignment",
+      "description": "assignment is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/operator_assignment"
+    },
+    {
+      "id": "cpp.core.language.attributes.4296a234d741",
+      "category": "Language Reference",
+      "name": "Attributes",
+      "displayName": "Attributes",
+      "symbolKind": "Other",
+      "signature": "Attributes",
+      "description": "Attributes is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/attributes"
+    },
+    {
+      "id": "cpp.core.language.auto.146c83b1603b",
+      "category": "Language Reference",
+      "name": "auto",
+      "displayName": "auto",
+      "symbolKind": "Other",
+      "signature": "auto",
+      "description": "auto is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/auto"
+    },
+    {
+      "id": "cpp.core.language.basic_concepts.d1bcc9a44baf",
+      "category": "Language Reference",
+      "name": "Basic concepts",
+      "displayName": "Basic concepts",
+      "symbolKind": "Other",
+      "signature": "Basic concepts",
+      "description": "Basic concepts is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/basic_concepts"
+    },
+    {
+      "id": "cpp.core.language.bit_field.314a833fc92a",
+      "category": "Language Reference",
+      "name": "Bit-fields",
+      "displayName": "Bit-fields",
+      "symbolKind": "Other",
+      "signature": "Bit-fields",
+      "description": "Bit-fields is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/bit_field"
+    },
+    {
+      "id": "cpp.core.language.bool_literal.0e69eaac4b80",
+      "category": "Language Reference",
+      "name": "boolean",
+      "displayName": "boolean",
+      "symbolKind": "Literal",
+      "signature": "boolean",
+      "description": "boolean is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/bool_literal"
+    },
+    {
+      "id": "cpp.core.language.break.052bc05a9540",
+      "category": "Language Reference",
+      "name": "break",
+      "displayName": "break",
+      "symbolKind": "Statement",
+      "signature": "break",
+      "description": "break is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/break"
+    },
+    {
+      "id": "cpp.core.language.operator_other.2e1a80df2111",
+      "category": "Language Reference",
+      "name": "call, comma, ternary",
+      "displayName": "call, comma, ternary",
+      "symbolKind": "Operator",
+      "signature": "call, comma, ternary",
+      "description": "call, comma, ternary is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/operator_other"
+    },
+    {
+      "id": "cpp.core.language.character_literal.af6a157edd5d",
+      "category": "Language Reference",
+      "name": "character",
+      "displayName": "character",
+      "symbolKind": "Literal",
+      "signature": "character",
+      "description": "character is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/character_literal"
+    },
+    {
+      "id": "cpp.core.language.charset.e159ecde4ad2",
+      "category": "Language Reference",
+      "name": "Character sets and encodings",
+      "displayName": "Character sets and encodings",
+      "symbolKind": "Other",
+      "signature": "Character sets and encodings",
+      "description": "Character sets and encodings is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/charset"
+    },
+    {
+      "id": "cpp.core.language.class_template_argument_deduction.f21f554d21be",
+      "category": "Language Reference",
+      "name": "class (CTAD)",
+      "displayName": "class (CTAD)",
+      "symbolKind": "Class",
+      "signature": "class (CTAD)",
+      "description": "class (CTAD) is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/class_template_argument_deduction"
+    },
+    {
+      "id": "cpp.core.language.member_template.40c845bf2be2",
+      "category": "Language Reference",
+      "name": "Class member template",
+      "displayName": "Class member template",
+      "symbolKind": "Other",
+      "signature": "Class member template",
+      "description": "Class member template is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/member_template"
+    },
+    {
+      "id": "cpp.core.language.class_template.44caa17b65dc",
+      "category": "Language Reference",
+      "name": "Class template",
+      "displayName": "Class template",
+      "symbolKind": "Class",
+      "signature": "Class template",
+      "description": "Class template is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/class_template"
+    },
+    {
+      "id": "cpp.core.language.class.5fe4261e398a",
+      "category": "Language Reference",
+      "name": "Class types",
+      "displayName": "Class types",
+      "symbolKind": "Class",
+      "signature": "Class types",
+      "description": "Class types is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/class"
+    },
+    {
+      "id": "cpp.core.language.classes.87a4e300c5fb",
+      "category": "Language Reference",
+      "name": "Classes",
+      "displayName": "Classes",
+      "symbolKind": "Class",
+      "signature": "Classes",
+      "description": "Classes is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/classes"
+    },
+    {
+      "id": "cpp.core.language.operator_comparison.36880f68e880",
+      "category": "Language Reference",
+      "name": "comparison",
+      "displayName": "comparison",
+      "symbolKind": "Operator",
+      "signature": "comparison",
+      "description": "comparison is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/operator_comparison"
+    },
+    {
+      "id": "cpp.core.language.conflicting_declarations.ce70e6d00622",
+      "category": "Language Reference",
+      "name": "Conflicting declarations",
+      "displayName": "Conflicting declarations",
+      "symbolKind": "Statement",
+      "signature": "Conflicting declarations",
+      "description": "Conflicting declarations is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/conflicting_declarations"
+    },
+    {
+      "id": "cpp.core.language.cv.c485bb97f379",
+      "category": "Language Reference",
+      "name": "const / volatile",
+      "displayName": "const / volatile",
+      "symbolKind": "Other",
+      "signature": "const / volatile",
+      "description": "const / volatile is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/cv"
+    },
+    {
+      "id": "cpp.core.language.const_cast.0c4dbd4466c5",
+      "category": "Language Reference",
+      "name": "const_cast",
+      "displayName": "const_cast",
+      "symbolKind": "Other",
+      "signature": "const_cast",
+      "description": "const_cast is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/const_cast"
+    },
+    {
+      "id": "cpp.core.language.constant_initialization.2f550ad4c2d3",
+      "category": "Language Reference",
+      "name": "constant",
+      "displayName": "constant",
+      "symbolKind": "Other",
+      "signature": "constant",
+      "description": "constant is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/constant_initialization"
+    },
+    {
+      "id": "cpp.core.language.constant_expression.0021ca4131e7",
+      "category": "Language Reference",
+      "name": "Constant expressions",
+      "displayName": "Constant expressions",
+      "symbolKind": "Other",
+      "signature": "Constant expressions",
+      "description": "Constant expressions is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/constant_expression"
+    },
+    {
+      "id": "cpp.core.language.consteval.aa4d3e3476ec",
+      "category": "Language Reference",
+      "name": "consteval",
+      "displayName": "consteval",
+      "symbolKind": "Other",
+      "signature": "consteval",
+      "description": "consteval is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/consteval"
+    },
+    {
+      "id": "cpp.core.language.constexpr.f4703c10dba0",
+      "category": "Language Reference",
+      "name": "constexpr",
+      "displayName": "constexpr",
+      "symbolKind": "Other",
+      "signature": "constexpr",
+      "description": "constexpr is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/constexpr"
+    },
+    {
+      "id": "cpp.core.language.constinit.9f052f818b59",
+      "category": "Language Reference",
+      "name": "constinit",
+      "displayName": "constinit",
+      "symbolKind": "Other",
+      "signature": "constinit",
+      "description": "constinit is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/constinit"
+    },
+    {
+      "id": "cpp.core.language.constraints.a0d86bb4c00d",
+      "category": "Language Reference",
+      "name": "Constraints and concepts",
+      "displayName": "Constraints and concepts",
+      "symbolKind": "Other",
+      "signature": "Constraints and concepts",
+      "description": "Constraints and concepts is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/constraints"
+    },
+    {
+      "id": "cpp.core.language.constructor.7e72af9f74c4",
+      "category": "Language Reference",
+      "name": "Constructors and member initializer lists",
+      "displayName": "Constructors and member initializer lists",
+      "symbolKind": "Other",
+      "signature": "Constructors and member initializer lists",
+      "description": "Constructors and member initializer lists is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/constructor"
+    },
+    {
+      "id": "cpp.core.language.continue.21e8c919ba82",
+      "category": "Language Reference",
+      "name": "continue",
+      "displayName": "continue",
+      "symbolKind": "Statement",
+      "signature": "continue",
+      "description": "continue is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/continue"
+    },
+    {
+      "id": "cpp.core.language.converting_constructor.67d8655dc625",
+      "category": "Language Reference",
+      "name": "Converting constructor",
+      "displayName": "Converting constructor",
+      "symbolKind": "Other",
+      "signature": "Converting constructor",
+      "description": "Converting constructor is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/converting_constructor"
+    },
+    {
+      "id": "cpp.core.language.as_operator.a10106f9ec07",
+      "category": "Language Reference",
+      "name": "Copy assignment",
+      "displayName": "Copy assignment",
+      "symbolKind": "Operator",
+      "signature": "Copy assignment",
+      "description": "Copy assignment is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/as_operator"
+    },
+    {
+      "id": "cpp.core.language.copy_assignment.b2260acef329",
+      "category": "Language Reference",
+      "name": "Copy assignment",
+      "displayName": "Copy assignment",
+      "symbolKind": "Other",
+      "signature": "Copy assignment",
+      "description": "Copy assignment is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/copy_assignment"
+    },
+    {
+      "id": "cpp.core.language.copy_constructor.fbfc6cf1c3b7",
+      "category": "Language Reference",
+      "name": "Copy constructor",
+      "displayName": "Copy constructor",
+      "symbolKind": "Other",
+      "signature": "Copy constructor",
+      "description": "Copy constructor is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/copy_constructor"
+    },
+    {
+      "id": "cpp.core.language.copy_elision.5acfb9010a8a",
+      "category": "Language Reference",
+      "name": "Copy elision (RVO)",
+      "displayName": "Copy elision (RVO)",
+      "symbolKind": "Other",
+      "signature": "Copy elision (RVO)",
+      "description": "Copy elision (RVO) is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/copy_elision"
+    },
+    {
+      "id": "cpp.core.language.copy_initialization.01b6244faf02",
+      "category": "Language Reference",
+      "name": "Copy-initialization",
+      "displayName": "Copy-initialization",
+      "symbolKind": "Other",
+      "signature": "Copy-initialization",
+      "description": "Copy-initialization is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/copy_initialization"
+    },
+    {
+      "id": "cpp.core.language.coroutines.4083a8a9d40b",
+      "category": "Language Reference",
+      "name": "Coroutines",
+      "displayName": "Coroutines",
+      "symbolKind": "Other",
+      "signature": "Coroutines",
+      "description": "Coroutines is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/coroutines"
+    },
+    {
+      "id": "cpp.core.language.crtp.f37ef08e0080",
+      "category": "Language Reference",
+      "name": "Curiously Recurring Template Pattern (CRTP)",
+      "displayName": "Curiously Recurring Template Pattern (CRTP)",
+      "symbolKind": "Other",
+      "signature": "Curiously Recurring Template Pattern (CRTP)",
+      "description": "Curiously Recurring Template Pattern (CRTP) is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/crtp"
+    },
+    {
+      "id": "cpp.core.language.data_members.81c8c8ea0d7e",
+      "category": "Language Reference",
+      "name": "Data members",
+      "displayName": "Data members",
+      "symbolKind": "Other",
+      "signature": "Data members",
+      "description": "Data members is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/data_members"
+    },
+    {
+      "id": "cpp.core.language.declarations.5535491f7bc7",
+      "category": "Language Reference",
+      "name": "Declarations",
+      "displayName": "Declarations",
+      "symbolKind": "Statement",
+      "signature": "Declarations",
+      "description": "Declarations is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/declarations"
+    },
+    {
+      "id": "cpp.core.language.decltype.0dafa3b64824",
+      "category": "Language Reference",
+      "name": "decltype",
+      "displayName": "decltype",
+      "symbolKind": "Other",
+      "signature": "decltype",
+      "description": "decltype is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/decltype"
+    },
+    {
+      "id": "cpp.core.language.default_arguments.a1f2717b7b63",
+      "category": "Language Reference",
+      "name": "Default arguments",
+      "displayName": "Default arguments",
+      "symbolKind": "Other",
+      "signature": "Default arguments",
+      "description": "Default arguments is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/default_arguments"
+    },
+    {
+      "id": "cpp.core.language.default_comparisons.ee17abfa280c",
+      "category": "Language Reference",
+      "name": "Default comparisons",
+      "displayName": "Default comparisons",
+      "symbolKind": "Other",
+      "signature": "Default comparisons",
+      "description": "Default comparisons is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/default_comparisons"
+    },
+    {
+      "id": "cpp.core.language.default_constructor.d11ebd03b27d",
+      "category": "Language Reference",
+      "name": "Default constructor",
+      "displayName": "Default constructor",
+      "symbolKind": "Other",
+      "signature": "Default constructor",
+      "description": "Default constructor is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/default_constructor"
+    },
+    {
+      "id": "cpp.core.language.default_initialization.a92a2c2721ef",
+      "category": "Language Reference",
+      "name": "Default-initialization",
+      "displayName": "Default-initialization",
+      "symbolKind": "Other",
+      "signature": "Default-initialization",
+      "description": "Default-initialization is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/default_initialization"
+    },
+    {
+      "id": "cpp.core.language.definition.5ab336ac2187",
+      "category": "Language Reference",
+      "name": "Definitions and ODR",
+      "displayName": "Definitions and ODR",
+      "symbolKind": "Statement",
+      "signature": "Definitions and ODR",
+      "description": "Definitions and ODR is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/definition"
+    },
+    {
+      "id": "cpp.core.language.delete.9aa8ce776b8a",
+      "category": "Language Reference",
+      "name": "delete",
+      "displayName": "delete",
+      "symbolKind": "Other",
+      "signature": "delete",
+      "description": "delete is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/delete"
+    },
+    {
+      "id": "cpp.core.language.dependent_name.8b84e8d5c48c",
+      "category": "Language Reference",
+      "name": "Dependent names",
+      "displayName": "Dependent names",
+      "symbolKind": "Other",
+      "signature": "Dependent names",
+      "description": "Dependent names is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/dependent_name"
+    },
+    {
+      "id": "cpp.core.language.derived_class.5218093fc11b",
+      "category": "Language Reference",
+      "name": "Derived class",
+      "displayName": "Derived class",
+      "symbolKind": "Class",
+      "signature": "Derived class",
+      "description": "Derived class is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/derived_class"
+    },
+    {
+      "id": "cpp.core.language.destructor.d63b325f375c",
+      "category": "Language Reference",
+      "name": "Destructor",
+      "displayName": "Destructor",
+      "symbolKind": "Other",
+      "signature": "Destructor",
+      "description": "Destructor is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/destructor"
+    },
+    {
+      "id": "cpp.core.language.direct_initialization.a745322a1e6b",
+      "category": "Language Reference",
+      "name": "Direct-initialization",
+      "displayName": "Direct-initialization",
+      "symbolKind": "Other",
+      "signature": "Direct-initialization",
+      "description": "Direct-initialization is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/direct_initialization"
+    },
+    {
+      "id": "cpp.core.language.do.c75ba12601c7",
+      "category": "Language Reference",
+      "name": "do - while",
+      "displayName": "do - while",
+      "symbolKind": "Statement",
+      "signature": "do - while",
+      "description": "do - while is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/do"
+    },
+    {
+      "id": "cpp.core.language.except_spec.939f923ac106",
+      "category": "Language Reference",
+      "name": "Dynamic specification",
+      "displayName": "Dynamic specification",
+      "symbolKind": "Other",
+      "signature": "Dynamic specification",
+      "description": "Dynamic specification is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/except_spec"
+    },
+    {
+      "id": "cpp.core.language.dynamic_cast.da6e585f0969",
+      "category": "Language Reference",
+      "name": "dynamic_cast",
+      "displayName": "dynamic_cast",
+      "symbolKind": "Other",
+      "signature": "dynamic_cast",
+      "description": "dynamic_cast is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/dynamic_cast"
+    },
+    {
+      "id": "cpp.core.language.elaborated_type_specifier.7e408413cfef",
+      "category": "Language Reference",
+      "name": "Elaborated type specifiers",
+      "displayName": "Elaborated type specifiers",
+      "symbolKind": "Other",
+      "signature": "Elaborated type specifiers",
+      "description": "Elaborated type specifiers is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/elaborated_type_specifier"
+    },
+    {
+      "id": "cpp.core.language.ebo.288f3dd63ff9",
+      "category": "Language Reference",
+      "name": "Empty base optimization (EBO)",
+      "displayName": "Empty base optimization (EBO)",
+      "symbolKind": "Other",
+      "signature": "Empty base optimization (EBO)",
+      "description": "Empty base optimization (EBO) is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/ebo"
+    },
+    {
+      "id": "cpp.core.language.enum.8bb18ddc294f",
+      "category": "Language Reference",
+      "name": "Enumerations and enumerators",
+      "displayName": "Enumerations and enumerators",
+      "symbolKind": "Enum",
+      "signature": "Enumerations and enumerators",
+      "description": "Enumerations and enumerators is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/enum"
+    },
+    {
+      "id": "cpp.core.language.escape.cff3be0c5ff7",
+      "category": "Language Reference",
+      "name": "Escape sequences",
+      "displayName": "Escape sequences",
+      "symbolKind": "Literal",
+      "signature": "Escape sequences",
+      "description": "Escape sequences is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/escape"
+    },
+    {
+      "id": "cpp.core.language.eval_order.c94719de73e0",
+      "category": "Language Reference",
+      "name": "Evaluation order",
+      "displayName": "Evaluation order",
+      "symbolKind": "Other",
+      "signature": "Evaluation order",
+      "description": "Evaluation order is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/eval_order"
+    },
+    {
+      "id": "cpp.core.language.exceptions.b5b1d544d955",
+      "category": "Language Reference",
+      "name": "Exceptions",
+      "displayName": "Exceptions",
+      "symbolKind": "Other",
+      "signature": "Exceptions",
+      "description": "Exceptions is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/exceptions"
+    },
+    {
+      "id": "cpp.core.language.explicit_cast.468c08cbbe1d",
+      "category": "Language Reference",
+      "name": "explicit",
+      "displayName": "explicit",
+      "symbolKind": "Other",
+      "signature": "explicit",
+      "description": "explicit is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/explicit_cast"
+    },
+    {
+      "id": "cpp.core.language.template_specialization.64a40a3053ca",
+      "category": "Language Reference",
+      "name": "Explicit specialization",
+      "displayName": "Explicit specialization",
+      "symbolKind": "Other",
+      "signature": "Explicit specialization",
+      "description": "Explicit specialization is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/template_specialization"
+    },
+    {
+      "id": "cpp.core.language.explicit.b3f5274247fc",
+      "category": "Language Reference",
+      "name": "explicit specifier",
+      "displayName": "explicit specifier",
+      "symbolKind": "Other",
+      "signature": "explicit specifier",
+      "description": "explicit specifier is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/explicit"
+    },
+    {
+      "id": "cpp.core.language.expressions.483b15c73071",
+      "category": "Language Reference",
+      "name": "Expressions",
+      "displayName": "Expressions",
+      "symbolKind": "Other",
+      "signature": "Expressions",
+      "description": "Expressions is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/expressions"
+    },
+    {
+      "id": "cpp.core.language.extending_std.d8d922ca04f5",
+      "category": "Language Reference",
+      "name": "Extending the namespace std",
+      "displayName": "Extending the namespace std",
+      "symbolKind": "Other",
+      "signature": "Extending the namespace std",
+      "description": "Extending the namespace std is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/extending_std"
+    },
+    {
+      "id": "cpp.core.language.final.87c6d4519fca",
+      "category": "Language Reference",
+      "name": "final",
+      "displayName": "final",
+      "symbolKind": "Other",
+      "signature": "final",
+      "description": "final is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/final"
+    },
+    {
+      "id": "cpp.core.language.floating_literal.d8dfb55f0c11",
+      "category": "Language Reference",
+      "name": "floating",
+      "displayName": "floating",
+      "symbolKind": "Literal",
+      "signature": "floating",
+      "description": "floating is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/floating_literal"
+    },
+    {
+      "id": "cpp.core.language.fold.5b12a37dd247",
+      "category": "Language Reference",
+      "name": "Fold expressions",
+      "displayName": "Fold expressions",
+      "symbolKind": "Other",
+      "signature": "Fold expressions",
+      "description": "Fold expressions is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/fold"
+    },
+    {
+      "id": "cpp.core.language.for.b3b8dd948b20",
+      "category": "Language Reference",
+      "name": "for",
+      "displayName": "for",
+      "symbolKind": "Statement",
+      "signature": "for",
+      "description": "for is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/for"
+    },
+    {
+      "id": "cpp.core.language.friend.bf9c98469d75",
+      "category": "Language Reference",
+      "name": "friend",
+      "displayName": "friend",
+      "symbolKind": "Other",
+      "signature": "friend",
+      "description": "friend is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/friend"
+    },
+    {
+      "id": "cpp.core.language.template_argument_deduction.6720571e9393",
+      "category": "Language Reference",
+      "name": "function",
+      "displayName": "function",
+      "symbolKind": "Other",
+      "signature": "function",
+      "description": "function is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/template_argument_deduction"
+    },
+    {
+      "id": "cpp.core.language.function.8e2fecdc3dda",
+      "category": "Language Reference",
+      "name": "Function declaration",
+      "displayName": "Function declaration",
+      "symbolKind": "Function",
+      "signature": "Function declaration",
+      "description": "Function declaration is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/function"
+    },
+    {
+      "id": "cpp.core.language.function_template.b4ce03a6e49b",
+      "category": "Language Reference",
+      "name": "Function template",
+      "displayName": "Function template",
+      "symbolKind": "Function",
+      "signature": "Function template",
+      "description": "Function template is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/function_template"
+    },
+    {
+      "id": "cpp.core.language.functions.bd5599c800bc",
+      "category": "Language Reference",
+      "name": "Functions",
+      "displayName": "Functions",
+      "symbolKind": "Function",
+      "signature": "Functions",
+      "description": "Functions is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/functions"
+    },
+    {
+      "id": "cpp.core.language.types.00119c668076",
+      "category": "Language Reference",
+      "name": "Fundamental types",
+      "displayName": "Fundamental types",
+      "symbolKind": "Other",
+      "signature": "Fundamental types",
+      "description": "Fundamental types is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/types"
+    },
+    {
+      "id": "cpp.core.language.goto.8d01694bcb6c",
+      "category": "Language Reference",
+      "name": "goto",
+      "displayName": "goto",
+      "symbolKind": "Statement",
+      "signature": "goto",
+      "description": "goto is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/goto"
+    },
+    {
+      "id": "cpp.core.language.catch.466ef22db369",
+      "category": "Language Reference",
+      "name": "Handling exceptions",
+      "displayName": "Handling exceptions",
+      "symbolKind": "Statement",
+      "signature": "Handling exceptions",
+      "description": "Handling exceptions is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/catch"
+    },
+    {
+      "id": "cpp.core.language.history.f515c986c1d2",
+      "category": "Language Reference",
+      "name": "History of C++",
+      "displayName": "History of C++",
+      "symbolKind": "Other",
+      "signature": "History of C++",
+      "description": "History of C++ is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/history"
+    },
+    {
+      "id": "cpp.core.language.if.7fe9a6bb209f",
+      "category": "Language Reference",
+      "name": "if",
+      "displayName": "if",
+      "symbolKind": "Statement",
+      "signature": "if",
+      "description": "if is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/if"
+    },
+    {
+      "id": "cpp.core.language.implicit_conversion.c7e8c1ca4210",
+      "category": "Language Reference",
+      "name": "implicit",
+      "displayName": "implicit",
+      "symbolKind": "Operator",
+      "signature": "implicit",
+      "description": "implicit is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/implicit_conversion"
+    },
+    {
+      "id": "cpp.core.language.operator_incdec.a81b150b283a",
+      "category": "Language Reference",
+      "name": "increment and decrement",
+      "displayName": "increment and decrement",
+      "symbolKind": "Operator",
+      "signature": "increment and decrement",
+      "description": "increment and decrement is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/operator_incdec"
+    },
+    {
+      "id": "cpp.core.language.initialization.06be137ebe4f",
+      "category": "Language Reference",
+      "name": "Initialization",
+      "displayName": "Initialization",
+      "symbolKind": "Other",
+      "signature": "Initialization",
+      "description": "Initialization is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/initialization"
+    },
+    {
+      "id": "cpp.core.language.injected-class-name.33102ed759e3",
+      "category": "Language Reference",
+      "name": "injected-class-name",
+      "displayName": "injected-class-name",
+      "symbolKind": "Class",
+      "signature": "injected-class-name",
+      "description": "injected-class-name is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/injected-class-name"
+    },
+    {
+      "id": "cpp.core.language.asm.762e94ee0aac",
+      "category": "Language Reference",
+      "name": "Inline assembly",
+      "displayName": "Inline assembly",
+      "symbolKind": "Other",
+      "signature": "Inline assembly",
+      "description": "Inline assembly is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/asm"
+    },
+    {
+      "id": "cpp.core.language.inline.e908d0aba473",
+      "category": "Language Reference",
+      "name": "inline specifier",
+      "displayName": "inline specifier",
+      "symbolKind": "Other",
+      "signature": "inline specifier",
+      "description": "inline specifier is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/inline"
+    },
+    {
+      "id": "cpp.core.language.integer_literal.ae3c87e0bd3d",
+      "category": "Language Reference",
+      "name": "integer",
+      "displayName": "integer",
+      "symbolKind": "Literal",
+      "signature": "integer",
+      "description": "integer is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/integer_literal"
+    },
+    {
+      "id": "cpp.core.language.lambda.e5c78d786b48",
+      "category": "Language Reference",
+      "name": "Lambda expression",
+      "displayName": "Lambda expression",
+      "symbolKind": "Function",
+      "signature": "Lambda expression",
+      "description": "Lambda expression is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/lambda"
+    },
+    {
+      "id": "cpp.core.language.language_linkage.add80d978026",
+      "category": "Language Reference",
+      "name": "Language linkage",
+      "displayName": "Language linkage",
+      "symbolKind": "Other",
+      "signature": "Language linkage",
+      "description": "Language linkage is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/language_linkage"
+    },
+    {
+      "id": "cpp.core.language.lifetime.3a88b0b3eb17",
+      "category": "Language Reference",
+      "name": "Lifetime",
+      "displayName": "Lifetime",
+      "symbolKind": "Other",
+      "signature": "Lifetime",
+      "description": "Lifetime is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/lifetime"
+    },
+    {
+      "id": "cpp.core.language.list_initialization.cbfff55142af",
+      "category": "Language Reference",
+      "name": "List-initialization",
+      "displayName": "List-initialization",
+      "symbolKind": "Other",
+      "signature": "List-initialization",
+      "description": "List-initialization is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/list_initialization"
+    },
+    {
+      "id": "cpp.core.language.operator_logical.8d020b963d5d",
+      "category": "Language Reference",
+      "name": "logical",
+      "displayName": "logical",
+      "symbolKind": "Operator",
+      "signature": "logical",
+      "description": "logical is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/operator_logical"
+    },
+    {
+      "id": "cpp.core.language.operator_member_access.ecc2e465f684",
+      "category": "Language Reference",
+      "name": "member access",
+      "displayName": "member access",
+      "symbolKind": "Operator",
+      "signature": "member access",
+      "description": "member access is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/operator_member_access"
+    },
+    {
+      "id": "cpp.core.language.access.ed1b7a7d8ef9",
+      "category": "Language Reference",
+      "name": "Member access",
+      "displayName": "Member access",
+      "symbolKind": "Other",
+      "signature": "Member access",
+      "description": "Member access is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/access"
+    },
+    {
+      "id": "cpp.core.language.member_functions.d62e616c653e",
+      "category": "Language Reference",
+      "name": "Member functions",
+      "displayName": "Member functions",
+      "symbolKind": "Function",
+      "signature": "Member functions",
+      "description": "Member functions is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/member_functions"
+    },
+    {
+      "id": "cpp.core.language.memory_model.cb998282c118",
+      "category": "Language Reference",
+      "name": "Memory",
+      "displayName": "Memory",
+      "symbolKind": "Other",
+      "signature": "Memory",
+      "description": "Memory is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/memory_model"
+    },
+    {
+      "id": "cpp.core.language.modules.a1509bbdf37b",
+      "category": "Language Reference",
+      "name": "Modules",
+      "displayName": "Modules",
+      "symbolKind": "Other",
+      "signature": "Modules",
+      "description": "Modules is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/modules"
+    },
+    {
+      "id": "cpp.core.language.move_assignment.7ea76f9a3616",
+      "category": "Language Reference",
+      "name": "Move assignment",
+      "displayName": "Move assignment",
+      "symbolKind": "Other",
+      "signature": "Move assignment",
+      "description": "Move assignment is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/move_assignment"
+    },
+    {
+      "id": "cpp.core.language.move_operator.4e782a8a4892",
+      "category": "Language Reference",
+      "name": "Move assignment",
+      "displayName": "Move assignment",
+      "symbolKind": "Operator",
+      "signature": "Move assignment",
+      "description": "Move assignment is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/move_operator"
+    },
+    {
+      "id": "cpp.core.language.move_constructor.06a5c8ff658c",
+      "category": "Language Reference",
+      "name": "Move constructor",
+      "displayName": "Move constructor",
+      "symbolKind": "Other",
+      "signature": "Move constructor",
+      "description": "Move constructor is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/move_constructor"
+    },
+    {
+      "id": "cpp.core.language.multithread.793600621141",
+      "category": "Language Reference",
+      "name": "Multithread",
+      "displayName": "Multithread",
+      "symbolKind": "Other",
+      "signature": "Multithread",
+      "description": "Multithread is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/multithread"
+    },
+    {
+      "id": "cpp.core.language.lookup.c2ce0383648d",
+      "category": "Language Reference",
+      "name": "Name lookup",
+      "displayName": "Name lookup",
+      "symbolKind": "Other",
+      "signature": "Name lookup",
+      "description": "Name lookup is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/lookup"
+    },
+    {
+      "id": "cpp.core.language.identifiers.d0858f04d765",
+      "category": "Language Reference",
+      "name": "Names and identifiers",
+      "displayName": "Names and identifiers",
+      "symbolKind": "Other",
+      "signature": "Names and identifiers",
+      "description": "Names and identifiers is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/identifiers"
+    },
+    {
+      "id": "cpp.core.language.namespace_alias.9c6920ed7741",
+      "category": "Language Reference",
+      "name": "Namespace alias",
+      "displayName": "Namespace alias",
+      "symbolKind": "Other",
+      "signature": "Namespace alias",
+      "description": "Namespace alias is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/namespace_alias"
+    },
+    {
+      "id": "cpp.core.language.namespace.7b0bf43333a7",
+      "category": "Language Reference",
+      "name": "Namespace declaration",
+      "displayName": "Namespace declaration",
+      "symbolKind": "Statement",
+      "signature": "Namespace declaration",
+      "description": "Namespace declaration is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/namespace"
+    },
+    {
+      "id": "cpp.core.language.ndr.53b7b69ed8dc",
+      "category": "Language Reference",
+      "name": "NDR",
+      "displayName": "NDR",
+      "symbolKind": "Other",
+      "signature": "NDR",
+      "description": "NDR is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/ndr"
+    },
+    {
+      "id": "cpp.core.language.nested_types.57a77ebd50c2",
+      "category": "Language Reference",
+      "name": "Nested classes",
+      "displayName": "Nested classes",
+      "symbolKind": "Other",
+      "signature": "Nested classes",
+      "description": "Nested classes is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/nested_types"
+    },
+    {
+      "id": "cpp.core.language.new.db478198e1d2",
+      "category": "Language Reference",
+      "name": "new",
+      "displayName": "new",
+      "symbolKind": "Other",
+      "signature": "new",
+      "description": "new is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/new"
+    },
+    {
+      "id": "cpp.core.language.noexcept.a90d6ffebb86",
+      "category": "Language Reference",
+      "name": "noexcept operator",
+      "displayName": "noexcept operator",
+      "symbolKind": "Other",
+      "signature": "noexcept operator",
+      "description": "noexcept operator is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/noexcept"
+    },
+    {
+      "id": "cpp.core.language.noexcept_spec.49f9bd404646",
+      "category": "Language Reference",
+      "name": "noexcept specification",
+      "displayName": "noexcept specification",
+      "symbolKind": "Other",
+      "signature": "noexcept specification",
+      "description": "noexcept specification is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/noexcept_spec"
+    },
+    {
+      "id": "cpp.core.language.nullptr.cdcf561a0e79",
+      "category": "Language Reference",
+      "name": "nullptr",
+      "displayName": "nullptr",
+      "symbolKind": "Other",
+      "signature": "nullptr",
+      "description": "nullptr is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/nullptr"
+    },
+    {
+      "id": "cpp.core.language.object.c5b601f09e4a",
+      "category": "Language Reference",
+      "name": "Object",
+      "displayName": "Object",
+      "symbolKind": "Other",
+      "signature": "Object",
+      "description": "Object is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/object"
+    },
+    {
+      "id": "cpp.core.language.operators.d13d180321d5",
+      "category": "Language Reference",
+      "name": "Operator overloading",
+      "displayName": "Operator overloading",
+      "symbolKind": "Operator",
+      "signature": "Operator overloading",
+      "description": "Operator overloading is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/operators"
+    },
+    {
+      "id": "cpp.core.language.operator_precedence.932d863263f6",
+      "category": "Language Reference",
+      "name": "Operator precedence",
+      "displayName": "Operator precedence",
+      "symbolKind": "Operator",
+      "signature": "Operator precedence",
+      "description": "Operator precedence is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/operator_precedence"
+    },
+    {
+      "id": "cpp.core.language.overload_resolution.a79dc0bb657e",
+      "category": "Language Reference",
+      "name": "Overload resolution",
+      "displayName": "Overload resolution",
+      "symbolKind": "Operator",
+      "signature": "Overload resolution",
+      "description": "Overload resolution is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/overload_resolution"
+    },
+    {
+      "id": "cpp.core.language.override.925092ec037e",
+      "category": "Language Reference",
+      "name": "override",
+      "displayName": "override",
+      "symbolKind": "Other",
+      "signature": "override",
+      "description": "override is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/override"
+    },
+    {
+      "id": "cpp.core.language.pack.db0afff7be63",
+      "category": "Language Reference",
+      "name": "Packs",
+      "displayName": "Packs",
+      "symbolKind": "Other",
+      "signature": "Packs",
+      "description": "Packs is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/pack"
+    },
+    {
+      "id": "cpp.core.language.partial_specialization.e7a71dec3e0f",
+      "category": "Language Reference",
+      "name": "Partial specialization",
+      "displayName": "Partial specialization",
+      "symbolKind": "Other",
+      "signature": "Partial specialization",
+      "description": "Partial specialization is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/partial_specialization"
+    },
+    {
+      "id": "cpp.core.language.translation_phases.8cebf9af7f69",
+      "category": "Language Reference",
+      "name": "Phases of translation",
+      "displayName": "Phases of translation",
+      "symbolKind": "Other",
+      "signature": "Phases of translation",
+      "description": "Phases of translation is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/translation_phases"
+    },
+    {
+      "id": "cpp.core.language.pimpl.61cfe958c237",
+      "category": "Language Reference",
+      "name": "Pointer to implementation (PIMPL)",
+      "displayName": "Pointer to implementation (PIMPL)",
+      "symbolKind": "Other",
+      "signature": "Pointer to implementation (PIMPL)",
+      "description": "Pointer to implementation (PIMPL) is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/pimpl"
+    },
+    {
+      "id": "cpp.core.language.pointer.b7a92f6dea7b",
+      "category": "Language Reference",
+      "name": "Pointers",
+      "displayName": "Pointers",
+      "symbolKind": "Other",
+      "signature": "Pointers",
+      "description": "Pointers is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/pointer"
+    },
+    {
+      "id": "cpp.core.language.punctuators.b27fbe148b88",
+      "category": "Language Reference",
+      "name": "Punctuation",
+      "displayName": "Punctuation",
+      "symbolKind": "Other",
+      "signature": "Punctuation",
+      "description": "Punctuation is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/punctuators"
+    },
+    {
+      "id": "cpp.core.language.qualified_lookup.13d87d957b62",
+      "category": "Language Reference",
+      "name": "qualified",
+      "displayName": "qualified",
+      "symbolKind": "Other",
+      "signature": "qualified",
+      "description": "qualified is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/qualified_lookup"
+    },
+    {
+      "id": "cpp.core.language.range-for.feaa8baf4ee8",
+      "category": "Language Reference",
+      "name": "range- for",
+      "displayName": "range- for",
+      "symbolKind": "Statement",
+      "signature": "range- for",
+      "description": "range- for is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/range-for"
+    },
+    {
+      "id": "cpp.core.language.reference_initialization.4cf7106bb879",
+      "category": "Language Reference",
+      "name": "Reference initialization",
+      "displayName": "Reference initialization",
+      "symbolKind": "Other",
+      "signature": "Reference initialization",
+      "description": "Reference initialization is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/reference_initialization"
+    },
+    {
+      "id": "cpp.core.language.reference.8d6b7cf58acd",
+      "category": "Language Reference",
+      "name": "References",
+      "displayName": "References",
+      "symbolKind": "Other",
+      "signature": "References",
+      "description": "References is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/reference"
+    },
+    {
+      "id": "cpp.core.language.reinterpret_cast.2755055e41fe",
+      "category": "Language Reference",
+      "name": "reinterpret_cast",
+      "displayName": "reinterpret_cast",
+      "symbolKind": "Other",
+      "signature": "reinterpret_cast",
+      "description": "reinterpret_cast is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/reinterpret_cast"
+    },
+    {
+      "id": "cpp.core.language.replacement_function.42befd6cbda7",
+      "category": "Language Reference",
+      "name": "Replacement functions",
+      "displayName": "Replacement functions",
+      "symbolKind": "Function",
+      "signature": "Replacement functions",
+      "description": "Replacement functions is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/replacement_function"
+    },
+    {
+      "id": "cpp.core.language.requires.22b107145197",
+      "category": "Language Reference",
+      "name": "Requires expression",
+      "displayName": "Requires expression",
+      "symbolKind": "Other",
+      "signature": "Requires expression",
+      "description": "Requires expression is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/requires"
+    },
+    {
+      "id": "cpp.core.language.raii.289fa5ca2ab0",
+      "category": "Language Reference",
+      "name": "Resource acquisition is initialization (RAII)",
+      "displayName": "Resource acquisition is initialization (RAII)",
+      "symbolKind": "Other",
+      "signature": "Resource acquisition is initialization (RAII)",
+      "description": "Resource acquisition is initialization (RAII) is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/raii"
+    },
+    {
+      "id": "cpp.core.language.return.b13736863b78",
+      "category": "Language Reference",
+      "name": "return",
+      "displayName": "return",
+      "symbolKind": "Statement",
+      "signature": "return",
+      "description": "return is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/return"
+    },
+    {
+      "id": "cpp.core.language.rule_of_three.2d0605790d85",
+      "category": "Language Reference",
+      "name": "Rule of three/five/zero",
+      "displayName": "Rule of three/five/zero",
+      "symbolKind": "Other",
+      "signature": "Rule of three/five/zero",
+      "description": "Rule of three/five/zero is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/rule_of_three"
+    },
+    {
+      "id": "cpp.core.language.scope.f29604a2b483",
+      "category": "Language Reference",
+      "name": "Scope",
+      "displayName": "Scope",
+      "symbolKind": "Other",
+      "signature": "Scope",
+      "description": "Scope is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/scope"
+    },
+    {
+      "id": "cpp.core.language.sfinae.b08d9bf86530",
+      "category": "Language Reference",
+      "name": "SFINAE",
+      "displayName": "SFINAE",
+      "symbolKind": "Other",
+      "signature": "SFINAE",
+      "description": "SFINAE is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/sfinae"
+    },
+    {
+      "id": "cpp.core.language.sizeof.336866e4c148",
+      "category": "Language Reference",
+      "name": "sizeof",
+      "displayName": "sizeof",
+      "symbolKind": "Other",
+      "signature": "sizeof",
+      "description": "sizeof is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/sizeof"
+    },
+    {
+      "id": "cpp.core.language.sizeof....d1d453c91cb4",
+      "category": "Language Reference",
+      "name": "sizeof...",
+      "displayName": "sizeof...",
+      "symbolKind": "Other",
+      "signature": "sizeof...",
+      "description": "sizeof... is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/sizeof..."
+    },
+    {
+      "id": "cpp.core.language.statements.1d2c5a707d5f",
+      "category": "Language Reference",
+      "name": "Statements",
+      "displayName": "Statements",
+      "symbolKind": "Other",
+      "signature": "Statements",
+      "description": "Statements is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/statements"
+    },
+    {
+      "id": "cpp.core.language.static.03444a4ecbcc",
+      "category": "Language Reference",
+      "name": "Static members",
+      "displayName": "Static members",
+      "symbolKind": "Other",
+      "signature": "Static members",
+      "description": "Static members is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/static"
+    },
+    {
+      "id": "cpp.core.language.static_assert.7866d0606543",
+      "category": "Language Reference",
+      "name": "static_assert",
+      "displayName": "static_assert",
+      "symbolKind": "Other",
+      "signature": "static_assert",
+      "description": "static_assert is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/static_assert"
+    },
+    {
+      "id": "cpp.core.language.static_cast.c589f7e7ffb7",
+      "category": "Language Reference",
+      "name": "static_cast",
+      "displayName": "static_cast",
+      "symbolKind": "Other",
+      "signature": "static_cast",
+      "description": "static_cast is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/static_cast"
+    },
+    {
+      "id": "cpp.core.language.storage_duration.b5b270f7ca4e",
+      "category": "Language Reference",
+      "name": "Storage duration and linkage",
+      "displayName": "Storage duration and linkage",
+      "symbolKind": "Other",
+      "signature": "Storage duration and linkage",
+      "description": "Storage duration and linkage is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/storage_duration"
+    },
+    {
+      "id": "cpp.core.language.string_literal.9d77062ae6e8",
+      "category": "Language Reference",
+      "name": "string",
+      "displayName": "string",
+      "symbolKind": "Literal",
+      "signature": "string",
+      "description": "string is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/string_literal"
+    },
+    {
+      "id": "cpp.core.language.structured_binding.82924e758b24",
+      "category": "Language Reference",
+      "name": "Structured bindings",
+      "displayName": "Structured bindings",
+      "symbolKind": "Other",
+      "signature": "Structured bindings",
+      "description": "Structured bindings is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/structured_binding"
+    },
+    {
+      "id": "cpp.core.language.switch.6a0c535b505b",
+      "category": "Language Reference",
+      "name": "switch",
+      "displayName": "switch",
+      "symbolKind": "Statement",
+      "signature": "switch",
+      "description": "switch is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/switch"
+    },
+    {
+      "id": "cpp.core.language.template_parameters.a42d44c6c834",
+      "category": "Language Reference",
+      "name": "Template parameters and arguments",
+      "displayName": "Template parameters and arguments",
+      "symbolKind": "Other",
+      "signature": "Template parameters and arguments",
+      "description": "Template parameters and arguments is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/template_parameters"
+    },
+    {
+      "id": "cpp.core.language.templates.048e59d99b4e",
+      "category": "Language Reference",
+      "name": "Templates",
+      "displayName": "Templates",
+      "symbolKind": "Other",
+      "signature": "Templates",
+      "description": "Templates is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/templates"
+    },
+    {
+      "id": "cpp.core.language.main_function.75c9a1657397",
+      "category": "Language Reference",
+      "name": "The main function",
+      "displayName": "The main function",
+      "symbolKind": "Function",
+      "signature": "The main function",
+      "description": "The main function is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/main_function"
+    },
+    {
+      "id": "cpp.core.language.this.3d71c4fdad35",
+      "category": "Language Reference",
+      "name": "The this pointer",
+      "displayName": "The this pointer",
+      "symbolKind": "Other",
+      "signature": "The this pointer",
+      "description": "The this pointer is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/this"
+    },
+    {
+      "id": "cpp.core.language.throw.482372065ea0",
+      "category": "Language Reference",
+      "name": "Throwing exceptions",
+      "displayName": "Throwing exceptions",
+      "symbolKind": "Statement",
+      "signature": "Throwing exceptions",
+      "description": "Throwing exceptions is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/throw"
+    },
+    {
+      "id": "cpp.core.language.template_metaprogramming.496f1444afc9",
+      "category": "Language Reference",
+      "name": "TMP",
+      "displayName": "TMP",
+      "symbolKind": "Other",
+      "signature": "TMP",
+      "description": "TMP is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/template_metaprogramming"
+    },
+    {
+      "id": "cpp.core.language.tu_local.a10623a9c05f",
+      "category": "Language Reference",
+      "name": "Translation-unit-local",
+      "displayName": "Translation-unit-local",
+      "symbolKind": "Other",
+      "signature": "Translation-unit-local",
+      "description": "Translation-unit-local is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/tu_local"
+    },
+    {
+      "id": "cpp.core.language.try.c6199d073dec",
+      "category": "Language Reference",
+      "name": "try block",
+      "displayName": "try block",
+      "symbolKind": "Statement",
+      "signature": "try block",
+      "description": "try block is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/try"
+    },
+    {
+      "id": "cpp.core.language.type_alias.c7cc5f00df94",
+      "category": "Language Reference",
+      "name": "Type alias",
+      "displayName": "Type alias",
+      "symbolKind": "Other",
+      "signature": "Type alias",
+      "description": "Type alias is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/type_alias"
+    },
+    {
+      "id": "cpp.core.language.typedef.651998ac1ffe",
+      "category": "Language Reference",
+      "name": "typedef",
+      "displayName": "typedef",
+      "symbolKind": "Other",
+      "signature": "typedef",
+      "description": "typedef is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/typedef"
+    },
+    {
+      "id": "cpp.core.language.typeid.5906ebd0d6be",
+      "category": "Language Reference",
+      "name": "typeid",
+      "displayName": "typeid",
+      "symbolKind": "Other",
+      "signature": "typeid",
+      "description": "typeid is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/typeid"
+    },
+    {
+      "id": "cpp.core.language.type.091914206ef6",
+      "category": "Language Reference",
+      "name": "Types",
+      "displayName": "Types",
+      "symbolKind": "Other",
+      "signature": "Types",
+      "description": "Types is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/type"
+    },
+    {
+      "id": "cpp.core.language.ub.32f52b9ea91a",
+      "category": "Language Reference",
+      "name": "Undefined behavior (UB)",
+      "displayName": "Undefined behavior (UB)",
+      "symbolKind": "Other",
+      "signature": "Undefined behavior (UB)",
+      "description": "Undefined behavior (UB) is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/ub"
+    },
+    {
+      "id": "cpp.core.language.union.b6e9ad8e5809",
+      "category": "Language Reference",
+      "name": "Union types",
+      "displayName": "Union types",
+      "symbolKind": "Class",
+      "signature": "Union types",
+      "description": "Union types is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/union"
+    },
+    {
+      "id": "cpp.core.language.unqualified_lookup.5b7885ced37f",
+      "category": "Language Reference",
+      "name": "unqualified",
+      "displayName": "unqualified",
+      "symbolKind": "Other",
+      "signature": "unqualified",
+      "description": "unqualified is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/unqualified_lookup"
+    },
+    {
+      "id": "cpp.core.language.cast_operator.61b722f01309",
+      "category": "Language Reference",
+      "name": "user-defined",
+      "displayName": "user-defined",
+      "symbolKind": "Operator",
+      "signature": "user-defined",
+      "description": "user-defined is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/cast_operator"
+    },
+    {
+      "id": "cpp.core.language.user_literal.632541eeeca0",
+      "category": "Language Reference",
+      "name": "user-defined (UDL)",
+      "displayName": "user-defined (UDL)",
+      "symbolKind": "Literal",
+      "signature": "user-defined (UDL)",
+      "description": "user-defined (UDL) is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/user_literal"
+    },
+    {
+      "id": "cpp.core.language.using_declaration.4b8d230de28c",
+      "category": "Language Reference",
+      "name": "using -declaration",
+      "displayName": "using -declaration",
+      "symbolKind": "Statement",
+      "signature": "using -declaration",
+      "description": "using -declaration is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/using_declaration"
+    },
+    {
+      "id": "cpp.core.language.usual_arithmetic_conversions.22fba217602f",
+      "category": "Language Reference",
+      "name": "Usual arithmetic conversions",
+      "displayName": "Usual arithmetic conversions",
+      "symbolKind": "Operator",
+      "signature": "Usual arithmetic conversions",
+      "description": "Usual arithmetic conversions is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/usual_arithmetic_conversions"
+    },
+    {
+      "id": "cpp.core.language.value_category.fe66002c2e0d",
+      "category": "Language Reference",
+      "name": "Value categories",
+      "displayName": "Value categories",
+      "symbolKind": "Other",
+      "signature": "Value categories",
+      "description": "Value categories is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/value_category"
+    },
+    {
+      "id": "cpp.core.language.value_initialization.ab90865c2b1e",
+      "category": "Language Reference",
+      "name": "Value-initialization",
+      "displayName": "Value-initialization",
+      "symbolKind": "Other",
+      "signature": "Value-initialization",
+      "description": "Value-initialization is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/value_initialization"
+    },
+    {
+      "id": "cpp.core.language.variable_template.20859fce14f3",
+      "category": "Language Reference",
+      "name": "Variable template",
+      "displayName": "Variable template",
+      "symbolKind": "Other",
+      "signature": "Variable template",
+      "description": "Variable template is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/variable_template"
+    },
+    {
+      "id": "cpp.core.language.variadic_arguments.7237c87f0a10",
+      "category": "Language Reference",
+      "name": "Variadic arguments",
+      "displayName": "Variadic arguments",
+      "symbolKind": "Other",
+      "signature": "Variadic arguments",
+      "description": "Variadic arguments is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/variadic_arguments"
+    },
+    {
+      "id": "cpp.core.language.virtual.4aeed838c1ba",
+      "category": "Language Reference",
+      "name": "Virtual function",
+      "displayName": "Virtual function",
+      "symbolKind": "Other",
+      "signature": "Virtual function",
+      "description": "Virtual function is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/virtual"
+    },
+    {
+      "id": "cpp.core.language.while.8e65c367e40f",
+      "category": "Language Reference",
+      "name": "while",
+      "displayName": "while",
+      "symbolKind": "Statement",
+      "signature": "while",
+      "description": "while is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/while"
+    },
+    {
+      "id": "cpp.core.language.zero_initialization.affd6791096b",
+      "category": "Language Reference",
+      "name": "zero",
+      "displayName": "zero",
+      "symbolKind": "Other",
+      "signature": "zero",
+      "description": "zero is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/zero_initialization"
+    },
+    {
+      "id": "cpp.core.language.Zero-overhead_principle.36394923a5c2",
+      "category": "Language Reference",
+      "name": "Zero-overhead principle",
+      "displayName": "Zero-overhead principle",
+      "symbolKind": "Other",
+      "signature": "Zero-overhead principle",
+      "description": "Zero-overhead principle is part of the C++20 language reference surface.",
+      "documentationUrl": "https://en.cppreference.com/cpp/language/Zero-overhead_principle"
+    }
+  ]
+}

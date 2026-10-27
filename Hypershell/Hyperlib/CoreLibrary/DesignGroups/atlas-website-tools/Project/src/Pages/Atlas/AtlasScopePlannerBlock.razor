@@ -1,0 +1,16 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<section class="content-section"><p class="eyebrow">Launch scope</p><h2 data-field="title">@T("title")</h2><p data-field="text">@T("text")</p><div class="two-grid"><form class="panel form-stack" @onsubmit="Plan" @onsubmit:preventDefault><label>Tool name<input required maxlength="80" @bind="_name" /></label><label>Primary audience<input required maxlength="120" @bind="_audience" /></label><label>Problem to solve<textarea required maxlength="240" @bind="_problem"></textarea></label><label>Core input<input required maxlength="140" @bind="_input" /></label><label>Expected output<input required maxlength="140" @bind="_output" /></label><label>Experience mode<select @bind="_mode"><option value="public">Public with no sign-in</option><option value="capture">Optional lead capture</option><option value="signin">Signed-in experience</option><option value="saved">Saved account data</option></select></label><button class="primary" type="submit">Build scope</button></form><div class="panel" aria-live="polite">@if(!_planned) { <h3>Your scope, in one place</h3><p>Describe one input and one useful result. The plan is calculated locally.</p> } else { <span class="badge">@Risk</span><h3>@_name</h3><p>@_problem</p><h4>Build first</h4><ul><li>One public page for @_audience.</li><li>Ask for @_input and return @_output.</li><li>Add a worked example and one clear next action.</li></ul><h4>Keep for later</h4><ul><li>Saved histories and personalized dashboards.</li><li>Integrations, automation and background processing.</li>@if(_mode is "signin" or "saved") { <li>Mandatory sign-in before the first useful result.</li> }</ul><p class="notice">@Delivery</p> }</div></div></section>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+private string _name = "", _audience = "", _problem = "", _input = "", _output = "", _mode = "public";
+private bool _planned;
+private void Plan() => _planned = new[] { _name, _audience, _problem, _input, _output }.All(value => !string.IsNullOrWhiteSpace(value));
+private string Risk => _mode switch { "public" => "Low delivery risk", "capture" => "Low to medium delivery risk", "saved" => "High delivery risk", _ => "Medium delivery risk" };
+private string Delivery => _mode is "public" or "capture" ? "Build a single submit-and-result flow before adding more product surface." : "Move account-specific behavior into a later phase to keep the first release focused.";
+}

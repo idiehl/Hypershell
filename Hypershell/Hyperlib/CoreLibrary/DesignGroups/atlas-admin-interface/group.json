@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "atlas-admin-interface",
+  "title": "Atlas \u00B7 Admin workspace",
+  "description": "The Admin shell, status strips, inventories, forms and approval patterns, using local demonstration data.",
+  "category": "Atlas website",
+  "sourceTemplateId": "atlas.website.v1"
+}

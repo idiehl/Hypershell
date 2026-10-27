@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "typescript-core",
+  "displayName": "TypeScript Core",
+  "description": "TypeScript syntax, type-system constructs, declarations, and globally available utility patterns.",
+  "language": "TypeScript",
+  "category": "Language core",
+  "kind": "Core",
+  "canonicalName": "TypeScript Language Core",
+  "ecosystem": "TypeScript",
+  "targetVersion": "TypeScript 7.0",
+  "sourceVersion": "TypeScript 7.0 language baseline",
+  "sourceUrl": "https://www.typescriptlang.org/docs/",
+  "license": "Apache-2.0",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Runs through the matching installed Hypershell terminal adapter.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "typescript",
+    "core",
+    "types",
+    "syntax"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 67,
+  "declaredIndexedCount": 22,
+  "declaredGuidedCount": 0,
+  "declaredVerifiedCount": 45,
+  "entryFiles": [
+    "entries/typescript-core.entries.json"
+  ],
+  "declaredGuideCount": 45,
+  "guideFiles": [
+    "guides/typescript-core.guides.json"
+  ],
+  "legacyIds": [
+    "typescript-essentials"
+  ]
+}

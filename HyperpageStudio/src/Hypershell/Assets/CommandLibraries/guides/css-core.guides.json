@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "css-core",
+  "guides": [
+    {
+      "entryId": "css.class-selector",
+      "definition": "A class selector begins with a full stop and matches elements whose class list contains the named token. Classes are reusable and may be combined.",
+      "parameters": [
+        {
+          "name": "className",
+          "displayName": "Class name",
+          "placeholder": "className",
+          "description": "The class token without a leading dot.",
+          "typeName": "CSS identifier",
+          "defaultValue": "card",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "A CSS property name.",
+          "typeName": "CSS property",
+          "defaultValue": "padding",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "A value accepted by the selected property.",
+          "typeName": "CSS value",
+          "defaultValue": "1rem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Pad every card",
+          "code": ".card {\n  padding: 1rem;\n}",
+          "explanation": "Every element with class=card receives one root-em of inner spacing."
+        }
+      ]
+    },
+    {
+      "entryId": "css.custom-property",
+      "definition": "Custom property names begin with two hyphens. Their values participate in the cascade and var() substitutes the computed value where it is used.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Property name",
+          "placeholder": "name",
+          "description": "The custom property name without the leading double hyphen.",
+          "typeName": "CSS identifier",
+          "defaultValue": "accent",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Design value",
+          "placeholder": "value",
+          "description": "The reusable CSS token value.",
+          "typeName": "CSS value",
+          "defaultValue": "#58a6ff",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "className",
+          "displayName": "Class",
+          "placeholder": "className",
+          "description": "The class that consumes the value.",
+          "typeName": "CSS identifier",
+          "defaultValue": "link",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "The property receiving the custom value.",
+          "typeName": "CSS property",
+          "defaultValue": "color",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Reuse an accent color",
+          "code": ":root {\n  --accent: #58a6ff;\n}\n\n.link {\n  color: var(--accent);\n}",
+          "explanation": "Changing --accent at the root updates every declaration that references it unless a nearer value overrides the cascade."
+        }
+      ]
+    },
+    {
+      "entryId": "css.box-sizing",
+      "definition": "With box-sizing:border-box, width and height apply to the border box instead of only the content box, simplifying layout calculations.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Normalize element sizing",
+          "code": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}",
+          "explanation": "The universal selector and both generated pseudo-elements use the same predictable sizing model."
+        }
+      ]
+    },
+    {
+      "entryId": "css.media-query",
+      "definition": "A media query condition tests the output environment. Range syntax can express a minimum viewport width without device-specific assumptions.",
+      "parameters": [
+        {
+          "name": "minimum",
+          "displayName": "Minimum width",
+          "placeholder": "minimum",
+          "description": "The viewport width at which the rule begins to apply.",
+          "typeName": "Media feature value",
+          "defaultValue": "48rem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "className",
+          "displayName": "Class",
+          "placeholder": "className",
+          "description": "The class changed by the query.",
+          "typeName": "CSS identifier",
+          "defaultValue": "layout",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "The property changed at the breakpoint.",
+          "typeName": "CSS property",
+          "defaultValue": "grid-template-columns",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The value used when the condition matches.",
+          "typeName": "CSS value",
+          "defaultValue": "16rem 1fr",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Add a sidebar on wider viewports",
+          "code": "@media (width >= 48rem) {\n  .layout {\n    grid-template-columns: 16rem 1fr;\n  }\n}",
+          "explanation": "The two-column layout activates when the viewport has enough inline space."
+        }
+      ]
+    },
+    {
+      "entryId": "css.focus-visible",
+      "definition": ":focus-visible matches a focused element when the user agent's interaction heuristics call for an obvious focus indicator, commonly during keyboard navigation.",
+      "parameters": [
+        {
+          "name": "className",
+          "displayName": "Class",
+          "placeholder": "className",
+          "description": "The interactive element class.",
+          "typeName": "CSS identifier",
+          "defaultValue": "button",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "width",
+          "displayName": "Outline width",
+          "placeholder": "width",
+          "description": "The thickness of the focus indicator.",
+          "typeName": "Length",
+          "defaultValue": "3px",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "color",
+          "displayName": "Outline color",
+          "placeholder": "color",
+          "description": "A high-contrast focus color.",
+          "typeName": "Color",
+          "defaultValue": "#58a6ff",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "offset",
+          "displayName": "Outline offset",
+          "placeholder": "offset",
+          "description": "Space between the border and outline.",
+          "typeName": "Length",
+          "defaultValue": "3px",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Make button focus obvious",
+          "code": ".button:focus-visible {\n  outline: 3px solid #58a6ff;\n  outline-offset: 3px;\n}",
+          "explanation": "The indicator remains outside the component border and is not removed from keyboard users."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,590 @@
+{
+  "schemaVersion": 1,
+  "templateId": "standard",
+  "title": "Core essentials \u00B7 Hyperpage collection",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Page content",
+      "allowedBlocks": []
+    }
+  ],
+  "blocks": [
+    {
+      "id": "legacy-core-navigation-header-v1",
+      "title": "Responsive navigation header",
+      "component": "LegacyCoreNavigationHeaderV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Brand link \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Site name",
+          "options": []
+        },
+        {
+          "id": "href-2",
+          "title": "Brand link \u00B7 href",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Navigation link 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Link 1",
+          "options": []
+        },
+        {
+          "id": "href-4",
+          "title": "Navigation link 1 \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Navigation link 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Link 2",
+          "options": []
+        },
+        {
+          "id": "href-5",
+          "title": "Navigation link 2 \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Navigation link 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Link 3",
+          "options": []
+        },
+        {
+          "id": "href-6",
+          "title": "Navigation link 3 \u00B7 href",
+          "type": "string",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-CORE-NAVIGATION-HEADER-V1",
+      "category": "Navigation",
+      "description": "Accessible brand link and primary navigation that wraps on narrow screens. Use in a standalone local project; Atlas-hosted Archive pages inherit the site shell.",
+      "sourceTemplateId": "core.navigation.header.v1",
+      "sourceLibrary": "Core essentials"
+    },
+    {
+      "id": "legacy-core-contact-form-v1",
+      "title": "Accessible contact form",
+      "component": "LegacyCoreContactFormV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Form heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Contact us",
+          "options": []
+        },
+        {
+          "id": "text-3",
+          "title": "Name label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Name",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Email label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Email",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Message label \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Message",
+          "options": []
+        },
+        {
+          "id": "text-9",
+          "title": "Submit button \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Send message",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-CORE-CONTACT-FORM-V1",
+      "category": "Forms \u0026 input",
+      "description": "Native name, email, message, and submit controls ready for a handler. Add a reviewed submit handler before publishing.",
+      "sourceTemplateId": "core.contact.form.v1",
+      "sourceLibrary": "Core essentials"
+    },
+    {
+      "id": "legacy-core-faq-disclosure-v1",
+      "title": "FAQ disclosures",
+      "component": "LegacyCoreFaqDisclosureV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "FAQ heading \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Frequently asked questions",
+          "options": []
+        },
+        {
+          "id": "text-4",
+          "title": "Question 1 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Question 1?",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Answer 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add a concise, useful answer here.",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Question 2 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Question 2?",
+          "options": []
+        },
+        {
+          "id": "text-8",
+          "title": "Answer 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add a concise, useful answer here.",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Question 3 summary \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Question 3?",
+          "options": []
+        },
+        {
+          "id": "text-11",
+          "title": "Answer 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Add a concise, useful answer here.",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-CORE-FAQ-DISCLOSURE-V1",
+      "category": "Content blocks",
+      "description": "Accessible heading and native disclosure controls for common questions. Use for questions, definitions, transcripts, or optional technical detail.",
+      "sourceTemplateId": "core.faq.disclosure.v1",
+      "sourceLibrary": "Core essentials"
+    },
+    {
+      "id": "legacy-core-accessible-table-v1",
+      "title": "Accessible data table",
+      "component": "LegacyCoreAccessibleTableV1Block",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text-2",
+          "title": "Table caption \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Data table caption",
+          "options": []
+        },
+        {
+          "id": "text-5",
+          "title": "Column 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Column 1",
+          "options": []
+        },
+        {
+          "id": "text-6",
+          "title": "Column 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Column 2",
+          "options": []
+        },
+        {
+          "id": "text-7",
+          "title": "Column 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Column 3",
+          "options": []
+        },
+        {
+          "id": "text-10",
+          "title": "Row 1 cell 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Value 1.1",
+          "options": []
+        },
+        {
+          "id": "text-11",
+          "title": "Row 1 cell 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Value 1.2",
+          "options": []
+        },
+        {
+          "id": "text-12",
+          "title": "Row 1 cell 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Value 1.3",
+          "options": []
+        },
+        {
+          "id": "text-14",
+          "title": "Row 2 cell 1 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Value 2.1",
+          "options": []
+        },
+        {
+          "id": "text-15",
+          "title": "Row 2 cell 2 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Value 2.2",
+          "options": []
+        },
+        {
+          "id": "text-16",
+          "title": "Row 2 cell 3 \u00B7 Text",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Value 2.3",
+          "options": []
+        },
+        {
+          "id": "span",
+          "title": "Layout width",
+          "type": "select",
+          "required": false,
+          "options": [
+            "full",
+            "half",
+            "third",
+            "two-thirds"
+          ]
+        },
+        {
+          "id": "font",
+          "title": "Font",
+          "type": "select",
+          "required": false,
+          "options": [
+            "system",
+            "serif",
+            "monospace",
+            "humanist",
+            "geometric"
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Alignment",
+          "type": "select",
+          "required": false,
+          "options": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ]
+        },
+        {
+          "id": "color",
+          "title": "Text color",
+          "type": "color",
+          "required": false,
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-LEGACY-CORE-ACCESSIBLE-TABLE-V1",
+      "category": "Data display",
+      "description": "Captioned table with scoped column headings and sample rows. Replace the sample values and keep the caption specific.",
+      "sourceTemplateId": "core.accessible.table.v1",
+      "sourceLibrary": "Core essentials"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#36617c",
+      "options": []
+    },
+    {
+      "id": "background",
+      "title": "Full page background",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#ffffff",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#202124",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panels",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#f5f6f7",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#687078",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "system",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "system",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    },
+    {
+      "id": "variant",
+      "title": "Layout design",
+      "type": "select",
+      "required": false,
+      "defaultValue": "woodland-editorial",
+      "options": [
+        "woodland-editorial",
+        "wave-laboratory",
+        "portfolio-grid",
+        "field-journal",
+        "architecture-studio",
+        "course-notebook",
+        "recipe-kitchen",
+        "event-poster",
+        "travel-atlas",
+        "product-launch",
+        "podcast-studio",
+        "gallery-wall",
+        "documentation-desk",
+        "nonprofit-story",
+        "wellness-retreat",
+        "maker-workbench",
+        "insight-dashboard"
+      ]
+    }
+  ],
+  "defaultBlocks": [],
+  "emptyPageDefault": true
+}

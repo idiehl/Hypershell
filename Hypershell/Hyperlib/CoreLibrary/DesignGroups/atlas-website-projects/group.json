@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "atlas-website-projects",
+  "title": "Atlas \u00B7 Project Lab",
+  "description": "Project cards with source and launch links, status labels and copyable build commands.",
+  "category": "Atlas website",
+  "sourceTemplateId": "atlas.website.v1"
+}

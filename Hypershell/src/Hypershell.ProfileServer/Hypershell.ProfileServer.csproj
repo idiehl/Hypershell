@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Hypershell.ProfileServer</AssemblyName>
+    <RootNamespace>Hypershell.ProfileServer</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hypershell.ProfileProtocol\Hypershell.ProfileProtocol.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Keep cloud metadata in the single-instance server's durable volume. -->
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.11" />
+    <!-- Parse and fingerprint uploaded OpenSSH/PEM credentials without
+         invoking a shell or exposing key material to process arguments. -->
+    <PackageReference Include="SSH.NET" Version="2026.0.0" />
+  </ItemGroup>
+</Project>

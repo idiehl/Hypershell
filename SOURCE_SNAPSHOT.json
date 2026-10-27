@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-10-27T03:20:37.4421716Z",
+  "purpose": "Development source snapshot for access from another computer",
+  "includesGitHistory": false,
+  "sources": [
+    {
+      "statusEntryCount": 127,
+      "includesUncommittedChanges": true,
+      "sourceKind": "working-tree-snapshot",
+      "baseCommit": "d1ca475ffc5f9c25919a736190e387f25cfd2029",
+      "directory": "Hypershell"
+    },
+    {
+      "statusEntryCount": 337,
+      "includesUncommittedChanges": true,
+      "sourceKind": "working-tree-snapshot",
+      "baseCommit": "eeb9472005b21433e2e2214185410e3ff6102f68",
+      "directory": "HyperpageStudio"
+    },
+    {
+      "statusEntryCount": null,
+      "includesUncommittedChanges": null,
+      "sourceKind": "source-directory-snapshot",
+      "baseCommit": null,
+      "directory": "Meridian"
+    }
+  ],
+  "sourceFileCount": 5809,
+  "sourceBytes": 361392060,
+  "exclusionRules": {
+    "filesystemLinks": "Excluded; symlinks and junctions are not followed",
+    "anyDirectoryName": [
+      ".git",
+      ".hypershell",
+      ".agents",
+      "bin",
+      "obj",
+      "node_modules",
+      "output",
+      "artifacts",
+      "dist",
+      ".cache",
+      ".test-data",
+      "test-results",
+      "TestResults",
+      "playwright-report",
+      ".hyperlib",
+      ".visual-page",
+      ".vs",
+      ".idea",
+      ".vscode",
+      "tmp",
+      ".codex-test",
+      "release",
+      "releases",
+      "installer-output",
+      "__pycache__"
+    ],
+    "Meridian": [
+      "content/",
+      "examples/visual-authoring/qa/",
+      "examples/visual-authoring/qa-expanded/",
+      "examples/visual-authoring/baseline-v1/"
+    ],
+    "anyFileName": [
+      ".git",
+      ".env",
+      ".env.* (except .env.example)",
+      "secrets.json",
+      "appsettings.Local.json",
+      "Thumbs.db",
+      "Desktop.ini",
+      ".DS_Store",
+      "store.lock",
+      "write.lock"
+    ],
+    "HypershellAndHyperpageStudio": [
+      "pages/",
+      "Hyperlib/Content/",
+      "Hyperlib/Library/",
+      "Hyperlib/Works/",
+      "Hyperlib/app/",
+      "Hyperlib/Media/ except base-templates/, forest-detail.svg, sample-motion.webm, sample-tone.wav, waves.svg, woodland.svg"
+    ],
+    "anyFileExtension": [
+      ".pfx",
+      ".p12",
+      ".pem",
+      ".key",
+      ".cer",
+      ".crt",
+      ".db",
+      ".sqlite",
+      ".sqlite3",
+      ".log",
+      ".dmp",
+      ".tmp",
+      ".bak",
+      ".cache",
+      ".nupkg",
+      ".snupkg",
+      ".pyc",
+      ".user",
+      ".suo"
+    ]
+  },
+  "originalSourceBytes": 361707808,
+  "textNormalization": "Git applies each component’s existing .gitattributes. SOURCE_FILES.sha256 describes canonical Git blobs and ZIP entries."
+}

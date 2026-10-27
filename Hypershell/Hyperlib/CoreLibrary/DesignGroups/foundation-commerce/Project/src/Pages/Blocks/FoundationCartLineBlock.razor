@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-cart-line">
+<div class="cart-line"><span class="product-art small" aria-hidden="true">✧</span><div><h3>@Context.Text("title")</h3><small>$24 per item</small></div><label>Quantity<input type="number" min="1" max="99" @bind="quantity" /></label><strong>@((Math.Clamp(quantity,1,99)*24).ToString("C2",CultureInfo.GetCultureInfo("en-US")))</strong></div>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private int quantity=1;
+}

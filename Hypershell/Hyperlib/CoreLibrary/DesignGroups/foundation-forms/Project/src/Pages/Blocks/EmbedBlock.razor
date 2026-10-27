@@ -1,0 +1,29 @@
+@using HyperLib.Core
+@inject NavigationManager Navigation
+<figure class="hl-embed">
+    <h2 data-field="title">@Context.Text("title", "Embedded resource")</h2>
+    @if (SafeAddress is { } address)
+    {
+        @if (_loaded) { <iframe title="@Context.Text("title", "Embedded resource")" src="@address.AbsoluteUri" sandbox="allow-scripts allow-forms allow-presentation" referrerpolicy="no-referrer" loading="lazy"></iframe> }
+        else { <div class="hl-embed-preview"><span class="hl-kicker">External resource</span><p>@address.Host</p><button class="hl-button" type="button" @onclick="() => _loaded = true">Load embedded content</button></div> }
+        <p class="hl-note"><a href="@address.AbsoluteUri" target="_blank" rel="noopener noreferrer">Open @address.Host ↗</a> · Some sites restrict embedding.</p>
+    }
+    else { <p class="hl-note">Choose an external HTTPS or HTTP address to embed a resource.</p> }
+    <figcaption data-field="caption">@Context.Text("caption")</figcaption>
+</figure>
+@code {
+    [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+    private bool _loaded;
+    private string _previousUrl = "";
+    protected override void OnParametersSet() { var url = Context.Text("url"); if (url != _previousUrl) { _loaded = false; _previousUrl = url; } }
+    private Uri? SafeAddress
+    {
+        get
+        {
+            var url = Context.Text("url");
+            if (!TemplateValidator.IsSafeUrl(url, allowRelative: false) || !Uri.TryCreate(url, UriKind.Absolute, out var address) || address.IsLoopback) return null;
+            var host = new Uri(Navigation.BaseUri);
+            return address.Scheme == host.Scheme && address.Host == host.Host && address.Port == host.Port ? null : address;
+        }
+    }
+}

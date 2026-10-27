@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-site-footer">
+<footer><div class="parallel"><div><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></div><nav aria-label="Footer"><ul>@foreach(var row in Rows){<li><a href="@Context.Text("url")">@Cell(row,0)</a></li>}</ul></nav></div><hr /><small>Made with care · @DateTime.UtcNow.Year</small></footer>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

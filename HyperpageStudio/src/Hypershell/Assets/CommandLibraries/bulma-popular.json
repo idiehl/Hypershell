@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "bulma-popular",
+  "displayName": "Bulma",
+  "description": "Curated Bulma starter recipes for the CSS Command Builder. The dependency is referenced, not bundled.",
+  "language": "CSS",
+  "category": "Popular libraries",
+  "kind": "Framework",
+  "canonicalName": "Bulma",
+  "ecosystem": "npm / Web",
+  "targetVersion": "1.0.4",
+  "sourceVersion": "1.0.4 documentation · curated 2026-08-17",
+  "sourceUrl": "https://bulma.io/documentation/",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Editor/build-tool content: include Bulma CSS or compile its Sass modules in the target project; Hypershell does not install it.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "css",
+    "popular library",
+    "bulma",
+    "css framework",
+    "components",
+    "sass",
+    "responsive"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/bulma-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/bulma-popular.guides.json"
+  ],
+  "legacyIds": []
+}

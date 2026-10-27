@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "htmx-popular",
+  "displayName": "htmx",
+  "description": "Curated htmx starter recipes for the HTML Command Builder. The dependency is referenced, not bundled.",
+  "language": "HTML",
+  "category": "Popular libraries",
+  "kind": "Framework",
+  "canonicalName": "htmx",
+  "ecosystem": "Web",
+  "targetVersion": "2.0.10",
+  "sourceVersion": "2.0.10 documentation · curated 2026-08-17",
+  "sourceUrl": "https://htmx.org/docs/",
+  "license": "0BSD",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Editor-only markup: include htmx 2 in the target page and ensure the server returns the expected HTML fragments.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "html",
+    "popular library",
+    "htmx.org",
+    "hypermedia",
+    "ajax",
+    "html fragments",
+    "server rendered"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/htmx-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/htmx-popular.guides.json"
+  ],
+  "legacyIds": []
+}

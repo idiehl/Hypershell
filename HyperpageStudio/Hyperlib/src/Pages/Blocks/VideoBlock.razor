@@ -1,0 +1,2 @@
+<figure><video controls preload="metadata" playsinline src="@Context.Text("src")" style="width:100%;max-height:500px;border-radius:12px">Your browser cannot play this video.</video><figcaption data-field="caption">@Context.Text("caption")</figcaption></figure>
+@code { [Parameter, EditorRequired] public BlockContext Context { get; set; } = new(); }

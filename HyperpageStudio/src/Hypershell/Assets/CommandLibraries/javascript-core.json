@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "javascript-core",
+  "displayName": "JavaScript Core",
+  "description": "ECMAScript syntax and language-defined built-in objects without browser or Node.js platform APIs.",
+  "language": "JavaScript",
+  "category": "Language core",
+  "kind": "Core",
+  "canonicalName": "ECMAScript Language Core",
+  "ecosystem": "ECMAScript",
+  "targetVersion": "ECMAScript 2024",
+  "sourceVersion": "ECMAScript 2024 declarations from TypeScript 5.9.3 · 68 pinned declaration files",
+  "sourceUrl": "https://tc39.es/ecma262/",
+  "license": "Ecma International",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Runs through the matching installed Hypershell terminal adapter.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "javascript",
+    "ecmascript",
+    "core",
+    "built-ins"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 1280,
+  "declaredIndexedCount": 1239,
+  "declaredGuidedCount": 0,
+  "declaredVerifiedCount": 41,
+  "entryFiles": [
+    "entries/javascript-core.entries.json"
+  ],
+  "declaredGuideCount": 41,
+  "guideFiles": [
+    "guides/javascript-core.guides.json"
+  ],
+  "legacyIds": [
+    "javascript-essentials"
+  ]
+}

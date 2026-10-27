@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 1,
+  "templateId": "foundation-structure",
+  "title": "Structure essentials",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Main content",
+      "allowedBlocks": []
+    }
+  ],
+  "blocks": [
+    {
+      "id": "chapter-cover",
+      "title": "Chapter cover",
+      "component": "FoundationChapterCoverBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Chapter cover",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A spacious opening page with a chapter marker and introduction.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A new perspective",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-CHAPTER-COVER",
+      "category": "Structure",
+      "description": "A spacious opening page with a chapter marker and introduction.",
+      "sourceTemplateId": "foundation-structure",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "split-introduction",
+      "title": "Split introduction",
+      "component": "FoundationSplitIntroductionBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Split introduction",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Balance a large heading against supporting copy and a single action.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-SPLIT-INTRODUCTION",
+      "category": "Structure",
+      "description": "Balance a large heading against supporting copy and a single action.",
+      "sourceTemplateId": "foundation-structure",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "three-column-features",
+      "title": "Three-column features",
+      "component": "FoundationThreeColumnFeaturesBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Three-column features",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A responsive trio of related features or benefits.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Explore|Find a useful starting point\nAdapt|Shape the details around your needs\nShare|Publish a coherent result",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-THREE-COLUMN-FEATURES",
+      "category": "Structure",
+      "description": "A responsive trio of related features or benefits.",
+      "sourceTemplateId": "foundation-structure",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "aside-note",
+      "title": "Editorial aside",
+      "component": "FoundationAsideNoteBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Editorial aside",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A secondary note with a clear label and quieter typography.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-ASIDE-NOTE",
+      "category": "Structure",
+      "description": "A secondary note with a clear label and quieter typography.",
+      "sourceTemplateId": "foundation-structure",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "section-heading",
+      "title": "Section heading",
+      "component": "FoundationSectionHeadingBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Section heading",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "An eyebrow, heading, and rule establish a new part of the page.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Section 01",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-SECTION-HEADING",
+      "category": "Structure",
+      "description": "An eyebrow, heading, and rule establish a new part of the page.",
+      "sourceTemplateId": "foundation-structure",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "profile-card",
+      "title": "Profile card",
+      "component": "FoundationProfileCardBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Profile card",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "An identity panel with a short biography and links.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Portfolio\nJournal\nContact",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-PROFILE-CARD",
+      "category": "Structure",
+      "description": "An identity panel with a short biography and links.",
+      "sourceTemplateId": "foundation-structure",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "resource-card",
+      "title": "Resource card",
+      "component": "FoundationResourceCardBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Resource card",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A reference object with type, description, and an external destination.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Guide",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-RESOURCE-CARD",
+      "category": "Structure",
+      "description": "A reference object with type, description, and an external destination.",
+      "sourceTemplateId": "foundation-structure",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "newsletter-panel",
+      "title": "Newsletter panel",
+      "component": "FoundationNewsletterPanelBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Newsletter panel",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "An invitation to follow a project, with a configurable destination.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-NEWSLETTER-PANEL",
+      "category": "Structure",
+      "description": "An invitation to follow a project, with a configurable destination.",
+      "sourceTemplateId": "foundation-structure",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "site-footer",
+      "title": "Multi-column footer",
+      "component": "FoundationSiteFooterBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Multi-column footer",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "An adaptable footer for a small publication or product site.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "About\nArchive\nContact\nAccessibility",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-SITE-FOOTER",
+      "category": "Structure",
+      "description": "An adaptable footer for a small publication or product site.",
+      "sourceTemplateId": "foundation-structure",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "call-to-action",
+      "title": "Call to action",
+      "component": "FoundationCallToActionBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Call to action",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "One focused invitation at the end of a section.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-CALL-TO-ACTION",
+      "category": "Structure",
+      "description": "One focused invitation at the end of a section.",
+      "sourceTemplateId": "foundation-structure",
+      "sourceLibrary": "Hyperlib Foundations"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#376954",
+      "options": []
+    },
+    {
+      "id": "background",
+      "title": "Full page background",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#f5f3ed",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#202b26",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panels",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#ffffff",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#647069",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "system",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "serif",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    },
+    {
+      "id": "variant",
+      "title": "Layout design",
+      "type": "select",
+      "required": false,
+      "defaultValue": "woodland-editorial",
+      "options": [
+        "woodland-editorial",
+        "wave-laboratory",
+        "portfolio-grid",
+        "field-journal",
+        "architecture-studio",
+        "course-notebook",
+        "recipe-kitchen",
+        "event-poster",
+        "travel-atlas",
+        "product-launch",
+        "podcast-studio",
+        "gallery-wall",
+        "documentation-desk",
+        "nonprofit-story",
+        "wellness-retreat",
+        "maker-workbench",
+        "insight-dashboard"
+      ]
+    }
+  ],
+  "defaultBlocks": [],
+  "emptyPageDefault": true
+}

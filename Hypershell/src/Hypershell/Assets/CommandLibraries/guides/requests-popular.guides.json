@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "requests-popular",
+  "guides": [
+    {
+      "entryId": "requests-popular.get-json",
+      "definition": "Requests JSON over HTTP, raises on an error status, and decodes the response body. Requires requests in the selected Python environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "url",
+          "displayName": "URL",
+          "placeholder": "url",
+          "description": "Request URL expression.",
+          "typeName": "Python string",
+          "defaultValue": "\"https://api.example.com/status\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "timeout",
+          "displayName": "Timeout seconds",
+          "placeholder": "timeout",
+          "description": "Connection and read timeout in seconds.",
+          "typeName": "float",
+          "defaultValue": "10",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read an API status",
+          "code": "import requests\n\nresponse = requests.get(\"https://api.example.com/status\", timeout=10)\nresponse.raise_for_status()\ndata = response.json()",
+          "explanation": "An explicit timeout prevents an unbounded wait; raise_for_status keeps HTTP failures out of the success path."
+        }
+      ]
+    },
+    {
+      "entryId": "requests-popular.post-json",
+      "definition": "Serializes a Python value as JSON and validates the response status. Requires requests in the selected Python environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "payload",
+          "displayName": "Payload expression",
+          "placeholder": "payload",
+          "description": "JSON-serializable Python value.",
+          "typeName": "Python expression",
+          "defaultValue": "{\"name\": \"Atlas\"}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "url",
+          "displayName": "URL",
+          "placeholder": "url",
+          "description": "Request URL expression.",
+          "typeName": "Python string",
+          "defaultValue": "\"https://api.example.com/jobs\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "timeout",
+          "displayName": "Timeout seconds",
+          "placeholder": "timeout",
+          "description": "Connection and read timeout in seconds.",
+          "typeName": "float",
+          "defaultValue": "10",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a job",
+          "code": "import requests\n\npayload = {\"name\": \"Atlas\", \"enabled\": True}\nresponse = requests.post(\"https://api.example.com/jobs\", json=payload, timeout=10)\nresponse.raise_for_status()",
+          "explanation": "The json argument handles JSON encoding and the content type; validate any API-specific response contract after the status check."
+        }
+      ]
+    },
+    {
+      "entryId": "requests-popular.session-headers",
+      "definition": "Creates a Requests session with shared headers and uses it for a request. Requires requests in the selected Python environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "headers",
+          "displayName": "Headers",
+          "placeholder": "headers",
+          "description": "Dictionary of headers shared by session requests.",
+          "typeName": "dict",
+          "defaultValue": "{\"Accept\": \"application/json\"}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "url",
+          "displayName": "URL",
+          "placeholder": "url",
+          "description": "Request URL expression.",
+          "typeName": "Python string",
+          "defaultValue": "\"https://api.example.com/status\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "timeout",
+          "displayName": "Timeout seconds",
+          "placeholder": "timeout",
+          "description": "Connection and read timeout in seconds.",
+          "typeName": "float",
+          "defaultValue": "10",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Reuse an API accept header",
+          "code": "import requests\n\nwith requests.Session() as session:\n    session.headers.update({\"Accept\": \"application/json\"})\n    response = session.get(\"https://api.example.com/status\", timeout=10)\n    response.raise_for_status()",
+          "explanation": "A session reuses connection pools and shared configuration; the context manager closes its resources deterministically."
+        }
+      ]
+    }
+  ]
+}

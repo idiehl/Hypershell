@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 1,
+  "templateId": "foundation-forms",
+  "title": "Forms essentials",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Main content",
+      "allowedBlocks": []
+    }
+  ],
+  "blocks": [
+    {
+      "id": "email-signup",
+      "title": "Email signup form",
+      "component": "FoundationEmailSignupBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Email signup form",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "An email field with native validation. Connect your own submission service in the component source.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-EMAIL-SIGNUP",
+      "category": "Forms",
+      "description": "An email field with native validation. Connect your own submission service in the component source.",
+      "sourceTemplateId": "foundation-forms",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "feedback-form",
+      "title": "Feedback form",
+      "component": "FoundationFeedbackFormBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Feedback form",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Collect a category and a detailed message; preview the response locally.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-FEEDBACK-FORM",
+      "category": "Forms",
+      "description": "Collect a category and a detailed message; preview the response locally.",
+      "sourceTemplateId": "foundation-forms",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "rating-input",
+      "title": "Rating input",
+      "component": "FoundationRatingInputBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Rating input",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A keyboard-friendly five-point rating with a local selection readout.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-RATING-INPUT",
+      "category": "Forms",
+      "description": "A keyboard-friendly five-point rating with a local selection readout.",
+      "sourceTemplateId": "foundation-forms",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "appointment-form",
+      "title": "Appointment request",
+      "component": "FoundationAppointmentFormBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Appointment request",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Date, time, and contact fields for a booking flow. Validate locally before connecting a scheduling backend.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-APPOINTMENT-FORM",
+      "category": "Forms",
+      "description": "Date, time, and contact fields for a booking flow. Validate locally before connecting a scheduling backend.",
+      "sourceTemplateId": "foundation-forms",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "address-fields",
+      "title": "Postal address",
+      "component": "FoundationAddressFieldsBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Postal address",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Autofill-aware address fields arranged for compact, readable entry.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-ADDRESS-FIELDS",
+      "category": "Forms",
+      "description": "Autofill-aware address fields arranged for compact, readable entry.",
+      "sourceTemplateId": "foundation-forms",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "filter-panel",
+      "title": "Filter panel",
+      "component": "FoundationFilterPanelBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Filter panel",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Native search, checkbox, and range controls for a browse sidebar.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Books\nObjects\nDigital editions",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-FILTER-PANEL",
+      "category": "Forms",
+      "description": "Native search, checkbox, and range controls for a browse sidebar.",
+      "sourceTemplateId": "foundation-forms",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "file-picker",
+      "title": "File picker",
+      "component": "FoundationFilePickerBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "File picker",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A native local file selector. Files stay on the device until your application supplies upload handling.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-FILE-PICKER",
+      "category": "Forms",
+      "description": "A native local file selector. Files stay on the device until your application supplies upload handling.",
+      "sourceTemplateId": "foundation-forms",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "preferences",
+      "title": "Preference controls",
+      "component": "FoundationPreferencesBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Preference controls",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A compact set of accessible switches, select fields, and grouped choices.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-PREFERENCES",
+      "category": "Forms",
+      "description": "A compact set of accessible switches, select fields, and grouped choices.",
+      "sourceTemplateId": "foundation-forms",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "poll",
+      "title": "Single-choice poll",
+      "component": "FoundationPollBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Single-choice poll",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "An accessible local vote preview. Connect a backend to persist or aggregate responses.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "The natural world\nDesign systems\nAncient history",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-POLL",
+      "category": "Forms",
+      "description": "An accessible local vote preview. Connect a backend to persist or aggregate responses.",
+      "sourceTemplateId": "foundation-forms",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "segmented-control",
+      "title": "Segmented control",
+      "component": "FoundationSegmentedControlBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Segmented control",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Switch between a small number of local views with clear pressed states.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Day\nWeek\nMonth",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-SEGMENTED-CONTROL",
+      "category": "Forms",
+      "description": "Switch between a small number of local views with clear pressed states.",
+      "sourceTemplateId": "foundation-forms",
+      "sourceLibrary": "Hyperlib Foundations"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#376954",
+      "options": []
+    },
+    {
+      "id": "background",
+      "title": "Full page background",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#f5f3ed",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#202b26",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panels",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#ffffff",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#647069",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "system",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "serif",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    },
+    {
+      "id": "variant",
+      "title": "Layout design",
+      "type": "select",
+      "required": false,
+      "defaultValue": "woodland-editorial",
+      "options": [
+        "woodland-editorial",
+        "wave-laboratory",
+        "portfolio-grid",
+        "field-journal",
+        "architecture-studio",
+        "course-notebook",
+        "recipe-kitchen",
+        "event-poster",
+        "travel-atlas",
+        "product-launch",
+        "podcast-studio",
+        "gallery-wall",
+        "documentation-desk",
+        "nonprofit-story",
+        "wellness-retreat",
+        "maker-workbench",
+        "insight-dashboard"
+      ]
+    }
+  ],
+  "defaultBlocks": [],
+  "emptyPageDefault": true
+}

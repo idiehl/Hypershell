@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hypershell.dev/schemas/profile-session-v1.json",
+  "title": "Hypershell profile session protocol v1",
+  "oneOf": [
+    { "$ref": "#/$defs/signInRequest" },
+    { "$ref": "#/$defs/sessionResponse" }
+  ],
+  "$defs": {
+    "signInRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protocolVersion", "accountId", "accessKey"],
+      "properties": {
+        "protocolVersion": { "const": 1 },
+        "accountId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,63}$"
+        },
+        "accessKey": {
+          "type": "string",
+          "pattern": "^hpk_[A-Za-z0-9_-]{43}$"
+        }
+      }
+    },
+    "sessionResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocolVersion",
+        "accountId",
+        "accountDisplayName",
+        "accessToken",
+        "expiresAtUtc"
+      ],
+      "properties": {
+        "protocolVersion": { "const": 1 },
+        "accountId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,63}$"
+        },
+        "accountDisplayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "accessToken": {
+          "type": "string",
+          "pattern": "^hps_[A-Za-z0-9_-]{43}$"
+        },
+        "expiresAtUtc": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

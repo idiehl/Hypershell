@@ -1,0 +1,18 @@
+@* Source: atlas.archive.element.figure.v1 (Atlas Archive). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-13951a04d953" data-vp-id="13951a04d953b36a3bdda8cef6cf3b55">
+    <figure class="vp-6fe13a483a6e" data-vp-id="6fe13a483a6e243ef524b3986cc0de7b">
+        <img class="vp-d552b5caa6c4" data-vp-id="d552b5caa6c42e88566338d60b096644" loading="lazy" alt="@(Context.Text("alt-2"))" src="@(Asset(Context.Text("src-2")))" />
+        <figcaption class="vp-74cf9f665bd2" data-field="text-3" data-vp-id="74cf9f665bd2f545b707c091b837e54d">
+            @(Context.Text("text-3"))
+        </figcaption>
+    </figure>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

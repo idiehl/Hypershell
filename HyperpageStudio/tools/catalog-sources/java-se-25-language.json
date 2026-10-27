@@ -1,0 +1,1100 @@
+{
+  "schemaVersion": 1,
+  "sourceVersion": "Java Language Specification SE 25 lexical inventory",
+  "sourceUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html",
+  "sourceSha256": "9a835319864be87f7c62df04a2e1a937291d18b3aa10b25fface0751efd6bd59",
+  "license": "Oracle documentation terms",
+  "entryCount": 109,
+  "entries": [
+    {
+      "id": "java.core.keyword.6e82e7319b36",
+      "category": "Contextual Keywords",
+      "name": "exports",
+      "displayName": "exports",
+      "symbolKind": "Keyword",
+      "signature": "exports",
+      "description": "exports is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.85172cbb0329",
+      "category": "Contextual Keywords",
+      "name": "module",
+      "displayName": "module",
+      "symbolKind": "Keyword",
+      "signature": "module",
+      "description": "module is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.bae4163e4949",
+      "category": "Contextual Keywords",
+      "name": "non-sealed",
+      "displayName": "non-sealed",
+      "symbolKind": "Keyword",
+      "signature": "non-sealed",
+      "description": "non-sealed is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.2783c50c61c1",
+      "category": "Contextual Keywords",
+      "name": "open",
+      "displayName": "open",
+      "symbolKind": "Keyword",
+      "signature": "open",
+      "description": "open is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.2a34f542b16a",
+      "category": "Contextual Keywords",
+      "name": "opens",
+      "displayName": "opens",
+      "symbolKind": "Keyword",
+      "signature": "opens",
+      "description": "opens is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.a5bc38591809",
+      "category": "Contextual Keywords",
+      "name": "permits",
+      "displayName": "permits",
+      "symbolKind": "Keyword",
+      "signature": "permits",
+      "description": "permits is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.cca3ff3a89fe",
+      "category": "Contextual Keywords",
+      "name": "provides",
+      "displayName": "provides",
+      "symbolKind": "Keyword",
+      "signature": "provides",
+      "description": "provides is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.c5ed1d7714b7",
+      "category": "Contextual Keywords",
+      "name": "record",
+      "displayName": "record",
+      "symbolKind": "Keyword",
+      "signature": "record",
+      "description": "record is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.37191a67fed3",
+      "category": "Contextual Keywords",
+      "name": "requires",
+      "displayName": "requires",
+      "symbolKind": "Keyword",
+      "signature": "requires",
+      "description": "requires is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.810cf8dfb82d",
+      "category": "Contextual Keywords",
+      "name": "sealed",
+      "displayName": "sealed",
+      "symbolKind": "Keyword",
+      "signature": "sealed",
+      "description": "sealed is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.7f46ca5d5edd",
+      "category": "Contextual Keywords",
+      "name": "to",
+      "displayName": "to",
+      "symbolKind": "Keyword",
+      "signature": "to",
+      "description": "to is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.a88326f7a756",
+      "category": "Contextual Keywords",
+      "name": "transitive",
+      "displayName": "transitive",
+      "symbolKind": "Keyword",
+      "signature": "transitive",
+      "description": "transitive is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.d0722f27453e",
+      "category": "Contextual Keywords",
+      "name": "uses",
+      "displayName": "uses",
+      "symbolKind": "Keyword",
+      "signature": "uses",
+      "description": "uses is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.88aa390f263e",
+      "category": "Contextual Keywords",
+      "name": "var",
+      "displayName": "var",
+      "symbolKind": "Keyword",
+      "signature": "var",
+      "description": "var is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.20b8b73e9b32",
+      "category": "Contextual Keywords",
+      "name": "when",
+      "displayName": "when",
+      "symbolKind": "Keyword",
+      "signature": "when",
+      "description": "when is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.d5b04e608fc5",
+      "category": "Contextual Keywords",
+      "name": "with",
+      "displayName": "with",
+      "symbolKind": "Keyword",
+      "signature": "with",
+      "description": "with is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.79a6b359fa2c",
+      "category": "Contextual Keywords",
+      "name": "yield",
+      "displayName": "yield",
+      "symbolKind": "Keyword",
+      "signature": "yield",
+      "description": "yield is a Java SE 25 contextual keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.literal.c4fa12aa9691",
+      "category": "Literals",
+      "name": "false",
+      "displayName": "false",
+      "symbolKind": "Literal",
+      "signature": "false",
+      "description": "false is a Java SE 25 literal.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.10"
+    },
+    {
+      "id": "java.core.literal.18cec92af4f0",
+      "category": "Literals",
+      "name": "null",
+      "displayName": "null",
+      "symbolKind": "Literal",
+      "signature": "null",
+      "description": "null is a Java SE 25 literal.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.10"
+    },
+    {
+      "id": "java.core.literal.28bd908feb31",
+      "category": "Literals",
+      "name": "true",
+      "displayName": "true",
+      "symbolKind": "Literal",
+      "signature": "true",
+      "description": "true is a Java SE 25 literal.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.10"
+    },
+    {
+      "id": "java.core.operator.7d20f327a681",
+      "category": "Operators",
+      "name": "-",
+      "displayName": "-",
+      "symbolKind": "Operator",
+      "signature": "-",
+      "description": "- is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.6c23018f1401",
+      "category": "Operators",
+      "name": "--",
+      "displayName": "--",
+      "symbolKind": "Operator",
+      "signature": "--",
+      "description": "-- is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.7cf890bedd78",
+      "category": "Operators",
+      "name": "-=",
+      "displayName": "-=",
+      "symbolKind": "Operator",
+      "signature": "-=",
+      "description": "-= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.50129ab0e1b1",
+      "category": "Operators",
+      "name": "->",
+      "displayName": "->",
+      "symbolKind": "Operator",
+      "signature": "->",
+      "description": "-> is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.35179850efdd",
+      "category": "Operators",
+      "name": ":",
+      "displayName": ":",
+      "symbolKind": "Operator",
+      "signature": ":",
+      "description": ": is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.db874e2373b6",
+      "category": "Operators",
+      "name": "!",
+      "displayName": "!",
+      "symbolKind": "Operator",
+      "signature": "!",
+      "description": "! is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.9877e7230a5d",
+      "category": "Operators",
+      "name": "!=",
+      "displayName": "!=",
+      "symbolKind": "Operator",
+      "signature": "!=",
+      "description": "!= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.01a2e509a2e1",
+      "category": "Operators",
+      "name": "?",
+      "displayName": "?",
+      "symbolKind": "Operator",
+      "signature": "?",
+      "description": "? is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.dfc9818aea97",
+      "category": "Operators",
+      "name": "*",
+      "displayName": "*",
+      "symbolKind": "Operator",
+      "signature": "*",
+      "description": "* is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.9d85c9144b39",
+      "category": "Operators",
+      "name": "*=",
+      "displayName": "*=",
+      "symbolKind": "Operator",
+      "signature": "*=",
+      "description": "*= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.abe853507c54",
+      "category": "Operators",
+      "name": "/",
+      "displayName": "/",
+      "symbolKind": "Operator",
+      "signature": "/",
+      "description": "/ is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.cfba904c3bd7",
+      "category": "Operators",
+      "name": "/=",
+      "displayName": "/=",
+      "symbolKind": "Operator",
+      "signature": "/=",
+      "description": "/= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.303c6a2b04b2",
+      "category": "Operators",
+      "name": "&",
+      "displayName": "&",
+      "symbolKind": "Operator",
+      "signature": "&",
+      "description": "& is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.2366fd6507e8",
+      "category": "Operators",
+      "name": "&&",
+      "displayName": "&&",
+      "symbolKind": "Operator",
+      "signature": "&&",
+      "description": "&& is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.585538facd73",
+      "category": "Operators",
+      "name": "&=",
+      "displayName": "&=",
+      "symbolKind": "Operator",
+      "signature": "&=",
+      "description": "&= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.84f17d2a590f",
+      "category": "Operators",
+      "name": "%",
+      "displayName": "%",
+      "symbolKind": "Operator",
+      "signature": "%",
+      "description": "% is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.5adc30c93766",
+      "category": "Operators",
+      "name": "%=",
+      "displayName": "%=",
+      "symbolKind": "Operator",
+      "signature": "%=",
+      "description": "%= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.ceb4f99a9763",
+      "category": "Operators",
+      "name": "^",
+      "displayName": "^",
+      "symbolKind": "Operator",
+      "signature": "^",
+      "description": "^ is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.bb54f7d17349",
+      "category": "Operators",
+      "name": "^=",
+      "displayName": "^=",
+      "symbolKind": "Operator",
+      "signature": "^=",
+      "description": "^= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.380e85e36057",
+      "category": "Operators",
+      "name": "+",
+      "displayName": "+",
+      "symbolKind": "Operator",
+      "signature": "+",
+      "description": "+ is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.6c2b3a6fc9c8",
+      "category": "Operators",
+      "name": "++",
+      "displayName": "++",
+      "symbolKind": "Operator",
+      "signature": "++",
+      "description": "++ is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.98ee66622dc6",
+      "category": "Operators",
+      "name": "+=",
+      "displayName": "+=",
+      "symbolKind": "Operator",
+      "signature": "+=",
+      "description": "+= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.24b01f83430a",
+      "category": "Operators",
+      "name": "<",
+      "displayName": "<",
+      "symbolKind": "Operator",
+      "signature": "<",
+      "description": "< is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.974283bb4480",
+      "category": "Operators",
+      "name": "<<",
+      "displayName": "<<",
+      "symbolKind": "Operator",
+      "signature": "<<",
+      "description": "<< is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.98efe69df469",
+      "category": "Operators",
+      "name": "<<=",
+      "displayName": "<<=",
+      "symbolKind": "Operator",
+      "signature": "<<=",
+      "description": "<<= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.702bb10f4076",
+      "category": "Operators",
+      "name": "<=",
+      "displayName": "<=",
+      "symbolKind": "Operator",
+      "signature": "<=",
+      "description": "<= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.5f945e5a4c88",
+      "category": "Operators",
+      "name": "=",
+      "displayName": "=",
+      "symbolKind": "Operator",
+      "signature": "=",
+      "description": "= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.463d98b43d07",
+      "category": "Operators",
+      "name": "==",
+      "displayName": "==",
+      "symbolKind": "Operator",
+      "signature": "==",
+      "description": "== is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.ad3c18f8c0a4",
+      "category": "Operators",
+      "name": ">",
+      "displayName": ">",
+      "symbolKind": "Operator",
+      "signature": ">",
+      "description": "> is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.2b87409accd2",
+      "category": "Operators",
+      "name": ">=",
+      "displayName": ">=",
+      "symbolKind": "Operator",
+      "signature": ">=",
+      "description": ">= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.d32871e9421d",
+      "category": "Operators",
+      "name": ">>",
+      "displayName": ">>",
+      "symbolKind": "Operator",
+      "signature": ">>",
+      "description": ">> is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.817166490ecc",
+      "category": "Operators",
+      "name": ">>=",
+      "displayName": ">>=",
+      "symbolKind": "Operator",
+      "signature": ">>=",
+      "description": ">>= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.332f869933b8",
+      "category": "Operators",
+      "name": ">>>",
+      "displayName": ">>>",
+      "symbolKind": "Operator",
+      "signature": ">>>",
+      "description": ">>> is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.8d28154f02c2",
+      "category": "Operators",
+      "name": ">>>=",
+      "displayName": ">>>=",
+      "symbolKind": "Operator",
+      "signature": ">>>=",
+      "description": ">>>= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.56ee6afb5403",
+      "category": "Operators",
+      "name": "|",
+      "displayName": "|",
+      "symbolKind": "Operator",
+      "signature": "|",
+      "description": "| is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.7103989afbc8",
+      "category": "Operators",
+      "name": "|=",
+      "displayName": "|=",
+      "symbolKind": "Operator",
+      "signature": "|=",
+      "description": "|= is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.389477104279",
+      "category": "Operators",
+      "name": "||",
+      "displayName": "||",
+      "symbolKind": "Operator",
+      "signature": "||",
+      "description": "|| is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.operator.7c544219c912",
+      "category": "Operators",
+      "name": "~",
+      "displayName": "~",
+      "symbolKind": "Operator",
+      "signature": "~",
+      "description": "~ is a Java SE 25 operator.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.12"
+    },
+    {
+      "id": "java.core.keyword.f5b6facf00ad",
+      "category": "Reserved Keywords",
+      "name": "_",
+      "displayName": "_",
+      "symbolKind": "Keyword",
+      "signature": "_",
+      "description": "_ is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.ac96b8d5ec4b",
+      "category": "Reserved Keywords",
+      "name": "abstract",
+      "displayName": "abstract",
+      "symbolKind": "Keyword",
+      "signature": "abstract",
+      "description": "abstract is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.a4af32f146d0",
+      "category": "Reserved Keywords",
+      "name": "assert",
+      "displayName": "assert",
+      "symbolKind": "Keyword",
+      "signature": "assert",
+      "description": "assert is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.333ad8d1c231",
+      "category": "Reserved Keywords",
+      "name": "boolean",
+      "displayName": "boolean",
+      "symbolKind": "Keyword",
+      "signature": "boolean",
+      "description": "boolean is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.9ab4a7cb0ab7",
+      "category": "Reserved Keywords",
+      "name": "break",
+      "displayName": "break",
+      "symbolKind": "Keyword",
+      "signature": "break",
+      "description": "break is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.3185121c3cda",
+      "category": "Reserved Keywords",
+      "name": "byte",
+      "displayName": "byte",
+      "symbolKind": "Keyword",
+      "signature": "byte",
+      "description": "byte is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.5b2e5f6287db",
+      "category": "Reserved Keywords",
+      "name": "case",
+      "displayName": "case",
+      "symbolKind": "Keyword",
+      "signature": "case",
+      "description": "case is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.7f69bde80fc2",
+      "category": "Reserved Keywords",
+      "name": "catch",
+      "displayName": "catch",
+      "symbolKind": "Keyword",
+      "signature": "catch",
+      "description": "catch is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.07156ce1f47c",
+      "category": "Reserved Keywords",
+      "name": "char",
+      "displayName": "char",
+      "symbolKind": "Keyword",
+      "signature": "char",
+      "description": "char is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.01c20bca09cc",
+      "category": "Reserved Keywords",
+      "name": "class",
+      "displayName": "class",
+      "symbolKind": "Keyword",
+      "signature": "class",
+      "description": "class is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.c80fef5188a6",
+      "category": "Reserved Keywords",
+      "name": "const",
+      "displayName": "const",
+      "symbolKind": "Keyword",
+      "signature": "const",
+      "description": "const is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.39910a6ee283",
+      "category": "Reserved Keywords",
+      "name": "continue",
+      "displayName": "continue",
+      "symbolKind": "Keyword",
+      "signature": "continue",
+      "description": "continue is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.1bce660f8475",
+      "category": "Reserved Keywords",
+      "name": "default",
+      "displayName": "default",
+      "symbolKind": "Keyword",
+      "signature": "default",
+      "description": "default is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.9178cb321fd3",
+      "category": "Reserved Keywords",
+      "name": "do",
+      "displayName": "do",
+      "symbolKind": "Keyword",
+      "signature": "do",
+      "description": "do is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.27806985ce51",
+      "category": "Reserved Keywords",
+      "name": "double",
+      "displayName": "double",
+      "symbolKind": "Keyword",
+      "signature": "double",
+      "description": "double is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.0df50a4fe097",
+      "category": "Reserved Keywords",
+      "name": "else",
+      "displayName": "else",
+      "symbolKind": "Keyword",
+      "signature": "else",
+      "description": "else is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.13f786da37fc",
+      "category": "Reserved Keywords",
+      "name": "enum",
+      "displayName": "enum",
+      "symbolKind": "Keyword",
+      "signature": "enum",
+      "description": "enum is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.d72eccd7040c",
+      "category": "Reserved Keywords",
+      "name": "extends",
+      "displayName": "extends",
+      "symbolKind": "Keyword",
+      "signature": "extends",
+      "description": "extends is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.3e112602d864",
+      "category": "Reserved Keywords",
+      "name": "final",
+      "displayName": "final",
+      "symbolKind": "Keyword",
+      "signature": "final",
+      "description": "final is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.b9b2e9563a28",
+      "category": "Reserved Keywords",
+      "name": "finally",
+      "displayName": "finally",
+      "symbolKind": "Keyword",
+      "signature": "finally",
+      "description": "finally is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.511e6c2faa42",
+      "category": "Reserved Keywords",
+      "name": "float",
+      "displayName": "float",
+      "symbolKind": "Keyword",
+      "signature": "float",
+      "description": "float is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.c0d6a938380b",
+      "category": "Reserved Keywords",
+      "name": "for",
+      "displayName": "for",
+      "symbolKind": "Keyword",
+      "signature": "for",
+      "description": "for is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.528941315632",
+      "category": "Reserved Keywords",
+      "name": "goto",
+      "displayName": "goto",
+      "symbolKind": "Keyword",
+      "signature": "goto",
+      "description": "goto is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.93f0dce8b042",
+      "category": "Reserved Keywords",
+      "name": "if",
+      "displayName": "if",
+      "symbolKind": "Keyword",
+      "signature": "if",
+      "description": "if is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.d7cbaf3bc6a7",
+      "category": "Reserved Keywords",
+      "name": "implements",
+      "displayName": "implements",
+      "symbolKind": "Keyword",
+      "signature": "implements",
+      "description": "implements is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.60d41b60d1af",
+      "category": "Reserved Keywords",
+      "name": "import",
+      "displayName": "import",
+      "symbolKind": "Keyword",
+      "signature": "import",
+      "description": "import is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.bae2ce64ee3e",
+      "category": "Reserved Keywords",
+      "name": "instanceof",
+      "displayName": "instanceof",
+      "symbolKind": "Keyword",
+      "signature": "instanceof",
+      "description": "instanceof is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.47be970ae1c9",
+      "category": "Reserved Keywords",
+      "name": "int",
+      "displayName": "int",
+      "symbolKind": "Keyword",
+      "signature": "int",
+      "description": "int is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.69442018a40f",
+      "category": "Reserved Keywords",
+      "name": "interface",
+      "displayName": "interface",
+      "symbolKind": "Keyword",
+      "signature": "interface",
+      "description": "interface is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.f4a44b0c833e",
+      "category": "Reserved Keywords",
+      "name": "long",
+      "displayName": "long",
+      "symbolKind": "Keyword",
+      "signature": "long",
+      "description": "long is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.b5200a3f1541",
+      "category": "Reserved Keywords",
+      "name": "native",
+      "displayName": "native",
+      "symbolKind": "Keyword",
+      "signature": "native",
+      "description": "native is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.c71a37432cba",
+      "category": "Reserved Keywords",
+      "name": "new",
+      "displayName": "new",
+      "symbolKind": "Keyword",
+      "signature": "new",
+      "description": "new is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.318a03cc77dd",
+      "category": "Reserved Keywords",
+      "name": "package",
+      "displayName": "package",
+      "symbolKind": "Keyword",
+      "signature": "package",
+      "description": "package is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.8e7f58edf53b",
+      "category": "Reserved Keywords",
+      "name": "private",
+      "displayName": "private",
+      "symbolKind": "Keyword",
+      "signature": "private",
+      "description": "private is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.3664a1016695",
+      "category": "Reserved Keywords",
+      "name": "protected",
+      "displayName": "protected",
+      "symbolKind": "Keyword",
+      "signature": "protected",
+      "description": "protected is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.e35d94b3bf9a",
+      "category": "Reserved Keywords",
+      "name": "public",
+      "displayName": "public",
+      "symbolKind": "Keyword",
+      "signature": "public",
+      "description": "public is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.caa91a911b2f",
+      "category": "Reserved Keywords",
+      "name": "return",
+      "displayName": "return",
+      "symbolKind": "Keyword",
+      "signature": "return",
+      "description": "return is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.909fac8b4ce6",
+      "category": "Reserved Keywords",
+      "name": "short",
+      "displayName": "short",
+      "symbolKind": "Keyword",
+      "signature": "short",
+      "description": "short is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.fc57b2855f8c",
+      "category": "Reserved Keywords",
+      "name": "static",
+      "displayName": "static",
+      "symbolKind": "Keyword",
+      "signature": "static",
+      "description": "static is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.d7240104e8d7",
+      "category": "Reserved Keywords",
+      "name": "strictfp",
+      "displayName": "strictfp",
+      "symbolKind": "Keyword",
+      "signature": "strictfp",
+      "description": "strictfp is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.e2705438c24c",
+      "category": "Reserved Keywords",
+      "name": "super",
+      "displayName": "super",
+      "symbolKind": "Keyword",
+      "signature": "super",
+      "description": "super is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.653a75271cc4",
+      "category": "Reserved Keywords",
+      "name": "switch",
+      "displayName": "switch",
+      "symbolKind": "Keyword",
+      "signature": "switch",
+      "description": "switch is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.fc14883985fd",
+      "category": "Reserved Keywords",
+      "name": "synchronized",
+      "displayName": "synchronized",
+      "symbolKind": "Keyword",
+      "signature": "synchronized",
+      "description": "synchronized is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.067948d081b1",
+      "category": "Reserved Keywords",
+      "name": "this",
+      "displayName": "this",
+      "symbolKind": "Keyword",
+      "signature": "this",
+      "description": "this is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.01e57e0153c3",
+      "category": "Reserved Keywords",
+      "name": "throw",
+      "displayName": "throw",
+      "symbolKind": "Keyword",
+      "signature": "throw",
+      "description": "throw is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.44107f07ee53",
+      "category": "Reserved Keywords",
+      "name": "throws",
+      "displayName": "throws",
+      "symbolKind": "Keyword",
+      "signature": "throws",
+      "description": "throws is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.cc3366b4c75d",
+      "category": "Reserved Keywords",
+      "name": "transient",
+      "displayName": "transient",
+      "symbolKind": "Keyword",
+      "signature": "transient",
+      "description": "transient is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.ecae741c71c9",
+      "category": "Reserved Keywords",
+      "name": "try",
+      "displayName": "try",
+      "symbolKind": "Keyword",
+      "signature": "try",
+      "description": "try is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.6c92cff79caa",
+      "category": "Reserved Keywords",
+      "name": "void",
+      "displayName": "void",
+      "symbolKind": "Keyword",
+      "signature": "void",
+      "description": "void is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.97925be5fff1",
+      "category": "Reserved Keywords",
+      "name": "volatile",
+      "displayName": "volatile",
+      "symbolKind": "Keyword",
+      "signature": "volatile",
+      "description": "volatile is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    },
+    {
+      "id": "java.core.keyword.c29de52a3382",
+      "category": "Reserved Keywords",
+      "name": "while",
+      "displayName": "while",
+      "symbolKind": "Keyword",
+      "signature": "while",
+      "description": "while is a Java SE 25 reserved keyword.",
+      "documentationUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.9"
+    }
+  ]
+}

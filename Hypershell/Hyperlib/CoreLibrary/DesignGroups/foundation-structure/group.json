@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "foundation-structure",
+  "title": "Structure essentials",
+  "description": "Editable structure modules. Native controls and local C# interactions; no third-party service required.",
+  "category": "Structure",
+  "sourceTemplateId": "foundation-structure"
+}

@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "express-popular",
+  "guides": [
+    {
+      "entryId": "express-popular.json-server",
+      "definition": "Creates an Express application with one GET route and starts listening. Requires Express in the active Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "route",
+          "displayName": "Route",
+          "placeholder": "route",
+          "description": "Express route path.",
+          "typeName": "JavaScript string",
+          "defaultValue": "\"/health\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "payload",
+          "displayName": "JSON payload",
+          "placeholder": "payload",
+          "description": "JSON-serializable response value.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "{ status: \"ok\" }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "port",
+          "displayName": "Port",
+          "placeholder": "port",
+          "description": "TCP port passed to app.listen.",
+          "typeName": "number",
+          "defaultValue": "3000",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Expose a health endpoint",
+          "code": "import express from \"express\";\n\nconst app = express();\napp.get(\"/health\", (request, response) => {\n  response.json({ status: \"ok\" });\n});\n\napp.listen(3000, () => console.log(`Listening on port 3000`));",
+          "explanation": "The route handler serializes the value as JSON; production servers should also define centralized error and shutdown behavior."
+        }
+      ]
+    },
+    {
+      "entryId": "express-popular.json-post-route",
+      "definition": "Enables JSON body parsing and validates a required request field. Requires Express in the active Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "route",
+          "displayName": "Route",
+          "placeholder": "route",
+          "description": "Express route path.",
+          "typeName": "JavaScript string",
+          "defaultValue": "\"/items\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fieldName",
+          "displayName": "Required field",
+          "placeholder": "fieldName",
+          "description": "Body property required by the endpoint.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "errorMessage",
+          "displayName": "Error message",
+          "placeholder": "errorMessage",
+          "description": "Client-facing validation message.",
+          "typeName": "JavaScript string",
+          "defaultValue": "\"name is required\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a named item",
+          "code": "app.use(express.json());\n\napp.post(\"/items\", (request, response) => {\n  const { name } = request.body;\n  if (!name) return response.status(400).json({ error: \"name is required\" });\n  return response.status(201).json({ name });\n});",
+          "explanation": "express.json parses matching request bodies before the route; explicit validation avoids treating malformed input as domain data."
+        }
+      ]
+    },
+    {
+      "entryId": "express-popular.error-middleware",
+      "definition": "Adds the four-argument Express error handler after application routes. Requires Express in the active Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "status",
+          "displayName": "Status code",
+          "placeholder": "status",
+          "description": "HTTP status returned for unhandled errors.",
+          "typeName": "number",
+          "defaultValue": "500",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "message",
+          "displayName": "Response message",
+          "placeholder": "message",
+          "description": "Non-sensitive client-facing error text.",
+          "typeName": "JavaScript string",
+          "defaultValue": "\"Internal server error\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Return an internal-server response",
+          "code": "app.use((error, request, response, next) => {\n  console.error(error);\n  if (response.headersSent) return next(error);\n  return response.status(500).json({ error: \"Internal server error\" });\n});",
+          "explanation": "Express recognizes error middleware by its four parameters; delegating after headers were sent lets the default handler close the response correctly."
+        }
+      ]
+    }
+  ]
+}

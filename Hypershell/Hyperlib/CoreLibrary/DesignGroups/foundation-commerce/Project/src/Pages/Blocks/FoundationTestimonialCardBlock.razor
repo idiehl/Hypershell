@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-testimonial-card">
+<figure class="testimonial panel"><div aria-label="5 out of 5 stars">★★★★★</div><blockquote>@Context.Text("text")</blockquote><figcaption><strong>@Context.Text("title")</strong><small>@Cell(Rows.FirstOrDefault() ?? "Reader",0)</small></figcaption></figure>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

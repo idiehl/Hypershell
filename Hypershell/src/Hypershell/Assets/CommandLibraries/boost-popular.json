@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "boost-popular",
+  "displayName": "Boost",
+  "description": "Curated Boost starter recipes for the C++ Command Builder. The dependency is referenced, not bundled.",
+  "language": "C++",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "Boost C++ Libraries",
+  "ecosystem": "C++",
+  "targetVersion": "1.92.0",
+  "sourceVersion": "1.92.0 documentation · curated 2026-08-17",
+  "sourceUrl": "https://www.boost.org/latest/libs/libraries.htm",
+  "license": "BSL-1.0",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Project dependency only: configure the required Boost headers and libraries in a C++ project; the isolated snippet runner does not resolve external packages.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "c++",
+    "popular library",
+    "boost",
+    "asio",
+    "algorithm",
+    "program options"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/boost-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/boost-popular.guides.json"
+  ],
+  "legacyIds": []
+}

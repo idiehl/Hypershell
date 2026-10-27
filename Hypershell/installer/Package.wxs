@@ -1,0 +1,35 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="Hypershell Core"
+           Manufacturer="Atlas Universalis"
+           Version="$(var.ProductVersion)"
+           UpgradeCode="9D66E404-62B8-48D0-9D48-347DB3E82AE0"
+           Scope="perMachine"
+           InstallerVersion="500">
+    <SummaryInformation Description="Hypershell Core — workspace and MyNet desktop host" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of Hypershell is already installed." />
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+    <Property Id="WEBVIEW2_MACHINE_VERSION">
+      <RegistrySearch Id="FindMachineWebView2" Root="HKLM" Bitness="always32"
+          Key="SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}"
+          Name="pv" Type="raw" />
+    </Property>
+    <Property Id="WEBVIEW2_USER_VERSION">
+      <RegistrySearch Id="FindUserWebView2" Root="HKCU" Bitness="always32"
+          Key="SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}"
+          Name="pv" Type="raw" />
+    </Property>
+    <Launch Condition="Installed OR (WEBVIEW2_MACHINE_VERSION AND WEBVIEW2_MACHINE_VERSION &lt;&gt; &quot;0.0.0.0&quot;) OR (WEBVIEW2_USER_VERSION AND WEBVIEW2_USER_VERSION &lt;&gt; &quot;0.0.0.0&quot;)"
+        Message="Hypershell requires Microsoft Edge WebView2 Runtime. Install it from https://developer.microsoft.com/microsoft-edge/webview2/ or use Hypershell Complete, which includes the runtime installer." />
+
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="Hypershell" />
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="Hypershell" />
+    </StandardDirectory>
+
+    <Feature Id="MainFeature" Title="Hypershell" Level="1">
+      <ComponentGroupRef Id="PublishedFiles" />
+    </Feature>
+  </Package>
+</Wix>

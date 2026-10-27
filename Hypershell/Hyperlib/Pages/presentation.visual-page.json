@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "projectId": "e62aef212e8d4bd9897ae31d4f50acd6",
+  "pageId": "20140836887844d0b9a929ee5dff9995",
+  "name": "Presentation",
+  "componentName": "WorkPage",
+  "route": "/presentation",
+  "slug": "presentation",
+  "fileType": "RazorPage",
+  "title": "HyperLib",
+  "description": "Studio-owned presentation shell. Author page content in HyperLib.",
+  "revision": "",
+  "generatorVersion": "1.0.0",
+  "updatedAtUtc": "2026-09-29T20:30:34.348641+00:00",
+  "root": {
+    "elementId": "a8cf0cd904324dc6b4b02f72e628f6f6",
+    "descriptorId": "core.page",
+    "name": "Page shell",
+    "text": "",
+    "isLocked": false,
+    "isHidden": false,
+    "attributes": {},
+    "styles": {},
+    "layout": {},
+    "bindings": [],
+    "events": [],
+    "children": []
+  },
+  "state": [],
+  "stylesheetPaths": [],
+  "sourceMappings": [
+    {
+      "elementId": "a8cf0cd904324dc6b4b02f72e628f6f6",
+      "relativePath": "src/Pages/Generated/WorkPage.razor",
+      "startLine": 7,
+      "endLine": 7
+    }
+  ],
+  "diagnostics": [],
+  "generatedFiles": [
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.razor",
+      "sha256": "6dd39c6063a7b567027b779099a025522d3518ef883c9f90e39d92ae4198994b"
+    },
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.razor.css",
+      "sha256": "8347bb5d56c2aa94a3d898161bb6edf52d1347ec2b0034d87d97da7f3477803c"
+    },
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.designer.g.cs",
+      "sha256": "4c9de09601c1d0202d306e34bf6bcd5bbf00b8a665221687593a5f6ffbd925b6"
+    },
+    {
+      "relativePath": "src/Pages/wwwroot/visual-page-theme.css",
+      "sha256": "71ca8fb8f7b69ca52f1fcca99b6fdc21441ae6bf08eb7b2999bb4760db3f635b"
+    }
+  ]
+}

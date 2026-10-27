@@ -1,0 +1,103 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "Avery / Selected Work",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "intro",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "DESIGN / DEVELOPMENT / IDEAS",
+        "title": "Avery / Selected Work",
+        "text": "Selected experiments in digital products, objects, and everyday systems."
+      }
+    },
+    {
+      "id": "project-one",
+      "type": "banner",
+      "region": "main",
+      "values": {
+        "eyebrow": "01 / DIGITAL",
+        "title": "A clearer daily rhythm",
+        "text": "A compact workspace that helps a small team plan together.",
+        "src": "/media/base-templates/portfolio-grid.svg",
+        "alt": "A clearer daily rhythm",
+        "span": "half"
+      }
+    },
+    {
+      "id": "project-two",
+      "type": "banner",
+      "region": "main",
+      "values": {
+        "eyebrow": "02 / PHYSICAL",
+        "title": "Objects with a purpose",
+        "text": "A series of simple forms made to be touched, moved, and used.",
+        "src": "/media/base-templates/portfolio-grid.svg",
+        "alt": "Objects with a purpose",
+        "span": "half"
+      }
+    },
+    {
+      "id": "capabilities",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "WHAT I BRING",
+        "style": "line"
+      }
+    },
+    {
+      "id": "research",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "01 / Notice",
+        "text": "Observe the real problem before drawing a solution.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "design",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "02 / Shape",
+        "text": "Turn a useful insight into a legible experience.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "build",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "03 / Make",
+        "text": "Prototype, test, and keep the useful parts.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "contact",
+      "type": "form",
+      "region": "main",
+      "values": {
+        "title": "Have something in mind?",
+        "description": "Describe a project in this local form preview."
+      }
+    },
+    {
+      "id": "closing",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Selected work / An independent practice"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

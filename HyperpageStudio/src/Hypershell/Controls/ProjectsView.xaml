@@ -1,0 +1,116 @@
+<UserControl x:Class="Hypershell.Controls.ProjectsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Hypershell.Controls"
+             MinWidth="220">
+  <UserControl.Resources>
+    <Style x:Key="ProjectsViewTabStyle" TargetType="{x:Type RadioButton}">
+      <Setter Property="Height" Value="30" />
+      <Setter Property="FontSize" Value="11" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="Foreground" Value="{StaticResource MutedForegroundBrush}" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Cursor" Value="Hand" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type RadioButton}">
+            <Border x:Name="TabSurface" CornerRadius="6"
+                    Background="{TemplateBinding Background}"
+                    BorderThickness="1" BorderBrush="Transparent">
+              <ContentPresenter HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="TabSurface" Property="Background"
+                        Value="{StaticResource AccentHoverBrush}" />
+              </Trigger>
+              <Trigger Property="IsChecked" Value="True">
+                <Setter TargetName="TabSurface" Property="Background"
+                        Value="{StaticResource SecondaryTintBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}" />
+              </Trigger>
+              <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter TargetName="TabSurface" Property="BorderBrush"
+                        Value="{StaticResource AccentBrush}" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Border Margin="10,8,10,0" Padding="2"
+            Background="{StaticResource PanelRaisedBrush}" CornerRadius="8">
+      <UniformGrid Columns="2">
+        <RadioButton x:Name="ProjectsWorkItemsTab"
+                     Content="Projects" Style="{StaticResource ProjectsViewTabStyle}"
+                     IsChecked="{Binding IsProjectsWorkItemsViewActive, Mode=OneWay}"
+                     Command="{Binding ShowProjectsWorkItemsCommand}"
+                     AutomationProperties.Name="Project work items"
+                     ToolTip="Projects and work items" />
+        <RadioButton x:Name="ProjectsRepositoriesTab"
+                     Content="Git repositories" Style="{StaticResource ProjectsViewTabStyle}"
+                     IsChecked="{Binding IsProjectsRepositoriesViewActive, Mode=OneWay}"
+                     Command="{Binding ShowProjectsRepositoriesCommand}"
+                     AutomationProperties.Name="Git repositories"
+                     ToolTip="Browse project repositories and Git changes" />
+      </UniformGrid>
+    </Border>
+    <controls:ProjectWorkItemsView x:Name="ProjectWorkItemsContent" Grid.Row="1"
+        DataContext="{Binding WorkItems}"
+        Visibility="{Binding DataContext.IsProjectsWorkItemsViewActive, RelativeSource={RelativeSource AncestorType={x:Type controls:ProjectsView}}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+    <Grid Grid.Row="1"
+          Visibility="{Binding IsProjectsRepositoriesViewActive, Converter={StaticResource BooleanToVisibilityConverter}}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid Margin="10,8,10,0">
+        <Grid.Style>
+          <Style TargetType="{x:Type Grid}">
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding SourceControl.IsBusy}" Value="True">
+                <Setter Property="IsEnabled" Value="False" />
+              </DataTrigger>
+              <DataTrigger Binding="{Binding FileExplorer.IsBusy}" Value="True">
+                <Setter Property="IsEnabled" Value="False" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Grid.Style>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="2*" />
+          <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="ProjectsRepositoryDevicePicker" Margin="0,0,5,0"
+                  ItemsSource="{Binding FileExplorer.Devices}"
+                  SelectedItem="{Binding FileExplorer.SelectedDevice, Mode=TwoWay}"
+                  AutomationProperties.Name="Repository device" ToolTip="Repository device">
+          <ComboBox.ItemTemplate>
+            <DataTemplate>
+              <TextBlock Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" />
+            </DataTemplate>
+          </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox x:Name="ProjectsRepositoryProjectPicker" Grid.Column="1"
+                  ItemsSource="{Binding FileExplorer.ProjectOptions}"
+                  SelectedItem="{Binding FileExplorer.SelectedProjectOption, Mode=TwoWay}"
+                  AutomationProperties.Name="Repository project" ToolTip="Repository project">
+          <ComboBox.ItemTemplate>
+            <DataTemplate>
+              <TextBlock Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" />
+            </DataTemplate>
+          </ComboBox.ItemTemplate>
+        </ComboBox>
+      </Grid>
+      <controls:SourceControlView x:Name="ProjectRepositoriesContent" Grid.Row="1"
+                                  MinWidth="0" DataContext="{Binding SourceControl}" />
+    </Grid>
+  </Grid>
+</UserControl>

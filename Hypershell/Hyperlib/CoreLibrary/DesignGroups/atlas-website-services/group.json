@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "atlas-website-services",
+  "title": "Atlas \u00B7 Services",
+  "description": "Service cards, an editorial introduction and a clear next action in the Atlas visual language.",
+  "category": "Atlas website",
+  "sourceTemplateId": "atlas.website.v1"
+}

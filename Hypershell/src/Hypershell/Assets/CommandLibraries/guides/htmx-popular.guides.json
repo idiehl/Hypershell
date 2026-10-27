@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "htmx-popular",
+  "guides": [
+    {
+      "entryId": "htmx-popular.load-fragment",
+      "definition": "Adds an htmx button that requests HTML and replaces a target element. Editor-only markup: include htmx 2 in the target page and ensure the server returns the expected HTML fragments.",
+      "parameters": [
+        {
+          "name": "url",
+          "displayName": "Request URL",
+          "placeholder": "url",
+          "description": "Quoted URL that returns an HTML fragment.",
+          "typeName": "HTML attribute",
+          "defaultValue": "\"/status/details\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "targetId",
+          "displayName": "Target id",
+          "placeholder": "targetId",
+          "description": "Element id without # that receives the response.",
+          "typeName": "HTML id",
+          "defaultValue": "statusPanel",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "swapMode",
+          "displayName": "Swap mode",
+          "placeholder": "swapMode",
+          "description": "Quoted htmx swap strategy.",
+          "typeName": "htmx swap",
+          "defaultValue": "\"innerHTML\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "label",
+          "displayName": "Button label",
+          "placeholder": "label",
+          "description": "Visible action text.",
+          "typeName": "HTML text",
+          "defaultValue": "Load details",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load status details",
+          "code": "<button type=\"button\" hx-get=\"/status/details\" hx-target=\"#statusPanel\" hx-swap=\"innerHTML\">\n  Load details\n</button>\n<div id=\"statusPanel\" aria-live=\"polite\"></div>",
+          "explanation": "hx-target identifies the fragment host and aria-live announces server-rendered updates to assistive technology."
+        }
+      ]
+    },
+    {
+      "entryId": "htmx-popular.submit-form",
+      "definition": "Posts an htmx form and replaces a result region with returned HTML. Editor-only markup: include htmx 2 in the target page and ensure the server returns the expected HTML fragments.",
+      "parameters": [
+        {
+          "name": "url",
+          "displayName": "POST URL",
+          "placeholder": "url",
+          "description": "Quoted endpoint that accepts form data and returns HTML.",
+          "typeName": "HTML attribute",
+          "defaultValue": "\"/projects\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "targetId",
+          "displayName": "Target id",
+          "placeholder": "targetId",
+          "description": "Replacement element id without #.",
+          "typeName": "HTML id",
+          "defaultValue": "projectResult",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "inputId",
+          "displayName": "Input id",
+          "placeholder": "inputId",
+          "description": "Unique id paired with the label.",
+          "typeName": "HTML id",
+          "defaultValue": "projectName",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "label",
+          "displayName": "Field label",
+          "placeholder": "label",
+          "description": "Visible form label.",
+          "typeName": "HTML text",
+          "defaultValue": "Project name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "inputName",
+          "displayName": "Input name",
+          "placeholder": "inputName",
+          "description": "Field name sent to the server.",
+          "typeName": "HTML name",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Submit a project name",
+          "code": "<form hx-post=\"/projects\" hx-target=\"#projectResult\" hx-swap=\"outerHTML\">\n  <label for=\"projectName\">Project name</label>\n  <input id=\"projectName\" name=\"name\" required>\n  <button type=\"submit\">Save</button>\n</form>\n<div id=\"projectResult\"></div>",
+          "explanation": "The server response should include the replacement element when outerHTML is used so the target remains available for later updates."
+        }
+      ]
+    },
+    {
+      "entryId": "htmx-popular.poll-status",
+      "definition": "Refreshes an HTML status region at a bounded interval. Editor-only markup: include htmx 2 in the target page and ensure the server returns the expected HTML fragments.",
+      "parameters": [
+        {
+          "name": "url",
+          "displayName": "Status URL",
+          "placeholder": "url",
+          "description": "Quoted endpoint returning a status fragment.",
+          "typeName": "HTML attribute",
+          "defaultValue": "\"/jobs/42/status\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "interval",
+          "displayName": "Interval",
+          "placeholder": "interval",
+          "description": "Polling interval such as 5s or 1m.",
+          "typeName": "htmx interval",
+          "defaultValue": "5s",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "loadingText",
+          "displayName": "Loading text",
+          "placeholder": "loadingText",
+          "description": "Initial content before the first response.",
+          "typeName": "HTML text",
+          "defaultValue": "Loading status…",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Refresh job status every five seconds",
+          "code": "<div hx-get=\"/jobs/42/status\" hx-trigger=\"load, every 5s\" hx-swap=\"innerHTML\" aria-live=\"polite\">\n  Loading status…\n</div>",
+          "explanation": "Polling is appropriate for bounded status updates; stop returning the polling attributes when the server reports a terminal state."
+        }
+      ]
+    }
+  ]
+}

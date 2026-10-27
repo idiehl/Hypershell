@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "fmt-popular",
+  "displayName": "{fmt}",
+  "description": "Curated {fmt} starter recipes for the C++ Command Builder. The dependency is referenced, not bundled.",
+  "language": "C++",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "fmt",
+  "ecosystem": "C++",
+  "targetVersion": "12.2.0",
+  "sourceVersion": "12.2.0 documentation · curated 2026-08-17",
+  "sourceUrl": "https://fmt.dev/latest/index.html",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Project dependency only: link fmt or configure its header-only mode in a C++ project; the isolated snippet runner does not resolve external packages.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "c++",
+    "popular library",
+    "fmt",
+    "format",
+    "print",
+    "unicode",
+    "cpp"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/fmt-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/fmt-popular.guides.json"
+  ],
+  "legacyIds": []
+}

@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 1,
+  "templateId": "atlas-public-archives",
+  "title": "Atlas \u00B7 Archives reader",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Page",
+      "allowedBlocks": [
+        "navigation",
+        "breadcrumbs",
+        "search-tree",
+        "collection-card",
+        "collection-grid",
+        "reader-heading",
+        "reader-workspace",
+        "footer"
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "navigation",
+      "title": "Atlas navigation",
+      "component": "AtlasNavigationBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Brand",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas Universalis",
+          "options": []
+        },
+        {
+          "id": "home",
+          "title": "Home link",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#",
+          "options": []
+        },
+        {
+          "id": "links",
+          "title": "Links \u00B7 label | address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Home|#\nPrinciples|#principles\nServices|#services\nBio|#bio\nProject Lab|#projects\nArchives|#archives",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-NAVIGATION",
+      "category": "Structure \u0026 navigation",
+      "description": "Portable Atlas navigation. Editable content, local behavior and Atlas styling. Source: Atlas.Web/Pages/Shared/_Layout.cshtml:24; site.css:93",
+      "sourceTemplateId": "atlas.website.navigation.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "breadcrumbs",
+      "title": "Atlas breadcrumb trail",
+      "component": "AtlasBreadcrumbsBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "items",
+          "title": "Trail \u00B7 label | address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Archives|#archives\nNatural world|#nature\nField notes|#notes",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-BREADCRUMBS",
+      "category": "Structure \u0026 navigation",
+      "description": "Portable Atlas breadcrumb trail. Editable content, local behavior and Atlas styling. Source: HyperLib.Archives/wwwroot/archives.js:43-54; archives.css:223",
+      "sourceTemplateId": "atlas.website.breadcrumbs.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "search-tree",
+      "title": "Atlas searchable hierarchy",
+      "component": "AtlasSearchTreeBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Explore the Archives",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Hierarchy \u00B7 collection | page title | address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Natural world|Woodland habitat|#woodland\nNatural world|Field observations|#field\nDesign notebook|Systems and patterns|#systems\nDesign notebook|Useful tools|#tools",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-SEARCH-TREE",
+      "category": "Structure \u0026 navigation",
+      "description": "Portable Atlas searchable hierarchy. Editable content, local behavior and Atlas styling. Source: HyperLib.Archives/wwwroot/index.html:43-53; archives.js:11-29",
+      "sourceTemplateId": "atlas.website.search-tree.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "collection-card",
+      "title": "Atlas collection card",
+      "component": "AtlasCollectionCardBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "kind",
+          "title": "Object type",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Collection",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Natural world",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description or count",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A collection of observations and ideas.",
+          "options": []
+        },
+        {
+          "id": "href",
+          "title": "Address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "#nature",
+          "options": []
+        },
+        {
+          "id": "src",
+          "title": "Cover image",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "alt",
+          "title": "Cover description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-COLLECTION-CARD",
+      "category": "Cards \u0026 collections",
+      "description": "Portable Atlas collection card. Editable content, local behavior and Atlas styling. Source: HyperLib.Archives/wwwroot/archives.js:30-35; archives.css:256",
+      "sourceTemplateId": "atlas.website.collection-card.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "collection-grid",
+      "title": "Atlas collection grid",
+      "component": "AtlasCollectionGridBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Explore the collections",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Cards \u00B7 type | title | summary | address",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Collection|Natural world|Habitats, observations, and field notes.|#nature\nWork|Design notebook|Systems, patterns, and ideas.|#design\nWork|Sound laboratory|Experiments in sound and space.|#sound\nPage|Getting started|A short path into the library.|#start",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-COLLECTION-GRID",
+      "category": "Cards \u0026 collections",
+      "description": "Portable Atlas collection grid. Editable content, local behavior and Atlas styling. Source: HyperLib.Archives/wwwroot/archives.js:44-58; archives.css:255",
+      "sourceTemplateId": "atlas.website.collection-grid.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "reader-heading",
+      "title": "Atlas reader introduction",
+      "component": "AtlasReaderHeadingBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "kicker",
+          "title": "Object type",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Public library",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Curiosity, collected.",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Introduction",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Collections, Works and Pages from Hyperlib.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-READER-HEADING",
+      "category": "Headers \u0026 heroes",
+      "description": "Portable Atlas reader introduction. Editable content, local behavior and Atlas styling. Source: HyperLib.Archives/wwwroot/index.html:56; archives.js:46",
+      "sourceTemplateId": "atlas.website.reader-heading.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "reader-workspace",
+      "title": "Atlas local reader workspace",
+      "component": "AtlasReaderWorkspaceBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "kicker",
+          "title": "Kicker",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Public library",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Introduction title",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Curiosity, collected.",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Introduction",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Open a page from the library to read it here. This portable reader uses the content you supply and runs without a server API.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Pages \u00B7 title | content",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Woodland habitat|A woodland is a network of organisms, light, water, and seasonal change. Record the relationships you observe.\nDesign notebook|Begin with the work someone is trying to accomplish. Build the smallest useful pattern, test it, and refine it.\nSound laboratory|Change one variable at a time and listen carefully to the result. Keep notes that help you repeat the experiment.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-READER-WORKSPACE",
+      "category": "Layouts \u0026 structure",
+      "description": "Portable Atlas local reader workspace. Editable content, local behavior and Atlas styling. Source: HyperLib.Archives/wwwroot/index.html:33-65; archives.js hierarchy/view behavior",
+      "sourceTemplateId": "atlas.website.reader-workspace.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    },
+    {
+      "id": "footer",
+      "title": "Atlas page footer",
+      "component": "AtlasFooterBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Name",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas Universalis",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Footer note",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Created in Hyperlib. Shared with the world.",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-ATLAS-FOOTER",
+      "category": "Structure \u0026 navigation",
+      "description": "Portable Atlas page footer. Editable content, local behavior and Atlas styling. Source: HyperLib.Archives/wwwroot/index.html:65; archives.css:264",
+      "sourceTemplateId": "atlas.website.footer.v1",
+      "sourceLibrary": "Atlas Universalis website"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "background",
+      "title": "Page color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#070d1a",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panel color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#101b35",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#e8ecf1",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#bcc5d0",
+      "options": []
+    },
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#c8963e",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "geometric",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "geometric",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    }
+  ],
+  "defaultBlocks": [
+    {
+      "id": "atlas-section-0",
+      "type": "navigation",
+      "region": "main",
+      "values": {
+        "title": "Atlas Universalis",
+        "home": "#",
+        "links": "Home|#\nPrinciples|#principles\nServices|#services\nBio|#bio\nProject Lab|#projects\nArchives|#archives"
+      }
+    },
+    {
+      "id": "atlas-section-1",
+      "type": "breadcrumbs",
+      "region": "main",
+      "values": {
+        "items": "Archives|#archives\nNatural world|#nature\nField notes|#notes"
+      }
+    },
+    {
+      "id": "atlas-section-2",
+      "type": "reader-workspace",
+      "region": "main",
+      "values": {
+        "kicker": "Public library",
+        "title": "Curiosity, collected.",
+        "text": "Open a page from the library to read it here. This portable reader uses the content you supply and runs without a server API.",
+        "items": "Woodland habitat|A woodland is a network of organisms, light, water, and seasonal change. Record the relationships you observe.\nDesign notebook|Begin with the work someone is trying to accomplish. Build the smallest useful pattern, test it, and refine it.\nSound laboratory|Change one variable at a time and listen carefully to the result. Keep notes that help you repeat the experiment."
+      }
+    },
+    {
+      "id": "atlas-section-3",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "title": "Atlas Universalis",
+        "text": "Created in Hyperlib. Shared with the world."
+      }
+    }
+  ],
+  "emptyPageDefault": false
+}

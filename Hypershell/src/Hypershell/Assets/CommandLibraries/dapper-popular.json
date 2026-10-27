@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "dapper-popular",
+  "displayName": "Dapper",
+  "description": "Curated Dapper starter recipes for the C# Command Builder. The dependency is referenced, not bundled.",
+  "language": "C#",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "Dapper",
+  "ecosystem": "NuGet",
+  "targetVersion": "2.1.79",
+  "sourceVersion": "2.1.79 documentation · curated 2026-08-17",
+  "sourceUrl": "https://github.com/DapperLib/Dapper",
+  "license": "Apache-2.0",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Project dependency only: add Dapper and a database provider to a project; the isolated C# runner does not restore packages or open database connections.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "c#",
+    "popular library",
+    "dapper",
+    "sql",
+    "database",
+    "micro orm",
+    "nuget"
+  ],
+  "executionTarget": "CSharp",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/dapper-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/dapper-popular.guides.json"
+  ],
+  "legacyIds": []
+}

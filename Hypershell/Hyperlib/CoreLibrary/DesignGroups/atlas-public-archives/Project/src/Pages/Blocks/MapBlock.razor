@@ -1,0 +1,41 @@
+@using System.Globalization
+<section class="hl-map-panel">
+    <h2 data-field="title">@Context.Text("title", "Find this place")</h2>
+    @if (_loaded)
+    {
+        <iframe class="hl-map-frame" title="@Context.Text("title", "OpenStreetMap")" src="@EmbedUrl" sandbox="allow-scripts" referrerpolicy="no-referrer" loading="lazy"></iframe>
+    }
+    else
+    {
+        <div class="hl-map-preview">
+            <svg viewBox="0 0 640 280" role="img" aria-label="Location preview. Load the interactive map for street detail.">
+                <defs><pattern id="grid-@Context.Id" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-opacity="0.14" /></pattern></defs>
+                <rect width="640" height="280" fill="url(#grid-@Context.Id)" />
+                <path d="M0 230 Q170 40 340 150 T640 65" fill="none" stroke="var(--hl-accent)" stroke-width="28" opacity=".15" />
+                <circle cx="320" cy="140" r="28" fill="var(--hl-accent)" opacity=".16" /><circle cx="320" cy="140" r="9" fill="var(--hl-accent)" />
+            </svg>
+            <button class="hl-button" type="button" @onclick="() => _loaded = true">Load OpenStreetMap</button>
+        </div>
+    }
+    <p class="hl-map-coordinate">@Number(Latitude)°, @Number(Longitude)° · <a href="@MapUrl" target="_blank" rel="noopener noreferrer">Open map ↗</a></p>
+    <p data-field="caption">@Context.Text("caption")</p>
+    @if (!_loaded) { <p class="hl-note">Street detail loads from OpenStreetMap only when you choose to load it.</p> }
+</section>
+@code {
+    [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+    private bool _loaded;
+    private double Latitude => Math.Clamp(Context.Number("latitude"), -85, 85);
+    private double Longitude => Math.Clamp(Context.Number("longitude"), -180, 180);
+    private int Zoom => (int)Math.Clamp(Context.Number("zoom", 12), 1, 18);
+    private static string Number(double value) => value.ToString("0.#####", CultureInfo.InvariantCulture);
+    private string MapUrl => $"https://www.openstreetmap.org/?mlat={Number(Latitude)}&mlon={Number(Longitude)}#map={Zoom}/{Number(Latitude)}/{Number(Longitude)}";
+    private string EmbedUrl
+    {
+        get
+        {
+            var span = 180.0 / Math.Pow(2, Zoom - 1);
+            var bounds = string.Join(',', Number(Math.Max(-180, Longitude - span)), Number(Math.Max(-85, Latitude - span * .5)), Number(Math.Min(180, Longitude + span)), Number(Math.Min(85, Latitude + span * .5)));
+            return $"https://www.openstreetmap.org/export/embed.html?bbox={Uri.EscapeDataString(bounds)}&layer=mapnik&marker={Number(Latitude)}%2C{Number(Longitude)}";
+        }
+    }
+}

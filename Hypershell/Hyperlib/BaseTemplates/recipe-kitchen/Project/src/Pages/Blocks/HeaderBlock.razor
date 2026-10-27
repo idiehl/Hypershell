@@ -1,0 +1,6 @@
+<header class="hl-header">
+    <p class="hl-kicker" data-field="eyebrow" data-placeholder="Eyebrow">@Context.Text("eyebrow")</p>
+    <h1 data-field="title" data-placeholder="Page title">@Context.Text("title")</h1>
+    <p class="hl-deck" data-field="text" data-placeholder="Introduction">@Context.Text("text")</p>
+</header>
+@code { [Parameter, EditorRequired] public BlockContext Context { get; set; } = new(); }

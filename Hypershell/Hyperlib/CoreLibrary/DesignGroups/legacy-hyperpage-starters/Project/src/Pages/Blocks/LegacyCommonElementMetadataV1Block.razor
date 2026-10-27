@@ -1,0 +1,23 @@
+@* Source: common.element.metadata.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-349776ec7fe5" data-vp-id="349776ec7fe5cc289926f549c0f201a8">
+    <div class="vp-4d54986ab413" data-vp-id="4d54986ab413935ce6aeb8d7d976500b">
+        <span class="vp-ce24d20d6e1e" data-field="text-2" data-vp-id="ce24d20d6e1eeed055e49b85e39baff8">
+            @(Context.Text("text-2"))
+        </span>
+        <span class="vp-bdb676213666" data-field="text-3" data-vp-id="bdb676213666a052d127d761a301f548">
+            @(Context.Text("text-3"))
+        </span>
+        <span class="vp-570464c59da4" data-field="text-4" data-vp-id="570464c59da4db164bccde67c7e21afb">
+            @(Context.Text("text-4"))
+        </span>
+    </div>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Theme xmlns="http://wixtoolset.org/schemas/v4/thmutil">
+  <Font Id="0" Height="-13" Weight="400" Foreground="windowtext" Background="window">Segoe UI</Font>
+  <Font Id="1" Height="-24" Weight="600" Foreground="windowtext">Segoe UI</Font>
+  <Window Width="520" Height="360" HexStyle="100a0000" FontId="0" Caption="Hypershell Complete Setup">
+    <Label X="24" Y="22" Width="-24" Height="36" FontId="1" DisablePrefix="yes">Hypershell Complete</Label>
+    <Page Name="Loading">
+      <Label X="24" Y="85" Width="-24" Height="30" DisablePrefix="yes">Checking installed components...</Label>
+    </Page>
+    <Page Name="Install">
+      <Label X="24" Y="84" Width="-24" Height="38" DisablePrefix="yes">Your shell, library, and creative workspace in one installation.</Label>
+      <Label X="24" Y="137" Width="-24" Height="24" DisablePrefix="yes">Hypershell and MyNet are included.</Label>
+      <Checkbox Name="InstallAuthoring" X="24" Y="173" Width="-24" Height="24" TabStop="yes">Hyperlib and Hyperpage Studio</Checkbox>
+      <Checkbox Name="InstallMeridian" X="24" Y="209" Width="-24" Height="24" TabStop="yes">Atlas Meridian</Checkbox>
+      <Label X="24" Y="253" Width="-24" Height="43" DisablePrefix="yes">Setup installs required Microsoft components. Your existing projects and library content are preserved.</Label>
+      <Button Name="InstallButton" X="-116" Y="-22" Width="86" Height="26" TabStop="yes">Install</Button>
+      <Button Name="InstallCancelButton" X="-24" Y="-22" Width="86" Height="26" TabStop="yes"><Text>Cancel</Text><CloseWindowAction /></Button>
+    </Page>
+    <Page Name="Progress">
+      <Label X="24" Y="94" Width="-24" Height="30" DisablePrefix="yes">Installing your selected components</Label>
+      <Label Name="OverallProgressPackageText" X="24" Y="145" Width="-24" Height="40" DisablePrefix="yes" />
+      <Progressbar Name="OverallCalculatedProgressbar" X="24" Y="203" Width="-24" Height="18" />
+      <Button Name="ProgressCancelButton" X="-24" Y="-22" Width="86" Height="26" TabStop="yes">Cancel</Button>
+    </Page>
+    <Page Name="Modify">
+      <Label X="24" Y="94" Width="-24" Height="45" DisablePrefix="yes">Repair or remove Hypershell Complete. Your saved projects and content remain on this computer.</Label>
+      <Button Name="RepairButton" X="24" Y="178" Width="108" Height="28" TabStop="yes" HideWhenDisabled="yes">Repair</Button>
+      <Button Name="UninstallButton" X="144" Y="178" Width="108" Height="28" TabStop="yes">Uninstall</Button>
+      <Button Name="ModifyCancelButton" X="-24" Y="-22" Width="86" Height="26" TabStop="yes"><Text>Close</Text><CloseWindowAction /></Button>
+    </Page>
+    <Page Name="Success">
+      <Label X="24" Y="94" Width="-24" Height="36" DisablePrefix="yes">Setup completed.</Label>
+      <Label X="24" Y="153" Width="-24" Height="43" VisibleCondition="WixStdBARestartRequired" DisablePrefix="yes">Restart Windows to finish installing the required components.</Label>
+      <Button Name="SuccessRestartButton" X="-116" Y="-22" Width="86" Height="26" TabStop="yes" HideWhenDisabled="yes">Restart</Button>
+      <Button Name="SuccessCloseButton" X="-24" Y="-22" Width="86" Height="26" TabStop="yes"><Text>Close</Text><CloseWindowAction /></Button>
+    </Page>
+    <Page Name="Failure">
+      <Label X="24" Y="94" Width="-24" Height="36" DisablePrefix="yes">Setup could not complete.</Label>
+      <Hypertext Name="FailureMessageText" X="24" Y="145" Width="-24" Height="90" TabStop="yes" HideWhenDisabled="yes" />
+      <Hypertext Name="FailureLogFileLink" X="24" Y="244" Width="-24" Height="30" TabStop="yes" HideWhenDisabled="yes">&lt;a href="#"&gt;View setup log&lt;/a&gt;</Hypertext>
+      <Button Name="FailureRestartButton" X="-116" Y="-22" Width="86" Height="26" TabStop="yes" HideWhenDisabled="yes">Restart</Button>
+      <Button Name="FailureCloseButton" X="-24" Y="-22" Width="86" Height="26" TabStop="yes"><Text>Close</Text><CloseWindowAction /></Button>
+    </Page>
+    <Page Name="Help">
+      <Label X="24" Y="94" Width="-24" Height="170" DisablePrefix="yes">Use /quiet for unattended setup, /repair to repair, or /uninstall to remove. Set InstallAuthoring=0 or InstallMeridian=0 to exclude an optional component. Microsoft prerequisites remain installed when the suite is removed.</Label>
+      <Button Name="HelpCloseButton" X="-24" Y="-22" Width="86" Height="26" TabStop="yes"><Text>Close</Text><CloseWindowAction /></Button>
+    </Page>
+  </Window>
+</Theme>

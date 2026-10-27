@@ -1,0 +1,22 @@
+@page "/browse/{NodeId}"
+@page "/browse"
+@rendermode InteractiveServer
+@inject RendererOptions Options
+@inject RendererContentClient Content
+@inject IJSRuntime JS
+
+<section class="hl-browse" style="@AppearanceStyle">
+    @if (Options.ShellComponent is { } shell) { <DynamicComponent Type="shell" /> }
+    <p class="hl-kicker">@(_node?.Type ?? "Personal library")</p>
+    <h1>@(_node?.Title ?? "A place for your curiosity.")</h1>
+    <p class="hl-intro">@(Options.Appearance("subtitle", _state, _node))</p>
+</section>
+
+@code {
+    [Parameter] public string? NodeId { get; set; }
+    private LibraryState? _state;
+    private LibraryNode? _node;
+    private string AppearanceStyle => Options.AppearanceStyle(_state, _node);
+    protected override async Task OnParametersSetAsync() { _state = await Content.GetStateAsync(); _node = _state.Nodes.FirstOrDefault(n => n.Id == NodeId); }
+    protected override async Task OnAfterRenderAsync(bool firstRender) { await JS.InvokeVoidAsync("hyperlibRenderer.ready", Options.GenerationId); }
+}

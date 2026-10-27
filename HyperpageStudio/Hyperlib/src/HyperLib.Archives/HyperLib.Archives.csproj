@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings>
+    <!-- Bundled renderer sources are inert release content, not receiver components. -->
+    <EnableDefaultRazorComponentItems>false</EnableDefaultRazorComponentItems>
+    <EnableDefaultRazorGenerateItems>false</EnableDefaultRazorGenerateItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../HyperLib.Runtime/HyperLib.Runtime.csproj" />
+    <PackageReference Include="Yarp.ReverseProxy" Version="2.3.0" />
+    <None Include="../HyperLib.Core/**/*" Exclude="../HyperLib.Core/bin/**;../HyperLib.Core/obj/**" Link="sdk/src/HyperLib.Core/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="../HyperLib.Runtime/**/*" Exclude="../HyperLib.Runtime/bin/**;../HyperLib.Runtime/obj/**" Link="sdk/src/HyperLib.Runtime/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="../../Starters/standard/src/Host/**/*" Exclude="../../Starters/standard/src/Host/bin/**;../../Starters/standard/src/Host/obj/**" Link="sdk/Starters/standard/src/Host/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

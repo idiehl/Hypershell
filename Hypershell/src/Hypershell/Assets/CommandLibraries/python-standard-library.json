@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "python-standard-library",
+  "displayName": "Python Standard Library",
+  "description": "Importable modules distributed with Python, organized by module, type, function, and member.",
+  "language": "Python",
+  "category": "Official reference",
+  "kind": "StandardLibrary",
+  "canonicalName": "The Python Standard Library",
+  "ecosystem": "Python",
+  "targetVersion": "Python 3.14",
+  "sourceVersion": "Python 3.14 · objects.inv c6936c1ffd2369bd1bfe5083055962e9fa66ccee104debb21f499d3255b4fcdf",
+  "sourceUrl": "https://docs.python.org/3/library/",
+  "license": "Python Software Foundation License",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Runs through the matching installed Hypershell terminal adapter.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "python",
+    "standard library",
+    "stdlib",
+    "modules"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 10040,
+  "declaredIndexedCount": 10000,
+  "declaredGuidedCount": 2,
+  "declaredVerifiedCount": 38,
+  "entryFiles": [
+    "entries/python-standard-library.001.entries.json",
+    "entries/python-standard-library.002.entries.json",
+    "entries/python-standard-library.003.entries.json"
+  ],
+  "declaredGuideCount": 40,
+  "guideFiles": [
+    "guides/python-standard-library.guides.json"
+  ],
+  "legacyIds": []
+}

@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-confirmation-panel">
+<section class="panel"><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p><div class="pills"><button @onclick="()=>confirmed=true">Confirm preview</button><button @onclick="()=>confirmed=false">Reset</button></div><output aria-live="polite">@(confirmed ? "Confirmed locally. No external action was taken." : "Waiting for confirmation.")</output></section>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private bool confirmed;
+}

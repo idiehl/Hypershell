@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "junit-jupiter-popular",
+  "guides": [
+    {
+      "entryId": "junit-jupiter-popular.basic-test",
+      "definition": "Defines a JUnit Jupiter test method with an explicit expected and actual value. Test-project dependency only: configure JUnit Jupiter in Maven, Gradle, or the IDE; the isolated Java runner does not resolve test engines.",
+      "parameters": [
+        {
+          "name": "methodName",
+          "displayName": "Method name",
+          "placeholder": "methodName",
+          "description": "Descriptive lowerCamelCase test name.",
+          "typeName": "Java method",
+          "defaultValue": "addsTwoValues",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "actual",
+          "displayName": "Actual expression",
+          "placeholder": "actual",
+          "description": "Expression under test.",
+          "typeName": "Java expression",
+          "defaultValue": "20 + 22",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expected",
+          "displayName": "Expected value",
+          "placeholder": "expected",
+          "description": "Expected result expression.",
+          "typeName": "Java expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Verify addition",
+          "code": "import static org.junit.jupiter.api.Assertions.assertEquals;\nimport org.junit.jupiter.api.Test;\n\n@Test\nvoid addsTwoValues() {\n    var actual = 20 + 22;\n    assertEquals(42, actual);\n}",
+          "explanation": "A descriptive method name states the behavior while assertEquals reports both expected and actual values on failure."
+        }
+      ]
+    },
+    {
+      "entryId": "junit-jupiter-popular.parameterized-test",
+      "definition": "Runs one JUnit Jupiter test method for every CsvSource row. Test-project dependency only: configure JUnit Jupiter in Maven, Gradle, or the IDE; the isolated Java runner does not resolve test engines.",
+      "parameters": [
+        {
+          "name": "cases",
+          "displayName": "CSV cases",
+          "placeholder": "cases",
+          "description": "CsvSource array expression.",
+          "typeName": "Java annotation value",
+          "defaultValue": "{ \"Atlas, 5\", \"Shell, 5\" }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "methodName",
+          "displayName": "Method name",
+          "placeholder": "methodName",
+          "description": "Descriptive test method name.",
+          "typeName": "Java method",
+          "defaultValue": "reportsLength",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameters",
+          "displayName": "Parameters",
+          "placeholder": "parameters",
+          "description": "Method parameters matching each CSV row.",
+          "typeName": "Java parameters",
+          "defaultValue": "String value, int expected",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expectedExpression",
+          "displayName": "Expected expression",
+          "placeholder": "expectedExpression",
+          "description": "Expected value passed to the assertion.",
+          "typeName": "Java expression",
+          "defaultValue": "expected",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "actualExpression",
+          "displayName": "Actual expression",
+          "placeholder": "actualExpression",
+          "description": "Expression under test.",
+          "typeName": "Java expression",
+          "defaultValue": "value.length()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Verify string lengths",
+          "code": "import static org.junit.jupiter.api.Assertions.assertEquals;\nimport org.junit.jupiter.params.ParameterizedTest;\nimport org.junit.jupiter.params.provider.CsvSource;\n\n@ParameterizedTest\n@CsvSource({ \"Atlas, 5\", \"Shell, 5\" })\nvoid reportsLength(String value, int expected) {\n    assertEquals(expected, value.length());\n}",
+          "explanation": "Parameterized tests keep identical behavior checks in one method while preserving each case as a distinct test invocation."
+        }
+      ]
+    },
+    {
+      "entryId": "junit-jupiter-popular.assert-exception",
+      "definition": "Verifies the exception type and keeps the thrown instance available for message checks. Test-project dependency only: configure JUnit Jupiter in Maven, Gradle, or the IDE; the isolated Java runner does not resolve test engines.",
+      "parameters": [
+        {
+          "name": "exceptionType",
+          "displayName": "Exception type",
+          "placeholder": "exceptionType",
+          "description": "Expected exception class without .class.",
+          "typeName": "Java exception",
+          "defaultValue": "IllegalArgumentException",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "operation",
+          "displayName": "Operation",
+          "placeholder": "operation",
+          "description": "Invocation expected to throw.",
+          "typeName": "Java expression",
+          "defaultValue": "service.load(null)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Reject an invalid argument",
+          "code": "import static org.junit.jupiter.api.Assertions.assertThrows;\n\nvar exception = assertThrows(IllegalArgumentException.class, () -> service.load(null));",
+          "explanation": "assertThrows fails when no exception or the wrong type is thrown and returns the matching exception for further assertions."
+        }
+      ]
+    }
+  ]
+}

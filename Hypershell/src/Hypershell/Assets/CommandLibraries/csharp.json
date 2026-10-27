@@ -1,0 +1,4203 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.1.0",
+  "id": "csharp-basics",
+  "displayName": "C# and .NET essentials",
+  "description": "Curated, example-driven C# and .NET APIs for everyday application, automation, data, and systems work. No additional packages are required.",
+  "language": "C#",
+  "category": "Essentials",
+  "kind": "Extension",
+  "parentLibraryId": "csharp-dotnet-8",
+  "frameworkName": ".NET",
+  "frameworkVersion": "8",
+  "targetFramework": "net8.0",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Compatible with the built-in .NET 10 C# runner; authored against .NET 8.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "csharp",
+    "dotnet",
+    "bcl",
+    "standard library",
+    "essentials"
+  ],
+  "executionTarget": "CSharp",
+  "actionDescriptions": {
+    "Add": "Adds a new value to an existing collection without replacing the collection itself.",
+    "Append": "Writes new data after the content that is already present.",
+    "Calculate": "Computes and returns a numerical result from the supplied values.",
+    "Clear": "Removes existing content or entries while leaving the container available for reuse.",
+    "Combine": "Builds one value from two or more separate values.",
+    "Convert": "Changes a value into another representation or data type.",
+    "Copy": "Creates another copy of existing data at a new destination.",
+    "Create": "Constructs a new object or resource that did not exist before.",
+    "Delete": "Permanently removes the selected resource.",
+    "Deserialize": "Reconstructs a typed in-memory object from stored or transmitted data.",
+    "Download": "Requests data from a remote HTTP address and returns the received content.",
+    "Filter": "Keeps only the values that satisfy a condition.",
+    "Find": "Searches for a value or position and reports what was found.",
+    "Format": "Produces a specific text representation or layout without changing the underlying value.",
+    "Get": "Retrieves an existing value, resource, or collection without intentionally changing it.",
+    "Group": "Organizes values into buckets that share the same key.",
+    "Join": "Combines several values into one sequence or string.",
+    "Match": "Applies a pattern and returns the matching text or match details.",
+    "Move": "Relocates a resource from one path to another.",
+    "Order": "Returns values arranged by a selected key.",
+    "Parse": "Interprets text as a specific typed value and reports or throws when the text is invalid.",
+    "Read": "Takes input from a user, stream, file, or response and returns it to the program.",
+    "Remove": "Takes a value out of a collection or deletes a selected element.",
+    "Replace": "Produces content in which selected values or matching text are substituted.",
+    "Run": "Schedules or launches executable work.",
+    "Select": "Projects or extracts a particular part of a value or sequence.",
+    "Serialize": "Turns an in-memory object into data that can be stored or transmitted.",
+    "Sort": "Rearranges a mutable collection into ascending or custom order.",
+    "Split": "Separates one value into multiple parts using a delimiter or pattern.",
+    "Start": "Launches a process or initiates an operation.",
+    "Sum": "Adds numeric values in a sequence and returns the total.",
+    "Test": "Evaluates a condition and returns true or false without intentionally changing the target.",
+    "Wait": "Asynchronously pauses until time passes or one or more operations finish.",
+    "Write": "Sends text or data to an output destination."
+  },
+  "objectDescriptions": {
+    "Base64": "Base64 is a text-safe encoding of binary bytes. It is useful for transport, but it is not encryption.",
+    "Console": "The console is the application's standard text input and output interface, normally connected to a terminal window.",
+    "DateTime": "DateTime is a value containing a calendar date and clock time, with optional local or UTC context.",
+    "Dictionary": "Dictionary<TKey,TValue> stores unique keys paired with values and provides fast lookup by key.",
+    "Directory": "A directory is a file-system container that can hold files and other directories.",
+    "Environment": "Environment exposes information and settings associated with the current process and operating-system session.",
+    "File": "A file is a named sequence of bytes stored by a file system; text helpers encode and decode those bytes as characters.",
+    "Guid": "Guid is a 128-bit identifier designed to be unique across machines and time without a central counter.",
+    "HashSet": "HashSet<T> stores unique values and supports mathematical set operations such as union and intersection.",
+    "HttpClient": "HttpClient is a reusable client for sending HTTP requests and receiving HTTP responses.",
+    "HttpResponse": "HttpResponseMessage represents an HTTP server's status code, headers, and response body.",
+    "Json": "JSON is a text format for objects, arrays, strings, numbers, Boolean values, and null.",
+    "List": "List<T> is an ordered, index-based collection whose size can grow or shrink.",
+    "Number": "A number is a typed numeric value on which mathematical, comparison, and conversion operations can be performed.",
+    "Path": "A path is text that identifies a file-system location; Path helpers manipulate the text without opening the resource.",
+    "Process": "A process is a running instance of a program with its own identifier, memory, handles, and execution state.",
+    "Random": "Random is a pseudo-random number generator for simulations and ordinary selection. It is not suitable for secrets or security tokens.",
+    "Regex": "A regular expression is a pattern language for finding, validating, splitting, and replacing text.",
+    "Sequence": "An IEnumerable<T> sequence is a stream of typed values. Many LINQ operations are lazy and run only when the sequence is enumerated.",
+    "String": "A string is an immutable sequence of Unicode characters used to represent text.",
+    "Task": "A Task represents work that may still be running and will eventually complete, fail, or be canceled."
+  },
+  "commands": [
+    {
+      "name": "Console.WriteLine",
+      "displayName": "Console.WriteLine",
+      "description": "Write a value followed by a line break.",
+      "definition": "Writes the text representation of a value to standard output and then writes the current platform's line terminator. The next console output begins on a new line.",
+      "moduleName": "System.Console",
+      "action": "Write",
+      "object": "Console",
+      "namespaceName": "System",
+      "typeName": "Console",
+      "memberName": "WriteLine",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "Console.WriteLine({message});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.console.writeline",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "message",
+          "displayName": "message",
+          "placeholder": "message",
+          "description": "The value or string expression to display.",
+          "typeName": "object",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Report a calculated result",
+          "code": "var filesFound = 12;\nConsole.WriteLine($\"Found {filesFound} files.\");",
+          "explanation": "The interpolated expression inserts the current value of filesFound, writes the completed message, and moves the cursor to the next line."
+        }
+      ]
+    },
+    {
+      "name": "Console.Write",
+      "displayName": "Console.Write",
+      "description": "Write a value without adding a line break.",
+      "definition": "Writes a value to standard output but leaves the cursor immediately after the text. This is useful for prompts or for building one line in several pieces.",
+      "moduleName": "System.Console",
+      "action": "Write",
+      "object": "Console",
+      "namespaceName": "System",
+      "typeName": "Console",
+      "memberName": "Write",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "Console.Write({message});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.console.write",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "message",
+          "displayName": "message",
+          "placeholder": "message",
+          "description": "The value or string expression to display.",
+          "typeName": "object",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Prompt on the current line",
+          "code": "Console.Write(\"Project name: \");\nvar projectName = Console.ReadLine();",
+          "explanation": "Because Write does not add a newline, the user's response appears on the same line as the prompt."
+        }
+      ]
+    },
+    {
+      "name": "Console.ReadLine",
+      "displayName": "Console.ReadLine",
+      "description": "Read one complete line of console input.",
+      "definition": "Waits for the user to enter text and press Enter, then returns the entered characters without the line terminator. It returns null when the input stream has ended.",
+      "moduleName": "System.Console",
+      "action": "Read",
+      "object": "Console",
+      "namespaceName": "System",
+      "typeName": "Console",
+      "memberName": "ReadLine",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var input = Console.ReadLine();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.console.readline",
+      "keywords": [],
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Read and validate a name",
+          "code": "Console.Write(\"Your name: \");\nvar name = Console.ReadLine();\nConsole.WriteLine($\"Hello, {name ?? \"guest\"}!\");",
+          "explanation": "ReadLine waits for Enter. The null-coalescing expression uses guest only if standard input has already closed."
+        }
+      ]
+    },
+    {
+      "name": "Console.ReadKey",
+      "displayName": "Console.ReadKey",
+      "description": "Read the next key pressed in the console.",
+      "definition": "Waits for a key press and returns a ConsoleKeyInfo containing the character and modifier keys. The intercept argument decides whether the pressed character is echoed to the terminal.",
+      "moduleName": "System.Console",
+      "action": "Read",
+      "object": "Console",
+      "namespaceName": "System",
+      "typeName": "Console",
+      "memberName": "ReadKey",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var key = Console.ReadKey({intercept});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.console.readkey",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "intercept",
+          "displayName": "intercept",
+          "placeholder": "intercept",
+          "description": "Use true to keep the pressed key from being displayed.",
+          "typeName": "bool",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Wait for confirmation without echoing",
+          "code": "Console.Write(\"Press Y to continue: \");\nvar key = Console.ReadKey(intercept: true);\nConsole.WriteLine(key.Key == ConsoleKey.Y ? \"Continuing\" : \"Canceled\");",
+          "explanation": "ReadKey captures one key immediately. With intercept set to true, the original key is not printed before the result message."
+        }
+      ]
+    },
+    {
+      "name": "string.Contains",
+      "displayName": "string.Contains",
+      "description": "Test whether text contains a specified value.",
+      "definition": "Returns true when the target string contains the supplied character sequence. An overload accepts StringComparison so the caller can choose ordinal or culture-aware, case-sensitive or case-insensitive matching.",
+      "moduleName": "System.String",
+      "action": "Test",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "Contains",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var contains = {text}.Contains({value}, StringComparison.OrdinalIgnoreCase);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.contains",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The string expression to search.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The character sequence to locate.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Perform a case-insensitive search",
+          "code": "var fileName = \"Quarterly-REPORT.pdf\";\nvar isReport = fileName.Contains(\"report\", StringComparison.OrdinalIgnoreCase);\nConsole.WriteLine(isReport);",
+          "explanation": "OrdinalIgnoreCase makes REPORT match report without applying language-specific sorting rules."
+        }
+      ]
+    },
+    {
+      "name": "string.StartsWith",
+      "displayName": "string.StartsWith",
+      "description": "Test whether text begins with a specified value.",
+      "definition": "Returns true when the beginning of the target string matches the supplied text. Supplying StringComparison makes the intended case and culture rules explicit.",
+      "moduleName": "System.String",
+      "action": "Test",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "StartsWith",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var startsWith = {text}.StartsWith({value}, StringComparison.OrdinalIgnoreCase);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.startswith",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The string expression to inspect.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The expected prefix.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Recognize an HTTPS address",
+          "code": "var address = \"HTTPS://example.com/api\";\nvar isSecure = address.StartsWith(\"https://\", StringComparison.OrdinalIgnoreCase);\nConsole.WriteLine(isSecure);",
+          "explanation": "Only the prefix is tested; the remainder of the address does not affect the result."
+        }
+      ]
+    },
+    {
+      "name": "string.EndsWith",
+      "displayName": "string.EndsWith",
+      "description": "Test whether text ends with a specified value.",
+      "definition": "Returns true when the final characters of the target string match the supplied suffix. It is commonly used for extensions and naming conventions, but Path.GetExtension is safer for full file paths.",
+      "moduleName": "System.String",
+      "action": "Test",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "EndsWith",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var endsWith = {text}.EndsWith({value}, StringComparison.OrdinalIgnoreCase);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.endswith",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The string expression to inspect.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The expected suffix.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Filter Markdown names",
+          "code": "var names = new[] { \"README.md\", \"photo.png\", \"notes.MD\" };\nvar markdown = names.Where(name =>\n    name.EndsWith(\".md\", StringComparison.OrdinalIgnoreCase));",
+          "explanation": "The predicate keeps names ending in .md regardless of letter case."
+        }
+      ]
+    },
+    {
+      "name": "string.Replace",
+      "displayName": "string.Replace",
+      "description": "Create text with matching content replaced.",
+      "definition": "Returns a new string in which every occurrence of the specified old text is replaced with new text. Strings are immutable, so the original string is unchanged.",
+      "moduleName": "System.String",
+      "action": "Replace",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "Replace",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var result = {text}.Replace({oldValue}, {newValue});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.replace",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The original string expression.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "oldValue",
+          "displayName": "oldValue",
+          "placeholder": "oldValue",
+          "description": "The text to find.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "newValue",
+          "displayName": "newValue",
+          "placeholder": "newValue",
+          "description": "The replacement text.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Normalize a path separator",
+          "code": "var portablePath = \"logs\\\\2026\\\\today.txt\";\nvar normalized = portablePath.Replace('\\\\', '/');\nConsole.WriteLine(normalized);",
+          "explanation": "Every backslash character is replaced in the returned string; portablePath keeps its original value."
+        }
+      ]
+    },
+    {
+      "name": "string.Split",
+      "displayName": "string.Split",
+      "description": "Separate text into an array of substrings.",
+      "definition": "Breaks a string wherever a delimiter occurs and returns the resulting pieces. Options can remove empty entries and trim whitespace during the split.",
+      "moduleName": "System.String",
+      "action": "Split",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "Split",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var parts = {text}.Split({separator}, StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.split",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The string expression to divide.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "separator",
+          "displayName": "separator",
+          "placeholder": "separator",
+          "description": "The delimiter character or string.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse a comma-separated list",
+          "code": "var input = \"alpha, beta, , gamma\";\nvar names = input.Split(\n    ',',\n    StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);\nConsole.WriteLine(names.Length);",
+          "explanation": "The options trim each piece and discard the empty field, producing alpha, beta, and gamma."
+        }
+      ]
+    },
+    {
+      "name": "string.Join",
+      "displayName": "string.Join",
+      "description": "Combine values into one delimited string.",
+      "definition": "Concatenates the text representation of each supplied value and inserts the separator between adjacent values. It does not place the separator before the first or after the last value.",
+      "moduleName": "System.String",
+      "action": "Join",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "Join",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var joined = string.Join({separator}, {values});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.join",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "separator",
+          "displayName": "separator",
+          "placeholder": "separator",
+          "description": "Text to place between values.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "values",
+          "displayName": "values",
+          "placeholder": "values",
+          "description": "The sequence or array to combine.",
+          "typeName": "IEnumerable<string>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a readable label list",
+          "code": "var labels = new[] { \"bug\", \"urgent\", \"backend\" };\nvar display = string.Join(\", \", labels);\nConsole.WriteLine(display);",
+          "explanation": "The three labels become one string: bug, urgent, backend."
+        }
+      ]
+    },
+    {
+      "name": "string.Trim",
+      "displayName": "string.Trim",
+      "description": "Remove leading and trailing whitespace.",
+      "definition": "Returns a new string with whitespace removed from both ends. Characters inside the string are preserved, and an overload can trim a caller-supplied set of characters instead.",
+      "moduleName": "System.String",
+      "action": "Format",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "Trim",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var trimmed = {text}.Trim();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.trim",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The string expression to trim.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Clean console input",
+          "code": "var raw = \"   project-alpha   \";\nvar project = raw.Trim();\nConsole.WriteLine($\"[{project}]\");",
+          "explanation": "The spaces at both edges disappear; the hyphen and internal characters remain."
+        }
+      ]
+    },
+    {
+      "name": "string.ToUpperInvariant",
+      "displayName": "string.ToUpperInvariant",
+      "description": "Create an uppercase string using culture-independent rules.",
+      "definition": "Returns an uppercase copy using the invariant culture. This is useful for machine-oriented identifiers; user-facing text often needs a specific CultureInfo instead.",
+      "moduleName": "System.String",
+      "action": "Convert",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "ToUpperInvariant",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var upper = {text}.ToUpperInvariant();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.toupperinvariant",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The string expression to convert.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Normalize a command token",
+          "code": "var token = \"deploy\";\nswitch (token.ToUpperInvariant())\n{\n    case \"DEPLOY\": Console.WriteLine(\"Starting deployment\"); break;\n}",
+          "explanation": "Normalization lets the switch compare one predictable representation of the token."
+        }
+      ]
+    },
+    {
+      "name": "string.ToLowerInvariant",
+      "displayName": "string.ToLowerInvariant",
+      "description": "Create a lowercase string using culture-independent rules.",
+      "definition": "Returns a lowercase copy using invariant-culture casing rules. It is appropriate for normalized protocol or identifier text, not for every language-sensitive display task.",
+      "moduleName": "System.String",
+      "action": "Convert",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "ToLowerInvariant",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var lower = {text}.ToLowerInvariant();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.tolowerinvariant",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The string expression to convert.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Normalize a file extension",
+          "code": "var extension = Path.GetExtension(\"REPORT.PDF\").ToLowerInvariant();\nif (extension == \".pdf\")\n{\n    Console.WriteLine(\"PDF document\");\n}",
+          "explanation": "The uppercase extension is converted to .pdf before comparison."
+        }
+      ]
+    },
+    {
+      "name": "string.IsNullOrWhiteSpace",
+      "displayName": "string.IsNullOrWhiteSpace",
+      "description": "Test whether text is missing or contains only whitespace.",
+      "definition": "Returns true for null, the empty string, or a string made entirely of whitespace characters. It is a concise guard for required text input.",
+      "moduleName": "System.String",
+      "action": "Test",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "IsNullOrWhiteSpace",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var isMissing = string.IsNullOrWhiteSpace({text});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.isnullorwhitespace",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The nullable string expression to validate.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Reject an empty project name",
+          "code": "Console.Write(\"Project name: \");\nvar name = Console.ReadLine();\nif (string.IsNullOrWhiteSpace(name))\n{\n    Console.WriteLine(\"A project name is required.\");\n}",
+          "explanation": "The guard catches end-of-input, an empty response, and a response containing only spaces or tabs."
+        }
+      ]
+    },
+    {
+      "name": "string.IndexOf",
+      "displayName": "string.IndexOf",
+      "description": "Find the zero-based position of text.",
+      "definition": "Searches the target string and returns the index where the requested character sequence first begins. It returns -1 when no match exists.",
+      "moduleName": "System.String",
+      "action": "Find",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "IndexOf",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var index = {text}.IndexOf({value}, StringComparison.OrdinalIgnoreCase);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.indexof",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The string expression to search.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The text to locate.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Locate a separator",
+          "code": "var assignment = \"timeout=30\";\nvar separator = assignment.IndexOf('=');\nvar key = assignment[..separator];\nvar value = assignment[(separator + 1)..];",
+          "explanation": "IndexOf finds the equals sign, and range expressions use that position to split the key from its value."
+        }
+      ]
+    },
+    {
+      "name": "string.Substring",
+      "displayName": "string.Substring",
+      "description": "Extract part of a string by position.",
+      "definition": "Returns a new string beginning at a zero-based index and optionally limited to a specified length. Invalid indexes or lengths throw ArgumentOutOfRangeException.",
+      "moduleName": "System.String",
+      "action": "Select",
+      "object": "String",
+      "namespaceName": "System",
+      "typeName": "String",
+      "memberName": "Substring",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var part = {text}.Substring({startIndex}, {length});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.string.substring",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The original string expression.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "startIndex",
+          "displayName": "startIndex",
+          "placeholder": "startIndex",
+          "description": "The zero-based first character to include.",
+          "typeName": "int",
+          "isRequired": true
+        },
+        {
+          "name": "length",
+          "displayName": "length",
+          "placeholder": "length",
+          "description": "The number of characters to return.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a date prefix",
+          "code": "var fileName = \"2026-07-27-report.txt\";\nvar dateText = fileName.Substring(0, 10);\nConsole.WriteLine(dateText);",
+          "explanation": "Starting at index 0 and taking 10 characters returns 2026-07-27."
+        }
+      ]
+    },
+    {
+      "name": "File.ReadAllText",
+      "displayName": "File.ReadAllText",
+      "description": "Read an entire text file into one string.",
+      "definition": "Opens a text file, decodes all of its content, returns it as one string, and closes the file. Use a streaming API when the file may be too large to hold comfortably in memory.",
+      "moduleName": "System.IO.File",
+      "action": "Read",
+      "object": "File",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "ReadAllText",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var content = File.ReadAllText({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.readalltext",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The path of the text file to read.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read and display a configuration file",
+          "code": "var path = Path.Combine(\"config\", \"appsettings.json\");\nvar json = File.ReadAllText(path);\nConsole.WriteLine(json);",
+          "explanation": "Path.Combine builds the location, ReadAllText loads the complete file, and Console.WriteLine displays the returned string."
+        }
+      ]
+    },
+    {
+      "name": "File.ReadAllTextAsync",
+      "displayName": "File.ReadAllTextAsync",
+      "description": "Asynchronously read an entire text file.",
+      "definition": "Reads all text without blocking the calling thread while operating-system I/O is pending. Await returns the complete string, and a CancellationToken overload can cancel the operation.",
+      "moduleName": "System.IO.File",
+      "action": "Read",
+      "object": "File",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "ReadAllTextAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var content = await File.ReadAllTextAsync({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.readalltextasync",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The path of the text file to read.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load text without blocking",
+          "code": "var notesPath = Path.Combine(\"data\", \"notes.txt\");\nvar notes = await File.ReadAllTextAsync(notesPath);\nConsole.WriteLine($\"Loaded {notes.Length} characters.\");",
+          "explanation": "await yields control while the file read is pending, then resumes with the complete text."
+        }
+      ]
+    },
+    {
+      "name": "File.ReadAllLines",
+      "displayName": "File.ReadAllLines",
+      "description": "Read a text file into an array of lines.",
+      "definition": "Reads every line from a text file, closes the file, and returns a string array with one element per line. Line terminator characters are not included in the returned strings.",
+      "moduleName": "System.IO.File",
+      "action": "Read",
+      "object": "File",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "ReadAllLines",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var lines = File.ReadAllLines({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.readalllines",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The path of the text file to read.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Process a file line by line",
+          "code": "var lines = File.ReadAllLines(\"servers.txt\");\nforeach (var line in lines)\n{\n    Console.WriteLine($\"Checking {line.Trim()}\");\n}",
+          "explanation": "Each file line becomes a separate array element that the loop can process independently."
+        }
+      ]
+    },
+    {
+      "name": "File.WriteAllText",
+      "displayName": "File.WriteAllText",
+      "description": "Create or replace a text file.",
+      "definition": "Writes the complete string to a file, creating the file if necessary and replacing its prior contents if it already exists. The method closes the file before returning.",
+      "moduleName": "System.IO.File",
+      "action": "Write",
+      "object": "File",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "WriteAllText",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "File.WriteAllText({path}, {contents});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.writealltext",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The destination file path.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "contents",
+          "displayName": "contents",
+          "placeholder": "contents",
+          "description": "The text to write.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Save application state",
+          "code": "var state = \"{\\\"lastProject\\\":\\\"Hypershell\\\"}\";\nDirectory.CreateDirectory(\"data\");\nFile.WriteAllText(Path.Combine(\"data\", \"state.json\"), state);",
+          "explanation": "The directory is ensured first, then WriteAllText creates or fully replaces state.json."
+        }
+      ]
+    },
+    {
+      "name": "File.WriteAllTextAsync",
+      "displayName": "File.WriteAllTextAsync",
+      "description": "Asynchronously create or replace a text file.",
+      "definition": "Writes a complete string while allowing the caller to remain responsive during pending I/O. Await completes only after the content has been written and the file has been closed.",
+      "moduleName": "System.IO.File",
+      "action": "Write",
+      "object": "File",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "WriteAllTextAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await File.WriteAllTextAsync({path}, {contents});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.writealltextasync",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The destination file path.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "contents",
+          "displayName": "contents",
+          "placeholder": "contents",
+          "description": "The text to write.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Save a report asynchronously",
+          "code": "var report = $\"Build report{Environment.NewLine}Status: passed\";\nawait File.WriteAllTextAsync(\"report.txt\", report);\nConsole.WriteLine(\"Report saved.\");",
+          "explanation": "The success message is reached after the asynchronous write has finished."
+        }
+      ]
+    },
+    {
+      "name": "File.AppendAllText",
+      "displayName": "File.AppendAllText",
+      "description": "Append text to the end of a file.",
+      "definition": "Opens or creates a text file, writes the supplied content after any existing content, and closes it. Add your own newline when each append should begin on a new line.",
+      "moduleName": "System.IO.File",
+      "action": "Append",
+      "object": "File",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "AppendAllText",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "File.AppendAllText({path}, {contents});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.appendalltext",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The file to append to.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "contents",
+          "displayName": "contents",
+          "placeholder": "contents",
+          "description": "The text to add.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Append a timestamped log entry",
+          "code": "var entry = $\"{DateTimeOffset.Now:O} Application started{Environment.NewLine}\";\nFile.AppendAllText(\"activity.log\", entry);",
+          "explanation": "The ISO timestamp and newline are added after earlier log entries; the prior file content is preserved."
+        }
+      ]
+    },
+    {
+      "name": "File.Exists",
+      "displayName": "File.Exists",
+      "description": "Test whether a file path currently exists.",
+      "definition": "Returns true when the path identifies an existing file. It returns false for missing paths, directories, invalid paths, and many access-related failures rather than throwing those failures.",
+      "moduleName": "System.IO.File",
+      "action": "Test",
+      "object": "File",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "Exists",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var exists = File.Exists({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.exists",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The file path to check.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load an optional settings file",
+          "code": "const string path = \"settings.json\";\nvar json = File.Exists(path)\n    ? File.ReadAllText(path)\n    : \"{}\";",
+          "explanation": "The file is read only when it exists; otherwise the program uses an empty JSON object."
+        }
+      ]
+    },
+    {
+      "name": "File.Copy",
+      "displayName": "File.Copy",
+      "description": "Copy a file to another path.",
+      "definition": "Creates a second file containing the source file's data. The overwrite argument controls whether an existing destination file may be replaced.",
+      "moduleName": "System.IO.File",
+      "action": "Copy",
+      "object": "File",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "Copy",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "File.Copy({sourcePath}, {destinationPath}, overwrite: {overwrite});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.copy",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "sourcePath",
+          "displayName": "sourcePath",
+          "placeholder": "sourcePath",
+          "description": "The existing file to copy.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "destinationPath",
+          "displayName": "destinationPath",
+          "placeholder": "destinationPath",
+          "description": "The new file path.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "overwrite",
+          "displayName": "overwrite",
+          "placeholder": "overwrite",
+          "description": "Whether an existing destination may be replaced.",
+          "typeName": "bool",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a replaceable backup",
+          "code": "var source = \"settings.json\";\nvar backup = \"settings.backup.json\";\nFile.Copy(source, backup, overwrite: true);",
+          "explanation": "The source remains in place, while the backup path receives a fresh copy even if an older backup exists."
+        }
+      ]
+    },
+    {
+      "name": "File.Move",
+      "displayName": "File.Move",
+      "description": "Move or rename a file.",
+      "definition": "Relocates a file to another path, which can also change its name. On the same volume this is usually a metadata operation; overloads can optionally replace an existing destination.",
+      "moduleName": "System.IO.File",
+      "action": "Move",
+      "object": "File",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "Move",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "File.Move({sourcePath}, {destinationPath}, overwrite: {overwrite});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.move",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "sourcePath",
+          "displayName": "sourcePath",
+          "placeholder": "sourcePath",
+          "description": "The current file path.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "destinationPath",
+          "displayName": "destinationPath",
+          "placeholder": "destinationPath",
+          "description": "The new file path.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "overwrite",
+          "displayName": "overwrite",
+          "placeholder": "overwrite",
+          "description": "Whether an existing destination may be replaced.",
+          "typeName": "bool",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Archive a completed download",
+          "code": "Directory.CreateDirectory(\"archive\");\nFile.Move(\n    \"download.tmp\",\n    Path.Combine(\"archive\", \"package.zip\"),\n    overwrite: true);",
+          "explanation": "The temporary file is relocated and renamed package.zip inside the archive directory."
+        }
+      ]
+    },
+    {
+      "name": "File.Delete",
+      "displayName": "File.Delete",
+      "description": "Delete a file.",
+      "definition": "Permanently removes the file at the supplied path. Calling it for a missing file does nothing, but invalid paths, access failures, and in-use files can throw exceptions.",
+      "moduleName": "System.IO.File",
+      "action": "Delete",
+      "object": "File",
+      "namespaceName": "System.IO",
+      "typeName": "File",
+      "memberName": "Delete",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "File.Delete({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.file.delete",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The file to remove.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Remove an expired temporary file",
+          "code": "var tempFile = Path.Combine(Path.GetTempPath(), \"hypershell.tmp\");\nif (File.Exists(tempFile))\n{\n    File.Delete(tempFile);\n}",
+          "explanation": "The existence check makes the intent explicit; Delete then removes the file rather than sending it to a recycle bin."
+        }
+      ]
+    },
+    {
+      "name": "Directory.CreateDirectory",
+      "displayName": "Directory.CreateDirectory",
+      "description": "Create a directory and any missing parents.",
+      "definition": "Ensures that the specified directory path exists, creating every missing directory in the path. It succeeds without replacing content when the directory already exists.",
+      "moduleName": "System.IO.Directory",
+      "action": "Create",
+      "object": "Directory",
+      "namespaceName": "System.IO",
+      "typeName": "Directory",
+      "memberName": "CreateDirectory",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var directory = Directory.CreateDirectory({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.directory.createdirectory",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The directory path to ensure.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Prepare a nested output folder",
+          "code": "var output = Path.Combine(\"build\", \"reports\", \"daily\");\nDirectory.CreateDirectory(output);\nFile.WriteAllText(Path.Combine(output, \"summary.txt\"), \"Ready\");",
+          "explanation": "CreateDirectory makes build, reports, and daily as needed before the file is written."
+        }
+      ]
+    },
+    {
+      "name": "Directory.GetFiles",
+      "displayName": "Directory.GetFiles",
+      "description": "Return file paths from a directory.",
+      "definition": "Immediately enumerates matching files and returns their paths as a string array. A search pattern limits names, and an overload can include subdirectories.",
+      "moduleName": "System.IO.Directory",
+      "action": "Get",
+      "object": "Directory",
+      "namespaceName": "System.IO",
+      "typeName": "Directory",
+      "memberName": "GetFiles",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var files = Directory.GetFiles({path}, {searchPattern});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.directory.getfiles",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The directory to search.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "searchPattern",
+          "displayName": "searchPattern",
+          "placeholder": "searchPattern",
+          "description": "A file-name pattern such as *.log.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "List log files",
+          "code": "var files = Directory.GetFiles(\"logs\", \"*.log\");\nforeach (var file in files)\n{\n    Console.WriteLine(Path.GetFileName(file));\n}",
+          "explanation": "GetFiles returns the matching paths as an array, and the loop prints just each file name."
+        }
+      ]
+    },
+    {
+      "name": "Directory.EnumerateFiles",
+      "displayName": "Directory.EnumerateFiles",
+      "description": "Lazily enumerate file paths from a directory.",
+      "definition": "Returns an IEnumerable<string> that produces matching file paths as they are requested. Unlike GetFiles, processing can begin before every match has been collected in memory.",
+      "moduleName": "System.IO.Directory",
+      "action": "Get",
+      "object": "Directory",
+      "namespaceName": "System.IO",
+      "typeName": "Directory",
+      "memberName": "EnumerateFiles",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var files = Directory.EnumerateFiles({path}, {searchPattern}, SearchOption.AllDirectories);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.directory.enumeratefiles",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The directory to search.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "searchPattern",
+          "displayName": "searchPattern",
+          "placeholder": "searchPattern",
+          "description": "A file-name pattern such as *.cs.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Stop after the first ten source files",
+          "code": "var sourceFiles = Directory\n    .EnumerateFiles(\".\", \"*.cs\", SearchOption.AllDirectories)\n    .Take(10);\n\nforeach (var file in sourceFiles)\n{\n    Console.WriteLine(file);\n}",
+          "explanation": "Lazy enumeration lets Take stop the directory walk after ten matching paths have been requested."
+        }
+      ]
+    },
+    {
+      "name": "Directory.GetDirectories",
+      "displayName": "Directory.GetDirectories",
+      "description": "Return child directory paths.",
+      "definition": "Returns a string array containing directories that match the selected path and optional search pattern. SearchOption can limit the operation to direct children or recurse through the tree.",
+      "moduleName": "System.IO.Directory",
+      "action": "Get",
+      "object": "Directory",
+      "namespaceName": "System.IO",
+      "typeName": "Directory",
+      "memberName": "GetDirectories",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var directories = Directory.GetDirectories({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.directory.getdirectories",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The parent directory to inspect.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Show immediate project folders",
+          "code": "foreach (var directory in Directory.GetDirectories(\"projects\"))\n{\n    Console.WriteLine(Path.GetFileName(directory));\n}",
+          "explanation": "Only the direct child directories are returned by this overload."
+        }
+      ]
+    },
+    {
+      "name": "Directory.Exists",
+      "displayName": "Directory.Exists",
+      "description": "Test whether a directory path currently exists.",
+      "definition": "Returns true when the path identifies an existing directory. Missing, invalid, and inaccessible paths normally produce false rather than an exception.",
+      "moduleName": "System.IO.Directory",
+      "action": "Test",
+      "object": "Directory",
+      "namespaceName": "System.IO",
+      "typeName": "Directory",
+      "memberName": "Exists",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var exists = Directory.Exists({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.directory.exists",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The directory path to check.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Choose an available workspace",
+          "code": "var workspace = Directory.Exists(@\"D:\\Work\")\n    ? @\"D:\\Work\"\n    : Environment.CurrentDirectory;\nConsole.WriteLine(workspace);",
+          "explanation": "The preferred directory is used when available; otherwise the current process directory becomes the fallback."
+        }
+      ]
+    },
+    {
+      "name": "Directory.Delete",
+      "displayName": "Directory.Delete",
+      "description": "Delete a directory.",
+      "definition": "Removes a directory. The recursive argument must be true to delete a non-empty tree, so callers should resolve and validate the exact target before using it.",
+      "moduleName": "System.IO.Directory",
+      "action": "Delete",
+      "object": "Directory",
+      "namespaceName": "System.IO",
+      "typeName": "Directory",
+      "memberName": "Delete",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "Directory.Delete({path}, recursive: {recursive});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.directory.delete",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The directory to remove.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "recursive",
+          "displayName": "recursive",
+          "placeholder": "recursive",
+          "description": "Whether to remove all descendants.",
+          "typeName": "bool",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Remove a known build-output folder",
+          "code": "var buildOutput = Path.GetFullPath(Path.Combine(\"artifacts\", \"temp\"));\nif (Directory.Exists(buildOutput))\n{\n    Directory.Delete(buildOutput, recursive: true);\n}",
+          "explanation": "The code resolves one explicit target, checks it, and removes the tree. Recursive deletion is permanent and should never use an unvalidated broad path."
+        }
+      ]
+    },
+    {
+      "name": "Path.Combine",
+      "displayName": "Path.Combine",
+      "description": "Combine path segments with the proper separator.",
+      "definition": "Joins path segments using the current platform's directory separator rules. If a later segment is rooted, earlier segments may be discarded, so untrusted rooted input should be validated.",
+      "moduleName": "System.IO.Path",
+      "action": "Combine",
+      "object": "Path",
+      "namespaceName": "System.IO",
+      "typeName": "Path",
+      "memberName": "Combine",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var path = Path.Combine({path1}, {path2});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.path.combine",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path1",
+          "displayName": "path1",
+          "placeholder": "path1",
+          "description": "The first path segment.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "path2",
+          "displayName": "path2",
+          "placeholder": "path2",
+          "description": "The next path segment.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a settings path",
+          "code": "var settingsPath = Path.Combine(\n    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),\n    \"Hypershell\",\n    \"settings.json\");",
+          "explanation": "Each segment is joined with the separator appropriate for the operating system."
+        }
+      ]
+    },
+    {
+      "name": "Path.GetFileName",
+      "displayName": "Path.GetFileName",
+      "description": "Extract the file-name portion of a path.",
+      "definition": "Returns the characters after the final directory separator. The result can include an extension and is empty when the path ends in a separator.",
+      "moduleName": "System.IO.Path",
+      "action": "Select",
+      "object": "Path",
+      "namespaceName": "System.IO",
+      "typeName": "Path",
+      "memberName": "GetFileName",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var fileName = Path.GetFileName({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.path.getfilename",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The path to inspect.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Display only a file name",
+          "code": "var fullPath = @\"C:\\logs\\app-2026.log\";\nConsole.WriteLine(Path.GetFileName(fullPath));",
+          "explanation": "The directory portion is removed and app-2026.log is returned."
+        }
+      ]
+    },
+    {
+      "name": "Path.GetExtension",
+      "displayName": "Path.GetExtension",
+      "description": "Extract the extension from a path.",
+      "definition": "Returns the final period and the characters that follow it in the last path segment. It returns an empty string when no extension is present.",
+      "moduleName": "System.IO.Path",
+      "action": "Select",
+      "object": "Path",
+      "namespaceName": "System.IO",
+      "typeName": "Path",
+      "memberName": "GetExtension",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var extension = Path.GetExtension({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.path.getextension",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The path to inspect.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Route files by extension",
+          "code": "var extension = Path.GetExtension(\"archive.tar.gz\");\nif (extension.Equals(\".gz\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"GZip content\");\n}",
+          "explanation": "GetExtension returns only the final extension, .gz, not the earlier .tar portion."
+        }
+      ]
+    },
+    {
+      "name": "Path.GetDirectoryName",
+      "displayName": "Path.GetDirectoryName",
+      "description": "Extract the directory portion of a path.",
+      "definition": "Returns the path text before the final directory separator, or null when the input has no directory information. It manipulates path text and does not check whether the directory exists.",
+      "moduleName": "System.IO.Path",
+      "action": "Select",
+      "object": "Path",
+      "namespaceName": "System.IO",
+      "typeName": "Path",
+      "memberName": "GetDirectoryName",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var directory = Path.GetDirectoryName({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.path.getdirectoryname",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The path to inspect.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Ensure a destination parent exists",
+          "code": "var destination = Path.GetFullPath(@\"exports\\daily\\report.csv\");\nvar parent = Path.GetDirectoryName(destination);\nif (parent is not null)\n{\n    Directory.CreateDirectory(parent);\n}",
+          "explanation": "The parent path is extracted from the full destination and created before a later file write."
+        }
+      ]
+    },
+    {
+      "name": "Path.GetFullPath",
+      "displayName": "Path.GetFullPath",
+      "description": "Resolve a path to an absolute normalized path.",
+      "definition": "Converts relative path text into a fully qualified path using a base directory and normalizes components such as dot segments. It does not require the resulting file or directory to exist.",
+      "moduleName": "System.IO.Path",
+      "action": "Get",
+      "object": "Path",
+      "namespaceName": "System.IO",
+      "typeName": "Path",
+      "memberName": "GetFullPath",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var fullPath = Path.GetFullPath({path});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.path.getfullpath",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The relative or absolute path to resolve.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Resolve a user-supplied relative path",
+          "code": "var fullPath = Path.GetFullPath(\n    Path.Combine(Environment.CurrentDirectory, @\"data\\..\\config\"));\nConsole.WriteLine(fullPath);",
+          "explanation": "The result is absolute and the data\\.. pair is normalized away."
+        }
+      ]
+    },
+    {
+      "name": "Path.ChangeExtension",
+      "displayName": "Path.ChangeExtension",
+      "description": "Return a path with a different extension.",
+      "definition": "Produces new path text whose final extension is replaced, added, or removed. It does not rename or create a file on disk.",
+      "moduleName": "System.IO.Path",
+      "action": "Replace",
+      "object": "Path",
+      "namespaceName": "System.IO",
+      "typeName": "Path",
+      "memberName": "ChangeExtension",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var changedPath = Path.ChangeExtension({path}, {extension});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.path.changeextension",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The original path.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "extension",
+          "displayName": "extension",
+          "placeholder": "extension",
+          "description": "The new extension, with or without a leading period.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a sidecar metadata name",
+          "code": "var imagePath = @\"photos\\sunset.jpg\";\nvar metadataPath = Path.ChangeExtension(imagePath, \".json\");\nConsole.WriteLine(metadataPath);",
+          "explanation": "The returned text is photos\\sunset.json; the original JPG file is untouched."
+        }
+      ]
+    },
+    {
+      "name": "Path.GetTempPath",
+      "displayName": "Path.GetTempPath",
+      "description": "Get the current user's temporary-file directory.",
+      "definition": "Returns the path the operating system designates for temporary files for the current process or user. The method returns a directory path but does not create a unique file within it.",
+      "moduleName": "System.IO.Path",
+      "action": "Get",
+      "object": "Path",
+      "namespaceName": "System.IO",
+      "typeName": "Path",
+      "memberName": "GetTempPath",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var tempDirectory = Path.GetTempPath();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.path.gettemppath",
+      "keywords": [],
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Build a unique temporary file path",
+          "code": "var tempFile = Path.Combine(\n    Path.GetTempPath(),\n    Path.GetRandomFileName());\nawait File.WriteAllTextAsync(tempFile, \"temporary data\");",
+          "explanation": "GetTempPath chooses the temporary directory and GetRandomFileName supplies a low-collision name inside it."
+        }
+      ]
+    },
+    {
+      "name": "Path.GetRandomFileName",
+      "displayName": "Path.GetRandomFileName",
+      "description": "Generate a random file name without creating a file.",
+      "definition": "Returns a cryptographically strong random name suitable for use as a file or directory name. It does not create anything, so the caller still chooses a directory and handles the small possibility of a collision.",
+      "moduleName": "System.IO.Path",
+      "action": "Create",
+      "object": "Path",
+      "namespaceName": "System.IO",
+      "typeName": "Path",
+      "memberName": "GetRandomFileName",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var randomName = Path.GetRandomFileName();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.io.path.getrandomfilename",
+      "keywords": [],
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Create an isolated temporary directory",
+          "code": "var tempDirectory = Path.Combine(\n    Path.GetTempPath(),\n    Path.GetRandomFileName());\nDirectory.CreateDirectory(tempDirectory);",
+          "explanation": "The random name becomes one child of the operating system's temporary directory, then CreateDirectory makes it real."
+        }
+      ]
+    },
+    {
+      "name": "List<T>.Add",
+      "displayName": "List<T>.Add",
+      "description": "Add one item to the end of a list.",
+      "definition": "Appends one value to a mutable List<T>, increasing Count by one. The value must be compatible with the list's element type.",
+      "moduleName": "System.Collections.Generic.List<T>",
+      "action": "Add",
+      "object": "List",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "List<T>",
+      "memberName": "Add",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{list}.Add({item});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1.add",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "list",
+          "displayName": "list",
+          "placeholder": "list",
+          "description": "The List<T> instance to change.",
+          "typeName": "List<T>",
+          "isRequired": true
+        },
+        {
+          "name": "item",
+          "displayName": "item",
+          "placeholder": "item",
+          "description": "The value to append.",
+          "typeName": "T",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Collect validation errors",
+          "code": "var projectName = \"   \";\nvar errors = new List<string>();\nif (string.IsNullOrWhiteSpace(projectName))\n{\n    errors.Add(\"Project name is required.\");\n}",
+          "explanation": "The message is appended only when validation fails, and the list can later display all collected errors."
+        }
+      ]
+    },
+    {
+      "name": "List<T>.AddRange",
+      "displayName": "List<T>.AddRange",
+      "description": "Append every item from another sequence.",
+      "definition": "Enumerates the supplied collection and appends each value to the list in order. The existing list entries remain before the newly added range.",
+      "moduleName": "System.Collections.Generic.List<T>",
+      "action": "Add",
+      "object": "List",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "List<T>",
+      "memberName": "AddRange",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{list}.AddRange({items});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1.addrange",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "list",
+          "displayName": "list",
+          "placeholder": "list",
+          "description": "The List<T> instance to change.",
+          "typeName": "List<T>",
+          "isRequired": true
+        },
+        {
+          "name": "items",
+          "displayName": "items",
+          "placeholder": "items",
+          "description": "The sequence of values to append.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Merge discovered files into a work list",
+          "code": "var work = new List<string> { \"README.md\" };\nvar sourceFiles = Directory.EnumerateFiles(\"src\", \"*.cs\");\nwork.AddRange(sourceFiles);\nConsole.WriteLine(work.Count);",
+          "explanation": "README.md stays first, followed by every source-file path produced by the enumeration."
+        }
+      ]
+    },
+    {
+      "name": "List<T>.Remove",
+      "displayName": "List<T>.Remove",
+      "description": "Remove the first matching value from a list.",
+      "definition": "Searches from the beginning of the list, removes the first equal item, and returns true. It returns false and leaves the list unchanged when no equal item exists.",
+      "moduleName": "System.Collections.Generic.List<T>",
+      "action": "Remove",
+      "object": "List",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "List<T>",
+      "memberName": "Remove",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var removed = {list}.Remove({item});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1.remove",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "list",
+          "displayName": "list",
+          "placeholder": "list",
+          "description": "The List<T> instance to change.",
+          "typeName": "List<T>",
+          "isRequired": true
+        },
+        {
+          "name": "item",
+          "displayName": "item",
+          "placeholder": "item",
+          "description": "The value to remove.",
+          "typeName": "T",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Remove a completed task",
+          "code": "var tasks = new List<string> { \"Build\", \"Test\", \"Deploy\" };\nif (tasks.Remove(\"Test\"))\n{\n    Console.WriteLine(\"Test task removed.\");\n}",
+          "explanation": "Remove returns true because Test was found, and the remaining list contains Build and Deploy."
+        }
+      ]
+    },
+    {
+      "name": "List<T>.RemoveAt",
+      "displayName": "List<T>.RemoveAt",
+      "description": "Remove the item at a zero-based index.",
+      "definition": "Deletes exactly one element by position and shifts all later elements down by one index. An index outside the current list range throws ArgumentOutOfRangeException.",
+      "moduleName": "System.Collections.Generic.List<T>",
+      "action": "Remove",
+      "object": "List",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "List<T>",
+      "memberName": "RemoveAt",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{list}.RemoveAt({index});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1.removeat",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "list",
+          "displayName": "list",
+          "placeholder": "list",
+          "description": "The List<T> instance to change.",
+          "typeName": "List<T>",
+          "isRequired": true
+        },
+        {
+          "name": "index",
+          "displayName": "index",
+          "placeholder": "index",
+          "description": "The zero-based position to delete.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Remove the oldest queue entry",
+          "code": "var queue = new List<string> { \"oldest\", \"middle\", \"newest\" };\nif (queue.Count > 0)\n{\n    queue.RemoveAt(0);\n}",
+          "explanation": "After the count guard, index 0 is safe to remove and middle becomes the first entry."
+        }
+      ]
+    },
+    {
+      "name": "List<T>.Contains",
+      "displayName": "List<T>.Contains",
+      "description": "Test whether a list contains an equal value.",
+      "definition": "Searches the list using its element equality comparer and returns true when an equal value is present. For strings, the default comparison is case-sensitive.",
+      "moduleName": "System.Collections.Generic.List<T>",
+      "action": "Test",
+      "object": "List",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "List<T>",
+      "memberName": "Contains",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var contains = {list}.Contains({item});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1.contains",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "list",
+          "displayName": "list",
+          "placeholder": "list",
+          "description": "The List<T> instance to search.",
+          "typeName": "List<T>",
+          "isRequired": true
+        },
+        {
+          "name": "item",
+          "displayName": "item",
+          "placeholder": "item",
+          "description": "The value to locate.",
+          "typeName": "T",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Avoid adding a duplicate ID",
+          "code": "var ids = new List<int> { 101, 203, 305 };\nif (!ids.Contains(203))\n{\n    ids.Add(203);\n}",
+          "explanation": "Contains finds 203, so the guarded Add does not create a duplicate."
+        }
+      ]
+    },
+    {
+      "name": "List<T>.Find",
+      "displayName": "List<T>.Find",
+      "description": "Find the first list item that satisfies a predicate.",
+      "definition": "Runs a Boolean predicate against list elements in order and returns the first match. When nothing matches it returns default(T), which can be ambiguous for value types.",
+      "moduleName": "System.Collections.Generic.List<T>",
+      "action": "Find",
+      "object": "List",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "List<T>",
+      "memberName": "Find",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var match = {list}.Find({predicate});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1.find",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "list",
+          "displayName": "list",
+          "placeholder": "list",
+          "description": "The List<T> instance to search.",
+          "typeName": "List<T>",
+          "isRequired": true
+        },
+        {
+          "name": "predicate",
+          "displayName": "predicate",
+          "placeholder": "predicate",
+          "description": "A function returning true for the desired item.",
+          "typeName": "Predicate<T>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find a user by ID",
+          "code": "var users = new[]\n{\n    new { Id = 7, Name = \"Ada\" },\n    new { Id = 12, Name = \"Grace\" }\n}.ToList();\nvar user = users.Find(candidate => candidate.Id == 12);\nConsole.WriteLine(user?.Name ?? \"Not found\");",
+          "explanation": "The predicate selects the first User whose Id is 12, so Grace is printed."
+        }
+      ]
+    },
+    {
+      "name": "List<T>.Sort",
+      "displayName": "List<T>.Sort",
+      "description": "Sort a list in place.",
+      "definition": "Reorders the existing List<T> rather than returning a second sequence. With no comparer it uses the element type's default ordering; overloads accept comparison logic.",
+      "moduleName": "System.Collections.Generic.List<T>",
+      "action": "Sort",
+      "object": "List",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "List<T>",
+      "memberName": "Sort",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{list}.Sort();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1.sort",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "list",
+          "displayName": "list",
+          "placeholder": "list",
+          "description": "The List<T> instance to reorder.",
+          "typeName": "List<T>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Sort version labels with a comparison",
+          "code": "var versions = new List<Version>\n{\n    new(2, 0),\n    new(1, 5),\n    new(1, 2)\n};\nversions.Sort();\nConsole.WriteLine(string.Join(\", \", versions));",
+          "explanation": "The list itself becomes 1.2, 1.5, 2.0 using Version's default comparison."
+        }
+      ]
+    },
+    {
+      "name": "Dictionary<TKey,TValue>.Add",
+      "displayName": "Dictionary<TKey,TValue>.Add",
+      "description": "Add a new key and value to a dictionary.",
+      "definition": "Stores a key-value pair and requires the key to be absent. Adding an equal key twice throws ArgumentException; use TryAdd or assignment when duplicate keys are expected.",
+      "moduleName": "System.Collections.Generic.Dictionary<TKey,TValue>",
+      "action": "Add",
+      "object": "Dictionary",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "Dictionary<TKey,TValue>",
+      "memberName": "Add",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{dictionary}.Add({key}, {value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.add",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "dictionary",
+          "displayName": "dictionary",
+          "placeholder": "dictionary",
+          "description": "The dictionary instance to change.",
+          "typeName": "Dictionary<TKey,TValue>",
+          "isRequired": true
+        },
+        {
+          "name": "key",
+          "displayName": "key",
+          "placeholder": "key",
+          "description": "The unique lookup key.",
+          "typeName": "TKey",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The value associated with the key.",
+          "typeName": "TValue",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Register a command handler",
+          "code": "var handlers = new Dictionary<string, Action>(\n    StringComparer.OrdinalIgnoreCase);\nhandlers.Add(\"build\", () => Console.WriteLine(\"Building\"));\nhandlers[\"build\"]();",
+          "explanation": "The comparer makes key lookup case-insensitive, and the stored Action is invoked by its build key."
+        }
+      ]
+    },
+    {
+      "name": "Dictionary<TKey,TValue>.TryGetValue",
+      "displayName": "Dictionary<TKey,TValue>.TryGetValue",
+      "description": "Look up a value without throwing when the key is absent.",
+      "definition": "Attempts one dictionary lookup, places the found value in an out variable, and returns true on success. On failure it returns false and assigns default(TValue).",
+      "moduleName": "System.Collections.Generic.Dictionary<TKey,TValue>",
+      "action": "Get",
+      "object": "Dictionary",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "Dictionary<TKey,TValue>",
+      "memberName": "TryGetValue",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var found = {dictionary}.TryGetValue({key}, out var value);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.trygetvalue",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "dictionary",
+          "displayName": "dictionary",
+          "placeholder": "dictionary",
+          "description": "The dictionary instance to search.",
+          "typeName": "Dictionary<TKey,TValue>",
+          "isRequired": true
+        },
+        {
+          "name": "key",
+          "displayName": "key",
+          "placeholder": "key",
+          "description": "The lookup key.",
+          "typeName": "TKey",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read an optional timeout",
+          "code": "var settings = new Dictionary<string, int>\n{\n    [\"timeout\"] = 30\n};\nvar timeout = settings.TryGetValue(\"timeout\", out var seconds)\n    ? seconds\n    : 10;",
+          "explanation": "The existing value 30 is returned; if the key were missing, the conditional would use 10."
+        }
+      ]
+    },
+    {
+      "name": "Dictionary<TKey,TValue>.ContainsKey",
+      "displayName": "Dictionary<TKey,TValue>.ContainsKey",
+      "description": "Test whether a dictionary contains a key.",
+      "definition": "Returns true when the dictionary contains an equal key according to its key comparer. When the value is also needed, TryGetValue avoids performing a second lookup.",
+      "moduleName": "System.Collections.Generic.Dictionary<TKey,TValue>",
+      "action": "Test",
+      "object": "Dictionary",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "Dictionary<TKey,TValue>",
+      "memberName": "ContainsKey",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var contains = {dictionary}.ContainsKey({key});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.containskey",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "dictionary",
+          "displayName": "dictionary",
+          "placeholder": "dictionary",
+          "description": "The dictionary instance to inspect.",
+          "typeName": "Dictionary<TKey,TValue>",
+          "isRequired": true
+        },
+        {
+          "name": "key",
+          "displayName": "key",
+          "placeholder": "key",
+          "description": "The key to test.",
+          "typeName": "TKey",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Add a default only when missing",
+          "code": "var ports = new Dictionary<string, int>();\nif (!ports.ContainsKey(\"https\"))\n{\n    ports[\"https\"] = 443;\n}",
+          "explanation": "The assignment runs only when no https key exists."
+        }
+      ]
+    },
+    {
+      "name": "Dictionary<TKey,TValue>.Remove",
+      "displayName": "Dictionary<TKey,TValue>.Remove",
+      "description": "Remove an entry by key.",
+      "definition": "Deletes the key and its associated value, returning true when an entry was present. An overload also returns the removed value through an out parameter.",
+      "moduleName": "System.Collections.Generic.Dictionary<TKey,TValue>",
+      "action": "Remove",
+      "object": "Dictionary",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "Dictionary<TKey,TValue>",
+      "memberName": "Remove",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var removed = {dictionary}.Remove({key});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.remove",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "dictionary",
+          "displayName": "dictionary",
+          "placeholder": "dictionary",
+          "description": "The dictionary instance to change.",
+          "typeName": "Dictionary<TKey,TValue>",
+          "isRequired": true
+        },
+        {
+          "name": "key",
+          "displayName": "key",
+          "placeholder": "key",
+          "description": "The key of the entry to remove.",
+          "typeName": "TKey",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Remove and inspect a cached value",
+          "code": "var cache = new Dictionary<string, string>\n{\n    [\"token\"] = \"temporary\"\n};\nif (cache.Remove(\"token\", out var removedValue))\n{\n    Console.WriteLine($\"Removed {removedValue.Length} characters.\");\n}",
+          "explanation": "The entry disappears from the dictionary while its former value remains available in removedValue."
+        }
+      ]
+    },
+    {
+      "name": "Dictionary<TKey,TValue>.Clear",
+      "displayName": "Dictionary<TKey,TValue>.Clear",
+      "description": "Remove every entry from a dictionary.",
+      "definition": "Deletes all key-value pairs and sets Count to zero while retaining the same dictionary instance, comparer, and reusable allocated storage.",
+      "moduleName": "System.Collections.Generic.Dictionary<TKey,TValue>",
+      "action": "Clear",
+      "object": "Dictionary",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "Dictionary<TKey,TValue>",
+      "memberName": "Clear",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{dictionary}.Clear();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.clear",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "dictionary",
+          "displayName": "dictionary",
+          "placeholder": "dictionary",
+          "description": "The dictionary instance to empty.",
+          "typeName": "Dictionary<TKey,TValue>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Reset an in-memory cache",
+          "code": "var cache = new Dictionary<string, object>();\ncache[\"profile\"] = new { Name = \"Developer\", Theme = \"Dark\" };\ncache.Clear();\nConsole.WriteLine(cache.Count);",
+          "explanation": "The same cache object remains usable, but it contains zero entries."
+        }
+      ]
+    },
+    {
+      "name": "HashSet<T>.Add",
+      "displayName": "HashSet<T>.Add",
+      "description": "Add a value only if it is not already in the set.",
+      "definition": "Inserts a unique value and returns true. When an equal value is already present, it returns false and the set remains unchanged.",
+      "moduleName": "System.Collections.Generic.HashSet<T>",
+      "action": "Add",
+      "object": "HashSet",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "HashSet<T>",
+      "memberName": "Add",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var added = {set}.Add({item});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1.add",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "set",
+          "displayName": "set",
+          "placeholder": "set",
+          "description": "The HashSet<T> instance to change.",
+          "typeName": "HashSet<T>",
+          "isRequired": true
+        },
+        {
+          "name": "item",
+          "displayName": "item",
+          "placeholder": "item",
+          "description": "The value to add.",
+          "typeName": "T",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Collect unique file extensions",
+          "code": "var extensions = new HashSet<string>(\n    StringComparer.OrdinalIgnoreCase);\nforeach (var file in Directory.EnumerateFiles(\".\"))\n{\n    extensions.Add(Path.GetExtension(file));\n}",
+          "explanation": "Repeated extensions are ignored, and the comparer treats .TXT and .txt as the same value."
+        }
+      ]
+    },
+    {
+      "name": "HashSet<T>.Contains",
+      "displayName": "HashSet<T>.Contains",
+      "description": "Test whether a set contains an equal value.",
+      "definition": "Uses the set's equality comparer to perform a fast membership test. It returns a Boolean and does not change the set.",
+      "moduleName": "System.Collections.Generic.HashSet<T>",
+      "action": "Test",
+      "object": "HashSet",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "HashSet<T>",
+      "memberName": "Contains",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var contains = {set}.Contains({item});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1.contains",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "set",
+          "displayName": "set",
+          "placeholder": "set",
+          "description": "The HashSet<T> instance to inspect.",
+          "typeName": "HashSet<T>",
+          "isRequired": true
+        },
+        {
+          "name": "item",
+          "displayName": "item",
+          "placeholder": "item",
+          "description": "The value to test.",
+          "typeName": "T",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Authorize a role",
+          "code": "var allowedRoles = new HashSet<string>(\n    new[] { \"Admin\", \"Operator\" },\n    StringComparer.OrdinalIgnoreCase);\nvar mayDeploy = allowedRoles.Contains(\"operator\");",
+          "explanation": "The case-insensitive set recognizes operator as the existing Operator role."
+        }
+      ]
+    },
+    {
+      "name": "HashSet<T>.UnionWith",
+      "displayName": "HashSet<T>.UnionWith",
+      "description": "Add every distinct value from another sequence.",
+      "definition": "Mutates the set so it contains values that appeared in either the original set or the supplied sequence. Duplicates remain collapsed according to the set's comparer.",
+      "moduleName": "System.Collections.Generic.HashSet<T>",
+      "action": "Combine",
+      "object": "HashSet",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "HashSet<T>",
+      "memberName": "UnionWith",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{set}.UnionWith({other});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1.unionwith",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "set",
+          "displayName": "set",
+          "placeholder": "set",
+          "description": "The HashSet<T> instance to change.",
+          "typeName": "HashSet<T>",
+          "isRequired": true
+        },
+        {
+          "name": "other",
+          "displayName": "other",
+          "placeholder": "other",
+          "description": "The values to merge into the set.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Merge permission sets",
+          "code": "var permissions = new HashSet<string> { \"read\", \"write\" };\nvar rolePermissions = new[] { \"write\", \"deploy\" };\npermissions.UnionWith(rolePermissions);\nConsole.WriteLine(string.Join(\", \", permissions));",
+          "explanation": "The result contains read, write, and deploy; the repeated write value appears only once."
+        }
+      ]
+    },
+    {
+      "name": "HashSet<T>.IntersectWith",
+      "displayName": "HashSet<T>.IntersectWith",
+      "description": "Keep only values that also occur in another sequence.",
+      "definition": "Mutates the set to its mathematical intersection with the supplied values. Every value not present in both collections is removed.",
+      "moduleName": "System.Collections.Generic.HashSet<T>",
+      "action": "Filter",
+      "object": "HashSet",
+      "namespaceName": "System.Collections.Generic",
+      "typeName": "HashSet<T>",
+      "memberName": "IntersectWith",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{set}.IntersectWith({other});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1.intersectwith",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "set",
+          "displayName": "set",
+          "placeholder": "set",
+          "description": "The HashSet<T> instance to filter.",
+          "typeName": "HashSet<T>",
+          "isRequired": true
+        },
+        {
+          "name": "other",
+          "displayName": "other",
+          "placeholder": "other",
+          "description": "The values allowed to remain.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Restrict requested features to supported features",
+          "code": "var requested = new HashSet<string> { \"logs\", \"metrics\", \"tracing\" };\nvar supported = new[] { \"logs\", \"metrics\" };\nrequested.IntersectWith(supported);",
+          "explanation": "tracing is removed because it is not supported; logs and metrics remain."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.Where",
+      "displayName": "Enumerable.Where",
+      "description": "Keep sequence elements that satisfy a condition.",
+      "definition": "Returns a lazy sequence that yields only source elements for which the predicate returns true. The source is evaluated when the result is enumerated, not when Where is called.",
+      "moduleName": "System.Linq",
+      "action": "Filter",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "Where",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var filtered = {source}.Where({predicate});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.where",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "predicate",
+          "displayName": "predicate",
+          "placeholder": "predicate",
+          "description": "A function that returns true for values to keep.",
+          "typeName": "Func<T,bool>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Keep only large files",
+          "code": "var largeFiles = Directory\n    .EnumerateFiles(\"logs\", \"*.log\")\n    .Where(path => new FileInfo(path).Length > 1_000_000);\n\nforeach (var file in largeFiles)\n{\n    Console.WriteLine(file);\n}",
+          "explanation": "Each path is tested during enumeration, and only files larger than one million bytes reach the loop."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.Select",
+      "displayName": "Enumerable.Select",
+      "description": "Transform every sequence element into a result value.",
+      "definition": "Returns a lazy projection in which the selector function converts each source element to another value or shape. It does not mutate the source objects unless the selector itself does so.",
+      "moduleName": "System.Linq",
+      "action": "Select",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "Select",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var projected = {source}.Select({selector});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.select",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<TSource>",
+          "isRequired": true
+        },
+        {
+          "name": "selector",
+          "displayName": "selector",
+          "placeholder": "selector",
+          "description": "A function that creates one result per source value.",
+          "typeName": "Func<TSource,TResult>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Project file paths into names",
+          "code": "var names = Directory\n    .EnumerateFiles(\"reports\", \"*.csv\")\n    .Select(Path.GetFileName);\n\nConsole.WriteLine(string.Join(Environment.NewLine, names));",
+          "explanation": "Each full path is replaced in the result sequence by its file-name portion."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.OrderBy",
+      "displayName": "Enumerable.OrderBy",
+      "description": "Order sequence elements by an ascending key.",
+      "definition": "Returns a new ordered sequence using the key produced for each element. The source collection is not rearranged, and enumeration performs the ordering work.",
+      "moduleName": "System.Linq",
+      "action": "Order",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "OrderBy",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var ordered = {source}.OrderBy({keySelector});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.orderby",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<TSource>",
+          "isRequired": true
+        },
+        {
+          "name": "keySelector",
+          "displayName": "keySelector",
+          "placeholder": "keySelector",
+          "description": "A function that returns the sort key.",
+          "typeName": "Func<TSource,TKey>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Order processes by memory use",
+          "code": "var processes = Process.GetProcesses()\n    .OrderBy(process => process.WorkingSet64)\n    .Take(5);\n\nforeach (var process in processes)\n{\n    Console.WriteLine($\"{process.ProcessName}: {process.WorkingSet64:N0}\");\n}",
+          "explanation": "The five processes with the smallest working sets are enumerated first."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.OrderByDescending",
+      "displayName": "Enumerable.OrderByDescending",
+      "description": "Order sequence elements by a descending key.",
+      "definition": "Returns an ordered sequence with larger or later key values first. The operation leaves the original collection unchanged.",
+      "moduleName": "System.Linq",
+      "action": "Order",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "OrderByDescending",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var ordered = {source}.OrderByDescending({keySelector});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.orderbydescending",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<TSource>",
+          "isRequired": true
+        },
+        {
+          "name": "keySelector",
+          "displayName": "keySelector",
+          "placeholder": "keySelector",
+          "description": "A function that returns the sort key.",
+          "typeName": "Func<TSource,TKey>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Show the newest files first",
+          "code": "var newest = Directory.EnumerateFiles(\"logs\")\n    .Select(path => new FileInfo(path))\n    .OrderByDescending(file => file.LastWriteTimeUtc)\n    .Take(3);",
+          "explanation": "FileInfo objects are sorted by UTC modification time, newest first, and only the first three are kept."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.GroupBy",
+      "displayName": "Enumerable.GroupBy",
+      "description": "Group sequence elements that share a key.",
+      "definition": "Returns groups keyed by the value produced for each source element. Every group is itself an enumerable sequence, and all elements with equal keys appear together.",
+      "moduleName": "System.Linq",
+      "action": "Group",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "GroupBy",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var groups = {source}.GroupBy({keySelector});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.groupby",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<TSource>",
+          "isRequired": true
+        },
+        {
+          "name": "keySelector",
+          "displayName": "keySelector",
+          "placeholder": "keySelector",
+          "description": "A function that chooses each grouping key.",
+          "typeName": "Func<TSource,TKey>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Count files by extension",
+          "code": "var groups = Directory.EnumerateFiles(\"assets\")\n    .GroupBy(path => Path.GetExtension(path).ToLowerInvariant());\n\nforeach (var group in groups)\n{\n    Console.WriteLine($\"{group.Key}: {group.Count()}\");\n}",
+          "explanation": "Paths sharing an extension are collected into the same group, then each group's size is printed."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.Any",
+      "displayName": "Enumerable.Any",
+      "description": "Test whether a sequence has any matching element.",
+      "definition": "Returns true as soon as one element satisfies the predicate, so it need not enumerate the rest. Without a predicate it tests whether the sequence contains at least one element.",
+      "moduleName": "System.Linq",
+      "action": "Test",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "Any",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var any = {source}.Any({predicate});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.any",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "predicate",
+          "displayName": "predicate",
+          "placeholder": "predicate",
+          "description": "The condition at least one element must satisfy.",
+          "typeName": "Func<T,bool>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Check for failed results",
+          "code": "var results = new[] { 0, 0, 2, 0 };\nvar hasFailure = results.Any(exitCode => exitCode != 0);\nConsole.WriteLine(hasFailure);",
+          "explanation": "Enumeration stops when exit code 2 satisfies the predicate, and true is returned."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.All",
+      "displayName": "Enumerable.All",
+      "description": "Test whether every sequence element satisfies a condition.",
+      "definition": "Returns false as soon as one element fails the predicate. It returns true for an empty sequence because no element violates the condition.",
+      "moduleName": "System.Linq",
+      "action": "Test",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "All",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var all = {source}.All({predicate});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.all",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "predicate",
+          "displayName": "predicate",
+          "placeholder": "predicate",
+          "description": "The condition every element must satisfy.",
+          "typeName": "Func<T,bool>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate all configured ports",
+          "code": "var ports = new[] { 80, 443, 8080 };\nvar valid = ports.All(port => port is > 0 and <= 65535);\nConsole.WriteLine(valid);",
+          "explanation": "Every port lies inside the legal numeric range, so All returns true."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.FirstOrDefault",
+      "displayName": "Enumerable.FirstOrDefault",
+      "description": "Return the first matching element or a default value.",
+      "definition": "Returns the first source element, or the first one satisfying a predicate. When no element exists it returns default(T), commonly null for reference types and zero for int.",
+      "moduleName": "System.Linq",
+      "action": "Find",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "FirstOrDefault",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var first = {source}.FirstOrDefault({predicate});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.firstordefault",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "predicate",
+          "displayName": "predicate",
+          "placeholder": "predicate",
+          "description": "The optional match condition.",
+          "typeName": "Func<T,bool>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find the first JSON file",
+          "code": "var firstJson = Directory\n    .EnumerateFiles(\"config\")\n    .FirstOrDefault(path =>\n        Path.GetExtension(path).Equals(\".json\", StringComparison.OrdinalIgnoreCase));\n\nConsole.WriteLine(firstJson ?? \"No JSON file found\");",
+          "explanation": "Enumeration stops at the first matching path; null produces the fallback message."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.SingleOrDefault",
+      "displayName": "Enumerable.SingleOrDefault",
+      "description": "Return the only matching element, or a default when none exists.",
+      "definition": "Returns one element when exactly one match exists and default(T) when none exists. It throws InvalidOperationException if more than one element matches, making duplicate data visible.",
+      "moduleName": "System.Linq",
+      "action": "Find",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "SingleOrDefault",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var single = {source}.SingleOrDefault({predicate});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.singleordefault",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "predicate",
+          "displayName": "predicate",
+          "placeholder": "predicate",
+          "description": "The match condition.",
+          "typeName": "Func<T,bool>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Require a unique user ID",
+          "code": "var requestedId = 12;\nvar users = new[]\n{\n    new { Id = 7, Name = \"Ada\" },\n    new { Id = 12, Name = \"Grace\" }\n};\nvar user = users.SingleOrDefault(candidate => candidate.Id == requestedId);\nif (user is null)\n{\n    Console.WriteLine(\"User not found.\");\n}",
+          "explanation": "No match yields null; duplicate IDs throw instead of silently choosing one record."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.Distinct",
+      "displayName": "Enumerable.Distinct",
+      "description": "Return one occurrence of each distinct value.",
+      "definition": "Produces a lazy sequence that omits later values considered equal by the selected comparer. It preserves the first-seen order in the current implementation, but callers should not depend on undocumented ordering guarantees.",
+      "moduleName": "System.Linq",
+      "action": "Filter",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "Distinct",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var unique = {source}.Distinct();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.distinct",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Remove duplicate tags",
+          "code": "var tags = new[] { \"CSharp\", \"powershell\", \"csharp\" };\nvar unique = tags.Distinct(StringComparer.OrdinalIgnoreCase);\nConsole.WriteLine(string.Join(\", \", unique));",
+          "explanation": "The case-insensitive comparer treats CSharp and csharp as duplicates."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.Count",
+      "displayName": "Enumerable.Count",
+      "description": "Count elements in a sequence.",
+      "definition": "Returns the number of source elements, or the number satisfying a predicate. It can use a collection's Count directly, but otherwise enumerates the sequence to calculate the result.",
+      "moduleName": "System.Linq",
+      "action": "Calculate",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "Count",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var count = {source}.Count({predicate});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.count",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "predicate",
+          "displayName": "predicate",
+          "placeholder": "predicate",
+          "description": "The optional condition for values to count.",
+          "typeName": "Func<T,bool>",
+          "isRequired": false
+        }
+      ],
+      "examples": [
+        {
+          "title": "Count enabled features",
+          "code": "var features = new[]\n{\n    (Name: \"Search\", Enabled: true),\n    (Name: \"Export\", Enabled: false),\n    (Name: \"Preview\", Enabled: true)\n};\nvar enabledCount = features.Count(feature => feature.Enabled);",
+          "explanation": "Only Search and Preview satisfy the predicate, so the result is 2."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.Sum",
+      "displayName": "Enumerable.Sum",
+      "description": "Add numeric sequence values.",
+      "definition": "Enumerates numeric values and returns their total. Selector overloads first extract a numeric value from each object, and overflow behavior depends on the numeric type.",
+      "moduleName": "System.Linq",
+      "action": "Sum",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "Sum",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var total = {source}.Sum({selector});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.sum",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "selector",
+          "displayName": "selector",
+          "placeholder": "selector",
+          "description": "The optional function that supplies each number.",
+          "typeName": "Func<T,TNumber>",
+          "isRequired": false
+        }
+      ],
+      "examples": [
+        {
+          "title": "Total file sizes",
+          "code": "var totalBytes = Directory\n    .EnumerateFiles(\"downloads\")\n    .Select(path => new FileInfo(path))\n    .Sum(file => file.Length);\n\nConsole.WriteLine($\"{totalBytes:N0} bytes\");",
+          "explanation": "The selector reads each FileInfo.Length and Sum adds those long integer values."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.Take",
+      "displayName": "Enumerable.Take",
+      "description": "Return at most the first requested number of elements.",
+      "definition": "Produces a lazy sequence containing the first count elements, or every element when the source is shorter. It stops requesting source values after the limit is reached.",
+      "moduleName": "System.Linq",
+      "action": "Select",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "Take",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var first = {source}.Take({count});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.take",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "count",
+          "displayName": "count",
+          "placeholder": "count",
+          "description": "The maximum number of values to return.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Display the five newest reports",
+          "code": "var reports = Directory.EnumerateFiles(\"reports\")\n    .OrderByDescending(File.GetLastWriteTimeUtc)\n    .Take(5);\n\nforeach (var report in reports)\n{\n    Console.WriteLine(report);\n}",
+          "explanation": "Ordering places newest paths first and Take limits the displayed result to five."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.Skip",
+      "displayName": "Enumerable.Skip",
+      "description": "Ignore a requested number of leading elements.",
+      "definition": "Returns a lazy sequence that discards the first count values and yields the remainder. If the source has fewer elements, the result is empty.",
+      "moduleName": "System.Linq",
+      "action": "Select",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "Skip",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var remainder = {source}.Skip({count});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.skip",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The input sequence.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "count",
+          "displayName": "count",
+          "placeholder": "count",
+          "description": "The number of leading values to ignore.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Select the second page of results",
+          "code": "const int pageSize = 20;\nconst int pageNumber = 2;\nvar results = Enumerable.Range(1, 75);\nvar page = results\n    .Skip((pageNumber - 1) * pageSize)\n    .Take(pageSize);",
+          "explanation": "Skip ignores the first page's 20 values and Take returns at most 20 values for page two."
+        }
+      ]
+    },
+    {
+      "name": "Enumerable.ToList",
+      "displayName": "Enumerable.ToList",
+      "description": "Materialize a sequence into a new list.",
+      "definition": "Enumerates the source immediately and copies its current values into a new List<T>. Later source changes do not automatically update that list.",
+      "moduleName": "System.Linq",
+      "action": "Create",
+      "object": "Sequence",
+      "namespaceName": "System.Linq",
+      "typeName": "Enumerable",
+      "memberName": "ToList",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var list = {source}.ToList();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.linq.enumerable.tolist",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The sequence to enumerate.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Capture the current matching files",
+          "code": "var snapshot = Directory\n    .EnumerateFiles(\"inbox\", \"*.json\")\n    .ToList();\n\nConsole.WriteLine($\"Captured {snapshot.Count} paths.\");",
+          "explanation": "ToList performs the directory enumeration now and stores the paths in a mutable list."
+        }
+      ]
+    },
+    {
+      "name": "JsonSerializer.Serialize",
+      "displayName": "JsonSerializer.Serialize",
+      "description": "Serialize a .NET value into JSON text.",
+      "definition": "Inspects the value's public data and produces a JSON string according to its .NET type and JsonSerializerOptions. The output is data, not executable C# source.",
+      "moduleName": "System.Text.Json",
+      "action": "Serialize",
+      "object": "Json",
+      "namespaceName": "System.Text.Json",
+      "typeName": "JsonSerializer",
+      "memberName": "Serialize",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var json = JsonSerializer.Serialize({value}, {options});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializer.serialize",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The .NET object to serialize.",
+          "typeName": "object",
+          "isRequired": true
+        },
+        {
+          "name": "options",
+          "displayName": "options",
+          "placeholder": "options",
+          "description": "Formatting, naming, converter, and reference-handling settings.",
+          "typeName": "JsonSerializerOptions",
+          "isRequired": false
+        }
+      ],
+      "examples": [
+        {
+          "title": "Write an indented settings document",
+          "code": "var settings = new\n{\n    ApplicationName = \"Hypershell\",\n    DarkMode = true\n};\nvar options = new JsonSerializerOptions { WriteIndented = true };\nvar json = JsonSerializer.Serialize(settings, options);\nawait File.WriteAllTextAsync(\"settings.json\", json);",
+          "explanation": "The record becomes indented JSON text, which is then saved as a file."
+        }
+      ]
+    },
+    {
+      "name": "JsonSerializer.Deserialize<T>",
+      "displayName": "JsonSerializer.Deserialize<T>",
+      "description": "Deserialize JSON text into a typed .NET value.",
+      "definition": "Parses JSON and creates an instance of T by mapping JSON properties to the type's serializable members. Invalid JSON can throw JsonException, and a literal JSON null can produce null.",
+      "moduleName": "System.Text.Json",
+      "action": "Deserialize",
+      "object": "Json",
+      "namespaceName": "System.Text.Json",
+      "typeName": "JsonSerializer",
+      "memberName": "Deserialize",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var value = JsonSerializer.Deserialize<{type}>({json}, {options});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializer.deserialize",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "The C# result type.",
+          "typeName": "Type",
+          "isRequired": true
+        },
+        {
+          "name": "json",
+          "displayName": "json",
+          "placeholder": "json",
+          "description": "The JSON string to parse.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "options",
+          "displayName": "options",
+          "placeholder": "options",
+          "description": "Optional naming and converter settings.",
+          "typeName": "JsonSerializerOptions",
+          "isRequired": false
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load typed application settings",
+          "code": "var json = \"\"\"\n    { \"applicationName\": \"Hypershell\", \"theme\": \"Dark\" }\n    \"\"\";\nvar settings = JsonSerializer.Deserialize<Dictionary<string, string>>(json)\n    ?? throw new InvalidDataException(\"Settings were null.\");\nConsole.WriteLine(settings[\"applicationName\"]);",
+          "explanation": "The JSON text is parsed into a typed dictionary, and the null guard rejects a JSON null document."
+        }
+      ]
+    },
+    {
+      "name": "JsonSerializer.SerializeAsync",
+      "displayName": "JsonSerializer.SerializeAsync",
+      "description": "Asynchronously write a .NET value as JSON to a stream.",
+      "definition": "Serializes a value directly into a Stream without first requiring one complete JSON string in memory. Await completes after the JSON bytes have been written.",
+      "moduleName": "System.Text.Json",
+      "action": "Serialize",
+      "object": "Json",
+      "namespaceName": "System.Text.Json",
+      "typeName": "JsonSerializer",
+      "memberName": "SerializeAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await JsonSerializer.SerializeAsync({stream}, {value}, {options});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializer.serializeasync",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "stream",
+          "displayName": "stream",
+          "placeholder": "stream",
+          "description": "The writable destination stream.",
+          "typeName": "Stream",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The object to serialize.",
+          "typeName": "object",
+          "isRequired": true
+        },
+        {
+          "name": "options",
+          "displayName": "options",
+          "placeholder": "options",
+          "description": "Optional serialization settings.",
+          "typeName": "JsonSerializerOptions",
+          "isRequired": false
+        }
+      ],
+      "examples": [
+        {
+          "title": "Stream a report into a file",
+          "code": "var report = new\n{\n    Status = \"Passed\",\n    Tests = 128\n};\nawait using var stream = File.Create(\"report.json\");\nawait JsonSerializer.SerializeAsync(\n    stream,\n    report,\n    new JsonSerializerOptions { WriteIndented = true });",
+          "explanation": "File.Create supplies the writable stream, and await using ensures it is disposed after serialization finishes."
+        }
+      ]
+    },
+    {
+      "name": "JsonSerializer.DeserializeAsync<T>",
+      "displayName": "JsonSerializer.DeserializeAsync<T>",
+      "description": "Asynchronously read a typed value from a JSON stream.",
+      "definition": "Reads UTF-8 JSON from a Stream and reconstructs an instance of T while allowing the caller to remain responsive during pending I/O. Malformed or incompatible content can throw JsonException.",
+      "moduleName": "System.Text.Json",
+      "action": "Deserialize",
+      "object": "Json",
+      "namespaceName": "System.Text.Json",
+      "typeName": "JsonSerializer",
+      "memberName": "DeserializeAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var value = await JsonSerializer.DeserializeAsync<{type}>({stream}, {options});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializer.deserializeasync",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "The C# result type.",
+          "typeName": "Type",
+          "isRequired": true
+        },
+        {
+          "name": "stream",
+          "displayName": "stream",
+          "placeholder": "stream",
+          "description": "The readable JSON stream.",
+          "typeName": "Stream",
+          "isRequired": true
+        },
+        {
+          "name": "options",
+          "displayName": "options",
+          "placeholder": "options",
+          "description": "Optional deserialization settings.",
+          "typeName": "JsonSerializerOptions",
+          "isRequired": false
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read JSON from a stream",
+          "code": "var json = \"\"\"\n    { \"name\": \"Hypershell\", \"commands\": 211 }\n    \"\"\";\nawait using var stream = new MemoryStream(Encoding.UTF8.GetBytes(json));\nvar catalog = await JsonSerializer.DeserializeAsync<Dictionary<string, JsonElement>>(stream)\n    ?? throw new InvalidDataException(\"Catalog was null.\");",
+          "explanation": "The UTF-8 JSON is consumed from a stream and converted directly into a typed dictionary."
+        }
+      ]
+    },
+    {
+      "name": "HttpClient.GetStringAsync",
+      "displayName": "HttpClient.GetStringAsync",
+      "description": "Download an HTTP response body as text.",
+      "definition": "Sends an HTTP GET request and asynchronously returns the response content as a string. It throws for an unsuccessful status code and should normally use a reused HttpClient instance.",
+      "moduleName": "System.Net.Http",
+      "action": "Download",
+      "object": "HttpClient",
+      "namespaceName": "System.Net.Http",
+      "typeName": "HttpClient",
+      "memberName": "GetStringAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var response = await {client}.GetStringAsync({url});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.httpclient.getstringasync",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "client",
+          "displayName": "client",
+          "placeholder": "client",
+          "description": "A reused HttpClient instance.",
+          "typeName": "HttpClient",
+          "isRequired": true
+        },
+        {
+          "name": "url",
+          "displayName": "url",
+          "placeholder": "url",
+          "description": "The request URI.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Download and parse JSON",
+          "code": "using var client = new HttpClient();\nclient.DefaultRequestHeaders.UserAgent.ParseAdd(\"Hypershell-Catalog/1.0\");\nvar json = await client.GetStringAsync(\n    \"https://api.github.com/repos/dotnet/runtime\");\nusing var document = JsonDocument.Parse(json);\nvar repositoryName = document.RootElement.GetProperty(\"full_name\").GetString();\nConsole.WriteLine(repositoryName);",
+          "explanation": "GetStringAsync returns the response body, and JsonDocument reads the selected property without requiring an application-specific model type."
+        }
+      ]
+    },
+    {
+      "name": "HttpClient.GetAsync",
+      "displayName": "HttpClient.GetAsync",
+      "description": "Send an HTTP GET request and keep the full response.",
+      "definition": "Asynchronously returns an HttpResponseMessage containing status, headers, and content. Unlike GetStringAsync, it lets the caller inspect non-success responses before deciding how to handle them.",
+      "moduleName": "System.Net.Http",
+      "action": "Download",
+      "object": "HttpClient",
+      "namespaceName": "System.Net.Http",
+      "typeName": "HttpClient",
+      "memberName": "GetAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "using var response = await {client}.GetAsync({url});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.httpclient.getasync",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "client",
+          "displayName": "client",
+          "placeholder": "client",
+          "description": "A reused HttpClient instance.",
+          "typeName": "HttpClient",
+          "isRequired": true
+        },
+        {
+          "name": "url",
+          "displayName": "url",
+          "placeholder": "url",
+          "description": "The request URI.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect status before reading content",
+          "code": "using var client = new HttpClient();\nusing var response = await client.GetAsync(\"https://example.com\");\nConsole.WriteLine($\"{(int)response.StatusCode} {response.ReasonPhrase}\");\nvar html = await response.Content.ReadAsStringAsync();",
+          "explanation": "The response object exposes status metadata and owns the content stream, so it is disposed after the body is read."
+        }
+      ]
+    },
+    {
+      "name": "HttpClient.PostAsJsonAsync",
+      "displayName": "HttpClient.PostAsJsonAsync",
+      "description": "Serialize a value as JSON and send it with HTTP POST.",
+      "definition": "Uses System.Net.Http.Json extensions to serialize a .NET value into a JSON request body, sets an application/json content type, and asynchronously returns the full response.",
+      "moduleName": "System.Net.Http.Json",
+      "action": "Write",
+      "object": "HttpClient",
+      "namespaceName": "System.Net.Http.Json",
+      "typeName": "HttpClient",
+      "memberName": "PostAsJsonAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "using var response = await {client}.PostAsJsonAsync({url}, {value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.json.httpclientjsonextensions.postasjsonasync",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "client",
+          "displayName": "client",
+          "placeholder": "client",
+          "description": "A reused HttpClient instance.",
+          "typeName": "HttpClient",
+          "isRequired": true
+        },
+        {
+          "name": "url",
+          "displayName": "url",
+          "placeholder": "url",
+          "description": "The destination URI.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The object to send as JSON.",
+          "typeName": "object",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create an API record",
+          "code": "using var client = new HttpClient();\nvar request = new { Name = \"Hypershell\" };\nusing var response = await client.PostAsJsonAsync(\n    \"https://api.example.com/projects\",\n    request);\nresponse.EnsureSuccessStatusCode();",
+          "explanation": "The request record is serialized into the POST body, and the final call turns a non-success response into an exception."
+        }
+      ]
+    },
+    {
+      "name": "HttpClient.SendAsync",
+      "displayName": "HttpClient.SendAsync",
+      "description": "Send a fully customized HTTP request.",
+      "definition": "Asynchronously sends an HttpRequestMessage whose method, URI, headers, version, and content the caller controls. It returns the response without automatically requiring a successful status.",
+      "moduleName": "System.Net.Http",
+      "action": "Write",
+      "object": "HttpClient",
+      "namespaceName": "System.Net.Http",
+      "typeName": "HttpClient",
+      "memberName": "SendAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "using var response = await {client}.SendAsync({request});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.httpclient.sendasync",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "client",
+          "displayName": "client",
+          "placeholder": "client",
+          "description": "A reused HttpClient instance.",
+          "typeName": "HttpClient",
+          "isRequired": true
+        },
+        {
+          "name": "request",
+          "displayName": "request",
+          "placeholder": "request",
+          "description": "The configured HTTP request.",
+          "typeName": "HttpRequestMessage",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Send an authenticated PATCH request",
+          "code": "const string token = \"development-example-token\";\nusing var client = new HttpClient();\nusing var request = new HttpRequestMessage(\n    HttpMethod.Patch,\n    \"https://api.example.com/projects/42\");\nrequest.Headers.Authorization =\n    new AuthenticationHeaderValue(\"Bearer\", token);\nrequest.Content = JsonContent.Create(new { archived = true });\n\nusing var response = await client.SendAsync(request);\nresponse.EnsureSuccessStatusCode();",
+          "explanation": "HttpRequestMessage provides control over PATCH, the authorization header, and the JSON body before SendAsync transmits it."
+        }
+      ]
+    },
+    {
+      "name": "HttpResponseMessage.EnsureSuccessStatusCode",
+      "displayName": "HttpResponseMessage.EnsureSuccessStatusCode",
+      "description": "Require an HTTP success status.",
+      "definition": "Returns the same response when its status code is in the 200–299 range. Otherwise it throws HttpRequestException, preventing later code from silently treating an error response as successful data.",
+      "moduleName": "System.Net.Http",
+      "action": "Test",
+      "object": "HttpResponse",
+      "namespaceName": "System.Net.Http",
+      "typeName": "HttpResponseMessage",
+      "memberName": "EnsureSuccessStatusCode",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{response}.EnsureSuccessStatusCode();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage.ensuresuccessstatuscode",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "response",
+          "displayName": "response",
+          "placeholder": "response",
+          "description": "The HTTP response to validate.",
+          "typeName": "HttpResponseMessage",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Fail before parsing an error page",
+          "code": "using var client = new HttpClient();\nvar endpoint = \"https://example.com/\";\nusing var response = await client.GetAsync(endpoint);\nresponse.EnsureSuccessStatusCode();\nvar payload = await response.Content.ReadAsStringAsync();\nConsole.WriteLine($\"Received {payload.Length:N0} characters.\");",
+          "explanation": "Only a 2xx response reaches body processing; an error status throws with HTTP context."
+        }
+      ]
+    },
+    {
+      "name": "DateTime.Now",
+      "displayName": "DateTime.Now",
+      "description": "Get the current local date and time.",
+      "definition": "Returns a DateTime representing the computer's current local clock with Kind set to Local. Use UtcNow for storage, distributed systems, and comparisons that should not depend on a local time zone.",
+      "moduleName": "System.DateTime",
+      "action": "Get",
+      "object": "DateTime",
+      "namespaceName": "System",
+      "typeName": "DateTime",
+      "memberName": "Now",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var now = DateTime.Now;",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.datetime.now",
+      "keywords": [],
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Display a local timestamp",
+          "code": "var now = DateTime.Now;\nConsole.WriteLine(now.ToString(\"yyyy-MM-dd HH:mm:ss\"));",
+          "explanation": "Now reads the local system clock and ToString formats it for display."
+        }
+      ]
+    },
+    {
+      "name": "DateTime.UtcNow",
+      "displayName": "DateTime.UtcNow",
+      "description": "Get the current Coordinated Universal Time.",
+      "definition": "Returns the current clock time in UTC with Kind set to Utc. UTC timestamps avoid ambiguity between computers in different time zones, though DateTimeOffset is often better when an offset must be preserved.",
+      "moduleName": "System.DateTime",
+      "action": "Get",
+      "object": "DateTime",
+      "namespaceName": "System",
+      "typeName": "DateTime",
+      "memberName": "UtcNow",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var utcNow = DateTime.UtcNow;",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.datetime.utcnow",
+      "keywords": [],
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Create an unambiguous log timestamp",
+          "code": "var line = $\"{DateTime.UtcNow:O} deployment started\";\nFile.AppendAllText(\"deploy.log\", line + Environment.NewLine);",
+          "explanation": "The round-trip O format includes full precision and a UTC designator suitable for logs."
+        }
+      ]
+    },
+    {
+      "name": "DateTime.Parse",
+      "displayName": "DateTime.Parse",
+      "description": "Parse date-and-time text or throw when invalid.",
+      "definition": "Interprets text using a culture and style rules and returns a DateTime. It throws FormatException for invalid text, so TryParse is preferable for ordinary user input.",
+      "moduleName": "System.DateTime",
+      "action": "Parse",
+      "object": "DateTime",
+      "namespaceName": "System",
+      "typeName": "DateTime",
+      "memberName": "Parse",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var date = DateTime.Parse({text}, CultureInfo.InvariantCulture);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.datetime.parse",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The date-and-time text to interpret.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse a controlled ISO date",
+          "code": "var releaseDate = DateTime.Parse(\n    \"2026-07-27\",\n    CultureInfo.InvariantCulture,\n    DateTimeStyles.AssumeUniversal);\nConsole.WriteLine(releaseDate.Year);",
+          "explanation": "A known machine-generated format is parsed with explicit invariant-culture rules."
+        }
+      ]
+    },
+    {
+      "name": "DateTime.TryParse",
+      "displayName": "DateTime.TryParse",
+      "description": "Try to parse date-and-time text without throwing for bad input.",
+      "definition": "Returns true and assigns the parsed DateTime when the text is valid under the selected culture and styles. Invalid text returns false and assigns the default DateTime value.",
+      "moduleName": "System.DateTime",
+      "action": "Parse",
+      "object": "DateTime",
+      "namespaceName": "System",
+      "typeName": "DateTime",
+      "memberName": "TryParse",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var valid = DateTime.TryParse({text}, out var date);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.datetime.tryparse",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The date-and-time text to test.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate a user-entered deadline",
+          "code": "Console.Write(\"Deadline: \");\nvar input = Console.ReadLine();\nif (DateTime.TryParse(input, out var deadline))\n{\n    Console.WriteLine($\"Stored {deadline:d}\");\n}\nelse\n{\n    Console.WriteLine(\"Enter a valid date.\");\n}",
+          "explanation": "Bad input follows the else branch instead of producing a FormatException."
+        }
+      ]
+    },
+    {
+      "name": "DateTime.AddDays",
+      "displayName": "DateTime.AddDays",
+      "description": "Create a DateTime shifted by a number of days.",
+      "definition": "Returns a new DateTime offset by the supplied whole or fractional day count. DateTime is immutable, so the original value remains unchanged.",
+      "moduleName": "System.DateTime",
+      "action": "Calculate",
+      "object": "DateTime",
+      "namespaceName": "System",
+      "typeName": "DateTime",
+      "memberName": "AddDays",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var shifted = {date}.AddDays({days});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.datetime.adddays",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "date",
+          "displayName": "date",
+          "placeholder": "date",
+          "description": "The original DateTime value.",
+          "typeName": "DateTime",
+          "isRequired": true
+        },
+        {
+          "name": "days",
+          "displayName": "days",
+          "placeholder": "days",
+          "description": "Positive or negative days to add.",
+          "typeName": "double",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Calculate a seven-day expiration",
+          "code": "var createdUtc = DateTime.UtcNow;\nvar expiresUtc = createdUtc.AddDays(7);\nConsole.WriteLine($\"Expires: {expiresUtc:O}\");",
+          "explanation": "expiresUtc is seven days later, while createdUtc still holds the original timestamp."
+        }
+      ]
+    },
+    {
+      "name": "Regex.IsMatch",
+      "displayName": "Regex.IsMatch",
+      "description": "Test whether text contains a regular-expression match.",
+      "definition": "Returns true when the regex engine finds at least one match for the pattern. Invalid patterns throw ArgumentException, and timeouts should be considered for patterns applied to untrusted input.",
+      "moduleName": "System.Text.RegularExpressions",
+      "action": "Test",
+      "object": "Regex",
+      "namespaceName": "System.Text.RegularExpressions",
+      "typeName": "Regex",
+      "memberName": "IsMatch",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var matches = Regex.IsMatch({input}, {pattern});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex.ismatch",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "input",
+          "displayName": "input",
+          "placeholder": "input",
+          "description": "The text to inspect.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "pattern",
+          "displayName": "pattern",
+          "placeholder": "pattern",
+          "description": "The regular-expression pattern.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate a simple identifier",
+          "code": "var identifier = \"project_alpha-2\";\nvar valid = Regex.IsMatch(\n    identifier,\n    @\"^[A-Za-z][A-Za-z0-9_-]*$\");\nConsole.WriteLine(valid);",
+          "explanation": "The anchors require the entire string to match, the first character must be a letter, and later characters may include digits, underscore, or hyphen."
+        }
+      ]
+    },
+    {
+      "name": "Regex.Match",
+      "displayName": "Regex.Match",
+      "description": "Find the first regex match and capture its groups.",
+      "definition": "Searches input and returns a Match object describing the first occurrence, including its text, position, length, and named or numbered capture groups. Match.Success indicates whether anything matched.",
+      "moduleName": "System.Text.RegularExpressions",
+      "action": "Match",
+      "object": "Regex",
+      "namespaceName": "System.Text.RegularExpressions",
+      "typeName": "Regex",
+      "memberName": "Match",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var match = Regex.Match({input}, {pattern});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex.match",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "input",
+          "displayName": "input",
+          "placeholder": "input",
+          "description": "The text to search.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "pattern",
+          "displayName": "pattern",
+          "placeholder": "pattern",
+          "description": "The regular-expression pattern.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Extract a key and numeric value",
+          "code": "var match = Regex.Match(\n    \"timeout=30\",\n    @\"^(?<key>\\w+)=(?<value>\\d+)$\");\nif (match.Success)\n{\n    Console.WriteLine($\"{match.Groups[\"key\"].Value}: {match.Groups[\"value\"].Value}\");\n}",
+          "explanation": "Named groups capture timeout separately from 30 after the complete input matches."
+        }
+      ]
+    },
+    {
+      "name": "Regex.Replace",
+      "displayName": "Regex.Replace",
+      "description": "Replace every substring matching a pattern.",
+      "definition": "Returns new text in which regex matches are replaced by fixed text or by values computed in a MatchEvaluator. The original input string is unchanged.",
+      "moduleName": "System.Text.RegularExpressions",
+      "action": "Replace",
+      "object": "Regex",
+      "namespaceName": "System.Text.RegularExpressions",
+      "typeName": "Regex",
+      "memberName": "Replace",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var result = Regex.Replace({input}, {pattern}, {replacement});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex.replace",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "input",
+          "displayName": "input",
+          "placeholder": "input",
+          "description": "The original text.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "pattern",
+          "displayName": "pattern",
+          "placeholder": "pattern",
+          "description": "The regular-expression pattern.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "replacement",
+          "displayName": "replacement",
+          "placeholder": "replacement",
+          "description": "Replacement text or evaluator.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Collapse repeated whitespace",
+          "code": "var raw = \"alpha   beta\\t\\tgamma\";\nvar normalized = Regex.Replace(raw, @\"\\s+\", \" \");\nConsole.WriteLine(normalized);",
+          "explanation": "Every run of one or more whitespace characters becomes exactly one space."
+        }
+      ]
+    },
+    {
+      "name": "Regex.Split",
+      "displayName": "Regex.Split",
+      "description": "Split text wherever a regex pattern matches.",
+      "definition": "Returns an array of text segments separated by pattern matches. Capturing groups in the pattern can also appear in the returned array, which differs from a simple string delimiter split.",
+      "moduleName": "System.Text.RegularExpressions",
+      "action": "Split",
+      "object": "Regex",
+      "namespaceName": "System.Text.RegularExpressions",
+      "typeName": "Regex",
+      "memberName": "Split",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var parts = Regex.Split({input}, {pattern});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex.split",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "input",
+          "displayName": "input",
+          "placeholder": "input",
+          "description": "The text to divide.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "pattern",
+          "displayName": "pattern",
+          "placeholder": "pattern",
+          "description": "The delimiter pattern.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Split on commas or semicolons",
+          "code": "var input = \"alpha, beta;gamma\";\nvar parts = Regex.Split(input, @\"\\s*[,;]\\s*\");\nConsole.WriteLine(string.Join(\"|\", parts));",
+          "explanation": "The pattern accepts either delimiter and consumes optional surrounding whitespace, producing alpha|beta|gamma."
+        }
+      ]
+    },
+    {
+      "name": "Task.Delay",
+      "displayName": "Task.Delay",
+      "description": "Asynchronously wait for a duration.",
+      "definition": "Returns a Task that completes after the requested interval without blocking a thread during the wait. A CancellationToken overload can end the delay early.",
+      "moduleName": "System.Threading.Tasks",
+      "action": "Wait",
+      "object": "Task",
+      "namespaceName": "System.Threading.Tasks",
+      "typeName": "Task",
+      "memberName": "Delay",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await Task.Delay({milliseconds});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task.delay",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "milliseconds",
+          "displayName": "milliseconds",
+          "placeholder": "milliseconds",
+          "description": "The delay duration in milliseconds.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Retry after a short backoff",
+          "code": "async Task<bool> TryConnectAsync(int attempt)\n{\n    await Task.Delay(10);\n    return attempt >= 2;\n}\n\nfor (var attempt = 1; attempt <= 3; attempt++)\n{\n    if (await TryConnectAsync(attempt))\n    {\n        break;\n    }\n\n    await Task.Delay(TimeSpan.FromSeconds(attempt));\n}",
+          "explanation": "Each failed attempt awaits a progressively longer delay without tying up a worker thread."
+        }
+      ]
+    },
+    {
+      "name": "Task.WhenAll",
+      "displayName": "Task.WhenAll",
+      "description": "Wait asynchronously for every supplied task.",
+      "definition": "Returns one task that completes when all input tasks finish. Await produces all results for generic tasks and propagates failures after the group has completed.",
+      "moduleName": "System.Threading.Tasks",
+      "action": "Wait",
+      "object": "Task",
+      "namespaceName": "System.Threading.Tasks",
+      "typeName": "Task",
+      "memberName": "WhenAll",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var results = await Task.WhenAll({tasks});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task.whenall",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "tasks",
+          "displayName": "tasks",
+          "placeholder": "tasks",
+          "description": "The operations to await together.",
+          "typeName": "IEnumerable<Task<T>>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Download several pages concurrently",
+          "code": "using var client = new HttpClient();\nvar urls = new[]\n{\n    \"https://example.com/\",\n    \"https://example.com/?page=2\",\n    \"https://example.com/?page=3\"\n};\nvar downloads = urls.Select(client.GetStringAsync);\nvar pages = await Task.WhenAll(downloads);\nConsole.WriteLine($\"Downloaded {pages.Length} pages.\");",
+          "explanation": "All GET requests are started before WhenAll is awaited, allowing their I/O waits to overlap."
+        }
+      ]
+    },
+    {
+      "name": "Task.WhenAny",
+      "displayName": "Task.WhenAny",
+      "description": "Wait asynchronously until one supplied task finishes.",
+      "definition": "Returns a task whose result is the first input Task to reach a terminal state. Await the returned inner task again to obtain its value or observe its exception.",
+      "moduleName": "System.Threading.Tasks",
+      "action": "Wait",
+      "object": "Task",
+      "namespaceName": "System.Threading.Tasks",
+      "typeName": "Task",
+      "memberName": "WhenAny",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var completed = await Task.WhenAny({tasks});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task.whenany",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "tasks",
+          "displayName": "tasks",
+          "placeholder": "tasks",
+          "description": "The competing operations.",
+          "typeName": "IEnumerable<Task<T>>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Apply an operation timeout",
+          "code": "var operation = Task.Run(async () =>\n{\n    await Task.Delay(25);\n    return new[] { \"Console\", \"File\", \"Task\" };\n});\nvar timeout = Task.Delay(TimeSpan.FromSeconds(5));\nvar completed = await Task.WhenAny(operation, timeout);\nif (completed != operation)\n{\n    throw new TimeoutException(\"Catalog load timed out.\");\n}\nvar catalog = await operation;",
+          "explanation": "WhenAny identifies which task completed first; the operation is awaited again to retrieve its result and propagate failures."
+        }
+      ]
+    },
+    {
+      "name": "Task.Run",
+      "displayName": "Task.Run",
+      "description": "Schedule CPU-bound work on the thread pool.",
+      "definition": "Queues a delegate to run on a thread-pool thread and returns a Task representing that work. It can keep a UI responsive during CPU-bound work, but it does not make synchronous I/O truly asynchronous.",
+      "moduleName": "System.Threading.Tasks",
+      "action": "Run",
+      "object": "Task",
+      "namespaceName": "System.Threading.Tasks",
+      "typeName": "Task",
+      "memberName": "Run",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var result = await Task.Run({function});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task.run",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "function",
+          "displayName": "function",
+          "placeholder": "function",
+          "description": "The CPU-bound delegate to execute.",
+          "typeName": "Func<T>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Calculate a hash away from the UI thread",
+          "code": "var data = Encoding.UTF8.GetBytes(\"Hypershell\");\nvar hash = await Task.Run(() =>\n{\n    return Convert.ToHexString(SHA256.HashData(data));\n});\nvar statusText = $\"SHA-256: {hash}\";\nConsole.WriteLine(statusText);",
+          "explanation": "The hashing work runs on a thread-pool thread, and the awaiting UI code resumes with the result."
+        }
+      ]
+    },
+    {
+      "name": "Process.Start",
+      "displayName": "Process.Start",
+      "description": "Start a process or open a shell-associated resource.",
+      "definition": "Creates a new operating-system process from a ProcessStartInfo and returns a Process object when one is available. UseShellExecute controls whether the OS shell may open documents and URLs instead of directly launching an executable.",
+      "moduleName": "System.Diagnostics",
+      "action": "Start",
+      "object": "Process",
+      "namespaceName": "System.Diagnostics",
+      "typeName": "Process",
+      "memberName": "Start",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "using var process = Process.Start({startInfo});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "startInfo",
+          "displayName": "startInfo",
+          "placeholder": "startInfo",
+          "description": "The executable, arguments, shell behavior, and startup settings.",
+          "typeName": "ProcessStartInfo",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Run an executable with a safe argument list",
+          "code": "var startInfo = new ProcessStartInfo\n{\n    FileName = \"dotnet\",\n    UseShellExecute = false\n};\nstartInfo.ArgumentList.Add(\"--info\");\n\nusing var process = Process.Start(startInfo)\n    ?? throw new InvalidOperationException(\"Process did not start.\");\nawait process.WaitForExitAsync();",
+          "explanation": "ArgumentList avoids hand-built command-line quoting, and the code asynchronously waits for the launched process to exit."
+        }
+      ]
+    },
+    {
+      "name": "Process.GetProcesses",
+      "displayName": "Process.GetProcesses",
+      "description": "Get processes running on the local computer.",
+      "definition": "Returns Process components representing the processes visible to the caller at that moment. Process state can change immediately, and each returned component should be disposed after use.",
+      "moduleName": "System.Diagnostics",
+      "action": "Get",
+      "object": "Process",
+      "namespaceName": "System.Diagnostics",
+      "typeName": "Process",
+      "memberName": "GetProcesses",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var processes = Process.GetProcesses();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.diagnostics.process.getprocesses",
+      "keywords": [],
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Display the five largest working sets",
+          "code": "var processes = Process.GetProcesses();\ntry\n{\n    foreach (var process in processes\n        .OrderByDescending(item => item.WorkingSet64)\n        .Take(5))\n    {\n        Console.WriteLine($\"{process.ProcessName}: {process.WorkingSet64:N0}\");\n    }\n}\nfinally\n{\n    foreach (var process in processes) process.Dispose();\n}",
+          "explanation": "The snapshot is ordered by memory use, and finally disposes every Process wrapper even if reading one property fails."
+        }
+      ]
+    },
+    {
+      "name": "Process.GetCurrentProcess",
+      "displayName": "Process.GetCurrentProcess",
+      "description": "Get a Process component for the running application.",
+      "definition": "Returns a Process object representing the caller's own operating-system process. It exposes the process ID, memory metrics, start time, threads, and other available runtime information.",
+      "moduleName": "System.Diagnostics",
+      "action": "Get",
+      "object": "Process",
+      "namespaceName": "System.Diagnostics",
+      "typeName": "Process",
+      "memberName": "GetCurrentProcess",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "using var current = Process.GetCurrentProcess();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.diagnostics.process.getcurrentprocess",
+      "keywords": [],
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Report this application's process ID",
+          "code": "using var current = Process.GetCurrentProcess();\nConsole.WriteLine(\n    $\"PID {current.Id}; working set {current.WorkingSet64:N0} bytes\");",
+          "explanation": "The Process wrapper reads information about the application that is executing this code, then is disposed."
+        }
+      ]
+    },
+    {
+      "name": "Environment.GetEnvironmentVariable",
+      "displayName": "Environment.GetEnvironmentVariable",
+      "description": "Read an environment-variable value.",
+      "definition": "Looks up a named variable in the current process environment and returns its string value. It returns null when the name is not defined; target overloads can inspect user or machine variables on supported systems.",
+      "moduleName": "System.Environment",
+      "action": "Get",
+      "object": "Environment",
+      "namespaceName": "System",
+      "typeName": "Environment",
+      "memberName": "GetEnvironmentVariable",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var value = Environment.GetEnvironmentVariable({name});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.environment.getenvironmentvariable",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "name",
+          "placeholder": "name",
+          "description": "The environment-variable name.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read an optional API endpoint",
+          "code": "var endpoint = Environment.GetEnvironmentVariable(\"APP_API_URL\");\nif (!Uri.TryCreate(endpoint, UriKind.Absolute, out var apiUri))\n{\n    apiUri = new Uri(\"https://api.example.com\");\n}",
+          "explanation": "A missing or invalid variable falls back to a known absolute URI."
+        }
+      ]
+    },
+    {
+      "name": "Environment.SetEnvironmentVariable",
+      "displayName": "Environment.SetEnvironmentVariable",
+      "description": "Set or remove an environment-variable value.",
+      "definition": "Changes an environment variable for the current process by default; user and machine targets are also available where supported and permitted. Passing null removes the variable from the selected target.",
+      "moduleName": "System.Environment",
+      "action": "Write",
+      "object": "Environment",
+      "namespaceName": "System",
+      "typeName": "Environment",
+      "memberName": "SetEnvironmentVariable",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "Environment.SetEnvironmentVariable({name}, {value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.environment.setenvironmentvariable",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "name",
+          "placeholder": "name",
+          "description": "The environment-variable name.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The new value, or null to remove it.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Configure a child process through its own environment",
+          "code": "var startInfo = new ProcessStartInfo(\"worker.exe\")\n{\n    UseShellExecute = false\n};\nstartInfo.Environment[\"APP_MODE\"] = \"Development\";\nusing var worker = Process.Start(startInfo);",
+          "explanation": "For child-process configuration, editing ProcessStartInfo.Environment scopes the value to that child instead of changing the whole current process."
+        }
+      ]
+    },
+    {
+      "name": "Guid.NewGuid",
+      "displayName": "Guid.NewGuid",
+      "description": "Create a new random GUID.",
+      "definition": "Returns a new 128-bit identifier with an extremely low collision probability. It is useful for identifiers, not as proof of identity or as a secret.",
+      "moduleName": "System.Guid",
+      "action": "Create",
+      "object": "Guid",
+      "namespaceName": "System",
+      "typeName": "Guid",
+      "memberName": "NewGuid",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var id = Guid.NewGuid();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.guid.newguid",
+      "keywords": [],
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Assign an ID to a new record",
+          "code": "var record = new\n{\n    Id = Guid.NewGuid(),\n    Name = \"Hypershell\",\n    CreatedUtc = DateTime.UtcNow\n};\nConsole.WriteLine(record.Id);",
+          "explanation": "The record receives a new identifier independently of its name and creation time."
+        }
+      ]
+    },
+    {
+      "name": "Guid.TryParse",
+      "displayName": "Guid.TryParse",
+      "description": "Try to parse GUID text without throwing for bad input.",
+      "definition": "Returns true and assigns the parsed Guid when the text has a recognized GUID format. Invalid or missing text returns false and assigns Guid.Empty.",
+      "moduleName": "System.Guid",
+      "action": "Parse",
+      "object": "Guid",
+      "namespaceName": "System",
+      "typeName": "Guid",
+      "memberName": "TryParse",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var valid = Guid.TryParse({text}, out var id);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.guid.tryparse",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The candidate GUID text.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate an ID from a route",
+          "code": "var routeValue = \"6f9619ff-8b86-d011-b42d-00cf4fc964ff\";\nif (!Guid.TryParse(routeValue, out var projectId))\n{\n    Console.WriteLine(\"Project ID is not a valid GUID.\");\n}\nelse\n{\n    Console.WriteLine($\"Validated project ID: {projectId}\");\n}\n",
+          "explanation": "Invalid route text takes the error branch; only a successfully parsed Guid is displayed as a validated ID."
+        }
+      ]
+    },
+    {
+      "name": "Convert.ToInt32",
+      "displayName": "Convert.ToInt32",
+      "description": "Convert a compatible value to a 32-bit integer.",
+      "definition": "Converts supported primitive or string values into Int32 using defined rounding and culture behavior. Invalid text, overflow, or unsupported values can throw; int.TryParse is safer for untrusted text.",
+      "moduleName": "System.Convert",
+      "action": "Convert",
+      "object": "Number",
+      "namespaceName": "System",
+      "typeName": "Convert",
+      "memberName": "ToInt32",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var number = Convert.ToInt32({value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.convert.toint32",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The compatible value to convert.",
+          "typeName": "object",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Convert a Boolean setting to a numeric flag",
+          "code": "var enabled = true;\nvar databaseFlag = Convert.ToInt32(enabled);\nConsole.WriteLine(databaseFlag);",
+          "explanation": "Convert maps true to 1 and false to 0. User-entered numeric text should normally use int.TryParse instead."
+        }
+      ]
+    },
+    {
+      "name": "Convert.ToBase64String",
+      "displayName": "Convert.ToBase64String",
+      "description": "Encode bytes as Base64 text.",
+      "definition": "Converts binary bytes into a Base64 string made from a restricted text alphabet. The encoding is reversible and transport-friendly but provides no secrecy.",
+      "moduleName": "System.Convert",
+      "action": "Convert",
+      "object": "Base64",
+      "namespaceName": "System",
+      "typeName": "Convert",
+      "memberName": "ToBase64String",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var encoded = Convert.ToBase64String({bytes});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.convert.tobase64string",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "bytes",
+          "displayName": "bytes",
+          "placeholder": "bytes",
+          "description": "The binary data to encode.",
+          "typeName": "byte[]",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Embed a small binary value in JSON",
+          "code": "var bytes = await File.ReadAllBytesAsync(\"icon.png\");\nvar payload = new\n{\n    fileName = \"icon.png\",\n    base64 = Convert.ToBase64String(bytes)\n};\nvar json = JsonSerializer.Serialize(payload);",
+          "explanation": "The image bytes become ordinary text that JSON can carry; a receiver must decode them to recover the image."
+        }
+      ]
+    },
+    {
+      "name": "Convert.FromBase64String",
+      "displayName": "Convert.FromBase64String",
+      "description": "Decode Base64 text into bytes.",
+      "definition": "Reconstructs the original byte array from valid Base64 text, ignoring permitted whitespace. Invalid alphabet, padding, or length produces FormatException.",
+      "moduleName": "System.Convert",
+      "action": "Convert",
+      "object": "Base64",
+      "namespaceName": "System",
+      "typeName": "Convert",
+      "memberName": "FromBase64String",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var bytes = Convert.FromBase64String({encoded});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.convert.frombase64string",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "encoded",
+          "displayName": "encoded",
+          "placeholder": "encoded",
+          "description": "The Base64 text to decode.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Restore an encoded attachment",
+          "code": "var payload = new\n{\n    Base64 = \"SHlwZXJzaGVsbA==\",\n    FileName = Path.Combine(Path.GetTempPath(), \"hypershell-attachment.txt\")\n};\ntry\n{\n    var bytes = Convert.FromBase64String(payload.Base64);\n    await File.WriteAllBytesAsync(payload.FileName, bytes);\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Attachment data is not valid Base64.\");\n}",
+          "explanation": "Valid text is decoded and written as bytes; malformed input is handled explicitly."
+        }
+      ]
+    },
+    {
+      "name": "Math.Round",
+      "displayName": "Math.Round",
+      "description": "Round a floating-point or decimal value.",
+      "definition": "Returns the nearest value at the requested number of fractional digits. The overload's MidpointRounding choice determines how exact halfway values are handled.",
+      "moduleName": "System.Math",
+      "action": "Calculate",
+      "object": "Number",
+      "namespaceName": "System",
+      "typeName": "Math",
+      "memberName": "Round",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var rounded = Math.Round({value}, {digits}, MidpointRounding.AwayFromZero);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.math.round",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The value to round.",
+          "typeName": "decimal",
+          "isRequired": true
+        },
+        {
+          "name": "digits",
+          "displayName": "digits",
+          "placeholder": "digits",
+          "description": "The number of fractional digits to retain.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Round currency with an explicit midpoint rule",
+          "code": "decimal unitPrice = 10.125m;\nvar displayPrice = Math.Round(\n    unitPrice,\n    2,\n    MidpointRounding.AwayFromZero);\nConsole.WriteLine(displayPrice);",
+          "explanation": "The explicit rule turns the midpoint into 10.13 instead of relying on the default banker's rounding behavior."
+        }
+      ]
+    },
+    {
+      "name": "Math.Clamp",
+      "displayName": "Math.Clamp",
+      "description": "Restrict a comparable value to a minimum and maximum.",
+      "definition": "Returns the minimum when the value is too small, the maximum when it is too large, and the value itself when it is inside the range. It throws when the maximum is less than the minimum.",
+      "moduleName": "System.Math",
+      "action": "Calculate",
+      "object": "Number",
+      "namespaceName": "System",
+      "typeName": "Math",
+      "memberName": "Clamp",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var clamped = Math.Clamp({value}, {min}, {max});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.math.clamp",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The value to constrain.",
+          "typeName": "int",
+          "isRequired": true
+        },
+        {
+          "name": "min",
+          "displayName": "min",
+          "placeholder": "min",
+          "description": "The inclusive lower limit.",
+          "typeName": "int",
+          "isRequired": true
+        },
+        {
+          "name": "max",
+          "displayName": "max",
+          "placeholder": "max",
+          "description": "The inclusive upper limit.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Constrain an opacity percentage",
+          "code": "var requestedOpacity = 135;\nvar opacityPercent = Math.Clamp(requestedOpacity, 0, 100);\nvar opacity = opacityPercent / 100.0;",
+          "explanation": "The out-of-range request becomes 100, then converts to an opacity value of 1.0."
+        }
+      ]
+    },
+    {
+      "name": "Random.Next",
+      "displayName": "Random.Next",
+      "description": "Generate a pseudo-random integer in a range.",
+      "definition": "Returns an integer greater than or equal to the minimum and strictly less than the maximum. Random.Shared is convenient and thread-safe for ordinary use; security-sensitive values require RandomNumberGenerator.",
+      "moduleName": "System.Random",
+      "action": "Create",
+      "object": "Random",
+      "namespaceName": "System",
+      "typeName": "Random",
+      "memberName": "Next",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var number = Random.Shared.Next({minValue}, {maxValue});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.random.next",
+      "keywords": [],
+      "parameters": [
+        {
+          "name": "minValue",
+          "displayName": "minValue",
+          "placeholder": "minValue",
+          "description": "The inclusive lower bound.",
+          "typeName": "int",
+          "isRequired": true
+        },
+        {
+          "name": "maxValue",
+          "displayName": "maxValue",
+          "placeholder": "maxValue",
+          "description": "The exclusive upper bound.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Choose a random list item",
+          "code": "var colors = new[] { \"blue\", \"orange\", \"green\" };\nvar index = Random.Shared.Next(0, colors.Length);\nConsole.WriteLine(colors[index]);",
+          "explanation": "The exclusive upper bound guarantees the returned index is valid for the array."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1289 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "nodejs-standard-library",
+  "guides": [
+    {
+      "entryId": "javascript.console-log",
+      "definition": "console.log formats its arguments and writes them to the process standard-output stream followed by a line break.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "A JavaScript expression to display.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "\"Hello from Hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Display a greeting",
+          "code": "console.log(\"Hello from Hypershell\");",
+          "explanation": "The string literal is evaluated and written to the Node.js terminal."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.read-file",
+      "definition": "node:fs/promises readFile returns a promise for the file contents. Supplying utf8 resolves the promise with a string.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "A JavaScript string containing the file path.",
+          "typeName": "String expression",
+          "defaultValue": "\"README.md\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read an isolated temporary file",
+          "code": "void (async () => {\n  const { mkdtemp, readFile, rm, writeFile } = require(\"node:fs/promises\");\n  const { join } = require(\"node:path\");\n  const { tmpdir } = require(\"node:os\");\n  const root = await mkdtemp(join(tmpdir(), \"hypershell-read-\"));\n  try {\n    const path = join(root, \"answer.txt\");\n    await writeFile(path, \"42\", \"utf8\");\n    console.log(await readFile(path, \"utf8\"));\n  } finally {\n    await rm(root, { recursive: true, force: true });\n  }\n})();",
+          "explanation": "The promise resolves with decoded text from a file created inside an isolated temporary directory, which is then removed."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.writefile.83199b4c6d47",
+      "definition": "fs/promises writeFile replaces an existing file by default and creates it when absent. Callers should await completion and avoid overlapping writes to the same path.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "A string, Buffer, URL, or file handle identifying the file.",
+          "typeName": "Path expression",
+          "defaultValue": "\"output.txt\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "data",
+          "displayName": "Data",
+          "placeholder": "data",
+          "description": "The string or binary content to write.",
+          "typeName": "String or binary expression",
+          "defaultValue": "\"Hello from Hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "encoding",
+          "displayName": "Encoding",
+          "placeholder": "encoding",
+          "description": "The text encoding option.",
+          "typeName": "String expression",
+          "defaultValue": "\"utf8\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Write and verify a temporary file",
+          "code": "void (async () => {\n  const { mkdtemp, readFile, rm, writeFile } = require(\"node:fs/promises\");\n  const { join } = require(\"node:path\");\n  const { tmpdir } = require(\"node:os\");\n  const root = await mkdtemp(join(tmpdir(), \"hypershell-write-\"));\n  try {\n    const path = join(root, \"answer.txt\");\n    await writeFile(path, \"42\", \"utf8\");\n    console.log(await readFile(path, \"utf8\"));\n  } finally {\n    await rm(root, { recursive: true, force: true });\n  }\n})();",
+          "explanation": "The example writes 42, reads it back, and removes its isolated temporary directory."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.readdir.1899210905f8",
+      "definition": "fs/promises readdir resolves with entry names by default. withFileTypes returns Dirent objects, while recursive can traverse descendants on supported Node versions.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Directory",
+          "placeholder": "path",
+          "description": "The directory path to inspect.",
+          "typeName": "Path expression",
+          "defaultValue": "\".\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Options",
+          "placeholder": "options",
+          "description": "Encoding, withFileTypes, or recursive behavior.",
+          "typeName": "Options object",
+          "defaultValue": "{ withFileTypes: true }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "List an isolated directory",
+          "code": "void (async () => {\n  const { mkdtemp, readdir, rm, writeFile } = require(\"node:fs/promises\");\n  const { join } = require(\"node:path\");\n  const { tmpdir } = require(\"node:os\");\n  const root = await mkdtemp(join(tmpdir(), \"hypershell-list-\"));\n  try {\n    await writeFile(join(root, \"answer.txt\"), \"42\");\n    console.log((await readdir(root)).sort());\n  } finally {\n    await rm(root, { recursive: true, force: true });\n  }\n})();",
+          "explanation": "The directory contains only answer.txt, then the temporary tree is removed."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.mkdir.e44f064fd598",
+      "definition": "fs/promises mkdir rejects when the target already exists unless recursive is true. Recursive creation resolves after all missing parents have been created.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Directory",
+          "placeholder": "path",
+          "description": "The directory path to create.",
+          "typeName": "Path expression",
+          "defaultValue": "\"output/reports\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Options",
+          "placeholder": "options",
+          "description": "Recursive and permission-mode behavior.",
+          "typeName": "Options object",
+          "defaultValue": "{ recursive: true }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create nested temporary directories",
+          "code": "void (async () => {\n  const { mkdtemp, mkdir, rm, stat } = require(\"node:fs/promises\");\n  const { join } = require(\"node:path\");\n  const { tmpdir } = require(\"node:os\");\n  const root = await mkdtemp(join(tmpdir(), \"hypershell-mkdir-\"));\n  try {\n    const nested = join(root, \"one\", \"two\");\n    await mkdir(nested, { recursive: true });\n    console.log((await stat(nested)).isDirectory());\n  } finally {\n    await rm(root, { recursive: true, force: true });\n  }\n})();",
+          "explanation": "Recursive creation builds both missing levels and stat confirms the final path is a directory."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.stat.fcefdddde203",
+      "definition": "fs/promises stat follows symbolic links and resolves with an fs.Stats object containing type checks, sizes, and timestamps. Use lstat to inspect a link itself.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "The path whose metadata is requested.",
+          "typeName": "Path expression",
+          "defaultValue": "\"README.md\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect a temporary file",
+          "code": "void (async () => {\n  const { mkdtemp, rm, stat, writeFile } = require(\"node:fs/promises\");\n  const { join } = require(\"node:path\");\n  const { tmpdir } = require(\"node:os\");\n  const root = await mkdtemp(join(tmpdir(), \"hypershell-stat-\"));\n  try {\n    const path = join(root, \"answer.txt\");\n    await writeFile(path, \"42\");\n    const info = await stat(path);\n    console.log(info.isFile(), info.size);\n  } finally {\n    await rm(root, { recursive: true, force: true });\n  }\n})();",
+          "explanation": "The Stats object identifies a file containing two UTF-8 bytes."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.rm.fb2be8b4aad0",
+      "definition": "fs/promises rm can recursively remove directory trees and can ignore missing paths with force. Recursive removal should be scoped to a path the application has validated.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "The validated file or directory path to remove.",
+          "typeName": "Path expression",
+          "defaultValue": "\"output.tmp\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Options",
+          "placeholder": "options",
+          "description": "Recursive, force, and retry behavior.",
+          "typeName": "Options object",
+          "defaultValue": "{ force: true }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Remove one temporary file",
+          "code": "void (async () => {\n  const { mkdtemp, rm, writeFile } = require(\"node:fs/promises\");\n  const { join } = require(\"node:path\");\n  const { tmpdir } = require(\"node:os\");\n  const root = await mkdtemp(join(tmpdir(), \"hypershell-rm-\"));\n  const path = join(root, \"temporary.txt\");\n  await writeFile(path, \"temporary\");\n  await rm(path);\n  console.log(\"removed\");\n  await rm(root, { recursive: true, force: true });\n})();",
+          "explanation": "The example removes only a file it created inside an isolated temporary directory."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.rename.b8469429ff96",
+      "definition": "fs/promises rename delegates to the operating system. Moving across file-system volumes can fail and may require an explicit copy-then-remove strategy.",
+      "parameters": [
+        {
+          "name": "oldPath",
+          "displayName": "Current path",
+          "placeholder": "oldPath",
+          "description": "The existing source path.",
+          "typeName": "Path expression",
+          "defaultValue": "\"draft.txt\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "newPath",
+          "displayName": "New path",
+          "placeholder": "newPath",
+          "description": "The destination path.",
+          "typeName": "Path expression",
+          "defaultValue": "\"final.txt\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Rename a temporary file",
+          "code": "void (async () => {\n  const { mkdtemp, readFile, rename, rm, writeFile } = require(\"node:fs/promises\");\n  const { join } = require(\"node:path\");\n  const { tmpdir } = require(\"node:os\");\n  const root = await mkdtemp(join(tmpdir(), \"hypershell-rename-\"));\n  try {\n    const draft = join(root, \"draft.txt\");\n    const final = join(root, \"final.txt\");\n    await writeFile(draft, \"42\");\n    await rename(draft, final);\n    console.log(await readFile(final, \"utf8\"));\n  } finally {\n    await rm(root, { recursive: true, force: true });\n  }\n})();",
+          "explanation": "The created file is renamed in place and remains readable under its new path."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.access.64b2c486aee3",
+      "definition": "fs/promises access is useful for a direct permission check, but checking before a later operation can introduce a race. Prefer performing the operation and handling its error when possible.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "The file-system path to test.",
+          "typeName": "Path expression",
+          "defaultValue": "\"README.md\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Check a temporary file",
+          "code": "void (async () => {\n  const { access, mkdtemp, rm, writeFile } = require(\"node:fs/promises\");\n  const { join } = require(\"node:path\");\n  const { tmpdir } = require(\"node:os\");\n  const root = await mkdtemp(join(tmpdir(), \"hypershell-access-\"));\n  try {\n    const path = join(root, \"answer.txt\");\n    await writeFile(path, \"42\");\n    await access(path);\n    console.log(\"accessible\");\n  } finally {\n    await rm(root, { recursive: true, force: true });\n  }\n})();",
+          "explanation": "access resolves for the file created by the example, after which the temporary directory is removed."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.join.7a309debaf45",
+      "definition": "path.join concatenates segments, normalizes separators and dot segments, and returns a relative or absolute path according to the supplied parts.",
+      "parameters": [
+        {
+          "name": "segments",
+          "displayName": "Segments",
+          "placeholder": "segments",
+          "description": "Comma-separated string expressions passed as path segments.",
+          "typeName": "Argument list",
+          "defaultValue": "\"reports\", \"2026\", \"summary.txt\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a nested path",
+          "code": "const { join } = require(\"node:path\");\nconsole.log(join(\"reports\", \"2026\", \"summary.txt\"));",
+          "explanation": "The segments are combined with the correct separator for the running platform."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.resolve.9a8ff42e00e0",
+      "definition": "path.resolve normalizes the result and uses the current working directory when the supplied segments do not establish an absolute base.",
+      "parameters": [
+        {
+          "name": "segments",
+          "displayName": "Segments",
+          "placeholder": "segments",
+          "description": "Comma-separated path-segment expressions.",
+          "typeName": "Argument list",
+          "defaultValue": "\"reports\", \"summary.txt\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Resolve a path beneath the working directory",
+          "code": "const { isAbsolute, resolve } = require(\"node:path\");\nconsole.log(isAbsolute(resolve(\"reports\", \"summary.txt\")));",
+          "explanation": "resolve produces an absolute path, confirmed without relying on a platform-specific spelling."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.relative.68c37c32e250",
+      "definition": "path.relative resolves both inputs before comparing them and returns an empty string when they identify the same location.",
+      "parameters": [
+        {
+          "name": "from",
+          "displayName": "From",
+          "placeholder": "from",
+          "description": "The starting path expression.",
+          "typeName": "Path expression",
+          "defaultValue": "\"/projects/app\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "to",
+          "displayName": "To",
+          "placeholder": "to",
+          "description": "The destination path expression.",
+          "typeName": "Path expression",
+          "defaultValue": "\"/projects/app/src/index.js\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find a child path relative to its root",
+          "code": "const { join, relative } = require(\"node:path\");\nconst root = process.cwd();\nconsole.log(relative(root, join(root, \"src\", \"index.js\")));",
+          "explanation": "The result identifies the nested file without embedding an operating-system-specific root."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.extname.7c3d0a4becb5",
+      "definition": "path.extname includes the leading period and returns an empty string when the basename has no extension under Node's path rules.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "The path string to inspect.",
+          "typeName": "Path expression",
+          "defaultValue": "\"report.pdf\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a PDF extension",
+          "code": "const { extname } = require(\"node:path\");\nconsole.log(extname(\"report.pdf\"));",
+          "explanation": "The returned extension includes the leading period."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.basename.2ce52fe7bd91",
+      "definition": "path.basename performs lexical path processing and does not access the file system. Case sensitivity of suffix removal follows normal string comparison.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "The path string to inspect.",
+          "typeName": "Path expression",
+          "defaultValue": "\"reports/summary.pdf\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "suffix",
+          "displayName": "Suffix",
+          "placeholder": "suffix",
+          "description": "An optional exact suffix removed from the result.",
+          "typeName": "String expression",
+          "defaultValue": "\".pdf\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a filename without its extension",
+          "code": "const { basename } = require(\"node:path\");\nconsole.log(basename(\"reports/summary.pdf\", \".pdf\"));",
+          "explanation": "basename selects summary.pdf and removes the exact .pdf suffix."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.dirname.433e8893f9b1",
+      "definition": "path.dirname lexically normalizes trailing separators and does not require the path to exist.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "The path string to inspect.",
+          "typeName": "Path expression",
+          "defaultValue": "\"reports/summary.pdf\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read the containing directory",
+          "code": "const { dirname } = require(\"node:path\");\nconsole.log(dirname(\"reports/summary.pdf\"));",
+          "explanation": "The final filename is removed, leaving reports."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.fileurltopath.4aa5959fb4af",
+      "definition": "url.fileURLToPath handles percent encoding, drive letters, and network paths according to Node's platform rules; reading URL.pathname directly does not.",
+      "parameters": [
+        {
+          "name": "url",
+          "displayName": "File URL",
+          "placeholder": "url",
+          "description": "A file URL object or string.",
+          "typeName": "URL expression",
+          "defaultValue": "new URL(\"file:///tmp/answer.txt\")",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Round-trip the working directory",
+          "code": "const { fileURLToPath, pathToFileURL } = require(\"node:url\");\nconst path = fileURLToPath(pathToFileURL(process.cwd()));\nconsole.log(typeof path === \"string\" && path.length > 0);",
+          "explanation": "Node converts the working directory to a file URL and back using platform-correct rules."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.pathtofileurl.51c02bd15d52",
+      "definition": "url.pathToFileURL resolves relative paths and correctly escapes characters that would have special meaning in a URL.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "The native path string to convert.",
+          "typeName": "Path expression",
+          "defaultValue": "process.cwd()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a file URL for the working directory",
+          "code": "const { pathToFileURL } = require(\"node:url\");\nconsole.log(pathToFileURL(process.cwd()).protocol);",
+          "explanation": "The resulting URL uses the file protocol on every supported platform."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.platform.34f245b8a921",
+      "definition": "os.platform returns values such as win32, linux, or darwin and matches process.platform. Feature detection is usually preferable when behavior can be tested directly.",
+      "parameters": [
+        {
+          "name": "expected",
+          "displayName": "Expected platform",
+          "placeholder": "expected",
+          "description": "A platform identifier to compare.",
+          "typeName": "String expression",
+          "defaultValue": "process.platform",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Compare the two platform surfaces",
+          "code": "const { platform } = require(\"node:os\");\nconsole.log(platform() === process.platform);",
+          "explanation": "os.platform and process.platform expose the same platform identifier."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.homedir.e1daf1008f35",
+      "definition": "os.homedir uses operating-system account information and environment fallbacks. Applications should join child paths rather than concatenate separators manually.",
+      "parameters": [
+        {
+          "name": "label",
+          "displayName": "Output label",
+          "placeholder": "label",
+          "description": "A label printed before the returned path.",
+          "typeName": "String expression",
+          "defaultValue": "\"home\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Confirm a home path is available",
+          "code": "const { homedir } = require(\"node:os\");\nconsole.log(typeof homedir() === \"string\" && homedir().length > 0);",
+          "explanation": "The API supplies a non-empty path string for the current user."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.tmpdir.5941deb392d8",
+      "definition": "os.tmpdir chooses the platform's configured temporary location. Use fs.mkdtemp to create an application-owned unique directory beneath it.",
+      "parameters": [
+        {
+          "name": "label",
+          "displayName": "Output label",
+          "placeholder": "label",
+          "description": "A label printed before the path.",
+          "typeName": "String expression",
+          "defaultValue": "\"temp\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read the temporary directory",
+          "code": "const { tmpdir } = require(\"node:os\");\nconsole.log(typeof tmpdir() === \"string\" && tmpdir().length > 0);",
+          "explanation": "The platform exposes a non-empty temporary-directory path."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.parseargs.3a6ccd4fb7e8",
+      "definition": "util.parseArgs returns option values, positional arguments, and optionally token metadata. Strict mode rejects unknown options and invalid values.",
+      "parameters": [
+        {
+          "name": "config",
+          "displayName": "Configuration",
+          "placeholder": "config",
+          "description": "The args, options, strict, and allowPositionals settings.",
+          "typeName": "Options object",
+          "defaultValue": "{ args: [\"--count\", \"42\"], options: { count: { type: \"string\" } } }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse one typed option",
+          "code": "const { parseArgs } = require(\"node:util\");\nconst parsed = parseArgs({ args: [\"--count\", \"42\"], options: { count: { type: \"string\" } } });\nconsole.log(parsed.values.count);",
+          "explanation": "The declared string option consumes the following token and exposes 42 under values.count."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.inspect.d0472352c3eb",
+      "definition": "util.inspect understands circular references, collection types, depth limits, colors, and custom inspectors. Its output is intended for diagnostics rather than stable serialization.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The value to inspect.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "{ answer: 42 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Options",
+          "placeholder": "options",
+          "description": "Depth, colors, sorting, and formatting settings.",
+          "typeName": "Options object",
+          "defaultValue": "{ sorted: true, colors: false }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect a nested object",
+          "code": "const { inspect } = require(\"node:util\");\nconsole.log(inspect({ answer: 42 }, { sorted: true, colors: false }));",
+          "explanation": "inspect produces a readable diagnostic form without ANSI color codes."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.promisify.d6dfedfec039",
+      "definition": "util.promisify expects the final argument to be a callback whose first value is an error. APIs with unusual callback contracts can provide a custom promisified implementation.",
+      "parameters": [
+        {
+          "name": "callbackFunction",
+          "displayName": "Callback function",
+          "placeholder": "callbackFunction",
+          "description": "An error-first callback function to wrap.",
+          "typeName": "Function expression",
+          "defaultValue": "(value, callback) => callback(null, value)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Promisify a small callback function",
+          "code": "void (async () => {\n  const { promisify } = require(\"node:util\");\n  const double = promisify((value, callback) => callback(null, value * 2));\n  console.log(await double(21));\n})();",
+          "explanation": "The callback result becomes the fulfillment value of the returned promise."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.createhash.815b1cd8b47c",
+      "definition": "crypto.createHash selects a supported digest algorithm. After digest is called, the Hash object is finalized and cannot accept more data.",
+      "parameters": [
+        {
+          "name": "algorithm",
+          "displayName": "Algorithm",
+          "placeholder": "algorithm",
+          "description": "A supported digest algorithm name.",
+          "typeName": "String expression",
+          "defaultValue": "\"sha256\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "data",
+          "displayName": "Data",
+          "placeholder": "data",
+          "description": "The string or binary data to hash.",
+          "typeName": "String or binary expression",
+          "defaultValue": "\"Hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "encoding",
+          "displayName": "Output encoding",
+          "placeholder": "encoding",
+          "description": "The digest encoding.",
+          "typeName": "String expression",
+          "defaultValue": "\"hex\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Hash a deterministic string",
+          "code": "const { createHash } = require(\"node:crypto\");\nconst digest = createHash(\"sha256\").update(\"Hypershell\").digest(\"hex\");\nconsole.log(digest.length);",
+          "explanation": "A SHA-256 digest rendered in hexadecimal contains 64 characters."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.randomuuid.a64534fa8da9",
+      "definition": "crypto.randomUUID uses the platform cryptographic random-number generator and may cache random data for performance unless disabled in its options.",
+      "parameters": [
+        {
+          "name": "options",
+          "displayName": "Options",
+          "placeholder": "options",
+          "description": "Controls entropy caching.",
+          "typeName": "Options object",
+          "defaultValue": "{ disableEntropyCache: false }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Generate and validate a UUID shape",
+          "code": "const { randomUUID } = require(\"node:crypto\");\nconsole.log(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(randomUUID()));",
+          "explanation": "The generated identifier matches the hexadecimal version-4 UUID structure."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.timingsafeequal.7a6bcbb65201",
+      "definition": "crypto.timingSafeEqual reduces timing leakage from the comparison itself. Inputs must have equal byte lengths, and surrounding code must also avoid timing-dependent behavior.",
+      "parameters": [
+        {
+          "name": "left",
+          "displayName": "Left bytes",
+          "placeholder": "left",
+          "description": "The first Buffer or typed-array expression.",
+          "typeName": "Binary expression",
+          "defaultValue": "Buffer.from(\"secret\")",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "right",
+          "displayName": "Right bytes",
+          "placeholder": "right",
+          "description": "An equal-length Buffer or typed-array expression.",
+          "typeName": "Binary expression",
+          "defaultValue": "Buffer.from(\"secret\")",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Compare equal buffers",
+          "code": "const { timingSafeEqual } = require(\"node:crypto\");\nconsole.log(timingSafeEqual(Buffer.from(\"secret\"), Buffer.from(\"secret\")));",
+          "explanation": "Equal byte sequences produce true without an early-exit byte comparison."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.eventemitter.594e5ae0f03c",
+      "definition": "EventEmitter calls listeners in registration order when emit runs. An unhandled error event throws, so error handling should be explicit for emitters that can fail.",
+      "parameters": [
+        {
+          "name": "eventName",
+          "displayName": "Event name",
+          "placeholder": "eventName",
+          "description": "The string or symbol identifying the event.",
+          "typeName": "String or symbol expression",
+          "defaultValue": "\"answer\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "listener",
+          "displayName": "Listener",
+          "placeholder": "listener",
+          "description": "The function called for emitted values.",
+          "typeName": "Function expression",
+          "defaultValue": "(value) => console.log(value)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The value passed to the listener.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Emit one named event",
+          "code": "const { EventEmitter } = require(\"node:events\");\nconst emitter = new EventEmitter();\nemitter.on(\"answer\", (value) => console.log(value));\nemitter.emit(\"answer\", 42);",
+          "explanation": "emit synchronously invokes the registered answer listener with 42."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.once.9df73e7b0f21",
+      "definition": "events.once resolves with an array of listener arguments and then removes its listeners. For EventEmitter instances, an error event rejects the promise while waiting for another event.",
+      "parameters": [
+        {
+          "name": "emitter",
+          "displayName": "Emitter",
+          "placeholder": "emitter",
+          "description": "An EventEmitter or EventTarget expression.",
+          "typeName": "Event source expression",
+          "defaultValue": "emitter",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "eventName",
+          "displayName": "Event name",
+          "placeholder": "eventName",
+          "description": "The event to await.",
+          "typeName": "String or symbol expression",
+          "defaultValue": "\"answer\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Wait for a queued event",
+          "code": "void (async () => {\n  const { EventEmitter, once } = require(\"node:events\");\n  const emitter = new EventEmitter();\n  const pending = once(emitter, \"answer\");\n  queueMicrotask(() => emitter.emit(\"answer\", 42));\n  console.log((await pending)[0]);\n})();",
+          "explanation": "The promise is registered before the microtask emits the event, then resolves with the emitted argument."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.on.554987b449e6",
+      "definition": "events.on queues matching events until consumed and removes its listeners when iteration ends. AbortSignal can cancel a long-running iterator.",
+      "parameters": [
+        {
+          "name": "emitter",
+          "displayName": "Emitter",
+          "placeholder": "emitter",
+          "description": "An EventEmitter expression.",
+          "typeName": "Event source expression",
+          "defaultValue": "emitter",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "eventName",
+          "displayName": "Event name",
+          "placeholder": "eventName",
+          "description": "The event to iterate.",
+          "typeName": "String or symbol expression",
+          "defaultValue": "\"data\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Consume one event through an async iterator",
+          "code": "void (async () => {\n  const { EventEmitter, on } = require(\"node:events\");\n  const emitter = new EventEmitter();\n  const events = on(emitter, \"data\");\n  queueMicrotask(() => emitter.emit(\"data\", 42));\n  for await (const [value] of events) {\n    console.log(value);\n    break;\n  }\n})();",
+          "explanation": "The iterator yields the emitted argument array and closes when the loop breaks."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.deepstrictequal.3840abe2d7c9",
+      "definition": "assert.deepStrictEqual compares prototypes, enumerable properties, collection contents, and primitive values using strict semantics appropriate for tests.",
+      "parameters": [
+        {
+          "name": "actual",
+          "displayName": "Actual",
+          "placeholder": "actual",
+          "description": "The value produced by the code under test.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "{ answer: 42 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expected",
+          "displayName": "Expected",
+          "placeholder": "expected",
+          "description": "The value the result must deeply equal.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "{ answer: 42 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Compare nested values",
+          "code": "const { deepStrictEqual } = require(\"node:assert\");\ndeepStrictEqual({ nested: [42] }, { nested: [42] });\nconsole.log(\"equal\");",
+          "explanation": "The two independently created structures contain equivalent prototypes, keys, arrays, and values."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.throws.9144a60235a0",
+      "definition": "assert.throws can validate an error class, regular-expression message, property object, or predicate. Use assert.rejects for promise rejections.",
+      "parameters": [
+        {
+          "name": "operation",
+          "displayName": "Operation",
+          "placeholder": "operation",
+          "description": "The synchronous statement expected to throw.",
+          "typeName": "Statement block",
+          "defaultValue": "{ throw new TypeError(\"invalid\"); }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expected",
+          "displayName": "Expected error",
+          "placeholder": "expected",
+          "description": "An error constructor, regular expression, object, or predicate.",
+          "typeName": "Error matcher expression",
+          "defaultValue": "TypeError",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Require a TypeError",
+          "code": "const { throws } = require(\"node:assert\");\nthrows(() => { throw new TypeError(\"invalid\"); }, TypeError);\nconsole.log(\"matched\");",
+          "explanation": "The assertion succeeds because the callback throws the expected error class."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.settimeout.2343e0d1c65e",
+      "definition": "timers/promises setTimeout integrates delays with async functions and supports AbortSignal cancellation and ref control through its options.",
+      "parameters": [
+        {
+          "name": "delay",
+          "displayName": "Delay",
+          "placeholder": "delay",
+          "description": "The approximate delay in milliseconds.",
+          "typeName": "Millisecond expression",
+          "defaultValue": "1",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The fulfillment value.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Resolve after a short delay",
+          "code": "void (async () => {\n  const { setTimeout } = require(\"node:timers/promises\");\n  console.log(await setTimeout(1, 42));\n})();",
+          "explanation": "The promise fulfills with 42 after the timer becomes eligible to run."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.setimmediate.c345659a6457",
+      "definition": "timers/promises setImmediate schedules work after I/O callbacks for the current event-loop iteration and supports AbortSignal cancellation.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The fulfillment value.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Resolve on the next check phase",
+          "code": "void (async () => {\n  const { setImmediate } = require(\"node:timers/promises\");\n  console.log(await setImmediate(42));\n})();",
+          "explanation": "The promise fulfills with the supplied value on the scheduled check phase."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.gzipsync.797bb47ca2a3",
+      "definition": "zlib.gzipSync blocks the event loop while compressing, making it suitable for small bounded inputs or tooling. Servers should normally use asynchronous or streaming compression.",
+      "parameters": [
+        {
+          "name": "data",
+          "displayName": "Data",
+          "placeholder": "data",
+          "description": "The string, Buffer, typed array, DataView, or ArrayBuffer to compress.",
+          "typeName": "String or binary expression",
+          "defaultValue": "\"Hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Compress and restore text",
+          "code": "const { gunzipSync, gzipSync } = require(\"node:zlib\");\nconst compressed = gzipSync(\"Hypershell\");\nconsole.log(gunzipSync(compressed).toString(\"utf8\"));",
+          "explanation": "The gzip output round-trips through gunzip to the original text."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.spawnsync.d25a96d2fc0d",
+      "definition": "child_process.spawnSync avoids shell parsing unless shell is explicitly enabled. Callers should inspect error, status, signal, stdout, and stderr and should set bounds for untrusted workloads.",
+      "parameters": [
+        {
+          "name": "command",
+          "displayName": "Command",
+          "placeholder": "command",
+          "description": "The executable path or name.",
+          "typeName": "Executable expression",
+          "defaultValue": "process.execPath",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "args",
+          "displayName": "Arguments",
+          "placeholder": "args",
+          "description": "An array of literal process arguments.",
+          "typeName": "Array expression",
+          "defaultValue": "[\"-e\", \"process.stdout.write('42')\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "options",
+          "displayName": "Options",
+          "placeholder": "options",
+          "description": "Encoding, working directory, environment, timeout, and shell behavior.",
+          "typeName": "Options object",
+          "defaultValue": "{ encoding: \"utf8\", shell: false, timeout: 5000 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Run an isolated Node child",
+          "code": "const { spawnSync } = require(\"node:child_process\");\nconst result = spawnSync(process.execPath, [\"-e\", \"process.stdout.write('42')\"], { encoding: \"utf8\", shell: false, timeout: 5000 });\nif (result.error) throw result.error;\nconsole.log(result.stdout);",
+          "explanation": "The current Node executable runs with a literal argument array, no shell, and a timeout."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.process-cwd.guide",
+      "definition": "process.cwd reflects the process-wide working directory used to resolve relative file-system paths. process.chdir can change it for the entire process.",
+      "parameters": [
+        {
+          "name": "label",
+          "displayName": "Output label",
+          "placeholder": "label",
+          "description": "A label printed before the path.",
+          "typeName": "String expression",
+          "defaultValue": "\"cwd\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Confirm the working directory is absolute",
+          "code": "const { isAbsolute } = require(\"node:path\");\nconsole.log(isAbsolute(process.cwd()));",
+          "explanation": "Node exposes the current working directory as an absolute path."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.process-argv.guide",
+      "definition": "process.argv is an array. The first item is the Node executable, the second is normally the script path, and later items are application arguments.",
+      "parameters": [
+        {
+          "name": "index",
+          "displayName": "Index",
+          "placeholder": "index",
+          "description": "The zero-based argument index to read.",
+          "typeName": "Integer expression",
+          "defaultValue": "0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect the executable argument",
+          "code": "console.log(typeof process.argv[0] === \"string\" && process.argv[0].length > 0);",
+          "explanation": "The first argument always identifies the executable used to start Node."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.process-env.guide",
+      "definition": "process.env values are strings when present. Assigning affects the current process and inherited child environments but does not persist system-wide settings.",
+      "parameters": [
+        {
+          "name": "key",
+          "displayName": "Variable name",
+          "placeholder": "key",
+          "description": "A string expression containing the environment-variable name.",
+          "typeName": "String expression",
+          "defaultValue": "\"PATH\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Set and remove a process-local value",
+          "code": "process.env.HYPERSHELL_GUIDE_VALUE = \"42\";\nconsole.log(process.env.HYPERSHELL_GUIDE_VALUE);\ndelete process.env.HYPERSHELL_GUIDE_VALUE;",
+          "explanation": "The value exists only in this isolated Node process and is removed before exit."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.buffer-from.guide",
+      "definition": "Buffer.from supports strings, arrays, array buffers, and other buffers. String decoding uses UTF-8 unless another supported encoding is supplied.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The string or byte source.",
+          "typeName": "String or binary expression",
+          "defaultValue": "\"Hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "encoding",
+          "displayName": "Encoding",
+          "placeholder": "encoding",
+          "description": "The string encoding used for text input.",
+          "typeName": "String expression",
+          "defaultValue": "\"utf8\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Encode and decode UTF-8 text",
+          "code": "const { Buffer } = require(\"node:buffer\");\nconsole.log(Buffer.from(\"Hypershell\", \"utf8\").toString(\"utf8\"));",
+          "explanation": "Buffer.from encodes the string and toString decodes the same bytes back to text."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.buffer-alloc.guide",
+      "definition": "Buffer.alloc zero-fills by default or repeats a supplied fill value. It is safer for general use than allocUnsafe when every byte will not be overwritten immediately.",
+      "parameters": [
+        {
+          "name": "size",
+          "displayName": "Size",
+          "placeholder": "size",
+          "description": "The number of bytes to allocate.",
+          "typeName": "Integer expression",
+          "defaultValue": "4",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fill",
+          "displayName": "Fill",
+          "placeholder": "fill",
+          "description": "The byte, string, or Buffer repeated through the allocation.",
+          "typeName": "Fill expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Allocate four initialized bytes",
+          "code": "const { Buffer } = require(\"node:buffer\");\nconsole.log([...Buffer.alloc(4, 42)]);",
+          "explanation": "Every allocated byte is initialized to decimal value 42."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.buffer-byte-length.guide",
+      "definition": "Buffer.byteLength measures encoded storage rather than JavaScript UTF-16 code units, so multibyte text can occupy more bytes than string.length reports.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The string or binary value to measure.",
+          "typeName": "String or binary expression",
+          "defaultValue": "\"✓\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "encoding",
+          "displayName": "Encoding",
+          "placeholder": "encoding",
+          "description": "The encoding used to measure a string.",
+          "typeName": "String expression",
+          "defaultValue": "\"utf8\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Measure a multibyte character",
+          "code": "const { Buffer } = require(\"node:buffer\");\nconsole.log(Buffer.byteLength(\"✓\", \"utf8\"));",
+          "explanation": "The check mark occupies three bytes in UTF-8 even though it is one JavaScript character."
+        }
+      ]
+    },
+    {
+      "entryId": "node.stdlib.stream-promises-pipeline.guide",
+      "definition": "stream/promises pipeline manages backpressure, forwards failures, and destroys participating streams as needed. It is safer than manually chaining pipe calls for multi-stage work.",
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "Source",
+          "placeholder": "source",
+          "description": "A readable stream, iterable, or async iterable.",
+          "typeName": "Stream expression",
+          "defaultValue": "require(\"node:stream\").Readable.from([\"42\"])",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "destination",
+          "displayName": "Destination",
+          "placeholder": "destination",
+          "description": "A writable stream or compatible transform.",
+          "typeName": "Stream expression",
+          "defaultValue": "process.stdout",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Transform iterable text through a pipeline",
+          "code": "void (async () => {\n  const { Readable, Transform, Writable } = require(\"node:stream\");\n  const { pipeline } = require(\"node:stream/promises\");\n  let output = \"\";\n  const upper = new Transform({ transform(chunk, encoding, callback) { callback(null, chunk.toString().toUpperCase()); } });\n  const sink = new Writable({ write(chunk, encoding, callback) { output += chunk.toString(); callback(); } });\n  await pipeline(Readable.from([\"hyper\", \"shell\"]), upper, sink);\n  console.log(output);\n})();",
+          "explanation": "pipeline applies backpressure, waits for completion, and yields the transformed HYPERSHELL text."
+        }
+      ]
+    }
+  ]
+}

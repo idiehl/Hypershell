@@ -1,0 +1,210 @@
+<UserControl x:Class="Hypershell.NetworkClientTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#FF0D1117"
+             Loaded="NetworkClientTabLoaded">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Border Grid.Row="0"
+            Background="#FF161B22"
+            BorderBrush="#FF30363D"
+            BorderThickness="0,0,0,1"
+            Padding="10,7">
+      <StackPanel>
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="86" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="{Binding Transport}"
+                     Foreground="{StaticResource SecondaryVividBrush}"
+                     FontWeight="Bold"
+                     VerticalAlignment="Center"
+                     Margin="0,0,9,0" />
+          <TextBox Grid.Column="1"
+                   Text="{Binding Host, UpdateSourceTrigger=PropertyChanged}"
+                   IsEnabled="{Binding CanEditConnection}"
+                   ToolTip="Host or IP"
+                   Margin="0,0,6,0" />
+          <TextBox Grid.Column="2"
+                   Text="{Binding PortText, UpdateSourceTrigger=PropertyChanged}"
+                   IsEnabled="{Binding CanEditConnection}"
+                   ToolTip="Destination port"
+                   Margin="0,0,6,0" />
+          <Button Grid.Column="3"
+                  Content="Connect"
+                  Click="ConnectClick"
+                  IsEnabled="{Binding CanEditConnection}"
+                  MinWidth="78"
+                  Margin="0,0,5,0" />
+          <Button Grid.Column="4"
+                  Content="Disconnect"
+                  Click="DisconnectClick"
+                  IsEnabled="{Binding IsConnected}"
+                  MinWidth="84" />
+        </Grid>
+
+        <WrapPanel Margin="0,7,0,0">
+          <TextBlock Text="Format"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     VerticalAlignment="Center"
+                     Margin="0,0,5,0" />
+          <ComboBox ItemsSource="{Binding PayloadFormats}"
+                    SelectedItem="{Binding PayloadFormat}"
+                    Width="82"
+                    Margin="0,0,10,0" />
+          <TextBlock Text="Encoding"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     VerticalAlignment="Center"
+                     Margin="0,0,5,0" />
+          <ComboBox ItemsSource="{Binding TextEncodings}"
+                    SelectedItem="{Binding TextEncoding}"
+                    Width="130"
+                    Margin="0,0,10,0" />
+          <TextBlock Text="Ending"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     VerticalAlignment="Center"
+                     Margin="0,0,5,0" />
+          <ComboBox ItemsSource="{Binding LineEndings}"
+                    SelectedItem="{Binding LineEnding}"
+                    Width="80"
+                    Margin="0,0,10,0" />
+          <CheckBox Content="TLS"
+                    IsChecked="{Binding UseTls}"
+                    IsEnabled="{Binding IsTcp}"
+                    VerticalAlignment="Center"
+                    Margin="0,0,9,0" />
+          <TextBox Text="{Binding SniHost, UpdateSourceTrigger=PropertyChanged}"
+                   Width="150"
+                   IsEnabled="{Binding UseTls}"
+                   ToolTip="TLS host"
+                   Margin="0,0,8,0" />
+          <CheckBox Content="Ignore certificate"
+                    IsChecked="{Binding AllowInvalidCertificate}"
+                    IsEnabled="{Binding UseTls}"
+                    VerticalAlignment="Center" />
+        </WrapPanel>
+
+        <WrapPanel Margin="0,6,0,0"
+                   Visibility="{Binding IsUdp, Converter={StaticResource BooleanToVisibilityConverter}}">
+          <TextBlock Text="Optional local bind"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     VerticalAlignment="Center"
+                     Margin="0,0,7,0" />
+          <TextBox Text="{Binding LocalBindAddress, UpdateSourceTrigger=PropertyChanged}"
+                   Width="170"
+                   ToolTip="Local IP"
+                   Margin="0,0,6,0" />
+          <TextBox Text="{Binding LocalBindPortText, UpdateSourceTrigger=PropertyChanged}"
+                   Width="80"
+                   ToolTip="Local UDP port" />
+        </WrapPanel>
+        <TextBlock Text="{Binding ContextDescription}"
+                   Foreground="{StaticResource MutedForegroundBrush}"
+                   FontSize="10"
+                   TextWrapping="Wrap"
+                   Margin="0,6,0,0" />
+      </StackPanel>
+    </Border>
+
+    <ListBox Grid.Row="1"
+             ItemsSource="{Binding Transcript}"
+             Background="#FF0D1117"
+             BorderThickness="0"
+             FontFamily="{StaticResource CodeFontFamily}"
+             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+             ScrollViewer.VerticalScrollBarVisibility="Auto"
+             VirtualizingPanel.IsVirtualizing="True">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Grid Margin="6,2">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="96" />
+              <ColumnDefinition Width="92" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding TimestampText}"
+                       Foreground="{StaticResource MutedForegroundBrush}" />
+            <TextBlock Grid.Column="1"
+                       Text="{Binding Direction}"
+                       Foreground="{StaticResource SecondaryVividBrush}"
+                       FontWeight="SemiBold" />
+            <TextBlock Grid.Column="2"
+                       Text="{Binding Text}"
+                       Foreground="{StaticResource ForegroundBrush}"
+                       TextWrapping="Wrap" />
+          </Grid>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+
+    <Border Grid.Row="2"
+            BorderBrush="#FF30363D"
+            BorderThickness="0,1,0,0"
+            Padding="10,8">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBox Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"
+                 AcceptsReturn="True"
+                 MinHeight="54"
+                 MaxHeight="150"
+                 VerticalScrollBarVisibility="Auto"
+                 FontFamily="{StaticResource CodeFontFamily}"
+                 ToolTip="Payload" />
+        <Button Grid.Column="1"
+                Content="Send"
+                Click="SendClick"
+                IsEnabled="{Binding CanSend}"
+                Width="82"
+                Margin="8,0,0,0" />
+      </Grid>
+    </Border>
+
+    <Border Grid.Row="3"
+            Background="#FF161B22"
+            BorderBrush="#FF30363D"
+            BorderThickness="0,1,0,0"
+            Padding="10,5">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+          <TextBlock Text="{Binding StatusMessage}"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     TextWrapping="Wrap" />
+          <TextBlock Text="{Binding CertificateDetails}"
+                     Visibility="{Binding HasCertificateDetails, Converter={StaticResource BooleanToVisibilityConverter}}"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     FontFamily="{StaticResource CodeFontFamily}"
+                     FontSize="10"
+                     TextWrapping="Wrap"
+                     Margin="0,4,0,0" />
+        </StackPanel>
+        <Button Grid.Column="1"
+                Content="Clear"
+                Click="ClearClick"
+                MinWidth="68"
+                Margin="8,0,5,0" />
+        <Button Grid.Column="2"
+                Content="Save…"
+                Click="SaveClick"
+                MinWidth="68" />
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

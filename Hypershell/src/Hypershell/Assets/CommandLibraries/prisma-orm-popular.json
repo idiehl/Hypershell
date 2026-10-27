@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "prisma-orm-popular",
+  "displayName": "Prisma ORM",
+  "description": "Curated Prisma ORM starter recipes for the TypeScript Command Builder. The dependency is referenced, not bundled.",
+  "language": "TypeScript",
+  "category": "Popular libraries",
+  "kind": "Framework",
+  "canonicalName": "Prisma ORM",
+  "ecosystem": "npm",
+  "targetVersion": "7",
+  "sourceVersion": "7 documentation · curated 2026-08-17",
+  "sourceUrl": "https://www.prisma.io/docs/orm",
+  "license": "Apache-2.0",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Generated-project dependency only: configure a Prisma schema, database, and generated client in a project before using these snippets.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "typescript",
+    "popular library",
+    "@prisma/client",
+    "database",
+    "orm",
+    "query",
+    "prisma client"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/prisma-orm-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/prisma-orm-popular.guides.json"
+  ],
+  "legacyIds": []
+}

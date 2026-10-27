@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "dapper-popular",
+  "guides": [
+    {
+      "entryId": "dapper-popular.query-async",
+      "definition": "Executes parameterized SQL and maps each row to the selected type. Project dependency only: add Dapper and a database provider to a project; the isolated C# runner does not restore packages or open database connections.",
+      "parameters": [
+        {
+          "name": "rowType",
+          "displayName": "Row type",
+          "placeholder": "rowType",
+          "description": "Type used to map each returned row.",
+          "typeName": "C# type",
+          "defaultValue": "User",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sql",
+          "displayName": "SQL",
+          "placeholder": "sql",
+          "description": "Quoted parameterized SQL query.",
+          "typeName": "C# string",
+          "defaultValue": "\"select * from Users where IsActive = @isActive\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterName",
+          "displayName": "Parameter name",
+          "placeholder": "parameterName",
+          "description": "Anonymous-object property matching the SQL parameter without @.",
+          "typeName": "C# identifier",
+          "defaultValue": "isActive",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterValue",
+          "displayName": "Parameter value",
+          "placeholder": "parameterValue",
+          "description": "Value safely bound to the SQL parameter.",
+          "typeName": "C# expression",
+          "defaultValue": "true",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load active users",
+          "code": "var rows = await connection.QueryAsync<User>(\"select * from Users where IsActive = @isActive\", new { isActive = true });",
+          "explanation": "Dapper binds the anonymous-object property to the matching SQL parameter and maps result columns by name."
+        }
+      ]
+    },
+    {
+      "entryId": "dapper-popular.query-single",
+      "definition": "Returns one mapped row or the type default when no row matches. Project dependency only: add Dapper and a database provider to a project; the isolated C# runner does not restore packages or open database connections.",
+      "parameters": [
+        {
+          "name": "rowType",
+          "displayName": "Row type",
+          "placeholder": "rowType",
+          "description": "Type used to map the returned row.",
+          "typeName": "C# type",
+          "defaultValue": "User",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sql",
+          "displayName": "SQL",
+          "placeholder": "sql",
+          "description": "Quoted parameterized query expected to return zero or one row.",
+          "typeName": "C# string",
+          "defaultValue": "\"select * from Users where Id = @id\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterName",
+          "displayName": "Parameter name",
+          "placeholder": "parameterName",
+          "description": "Anonymous-object property matching the SQL parameter.",
+          "typeName": "C# identifier",
+          "defaultValue": "id",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterValue",
+          "displayName": "Parameter value",
+          "placeholder": "parameterValue",
+          "description": "Value safely bound to the SQL parameter.",
+          "typeName": "C# expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find a user by identifier",
+          "code": "var row = await connection.QuerySingleOrDefaultAsync<User>(\"select * from Users where Id = @id\", new { id = 42 });",
+          "explanation": "QuerySingleOrDefault expects at most one row; multiple matches indicate a data or query invariant failure."
+        }
+      ]
+    },
+    {
+      "entryId": "dapper-popular.execute-command",
+      "definition": "Runs a non-query SQL command and captures the affected-row count. Project dependency only: add Dapper and a database provider to a project; the isolated C# runner does not restore packages or open database connections.",
+      "parameters": [
+        {
+          "name": "sql",
+          "displayName": "SQL",
+          "placeholder": "sql",
+          "description": "Quoted parameterized INSERT, UPDATE, DELETE, or command text.",
+          "typeName": "C# string",
+          "defaultValue": "\"update Users set IsActive = 0 where Id = @id\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterName",
+          "displayName": "Parameter name",
+          "placeholder": "parameterName",
+          "description": "Anonymous-object property matching the SQL parameter.",
+          "typeName": "C# identifier",
+          "defaultValue": "id",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterValue",
+          "displayName": "Parameter value",
+          "placeholder": "parameterValue",
+          "description": "Value safely bound to the SQL parameter.",
+          "typeName": "C# expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Deactivate a user",
+          "code": "var affected = await connection.ExecuteAsync(\"update Users set IsActive = 0 where Id = @id\", new { id = 42 });",
+          "explanation": "ExecuteAsync parameterizes values and returns how many rows the database reports as affected."
+        }
+      ]
+    }
+  ]
+}

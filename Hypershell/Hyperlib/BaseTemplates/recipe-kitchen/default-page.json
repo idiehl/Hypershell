@@ -1,0 +1,90 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "Roasted Harvest Bowl",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "recipe-header",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "THE EVERYDAY TABLE",
+        "title": "Roasted Harvest Bowl",
+        "text": "A flexible template for a warm, colorful meal."
+      }
+    },
+    {
+      "id": "recipe-photo",
+      "type": "image",
+      "region": "main",
+      "values": {
+        "src": "/media/base-templates/recipe-kitchen.svg",
+        "alt": "Illustrated seasonal ingredients",
+        "caption": "Swap ingredients for what is in season and what you enjoy.",
+        "width": 100,
+        "span": "full"
+      }
+    },
+    {
+      "id": "ingredients",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Ingredients\n\n- 2 cups chopped seasonal vegetables\n- 1 cup cooked grain\n- 1 cup cooked beans\n- Olive oil and seasoning\n- A spoonful of your favorite dressing",
+        "span": "third"
+      }
+    },
+    {
+      "id": "method",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Method\n\n1. Cut the vegetables into similar-sized pieces.\n2. Roast until tender, checking as they cook.\n3. Warm the grains and beans.\n4. Arrange in a bowl and add dressing.\n\nAdjust the quantities and seasoning to suit your table.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "kitchen-timer",
+      "type": "tool",
+      "region": "main",
+      "values": {
+        "title": "Ten-minute check-in",
+        "mode": "timer",
+        "initial": 600,
+        "items": "",
+        "span": "half"
+      }
+    },
+    {
+      "id": "cook-note",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Make it yours",
+        "text": "Add something crisp, something bright, and something creamy. Use the timer as a reminder to check progress.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "serving",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "AT THE TABLE",
+        "style": "dots"
+      }
+    },
+    {
+      "id": "recipe-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "A demonstration recipe layout / Edit the ingredients and instructions for your own recipe"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

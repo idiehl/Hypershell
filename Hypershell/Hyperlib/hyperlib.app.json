@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "hyperlib",
+  "name": "HyperLib",
+  "description": "A personal library of living pages.",
+  "hostProject": "src/HyperLib.Host/HyperLib.Host.csproj",
+  "studioProject": "visual-page.project.json"
+}

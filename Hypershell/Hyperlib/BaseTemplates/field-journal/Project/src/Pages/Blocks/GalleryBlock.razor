@@ -1,0 +1,2 @@
+<figure><div class="hl-gallery"><img src="@Context.Text("src1")" alt="@Context.Text("caption")" loading="lazy"/><img src="@Context.Text("src2")" alt="@Context.Text("caption")" loading="lazy"/></div><figcaption data-field="caption">@Context.Text("caption")</figcaption></figure>
+@code { [Parameter, EditorRequired] public BlockContext Context { get; set; } = new(); }

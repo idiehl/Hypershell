@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="theme-color" content="#081226" />
+    <title>@ViewData["Title"] · Hypershell Admin</title>
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" asp-append-version="true" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/brand/favicon-32.png" asp-append-version="true" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/brand/favicon-16.png" asp-append-version="true" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/brand/apple-touch-icon.png" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="Hypershell Admin overview">
+            <img class="brand-mark" src="~/brand/atlas-emblem-96.png" asp-append-version="true" width="32" height="32" alt="" />
+            <span class="brand-copy">
+                <span class="brand-name">Atlas Universalis</span>
+                <span class="brand-context">Hypershell Admin</span>
+            </span>
+        </a>
+        @if (User.Identity?.IsAuthenticated == true)
+        {
+            <form method="post" asp-page="/Account/Logout">
+                <button class="icon-button" type="submit" title="Sign out" aria-label="Sign out">
+                    <svg class="icon-glyph" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M10 5H5v14h5M14 8l4 4-4 4M18 12H9" />
+                    </svg>
+                </button>
+            </form>
+        }
+    </header>
+    <main class="site-main">
+        @RenderBody()
+    </main>
+</body>
+</html>

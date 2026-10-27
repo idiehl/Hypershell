@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "threejs-popular",
+  "guides": [
+    {
+      "entryId": "threejs-popular.create-scene",
+      "definition": "Creates a three.js scene, camera, renderer, and visible mesh. Browser/editor content: import three.js in the target page or bundle and serve it over HTTP; the Web APIs surface is editor-only.",
+      "parameters": [
+        {
+          "name": "fieldOfView",
+          "displayName": "Field of view",
+          "placeholder": "fieldOfView",
+          "description": "Vertical camera field of view in degrees.",
+          "typeName": "number",
+          "defaultValue": "75",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "aspect",
+          "displayName": "Aspect ratio",
+          "placeholder": "aspect",
+          "description": "Viewport width divided by height.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "window.innerWidth / window.innerHeight",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "width",
+          "displayName": "Renderer width",
+          "placeholder": "width",
+          "description": "Canvas pixel width.",
+          "typeName": "number expression",
+          "defaultValue": "window.innerWidth",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "height",
+          "displayName": "Renderer height",
+          "placeholder": "height",
+          "description": "Canvas pixel height.",
+          "typeName": "number expression",
+          "defaultValue": "window.innerHeight",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "color",
+          "displayName": "Material color",
+          "placeholder": "color",
+          "description": "Color representation accepted by three.js.",
+          "typeName": "three.js color",
+          "defaultValue": "0x3b82f6",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a blue cube scene",
+          "code": "import * as THREE from \"three\";\n\nconst scene = new THREE.Scene();\nconst camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);\nconst renderer = new THREE.WebGLRenderer({ antialias: true });\nrenderer.setSize(window.innerWidth, window.innerHeight);\ndocument.body.append(renderer.domElement);\n\nconst geometry = new THREE.BoxGeometry(1, 1, 1);\nconst material = new THREE.MeshStandardMaterial({ color: 0x3b82f6 });\nconst mesh = new THREE.Mesh(geometry, material);\nconst light = new THREE.HemisphereLight(0xffffff, 0x444444, 3);\nscene.add(mesh, light);\ncamera.position.z = 3;\nrenderer.render(scene, camera);",
+          "explanation": "The light makes the standard material visible and the initial render paints a frame immediately; dispose GPU resources when removing long-lived scenes."
+        }
+      ]
+    },
+    {
+      "entryId": "threejs-popular.animation-loop",
+      "definition": "Uses renderer.setAnimationLoop to update a mesh and render every frame. Browser/editor content: import three.js in the target page or bundle and serve it over HTTP; the Web APIs surface is editor-only.",
+      "parameters": [
+        {
+          "name": "meshName",
+          "displayName": "Mesh name",
+          "placeholder": "meshName",
+          "description": "Mesh updated each frame.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "mesh",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "axis",
+          "displayName": "Rotation axis",
+          "placeholder": "axis",
+          "description": "Rotation axis x, y, or z.",
+          "typeName": "axis",
+          "defaultValue": "y",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "speed",
+          "displayName": "Speed factor",
+          "placeholder": "speed",
+          "description": "Radians per millisecond multiplier.",
+          "typeName": "number",
+          "defaultValue": "0.001",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Rotate the created mesh",
+          "code": "renderer.setAnimationLoop(time => {\n  mesh.rotation.y = time * 0.001;\n  renderer.render(scene, camera);\n});",
+          "explanation": "setAnimationLoop integrates with regular displays and immersive sessions; the time argument is in milliseconds."
+        }
+      ]
+    },
+    {
+      "entryId": "threejs-popular.handle-resize",
+      "definition": "Updates the projection matrix and renderer size when the viewport changes. Browser/editor content: import three.js in the target page or bundle and serve it over HTTP; the Web APIs surface is editor-only.",
+      "parameters": [
+        {
+          "name": "width",
+          "displayName": "Width expression",
+          "placeholder": "width",
+          "description": "New renderer width.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "window.innerWidth",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "height",
+          "displayName": "Height expression",
+          "placeholder": "height",
+          "description": "New renderer height.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "window.innerHeight",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Follow the browser viewport",
+          "code": "window.addEventListener(\"resize\", () => {\n  const width = window.innerWidth;\n  const height = window.innerHeight;\n  camera.aspect = width / height;\n  camera.updateProjectionMatrix();\n  renderer.setSize(width, height);\n});",
+          "explanation": "Changing aspect alone is insufficient; updateProjectionMatrix applies the new camera projection before the next render."
+        }
+      ]
+    }
+  ]
+}

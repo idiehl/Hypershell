@@ -1,0 +1,189 @@
+[
+  {
+    "id": "woodland-editorial",
+    "title": "Woodland Editorial",
+    "description": "The original warm field notebook, with a long-form opening, survey, and image gallery.",
+    "category": "Originals",
+    "demoTitle": "A Woodland Habitat",
+    "isOriginal": true,
+    "background": "#f5f3ed",
+    "accent": "#376954",
+    "ink": "#202b26"
+  },
+  {
+    "id": "wave-laboratory",
+    "title": "Wave Laboratory",
+    "description": "The original dark science workspace, with a wave experiment and playable media.",
+    "category": "Originals",
+    "demoTitle": "Exploring a Wave",
+    "isOriginal": true,
+    "background": "#101a21",
+    "accent": "#7fa7ee",
+    "ink": "#e9f1fc"
+  },
+  {
+    "id": "portfolio-grid",
+    "title": "Portfolio Grid",
+    "description": "A typographic introduction, paired project cards, a three-column capabilities row, and contact form.",
+    "category": "Creative",
+    "demoTitle": "Avery / Selected Work",
+    "isOriginal": false,
+    "background": "#f1f0ec",
+    "accent": "#e14c38",
+    "ink": "#20211f"
+  },
+  {
+    "id": "field-journal",
+    "title": "Field Journal",
+    "description": "A literary publication with an opening spread, narrow margin notes, and a reading-column rhythm.",
+    "category": "Publication",
+    "demoTitle": "The Shape of a Quiet Morning",
+    "isOriginal": false,
+    "background": "#f5eddb",
+    "accent": "#8c4732",
+    "ink": "#392f27"
+  },
+  {
+    "id": "architecture-studio",
+    "title": "Architecture Studio",
+    "description": "Oversized project photography, a two-thirds narrative, and restrained numbered specification panels.",
+    "category": "Design",
+    "demoTitle": "House Between the Pines",
+    "isOriginal": false,
+    "background": "#e9e7e0",
+    "accent": "#75624b",
+    "ink": "#272725"
+  },
+  {
+    "id": "course-notebook",
+    "title": "Course Notebook",
+    "description": "A lesson opener followed by objectives, a guided exercise, a checklist, and a reflection form.",
+    "category": "Learning",
+    "demoTitle": "Seeing in Systems",
+    "isOriginal": false,
+    "background": "#f6f3ff",
+    "accent": "#6950a3",
+    "ink": "#302747"
+  },
+  {
+    "id": "recipe-kitchen",
+    "title": "Recipe Kitchen",
+    "description": "A recipe card with a wide hero, ingredient sidebar, method column, and useful kitchen timer.",
+    "category": "Food",
+    "demoTitle": "Roasted Harvest Bowl",
+    "isOriginal": false,
+    "background": "#fff8e9",
+    "accent": "#af5636",
+    "ink": "#493023"
+  },
+  {
+    "id": "event-poster",
+    "title": "Event Poster",
+    "description": "A centered oversized poster, three schedule columns, venue map, and registration preview.",
+    "category": "Events",
+    "demoTitle": "Night School / Make Together",
+    "isOriginal": false,
+    "background": "#17122d",
+    "accent": "#f2b84b",
+    "ink": "#fff0d2"
+  },
+  {
+    "id": "travel-atlas",
+    "title": "Travel Atlas",
+    "description": "A destination feature, interactive route checklist, location map, and practical side notes.",
+    "category": "Travel",
+    "demoTitle": "A Slow Weekend in Portland",
+    "isOriginal": false,
+    "background": "#edf4f1",
+    "accent": "#20758a",
+    "ink": "#203c42"
+  },
+  {
+    "id": "product-launch",
+    "title": "Product Launch",
+    "description": "A product-led hero, three benefits, a demo area, comparison note, and clear call to action.",
+    "category": "Product",
+    "demoTitle": "Meet Orbit Desk",
+    "isOriginal": false,
+    "background": "#101824",
+    "accent": "#a6c4ff",
+    "ink": "#f1f5ff"
+  },
+  {
+    "id": "podcast-studio",
+    "title": "Podcast Studio",
+    "description": "Cover art beside episode notes, a large audio player, transcript, and listening recommendations.",
+    "category": "Audio",
+    "demoTitle": "Small Signals / Episode 07",
+    "isOriginal": false,
+    "background": "#241827",
+    "accent": "#f1b6cb",
+    "ink": "#fff0f5"
+  },
+  {
+    "id": "gallery-wall",
+    "title": "Gallery Wall",
+    "description": "A quiet exhibition label, full-width image pair, offset captions, and a visitor note.",
+    "category": "Art",
+    "demoTitle": "Studies in Light and Form",
+    "isOriginal": false,
+    "background": "#f8f7f3",
+    "accent": "#736457",
+    "ink": "#302c28"
+  },
+  {
+    "id": "documentation-desk",
+    "title": "Documentation Desk",
+    "description": "A monospace guide with overview, quick-start steps, reference sidebars, and an interactive checklist.",
+    "category": "Reference",
+    "demoTitle": "Build a Useful Component",
+    "isOriginal": false,
+    "background": "#eef1f4",
+    "accent": "#36617c",
+    "ink": "#263540"
+  },
+  {
+    "id": "nonprofit-story",
+    "title": "Nonprofit Story",
+    "description": "A people-first banner, impact cards, project story, local map, and volunteer form.",
+    "category": "Community",
+    "demoTitle": "A Garden for Everyone",
+    "isOriginal": false,
+    "background": "#f6f4df",
+    "accent": "#537541",
+    "ink": "#303d2b"
+  },
+  {
+    "id": "wellness-retreat",
+    "title": "Wellness Retreat",
+    "description": "An airy centered introduction, gentle image spread, reflection, and quiet guided timer.",
+    "category": "Wellbeing",
+    "demoTitle": "A Little Room to Breathe",
+    "isOriginal": false,
+    "background": "#f0e9e6",
+    "accent": "#99746b",
+    "ink": "#53423e"
+  },
+  {
+    "id": "maker-workbench",
+    "title": "Maker Workbench",
+    "description": "A practical project sheet with materials, build steps, calculator, and tool checklist.",
+    "category": "Making",
+    "demoTitle": "Build a Small Desk Shelf",
+    "isOriginal": false,
+    "background": "#292722",
+    "accent": "#efb858",
+    "ink": "#f4eddb"
+  },
+  {
+    "id": "insight-dashboard",
+    "title": "Insight Dashboard",
+    "description": "A compact operational workspace with three metric cards, comparison panels, and a planning checklist.",
+    "category": "Dashboard",
+    "demoTitle": "The Week at a Glance",
+    "isOriginal": false,
+    "background": "#101a22",
+    "accent": "#58bac2",
+    "ink": "#edf6f7"
+  }
+]

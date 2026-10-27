@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-table-of-contents">
+<nav aria-label="Table of contents"><h2>@Context.Text("title")</h2><ol>@foreach(var row in Rows){<li><a href="@Context.Text("url")">@Cell(row,0)</a><small>@Cell(row,1)</small></li>}</ol></nav>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-rating-input">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><fieldset><legend>How helpful was this?</legend><div class="pills">@for(var i=1;i<=5;i++){var score=i;<label class="inline"><input type="radio" name="@(Context.Id+"-rating")" value="@score" @onchange="()=>rating=score" /> @score</label>}</div></fieldset><output aria-live="polite">@(rating==0 ? "Choose a rating" : $"Selected {rating} of 5")</output>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private int rating;
+}

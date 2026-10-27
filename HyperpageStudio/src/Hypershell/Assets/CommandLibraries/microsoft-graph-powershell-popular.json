@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "microsoft-graph-powershell-popular",
+  "displayName": "Microsoft Graph PowerShell",
+  "description": "Curated Microsoft Graph PowerShell starter recipes for the PowerShell Command Builder. The dependency is referenced, not bundled.",
+  "language": "PowerShell",
+  "category": "Popular libraries",
+  "kind": "Module",
+  "canonicalName": "Microsoft.Graph",
+  "ecosystem": "PowerShell Gallery",
+  "targetVersion": "2.38.1",
+  "sourceVersion": "2.38.1 documentation · curated 2026-08-17",
+  "sourceUrl": "https://learn.microsoft.com/powershell/microsoftgraph/overview",
+  "license": "MIT",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Requires the relevant Microsoft.Graph modules plus an authorized Microsoft 365 sign-in; Hypershell does not install or authenticate them.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "powershell",
+    "popular library",
+    "microsoft.graph",
+    "microsoft 365",
+    "graph",
+    "identity",
+    "cloud"
+  ],
+  "executionTarget": "PowerShell",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/microsoft-graph-powershell-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/microsoft-graph-powershell-popular.guides.json"
+  ],
+  "legacyIds": []
+}

@@ -1,0 +1,275 @@
+<Window x:Class="Hypershell.NewDocumentDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="New Text Document"
+        Width="620"
+        Height="800"
+        MaxHeight="920"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        FontFamily="{StaticResource UiFontFamily}"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType">
+  <Window.Resources>
+    <Style x:Key="SectionNumberStyle" TargetType="{x:Type TextBlock}">
+      <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}" />
+      <Setter Property="FontSize" Value="11" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Margin" Value="0,0,0,4" />
+    </Style>
+    <Style x:Key="HintStyle" TargetType="{x:Type TextBlock}">
+      <Setter Property="Foreground" Value="{StaticResource MutedForegroundBrush}" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="TextWrapping" Value="Wrap" />
+      <Setter Property="Margin" Value="1,4,0,0" />
+    </Style>
+  </Window.Resources>
+
+  <Border Background="{StaticResource PanelBrush}"
+          BorderBrush="#2E5D86"
+          BorderThickness="1"
+          CornerRadius="10"
+          ClipToBounds="True">
+    <Border.Effect>
+      <DropShadowEffect BlurRadius="24"
+                        ShadowDepth="8"
+                        Opacity="0.58"
+                        Color="#000000" />
+    </Border.Effect>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="52" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Border Background="#10151B"
+              BorderBrush="{StaticResource BorderBrush}"
+              BorderThickness="0,0,0,1"
+              MouseLeftButtonDown="TitleBarMouseLeftButtonDown">
+        <Grid Margin="16,0,8,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="&lt;/&gt;"
+                     FontFamily="{StaticResource CodeFontFamily}"
+                     FontSize="24"
+                     Foreground="{StaticResource SecondaryBrush}"
+                     VerticalAlignment="Center"
+                     Margin="0,0,12,0" />
+          <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock Text="New Text Document"
+                       FontSize="17"
+                       FontWeight="SemiBold"
+                       Foreground="{StaticResource ForegroundBrush}" />
+            <TextBlock Text="Choose the language and editing rules before the document opens."
+                       FontSize="9.5"
+                       Foreground="{StaticResource MutedForegroundBrush}" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Click="CancelClick"
+                  Style="{StaticResource HeaderIconButtonStyle}"
+                  Width="34"
+                  Height="34"
+                  ToolTip="Cancel">
+            <Path Data="M 3 3 L 13 13 M 13 3 L 3 13"
+                  Stroke="{StaticResource ForegroundBrush}"
+                  StrokeThickness="1.5"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round" />
+          </Button>
+        </Grid>
+      </Border>
+
+      <ScrollViewer Grid.Row="1"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="22,18,22,20">
+          <TextBlock Text="01  DOCUMENT NAME" Style="{StaticResource SectionNumberStyle}" />
+          <TextBox x:Name="DocumentNameTextBox"
+                   FontFamily="{StaticResource CodeFontFamily}" />
+          <TextBlock Text="The selected language supplies an extension when the name does not have one."
+                     Style="{StaticResource HintStyle}" />
+
+          <TextBlock Text="02  LANGUAGE MODE"
+                     Style="{StaticResource SectionNumberStyle}"
+                     Margin="0,14,0,4" />
+          <ComboBox x:Name="LanguageComboBox"
+                    SelectionChanged="LanguageSelectionChanged"
+                    MaxDropDownHeight="390">
+            <ComboBox.ItemTemplate>
+              <DataTemplate>
+                <Grid MinWidth="390">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Text="{Binding DisplayName}" />
+                  <TextBlock Grid.Column="1"
+                             Text="{Binding DefaultExtension}"
+                             Foreground="{StaticResource MutedForegroundBrush}"
+                             FontFamily="{StaticResource CodeFontFamily}"
+                             Margin="12,0,0,0" />
+                </Grid>
+              </DataTemplate>
+            </ComboBox.ItemTemplate>
+          </ComboBox>
+          <TextBlock x:Name="LanguageHintText"
+                     Style="{StaticResource HintStyle}" />
+
+          <TextBlock Text="03  STARTING TEMPLATE"
+                     Style="{StaticResource SectionNumberStyle}"
+                     Margin="0,14,0,4" />
+          <ComboBox x:Name="TemplateComboBox"
+                    SelectionChanged="TemplateSelectionChanged"
+                    MaxDropDownHeight="280">
+            <ComboBox.ItemTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding DisplayName}" />
+              </DataTemplate>
+            </ComboBox.ItemTemplate>
+          </ComboBox>
+          <TextBlock x:Name="TemplateHintText"
+                     Style="{StaticResource HintStyle}" />
+
+          <Grid Margin="0,14,0,0">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="14" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+              <TextBlock Text="04  FILE ENCODING" Style="{StaticResource SectionNumberStyle}" />
+              <ComboBox x:Name="EncodingComboBox"
+                        DisplayMemberPath="DisplayName"
+                        SelectedValuePath="Kind" />
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+              <TextBlock Text="05  LINE ENDINGS" Style="{StaticResource SectionNumberStyle}" />
+              <ComboBox x:Name="LineEndingComboBox"
+                        DisplayMemberPath="DisplayName"
+                        SelectedValuePath="Kind" />
+            </StackPanel>
+          </Grid>
+
+          <Grid Margin="0,14,0,0">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="14" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+              <TextBlock Text="06  INDENT WITH" Style="{StaticResource SectionNumberStyle}" />
+              <ComboBox x:Name="IndentationComboBox" />
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+              <TextBlock Text="07  INDENT SIZE" Style="{StaticResource SectionNumberStyle}" />
+              <ComboBox x:Name="TabSizeComboBox" />
+            </StackPanel>
+          </Grid>
+
+          <Grid Margin="0,14,0,0">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="14" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+              <TextBlock Text="08  EDITOR FONT" Style="{StaticResource SectionNumberStyle}" />
+              <ComboBox x:Name="FontFamilyComboBox"
+                        ItemTemplate="{StaticResource FontFamilyPreviewTemplate}"
+                        MaxDropDownHeight="340" />
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+              <TextBlock Text="09  FONT SIZE" Style="{StaticResource SectionNumberStyle}" />
+              <ComboBox x:Name="FontSizeComboBox" />
+            </StackPanel>
+          </Grid>
+
+          <TextBlock Text="10  TAB COLOR"
+                     Style="{StaticResource SectionNumberStyle}"
+                     Margin="0,14,0,4" />
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="36" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Width="31"
+                    Height="31"
+                    Padding="2"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch"
+                    Click="ChooseTabColorClick"
+                    ToolTip="Choose the document tab color">
+              <Border x:Name="TabColorPreview"
+                      CornerRadius="5"
+                      BorderBrush="#7A838F"
+                      BorderThickness="1" />
+            </Button>
+            <TextBox x:Name="TabColorTextBox"
+                     Grid.Column="1"
+                     IsReadOnly="True"
+                     TextChanged="TabColorTextChanged" />
+          </Grid>
+
+          <TextBlock Text="11  EDITOR ASSISTANCE"
+                     Style="{StaticResource SectionNumberStyle}"
+                     Margin="0,14,0,4" />
+          <UniformGrid Columns="2">
+            <CheckBox x:Name="WordWrapCheckBox" Content="Word wrap" Margin="0,3" />
+            <CheckBox x:Name="MinimapCheckBox" Content="Minimap" Margin="0,3" />
+            <CheckBox x:Name="LineNumbersCheckBox" Content="Line numbers" Margin="0,3" />
+            <CheckBox x:Name="BracketGuidesCheckBox" Content="Bracket-pair guides" Margin="0,3" />
+            <CheckBox x:Name="FormatOnTypeCheckBox" Content="Format while typing" Margin="0,3" />
+            <CheckBox x:Name="FormatOnPasteCheckBox" Content="Format pasted code" Margin="0,3" />
+          </UniformGrid>
+
+          <TextBlock Text="12  SAVE CLEANUP"
+                     Style="{StaticResource SectionNumberStyle}"
+                     Margin="0,14,0,4" />
+          <UniformGrid Columns="2">
+            <CheckBox x:Name="TrimTrailingWhitespaceCheckBox"
+                      Content="Trim trailing spaces"
+                      Margin="0,3" />
+            <CheckBox x:Name="FinalNewlineCheckBox"
+                      Content="End with a newline"
+                      Margin="0,3" />
+          </UniformGrid>
+
+          <TextBlock Text="Syntax coloring and automatic indentation use the selected Monaco language mode. Full formatters are used when the language provides one; otherwise Format Document safely normalizes indentation and trailing whitespace."
+                     Style="{StaticResource HintStyle}" />
+
+          <TextBlock x:Name="ValidationText"
+                     Foreground="{StaticResource AttentionBrush}"
+                     TextWrapping="Wrap"
+                     MinHeight="18"
+                     Margin="0,10,0,0" />
+
+          <Grid Margin="0,4,0,0">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Content="CANCEL"
+                    Click="CancelClick"
+                    Padding="12,8"
+                    Margin="0,0,5,0"
+                    IsCancel="True" />
+            <Button Grid.Column="1"
+                    Content="Create Document"
+                    Click="CreateClick"
+                    Padding="12,8"
+                    Margin="5,0,0,0"
+                    Background="{StaticResource SecondaryHoverBrush}"
+                    IsDefault="True" />
+          </Grid>
+        </StackPanel>
+      </ScrollViewer>
+    </Grid>
+  </Border>
+</Window>

@@ -1,0 +1,440 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hypershell.dev/schemas/profile-bundle-v1.json",
+  "title": "Hypershell portable profile bundle",
+  "description": "A bounded, non-secret Hypershell workspace configuration. Device paths, commands, approvals, credentials, sessions, recovery data, and document contents are structurally excluded.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "format",
+    "bundleVersion",
+    "exportedAtUtc",
+    "exportedBy",
+    "profileSha256",
+    "profile"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri",
+      "maxLength": 240
+    },
+    "format": {
+      "const": "hypershell-profile"
+    },
+    "bundleVersion": {
+      "const": 1
+    },
+    "exportedAtUtc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "exportedBy": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "profileSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
+    },
+    "profile": {
+      "$ref": "#/$defs/profile"
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$"
+    },
+    "relativePath": {
+      "type": "string",
+      "maxLength": 1024,
+      "not": {
+        "anyOf": [
+          { "pattern": "^[A-Za-z]:" },
+          { "pattern": "^[\\\\/]" },
+          { "pattern": "(^|[\\\\/])\\.\\.([\\\\/]|$)" }
+        ]
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "id",
+        "displayName",
+        "revision",
+        "updatedAtUtc",
+        "workspacePreferences",
+        "configuration",
+        "extensions",
+        "libraries",
+        "workspaces"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "id": { "$ref": "#/$defs/id" },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "updatedAtUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "workspacePreferences": {
+          "$ref": "#/$defs/workspacePreferences"
+        },
+        "configuration": {
+          "$ref": "#/$defs/configuration"
+        },
+        "extensions": {
+          "type": "array",
+          "maxItems": 512,
+          "items": { "$ref": "#/$defs/extensionReference" }
+        },
+        "libraries": {
+          "type": "array",
+          "maxItems": 512,
+          "items": { "$ref": "#/$defs/libraryReference" }
+        },
+        "workspaces": {
+          "type": "array",
+          "maxItems": 128,
+          "items": { "$ref": "#/$defs/workspaceReference" }
+        }
+      }
+    },
+    "workspacePreferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "themeId",
+        "restoreWorkspaceOnStart",
+        "restoreOpenDocuments",
+        "preferWorkspaceScopedAiAccess",
+        "extensionSettings"
+      ],
+      "properties": {
+        "themeId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "restoreWorkspaceOnStart": { "type": "boolean" },
+        "restoreOpenDocuments": { "type": "boolean" },
+        "preferWorkspaceScopedAiAccess": { "type": "boolean" },
+        "extensionSettings": {
+          "type": "object",
+          "maxProperties": 0,
+          "description": "Reserved in schema v1; extension settings cannot travel until a host-owned per-extension schema and secret filter exist."
+        }
+      }
+    },
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "application",
+        "commandBuilder",
+        "explorer",
+        "activeTerminalProfileId",
+        "terminalConfigurations",
+        "activeEnvironmentId",
+        "environments",
+        "workspaceLayout"
+      ],
+      "properties": {
+        "application": { "$ref": "#/$defs/application" },
+        "commandBuilder": { "$ref": "#/$defs/commandBuilder" },
+        "explorer": { "$ref": "#/$defs/explorer" },
+        "activeTerminalProfileId": { "$ref": "#/$defs/id" },
+        "terminalConfigurations": {
+          "type": "array",
+          "maxItems": 128,
+          "items": { "$ref": "#/$defs/terminalConfiguration" }
+        },
+        "activeEnvironmentId": { "$ref": "#/$defs/id" },
+        "environments": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 128,
+          "items": { "$ref": "#/$defs/environment" }
+        },
+        "workspaceLayout": { "$ref": "#/$defs/layout" }
+      }
+    },
+    "application": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "openFileExplorerOnStartup",
+        "openCommandBuilderOnStartup",
+        "createTerminalOnStartup",
+        "showSaveStatusInTitleBar",
+        "newTabPlacement"
+      ],
+      "properties": {
+        "openFileExplorerOnStartup": { "type": "boolean" },
+        "openCommandBuilderOnStartup": { "type": "boolean" },
+        "createTerminalOnStartup": { "type": "boolean" },
+        "showSaveStatusInTitleBar": { "type": "boolean" },
+        "newTabPlacement": {
+          "enum": ["AfterLast", "AfterCurrent"]
+        }
+      }
+    },
+    "commandBuilder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "openCompatibleTerminalAutomatically",
+        "openBuilderWhenPathsAreInserted"
+      ],
+      "properties": {
+        "openCompatibleTerminalAutomatically": { "type": "boolean" },
+        "openBuilderWhenPathsAreInserted": { "type": "boolean" }
+      }
+    },
+    "explorer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["showHiddenItems", "directoriesFirst"],
+      "properties": {
+        "showHiddenItems": { "type": "boolean" },
+        "directoriesFirst": { "type": "boolean" }
+      }
+    },
+    "terminalConfiguration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "description",
+        "targetTerminalProfileIds",
+        "settings",
+        "tabTitleTemplate",
+        "tabColor"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "targetTerminalProfileIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "settings": { "$ref": "#/$defs/terminalSettings" },
+        "tabTitleTemplate": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "tabColor": { "$ref": "#/$defs/color" }
+      }
+    },
+    "terminalSettings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fontFamilyName",
+        "fontSize",
+        "useBoldText",
+        "useItalicText",
+        "foregroundColor",
+        "backgroundColor",
+        "accentColor",
+        "errorColor",
+        "clearOnRun",
+        "enterRunsCommand",
+        "showTimestamps",
+        "textBackdropMode",
+        "textBackdropOpacity"
+      ],
+      "properties": {
+        "fontFamilyName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "fontSize": { "type": "number", "minimum": 8, "maximum": 36 },
+        "useBoldText": { "type": "boolean" },
+        "useItalicText": { "type": "boolean" },
+        "foregroundColor": { "$ref": "#/$defs/color" },
+        "backgroundColor": { "$ref": "#/$defs/color" },
+        "accentColor": { "$ref": "#/$defs/color" },
+        "errorColor": { "$ref": "#/$defs/color" },
+        "clearOnRun": { "type": "boolean" },
+        "enterRunsCommand": { "type": "boolean" },
+        "showTimestamps": { "type": "boolean" },
+        "textBackdropMode": {
+          "enum": ["Everything", "CurrentInput", "None"]
+        },
+        "textBackdropOpacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "description",
+        "language",
+        "libraryIds",
+        "sourceLibraryId"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "language": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "libraryIds": {
+          "type": "array",
+          "maxItems": 256,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "sourceLibraryId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^$|^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+        }
+      }
+    },
+    "extensionReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "extensionId",
+        "versionRange",
+        "enabled",
+        "activateOnStartup"
+      ],
+      "properties": {
+        "extensionId": { "$ref": "#/$defs/id" },
+        "versionRange": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "enabled": { "type": "boolean" },
+        "activateOnStartup": { "type": "boolean" }
+      }
+    },
+    "libraryReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "extensionId",
+        "libraryId",
+        "versionRange",
+        "enabled"
+      ],
+      "properties": {
+        "extensionId": { "$ref": "#/$defs/id" },
+        "libraryId": { "$ref": "#/$defs/id" },
+        "versionRange": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "enabled": { "type": "boolean" }
+      }
+    },
+    "workspaceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "displayName",
+        "repositoryId",
+        "repositorySubdirectory",
+        "openDocumentPaths",
+        "layout"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "displayName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "repositoryId": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "repositorySubdirectory": { "$ref": "#/$defs/relativePath" },
+        "openDocumentPaths": {
+          "type": "array",
+          "maxItems": 256,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/relativePath" }
+        },
+        "layout": { "$ref": "#/$defs/layout" }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["isUserUnlocked", "panels"],
+      "properties": {
+        "isUserUnlocked": { "type": "boolean" },
+        "panels": {
+          "type": "array",
+          "maxItems": 128,
+          "items": { "$ref": "#/$defs/panel" }
+        },
+        "sideTools": {
+          "type": "array",
+          "maxItems": 128,
+          "items": { "$ref": "#/$defs/sideTool" }
+        }
+      }
+    },
+    "sideTool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["toolId", "order", "isVisible"],
+      "properties": {
+        "toolId": { "$ref": "#/$defs/id" },
+        "order": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "isVisible": { "type": "boolean" }
+      }
+    },
+    "panel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "extensionId",
+        "panelId",
+        "slot",
+        "replaces",
+        "order",
+        "width",
+        "height",
+        "isVisible"
+      ],
+      "properties": {
+        "extensionId": { "$ref": "#/$defs/id" },
+        "panelId": { "$ref": "#/$defs/id" },
+        "slot": {
+          "enum": ["Left", "Right", "Bottom", "Center", "Floating"]
+        },
+        "replaces": {
+          "type": ["string", "null"],
+          "enum": ["FileExplorer", "CommandBuilder", null]
+        },
+        "order": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "width": { "type": "number", "minimum": 0, "maximum": 4000 },
+        "height": { "type": "number", "minimum": 0, "maximum": 4000 },
+        "isVisible": { "type": "boolean" }
+      }
+    }
+  }
+}

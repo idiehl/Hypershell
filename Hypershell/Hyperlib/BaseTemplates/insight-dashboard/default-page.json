@@ -1,0 +1,112 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "The Week at a Glance",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "dashboard-header",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "WORKSPACE / WEEKLY REVIEW",
+        "title": "The Week at a Glance",
+        "text": "Illustrative numbers and a practical place to choose the next step."
+      }
+    },
+    {
+      "id": "metric-projects",
+      "type": "counter",
+      "region": "main",
+      "values": {
+        "label": "Active projects",
+        "start": 4,
+        "span": "third"
+      }
+    },
+    {
+      "id": "metric-finished",
+      "type": "counter",
+      "region": "main",
+      "values": {
+        "label": "Tasks finished",
+        "start": 12,
+        "span": "third"
+      }
+    },
+    {
+      "id": "metric-experiments",
+      "type": "counter",
+      "region": "main",
+      "values": {
+        "label": "Experiments running",
+        "start": 3,
+        "span": "third"
+      }
+    },
+    {
+      "id": "progress",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Moving forward",
+        "text": "One useful improvement shipped. Two assumptions tested. A clearer next step for the oldest project.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "attention",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Needs attention",
+        "text": "Choose one stalled task and make it smaller. Review any commitment that no longer serves the goal.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "planning-heading",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "PLAN THE NEXT CYCLE",
+        "style": "line"
+      }
+    },
+    {
+      "id": "weekly-checklist",
+      "type": "tool",
+      "region": "main",
+      "values": {
+        "title": "Review and reset",
+        "mode": "checklist",
+        "initial": 0,
+        "items": "Review completed work\nChoose the next priority\nClear one blocker\nLeave space for the unexpected",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "focus",
+      "type": "tool",
+      "region": "main",
+      "values": {
+        "title": "A short focus block",
+        "mode": "timer",
+        "initial": 900,
+        "items": "",
+        "span": "third"
+      }
+    },
+    {
+      "id": "dashboard-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Demo workspace / Counters are illustrative and are not connected to analytics"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

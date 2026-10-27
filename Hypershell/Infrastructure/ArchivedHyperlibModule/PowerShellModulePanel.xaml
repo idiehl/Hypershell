@@ -1,0 +1,99 @@
+<!--
+  Archived Hypershell module-picker prototype. This fragment is intentionally
+  not compiled by Hypershell and retains its original binding names for future
+  Hyperlib design work.
+-->
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <Grid.RowDefinitions>
+    <RowDefinition Height="Auto" />
+    <RowDefinition Height="Auto" />
+    <RowDefinition Height="*" />
+    <RowDefinition Height="Auto" />
+  </Grid.RowDefinitions>
+
+  <Grid Margin="0,0,0,5">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+    <StackPanel>
+      <TextBlock Text="POWERSHELL MODULES"
+                 FontSize="10"
+                 FontWeight="SemiBold" />
+      <TextBlock Text="{Binding PowerShellModuleSummary}"
+                 FontSize="9.5"
+                 Margin="0,1,0,0" />
+    </StackPanel>
+    <StackPanel Grid.Column="1"
+                Orientation="Horizontal"
+                VerticalAlignment="Center">
+      <Button Command="{Binding SelectAllPowerShellModulesCommand}"
+              Content="ALL"
+              Padding="6,2" />
+      <Button Command="{Binding ClearPowerShellModuleSelectionCommand}"
+              Content="NONE"
+              Padding="6,2"
+              Margin="4,0,0,0" />
+    </StackPanel>
+  </Grid>
+
+  <Grid Grid.Row="1" Margin="0,0,0,5">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="32" />
+    </Grid.ColumnDefinitions>
+    <TextBox Text="{Binding ModuleSearchText, UpdateSourceTrigger=PropertyChanged}"
+             ToolTip="Search modules by name, version, source, or description"
+             Padding="7,4" />
+    <Button Grid.Column="1"
+            Command="{Binding RefreshPowerShellModulesCommand}"
+            Content="↻"
+            FontSize="17"
+            Margin="4,0,0,0" />
+  </Grid>
+
+  <ListBox Grid.Row="2"
+           ItemsSource="{Binding PowerShellModuleSelectionsView}"
+           ScrollViewer.VerticalScrollBarVisibility="Auto"
+           VirtualizingPanel.IsVirtualizing="True"
+           VirtualizingPanel.VirtualizationMode="Recycling">
+    <ListBox.ItemTemplate>
+      <DataTemplate>
+        <Grid Margin="3,5" ToolTip="{Binding Library.SourcePath}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}"
+                    VerticalAlignment="Center"
+                    Margin="0,0,8,0" />
+          <StackPanel Grid.Column="1">
+            <TextBlock Text="{Binding DisplayName}"
+                       FontWeight="SemiBold" />
+            <TextBlock Text="{Binding DetailLabel}"
+                       FontSize="9.5" />
+            <TextBlock Text="{Binding RuntimeStatusLabel}"
+                       FontSize="8.5"
+                       FontWeight="SemiBold"
+                       ToolTip="{Binding RuntimeStatusToolTip}" />
+          </StackPanel>
+          <TextBlock Grid.Column="2"
+                     Text="{Binding CountLabel}"
+                     FontSize="9.5"
+                     VerticalAlignment="Center"
+                     Margin="8,0,2,0" />
+        </Grid>
+      </DataTemplate>
+    </ListBox.ItemTemplate>
+  </ListBox>
+
+  <StackPanel Grid.Row="3" Margin="1,6,1,0">
+    <TextBlock Text="MANAGED MODULE DIRECTORY"
+               FontSize="8.5"
+               FontWeight="SemiBold" />
+    <TextBlock Text="{Binding PowerShellModuleDirectory}"
+               FontSize="8.5"
+               TextTrimming="CharacterEllipsis" />
+  </StackPanel>
+</Grid>

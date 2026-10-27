@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>Meridian.TaskLauncher</AssemblyName>
+    <MeridianRoot>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../../..'))</MeridianRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="TaskLaunch.cs" />
+    <Compile Include="KeySetup.cs" />
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute"><_Parameter1>MeridianRoot</_Parameter1><_Parameter2>$(MeridianRoot)</_Parameter2></AssemblyAttribute>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute"><_Parameter1>BackendPowerShell</_Parameter1><_Parameter2>$(BackendPowerShell)</_Parameter2></AssemblyAttribute>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute"><_Parameter1>SecurePowerShell</_Parameter1><_Parameter2>$(SecurePowerShell)</_Parameter2></AssemblyAttribute>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute"><_Parameter1>PowerShellSha256</_Parameter1><_Parameter2>$(PowerShellSha256)</_Parameter2></AssemblyAttribute>
+    <InternalsVisibleTo Include="Meridian.TaskLauncher.Tests" />
+  </ItemGroup>
+  <Target Name="RequireTrustedPowerShell" BeforeTargets="BeforeBuild">
+    <Error Condition="'$(BackendPowerShell)' == '' Or '$(SecurePowerShell)' == '' Or '$(PowerShellSha256)' == ''" Text="Build using build-task-launcher.ps1 to pin the verified PowerShell installations." />
+  </Target>
+</Project>

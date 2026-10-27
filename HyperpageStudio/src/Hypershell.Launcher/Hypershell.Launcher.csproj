@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Hypershell</AssemblyName>
+    <RootNamespace>Hypershell.Launcher</RootNamespace>
+    <AssemblyTitle>Hypershell Launcher</AssemblyTitle>
+    <Description>Stable desktop launcher for Hypershell</Description>
+    <Product>Hypershell</Product>
+    <ApplicationIcon>..\Hypershell\Assets\Brand\hypershell.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Hypershell.LauncherVerifier" />
+    <Content Include="..\Hypershell\Assets\Brand\hypershell.ico" Link="Hypershell.ico" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

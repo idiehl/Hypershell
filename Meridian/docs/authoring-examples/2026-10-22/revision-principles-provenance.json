@@ -1,0 +1,83 @@
+{
+  "recordedOn": "2026-10-22",
+  "examples": [
+    "EX-008",
+    "EX-009",
+    "EX-010",
+    "EX-011"
+  ],
+  "status": "User-supplied failure examples and explicit accepted authoring corrections.",
+  "identity": {
+    "workTitle": "C++ classes and types",
+    "historicallyCorroboratedProjectId": "2a9aa31d-b13c-4d0b-9192-b1a94b7c0fce",
+    "historicallyCorroboratedWorkId": "6bdf2562-d8db-44ae-af8e-31cfc3d738f7",
+    "corroborationSource": "Existing EX-006 / EX-007 provenance.json records prior read-only live metadata.",
+    "qualification": "No new live GET was used to record this evidence. The screenshots do not establish an exact saved revision; subsequent Work edits are separate evidence."
+  },
+  "acceptedRules": [
+    "PURPOSE-004",
+    "NODE-005",
+    "LAYOUT-008",
+    "SCALE-005",
+    "PRESENTATION-005",
+    "PRESENTATION-006"
+  ],
+  "refinedRules": [
+    "SCALE-001",
+    "SCALE-002"
+  ],
+  "scope": "Accepted composition principles and the specific C++ correction. Not certification of the complete Work, any implementation, or every property of earlier positive examples.",
+  "liveProjectMutations": false,
+  "attachments": [
+    {
+      "example": "EX-008",
+      "originalPath": "C:/Users/ihigg/AppData/Local/Temp/codex-clipboard-b010a646-8377-4a18-b744-52357bd4b63f.png",
+      "retainedPath": "docs/authoring-examples/2026-10-22/08-graph-not-document.png",
+      "sha256": "6e8352ebb4dda191fec78b26fb0df13722d78933dcdf1693c0cba948ab197220",
+      "copiedWithoutModification": true,
+      "width": 2005,
+      "height": 994,
+      "bytes": 114838
+    },
+    {
+      "example": "EX-009",
+      "originalPath": "C:/Users/ihigg/AppData/Local/Temp/codex-clipboard-08635201-a6ff-4cfe-896d-62ed1c75baad.png",
+      "retainedPath": "docs/authoring-examples/2026-10-22/09-content-not-meta-labels.png",
+      "sha256": "28372f4df3d5bb37106db45b0a82c0ecc78953709f40a9b229ba25516854744a",
+      "copiedWithoutModification": true,
+      "width": 1540,
+      "height": 1144,
+      "bytes": 98240
+    },
+    {
+      "example": "EX-010",
+      "originalPath": "C:/Users/ihigg/AppData/Local/Temp/codex-clipboard-52f88f53-3cad-4ae2-99bd-db8d0c72e89d.png",
+      "retainedPath": "docs/authoring-examples/2026-10-22/10-inconsistent-branch-direction.png",
+      "sha256": "4007c98c789784a7f989146cc9e1396fcc5053251bcf0f55251cafa30c37f793",
+      "copiedWithoutModification": true,
+      "width": 948,
+      "height": 1197,
+      "bytes": 64585
+    },
+    {
+      "example": "EX-011",
+      "originalPath": "C:/Users/ihigg/AppData/Local/Temp/codex-clipboard-10c45975-e623-4c24-80f0-3aefd341c53b.png",
+      "retainedPath": "docs/authoring-examples/2026-10-22/11-excessive-scale-variance.png",
+      "sha256": "19481406a8309975474a41a5e8d601f75068d990ad6c7af95e15a5d2dd01ddd6",
+      "copiedWithoutModification": true,
+      "width": 1811,
+      "height": 1206,
+      "bytes": 163307
+    }
+  ],
+  "verification": {
+    "byteExactCopies": true,
+    "pngHeadersAndDimensionsChecked": true,
+    "originalAndCopySHA256Match": true,
+    "ruleIdsUnique": true,
+    "acceptedRulesPresentInStandards": true,
+    "exampleIdsUnique": true,
+    "relativeLinksExist": true,
+    "scopeLimitedToUserCorrection": true
+  }
+}

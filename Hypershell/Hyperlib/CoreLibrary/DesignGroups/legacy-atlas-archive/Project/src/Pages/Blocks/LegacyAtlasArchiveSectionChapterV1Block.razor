@@ -1,0 +1,45 @@
+@* Source: atlas.archive.section.chapter.v1 (Atlas Archive). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-e261d6755de2" data-vp-id="e261d6755de207143ccbaf16b74d8280">
+    <article class="vp-eb7715cb2e15" data-vp-id="eb7715cb2e15b8fced3b754492a9810b">
+        <section aria-label="Descriptive chapter heading" class="vp-372d04501c8f" data-vp-id="372d04501c8f778f35cc63140962a0bd" id="@(LocalIds("chapter-title"))">
+            <h2 class="vp-2ad6008952ab" data-field="text-3">
+                @(Context.Text("text-3"))
+            </h2>
+            <p class="vp-a4c10b7ef79a" data-field="text-4" data-vp-id="a4c10b7ef79a2c28fae124f87c621e49">
+                @(Context.Text("text-4"))
+            </p>
+            <p class="vp-92e37c69e1c2" data-field="text-5" data-vp-id="92e37c69e1c27111eca6a4454e314616">
+                @(Context.Text("text-5"))
+            </p>
+        </section>
+        <aside aria-label="Key context" class="vp-30ada74f5a2b" data-vp-id="30ada74f5a2b88c2326d9890b812b6d7">
+            <p class="vp-cc8bc44748fe" data-field="text-7" data-vp-id="cc8bc44748fef8a37d16324c6a69c6f5">
+                @(Context.Text("text-7"))
+            </p>
+            <h3 class="vp-3e2694ac04d1" data-field="text-8">
+                @(Context.Text("text-8"))
+            </h3>
+            <p class="vp-80d2da8d822f" data-field="text-9" data-vp-id="80d2da8d822f6ea1fe02ce163117d4e9">
+                @(Context.Text("text-9"))
+            </p>
+        </aside>
+        <figure class="vp-7308a55ed0bc" data-vp-id="7308a55ed0bc866f2d49af7293581abb">
+            <img class="vp-271b8050e621" data-vp-id="271b8050e621d9dae5bbf31115383f69" loading="lazy" alt="@(Context.Text("alt-11"))" src="@(Asset(Context.Text("src-11")))" />
+            <figcaption class="vp-e6c2ada55b03" data-field="text-12" data-vp-id="e6c2ada55b03710acabfc544fac8c89b">
+                @(Context.Text("text-12"))
+            </figcaption>
+        </figure>
+        <p class="vp-88b975bfc3fa" data-field="text-13" data-vp-id="88b975bfc3fa9b7074fe776e2bd51785">
+            @(Context.Text("text-13"))
+        </p>
+    </article>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

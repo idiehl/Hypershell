@@ -1,0 +1,521 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "html-core",
+  "guides": [
+    {
+      "entryId": "html.document-shell",
+      "definition": "A standards-mode HTML document starts with a doctype and an html element. Metadata belongs in head, while rendered page content belongs in body.",
+      "parameters": [
+        {
+          "name": "language",
+          "displayName": "Language",
+          "placeholder": "language",
+          "description": "The page's primary BCP 47 language tag.",
+          "typeName": "Language tag",
+          "defaultValue": "en",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "title",
+          "displayName": "Document title",
+          "placeholder": "title",
+          "description": "Text shown in the browser tab and used by assistive technology.",
+          "typeName": "Plain text",
+          "defaultValue": "Hypershell Web Page",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "heading",
+          "displayName": "Page heading",
+          "placeholder": "heading",
+          "description": "The visible primary heading.",
+          "typeName": "Plain text",
+          "defaultValue": "Hello, web",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Start a standards-mode page",
+          "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Hypershell Web Page</title>\n</head>\n<body>\n  <main>\n    <h1>Hello, web</h1>\n  </main>\n</body>\n</html>",
+          "explanation": "The metadata establishes encoding and responsive sizing before the main landmark contains the visible page heading."
+        }
+      ]
+    },
+    {
+      "entryId": "html.semantic-layout",
+      "definition": "Semantic sectioning and grouping elements communicate the purpose of page regions to browsers, assistive technology, and maintainers.",
+      "parameters": [
+        {
+          "name": "siteName",
+          "displayName": "Site name",
+          "placeholder": "siteName",
+          "description": "The product or site heading.",
+          "typeName": "Plain text",
+          "defaultValue": "Hypershell",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "navigation",
+          "displayName": "Navigation markup",
+          "placeholder": "navigation",
+          "description": "Links placed in the primary navigation region.",
+          "typeName": "HTML fragment",
+          "defaultValue": "<a href=\"/\">Home</a>",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "heading",
+          "displayName": "Main heading",
+          "placeholder": "heading",
+          "description": "The heading for the primary content.",
+          "typeName": "Plain text",
+          "defaultValue": "Workspace",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "content",
+          "displayName": "Content",
+          "placeholder": "content",
+          "description": "A paragraph of primary content.",
+          "typeName": "Plain text",
+          "defaultValue": "Build something useful.",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "footer",
+          "displayName": "Footer",
+          "placeholder": "footer",
+          "description": "Supporting footer content.",
+          "typeName": "HTML fragment",
+          "defaultValue": "<small>Built with Hypershell</small>",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Describe the page structure",
+          "code": "<header>\n  <h1>Hypershell</h1>\n  <nav aria-label=\"Primary\"><a href=\"/\">Home</a></nav>\n</header>\n<main>\n  <h2>Workspace</h2>\n  <p>Build something useful.</p>\n</main>\n<footer><small>Built with Hypershell</small></footer>",
+          "explanation": "Each region has a native role, while the navigation label distinguishes it from any other nav regions."
+        }
+      ]
+    },
+    {
+      "entryId": "html.anchor",
+      "definition": "An a element with an href attribute creates a hyperlink. Link text should describe the destination without relying on surrounding prose.",
+      "parameters": [
+        {
+          "name": "url",
+          "displayName": "Destination",
+          "placeholder": "url",
+          "description": "A relative or absolute URL.",
+          "typeName": "URL",
+          "defaultValue": "https://example.com",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "label",
+          "displayName": "Link text",
+          "placeholder": "label",
+          "description": "Meaningful text describing the destination.",
+          "typeName": "Plain text",
+          "defaultValue": "Read the documentation",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Link to documentation",
+          "code": "<a href=\"https://example.com\">Read the documentation</a>",
+          "explanation": "The href identifies the destination and the visible text explains what the user will open."
+        }
+      ]
+    },
+    {
+      "entryId": "html.figure-image",
+      "definition": "The img alt attribute provides a text alternative when the image carries meaning. figure and figcaption associate supporting caption content with it.",
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "Image source",
+          "placeholder": "source",
+          "description": "The image URL or relative file path.",
+          "typeName": "URL",
+          "defaultValue": "images/workspace.png",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "alternative",
+          "displayName": "Alternative text",
+          "placeholder": "alternative",
+          "description": "A concise replacement for the image's meaning.",
+          "typeName": "Plain text",
+          "defaultValue": "Hypershell workspace with editor and browser tabs",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "width",
+          "displayName": "Width",
+          "placeholder": "width",
+          "description": "The intrinsic image width in CSS pixels.",
+          "typeName": "Positive integer",
+          "defaultValue": "1280",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "height",
+          "displayName": "Height",
+          "placeholder": "height",
+          "description": "The intrinsic image height in CSS pixels.",
+          "typeName": "Positive integer",
+          "defaultValue": "720",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "caption",
+          "displayName": "Caption",
+          "placeholder": "caption",
+          "description": "Visible supporting text associated with the image.",
+          "typeName": "Plain text",
+          "defaultValue": "A customizable Hypershell workspace.",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Caption a product screenshot",
+          "code": "<figure>\n  <img src=\"images/workspace.png\" alt=\"Hypershell workspace with editor and browser tabs\" width=\"1280\" height=\"720\">\n  <figcaption>A customizable Hypershell workspace.</figcaption>\n</figure>",
+          "explanation": "Explicit dimensions reserve layout space, alt text replaces the image's meaning, and the caption remains visible to everyone."
+        }
+      ]
+    },
+    {
+      "entryId": "html.form",
+      "definition": "A label associated through for and id gives a form control an accessible name. Native input types and required constraints provide useful browser behavior.",
+      "parameters": [
+        {
+          "name": "action",
+          "displayName": "Action",
+          "placeholder": "action",
+          "description": "The URL that receives submitted form data.",
+          "typeName": "URL",
+          "defaultValue": "/subscribe",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "method",
+          "displayName": "Method",
+          "placeholder": "method",
+          "description": "The form submission method, normally get or post.",
+          "typeName": "Form method",
+          "defaultValue": "post",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "id",
+          "displayName": "Control ID",
+          "placeholder": "id",
+          "description": "A document-unique identifier shared with the label.",
+          "typeName": "HTML identifier",
+          "defaultValue": "email",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "label",
+          "displayName": "Label",
+          "placeholder": "label",
+          "description": "Text naming the input.",
+          "typeName": "Plain text",
+          "defaultValue": "Email address",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "name",
+          "displayName": "Field name",
+          "placeholder": "name",
+          "description": "The key used in submitted form data.",
+          "typeName": "Form field name",
+          "defaultValue": "email",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "type",
+          "displayName": "Input type",
+          "placeholder": "type",
+          "description": "A native input type appropriate for the expected data.",
+          "typeName": "Input type",
+          "defaultValue": "email",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "button",
+          "displayName": "Button label",
+          "placeholder": "button",
+          "description": "Text describing the submission action.",
+          "typeName": "Plain text",
+          "defaultValue": "Subscribe",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Collect an email address",
+          "code": "<form action=\"/subscribe\" method=\"post\">\n  <label for=\"email\">Email address</label>\n  <input id=\"email\" name=\"email\" type=\"email\" required>\n  <button type=\"submit\">Subscribe</button>\n</form>",
+          "explanation": "The explicit label names the input, type=email enables email-specific validation, and required prevents an empty native submission."
+        }
+      ]
+    },
+    {
+      "entryId": "html.list",
+      "definition": "Use ul when order is not meaningful and ol when sequence or ranking matters. Each direct item is represented by li.",
+      "parameters": [
+        {
+          "name": "listType",
+          "displayName": "List type",
+          "placeholder": "listType",
+          "description": "Use ul for unordered content or ol for an ordered sequence.",
+          "typeName": "ul or ol",
+          "defaultValue": "ul",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "first",
+          "displayName": "First item",
+          "placeholder": "first",
+          "description": "The first list item.",
+          "typeName": "Plain text",
+          "defaultValue": "Plan",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "second",
+          "displayName": "Second item",
+          "placeholder": "second",
+          "description": "The second list item.",
+          "typeName": "Plain text",
+          "defaultValue": "Build",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "third",
+          "displayName": "Third item",
+          "placeholder": "third",
+          "description": "The third list item.",
+          "typeName": "Plain text",
+          "defaultValue": "Verify",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "List development stages",
+          "code": "<ol>\n  <li>Plan</li>\n  <li>Build</li>\n  <li>Verify</li>\n</ol>",
+          "explanation": "An ordered list communicates that the stages have a meaningful sequence."
+        }
+      ]
+    },
+    {
+      "entryId": "html.table",
+      "definition": "table is for genuinely tabular data. caption names the table and th scope attributes identify whether headings apply to columns or rows.",
+      "parameters": [
+        {
+          "name": "caption",
+          "displayName": "Caption",
+          "placeholder": "caption",
+          "description": "A concise name for the data set.",
+          "typeName": "Plain text",
+          "defaultValue": "Build status",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstHeading",
+          "displayName": "First heading",
+          "placeholder": "firstHeading",
+          "description": "The first column heading.",
+          "typeName": "Plain text",
+          "defaultValue": "Stage",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondHeading",
+          "displayName": "Second heading",
+          "placeholder": "secondHeading",
+          "description": "The second column heading.",
+          "typeName": "Plain text",
+          "defaultValue": "Status",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstValue",
+          "displayName": "First value",
+          "placeholder": "firstValue",
+          "description": "The first row's first value.",
+          "typeName": "Plain text",
+          "defaultValue": "Web pack",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondValue",
+          "displayName": "Second value",
+          "placeholder": "secondValue",
+          "description": "The first row's second value.",
+          "typeName": "Plain text",
+          "defaultValue": "Ready",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Show a build status",
+          "code": "<table>\n  <caption>Build status</caption>\n  <thead>\n    <tr><th scope=\"col\">Stage</th><th scope=\"col\">Status</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Web pack</td><td>Ready</td></tr>\n  </tbody>\n</table>",
+          "explanation": "The caption names the table and column scopes let tools associate both data cells with their headings."
+        }
+      ]
+    },
+    {
+      "entryId": "html.details",
+      "definition": "details provides a native disclosure widget and summary supplies its always-visible label. The open attribute controls its initial state.",
+      "parameters": [
+        {
+          "name": "summary",
+          "displayName": "Summary",
+          "placeholder": "summary",
+          "description": "The clickable label for the disclosure.",
+          "typeName": "Plain text",
+          "defaultValue": "What does Preview do?",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "content",
+          "displayName": "Details",
+          "placeholder": "content",
+          "description": "The content revealed when the widget opens.",
+          "typeName": "Plain text",
+          "defaultValue": "It loads the saved page in a Hypershell browser tab.",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Explain browser preview",
+          "code": "<details>\n  <summary>What does Preview do?</summary>\n  <p>It loads the saved page in a Hypershell browser tab.</p>\n</details>",
+          "explanation": "The browser supplies keyboard, pointer, and open-state behavior for the disclosure."
+        }
+      ]
+    },
+    {
+      "entryId": "html.stylesheet-link",
+      "definition": "A link element with rel=stylesheet creates an external resource link whose CSS rules apply to the document when loaded.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Stylesheet path",
+          "placeholder": "path",
+          "description": "A URL or path relative to the HTML document.",
+          "typeName": "URL",
+          "defaultValue": "styles.css",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load the project stylesheet",
+          "code": "<link rel=\"stylesheet\" href=\"styles.css\">",
+          "explanation": "A relative path resolves beside the saved HTML file, so local browser preview can load styles.css from the same folder."
+        }
+      ]
+    },
+    {
+      "entryId": "html.module-script",
+      "definition": "A script element with type=module loads JavaScript as a module, enabling import and export syntax and executing after document parsing.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Module path",
+          "placeholder": "path",
+          "description": "A URL or path to browser-compatible JavaScript.",
+          "typeName": "URL",
+          "defaultValue": "app.js",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load the browser entry module",
+          "code": "<script type=\"module\" src=\"app.js\"></script>",
+          "explanation": "The browser parses app.js as a module. TypeScript source must first be compiled to browser-compatible JavaScript."
+        }
+      ]
+    }
+  ]
+}

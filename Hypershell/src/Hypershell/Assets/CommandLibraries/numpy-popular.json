@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "numpy-popular",
+  "displayName": "NumPy",
+  "description": "Curated NumPy starter recipes for the Python Command Builder. The dependency is referenced, not bundled.",
+  "language": "Python",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "NumPy",
+  "ecosystem": "PyPI",
+  "targetVersion": "2.5",
+  "sourceVersion": "2.5 documentation · curated 2026-08-17",
+  "sourceUrl": "https://numpy.org/doc/stable/",
+  "license": "BSD-3-Clause",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Requires NumPy in the selected Python environment; Hypershell does not install it.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "python",
+    "popular library",
+    "numpy",
+    "array",
+    "numerical",
+    "matrix",
+    "scientific"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/numpy-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/numpy-popular.guides.json"
+  ],
+  "legacyIds": []
+}

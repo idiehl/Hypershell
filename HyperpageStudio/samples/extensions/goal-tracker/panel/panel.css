@@ -1,0 +1,200 @@
+:root {
+  --host-background: #0d1117;
+  --host-panel: #161b22;
+  --host-foreground: #e6edf3;
+  --host-muted: #8b949e;
+  --host-accent: #58a6ff;
+  color-scheme: dark;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--host-background);
+  color: var(--host-foreground);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 240px;
+  background: var(--host-background);
+}
+
+.tracker {
+  min-height: 100vh;
+  padding: 20px 16px;
+}
+
+.eyebrow {
+  margin: 0 0 7px;
+  color: var(--host-accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.summary {
+  margin: 9px 0 8px;
+  color: var(--host-muted);
+  font-size: 12px;
+}
+
+.progress {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #21262d;
+}
+
+.progress span {
+  display: block;
+  width: 50%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--host-accent);
+  transition: width 160ms ease-out;
+}
+
+.progress[data-progress="0"] span {
+  width: 0;
+}
+
+.progress[data-progress="1"] span {
+  width: 25%;
+}
+
+.progress[data-progress="2"] span {
+  width: 50%;
+}
+
+.progress[data-progress="3"] span {
+  width: 75%;
+}
+
+.stages {
+  display: grid;
+  gap: 7px;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stages button {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 10px;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #30363d;
+  border-radius: 7px;
+  background: var(--host-panel);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.stages button:hover,
+.stages button:focus-visible {
+  border-color: var(--host-accent);
+  outline: none;
+}
+
+.marker {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border: 1px solid #484f58;
+  border-radius: 50%;
+  color: #8b949e;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+li[data-state="complete"] .marker {
+  border-color: #3fb950;
+  background: #17351f;
+  color: #7ee787;
+}
+
+li[data-state="active"] button {
+  border-color: #388bfd;
+  background: #132238;
+}
+
+li[data-state="active"] .marker {
+  border-color: #58a6ff;
+  color: #79c0ff;
+}
+
+strong,
+small {
+  display: block;
+}
+
+.context {
+  display: grid;
+  gap: 4px;
+  margin: 0 0 18px;
+  padding: 10px 11px;
+  border: 1px solid #30363d;
+  border-radius: 7px;
+  background: #0d1117;
+}
+
+.context span {
+  color: var(--host-muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.context strong {
+  overflow: hidden;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+strong {
+  font-size: 12px;
+}
+
+small {
+  margin-top: 3px;
+  color: var(--host-muted);
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--host-muted);
+  font-size: 10px;
+}
+
+.signal {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3fb950;
+  box-shadow: 0 0 0 3px #17351f;
+}
+
+.signal[data-state="error"] {
+  background: #f85149;
+  box-shadow: 0 0 0 3px #3d1719;
+}
+
+.signal[data-state="pending"] {
+  background: #d29922;
+  box-shadow: 0 0 0 3px #3d2f12;
+}

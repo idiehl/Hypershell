@@ -1,0 +1,93 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "Build a Small Desk Shelf",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "build-header",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "WORKBENCH / PROJECT 01",
+        "title": "Build a Small Desk Shelf",
+        "text": "A project sheet for planning, measuring, and learning through a first build."
+      }
+    },
+    {
+      "id": "build-plan",
+      "type": "image",
+      "region": "main",
+      "values": {
+        "src": "/media/base-templates/maker-workbench.svg",
+        "alt": "A conceptual shelf and material diagram",
+        "caption": "Illustrative plan only; adapt dimensions and methods to your materials.",
+        "width": 100,
+        "span": "full"
+      }
+    },
+    {
+      "id": "materials",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Materials to plan\n\n- Shelf board\n- Two supports\n- Suitable fixings\n- A finish appropriate to the material\n\nCheck dimensions, stability, and tool instructions before building.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "build-steps",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Build sequence\n\n1. Sketch the intended size and purpose.\n2. Check the space where it will sit.\n3. Mark dimensions before cutting.\n4. Test the fit before final assembly.\n5. Inspect the finished piece before use.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "measurements",
+      "type": "tool",
+      "region": "main",
+      "values": {
+        "title": "A quick calculation",
+        "mode": "calculator",
+        "initial": 0,
+        "items": "",
+        "span": "half"
+      }
+    },
+    {
+      "id": "build-checklist",
+      "type": "tool",
+      "region": "main",
+      "values": {
+        "title": "Before the first cut",
+        "mode": "checklist",
+        "initial": 0,
+        "items": "Check material dimensions\nRead tool instructions\nPrepare a clear work area\nMark the cut lines",
+        "span": "half"
+      }
+    },
+    {
+      "id": "build-log",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Keep a build log",
+        "text": "Record one measurement that changed and one detail you would improve next time.",
+        "span": "full"
+      }
+    },
+    {
+      "id": "workbench-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Maker Workbench / A planning template, not a certified construction plan"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

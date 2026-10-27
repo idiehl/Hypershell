@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "workers-standard",
+  "displayName": "Web Workers",
+  "description": "Web Workers interfaces and browser-platform operations.",
+  "language": "Web APIs",
+  "category": "Official reference",
+  "kind": "PlatformApi",
+  "canonicalName": "Web Workers",
+  "ecosystem": "Web Platform",
+  "targetVersion": "Living Standard inventory",
+  "sourceVersion": "Web declarations from TypeScript 5.9.3 · 080941d9f9ff/6d08cde2bfb6",
+  "sourceUrl": "https://html.spec.whatwg.org/multipage/workers.html",
+  "license": "WHATWG Living Standard",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Web API entries target compatible JavaScript or TypeScript editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "web api",
+    "browser",
+    "Web Workers"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 92,
+  "declaredIndexedCount": 92,
+  "declaredGuidedCount": 0,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/workers-standard.entries.json"
+  ],
+  "declaredGuideCount": 0,
+  "guideFiles": [],
+  "legacyIds": []
+}

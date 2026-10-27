@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "lodash-popular",
+  "guides": [
+    {
+      "entryId": "lodash-popular.group-by",
+      "definition": "Groups collection values under keys produced by a Lodash iteratee. Requires Lodash in the active Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "collection",
+          "displayName": "Collection",
+          "placeholder": "collection",
+          "description": "Array or collection to group.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "users",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "iteratee",
+          "displayName": "Key selector",
+          "placeholder": "iteratee",
+          "description": "Function returning a group key for each value.",
+          "typeName": "JavaScript function",
+          "defaultValue": "user => user.role",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Group users by role",
+          "code": "import groupBy from \"lodash/groupBy.js\";\n\nconst grouped = groupBy(users, user => user.role);",
+          "explanation": "A focused per-method import makes the dependency visible and can reduce unnecessary bundled code."
+        }
+      ]
+    },
+    {
+      "entryId": "lodash-popular.debounce-callback",
+      "definition": "Creates a function that delays invocation until calls have paused. Requires Lodash in the active Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "variable",
+          "displayName": "Function name",
+          "placeholder": "variable",
+          "description": "Name for the debounced function.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "searchLater",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "callback",
+          "displayName": "Callback",
+          "placeholder": "callback",
+          "description": "Function invoked after the quiet period.",
+          "typeName": "JavaScript function",
+          "defaultValue": "query => search(query)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "waitMilliseconds",
+          "displayName": "Wait milliseconds",
+          "placeholder": "waitMilliseconds",
+          "description": "Delay after the most recent call.",
+          "typeName": "number",
+          "defaultValue": "250",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Debounce a search request",
+          "code": "import debounce from \"lodash/debounce.js\";\n\nconst searchLater = debounce(query => search(query), 250);",
+          "explanation": "Debouncing is useful for bursty UI input; call cancel or flush during lifecycle cleanup when pending work matters."
+        }
+      ]
+    },
+    {
+      "entryId": "lodash-popular.merge-config",
+      "definition": "Recursively merges an override object into a fresh configuration object. Requires Lodash in the active Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "defaults",
+          "displayName": "Defaults",
+          "placeholder": "defaults",
+          "description": "Base configuration object.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "defaults",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "overrides",
+          "displayName": "Overrides",
+          "placeholder": "overrides",
+          "description": "Configuration values that take precedence.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "userSettings",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Merge nested settings",
+          "code": "import merge from \"lodash/merge.js\";\n\nconst config = merge({}, defaults, userSettings);",
+          "explanation": "Starting with an empty object avoids mutating the defaults object; arrays still follow Lodash merge semantics and may need a customizer."
+        }
+      ]
+    }
+  ]
+}

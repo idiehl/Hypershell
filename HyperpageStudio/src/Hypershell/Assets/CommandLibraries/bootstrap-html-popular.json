@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "bootstrap-html-popular",
+  "displayName": "Bootstrap",
+  "description": "Curated Bootstrap starter recipes for the HTML Command Builder. The dependency is referenced, not bundled.",
+  "language": "HTML",
+  "category": "Popular libraries",
+  "kind": "Framework",
+  "canonicalName": "Bootstrap",
+  "ecosystem": "Web",
+  "targetVersion": "5.3.8",
+  "sourceVersion": "5.3.8 documentation · curated 2026-08-17",
+  "sourceUrl": "https://getbootstrap.com/docs/5.3/getting-started/introduction/",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Editor-only markup: include Bootstrap 5.3 CSS (and its JavaScript bundle for interactive components) in the target page.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "html",
+    "popular library",
+    "bootstrap",
+    "responsive",
+    "components",
+    "layout",
+    "css framework"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/bootstrap-html-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/bootstrap-html-popular.guides.json"
+  ],
+  "legacyIds": []
+}

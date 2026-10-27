@@ -1,0 +1,3 @@
+@using HyperLib.Runtime
+<div class="hl-richtext">@((MarkupString)SafeRichText.Render(Context.Text("text")))</div>
+@code { [Parameter, EditorRequired] public BlockContext Context { get; set; } = new(); }

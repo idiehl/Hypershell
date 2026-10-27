@@ -1,0 +1,29 @@
+@* Source: common.element.profile.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-c577c9c17668" data-vp-id="c577c9c176685d8060195595439ddcb8">
+    <div class="vp-63855023afe3" data-vp-id="63855023afe30dc691685a573031ba91">
+        <div aria-label="Replace with a profile image" class="vp-e68edefc69d1" data-vp-id="e68edefc69d1df7e6aa7d3560677ffaf" role="img"></div>
+        <div class="vp-9bbeb3847225" data-vp-id="9bbeb38472254490c37a8fad7b4fa31a">
+            <h3 class="vp-149836739c33" data-field="text-4">
+                @(Context.Text("text-4"))
+            </h3>
+            <p class="vp-de6dd59d05c9" data-field="text-5" data-vp-id="de6dd59d05c97062b32a90fd0dadf8b0">
+                @(Context.Text("text-5"))
+            </p>
+            <p class="vp-0202a02ca618" data-field="text-6" data-vp-id="0202a02ca61822351c26c6b75cb13d33">
+                @(Context.Text("text-6"))
+            </p>
+            <a class="vp-77f1c5c8d9ad" data-field="text-7" data-vp-id="77f1c5c8d9adbc774e91d2ba01946a8b" href="@(Link(Context.Text("href-7")))">
+                @(Context.Text("text-7"))
+            </a>
+        </div>
+    </div>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

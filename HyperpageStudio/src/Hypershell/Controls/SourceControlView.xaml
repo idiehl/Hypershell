@@ -1,0 +1,399 @@
+<UserControl x:Class="Hypershell.Controls.SourceControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:Hypershell.ViewModels"
+             MinWidth="300">
+  <UserControl.Resources>
+    <Style x:Key="SourceControlIconButtonStyle"
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource {x:Type Button}}">
+      <Setter Property="MinWidth" Value="30" />
+      <Setter Property="Height" Value="30" />
+      <Setter Property="Padding" Value="5,0" />
+      <Setter Property="Margin" Value="3,0,0,0" />
+      <Setter Property="FontFamily" Value="{StaticResource CodeFontFamily}" />
+      <Setter Property="FontSize" Value="15" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="Background" Value="{StaticResource PanelRaisedBrush}" />
+      <Setter Property="BorderBrush" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style x:Key="SourceControlLabelStyle"
+           TargetType="{x:Type TextBlock}">
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="Foreground" Value="{StaticResource MutedForegroundBrush}" />
+    </Style>
+  </UserControl.Resources>
+
+  <Grid Margin="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <StackPanel>
+        <TextBlock Text="REPOSITORY"
+                   Foreground="{StaticResource AccentBrush}"
+                   FontSize="11"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding RepositoryRoot}"
+                   Foreground="{StaticResource MutedForegroundBrush}"
+                   FontSize="9"
+                   TextTrimming="CharacterEllipsis"
+                   ToolTip="Current repository"
+                   Margin="0,2,5,0" />
+      </StackPanel>
+      <Button Grid.Column="1"
+              Click="OpenRepositoryOperationsClick"
+              Content="⋯"
+              Style="{StaticResource SourceControlIconButtonStyle}"
+              ToolTip="Repository operations" />
+      <Button Grid.Column="2"
+              Command="{Binding RefreshCommand}"
+              Content="↻"
+              Style="{StaticResource SourceControlIconButtonStyle}"
+              ToolTip="Refresh repository" />
+    </Grid>
+
+    <Border Grid.Row="1"
+            Margin="0,9,0,8"
+            Padding="8"
+            Background="{StaticResource PanelRaisedBrush}"
+            BorderBrush="Transparent"
+            BorderThickness="0"
+            CornerRadius="8">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <ComboBox ItemsSource="{Binding Branches}"
+                    SelectedItem="{Binding SelectedBranch, Mode=TwoWay}"
+                    ToolTip="Choose branch">
+            <ComboBox.ItemTemplate>
+              <DataTemplate>
+                <Grid MinWidth="180">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Text="⑂"
+                             FontFamily="{StaticResource CodeFontFamily}"
+                             Foreground="{StaticResource SecondaryBrush}"
+                             Margin="0,0,6,0" />
+                  <TextBlock Grid.Column="1"
+                             Text="{Binding Name}"
+                             TextTrimming="CharacterEllipsis" />
+                </Grid>
+              </DataTemplate>
+            </ComboBox.ItemTemplate>
+          </ComboBox>
+          <Button Grid.Column="1"
+                  Command="{Binding CheckoutBranchCommand}"
+                  Content="↪"
+                  Style="{StaticResource SourceControlIconButtonStyle}"
+                  ToolTip="Checkout branch" />
+        </Grid>
+        <Grid Grid.Row="1" Margin="0,7,0,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBlock Text="{Binding BranchName}"
+                       FontWeight="SemiBold"
+                       TextTrimming="CharacterEllipsis" />
+            <TextBlock Text="{Binding AheadBehindText}"
+                       Foreground="{StaticResource MutedForegroundBrush}"
+                       Margin="8,0,0,0" />
+          </StackPanel>
+          <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <Button Command="{Binding FetchCommand}"
+                    Content="↓"
+                    Style="{StaticResource SourceControlIconButtonStyle}"
+                    ToolTip="Fetch" />
+            <Button Command="{Binding PullCommand}"
+                    Content="⇣"
+                    Style="{StaticResource SourceControlIconButtonStyle}"
+                    ToolTip="Pull" />
+            <Button Command="{Binding PushCommand}"
+                    Content="⇡"
+                    Style="{StaticResource SourceControlIconButtonStyle}"
+                    ToolTip="Push" />
+          </StackPanel>
+        </Grid>
+      </Grid>
+      <Border.Style>
+        <Style TargetType="{x:Type Border}">
+          <Setter Property="Visibility" Value="Collapsed" />
+          <Style.Triggers>
+            <DataTrigger Binding="{Binding HasRepository}" Value="True">
+              <Setter Property="Visibility" Value="Visible" />
+            </DataTrigger>
+          </Style.Triggers>
+        </Style>
+      </Border.Style>
+    </Border>
+
+    <Grid Grid.Row="2">
+      <Border Padding="16"
+              Background="{StaticResource PanelBrush}"
+              BorderBrush="Transparent"
+              BorderThickness="0"
+              CornerRadius="8">
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+          <TextBlock Text="No repository"
+                     TextAlignment="Center"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     Margin="0,0,0,9" />
+          <Button Command="{Binding InitializeCommand}"
+                  Content="＋"
+                  Style="{StaticResource SourceControlIconButtonStyle}"
+                  HorizontalAlignment="Center"
+                  ToolTip="Initialize repository" />
+        </StackPanel>
+        <Border.Style>
+          <Style TargetType="{x:Type Border}">
+            <Setter Property="Visibility" Value="Visible" />
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding HasRepository}" Value="True">
+                <Setter Property="Visibility" Value="Collapsed" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Border.Style>
+      </Border>
+
+      <Grid>
+        <Grid.Style>
+          <Style TargetType="{x:Type Grid}">
+            <Setter Property="Visibility" Value="Collapsed" />
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding HasRepository}" Value="True">
+                <Setter Property="Visibility" Value="Visible" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Grid.Style>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="1,0,0,5">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="Changes"
+                     Style="{StaticResource SourceControlLabelStyle}"
+                     VerticalAlignment="Center" />
+          <Button Grid.Column="1"
+                  Command="{Binding StageAllCommand}"
+                  Content="＋"
+                  Style="{StaticResource SourceControlIconButtonStyle}"
+                  ToolTip="Stage all changes" />
+        </Grid>
+
+        <ListBox Grid.Row="1"
+                 ItemsSource="{Binding Changes}"
+                 SelectedItem="{Binding SelectedChange, Mode=TwoWay}"
+                 Background="Transparent"
+                 BorderThickness="0"
+                 Padding="0"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+          <ListBox.ItemContainerStyle>
+            <Style TargetType="{x:Type ListBoxItem}">
+              <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+              <Setter Property="Padding" Value="0" />
+              <Setter Property="Margin" Value="0,0,0,4" />
+            </Style>
+          </ListBox.ItemContainerStyle>
+          <ListBox.ItemTemplate>
+            <DataTemplate DataType="{x:Type viewModels:SourceControlChangeViewModel}">
+              <Grid Margin="5,4">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="30" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Border Width="24"
+                        Height="24"
+                        BorderBrush="{StaticResource BorderBrush}"
+                        BorderThickness="1"
+                        Background="{StaticResource PanelRaisedBrush}">
+                  <TextBlock Text="{Binding StateGlyph}"
+                             FontFamily="{StaticResource CodeFontFamily}"
+                             FontSize="10"
+                             FontWeight="Bold"
+                             Foreground="{StaticResource SecondaryBrush}"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center" />
+                </Border>
+                <StackPanel Grid.Column="1">
+                  <TextBlock Text="{Binding FileName}"
+                             TextTrimming="CharacterEllipsis" />
+                  <TextBlock Text="{Binding Directory}"
+                             Foreground="{StaticResource MutedForegroundBrush}"
+                             FontSize="9"
+                             TextTrimming="CharacterEllipsis" />
+                </StackPanel>
+              </Grid>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Grid Grid.Row="2" Margin="0,6,0,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="{Binding SelectedChange.Path}"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     FontSize="9"
+                     TextTrimming="CharacterEllipsis"
+                     VerticalAlignment="Center"
+                     Margin="1,0,5,0" />
+          <Button Grid.Column="1"
+                  Command="{Binding OpenConflictCommand}"
+                  Content="Ⅲ"
+                  Style="{StaticResource SourceControlIconButtonStyle}"
+                  ToolTip="Open conflict" />
+          <Button Grid.Column="2"
+                  Command="{Binding ResolveConflictCommand}"
+                  Content="✓"
+                  Style="{StaticResource SourceControlIconButtonStyle}"
+                  Foreground="{StaticResource SuccessBrush}"
+                  ToolTip="Resolve conflict" />
+          <Button Grid.Column="3"
+                  Click="OpenPatchStagingClick"
+                  Content="≋"
+                  Style="{StaticResource SourceControlIconButtonStyle}"
+                  ToolTip="Stage hunks" />
+          <Button Grid.Column="4"
+                  Command="{Binding OpenDiffCommand}"
+                  Content="≠"
+                  Style="{StaticResource SourceControlIconButtonStyle}"
+                  ToolTip="Open diff" />
+          <Button Grid.Column="5"
+                  Command="{Binding StageSelectedCommand}"
+                  Content="＋"
+                  Style="{StaticResource SourceControlIconButtonStyle}"
+                  ToolTip="Stage selected change" />
+          <Button Grid.Column="6"
+                  Command="{Binding UnstageSelectedCommand}"
+                  Content="−"
+                  Style="{StaticResource SourceControlIconButtonStyle}"
+                  ToolTip="Unstage selected change" />
+        </Grid>
+      </Grid>
+    </Grid>
+
+    <StackPanel Grid.Row="3" Margin="0,8,0,0">
+      <TextBox Text="{Binding CommitMessage, UpdateSourceTrigger=PropertyChanged}"
+               AcceptsReturn="True"
+               TextWrapping="Wrap"
+               MinHeight="58"
+               MaxHeight="120"
+               VerticalScrollBarVisibility="Auto"
+               ToolTip="Commit message" />
+      <StackPanel Orientation="Horizontal"
+                  HorizontalAlignment="Right"
+                  Margin="0,5,0,0">
+        <Button Command="{Binding AmendCommand}"
+                Content="↺"
+                Style="{StaticResource SourceControlIconButtonStyle}"
+                ToolTip="Amend commit" />
+        <Button Command="{Binding CommitCommand}"
+                Content="✓"
+                Style="{StaticResource SourceControlIconButtonStyle}"
+                Foreground="{StaticResource SuccessBrush}"
+                ToolTip="Commit staged changes" />
+      </StackPanel>
+      <StackPanel.Style>
+        <Style TargetType="{x:Type StackPanel}">
+          <Setter Property="Visibility" Value="Collapsed" />
+          <Style.Triggers>
+            <DataTrigger Binding="{Binding HasRepository}" Value="True">
+              <Setter Property="Visibility" Value="Visible" />
+            </DataTrigger>
+          </Style.Triggers>
+        </Style>
+      </StackPanel.Style>
+    </StackPanel>
+
+    <StackPanel Grid.Row="4" Margin="1,8,1,0">
+      <ProgressBar Height="2"
+                   IsIndeterminate="True"
+                   Margin="0,0,0,6">
+        <ProgressBar.Style>
+          <Style TargetType="{x:Type ProgressBar}">
+            <Setter Property="Visibility" Value="Collapsed" />
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding IsBusy}" Value="True">
+                <Setter Property="Visibility" Value="Visible" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </ProgressBar.Style>
+      </ProgressBar>
+      <TextBlock Text="{Binding StatusMessage}"
+                 Foreground="{StaticResource MutedForegroundBrush}"
+                 TextWrapping="Wrap" />
+        <Expander Header="HISTORY"
+                Margin="0,7,0,0">
+        <StackPanel>
+          <ListBox ItemsSource="{Binding History}"
+                   SelectedItem="{Binding SelectedCommit, Mode=TwoWay}"
+                   MaxHeight="190"
+                   Background="Transparent"
+                   BorderThickness="0">
+            <ListBox.ItemTemplate>
+              <DataTemplate>
+                <StackPanel Margin="0,3">
+                  <TextBlock Text="{Binding Subject}"
+                             TextTrimming="CharacterEllipsis" />
+                  <TextBlock Foreground="{StaticResource MutedForegroundBrush}"
+                             FontFamily="{StaticResource CodeFontFamily}"
+                             FontSize="9">
+                    <Run Text="{Binding CommitId}" />
+                    <Run Text="  " />
+                    <Run Text="{Binding AuthorName}" />
+                  </TextBlock>
+                </StackPanel>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+          <Button Command="{Binding OpenCommitDiffCommand}"
+                  Content="≠"
+                  Style="{StaticResource SourceControlIconButtonStyle}"
+                  HorizontalAlignment="Right"
+                  Margin="0,5,0,0"
+                        ToolTip="Open patch" />
+        </StackPanel>
+      </Expander>
+    </StackPanel>
+  </Grid>
+</UserControl>

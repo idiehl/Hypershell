@@ -1,0 +1,787 @@
+{
+  "schemaVersion": 1,
+  "source": "doc/glossary/keywords.pdf",
+  "count": 130,
+  "keywords": [
+    {
+      "keyword": "class",
+      "lexicalClass": "Reserved",
+      "category": "type_declaration",
+      "description": "Declares a reference type whose instances can contain data and behavior."
+    },
+    {
+      "keyword": "struct",
+      "lexicalClass": "Reserved",
+      "category": "type_declaration",
+      "description": "Declares a value type, copied by value unless used through a reference."
+    },
+    {
+      "keyword": "interface",
+      "lexicalClass": "Reserved",
+      "category": "type_declaration",
+      "description": "Declares a contract of members that implementing types must provide."
+    },
+    {
+      "keyword": "enum",
+      "lexicalClass": "Reserved",
+      "category": "type_declaration",
+      "description": "Declares a value type made from a named set of integral constants."
+    },
+    {
+      "keyword": "delegate",
+      "lexicalClass": "Reserved",
+      "category": "type_declaration",
+      "description": "Declares a type-safe callable signature that can reference methods."
+    },
+    {
+      "keyword": "record",
+      "lexicalClass": "Contextual",
+      "category": "type_declaration",
+      "description": "Declares a data-oriented class or struct with generated value-based features."
+    },
+    {
+      "keyword": "union",
+      "lexicalClass": "Preview keyword",
+      "category": "type_declaration",
+      "description": "C# 15 preview: declares a type whose value is one of a fixed set of case types."
+    },
+    {
+      "keyword": "bool",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.Boolean; stores true or false."
+    },
+    {
+      "keyword": "byte",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.Byte; unsigned 8-bit integer."
+    },
+    {
+      "keyword": "sbyte",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.SByte; signed 8-bit integer."
+    },
+    {
+      "keyword": "short",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.Int16; signed 16-bit integer."
+    },
+    {
+      "keyword": "ushort",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.UInt16; unsigned 16-bit integer."
+    },
+    {
+      "keyword": "int",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.Int32; signed 32-bit integer."
+    },
+    {
+      "keyword": "uint",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.UInt32; unsigned 32-bit integer."
+    },
+    {
+      "keyword": "long",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.Int64; signed 64-bit integer."
+    },
+    {
+      "keyword": "ulong",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.UInt64; unsigned 64-bit integer."
+    },
+    {
+      "keyword": "nint",
+      "lexicalClass": "Contextual",
+      "category": "built_in_type_or_literal",
+      "description": "Contextual alias for System.IntPtr; signed native-sized integer."
+    },
+    {
+      "keyword": "nuint",
+      "lexicalClass": "Contextual",
+      "category": "built_in_type_or_literal",
+      "description": "Contextual alias for System.UIntPtr; unsigned native-sized integer."
+    },
+    {
+      "keyword": "char",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.Char; one UTF-16 code unit."
+    },
+    {
+      "keyword": "float",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.Single; 32-bit floating-point value."
+    },
+    {
+      "keyword": "double",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.Double; 64-bit floating-point value."
+    },
+    {
+      "keyword": "decimal",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.Decimal; high-precision base-10 numeric value."
+    },
+    {
+      "keyword": "string",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.String; an immutable sequence of UTF-16 characters."
+    },
+    {
+      "keyword": "object",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Alias for System.Object; the ultimate base type of .NET types."
+    },
+    {
+      "keyword": "dynamic",
+      "lexicalClass": "Contextual",
+      "category": "built_in_type_or_literal",
+      "description": "Defers member binding and many type checks until runtime."
+    },
+    {
+      "keyword": "void",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Indicates that a method returns no value, or represents an untyped pointer target."
+    },
+    {
+      "keyword": "true",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Boolean literal representing the true value."
+    },
+    {
+      "keyword": "false",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Boolean literal representing the false value."
+    },
+    {
+      "keyword": "null",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Literal representing no object reference or no nullable value."
+    },
+    {
+      "keyword": "default",
+      "lexicalClass": "Reserved",
+      "category": "built_in_type_or_literal",
+      "description": "Produces the default value of a type; also labels a fallback switch case."
+    },
+    {
+      "keyword": "public",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Makes a declared member or type accessible wherever its containing assembly is referenced."
+    },
+    {
+      "keyword": "private",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Restricts access to the containing type."
+    },
+    {
+      "keyword": "protected",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Allows access from the containing type and derived types."
+    },
+    {
+      "keyword": "internal",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Restricts access to the same assembly."
+    },
+    {
+      "keyword": "abstract",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Declares an incomplete type or member that must be completed by derivation or override."
+    },
+    {
+      "keyword": "sealed",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Prevents a class from being inherited or an override from being overridden again."
+    },
+    {
+      "keyword": "static",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Makes a member belong to the type itself, or declares a non-instantiable static class."
+    },
+    {
+      "keyword": "virtual",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Allows an instance member to be overridden in a derived type."
+    },
+    {
+      "keyword": "override",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Provides a new implementation of an inherited virtual or abstract member."
+    },
+    {
+      "keyword": "readonly",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Restricts mutation of fields, structs, members, or references depending on context."
+    },
+    {
+      "keyword": "volatile",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Applies special memory-access semantics to a field; it is not a replacement for locking."
+    },
+    {
+      "keyword": "const",
+      "lexicalClass": "Reserved",
+      "category": "declaration_modifier",
+      "description": "Declares a compile-time constant whose value is embedded in consuming code."
+    },
+    {
+      "keyword": "partial",
+      "lexicalClass": "Contextual",
+      "category": "declaration_modifier",
+      "description": "Allows a type or supported member declaration to be split across multiple parts."
+    },
+    {
+      "keyword": "required",
+      "lexicalClass": "Contextual",
+      "category": "declaration_modifier",
+      "description": "Requires callers to initialize a field or property during object creation."
+    },
+    {
+      "keyword": "file",
+      "lexicalClass": "Contextual",
+      "category": "declaration_modifier",
+      "description": "Limits a top-level type to the source file in which it is declared."
+    },
+    {
+      "keyword": "extension",
+      "lexicalClass": "Contextual",
+      "category": "declaration_modifier",
+      "description": "C# 14: introduces an extension block containing extension members for another type."
+    },
+    {
+      "keyword": "closed",
+      "lexicalClass": "Preview contextual",
+      "category": "declaration_modifier",
+      "description": "C# 15 preview: restricts direct derived types to the declaring assembly for exhaustiveness analysis."
+    },
+    {
+      "keyword": "safe",
+      "lexicalClass": "Preview contextual",
+      "category": "declaration_modifier",
+      "description": "C# 15 preview: explicitly attests that a declaration is safe under the updated memory-safety model."
+    },
+    {
+      "keyword": "namespace",
+      "lexicalClass": "Reserved",
+      "category": "namespace_or_import",
+      "description": "Declares the logical namespace that contains types or nested namespaces."
+    },
+    {
+      "keyword": "using",
+      "lexicalClass": "Reserved",
+      "category": "namespace_or_import",
+      "description": "Introduces namespace imports, aliases, static imports, or deterministic resource disposal."
+    },
+    {
+      "keyword": "global",
+      "lexicalClass": "Contextual",
+      "category": "namespace_or_import",
+      "description": "Refers to the global namespace or declares a project-wide global using directive."
+    },
+    {
+      "keyword": "alias",
+      "lexicalClass": "Contextual",
+      "category": "namespace_or_import",
+      "description": "Used with extern alias to reference an externally assigned assembly alias."
+    },
+    {
+      "keyword": "new",
+      "lexicalClass": "Reserved",
+      "category": "object_or_type_expression",
+      "description": "Creates an object or value; can also hide an inherited member or specify a constructor constraint."
+    },
+    {
+      "keyword": "this",
+      "lexicalClass": "Reserved",
+      "category": "object_or_type_expression",
+      "description": "Refers to the current instance; also marks an extension-method receiver or indexer parameter list."
+    },
+    {
+      "keyword": "base",
+      "lexicalClass": "Reserved",
+      "category": "object_or_type_expression",
+      "description": "Accesses base-class members or invokes a base-class constructor."
+    },
+    {
+      "keyword": "typeof",
+      "lexicalClass": "Reserved",
+      "category": "object_or_type_expression",
+      "description": "Produces the System.Type object for a type known at compile time."
+    },
+    {
+      "keyword": "sizeof",
+      "lexicalClass": "Reserved",
+      "category": "object_or_type_expression",
+      "description": "Returns the size in bytes of an unmanaged type."
+    },
+    {
+      "keyword": "nameof",
+      "lexicalClass": "Contextual",
+      "category": "object_or_type_expression",
+      "description": "Produces a compile-time string containing the name of a symbol."
+    },
+    {
+      "keyword": "stackalloc",
+      "lexicalClass": "Reserved",
+      "category": "object_or_type_expression",
+      "description": "Allocates a block of memory on the stack, commonly exposed as a Span<T> or pointer."
+    },
+    {
+      "keyword": "with",
+      "lexicalClass": "Contextual",
+      "category": "object_or_type_expression",
+      "description": "Creates a modified copy or, in C# 15 collection expressions, supplies construction arguments."
+    },
+    {
+      "keyword": "event",
+      "lexicalClass": "Reserved",
+      "category": "property_or_event_keyword",
+      "description": "Declares an event member with controlled subscription and unsubscription."
+    },
+    {
+      "keyword": "get",
+      "lexicalClass": "Contextual",
+      "category": "property_or_event_keyword",
+      "description": "Defines the read accessor of a property or indexer."
+    },
+    {
+      "keyword": "set",
+      "lexicalClass": "Contextual",
+      "category": "property_or_event_keyword",
+      "description": "Defines the write accessor of a property or indexer."
+    },
+    {
+      "keyword": "init",
+      "lexicalClass": "Contextual",
+      "category": "property_or_event_keyword",
+      "description": "Defines a write accessor usable only during object initialization."
+    },
+    {
+      "keyword": "add",
+      "lexicalClass": "Contextual",
+      "category": "property_or_event_keyword",
+      "description": "Defines the accessor executed when code subscribes to a custom event."
+    },
+    {
+      "keyword": "remove",
+      "lexicalClass": "Contextual",
+      "category": "property_or_event_keyword",
+      "description": "Defines the accessor executed when code unsubscribes from a custom event."
+    },
+    {
+      "keyword": "value",
+      "lexicalClass": "Contextual",
+      "category": "property_or_event_keyword",
+      "description": "Implicit parameter containing the value supplied to a setter or custom event accessor."
+    },
+    {
+      "keyword": "field",
+      "lexicalClass": "Contextual",
+      "category": "property_or_event_keyword",
+      "description": "C# 14: refers to a compiler-generated backing field inside a property accessor."
+    },
+    {
+      "keyword": "operator",
+      "lexicalClass": "Reserved",
+      "category": "operator_conversion_or_pattern",
+      "description": "Declares a user-defined operator or conversion operator."
+    },
+    {
+      "keyword": "implicit",
+      "lexicalClass": "Reserved",
+      "category": "operator_conversion_or_pattern",
+      "description": "Declares a conversion that the compiler may apply without an explicit cast."
+    },
+    {
+      "keyword": "explicit",
+      "lexicalClass": "Reserved",
+      "category": "operator_conversion_or_pattern",
+      "description": "Declares a conversion that normally requires an explicit cast."
+    },
+    {
+      "keyword": "is",
+      "lexicalClass": "Reserved",
+      "category": "operator_conversion_or_pattern",
+      "description": "Tests a value against a type or pattern and can introduce a pattern variable."
+    },
+    {
+      "keyword": "as",
+      "lexicalClass": "Reserved",
+      "category": "operator_conversion_or_pattern",
+      "description": "Attempts a reference or nullable conversion and returns null when it fails."
+    },
+    {
+      "keyword": "and",
+      "lexicalClass": "Contextual",
+      "category": "operator_conversion_or_pattern",
+      "description": "Combines two patterns that must both match."
+    },
+    {
+      "keyword": "or",
+      "lexicalClass": "Contextual",
+      "category": "operator_conversion_or_pattern",
+      "description": "Combines alternative patterns where either may match."
+    },
+    {
+      "keyword": "not",
+      "lexicalClass": "Contextual",
+      "category": "operator_conversion_or_pattern",
+      "description": "Negates a pattern."
+    },
+    {
+      "keyword": "if",
+      "lexicalClass": "Reserved",
+      "category": "conditional_control_flow",
+      "description": "Executes a statement when a Boolean condition is true."
+    },
+    {
+      "keyword": "else",
+      "lexicalClass": "Reserved",
+      "category": "conditional_control_flow",
+      "description": "Provides the alternative branch of an if statement."
+    },
+    {
+      "keyword": "switch",
+      "lexicalClass": "Reserved",
+      "category": "conditional_control_flow",
+      "description": "Selects a branch or value by matching cases or patterns."
+    },
+    {
+      "keyword": "case",
+      "lexicalClass": "Reserved",
+      "category": "conditional_control_flow",
+      "description": "Introduces a switch label or pattern arm."
+    },
+    {
+      "keyword": "when",
+      "lexicalClass": "Contextual",
+      "category": "conditional_control_flow",
+      "description": "Adds a filter to a catch clause or a guard to a switch case or arm."
+    },
+    {
+      "keyword": "for",
+      "lexicalClass": "Reserved",
+      "category": "loop_or_jump_control_flow",
+      "description": "Defines a loop with initializer, condition, and iterator components."
+    },
+    {
+      "keyword": "foreach",
+      "lexicalClass": "Reserved",
+      "category": "loop_or_jump_control_flow",
+      "description": "Iterates over elements produced by an enumerable pattern."
+    },
+    {
+      "keyword": "while",
+      "lexicalClass": "Reserved",
+      "category": "loop_or_jump_control_flow",
+      "description": "Repeats a statement while a condition remains true."
+    },
+    {
+      "keyword": "do",
+      "lexicalClass": "Reserved",
+      "category": "loop_or_jump_control_flow",
+      "description": "Starts a loop that evaluates its condition after each iteration."
+    },
+    {
+      "keyword": "break",
+      "lexicalClass": "Reserved",
+      "category": "loop_or_jump_control_flow",
+      "description": "Exits the nearest loop or switch; C# 15 preview also supports labeled targets."
+    },
+    {
+      "keyword": "continue",
+      "lexicalClass": "Reserved",
+      "category": "loop_or_jump_control_flow",
+      "description": "Starts the next loop iteration; C# 15 preview also supports labeled targets."
+    },
+    {
+      "keyword": "goto",
+      "lexicalClass": "Reserved",
+      "category": "loop_or_jump_control_flow",
+      "description": "Transfers control to a label, case label, or default label."
+    },
+    {
+      "keyword": "return",
+      "lexicalClass": "Reserved",
+      "category": "loop_or_jump_control_flow",
+      "description": "Exits a method, local function, lambda, or accessor and optionally supplies a value."
+    },
+    {
+      "keyword": "yield",
+      "lexicalClass": "Contextual",
+      "category": "loop_or_jump_control_flow",
+      "description": "Produces the next value from an iterator or ends iterator production."
+    },
+    {
+      "keyword": "try",
+      "lexicalClass": "Reserved",
+      "category": "runtime_control_or_safety",
+      "description": "Introduces code whose exceptions may be handled or finalized."
+    },
+    {
+      "keyword": "catch",
+      "lexicalClass": "Reserved",
+      "category": "runtime_control_or_safety",
+      "description": "Handles an exception thrown from an associated try block."
+    },
+    {
+      "keyword": "finally",
+      "lexicalClass": "Reserved",
+      "category": "runtime_control_or_safety",
+      "description": "Runs cleanup code after try/catch completion regardless of success or exception."
+    },
+    {
+      "keyword": "throw",
+      "lexicalClass": "Reserved",
+      "category": "runtime_control_or_safety",
+      "description": "Raises an exception or rethrows the current exception."
+    },
+    {
+      "keyword": "checked",
+      "lexicalClass": "Reserved",
+      "category": "runtime_control_or_safety",
+      "description": "Enables overflow checking for integral arithmetic and conversions in a scope or expression."
+    },
+    {
+      "keyword": "unchecked",
+      "lexicalClass": "Reserved",
+      "category": "runtime_control_or_safety",
+      "description": "Disables overflow checking for integral arithmetic and conversions in a scope or expression."
+    },
+    {
+      "keyword": "lock",
+      "lexicalClass": "Reserved",
+      "category": "runtime_control_or_safety",
+      "description": "Executes a critical section with mutual exclusion on a synchronization object."
+    },
+    {
+      "keyword": "params",
+      "lexicalClass": "Reserved",
+      "category": "parameter_reference_or_constraint",
+      "description": "Allows a method parameter to accept a variable number of arguments or a parameter collection."
+    },
+    {
+      "keyword": "in",
+      "lexicalClass": "Reserved",
+      "category": "parameter_reference_or_constraint",
+      "description": "Marks a readonly by-reference parameter; also appears in foreach and query syntax."
+    },
+    {
+      "keyword": "out",
+      "lexicalClass": "Reserved",
+      "category": "parameter_reference_or_constraint",
+      "description": "Marks a by-reference output parameter that the callee must assign."
+    },
+    {
+      "keyword": "ref",
+      "lexicalClass": "Reserved",
+      "category": "parameter_reference_or_constraint",
+      "description": "Passes, returns, or stores an alias to an existing variable or storage location."
+    },
+    {
+      "keyword": "where",
+      "lexicalClass": "Contextual",
+      "category": "parameter_reference_or_constraint",
+      "description": "Introduces generic constraints or filters elements in a LINQ query."
+    },
+    {
+      "keyword": "notnull",
+      "lexicalClass": "Contextual",
+      "category": "parameter_reference_or_constraint",
+      "description": "Constrains a generic type parameter to nonnullable types under nullable analysis."
+    },
+    {
+      "keyword": "allows",
+      "lexicalClass": "Contextual",
+      "category": "parameter_reference_or_constraint",
+      "description": "Introduces an anti-constraint, currently used as allows ref struct for ref-like type arguments."
+    },
+    {
+      "keyword": "scoped",
+      "lexicalClass": "Contextual",
+      "category": "parameter_reference_or_constraint",
+      "description": "Restricts the escape lifetime of a ref-like parameter, local, or return value."
+    },
+    {
+      "keyword": "async",
+      "lexicalClass": "Contextual",
+      "category": "asynchronous_keyword",
+      "description": "Marks a method, lambda, or anonymous function that can use await."
+    },
+    {
+      "keyword": "await",
+      "lexicalClass": "Contextual",
+      "category": "asynchronous_keyword",
+      "description": "Suspends asynchronous execution until an awaitable operation completes without blocking the thread."
+    },
+    {
+      "keyword": "from",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Introduces a query data source and range variable."
+    },
+    {
+      "keyword": "select",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Projects query elements into the result sequence."
+    },
+    {
+      "keyword": "group",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Groups query elements by a key."
+    },
+    {
+      "keyword": "into",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Continues a query using the result of a group, join, or select clause."
+    },
+    {
+      "keyword": "orderby",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Sorts query results by one or more keys."
+    },
+    {
+      "keyword": "join",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Correlates elements from two data sources by matching keys."
+    },
+    {
+      "keyword": "let",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Introduces a query range variable for a computed intermediate value."
+    },
+    {
+      "keyword": "on",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Introduces the left key expression of a query join clause."
+    },
+    {
+      "keyword": "equals",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Separates the left and right key expressions of a query join clause."
+    },
+    {
+      "keyword": "by",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Introduces the key expression of a group clause."
+    },
+    {
+      "keyword": "ascending",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Requests ascending ordering for a query sort key."
+    },
+    {
+      "keyword": "descending",
+      "lexicalClass": "Contextual",
+      "category": "query_expression_keyword",
+      "description": "Requests descending ordering for a query sort key."
+    },
+    {
+      "keyword": "extern",
+      "lexicalClass": "Reserved",
+      "category": "interop_or_unsafe_keyword",
+      "description": "Declares an externally implemented member or introduces an external assembly alias."
+    },
+    {
+      "keyword": "unsafe",
+      "lexicalClass": "Reserved",
+      "category": "interop_or_unsafe_keyword",
+      "description": "Permits pointer operations and other code requiring an unsafe context."
+    },
+    {
+      "keyword": "fixed",
+      "lexicalClass": "Reserved",
+      "category": "interop_or_unsafe_keyword",
+      "description": "Pins managed storage for pointer access or declares a fixed-size buffer."
+    },
+    {
+      "keyword": "managed",
+      "lexicalClass": "Contextual",
+      "category": "interop_or_unsafe_keyword",
+      "description": "Specifies a managed function-pointer calling convention."
+    },
+    {
+      "keyword": "unmanaged",
+      "lexicalClass": "Contextual",
+      "category": "interop_or_unsafe_keyword",
+      "description": "Specifies an unmanaged function-pointer convention or constrains T to unmanaged types."
+    },
+    {
+      "keyword": "Cdecl",
+      "lexicalClass": "Contextual (interop)",
+      "category": "interop_or_unsafe_keyword",
+      "description": "Selects the C declaration unmanaged function-pointer calling convention."
+    },
+    {
+      "keyword": "Fastcall",
+      "lexicalClass": "Contextual (interop)",
+      "category": "interop_or_unsafe_keyword",
+      "description": "Selects the Fastcall unmanaged function-pointer calling convention."
+    },
+    {
+      "keyword": "Stdcall",
+      "lexicalClass": "Contextual (interop)",
+      "category": "interop_or_unsafe_keyword",
+      "description": "Selects the Standard Call unmanaged function-pointer calling convention."
+    },
+    {
+      "keyword": "Thiscall",
+      "lexicalClass": "Contextual (interop)",
+      "category": "interop_or_unsafe_keyword",
+      "description": "Selects the Thiscall unmanaged function-pointer calling convention."
+    },
+    {
+      "keyword": "var",
+      "lexicalClass": "Contextual",
+      "category": "compiler_context_keyword",
+      "description": "Requests compiler inference for a local variable type or captures a value in a var pattern."
+    },
+    {
+      "keyword": "args",
+      "lexicalClass": "Contextual",
+      "category": "compiler_context_keyword",
+      "description": "Names the compiler-provided string[] command-line argument variable in top-level statements."
+    }
+  ]
+}

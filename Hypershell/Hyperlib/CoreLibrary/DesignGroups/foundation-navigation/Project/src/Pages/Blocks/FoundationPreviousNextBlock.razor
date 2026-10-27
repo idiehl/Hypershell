@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-previous-next">
+<nav class="previous-next" aria-label="Chapter navigation"><a href="@Context.Text("url")"><small>← Previous</small><strong>@Cell(Rows.FirstOrDefault() ?? "The introduction",0)</strong></a><a href="@Context.Text("url")"><small>Next →</small><strong>@Cell(Rows.LastOrDefault() ?? "Further reading",0)</strong></a></nav>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

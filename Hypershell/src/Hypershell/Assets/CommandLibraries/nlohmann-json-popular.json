@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "nlohmann-json-popular",
+  "displayName": "nlohmann/json",
+  "description": "Curated nlohmann/json starter recipes for the C++ Command Builder. The dependency is referenced, not bundled.",
+  "language": "C++",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "JSON for Modern C++",
+  "ecosystem": "C++",
+  "targetVersion": "3.12.0",
+  "sourceVersion": "3.12.0 documentation · curated 2026-08-17",
+  "sourceUrl": "https://json.nlohmann.me/",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Project dependency only: add the nlohmann/json headers to a C++ project; the isolated snippet runner does not resolve external packages.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "c++",
+    "popular library",
+    "nlohmann/json",
+    "json",
+    "parse",
+    "serialize",
+    "header only"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/nlohmann-json-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/nlohmann-json-popular.guides.json"
+  ],
+  "legacyIds": []
+}

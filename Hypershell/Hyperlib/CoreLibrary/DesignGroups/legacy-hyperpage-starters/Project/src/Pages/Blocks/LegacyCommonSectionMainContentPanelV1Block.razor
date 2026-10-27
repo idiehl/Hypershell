@@ -1,0 +1,34 @@
+@* Source: common.section.main-content-panel.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-29092bbf2c63" data-vp-id="29092bbf2c6308634d21bfca17b49e72">
+    <div class="vp-38af72d35cc2" data-vp-id="38af72d35cc2cbb7a447bc5122e201b4" role="main">
+        <h1 class="vp-09b2606bb16a" data-field="text-2">
+            @(Context.Text("text-2"))
+        </h1>
+        <div class="vp-0462edd38070" data-vp-id="0462edd380706461fbbeaf950a106dc4">
+            <span class="vp-210edce6fe25" data-field="text-4" data-vp-id="210edce6fe256fc5b311402c52b37799">
+                @(Context.Text("text-4"))
+            </span>
+            <span class="vp-1563d5459758" data-field="text-5" data-vp-id="1563d545975826338865d98f70ed2c45">
+                @(Context.Text("text-5"))
+            </span>
+            <span class="vp-c23115de03e9" data-field="text-6" data-vp-id="c23115de03e955d73c8d5d18a7b9bf7b">
+                @(Context.Text("text-6"))
+            </span>
+        </div>
+        <p class="vp-fc7347cdea4c" data-field="text-7" data-vp-id="fc7347cdea4c019ee476159ce78dde9c">
+            @(Context.Text("text-7"))
+        </p>
+        <p class="vp-93d5e2424e09" data-field="text-8" data-vp-id="93d5e2424e092ce72a93bfb08ba715ca">
+            @(Context.Text("text-8"))
+        </p>
+    </div>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "event-poster",
+  "title": "Event Poster",
+  "description": "A centered oversized poster, three schedule columns, venue map, and registration preview.",
+  "category": "Events",
+  "sourceTemplateId": "event-poster"
+}

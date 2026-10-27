@@ -1,0 +1,21 @@
+/* A compact control stands in for the real, remembered Cluster contents. */
+.ms-node.ms-cluster-button{padding:0!important;cursor:pointer;border:0!important;border-radius:0;background:transparent!important;overflow:visible;isolation:isolate;touch-action:none}
+.ms-node.ms-cluster-button[data-shape=circle]{border-radius:50%}
+.ms-cluster-button>.ms-node-background,.ms-cluster-button>.ms-node-border,.ms-cluster-button>.ms-node-header,.ms-cluster-button>.ms-node-body{display:none!important}
+.ms-cluster-emblem{position:absolute;inset:var(--ms-shape-inset-y,0px) var(--ms-shape-inset-x,0px);display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--ms-accent,#77d7c4) 65%,transparent);border-radius:inherit;background:radial-gradient(circle at 38% 27%,color-mix(in srgb,var(--ms-accent,#77d7c4) 19%,#17232b),var(--ms-fill,#111e26) 76%);box-shadow:inset 0 0 18px color-mix(in srgb,var(--ms-accent,#77d7c4) 8%,transparent),0 3px 12px #0002;color:var(--ms-accent,#77d7c4);pointer-events:none;transition:box-shadow .2s,border-color .2s}
+.ms-cluster-button[data-shape=square]>.ms-cluster-emblem{border-radius:3px}
+.ms-cluster-artwork{display:block;width:82%;height:82%;overflow:visible;transform-origin:center;transition:transform .25s}
+.ms-cluster-orbit{transform-origin:32px 32px;animation:ms-cluster-orbit 20s linear infinite}
+.ms-cluster-orbit-track{fill:none;stroke:currentColor;stroke-width:.65;stroke-opacity:.32;stroke-dasharray:4 6}
+.ms-cluster-satellite{fill:currentColor;fill-opacity:.75;stroke:currentColor;stroke-width:.5}
+.ms-cluster-core{transform-origin:32px 32px;animation:ms-cluster-breathe 4s ease-in-out infinite}
+.ms-cluster-core-outline{fill:none;stroke:currentColor;stroke-width:1;stroke-opacity:.65}
+.ms-cluster-core-fill{fill:currentColor;fill-opacity:.13;stroke:currentColor;stroke-width:1.1}
+.ms-cluster-core-light{fill:currentColor}
+.ms-cluster-button:hover>.ms-cluster-emblem,.ms-cluster-button:focus-visible>.ms-cluster-emblem{border-color:var(--ms-accent,#77d7c4);box-shadow:inset 0 0 23px color-mix(in srgb,var(--ms-accent,#77d7c4) 16%,transparent),0 0 17px color-mix(in srgb,var(--ms-accent,#77d7c4) 18%,transparent)}
+.ms-cluster-button:hover .ms-cluster-artwork,.ms-cluster-button:focus-visible .ms-cluster-artwork{transform:scale(1.09)}
+.ms-cluster-name{position:absolute;left:50%;bottom:calc(100% + 8px / var(--ms-camera-scale,1));transform:translate(-50%,3px);max-width:calc(260px / var(--ms-camera-scale,1));width:max-content;padding:calc(5px / var(--ms-camera-scale,1)) calc(9px / var(--ms-camera-scale,1));border:1px solid color-mix(in srgb,var(--ms-accent,#77d7c4) 35%,transparent);border-radius:4px;background:#101d27f5;color:var(--ms-text-color,#dfefeb);font:500 calc(12px / var(--ms-camera-scale,1))/1.35 var(--ms-font,Segoe UI,system-ui,sans-serif);text-align:center;white-space:normal;overflow-wrap:anywhere;opacity:0;visibility:hidden;transition:opacity .15s,transform .15s;box-shadow:0 3px 12px #0002;z-index:20}
+.ms-cluster-button:hover .ms-cluster-name,.ms-cluster-button:focus-visible .ms-cluster-name{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@keyframes ms-cluster-orbit{to{transform:rotate(360deg)}}
+@keyframes ms-cluster-breathe{0%,100%{transform:scale(.96);opacity:.75}50%{transform:scale(1.04);opacity:1}}
+@media(prefers-reduced-motion:reduce){.ms-cluster-orbit,.ms-cluster-core{animation:none}.ms-cluster-artwork,.ms-cluster-emblem,.ms-cluster-name{transition:none}}

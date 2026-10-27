@@ -1,0 +1,103 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "Night School / Make Together",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "poster",
+      "type": "banner",
+      "region": "main",
+      "values": {
+        "eyebrow": "ONE EVENING / MANY POSSIBILITIES",
+        "title": "Night School / Make Together",
+        "text": "Make together. Share what you know. Leave with a first attempt.",
+        "src": "/media/base-templates/event-poster.svg",
+        "alt": "Abstract evening workshop poster",
+        "align": "center"
+      }
+    },
+    {
+      "id": "schedule-heading",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "THE EVENING",
+        "style": "line"
+      }
+    },
+    {
+      "id": "doors",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "18:00 / Arrive",
+        "text": "Meet the room, collect materials, and find a place to begin.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "workshop",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "18:30 / Make",
+        "text": "A guided introduction followed by time to experiment.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "share",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "20:00 / Share",
+        "text": "A short, friendly show-and-tell. Unfinished work is welcome.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "venue",
+      "type": "map",
+      "region": "main",
+      "values": {
+        "title": "Find the workshop",
+        "latitude": 45.52,
+        "longitude": -122.68,
+        "zoom": 12,
+        "caption": "Example venue area. Replace with the real event coordinates.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "access",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Before you come",
+        "text": "Bring curiosity. Materials are provided. Add your accessibility and arrival information here.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "registration",
+      "type": "form",
+      "region": "main",
+      "values": {
+        "title": "Save a place",
+        "description": "Registration form demonstration; no booking or submission occurs."
+      }
+    },
+    {
+      "id": "event-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Night School / An example event page"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

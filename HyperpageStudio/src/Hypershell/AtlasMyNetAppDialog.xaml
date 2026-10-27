@@ -1,0 +1,267 @@
+<Window x:Class="Hypershell.AtlasMyNetAppDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="760"
+        Height="790"
+        MinWidth="680"
+        MinHeight="620"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        FontFamily="{StaticResource UiFontFamily}">
+  <Window.Resources>
+    <Style x:Key="MyNetFieldLabelStyle" TargetType="{x:Type TextBlock}">
+      <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Margin" Value="0,8,0,4" />
+    </Style>
+  </Window.Resources>
+  <Border Background="{StaticResource PanelBrush}"
+          BorderBrush="#2E5D86"
+          BorderThickness="1"
+          CornerRadius="10"
+          ClipToBounds="True">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="56" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="62" />
+      </Grid.RowDefinitions>
+
+      <Border Background="#10151B"
+              BorderBrush="{StaticResource BorderBrush}"
+              BorderThickness="0,0,0,1"
+              MouseLeftButtonDown="TitleBarMouseLeftButtonDown">
+        <Grid Margin="16,0,8,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="&#xE968;"
+                     FontFamily="Segoe Fluent Icons"
+                     FontSize="20"
+                     Foreground="{StaticResource SecondaryVividBrush}"
+                     VerticalAlignment="Center"
+                     Margin="0,0,11,0" />
+          <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock x:Name="HeadingText"
+                       FontSize="17"
+                       FontWeight="SemiBold"
+                       Foreground="{StaticResource ForegroundBrush}" />
+            <TextBlock Text="Register app"
+                       FontSize="9.5"
+                       Foreground="{StaticResource MutedForegroundBrush}" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Click="CancelClick"
+                  Style="{StaticResource HeaderIconButtonStyle}"
+                  Width="34"
+                  Height="34">
+            <Path Data="M 3 3 L 13 13 M 13 3 L 3 13"
+                  Stroke="{StaticResource ForegroundBrush}"
+                  StrokeThickness="1.5" />
+          </Button>
+        </Grid>
+      </Border>
+
+      <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="22,12,22,18">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="0,0,8,0">
+              <TextBlock Text="NAME" Style="{StaticResource MyNetFieldLabelStyle}" />
+              <TextBox x:Name="DisplayNameTextBox" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="8,0,0,0">
+              <TextBlock Text="ID" Style="{StaticResource MyNetFieldLabelStyle}" />
+              <TextBox x:Name="IdTextBox" FontFamily="{StaticResource CodeFontFamily}" />
+            </StackPanel>
+          </Grid>
+
+          <CheckBox x:Name="NativeAppCheckBox"
+                    Content="Native desktop app"
+                    ToolTip="Launch the app in its own window. No web server or port is required."
+                    Checked="NativeAppChanged"
+                    Unchecked="NativeAppChanged"
+                    Margin="1,12,0,0" />
+          <StackPanel x:Name="WebAddressPanel">
+            <TextBlock Text="URL" Style="{StaticResource MyNetFieldLabelStyle}" />
+            <TextBox x:Name="UrlTextBox"
+                     FontFamily="{StaticResource CodeFontFamily}"
+                     ToolTip="Port placeholder" />
+            <TextBlock Text="PORTS"
+                       Style="{StaticResource MyNetFieldLabelStyle}" />
+            <TextBox x:Name="PortsTextBox"
+                     FontFamily="{StaticResource CodeFontFamily}"
+                     ToolTip="Ports or ranges" />
+          </StackPanel>
+
+          <Border Margin="0,14,0,4"
+                  Padding="10"
+                  BorderBrush="{StaticResource BorderBrush}"
+                  BorderThickness="1"
+                  Background="#FF0D1117">
+            <StackPanel>
+              <TextBlock x:Name="StartCommandHeading" Text="START COMMAND (OPTIONAL)"
+                         Foreground="{StaticResource AccentBrush}"
+                         FontWeight="SemiBold"
+                         FontSize="11" />
+              <TextBlock Text="No shell parsing"
+                         Foreground="{StaticResource MutedForegroundBrush}"
+                         FontSize="10"
+                         TextWrapping="Wrap"
+                         Margin="0,2,0,0" />
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                  <TextBlock Text="EXECUTABLE" Style="{StaticResource MyNetFieldLabelStyle}" />
+                  <TextBox x:Name="LaunchExecutableTextBox"
+                           FontFamily="{StaticResource CodeFontFamily}" />
+                </StackPanel>
+                <Button Grid.Column="1"
+                        Content="Browse…"
+                        Click="BrowseLaunchExecutableClick"
+                        VerticalAlignment="Bottom"
+                        Margin="7,0,0,0" />
+              </Grid>
+              <TextBlock Text="ARGUMENTS" Style="{StaticResource MyNetFieldLabelStyle}" />
+              <TextBox x:Name="LaunchArgumentsTextBox"
+                       AcceptsReturn="True"
+                       Height="62"
+                       VerticalScrollBarVisibility="Auto"
+                       FontFamily="{StaticResource CodeFontFamily}" />
+              <TextBlock Text="DIRECTORY" Style="{StaticResource MyNetFieldLabelStyle}" />
+              <TextBox x:Name="WorkingDirectoryTextBox"
+                       FontFamily="{StaticResource CodeFontFamily}" />
+              <TextBlock Text="ENVIRONMENT" Style="{StaticResource MyNetFieldLabelStyle}" />
+              <TextBox x:Name="EnvironmentTextBox"
+                       AcceptsReturn="True"
+                       Height="58"
+                       VerticalScrollBarVisibility="Auto"
+                       FontFamily="{StaticResource CodeFontFamily}" />
+            </StackPanel>
+          </Border>
+
+          <Border x:Name="HealthCheckPanel"
+                  Margin="0,8,0,4"
+                  Padding="10"
+                  BorderBrush="{StaticResource BorderBrush}"
+                  BorderThickness="1"
+                  Background="#FF0D1117">
+            <StackPanel>
+              <TextBlock Text="HEALTH CHECK"
+                         Foreground="{StaticResource AccentBrush}"
+                         FontWeight="SemiBold"
+                         FontSize="11" />
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="2*" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="0,0,8,0">
+                  <TextBlock Text="PATH" Style="{StaticResource MyNetFieldLabelStyle}" />
+                  <TextBox x:Name="HealthPathTextBox" FontFamily="{StaticResource CodeFontFamily}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="8,0,0,0">
+                  <TextBlock Text="STATUS" Style="{StaticResource MyNetFieldLabelStyle}" />
+                  <TextBox x:Name="HealthStatusTextBox" />
+                </StackPanel>
+              </Grid>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="0,0,8,0">
+                  <TextBlock Text="HEADER" Style="{StaticResource MyNetFieldLabelStyle}" />
+                  <TextBox x:Name="HealthHeaderNameTextBox" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="8,0,0,0">
+                  <TextBlock Text="VALUE" Style="{StaticResource MyNetFieldLabelStyle}" />
+                  <TextBox x:Name="HealthHeaderValueTextBox" />
+                </StackPanel>
+              </Grid>
+            </StackPanel>
+          </Border>
+
+          <Border Margin="0,8,0,4"
+                  Padding="10"
+                  BorderBrush="{StaticResource BorderBrush}"
+                  BorderThickness="1"
+                  Background="#FF0D1117">
+            <StackPanel>
+              <TextBlock Text="STOP BEHAVIOR"
+                         Foreground="{StaticResource AccentBrush}"
+                         FontWeight="SemiBold"
+                         FontSize="11" />
+              <TextBlock Text="MODE" Style="{StaticResource MyNetFieldLabelStyle}" />
+              <ComboBox x:Name="StopModeComboBox" SelectionChanged="StopModeSelectionChanged" />
+              <StackPanel x:Name="StopCommandPanel">
+                <TextBlock Text="STOP" Style="{StaticResource MyNetFieldLabelStyle}" />
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                  </Grid.ColumnDefinitions>
+                  <TextBox x:Name="StopExecutableTextBox"
+                           FontFamily="{StaticResource CodeFontFamily}"
+                           Margin="0,0,7,0" />
+                  <Button Grid.Column="1"
+                          Content="Browse…"
+                          Click="BrowseStopExecutableClick"
+                          Padding="10,4" />
+                </Grid>
+                <TextBlock Text="ARGUMENTS" Style="{StaticResource MyNetFieldLabelStyle}" />
+                <TextBox x:Name="StopArgumentsTextBox"
+                         AcceptsReturn="True"
+                         Height="58"
+                         VerticalScrollBarVisibility="Auto"
+                         FontFamily="{StaticResource CodeFontFamily}" />
+                <TextBlock Text="DIRECTORY" Style="{StaticResource MyNetFieldLabelStyle}" />
+                <TextBox x:Name="StopWorkingDirectoryTextBox" FontFamily="{StaticResource CodeFontFamily}" />
+              </StackPanel>
+            </StackPanel>
+          </Border>
+
+          <CheckBox x:Name="AllowExternalResourcesCheckBox"
+                    Content="Public access"
+                    Margin="1,12,0,0" />
+          <TextBlock x:Name="StatusText"
+                     Foreground="#FFFF7B72"
+                     TextWrapping="Wrap"
+                     Margin="1,9,0,0" />
+        </StackPanel>
+      </ScrollViewer>
+
+      <Border Grid.Row="2"
+              Background="#10151B"
+              BorderBrush="{StaticResource BorderBrush}"
+              BorderThickness="0,1,0,0">
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="18,11">
+          <Button Content="Cancel"
+                  Click="CancelClick"
+                  Padding="16,7"
+                  Margin="0,0,8,0" />
+          <Button Content="Save"
+                  Click="SaveClick"
+                  Padding="18,7"
+                  Background="{StaticResource AccentHoverBrush}"
+                  IsDefault="True" />
+        </StackPanel>
+      </Border>
+    </Grid>
+  </Border>
+</Window>

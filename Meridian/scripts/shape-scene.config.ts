@@ -1,0 +1,2 @@
+import { defineConfig } from '@playwright/test';
+export default defineConfig({ testDir: '../tests', testMatch: ['shape-collision.browser.ts', 'selection-scene.browser.ts'], workers: 1, timeout: 45000, use: { viewport: { width: 1500, height: 950 }, trace: 'retain-on-failure', screenshot: 'only-on-failure' }, projects: [{ name: 'chromium', use: { browserName: 'chromium' } }], outputDir: '../output/shape-scene-qa' });

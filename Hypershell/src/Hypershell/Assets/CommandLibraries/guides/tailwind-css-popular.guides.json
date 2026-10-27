@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "tailwind-css-popular",
+  "guides": [
+    {
+      "entryId": "tailwind-css-popular.import-tailwind",
+      "definition": "Adds the Tailwind CSS v4 import to an application stylesheet. Editor/build-tool content: configure Tailwind CSS 4 in the target project; Hypershell does not run the Tailwind compiler.",
+      "parameters": [
+        {
+          "name": "packageImport",
+          "displayName": "Package import",
+          "placeholder": "packageImport",
+          "description": "Quoted Tailwind package import.",
+          "typeName": "CSS string",
+          "defaultValue": "\"tailwindcss\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Import Tailwind",
+          "code": "@import \"tailwindcss\";",
+          "explanation": "Tailwind v4 discovers source classes automatically in common setups; configure explicit sources when project structure requires them."
+        }
+      ]
+    },
+    {
+      "entryId": "tailwind-css-popular.theme-token",
+      "definition": "Adds a Tailwind v4 theme variable that generates matching utility classes. Editor/build-tool content: configure Tailwind CSS 4 in the target project; Hypershell does not run the Tailwind compiler.",
+      "parameters": [
+        {
+          "name": "tokenNamespace",
+          "displayName": "Token namespace",
+          "placeholder": "tokenNamespace",
+          "description": "Namespace such as color, font, or spacing.",
+          "typeName": "Tailwind theme namespace",
+          "defaultValue": "color",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "tokenName",
+          "displayName": "Token name",
+          "placeholder": "tokenName",
+          "description": "Project-specific token name.",
+          "typeName": "CSS identifier",
+          "defaultValue": "atlas",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "Valid CSS value for the token.",
+          "typeName": "CSS value",
+          "defaultValue": "oklch(0.68 0.18 240)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Define a brand color",
+          "code": "@theme {\n  --color-atlas: oklch(0.68 0.18 240);\n}",
+          "explanation": "Theme namespaces connect design tokens to generated utilities; use a stable naming convention shared with the design system."
+        }
+      ]
+    },
+    {
+      "entryId": "tailwind-css-popular.custom-utility",
+      "definition": "Creates a Tailwind v4 utility backed by ordinary CSS declarations. Editor/build-tool content: configure Tailwind CSS 4 in the target project; Hypershell does not run the Tailwind compiler.",
+      "parameters": [
+        {
+          "name": "utilityName",
+          "displayName": "Utility name",
+          "placeholder": "utilityName",
+          "description": "Class name without the leading dot.",
+          "typeName": "CSS identifier",
+          "defaultValue": "text-balance",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "CSS property set by the utility.",
+          "typeName": "CSS property",
+          "defaultValue": "text-wrap",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "CSS property value.",
+          "typeName": "CSS value",
+          "defaultValue": "balance",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Add a balanced text utility",
+          "code": "@utility text-balance {\n  text-wrap: balance;\n}",
+          "explanation": "@utility registers a class that participates in Tailwind variants and build-time usage detection."
+        }
+      ]
+    }
+  ]
+}

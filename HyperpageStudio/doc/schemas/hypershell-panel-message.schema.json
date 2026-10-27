@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hypershell:schema:panel-message-request:1",
+  "title": "Hypershell extension panel host request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol", "version", "type", "id", "method"],
+  "properties": {
+    "protocol": { "const": "hypershell.panel" },
+    "version": { "const": 1 },
+    "type": { "const": "request" },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$"
+    },
+    "method": {
+      "enum": [
+        "host.ready",
+        "host.getContext",
+        "state.get",
+        "state.set",
+        "events.subscribe"
+      ]
+    },
+    "params": { "type": "object" }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "method": { "const": "host.ready" },
+        "params": { "$ref": "#/$defs/emptyParams" }
+      }
+    },
+    {
+      "properties": {
+        "method": { "const": "host.getContext" },
+        "params": { "$ref": "#/$defs/emptyParams" }
+      }
+    },
+    {
+      "properties": {
+        "method": { "const": "state.get" },
+        "params": { "$ref": "#/$defs/emptyParams" }
+      }
+    },
+    {
+      "required": ["params"],
+      "properties": {
+        "method": { "const": "state.set" },
+        "params": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["value"],
+          "properties": {
+            "value": { "type": "object" }
+          }
+        }
+      }
+    },
+    {
+      "required": ["params"],
+      "properties": {
+        "method": { "const": "events.subscribe" },
+        "params": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["events"],
+          "properties": {
+            "events": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "const": "host.contextChanged" }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "emptyParams": {
+      "type": "object",
+      "maxProperties": 0
+    }
+  }
+}

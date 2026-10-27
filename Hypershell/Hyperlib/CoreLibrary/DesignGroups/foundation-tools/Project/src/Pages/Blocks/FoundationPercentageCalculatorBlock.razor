@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-percentage-calculator">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><div class="parallel"><label>Percentage<input type="number" @bind="percent" @bind:event="oninput" /></label><label>Of amount<input type="number" @bind="amount" @bind:event="oninput" /></label></div><output class="tool-result">@percent% of @amount = @((amount*percent/100).ToString("0.##"))</output>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private decimal percent=15, amount=240;
+}

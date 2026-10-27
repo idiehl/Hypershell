@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "atlas-website-bio",
+  "title": "Atlas \u00B7 People \u0026 biography",
+  "description": "Portrait, biographical timeline and contact links adapted from the current Bio page.",
+  "category": "Atlas website",
+  "sourceTemplateId": "atlas.website.v1"
+}

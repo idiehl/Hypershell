@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "dom-standard",
+  "guides": [
+    {
+      "entryId": "web.query-selector",
+      "definition": "querySelector parses a selector and returns the first matching descendant in tree order. Code must handle the possibility that nothing matches.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The binding that receives the element or null.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "status",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "selector",
+          "displayName": "Selector",
+          "placeholder": "selector",
+          "description": "A CSS selector evaluated against the document.",
+          "typeName": "CSS selector",
+          "defaultValue": "#status",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "Replacement text for the matched element.",
+          "typeName": "Plain text",
+          "defaultValue": "Ready",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Update a status element",
+          "code": "const status = document.querySelector(\"#status\");\nif (status) {\n  status.textContent = \"Ready\";\n}",
+          "explanation": "The null check prevents an exception when the page does not contain the expected element."
+        }
+      ]
+    },
+    {
+      "entryId": "web.add-event-listener",
+      "definition": "addEventListener registers a listener on an EventTarget. The callback runs when a matching event reaches the target during the configured phase.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The selected event target binding.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "button",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "selector",
+          "displayName": "Selector",
+          "placeholder": "selector",
+          "description": "A selector locating the event target.",
+          "typeName": "CSS selector",
+          "defaultValue": "#action",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "event",
+          "displayName": "Event type",
+          "placeholder": "event",
+          "description": "The event type without an on prefix.",
+          "typeName": "Event type",
+          "defaultValue": "click",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "statement",
+          "displayName": "Handler body",
+          "placeholder": "statement",
+          "description": "Browser JavaScript executed for the event.",
+          "typeName": "JavaScript statement",
+          "defaultValue": "console.log(\"Clicked\");",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Handle a button click",
+          "code": "const button = document.querySelector(\"#action\");\nbutton?.addEventListener(\"click\", () => {\n  console.log(\"Clicked\");\n});",
+          "explanation": "Optional chaining registers the listener only when the button exists."
+        }
+      ]
+    },
+    {
+      "entryId": "web.class-list-toggle",
+      "definition": "classList exposes an element's class tokens as a DOMTokenList. toggle changes one token and returns whether it is present afterward.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The selected element binding.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "panel",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "selector",
+          "displayName": "Selector",
+          "placeholder": "selector",
+          "description": "A selector locating the element.",
+          "typeName": "CSS selector",
+          "defaultValue": ".panel",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "className",
+          "displayName": "Class",
+          "placeholder": "className",
+          "description": "The class token to toggle.",
+          "typeName": "Class token",
+          "defaultValue": "is-open",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Toggle an open state",
+          "code": "const panel = document.querySelector(\".panel\");\npanel?.classList.toggle(\"is-open\");",
+          "explanation": "The element's class attribute and matching CSS state change without rebuilding the element."
+        }
+      ]
+    },
+    {
+      "entryId": "web.create-element",
+      "definition": "createElement constructs an element in the document without attaching it. append adds the node or text at the end of a parent node's children.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The binding for the new element.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "item",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "tag",
+          "displayName": "Tag name",
+          "placeholder": "tag",
+          "description": "The local name of the HTML element to create.",
+          "typeName": "HTML tag name",
+          "defaultValue": "li",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "Text content placed in the new element.",
+          "typeName": "Plain text",
+          "defaultValue": "Verify",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parent",
+          "displayName": "Parent selector",
+          "placeholder": "parent",
+          "description": "A selector locating the insertion parent.",
+          "typeName": "CSS selector",
+          "defaultValue": "#steps",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Append a list item",
+          "code": "const item = document.createElement(\"li\");\nitem.textContent = \"Verify\";\ndocument.querySelector(\"#steps\")?.append(item);",
+          "explanation": "textContent inserts text without parsing it as HTML, then append attaches the finished item to the list."
+        }
+      ]
+    }
+  ]
+}

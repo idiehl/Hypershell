@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "maker-workbench",
+  "title": "Maker Workbench",
+  "description": "A practical project sheet with materials, build steps, calculator, and tool checklist.",
+  "category": "Making",
+  "sourceTemplateId": "maker-workbench"
+}

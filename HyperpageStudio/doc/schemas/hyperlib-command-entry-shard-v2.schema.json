@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hypershell.dev/schemas/hyperlib-command-entry-shard-v2.schema.json",
+  "title": "Hyperlib command entry shard v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "libraryId", "entries"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "libraryId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{1,127}$"
+    },
+    "entries": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": {
+        "$ref": "hyperlib-command-library-v2.schema.json#/$defs/entry"
+      }
+    }
+  }
+}

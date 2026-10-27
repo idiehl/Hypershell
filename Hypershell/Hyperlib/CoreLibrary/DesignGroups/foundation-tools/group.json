@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "foundation-tools",
+  "title": "Tools essentials",
+  "description": "Editable tools modules. Native controls and local C# interactions; no third-party service required.",
+  "category": "Tools",
+  "sourceTemplateId": "foundation-tools"
+}

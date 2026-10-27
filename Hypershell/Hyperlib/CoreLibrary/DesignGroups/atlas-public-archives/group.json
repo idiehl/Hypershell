@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "atlas-public-archives",
+  "title": "Atlas \u00B7 Archives reader",
+  "description": "The current public Archives hierarchy, search, cards, breadcrumbs and reader layout with editable local data.",
+  "category": "Atlas website",
+  "sourceTemplateId": "atlas.website.v1"
+}

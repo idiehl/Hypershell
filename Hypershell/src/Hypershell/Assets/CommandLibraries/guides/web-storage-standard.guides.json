@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "web-storage-standard",
+  "guides": [
+    {
+      "entryId": "web.local-storage",
+      "definition": "localStorage exposes origin-scoped string key/value storage that normally persists across browsing sessions. Structured data must be serialized explicitly.",
+      "parameters": [
+        {
+          "name": "key",
+          "displayName": "Key",
+          "placeholder": "key",
+          "description": "The origin-scoped storage key.",
+          "typeName": "String",
+          "defaultValue": "theme",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The string value to store.",
+          "typeName": "String",
+          "defaultValue": "dark",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The binding that receives the stored or fallback value.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "theme",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fallback",
+          "displayName": "Fallback",
+          "placeholder": "fallback",
+          "description": "The value used when the key is absent.",
+          "typeName": "String",
+          "defaultValue": "system",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Remember a theme",
+          "code": "localStorage.setItem(\"theme\", \"dark\");\nconst theme = localStorage.getItem(\"theme\") ?? \"system\";\nconsole.log(theme);",
+          "explanation": "Both the key and value are strings; nullish coalescing handles a missing key without treating an empty stored string as absent."
+        }
+      ]
+    }
+  ]
+}

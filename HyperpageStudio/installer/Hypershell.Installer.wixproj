@@ -1,0 +1,15 @@
+<Project Sdk="WixToolset.Sdk/4.0.6">
+  <PropertyGroup>
+    <OutputType>Package</OutputType>
+    <Platform>x64</Platform>
+    <ProductVersion Condition="'$(ProductVersion)' == ''">0.1.0</ProductVersion>
+    <PublishDir Condition="'$(PublishDir)' == ''">$(MSBuildThisFileDirectory)..\output\publish\win-x64</PublishDir>
+    <OutputName>Hypershell-$(ProductVersion)-win-x64</OutputName>
+    <DefineConstants>ProductVersion=$(ProductVersion);PublishDir=$(PublishDir)</DefineConstants>
+    <SuppressIces>ICE60;ICE61</SuppressIces>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(GeneratedFilesPath)' != ''">
+    <Compile Include="$(GeneratedFilesPath)" />
+  </ItemGroup>
+</Project>

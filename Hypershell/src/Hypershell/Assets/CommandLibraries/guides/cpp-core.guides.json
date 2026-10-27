@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "cpp-core",
+  "guides": [
+    {
+      "entryId": "cpp.core.variable",
+      "definition": "A typed declaration creates an object whose lifetime and type are known at compile time.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Declare a typed value",
+          "code": "int answer = 42;\nvolatile int sink = answer;",
+          "explanation": "A typed declaration creates an object whose lifetime and type are known at compile time."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.core.conditional",
+      "definition": "An if statement evaluates a contextual Boolean expression and executes one selected branch.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Branch with if",
+          "code": "int value = 42;\nif (value > 0) { value += 1; } else { value = 0; }",
+          "explanation": "An if statement evaluates a contextual Boolean expression and executes one selected branch."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.core.counted-loop",
+      "definition": "A for statement combines initialization, a continuation condition, and an iteration expression.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Run a counted loop",
+          "code": "int total = 0;\nfor (int index = 0; index < 4; ++index) { total += index; }",
+          "explanation": "A for statement combines initialization, a continuation condition, and an iteration expression."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.core.range-loop",
+      "definition": "A range-based for statement visits each element exposed by a compatible range expression.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Iterate a native array",
+          "code": "int values[]{1, 2, 3};\nint total = 0;\nfor (int value : values) { total += value; }",
+          "explanation": "A range-based for statement visits each element exposed by a compatible range expression."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.core.lambda",
+      "definition": "A lambda expression creates an unnamed function object and explicitly controls captured state.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Create a lambda",
+          "code": "auto doubleValue = [](int value) { return value * 2; };\nvolatile int answer = doubleValue(21);",
+          "explanation": "A lambda expression creates an unnamed function object and explicitly controls captured state."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.core.class",
+      "definition": "A class defines a user type with explicit access control, constructors, state, and member functions.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Declare a class",
+          "code": "class Task { public: explicit Task(int value) : value_(value) {} int value() const { return value_; } private: int value_; };\nTask task{42};\nvolatile int answer = task.value();",
+          "explanation": "A class defines a user type with explicit access control, constructors, state, and member functions."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.core.scoped-enum",
+      "definition": "A scoped enumeration keeps enumerator names inside the enum type and does not implicitly convert to integers.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Declare a scoped enum",
+          "code": "enum class Status { pending, ready };\nStatus status = Status::ready;\n(void)status;",
+          "explanation": "A scoped enumeration keeps enumerator names inside the enum type and does not implicitly convert to integers."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.core.generic-lambda",
+      "definition": "A generic lambda uses placeholder parameter types to generate a call operator for each used argument type.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Create a generic lambda",
+          "code": "auto identity = [](auto value) { return value; };\nvolatile int answer = identity(42);",
+          "explanation": "A generic lambda uses placeholder parameter types to generate a call operator for each used argument type."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.core.structured-binding",
+      "definition": "A structured binding introduces names for the elements of an array or aggregate-like object.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Decompose an object",
+          "code": "struct Point { int x; int y; };\nauto [x, y] = Point{20, 22};\nvolatile int answer = x + y;",
+          "explanation": "A structured binding introduces names for the elements of an array or aggregate-like object."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.core.exception",
+      "definition": "A try block transfers control to a matching catch handler when an exception is thrown.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Handle an exception",
+          "code": "int result = 0;\ntry { throw 42; } catch (int value) { result = value; }\nvolatile int answer = result;",
+          "explanation": "A try block transfers control to a matching catch handler when an exception is thrown."
+        }
+      ]
+    }
+  ]
+}

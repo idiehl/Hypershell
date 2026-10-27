@@ -1,0 +1,82 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "A Little Room to Breathe",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "welcome",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "A PAUSE IN THE DAY",
+        "title": "A Little Room to Breathe",
+        "text": "A quiet page for noticing, reflecting, and taking an unhurried break.",
+        "align": "center"
+      }
+    },
+    {
+      "id": "quiet-image",
+      "type": "image",
+      "region": "main",
+      "values": {
+        "src": "/media/base-templates/wellness-retreat.svg",
+        "alt": "Soft abstract landscape",
+        "caption": "Find a comfortable place to pause.",
+        "width": 100,
+        "span": "full"
+      }
+    },
+    {
+      "id": "reflection",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Arrive where you are\n\nNotice the support beneath you, the light around you, and one sound in the room. There is nothing to complete.\n\nUse this space as a personal reflection, at your own pace.",
+        "span": "half"
+      }
+    },
+    {
+      "id": "pause-timer",
+      "type": "tool",
+      "region": "main",
+      "values": {
+        "title": "A two-minute pause",
+        "mode": "timer",
+        "initial": 120,
+        "items": "",
+        "span": "half"
+      }
+    },
+    {
+      "id": "breathing-room",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "",
+        "style": "space"
+      }
+    },
+    {
+      "id": "gentle-note",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "A thought to keep",
+        "text": "A small pause can be enough. Return to the day when you are ready.",
+        "align": "center"
+      }
+    },
+    {
+      "id": "quiet-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "A reflective layout / Adapt the words and timing to your own practice"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

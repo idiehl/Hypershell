@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 1,
+  "templateId": "foundation-typography",
+  "title": "Typography essentials",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Main content",
+      "allowedBlocks": []
+    }
+  ],
+  "blocks": [
+    {
+      "id": "lead-paragraph",
+      "title": "Lead paragraph",
+      "component": "FoundationLeadParagraphBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Lead paragraph",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "An editorial opening with generous measure and readable spacing.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-LEAD-PARAGRAPH",
+      "category": "Typography",
+      "description": "An editorial opening with generous measure and readable spacing.",
+      "sourceTemplateId": "foundation-typography",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "drop-cap",
+      "title": "Drop cap",
+      "component": "FoundationDropCapBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Drop cap",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Begin a chapter with a large initial letter, while retaining natural reading order.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-DROP-CAP",
+      "category": "Typography",
+      "description": "Begin a chapter with a large initial letter, while retaining natural reading order.",
+      "sourceTemplateId": "foundation-typography",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "pull-quote",
+      "title": "Pull quote",
+      "component": "FoundationPullQuoteBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Pull quote",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Give a memorable statement room to breathe.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-PULL-QUOTE",
+      "category": "Typography",
+      "description": "Give a memorable statement room to breathe.",
+      "sourceTemplateId": "foundation-typography",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "epigraph",
+      "title": "Epigraph",
+      "component": "FoundationEpigraphBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Epigraph",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A quiet quotation before the story begins.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-EPIGRAPH",
+      "category": "Typography",
+      "description": "A quiet quotation before the story begins.",
+      "sourceTemplateId": "foundation-typography",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "glossary",
+      "title": "Glossary",
+      "component": "FoundationGlossaryBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Glossary",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Define specialist language in an accessible term and definition list.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Affordance|A clue to what an object can do\nHierarchy|The order of importance in a composition\nMeasure|The length of a line of type",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-GLOSSARY",
+      "category": "Typography",
+      "description": "Define specialist language in an accessible term and definition list.",
+      "sourceTemplateId": "foundation-typography",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "footnotes",
+      "title": "Footnotes",
+      "component": "FoundationFootnotesBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Footnotes",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Small, numbered annotations for the end of an essay or report.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Design notes|Revised for the second edition.\nSource context|The original study is available in the bibliography.",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-FOOTNOTES",
+      "category": "Typography",
+      "description": "Small, numbered annotations for the end of an essay or report.",
+      "sourceTemplateId": "foundation-typography",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "poetry",
+      "title": "Poetry stanza",
+      "component": "FoundationPoetryBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Poetry stanza",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Preserve intentional line breaks without sacrificing responsive typography.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Between the branches, morning light\nMaps a small and quiet world.\nWe follow where the shadows end.",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-POETRY",
+      "category": "Typography",
+      "description": "Preserve intentional line breaks without sacrificing responsive typography.",
+      "sourceTemplateId": "foundation-typography",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "transcript",
+      "title": "Timed transcript",
+      "component": "FoundationTranscriptBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Timed transcript",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A readable sequence of time-stamped speaker contributions.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "00:00|Mara|Welcome to the field notes.\n00:18|Theo|Today we are listening to the woodland.\n00:42|Mara|What changes when we slow down?",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-TRANSCRIPT",
+      "category": "Typography",
+      "description": "A readable sequence of time-stamped speaker contributions.",
+      "sourceTemplateId": "foundation-typography",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "bilingual-text",
+      "title": "Parallel translation",
+      "component": "FoundationBilingualTextBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Parallel translation",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Place an original passage beside its translation for close reading.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Original \u00B7 Latin|Ars longa, vita brevis.\nTranslation \u00B7 English|Art is long, life is short.",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-BILINGUAL-TEXT",
+      "category": "Typography",
+      "description": "Place an original passage beside its translation for close reading.",
+      "sourceTemplateId": "foundation-typography",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "byline",
+      "title": "Article byline",
+      "component": "FoundationBylineBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Article byline",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A compact author, date, and reading-time record.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Field notes\n8 minute read",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-BYLINE",
+      "category": "Typography",
+      "description": "A compact author, date, and reading-time record.",
+      "sourceTemplateId": "foundation-typography",
+      "sourceLibrary": "Hyperlib Foundations"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#376954",
+      "options": []
+    },
+    {
+      "id": "background",
+      "title": "Full page background",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#f5f3ed",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#202b26",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panels",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#ffffff",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#647069",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "system",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "serif",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    },
+    {
+      "id": "variant",
+      "title": "Layout design",
+      "type": "select",
+      "required": false,
+      "defaultValue": "woodland-editorial",
+      "options": [
+        "woodland-editorial",
+        "wave-laboratory",
+        "portfolio-grid",
+        "field-journal",
+        "architecture-studio",
+        "course-notebook",
+        "recipe-kitchen",
+        "event-poster",
+        "travel-atlas",
+        "product-launch",
+        "podcast-studio",
+        "gallery-wall",
+        "documentation-desk",
+        "nonprofit-story",
+        "wellness-retreat",
+        "maker-workbench",
+        "insight-dashboard"
+      ]
+    }
+  ],
+  "defaultBlocks": [],
+  "emptyPageDefault": true
+}

@@ -1,0 +1,576 @@
+MERIDIAN WORK RULEBOOK
+======================
+Initial sectioned baseline: October 20, 2026.
+User dictation and illustrated corrections incorporated: October 20, 2026.
+Scoped positive examples and branch-expansion requirement: October 22, 2026.
+Graph-first composition and Minimum Effective Variance: October 22, 2026.
+Node Hub complementary-content guidance: October 24, 2026.
+
+Use this document to establish how Meridian Works should be created and reviewed.
+Write in ordinary language. Add, remove, or revise rules directly in the relevant
+section. A short rule is sufficient; reasons, examples, and exceptions are useful
+when they make its intent clearer.
+You may also dictate or describe rules in conversation. Codex should translate
+those ideas into clear entries in this document, preserving your intended meaning
+and organizing them under the appropriate sections.
+
+RULE STATUS
+-----------
+[ACCEPTED] An explicit requirement established by you.
+[INHERITED] An existing project instruction or documented technical constraint.
+[PROPOSED] A new starter guideline drafted by Codex for your review.
+
+Accepted and inherited rules guide authoring. Proposed rules remain suggestions
+until you accept them. A new rule you write yourself is a user instruction within
+its stated scope; it does not need a second confirmation. Blank templates, review
+notes, and unresolved questions are not rules. Do not infer approval of every
+design choice from approval of one example.
+
+
+YOUR RULES AND BASELINES
+=======================
+
+1. PURPOSE AND READING PATH
+--------------------------
+PURPOSE-001 [INHERITED]
+Compose a visual information system around the relationship being explained.
+Choose a genealogy, sequence, comparison, dependency map, annotated image, or
+another appropriate structure instead of giving every subject the same card grid.
+
+PURPOSE-002 [PROPOSED]
+Before arranging objects, state what the intended viewer should understand or do.
+Use that purpose to decide what belongs in the overview and what is supporting
+detail. A Work should have a recognizable starting point and major branches.
+
+PURPOSE-003 [PROPOSED]
+Give important branches clear names and visible ways to explore them. Put complete
+source material within reach without forcing every passage into the first view.
+
+PURPOSE-004 [ACCEPTED — user direction, October 22, 2026]
+Creating a Meridian Work is akin to creating a graph, timeline, or chart. Compose
+the relationships in systems, event timelines, and collections of data. The
+result should not resemble a web page or a traditional text document laid out
+across the workspace. Let the objects and their spatial relationships carry the
+meaning; do not substitute an introductory essay or instructions for the graph.
+This governs the Work's composition. Supporting documents and embedded reading
+surfaces may still use the document format appropriate to their contents.
+Review: hide author-facing explanations and inspect the composition itself. Its
+subject and relationships should remain apparent. See EX-008.
+
+Your additions or revisions:
+
+
+2. CHOOSING THE NODE TYPE
+------------------------
+NODE-001 [INHERITED]
+Choose Type for the node's role and behavior. Choose its displayed content and
+appearance separately. A Tag identifies a node in navigation and search; it need
+not appear as interior text. A named node with an empty interior is valid.
+
+NODE-002 [PROPOSED]
+Use the simplest node role that expresses the material:
+  - Media: a concept, passage, image/document, or hyperlink whose own content
+    remains visible when its children are disclosed outside it.
+  - Container: a group whose children belong inside a bounded workspace. Its
+    cover content is hidden while expanded and returns when collapsed.
+  - Work: a portal to another Work when a separate workspace is useful.
+  - Reference: a view or saved observation of an existing original, retaining its
+    target identity. The Reference itself is a separate node, rather than a
+    disconnected duplicate of the original entity.
+  - Utility Pivot: a deliberate bend in a route.
+  - Utility Joint: an actual shared meeting point for connected routes.
+  - Operation, input, Number, Switch, or Output: an actual functional system,
+    rather than a visual substitute for an ordinary explanatory node.
+
+NODE-003 [PROPOSED]
+Do not create extra semantic node types just to obtain a shape or visual style.
+Use appearance settings for labels, transparent backgrounds, decorative media,
+and empty shapes. A Cluster can preserve relative positions through edge locks
+or group selected branches behind one named collapse/expand button. Use a Module
+for reusable content; neither automatically asserts a conceptual relationship.
+
+NODE-004 [ACCEPTED]
+Choose the presentation medium before assuming a collection belongs in nodes.
+A document may explain a large body of material more clearly and quickly. For
+very large lists or collections of nearly identical objects, prefer a spreadsheet
+when its rows, columns, sorting, or comparison are more useful than a spatial
+diagram. Embed the appropriate document or spreadsheet in the Work when suitable,
+instead of forcing every item into a separate node.
+Review: can the viewer find, read, and compare the information more easily in the
+chosen medium? A node diagram is justified by the relationships it communicates,
+not merely by the availability of more space. A spreadsheet document and the
+Meridian Spreadsheet Display Pattern are different presentation choices.
+
+NODE-005 [ACCEPTED — user direction, October 22, 2026]
+When plotting hierarchically related objects, each object node should contain
+the object itself and nothing more. Display its concise identifying name; do
+not append category counts, descriptions of how the graph is organized, or
+instructions for exploring the branch. Put useful extended reading in a separate
+supporting document or appropriate disclosure rather than repeating it on every
+object. Preserve precise technical identifiers when a shorter name would make
+the object ambiguous. This rule does not remove the actual objects, relationships,
+attachments, or supporting information from the collection.
+Review: every visible item in the hierarchy identifies its subject directly,
+without requiring the viewer to filter out author commentary. See EX-009.
+
+NODE-006 [ACCEPTED — user Node Hub direction, October 24, 2026]
+Use a node's Hub to collect complementary material about the same subject that
+does not need to occupy the graph workspace. Keep the node's visible content
+focused on its role in the system being represented. In a Greek gods family
+tree, for example, Zeus may retain stories, artwork, video, documents and source
+links in his Hub without turning each resource into a visible family-tree node.
+Keep separate graph nodes when they represent distinct objects or meaningful
+relationships, or when their spatial arrangement contributes to the Work.
+This does not require moving every resource into a Hub or automatically
+converting existing child nodes; preserve meaningful identities and relationships.
+Review: supplementary content remains accessible from its subject, while the
+visible graph communicates the intended relationships without unrelated clutter.
+
+NODE-007 [INHERITED — installed Node Hub technical contract, October 24, 2026]
+Node Hub content is independent of structural Type and child Display Pattern.
+Only the first ordered content item, its Display slot, supplies the node's
+visible body. Choose it deliberately; keep complementary items behind it.
+The Title is separate; hiding it must not erase its identity or formatting.
+Preserve stable content-item IDs, source assets, attribution and original bytes
+when editing or reordering a Hub. Do not replace meaningful descendants or
+functional behavior merely to add supporting content. A Reference's explicit
+Hub content is a local visual override, not a change to its source or value.
+Review: inspect both the displayed item and supporting Hub readers/players in
+the actual viewer, including source access and save/reopen or publication.
+
+Your additions or revisions:
+
+
+3. CHOOSING THE CONTAINER AND DISPLAY PATTERN
+-------------------------------------------
+CONTAINER-001 [INHERITED]
+Decide bounded versus unbounded behavior separately from Display Pattern. A
+Container reveals children inside its border. Media and other unbounded parents
+disclose children outside their own tile. Every non-root node can own children;
+having children does not by itself require changing a node into a Container.
+
+CONTAINER-002 [PROPOSED]
+Choose the Display Pattern for the way the material should be explored:
+  - Freeform: unequal sizes, authored spatial relationships, maps, or diagrams.
+  - Horizontal: an ordered row or a simultaneous comparison across peers.
+  - Vertical: an ordered column or a downward reading sequence.
+  - Grid: comparable items suited to uniform tiles and a common visual rhythm.
+  - Spreadsheet: explicit addressable rows, columns, and uniform cells.
+  - Window: a larger ordered collection viewed through a smaller scrolling
+    surface, such as a reading desk or a long register.
+  - Gallery: one object at a time, when focused browsing is preferable to seeing
+    every item simultaneously. Keep the viewing frame consistent while paging.
+Ordered patterns allocate shared tile dimensions. Use Freeform when unequal node
+sizes are necessary; do not expect an ordered row to preserve arbitrary sizes.
+
+CONTAINER-003 [PROPOSED]
+Use enclosure to communicate membership and scope. Choose nesting levels that
+help navigation, with room for legible content and understandable routes. Avoid
+large unexplained empty backdrops and unnecessary layers of almost-empty groups.
+
+CONTAINER-004 [INHERITED]
+An Expansion Tray is a presentation surface for original descendants, not a new
+semantic node or a duplicate branch. Preserve its remembered position and size,
+its descendants' identities, and their expansion states through collapse/reopen.
+
+CONTAINER-005 [ACCEPTED]
+Use expandable containers to keep large Works manageable. Group substantial
+collections into meaningful branches that can hide supporting material and
+reveal the portions relevant to the current reading path. A large genealogy,
+for example, should not require every generation and dossier to remain visible
+at once. Keep the branch names and ways to reveal their contents discoverable.
+Review the initial overview and expanded branches: disclosure should reduce the
+visible footprint without losing relationships or hiding how to reach material.
+This does not require a single hierarchy when the subject is a set of equal peers.
+Failure example: EX-003 in docs/authoring-examples/README.md.
+
+Your additions or revisions:
+
+
+4. ARRANGING A WORK
+-------------------
+LAYOUT-001 [ACCEPTED]
+Decide what position and distance mean in the Work before arranging its contents.
+Space may represent time, conceptual distance, priority, or another relationship
+appropriate to the subject. Use proximity, alignment, enclosure, and separation
+to express that meaning consistently. Do not scatter objects merely to occupy
+space, or imply a relationship through placement that the content does not support.
+Review: the viewer should be able to understand why objects are near, far apart,
+above, below, or grouped together within the chosen spatial scheme.
+
+LAYOUT-002 [ACCEPTED]
+Choose orientation and reading direction for the contents of the project.
+A horizontal or vertical cascade can convey progression through a story, a period
+of time, or a sequence. A radial arrangement can place a central topic or theme
+at the center with related ideas emanating from it. Other subjects may need
+another structure. Direct the viewer's eye so its traversal supports the intended
+meaning; do not apply one arrangement to every Work.
+Review: follow the intended reading path and check that direction, branching, and
+changes of direction make the subject easier to understand.
+
+LAYOUT-003 [PROPOSED]
+Use whitespace for separation, routing, and comfortable interaction. Balance
+dense areas with clear structure; avoid both unexplained empty regions and
+crowded clusters that require tracing through unrelated content.
+
+LAYOUT-004 [ACCEPTED]
+Express the difference between a Work organized around a Master node and a Work
+composed of equally important peers. A Master may contain or connect the rest of
+the space; a peer collection need not have an artificial dominant object. Use
+orientation, grouping, and the intended path of the viewer's eye to make the
+actual structure apparent. Do not invent a hierarchy just to impose a layout.
+
+LAYOUT-005 [ACCEPTED — user correction, October 21, 2026]
+When a Work is requested as a horizontal or vertical tree, orientation describes
+the direction in which generations branch. A vertical hierarchy has roots above
+their children, with siblings spreading sideways and deeper descendants expanding
+downward. A horizontal hierarchy has roots to the left, with siblings spreading
+vertically and deeper descendants expanding to the right. A single Row, Column,
+or chain of linked nodes does not satisfy a branching hierarchy. Do not confuse
+these spatial compositions with the Horizontal/Vertical node Display Patterns.
+Use actual parent-child membership and expandable branches; retain the original
+structure and readable detail through collapse, reopen, search, and zoom. Scale
+can vary to fit a dense tree while keeping its levels intelligible.
+Review: expand at least three generations and more than one sibling branch. Check
+the growth direction, genuine hierarchy, route clearance, and useful reading scale.
+Sequences may still use a line when the content actually describes a sequence.
+Example: EX-005 in docs/authoring-examples/README.md.
+
+LAYOUT-006 [ACCEPTED — user direction, October 21, 2026]
+Name content Works for their subject, such as "C# namespaces". Do not use a layout
+style as a substitute for a useful content title. Orientation can be explained
+in supporting instructions or a comparison specifically about layout techniques.
+
+LAYOUT-007 [ACCEPTED — user direction, October 22, 2026]
+It must always be possible to open all the sub-nodes of any branch without
+overlapping or interfering with unrelated nodes. Plan the space for the fully
+expanded branch, including its deeper descendants, rather than judging clearance
+only from the collapsed overview. Use variable scale and branch spacing to retain
+clear separation and access to the surrounding material.
+Review: fully expand every descendant layer of the branch, with nearby unrelated
+nodes visible. Check node frames, text, controls, labels, and connecting routes at
+overview and useful reading scales. Opening the branch must not obscure, cover,
+or prevent interaction with those unrelated nodes. Apply this check to each
+branch; one clear example does not establish that all branches are clear.
+Children intentionally displayed inside their owning Container and necessary
+endpoint/ancestor crossings retain the distinctions in ROUTE-001. They do not
+permit interference with unrelated content.
+Approved example: EX-007 in docs/authoring-examples/README.md. The approval
+establishes this property and requirement, not certification of the entire Work.
+
+LAYOUT-008 [ACCEPTED — user direction, October 22, 2026]
+Maintain a coherent branching direction and routing rhythm within a hierarchy.
+If generations grow left to right, do not detach one peer branch on an unusually
+long diagonal route that then grows downward or back to the left. Bring that
+branch into the same directional structure as its peers. Link lengths may vary
+and nodes may be staggered to leave room for descendants and avoid collisions;
+consistent direction does not require identical lengths or perfect columns.
+Review: follow every branch from its parent through the deepest disclosed layer.
+No peer should feel disconnected because its direction or route is an unrelated
+exception. Retain changes of direction only when they express the subject itself,
+rather than an accidental arrangement. See EX-010.
+
+LAYOUT-009 [ACCEPTED — user Smart Link direction, October 24, 2026]
+Use normal links to establish the Work's basic structure and meaningful
+relationships. Use Smart Links for bulk node chains whose spacing should adapt
+as branches open and close. Keep closed peers regularly spaced; reserve extra
+space for the descendants currently revealed instead of spreading every parent
+far apart for a fully expanded system in advance. Keep other chains and visible
+content clear, and preserve the author's deliberate manual layout and locks.
+Review the compact state and repeated expansion/collapse of neighboring branches,
+checking that content and routes stay clear and that closing a branch compacts
+the managed chain without drift. Existing Works do not opt in automatically.
+
+LAYOUT-010 [ACCEPTED — user Smart Link correction, October 24, 2026]
+Center a parent on the chain of sub-nodes it reveals. Use both directions along
+the sibling axis: children opening downward spread to the left and right of
+their parent; children opening rightward spread above and below it. Preserve
+the direction in which generations open, without also forcing sibling growth
+toward only one end of the chain. Directional consistency does not require a
+downward hierarchy to drift rightward or a rightward hierarchy to drift downward.
+Use available space on both sides instead of adding every child toward the bulk
+of the surrounding system. Preserve membership order, clear routes, and dynamic
+spacing as nested branches open and close. Explicit position locks and real
+obstacles remain constraints; review and explain cases where they prevent exact
+centering rather than silently moving locked content or crossing node bodies.
+Review: expand multiple adjacent branches, including an asymmetric nested branch.
+Their parent remains centered on the child chain when unconstrained; visible
+descendants stay clear, use both sides of the sibling axis, and compact without
+drift when closed. See EX-012.
+
+Your additions or revisions:
+
+
+5. SPATIAL RELATIONSHIPS BETWEEN LINKED NODES
+-------------------------------------------
+RELATION-001 [INHERITED]
+Each link must communicate a real relationship. Label that relationship clearly
+when the meaning would otherwise be ambiguous. Keep alternative source accounts
+distinct; do not merge incompatible claims into one asserted relationship.
+
+RELATION-002 [PROPOSED]
+Arrange linked nodes so the viewer can follow their relationship and direction
+without repeatedly crossing unrelated groups. Give peers a coherent placement
+and reserve clear routes between branches. Proximity alone is not proof of a
+relationship, and distance alone does not change a link's meaning.
+
+RELATION-003 [PROPOSED]
+Use Pivots to shape routes and Utility Joints for genuine shared connections.
+Crossing lines do not become connected merely because they intersect. Do not
+insert a Joint solely to reduce visual clutter if it would imply a false shared
+connection. Routing utilities and computation Operations have different roles.
+
+Your additions or revisions:
+
+
+6. LINK CLEARANCE AND OVERLAP
+---------------------------
+ROUTE-001 [ACCEPTED]
+Never overlap a node with a link. In a composed Work, no route may pass through
+an unrelated node's visible body, title, image, caption, or controls. Do not hide
+the collision by placing the line behind the node or making its paint transparent.
+
+Necessary attachment/containment distinctions:
+  - A link meets its intended source and destination at their attachment points.
+  - A link may occupy open workspace inside its owning container.
+  - A tray tether may cross an enclosing ancestor's border to reach its original
+    source. That crossing must remain distinguishable from linking to the ancestor.
+These do not permit a route to obscure an unrelated node or its content.
+
+ROUTE-002 [ACCEPTED]
+First rearrange nodes or groups to avoid long, obstructed links. If an extended
+link is still necessary, use saved link routing joints or Pivots to carry it
+around node edges through clear space. Never accept a route through node content
+because a direct line is easier to draw. Keep labels and bends clear of bodies,
+text, and controls, and avoid ambiguous attachments.
+Use Pivots for bends and Utility Joints where a shared connection is real; routing
+must not invent a semantic connection between otherwise unrelated links.
+Review: trace every segment of the rendered route from source to destination,
+including labels. No segment may obscure an unrelated node's content.
+Failure example: EX-001 in docs/authoring-examples/README.md.
+
+ROUTE-003 [PROPOSED]
+Inspect route clearance again after moving, resizing, changing a Display Pattern,
+or expanding a branch. Check the actual rendered geometry, including visible
+labels and shaped node outlines, rather than assuming a clean overview proves
+every disclosed state is clear.
+
+Your additions or revisions:
+
+
+7. VARIABLE SCALE AND USE OF WORKSPACE
+------------------------------------
+SCALE-001 [ACCEPTED]
+Make effective use of the Work's space through variable scale. Use differing node
+and branch sizes to organize major concepts and deeper detail within one
+explorable composition. Do not force every level of information into one size.
+Apply SCALE-005 when choosing how much variation is necessary; variable scale
+does not justify extreme differences simply to compress a large Work.
+
+SCALE-002 [ACCEPTED]
+Use differences in size and proportion to express differences in importance or
+to make effective use of available space around a heavily populated node. Choose
+which purpose scale serves in the local composition and keep that meaning clear.
+A larger object does not automatically mean greater importance when its size
+serves reading or spatial fit. Smaller branches must remain useful and readable
+when explored at their intended viewing scale.
+Review overview orientation and focused reading separately: size variation should
+clarify the composition or use its space well, without distorting its meaning.
+Approved example: EX-006 in docs/authoring-examples/README.md, accepted October 22,
+2026 specifically for using variable scaling to take advantage of available space
+very effectively. That approval does not prescribe the example's palette, font,
+exact proportions, or every other design choice for future Works.
+The later correction in SCALE-005 limits unnecessary variance while preserving
+this approved use of scale. EX-006 is not approval of the entire Work's range.
+
+SCALE-003 [ACCEPTED]
+Size and frame a node appropriately for its contents. Do not solve a large body
+of text by shrinking it into an unreadable strip inside an oversized object.
+For long reading material, choose a suitable scrolling reading surface or a
+document that keeps the text readable while limiting its visible footprint.
+Consider a Window arrangement when a viewport over an ordered collection of
+child nodes suits the material. Window is a Display Pattern, not a separate
+semantic node type, and does not by itself make arbitrary body text scroll.
+Use disclosure or a separate Work when that better serves the material.
+Review: the text should use a sensible reading width and readable scale, and the
+viewer should be able to reach the complete content without enlarging a mostly
+empty frame. Choose the reading surface for the content, rather than treating
+Window as a requirement for every long passage.
+Failure example: EX-004 in docs/authoring-examples/README.md.
+
+SCALE-004 [INHERITED]
+Retain original media quality independently of a node's world-space dimensions.
+A small image frame may still need the full source when zoomed into. Vector
+geometry and text can scale sharply; a raster image still has finite source
+detail, and zoom does not invent missing resolution.
+
+SCALE-005 [ACCEPTED — user direction, October 22, 2026]
+Use Minimum Effective Variance: the least difference in node and branch scale
+that effectively serves the composition. Using available space is a good thing.
+Do not aim to fit all content into a confined page, thin strip, or perfectly
+aligned column by applying an enormous range of sizes. Spread nodes out enough
+to establish direction and make the information practical to explore. Stagger
+nodes and vary link lengths, using clear routes and saved routing utilities to
+avoid overlap before resorting to drastic size reductions.
+Prioritize how much work the viewer must do to see and read the information over
+the minimum amount of workspace occupied. Judge panning, zoom changes, reading
+scale, and branch exploration together. Variable scale remains available under
+SCALE-001 / SCALE-002, but its amount must earn its place in the local composition.
+Review: compare peer and adjacent-level sizes at useful reading scale, then open
+the whole branch. Try additional spacing or staggering before accepting a large
+scale jump. Preserve the clearance required by LAYOUT-007 and ROUTE-001 / 002.
+No fixed numerical ratio is established by this principle. See EX-011.
+
+Your additions or revisions:
+
+
+8. TEXT, IMAGES, AND VISUAL PRESENTATION
+--------------------------------------
+PRESENTATION-001 [PROPOSED]
+Use a coherent visual hierarchy for titles, explanations, captions, and controls.
+Check contrast against actual background paint and decorative images. Transparent
+or hover-revealed backgrounds must leave content understandable at rest.
+
+PRESENTATION-002 [INHERITED]
+Choose images for their explanatory value and keep source, attribution, dates,
+and identification uncertainty accessible. An artwork interprets its subject;
+it does not establish every detail of an account as fact.
+
+PRESENTATION-003 [PROPOSED]
+Decorative images should reinforce the subject without competing with the reading
+path or concealing links. Preserve their proportions unless a deliberate crop
+serves the composition. Keep complete reading material and image credits within
+reach even when the overview uses a short excerpt or a visual cover.
+
+PRESENTATION-004 [ACCEPTED]
+Maintain a coherent visual style within a Work. Establish a consistent palette,
+font families, typographic hierarchy, and overall treatment, and apply them across
+nodes and authored diagrams. An unrelated color scheme or font can make an object
+feel imported from a different Work and disrupt the composition.
+Differences should belong to the same visual system and serve the material; this
+does not require every heading, caption, and body passage to be identical. This
+rule governs authored presentation, not the historical style of a source artwork
+or facsimile.
+Review: inspect the Work as a whole and its embedded authored elements. None
+should feel out of place because it retains an unrelated default style.
+Failure example: EX-002 in docs/authoring-examples/README.md.
+
+PRESENTATION-005 [ACCEPTED — user direction, October 22, 2026]
+Keep visible node text concise and centered on the subject. Use a simple one-
+or two-word descriptive title for documents and sections where it identifies the
+content clearly. Prefer "Type Index" to "Complete type index - original CSV" and
+"Index Guide" to "Download the complete guide". Avoid redundant descriptions of
+the information being presented. Exact object identifiers retain the precision
+required by NODE-005; brevity is not a reason to misidentify a technical object.
+Review: a label names the content, rather than instructing the viewer to perform
+an action or repeating file metadata. See EX-009.
+
+PRESENTATION-006 [ACCEPTED — user direction, October 22, 2026]
+Keep the visible Work focused on its subject. Avoid breaking immersion with meta
+information: statistics about the Work or dataset, node/group counts, explanations
+of organization or layout technique, navigation instructions, "how to read" text,
+source/citation commentary, or irrelevant filenames and file-format labels.
+For example, a C++ hierarchy does not need counts of its categories or subgroups,
+instructions to choose a task and inspect a family, or a note explaining that its
+classification is not inheritance. Express the actual relationships accurately
+through the graph instead.
+Preserve attribution, source URLs, uncertainty, factual qualifications, attachment
+identities, and original file metadata where appropriate in metadata, supporting
+documents, or a deliberate source/credit surface outside the primary graph. This
+is a presentation rule, not permission to discard provenance, misrepresent a
+relationship, or omit a qualification needed to avoid a false factual assertion.
+Format labels remain appropriate when format itself is the subject of the Work.
+Review: inspect the visible graph and collapsed document nodes. Their text should
+identify the objects and relationships, without scaffolding about the workspace.
+Then verify that supporting sources and complete material remain accessible.
+See EX-008 and EX-009.
+
+PRESENTATION-007 [ACCEPTED — user node-default direction, October 24, 2026]
+Start new nodes with centered titles/text and larger, readable typography. Let
+the text composition occupy roughly 65% of the automatic node's height. A visible
+title determines its natural width so it fits completely; hidden or absent
+titles and manually sized nodes retain their appropriate width behavior.
+Explicit authored formatting and manual dimensions remain intentional choices.
+Tiny nodes may magnify temporarily on hover to a common reading size, but that
+viewer aid does not change saved geometry or justify an unreadable composition.
+Review new labels, body text and constrained reading surfaces at useful scale;
+retain the existing Minimum Effective Variance and graph-first requirements.
+
+Your additions or revisions:
+
+
+9. REVIEW AND COMPLETION
+-----------------------
+REVIEW-001 [INHERITED]
+Render the actual Work and open both overview and useful detail views. Inspect
+hierarchy, text clipping, image loading, contrast, route clearance, and navigation.
+A valid data file or a clean automated metric alone does not prove visual quality.
+
+REVIEW-002 [INHERITED]
+Exercise the behaviors used in the Work: nested disclosure, Gallery navigation,
+Window scrolling, portals, references, source access, and remembered frames.
+Verify relevant appearance and relationships after saving/reopening and publication.
+
+REVIEW-003 [INHERITED]
+Preserve existing GUIDs, original source material, attachments, references, and
+functional semantics within the requested scope. Retain the recipe, alias map,
+and review evidence. Distinguish a staged draft, a saved Work, and a publication.
+
+Your additions or revisions:
+
+
+WORK REVIEW NOTES
+=================
+Use this section while looking at an existing Work. Notes are observations;
+they become general rules when you explicitly establish a rule above.
+
+October 20, 2026: four user-supplied failure examples and their dictated lessons
+are retained in docs/authoring-examples/README.md, with permanent screenshot
+copies. The relevant rules above are ACCEPTED because the user explicitly stated
+the requirements. These records do not certify the complete illustrated Works
+or claim that their content has already been repaired.
+
+October 22, 2026: EX-008 through EX-011 retain the user's four later C++ failure
+screenshots and explicit corrections. They establish the new accepted rules above
+and refine the amount of variable scale, without withdrawing the scoped positive
+properties in EX-006 / EX-007 or certifying a complete Work. The user separately
+requested a revision of that C++ Work during the same cycle; its implementation
+and rendered verification belong to the revision evidence, not these originals.
+
+Work name and identifiers:
+Purpose and intended viewer:
+What works well:
+What should change:
+What the viewer should understand or be able to do:
+Rules illustrated, accepted, proposed, or revised:
+
+
+IDEAS AND QUESTIONS
+===================
+Unresolved possibilities and Codex's additional suggestions belong here or carry
+the PROPOSED status above. They remain proposals until you accept them.
+
+
+HOW CODEX SHOULD USE THIS DOCUMENT
+=================================
+Read the current saved file before authoring or reviewing Meridian Works.
+Apply accepted and inherited rules within their stated scope. Your current
+explicit instructions take precedence. If rules conflict and the intended
+result is unclear, identify the conflict instead of silently discarding a rule.
+
+Keep your wording intact unless you request editing or organization. An explicit
+rule or correction from you supplies acceptance within its stated scope, without
+a second confirmation. Do not silently convert Codex's proposals into axioms.
+
+When you dictate ideas, translate and transcribe them into clear rules under the
+appropriate sections. Preserve intent and qualifications, refine an existing
+rule when it covers the same idea, and retain stable IDs. Record explicit
+directions as ACCEPTED; label additional Codex suggestions PROPOSED. Retain
+concrete examples and reasons alongside the rules. Ask only when a material
+ambiguity cannot be resolved from the context. A request to document a review
+does not by itself request changes to the illustrated Works.
+
+The companion docs/WORK-AUTHORING-STANDARDS.md records status and inherited
+project guidance. It does not require you to maintain duplicate rule lists.
+Codex must read both. Save this file after editing so future sessions can read
+your changes directly instead of relying on a stale summary.

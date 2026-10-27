@@ -1,0 +1,15 @@
+**/bin/
+**/obj/
+**/node_modules/
+.git/
+.vs/
+.codex-test/
+artifacts/
+TestResults/
+tmp/
+output/
+doc/
+samples/
+tools/
+Hyperlib/
+Infrastructure/

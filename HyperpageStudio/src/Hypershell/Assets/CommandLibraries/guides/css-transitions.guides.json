@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "css-transitions",
+  "guides": [
+    {
+      "entryId": "css.transition",
+      "definition": "A transition observes changes to selected animatable properties and interpolates their computed values according to a duration and timing function.",
+      "parameters": [
+        {
+          "name": "className",
+          "displayName": "Class",
+          "placeholder": "className",
+          "description": "The element receiving the transition.",
+          "typeName": "CSS identifier",
+          "defaultValue": "card",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "One animatable property to interpolate.",
+          "typeName": "CSS property",
+          "defaultValue": "transform",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "duration",
+          "displayName": "Duration",
+          "placeholder": "duration",
+          "description": "How long the interpolation takes.",
+          "typeName": "Time",
+          "defaultValue": "160ms",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "timing",
+          "displayName": "Timing",
+          "placeholder": "timing",
+          "description": "The rate-of-change function.",
+          "typeName": "Timing function",
+          "defaultValue": "ease-out",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Hover value",
+          "placeholder": "value",
+          "description": "The property's value in the hover state.",
+          "typeName": "CSS value",
+          "defaultValue": "translateY(-2px)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Lift a card on hover",
+          "code": ".card {\n  transition: transform 160ms ease-out;\n}\n\n.card:hover {\n  transform: translateY(-2px);\n}",
+          "explanation": "Only transform is animated, keeping the transition explicit and short."
+        }
+      ]
+    }
+  ]
+}

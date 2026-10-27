@@ -1,0 +1,230 @@
+@* Source: common.page.directory.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-f8d648ed293a" data-vp-id="f8d648ed293ae0b2c1ef9b145d477f2f">
+    <header class="vp-7ce69b623cba" data-vp-id="7ce69b623cbaeafe9e5afc8725bfb0bb">
+        <a aria-label="Home" class="vp-c3ce61db88dc" data-field="text-2" data-vp-id="c3ce61db88dcfac8e5d62a2b4f36bcdc" href="@(Link(Context.Text("href-2")))">
+            @(Context.Text("text-2"))
+        </a>
+        <nav aria-label="Primary navigation" class="vp-198a40079ab2" data-vp-id="198a40079ab290403c32e0c1960e41bb">
+            <a class="vp-af7238309c88" data-field="text-4" data-vp-id="af7238309c883b398af706b9ef62ab6e" href="@(Link(Context.Text("href-4")))">
+                @(Context.Text("text-4"))
+            </a>
+            <a class="vp-a02df11c6cc1" data-field="text-5" data-vp-id="a02df11c6cc1b03f3cfcfe82daed29ce" href="@(Link(Context.Text("href-5")))">
+                @(Context.Text("text-5"))
+            </a>
+            <a class="vp-836438428953" data-field="text-6" data-vp-id="8364384289536d411b064473e7e96b08" href="@(Link(Context.Text("href-6")))">
+                @(Context.Text("text-6"))
+            </a>
+            <button class="vp-a103778477c9" data-field="text-7" data-vp-id="a103778477c98c382846aabe9aa5ef57">
+                @(Context.Text("text-7"))
+            </button>
+        </nav>
+    </header>
+    <section class="vp-cf90d3ef335e" data-vp-id="cf90d3ef335e1035fafa18a28b6191cf">
+        <h1 class="vp-3cd670534152" data-field="text-9">
+            @(Context.Text("text-9"))
+        </h1>
+        <p class="vp-8cc8545204cb" data-field="text-10" data-vp-id="8cc8545204cbc8e2bc0b19291890d643">
+            @(Context.Text("text-10"))
+        </p>
+    </section>
+    <form @onsubmit:preventDefault aria-label="Search and filter the collection" class="vp-5d31a8a47aaa" data-vp-id="5d31a8a47aaac67f173973908cb5aeec" method="get">
+        <div class="vp-84ecc3bdca74" data-vp-id="84ecc3bdca74a914345440f95e9e8435">
+            <label class="vp-4ee31de0c91a" data-field="text-13" data-vp-id="4ee31de0c91a603e4a7e13d9868420d1" for="@(LocalIds("directory-search"))">
+                @(Context.Text("text-13"))
+            </label>
+            <input aria-label="Search" class="vp-c45c95956204" data-vp-id="c45c959562043893330b47c09836629c" name="query" id="@(LocalIds("directory-search"))" placeholder="@(Context.Text("placeholder-14"))" />
+        </div>
+        <div class="vp-33c2460db3c4" data-vp-id="33c2460db3c4591722aecc1eb62620e2">
+            <label class="vp-f9c328663d72" data-field="text-16" data-vp-id="f9c328663d7272e3c28dec4d395b467a" for="@(LocalIds("directory-category"))">
+                @(Context.Text("text-16"))
+            </label>
+            <select aria-label="Category" class="vp-3e7110271c01" data-vp-id="3e7110271c010c33d7b0b73d64dd40a5" name="category" id="@(LocalIds("directory-category"))">
+                <option class="vp-951da67230cf" data-field="text-18" data-vp-id="951da67230cf3da838360f864d2f191d" value="">
+                    @(Context.Text("text-18"))
+                </option>
+                <option class="vp-0c79f0daaf92" data-field="text-19" data-vp-id="0c79f0daaf92af0d45d2e71adbe1a091" value="first">
+                    @(Context.Text("text-19"))
+                </option>
+            </select>
+        </div>
+        <button class="vp-05342fb485ca" data-field="text-20" data-vp-id="05342fb485ca6474e1ee2ea0557017b0">
+            @(Context.Text("text-20"))
+        </button>
+    </form>
+    <section aria-label="Directory results" class="vp-7f6c16a55ab4" data-vp-id="7f6c16a55ab49588cc5531b3aa2715c4">
+        <div class="vp-86e012593a8d" data-vp-id="86e012593a8dde051afcd6e8a8e73187">
+            <div class="vp-9d58dca1fc20" data-vp-id="9d58dca1fc2081bf32319701474f4cb0">
+                <span class="vp-04fb3db77b75" data-field="text-24" data-vp-id="04fb3db77b75836e68f12c299acff3c2">
+                    @(Context.Text("text-24"))
+                </span>
+                <span class="vp-9f0edef995ef" data-field="text-25" data-vp-id="9f0edef995ef3a284fa0ed2435f7b89c">
+                    @(Context.Text("text-25"))
+                </span>
+                <span class="vp-4ad9171c3c25" data-field="text-26" data-vp-id="4ad9171c3c259690b780713a82f4f127">
+                    @(Context.Text("text-26"))
+                </span>
+            </div>
+            <h3 class="vp-cb5c4c8fc19d" data-field="text-27">
+                @(Context.Text("text-27"))
+            </h3>
+            <p class="vp-282a10e29c94" data-field="text-28" data-vp-id="282a10e29c94672640ae47ead54434b0">
+                @(Context.Text("text-28"))
+            </p>
+            <a class="vp-b17c511b0126" data-field="text-29" data-vp-id="b17c511b0126fa5e9b2f9b0f3bd0a3af" href="@(Link(Context.Text("href-29")))">
+                @(Context.Text("text-29"))
+            </a>
+        </div>
+        <div class="vp-fcf410b82cc2" data-vp-id="fcf410b82cc21ddc129b8a1562454846">
+            <div class="vp-3cb1e8e2168f" data-vp-id="3cb1e8e2168f331966e19e8f01d2deed">
+                <span class="vp-56b9278f6d8f" data-field="text-32" data-vp-id="56b9278f6d8f065d304810c709c0aa96">
+                    @(Context.Text("text-32"))
+                </span>
+                <span class="vp-848767528c6e" data-field="text-33" data-vp-id="848767528c6e7acaf0ce8276b345aa62">
+                    @(Context.Text("text-33"))
+                </span>
+                <span class="vp-83454eb001e9" data-field="text-34" data-vp-id="83454eb001e9f05cde51803221f00370">
+                    @(Context.Text("text-34"))
+                </span>
+            </div>
+            <h3 class="vp-8bdb5a1094be" data-field="text-35">
+                @(Context.Text("text-35"))
+            </h3>
+            <p class="vp-3c2e6d0f87a9" data-field="text-36" data-vp-id="3c2e6d0f87a92db2d16dadc1a959e21d">
+                @(Context.Text("text-36"))
+            </p>
+            <a class="vp-73b133ff02cc" data-field="text-37" data-vp-id="73b133ff02cc9943cb806ad926e2c3a3" href="@(Link(Context.Text("href-37")))">
+                @(Context.Text("text-37"))
+            </a>
+        </div>
+        <div class="vp-a554ba4573de" data-vp-id="a554ba4573de7e6f7c2c668360d8886c">
+            <div class="vp-1a28bb815c05" data-vp-id="1a28bb815c054401e45adabc640fd702">
+                <span class="vp-6e9a82e15f51" data-field="text-40" data-vp-id="6e9a82e15f514d99189ac4250ca0acdc">
+                    @(Context.Text("text-40"))
+                </span>
+                <span class="vp-6696440b6b1b" data-field="text-41" data-vp-id="6696440b6b1b77b0c58e4d3a804a6d7d">
+                    @(Context.Text("text-41"))
+                </span>
+                <span class="vp-4d2b92f4f0e2" data-field="text-42" data-vp-id="4d2b92f4f0e2c20d80cfbb7e857ab0e2">
+                    @(Context.Text("text-42"))
+                </span>
+            </div>
+            <h3 class="vp-a1a2afb05913" data-field="text-43">
+                @(Context.Text("text-43"))
+            </h3>
+            <p class="vp-d355b6ee8b69" data-field="text-44" data-vp-id="d355b6ee8b69e3ab5ef02ffb99954da5">
+                @(Context.Text("text-44"))
+            </p>
+            <a class="vp-8659d12beb8a" data-field="text-45" data-vp-id="8659d12beb8ad9f1b02a03e54fc47929" href="@(Link(Context.Text("href-45")))">
+                @(Context.Text("text-45"))
+            </a>
+        </div>
+        <div class="vp-c380b1ca300f" data-vp-id="c380b1ca300f0bb48512d2ce90efbce8">
+            <div class="vp-f383453b1ea1" data-vp-id="f383453b1ea1e1a046b01f5133bce534">
+                <span class="vp-2e25b1b449da" data-field="text-48" data-vp-id="2e25b1b449da1a43228e48e97e9dae7b">
+                    @(Context.Text("text-48"))
+                </span>
+                <span class="vp-0665f46f4ade" data-field="text-49" data-vp-id="0665f46f4adec7f82ca5a0f2eca6ca1b">
+                    @(Context.Text("text-49"))
+                </span>
+                <span class="vp-14b3844c2303" data-field="text-50" data-vp-id="14b3844c230359a59446a2fb285b47a4">
+                    @(Context.Text("text-50"))
+                </span>
+            </div>
+            <h3 class="vp-1b8c714f30b7" data-field="text-51">
+                @(Context.Text("text-51"))
+            </h3>
+            <p class="vp-f07113a4ba2a" data-field="text-52" data-vp-id="f07113a4ba2ab5033b232c94c1204932">
+                @(Context.Text("text-52"))
+            </p>
+            <a class="vp-59ac593f2b17" data-field="text-53" data-vp-id="59ac593f2b174442c2af5d7dc50eff17" href="@(Link(Context.Text("href-53")))">
+                @(Context.Text("text-53"))
+            </a>
+        </div>
+        <div class="vp-9b4b9a4ac0bd" data-vp-id="9b4b9a4ac0bd11456f5f90d9067fee17">
+            <div class="vp-b21c27761028" data-vp-id="b21c27761028aa094885af3ac2e81e2d">
+                <span class="vp-09eaa44fb5b2" data-field="text-56" data-vp-id="09eaa44fb5b2de5c9b4f0d816ea30e75">
+                    @(Context.Text("text-56"))
+                </span>
+                <span class="vp-042881c76249" data-field="text-57" data-vp-id="042881c76249277f409a19eb38a93ad8">
+                    @(Context.Text("text-57"))
+                </span>
+                <span class="vp-051746f5a469" data-field="text-58" data-vp-id="051746f5a469ec772dd0853ffd8f97c0">
+                    @(Context.Text("text-58"))
+                </span>
+            </div>
+            <h3 class="vp-fdbecff8158f" data-field="text-59">
+                @(Context.Text("text-59"))
+            </h3>
+            <p class="vp-7c9dfdd48d3e" data-field="text-60" data-vp-id="7c9dfdd48d3e1db959397957796101f1">
+                @(Context.Text("text-60"))
+            </p>
+            <a class="vp-542f20fc228a" data-field="text-61" data-vp-id="542f20fc228a1659a57a278992a9f7fc" href="@(Link(Context.Text("href-61")))">
+                @(Context.Text("text-61"))
+            </a>
+        </div>
+        <div class="vp-cf17ec4e03bc" data-vp-id="cf17ec4e03bccd9326f7ea3c38b7b985">
+            <div class="vp-48545f782a23" data-vp-id="48545f782a231eae57c6ec5facc32da2">
+                <span class="vp-ef14431b150f" data-field="text-64" data-vp-id="ef14431b150fbf7cc9fd66f8be53210b">
+                    @(Context.Text("text-64"))
+                </span>
+                <span class="vp-98b65224e4a0" data-field="text-65" data-vp-id="98b65224e4a01520b9770d67f9b0eb2f">
+                    @(Context.Text("text-65"))
+                </span>
+                <span class="vp-7a42aacc30bf" data-field="text-66" data-vp-id="7a42aacc30bf74a8a594a46d4c06ad96">
+                    @(Context.Text("text-66"))
+                </span>
+            </div>
+            <h3 class="vp-2bd8e770ff83" data-field="text-67">
+                @(Context.Text("text-67"))
+            </h3>
+            <p class="vp-ea3c4aa12003" data-field="text-68" data-vp-id="ea3c4aa12003b80be7c83583ab17f2b7">
+                @(Context.Text("text-68"))
+            </p>
+            <a class="vp-e7a5ce4b8307" data-field="text-69" data-vp-id="e7a5ce4b830764fa926087fd244297b9" href="@(Link(Context.Text("href-69")))">
+                @(Context.Text("text-69"))
+            </a>
+        </div>
+    </section>
+    <nav aria-label="Pagination" class="vp-58733c8f4ce3" data-vp-id="58733c8f4ce3491a7419a2a58bf1e0ef">
+        <a class="vp-4d94426c17af" data-field="text-71" data-vp-id="4d94426c17aff38962b214e3fbf9d9d9" href="@(Link(Context.Text("href-71")))">
+            @(Context.Text("text-71"))
+        </a>
+        <a class="vp-767596d89cb1" data-field="text-72" data-vp-id="767596d89cb1a807024344c097ec08da" href="@(Link(Context.Text("href-72")))">
+            @(Context.Text("text-72"))
+        </a>
+        <a class="vp-5ffdbc6ca00a" data-field="text-73" data-vp-id="5ffdbc6ca00ada5ba68bdef4e148adb2" href="@(Link(Context.Text("href-73")))">
+            @(Context.Text("text-73"))
+        </a>
+        <a class="vp-9f6b20ea6172" data-field="text-74" data-vp-id="9f6b20ea617214926347ec94ef9c0e03" href="@(Link(Context.Text("href-74")))">
+            @(Context.Text("text-74"))
+        </a>
+        <a class="vp-30ad6b3486cb" data-field="text-75" data-vp-id="30ad6b3486cb5e507d5f49b2972d3547" href="@(Link(Context.Text("href-75")))">
+            @(Context.Text("text-75"))
+        </a>
+    </nav>
+    <div aria-label="Site footer" class="vp-1ad8ad99e049" data-vp-id="1ad8ad99e049179b30d53d9ee910a01f" role="contentinfo">
+        <p class="vp-0a5799cfaaa3" data-field="text-77" data-vp-id="0a5799cfaaa3d47819ee1e49c127534a">
+            @(Context.Text("text-77"))
+        </p>
+        <nav aria-label="Footer navigation" class="vp-b77c2e3c8cbb" data-vp-id="b77c2e3c8cbbdc53c95deab51e0f7eee">
+            <a class="vp-2fe2e4f004b8" data-field="text-79" data-vp-id="2fe2e4f004b88485c32c62690ed3f952" href="@(Link(Context.Text("href-79")))">
+                @(Context.Text("text-79"))
+            </a>
+            <a class="vp-d4c3dfa29d54" data-field="text-80" data-vp-id="d4c3dfa29d5413a3272de115f5eda43c" href="@(Link(Context.Text("href-80")))">
+                @(Context.Text("text-80"))
+            </a>
+            <a class="vp-04df4572ebc8" data-field="text-81" data-vp-id="04df4572ebc8f36dd5f9c38784cf74ca" href="@(Link(Context.Text("href-81")))">
+                @(Context.Text("text-81"))
+            </a>
+        </nav>
+    </div>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

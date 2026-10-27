@@ -1,0 +1,92 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "A Woodland Habitat",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "page-header",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "NATURAL WORLD / FIELD NOTES",
+        "title": "A Woodland Habitat",
+        "text": "Notice the layers of a living landscape."
+      }
+    },
+    {
+      "id": "woodland-intro",
+      "type": "text",
+      "region": "main",
+      "values": {
+        "text": "A woodland is a living neighborhood. Trees form a canopy, shrubs provide shelter, and the forest floor supports fungi, insects, and new growth. Use this page as a field notebook: add observations, photographs, and questions as you explore."
+      }
+    },
+    {
+      "id": "woodland-image",
+      "type": "image",
+      "region": "main",
+      "values": {
+        "src": "/media/woodland.svg",
+        "alt": "An illustrated woodland with layered trees and a winding path",
+        "caption": "Look for the layers: canopy, understory, and forest floor."
+      }
+    },
+    {
+      "id": "woodland-note",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Try a five-minute survey",
+        "text": "Choose one small patch. Record three textures, two sounds, and one sign of animal life. Return later and notice what has changed."
+      }
+    },
+    {
+      "id": "woodland-counter",
+      "type": "counter",
+      "region": "main",
+      "values": {
+        "label": "Species observed",
+        "start": 0
+      }
+    },
+    {
+      "id": "woodland-richtext",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## A closer look\n\nRecord the **canopy**, the *understory*, and the forest floor as separate habitats.\n\n- Sketch one leaf shape.\n- Look for tracks without disturbing wildlife.\n- Add a question for your next visit."
+      }
+    },
+    {
+      "id": "woodland-gallery",
+      "type": "gallery",
+      "region": "main",
+      "values": {
+        "src1": "/media/woodland.svg",
+        "src2": "/media/forest-detail.svg",
+        "caption": "Different views of the same living landscape."
+      }
+    },
+    {
+      "id": "page-divider",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "",
+        "style": "line"
+      }
+    },
+    {
+      "id": "page-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Woodland Editorial / Keep exploring"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

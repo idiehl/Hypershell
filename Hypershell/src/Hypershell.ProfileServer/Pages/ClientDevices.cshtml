@@ -1,0 +1,42 @@
+@page "/Admin/client-pcs"
+@model ClientDevicesModel
+@{
+    ViewData["Title"] = "Client PCs";
+}
+
+<section class="page-heading compact">
+    <a class="back-link" href="/">← Overview</a>
+    <h1>Client PCs</h1>
+    <p class="muted">Signed-in Hypershell installations and their rotating credentials.</p>
+</section>
+
+@if (!string.IsNullOrWhiteSpace(Model.Notice))
+{
+    <p class="notice">@Model.Notice</p>
+}
+
+<section class="inventory-section">
+@if (Model.Devices.Count == 0)
+{
+    <p class="muted">No Windows installation has signed in yet.</p>
+}
+else
+{
+    @foreach (var device in Model.Devices)
+    {
+        <article class="inventory-row @(device.RevokedAtUtc is null ? "" : "disabled")">
+            <div>
+                <h3>@device.DisplayName</h3>
+                <p>@device.Platform · last seen @device.LastSeenAtUtc.ToLocalTime().ToString("g")</p>
+                <small>First sign-in @device.CreatedAtUtc.ToLocalTime().ToString("g") · @device.Id</small>
+            </div>
+            @if (device.RevokedAtUtc is null)
+            {
+                <form method="post" asp-page-handler="Revoke" asp-route-deviceId="@device.Id">
+                    <button class="icon-button danger-icon" type="submit" title="Revoke client PC" aria-label="Revoke client PC">×</button>
+                </form>
+            }
+        </article>
+    }
+}
+</section>

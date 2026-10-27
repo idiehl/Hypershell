@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "css-flexible-box-layout",
+  "displayName": "CSS Flexible Box Layout",
+  "description": "CSS Flexible Box Layout properties, values, and composition patterns.",
+  "language": "CSS",
+  "category": "Official reference",
+  "kind": "Specification",
+  "canonicalName": "CSS Flexible Box Layout",
+  "ecosystem": "CSS",
+  "targetVersion": "Living specification inventory",
+  "sourceVersion": "mdn-data 2.31.0 · properties 004ebcb0d571b2e1cf42c4793e05c99de19c2b1bddae739638acbcb855721f8e",
+  "sourceUrl": "https://www.w3.org/TR/css-flexbox-1/",
+  "license": "W3C document license",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "CSS specification entries insert into compatible editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "css",
+    "specification",
+    "CSS Flexible Box Layout"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 13,
+  "declaredIndexedCount": 12,
+  "declaredGuidedCount": 1,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/css-flexible-box-layout.entries.json"
+  ],
+  "declaredGuideCount": 1,
+  "guideFiles": [
+    "guides/css-flexible-box-layout.guides.json"
+  ],
+  "legacyIds": []
+}

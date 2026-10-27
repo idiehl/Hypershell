@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "html-navigation",
+  "guides": [
+    {
+      "entryId": "web.history-push-state",
+      "definition": "pushState adds a session-history entry containing optional state and a same-origin URL. Applications should also handle popstate when users navigate backward or forward.",
+      "parameters": [
+        {
+          "name": "stateKey",
+          "displayName": "State key",
+          "placeholder": "stateKey",
+          "description": "A property stored in the history entry state object.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "view",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "stateValue",
+          "displayName": "State value",
+          "placeholder": "stateValue",
+          "description": "A structured-cloneable value stored for the entry.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "\"settings\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "url",
+          "displayName": "URL",
+          "placeholder": "url",
+          "description": "A same-origin URL represented by the new entry.",
+          "typeName": "Same-origin URL",
+          "defaultValue": "/settings",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Navigate to a settings view",
+          "code": "history.pushState({ view: \"settings\" }, \"\", \"/settings\");\nwindow.addEventListener(\"popstate\", (event) => {\n  console.log(event.state);\n});",
+          "explanation": "The displayed URL and history stack change without a document load, and popstate observes later traversal."
+        }
+      ]
+    }
+  ]
+}

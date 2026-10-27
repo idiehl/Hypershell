@@ -1,0 +1,1491 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "python-standard-library",
+  "guides": [
+    {
+      "entryId": "python.dataclass",
+      "definition": "The dataclass decorator inspects annotated fields and generates common special methods such as __init__ and __repr__.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Class name",
+          "placeholder": "name",
+          "description": "The data class identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "Task",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "field",
+          "displayName": "Field name",
+          "placeholder": "field",
+          "description": "The annotated instance field.",
+          "typeName": "Identifier",
+          "defaultValue": "title",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "type",
+          "displayName": "Field type",
+          "placeholder": "type",
+          "description": "The field's type annotation.",
+          "typeName": "Type expression",
+          "defaultValue": "str",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value passed to the generated initializer.",
+          "typeName": "Python expression",
+          "defaultValue": "\"Ship Hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a Task value",
+          "code": "from dataclasses import dataclass\n\n@dataclass\nclass Task:\n    title: str\n\nprint(Task(\"Ship Hypershell\"))",
+          "explanation": "dataclass generates an initializer accepting title and a readable representation for print."
+        }
+      ]
+    },
+    {
+      "entryId": "python.pathlib-read-text",
+      "definition": "Path.read_text opens the path in text mode, reads its contents, and closes the file. Supplying encoding makes decoding deterministic.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "A Python string or raw-string path literal.",
+          "typeName": "Path expression",
+          "defaultValue": "r\"README.md\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a README",
+          "code": "from pathlib import Path\ntext = Path(r\"README.md\").read_text(encoding=\"utf-8\")\nprint(text)",
+          "explanation": "The raw string represents the path and pathlib handles opening and closing the file."
+        }
+      ]
+    },
+    {
+      "entryId": "python.json-loads",
+      "definition": "json.loads deserializes a str, bytes, or bytearray containing one JSON document into corresponding Python values.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "JSON text",
+          "placeholder": "text",
+          "description": "A Python string containing a JSON document.",
+          "typeName": "String expression",
+          "defaultValue": "'{\"status\": \"ready\"}'",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Key",
+          "placeholder": "key",
+          "description": "A Python string key read from the parsed dictionary.",
+          "typeName": "String expression",
+          "defaultValue": "\"status\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a JSON property",
+          "code": "import json\ndata = json.loads('{\"status\": \"ready\"}')\nprint(data[\"status\"])",
+          "explanation": "The JSON object becomes a Python dictionary, whose status value is then printed."
+        }
+      ]
+    },
+    {
+      "entryId": "python.urlopen",
+      "definition": "urllib.request.urlopen opens a URL and returns a response object. A with statement guarantees that the response is closed.",
+      "parameters": [
+        {
+          "name": "url",
+          "displayName": "URL",
+          "placeholder": "url",
+          "description": "A Python string containing an HTTP or HTTPS URL.",
+          "typeName": "String expression",
+          "defaultValue": "\"https://example.com\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "timeout",
+          "displayName": "Timeout",
+          "placeholder": "timeout",
+          "description": "Maximum seconds to wait for the connection.",
+          "typeName": "Number expression",
+          "defaultValue": "10",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "limit",
+          "displayName": "Byte limit",
+          "placeholder": "limit",
+          "description": "Maximum response bytes read by this example.",
+          "typeName": "Integer expression",
+          "defaultValue": "4096",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a small response",
+          "code": "from urllib.request import urlopen\nwith urlopen(\"https://example.com\", timeout=10) as response:\n    text = response.read(4096).decode(\"utf-8\", errors=\"replace\")\nprint(text)",
+          "explanation": "The response is closed automatically and the example limits how many bytes it reads into memory."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.pathlib.path.exists.method",
+      "definition": "Path.exists follows the platform's filesystem rules and returns a Boolean instead of raising when the target is simply absent.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "A path string or path-like expression.",
+          "typeName": "Path expression",
+          "defaultValue": "r\".\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Check the current directory",
+          "code": "from pathlib import Path\nprint(Path.cwd().exists())",
+          "explanation": "The process's current working directory exists while the program is running."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.pathlib.path.glob.method",
+      "definition": "Path.glob evaluates a pattern relative to the receiving path. The ** component enables recursive matching.",
+      "parameters": [
+        {
+          "name": "root",
+          "displayName": "Root path",
+          "placeholder": "root",
+          "description": "The directory relative to which matching begins.",
+          "typeName": "Path expression",
+          "defaultValue": "r\".\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "pattern",
+          "displayName": "Pattern",
+          "placeholder": "pattern",
+          "description": "A relative glob pattern.",
+          "typeName": "String expression",
+          "defaultValue": "\"*.py\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find Python files in a temporary folder",
+          "code": "from pathlib import Path\nfrom tempfile import TemporaryDirectory\n\nwith TemporaryDirectory() as folder:\n    root = Path(folder)\n    (root / \"one.py\").touch()\n    (root / \"two.txt\").touch()\n    print([path.name for path in root.glob(\"*.py\")])",
+          "explanation": "Only the file whose suffix matches .py is yielded."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.pathlib.path.write-text.method",
+      "definition": "Path.write_text opens the file in text mode, writes the supplied string, closes the file, and returns the number of characters written.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "The destination path.",
+          "typeName": "Path expression",
+          "defaultValue": "r\"output.txt\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The complete string to write.",
+          "typeName": "String expression",
+          "defaultValue": "\"Hypershell\\n\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Write and read temporary text",
+          "code": "from pathlib import Path\nfrom tempfile import TemporaryDirectory\n\nwith TemporaryDirectory() as folder:\n    path = Path(folder) / \"note.txt\"\n    path.write_text(\"Hypershell\\n\", encoding=\"utf-8\")\n    print(path.read_text(encoding=\"utf-8\").strip())",
+          "explanation": "The temporary file is encoded as UTF-8 and removed with its temporary directory."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.pathlib.path.mkdir.method",
+      "definition": "Path.mkdir mirrors mkdir semantics. parents=True creates missing ancestors, while exist_ok=True suppresses the error for an existing directory.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Directory path",
+          "placeholder": "path",
+          "description": "The directory to create.",
+          "typeName": "Path expression",
+          "defaultValue": "r\"output/nested\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parents",
+          "displayName": "Create parents",
+          "placeholder": "parents",
+          "description": "Create missing ancestor directories.",
+          "typeName": "Boolean expression",
+          "defaultValue": "True",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "exist_ok",
+          "displayName": "Allow existing",
+          "placeholder": "exist_ok",
+          "description": "Do not fail when the directory already exists.",
+          "typeName": "Boolean expression",
+          "defaultValue": "True",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create nested temporary directories",
+          "code": "from pathlib import Path\nfrom tempfile import TemporaryDirectory\n\nwith TemporaryDirectory() as folder:\n    path = Path(folder) / \"output\" / \"nested\"\n    path.mkdir(parents=True)\n    print(path.is_dir())",
+          "explanation": "parents=True creates both missing levels beneath the temporary directory."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.os.getenv.function",
+      "definition": "os.getenv reads the process environment snapshot represented by os.environ and avoids KeyError when a name is absent.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable name",
+          "placeholder": "name",
+          "description": "The environment-variable key.",
+          "typeName": "String expression",
+          "defaultValue": "\"HYPERSHELL_MODE\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "default",
+          "displayName": "Fallback",
+          "placeholder": "default",
+          "description": "Returned when the key is absent.",
+          "typeName": "Python expression",
+          "defaultValue": "\"default\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a temporary environment value",
+          "code": "import os\n\nos.environ[\"HYPERSHELL_MODE\"] = \"ready\"\ntry:\n    print(os.getenv(\"HYPERSHELL_MODE\", \"default\"))\nfinally:\n    os.environ.pop(\"HYPERSHELL_MODE\", None)",
+          "explanation": "getenv reads ready, and the finally block restores the process environment."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.os.listdir.function",
+      "definition": "os.listdir returns names without joining them to the supplied path and does not guarantee ordering. Sort the result when deterministic presentation matters.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Directory",
+          "placeholder": "path",
+          "description": "The directory to enumerate.",
+          "typeName": "Path expression",
+          "defaultValue": "r\".\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "List temporary entries",
+          "code": "import os\nfrom pathlib import Path\nfrom tempfile import TemporaryDirectory\n\nwith TemporaryDirectory() as folder:\n    Path(folder, \"alpha.txt\").touch()\n    Path(folder, \"beta.txt\").touch()\n    print(sorted(os.listdir(folder)))",
+          "explanation": "The sorted result contains the two names created in the temporary directory."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.os.walk.function",
+      "definition": "os.walk recursively traverses a tree and yields (directory, directories, files) tuples. Mutating the directories list can prune top-down traversal.",
+      "parameters": [
+        {
+          "name": "root",
+          "displayName": "Root directory",
+          "placeholder": "root",
+          "description": "The traversal starting point.",
+          "typeName": "Path expression",
+          "defaultValue": "r\".\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Walk a temporary tree",
+          "code": "import os\nfrom pathlib import Path\nfrom tempfile import TemporaryDirectory\n\nwith TemporaryDirectory() as folder:\n    nested = Path(folder, \"nested\")\n    nested.mkdir()\n    (nested / \"item.txt\").touch()\n    files = [name for _, _, names in os.walk(folder) for name in names]\n    print(files)",
+          "explanation": "Traversal reaches the nested directory and reports its file."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.os.replace.function",
+      "definition": "os.replace performs an atomic rename when the operating system supports it on the same filesystem. Cross-filesystem moves are not supported by this operation.",
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "Source",
+          "placeholder": "source",
+          "description": "The existing source path.",
+          "typeName": "Path expression",
+          "defaultValue": "r\"draft.txt\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "destination",
+          "displayName": "Destination",
+          "placeholder": "destination",
+          "description": "The destination path to replace.",
+          "typeName": "Path expression",
+          "defaultValue": "r\"current.txt\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Replace a temporary file",
+          "code": "import os\nfrom pathlib import Path\nfrom tempfile import TemporaryDirectory\n\nwith TemporaryDirectory() as folder:\n    source = Path(folder, \"draft.txt\")\n    destination = Path(folder, \"current.txt\")\n    source.write_text(\"new\", encoding=\"utf-8\")\n    destination.write_text(\"old\", encoding=\"utf-8\")\n    os.replace(source, destination)\n    print(destination.read_text(encoding=\"utf-8\"))",
+          "explanation": "The destination now contains the source file's new content."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.os.environ.data",
+      "definition": "os.environ synchronizes mapping changes with the current process environment. Values and keys are strings on Windows and most Python interfaces.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable name",
+          "placeholder": "name",
+          "description": "The environment-variable key.",
+          "typeName": "String expression",
+          "defaultValue": "\"HYPERSHELL_MODE\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The string value to store.",
+          "typeName": "String expression",
+          "defaultValue": "\"ready\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Set and restore an environment variable",
+          "code": "import os\n\nkey = \"HYPERSHELL_MODE\"\nprevious = os.environ.get(key)\nos.environ[key] = \"ready\"\ntry:\n    print(os.environ[key])\nfinally:\n    if previous is None:\n        os.environ.pop(key, None)\n    else:\n        os.environ[key] = previous",
+          "explanation": "The mapping update is visible immediately and the original state is restored."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.sys.argv.data",
+      "definition": "sys.argv is a list whose first item identifies the executed script or command context. Additional items preserve argument order.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Inspect the current argument list",
+          "code": "import sys\nprint(isinstance(sys.argv, list), len(sys.argv) >= 1)",
+          "explanation": "Python always exposes argv as a list containing at least its execution-context entry."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.sys.version-info.data",
+      "definition": "sys.version_info exposes major, minor, micro, releaselevel, and serial fields and supports tuple-style version comparisons.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Require modern Python",
+          "code": "import sys\nprint(sys.version_info >= (3, 11))",
+          "explanation": "The named tuple compares lexicographically against a shorter version tuple."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.sys.platform.data",
+      "definition": "sys.platform identifies the platform on which Python was built. Use platform for richer descriptive information and os interfaces for platform-neutral operations.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Classify the host family",
+          "code": "import sys\nfamily = \"windows\" if sys.platform == \"win32\" else \"non-windows\"\nprint(family)",
+          "explanation": "The stable win32 value identifies Windows even on 64-bit Python."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.json.dumps.function",
+      "definition": "json.dumps serializes dictionaries, lists, strings, numbers, booleans, and None. Formatting and key ordering can be controlled for readable or deterministic output.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "A JSON-serializable Python value.",
+          "typeName": "Python expression",
+          "defaultValue": "{\"status\": \"ready\", \"count\": 42}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "indent",
+          "displayName": "Indent",
+          "placeholder": "indent",
+          "description": "Spaces used for each nesting level.",
+          "typeName": "Integer expression",
+          "defaultValue": "2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sort_keys",
+          "displayName": "Sort keys",
+          "placeholder": "sort_keys",
+          "description": "Write object keys in sorted order.",
+          "typeName": "Boolean expression",
+          "defaultValue": "True",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create stable formatted JSON",
+          "code": "import json\nprint(json.dumps({\"status\": \"ready\", \"count\": 42}, sort_keys=True))",
+          "explanation": "sort_keys produces deterministic object-key order in the serialized text."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.json.dump.function",
+      "definition": "json.dump writes JSON incrementally to a file-like object's write method. The destination must accept strings rather than bytes.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "A JSON-serializable Python value.",
+          "typeName": "Python expression",
+          "defaultValue": "{\"answer\": 42}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "stream",
+          "displayName": "Text stream",
+          "placeholder": "stream",
+          "description": "A writable text file-like object.",
+          "typeName": "Text stream expression",
+          "defaultValue": "stream",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "indent",
+          "displayName": "Indent",
+          "placeholder": "indent",
+          "description": "Spaces used for each nesting level.",
+          "typeName": "Integer expression",
+          "defaultValue": "2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Write JSON into memory",
+          "code": "import json\nfrom io import StringIO\n\nstream = StringIO()\njson.dump({\"answer\": 42}, stream, sort_keys=True)\nprint(stream.getvalue())",
+          "explanation": "StringIO provides the text-stream interface without creating a file."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.json.load.function",
+      "definition": "json.load reads from a file-like object's read method and returns the corresponding Python value graph.",
+      "parameters": [
+        {
+          "name": "stream",
+          "displayName": "Input stream",
+          "placeholder": "stream",
+          "description": "A readable stream containing one JSON document.",
+          "typeName": "Readable stream expression",
+          "defaultValue": "stream",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read JSON from memory",
+          "code": "import json\nfrom io import StringIO\n\nstream = StringIO('{\"answer\": 42}')\ndata = json.load(stream)\nprint(data[\"answer\"])",
+          "explanation": "The in-memory JSON object becomes a dictionary whose answer value is 42."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.datetime.date.class",
+      "definition": "datetime.date is immutable and supports ISO parsing, calendar arithmetic with timedelta, ordering, and formatting.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "ISO date",
+          "placeholder": "text",
+          "description": "A YYYY-MM-DD string.",
+          "typeName": "String expression",
+          "defaultValue": "\"2026-08-10\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse an ISO date",
+          "code": "from datetime import date\nvalue = date.fromisoformat(\"2026-08-10\")\nprint(value.year, value.month, value.day)",
+          "explanation": "The ISO components become accessible integer fields."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.datetime.datetime.class",
+      "definition": "datetime.datetime is immutable. A timezone-aware value includes tzinfo and can be converted between offsets without losing the represented instant.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "ISO timestamp",
+          "placeholder": "text",
+          "description": "An ISO 8601-compatible datetime string.",
+          "typeName": "String expression",
+          "defaultValue": "\"2026-08-10T12:30:00+00:00\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse an aware timestamp",
+          "code": "from datetime import datetime\nvalue = datetime.fromisoformat(\"2026-08-10T12:30:00+00:00\")\nprint(value.isoformat())",
+          "explanation": "The parsed value retains its explicit UTC offset."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.datetime.timedelta.class",
+      "definition": "datetime.timedelta represents durations with day, second, and microsecond resolution and supports arithmetic with dates, datetimes, and other durations.",
+      "parameters": [
+        {
+          "name": "days",
+          "displayName": "Days",
+          "placeholder": "days",
+          "description": "Whole or fractional days.",
+          "typeName": "Number expression",
+          "defaultValue": "1",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "hours",
+          "displayName": "Hours",
+          "placeholder": "hours",
+          "description": "Whole or fractional hours.",
+          "typeName": "Number expression",
+          "defaultValue": "2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Convert a duration to seconds",
+          "code": "from datetime import timedelta\nduration = timedelta(minutes=42)\nprint(duration.total_seconds())",
+          "explanation": "Forty-two minutes equals 2520 seconds."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.datetime.timezone.class",
+      "definition": "datetime.timezone implements tzinfo for fixed offsets. Use zoneinfo when daylight-saving or historical regional rules are required.",
+      "parameters": [
+        {
+          "name": "year",
+          "displayName": "Year",
+          "placeholder": "year",
+          "description": "The calendar year.",
+          "typeName": "Integer expression",
+          "defaultValue": "2026",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "month",
+          "displayName": "Month",
+          "placeholder": "month",
+          "description": "The month number.",
+          "typeName": "Integer expression",
+          "defaultValue": "8",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "day",
+          "displayName": "Day",
+          "placeholder": "day",
+          "description": "The day of month.",
+          "typeName": "Integer expression",
+          "defaultValue": "10",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create an aware UTC datetime",
+          "code": "from datetime import datetime, timezone\nvalue = datetime(2026, 8, 10, 12, 30, tzinfo=timezone.utc)\nprint(value.utcoffset().total_seconds())",
+          "explanation": "timezone.utc supplies a zero-second offset from UTC."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.re.compile.function",
+      "definition": "re.compile parses a pattern once and returns an object with search, match, findall, and substitution methods.",
+      "parameters": [
+        {
+          "name": "pattern",
+          "displayName": "Pattern",
+          "placeholder": "pattern",
+          "description": "The regular-expression source.",
+          "typeName": "String expression",
+          "defaultValue": "r\"[A-Z]+\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "flags",
+          "displayName": "Flags",
+          "placeholder": "flags",
+          "description": "Combined re flags modifying matching.",
+          "typeName": "Flag expression",
+          "defaultValue": "re.IGNORECASE",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Compile a case-insensitive word pattern",
+          "code": "import re\npattern = re.compile(r\"hypershell\", re.IGNORECASE)\nprint(bool(pattern.fullmatch(\"HyperShell\")))",
+          "explanation": "The compiled pattern matches the complete string without case sensitivity."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.re.search.function",
+      "definition": "re.search scans the entire string and returns a Match object or None. Use fullmatch when the entire input must satisfy the pattern.",
+      "parameters": [
+        {
+          "name": "pattern",
+          "displayName": "Pattern",
+          "placeholder": "pattern",
+          "description": "The regular expression to find.",
+          "typeName": "String expression",
+          "defaultValue": "r\"\\d+\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The input string to scan.",
+          "typeName": "String expression",
+          "defaultValue": "\"answer=42\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find the first integer",
+          "code": "import re\nmatch = re.search(r\"\\d+\", \"answer=42\")\nprint(match.group(0) if match else None)",
+          "explanation": "The first digit run is captured as 42."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.re.findall.function",
+      "definition": "re.findall returns matched strings or tuples of captured groups. Empty matches may be included according to regular-expression rules.",
+      "parameters": [
+        {
+          "name": "pattern",
+          "displayName": "Pattern",
+          "placeholder": "pattern",
+          "description": "The regular expression to collect.",
+          "typeName": "String expression",
+          "defaultValue": "r\"\\d+\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The input string to scan.",
+          "typeName": "String expression",
+          "defaultValue": "\"x=20, y=22\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Collect numeric fields",
+          "code": "import re\nprint(re.findall(r\"\\d+\", \"x=20, y=22\"))",
+          "explanation": "Both non-overlapping digit runs are returned in source order."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.re.sub.function",
+      "definition": "re.sub accepts either replacement text or a callable. count=0 replaces every match, while a positive count limits replacements.",
+      "parameters": [
+        {
+          "name": "pattern",
+          "displayName": "Pattern",
+          "placeholder": "pattern",
+          "description": "The regular expression to replace.",
+          "typeName": "String expression",
+          "defaultValue": "r\"\\s+\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "replacement",
+          "displayName": "Replacement",
+          "placeholder": "replacement",
+          "description": "Text or a callable used for each match.",
+          "typeName": "Python expression",
+          "defaultValue": "\"-\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The input string.",
+          "typeName": "Python expression",
+          "defaultValue": "\"Hyper shell tools\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Normalize whitespace",
+          "code": "import re\nprint(re.sub(r\"\\s+\", \"-\", \"Hyper   shell tools\"))",
+          "explanation": "Each whitespace run becomes one hyphen."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.collections.counter.class",
+      "definition": "Counter supplies zero for missing keys and adds multiset operations plus helpers such as most_common and elements.",
+      "parameters": [
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "Hashable values to count.",
+          "typeName": "Python iterable",
+          "defaultValue": "[\"ready\", \"busy\", \"ready\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "limit",
+          "displayName": "Limit",
+          "placeholder": "limit",
+          "description": "Maximum number of common items to return.",
+          "typeName": "Integer expression",
+          "defaultValue": "2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find the most common state",
+          "code": "from collections import Counter\ncounts = Counter([\"ready\", \"busy\", \"ready\"])\nprint(counts.most_common(1))",
+          "explanation": "ready occurs twice and is returned as the most common item."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.collections.defaultdict.class",
+      "definition": "defaultdict extends dict with a default_factory used by __missing__. Reading a missing key inserts the newly created value.",
+      "parameters": [
+        {
+          "name": "factory",
+          "displayName": "Factory",
+          "placeholder": "factory",
+          "description": "A zero-argument callable creating missing values.",
+          "typeName": "Callable expression",
+          "defaultValue": "list",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Key name",
+          "placeholder": "key",
+          "description": "The pair variable used as a key.",
+          "typeName": "Identifier",
+          "defaultValue": "group",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value name",
+          "placeholder": "value",
+          "description": "The pair variable appended to the group.",
+          "typeName": "Identifier",
+          "defaultValue": "item",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "pairs",
+          "displayName": "Pairs",
+          "placeholder": "pairs",
+          "description": "Key-value pairs to group.",
+          "typeName": "Python iterable",
+          "defaultValue": "[(\"a\", 20), (\"a\", 22)]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Group values by key",
+          "code": "from collections import defaultdict\n\ngroups = defaultdict(list)\nfor key, value in [(\"a\", 20), (\"a\", 22)]:\n    groups[key].append(value)\nprint(dict(groups))",
+          "explanation": "The list factory creates the first group before values are appended."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.collections.deque.class",
+      "definition": "deque stores a sequence optimized for operations at either endpoint. maxlen can enforce a bounded rolling window.",
+      "parameters": [
+        {
+          "name": "iterable",
+          "displayName": "Initial values",
+          "placeholder": "iterable",
+          "description": "Values loaded from left to right.",
+          "typeName": "Python iterable",
+          "defaultValue": "[1, 2, 3]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "limit",
+          "displayName": "Maximum length",
+          "placeholder": "limit",
+          "description": "The bounded queue size.",
+          "typeName": "Integer expression",
+          "defaultValue": "3",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Appended value",
+          "placeholder": "value",
+          "description": "A new right-side value.",
+          "typeName": "Python expression",
+          "defaultValue": "4",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Maintain a rolling window",
+          "code": "from collections import deque\nvalues = deque([1, 2, 3], maxlen=3)\nvalues.append(4)\nprint(list(values))",
+          "explanation": "Appending 4 evicts the oldest value to preserve the maximum length."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.collections.namedtuple.function",
+      "definition": "namedtuple dynamically creates an immutable tuple subclass with generated field properties and useful conversion helpers.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Binding name",
+          "placeholder": "name",
+          "description": "The variable receiving the generated type.",
+          "typeName": "Identifier",
+          "defaultValue": "Point",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "type_name",
+          "displayName": "Type name",
+          "placeholder": "type_name",
+          "description": "The generated class name.",
+          "typeName": "String expression",
+          "defaultValue": "\"Point\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fields",
+          "displayName": "Fields",
+          "placeholder": "fields",
+          "description": "Field names as a string or iterable.",
+          "typeName": "String iterable",
+          "defaultValue": "[\"x\", \"y\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "Constructor arguments for the fields.",
+          "typeName": "Argument list",
+          "defaultValue": "20, 22",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a coordinate value",
+          "code": "from collections import namedtuple\nPoint = namedtuple(\"Point\", [\"x\", \"y\"])\npoint = Point(20, 22)\nprint(point.x + point.y)",
+          "explanation": "The generated immutable type exposes x and y as named fields."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.itertools.chain.function",
+      "definition": "itertools.chain advances through one input iterable at a time without creating an intermediate combined collection.",
+      "parameters": [
+        {
+          "name": "first",
+          "displayName": "First iterable",
+          "placeholder": "first",
+          "description": "The first values yielded.",
+          "typeName": "Python iterable",
+          "defaultValue": "[1, 2]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "second",
+          "displayName": "Second iterable",
+          "placeholder": "second",
+          "description": "Values yielded afterward.",
+          "typeName": "Python iterable",
+          "defaultValue": "[3, 4]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Combine two sequences",
+          "code": "from itertools import chain\nprint(list(chain([1, 2], [3, 4])))",
+          "explanation": "The iterator yields all four values without first concatenating the lists."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.itertools.islice.function",
+      "definition": "itertools.islice consumes an iterable using start, stop, and step values similar to slicing, but negative values are not supported.",
+      "parameters": [
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "The source values.",
+          "typeName": "Python iterable",
+          "defaultValue": "range(20)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "start",
+          "displayName": "Start",
+          "placeholder": "start",
+          "description": "The first consumed index.",
+          "typeName": "Integer expression",
+          "defaultValue": "2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "stop",
+          "displayName": "Stop",
+          "placeholder": "stop",
+          "description": "The exclusive ending index.",
+          "typeName": "Integer expression",
+          "defaultValue": "8",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "step",
+          "displayName": "Step",
+          "placeholder": "step",
+          "description": "The positive interval between yielded values.",
+          "typeName": "Integer expression",
+          "defaultValue": "2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Take selected range values",
+          "code": "from itertools import islice\nprint(list(islice(range(20), 2, 8, 2)))",
+          "explanation": "The iterator yields indexes 2, 4, and 6 before the exclusive stop."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.itertools.count.function",
+      "definition": "itertools.count starts at a chosen value and repeatedly adds step. Consumers should impose a bound unless an endless stream is intentional.",
+      "parameters": [
+        {
+          "name": "start",
+          "displayName": "Start",
+          "placeholder": "start",
+          "description": "The first generated value.",
+          "typeName": "Number expression",
+          "defaultValue": "10",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "step",
+          "displayName": "Step",
+          "placeholder": "step",
+          "description": "The amount added after each value.",
+          "typeName": "Number expression",
+          "defaultValue": "2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "limit",
+          "displayName": "Limit",
+          "placeholder": "limit",
+          "description": "The number of values consumed by islice.",
+          "typeName": "Integer expression",
+          "defaultValue": "4",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Bound an infinite counter",
+          "code": "from itertools import count, islice\nprint(list(islice(count(10, 2), 4)))",
+          "explanation": "islice safely consumes the first four values from the unbounded counter."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.itertools.zip-longest.function",
+      "definition": "zip_longest substitutes fillvalue after shorter iterables are exhausted, preserving rows that ordinary zip would omit.",
+      "parameters": [
+        {
+          "name": "left",
+          "displayName": "First iterable",
+          "placeholder": "left",
+          "description": "The first column of values.",
+          "typeName": "Python iterable",
+          "defaultValue": "[1, 2, 3]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "right",
+          "displayName": "Second iterable",
+          "placeholder": "right",
+          "description": "The second column of values.",
+          "typeName": "Python iterable",
+          "defaultValue": "[\"a\", \"b\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fill",
+          "displayName": "Fill value",
+          "placeholder": "fill",
+          "description": "Used after a shorter input ends.",
+          "typeName": "Python expression",
+          "defaultValue": "None",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Preserve an unmatched row",
+          "code": "from itertools import zip_longest\nprint(list(zip_longest([1, 2, 3], [\"a\", \"b\"], fillvalue=None)))",
+          "explanation": "The final integer remains paired with the explicit fill value."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.subprocess.run.function",
+      "definition": "subprocess.run is the recommended high-level interface for bounded child-process execution. Pass an argument list instead of a shell string when shell syntax is unnecessary.",
+      "parameters": [
+        {
+          "name": "arguments",
+          "displayName": "Arguments",
+          "placeholder": "arguments",
+          "description": "The executable followed by individual arguments.",
+          "typeName": "Argument-list expression",
+          "defaultValue": "[sys.executable, \"-c\", \"print(42)\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "timeout",
+          "displayName": "Timeout",
+          "placeholder": "timeout",
+          "description": "Maximum seconds before the child is terminated.",
+          "typeName": "Number expression",
+          "defaultValue": "10",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Run the active Python interpreter",
+          "code": "import subprocess\nimport sys\n\nresult = subprocess.run(\n    [sys.executable, \"-c\", \"print(6 * 7)\"],\n    capture_output=True,\n    text=True,\n    timeout=10,\n    check=True)\nprint(result.stdout.strip())",
+          "explanation": "The argument list safely starts the current interpreter and captures its successful output."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.asyncio.run.function",
+      "definition": "asyncio.run is the normal synchronous entry point for an asyncio program and cannot be called while another event loop is already running in the same thread.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Coroutine name",
+          "placeholder": "name",
+          "description": "The async function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "main",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Result expression",
+          "placeholder": "expression",
+          "description": "The coroutine's return value.",
+          "typeName": "Python expression",
+          "defaultValue": "6 * 7",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Run a coroutine to completion",
+          "code": "import asyncio\n\nasync def main():\n    return 6 * 7\n\nprint(asyncio.run(main()))",
+          "explanation": "asyncio.run owns the event-loop lifecycle and returns the coroutine's value."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.asyncio.gather.function",
+      "definition": "asyncio.gather aggregates multiple awaitables. Completion order may differ, but the returned result list follows the original argument order.",
+      "parameters": [
+        {
+          "name": "worker",
+          "displayName": "Worker name",
+          "placeholder": "worker",
+          "description": "The coroutine function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "double",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "argument",
+          "displayName": "Argument name",
+          "placeholder": "argument",
+          "description": "The worker parameter.",
+          "typeName": "Identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Result expression",
+          "placeholder": "expression",
+          "description": "The worker result.",
+          "typeName": "Python expression",
+          "defaultValue": "value * 2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "Inputs used to create awaitables.",
+          "typeName": "Python iterable",
+          "defaultValue": "[20, 21]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Gather ordered results",
+          "code": "import asyncio\n\nasync def double(value):\n    await asyncio.sleep(0)\n    return value * 2\n\nasync def main():\n    print(await asyncio.gather(double(20), double(21)))\n\nasyncio.run(main())",
+          "explanation": "Both coroutines can make progress concurrently while results remain in argument order."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.asyncio.timeout.function",
+      "definition": "asyncio.timeout is an asynchronous context manager that applies a deadline to awaits in its body.",
+      "parameters": [
+        {
+          "name": "seconds",
+          "displayName": "Timeout",
+          "placeholder": "seconds",
+          "description": "Maximum seconds allowed inside the context.",
+          "typeName": "Number expression",
+          "defaultValue": "1",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "awaitable",
+          "displayName": "Awaitable",
+          "placeholder": "awaitable",
+          "description": "The operation governed by the deadline.",
+          "typeName": "Awaitable expression",
+          "defaultValue": "asyncio.sleep(0)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Complete work before a deadline",
+          "code": "import asyncio\n\nasync def main():\n    async with asyncio.timeout(1):\n        await asyncio.sleep(0)\n        print(\"ready\")\n\nasyncio.run(main())",
+          "explanation": "The cooperative sleep completes before the one-second deadline."
+        }
+      ]
+    },
+    {
+      "entryId": "python.stdlib.asyncio.taskgroup.class",
+      "definition": "TaskGroup provides structured concurrency. If one child fails, remaining children are cancelled and failures are raised together after cleanup.",
+      "parameters": [
+        {
+          "name": "worker",
+          "displayName": "Worker name",
+          "placeholder": "worker",
+          "description": "The child coroutine identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "double",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "argument",
+          "displayName": "Argument name",
+          "placeholder": "argument",
+          "description": "The child coroutine parameter.",
+          "typeName": "Identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Result expression",
+          "placeholder": "expression",
+          "description": "The child task result.",
+          "typeName": "Python expression",
+          "defaultValue": "value * 2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Input",
+          "placeholder": "value",
+          "description": "The example input value.",
+          "typeName": "Python expression",
+          "defaultValue": "21",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a completed child result",
+          "code": "import asyncio\n\nasync def double(value):\n    await asyncio.sleep(0)\n    return value * 2\n\nasync def main():\n    async with asyncio.TaskGroup() as group:\n        task = group.create_task(double(21))\n    print(task.result())\n\nasyncio.run(main())",
+          "explanation": "Leaving the TaskGroup waits for the child, after which its result is available."
+        }
+      ]
+    }
+  ]
+}

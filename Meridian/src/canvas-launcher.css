@@ -1,0 +1,22 @@
+/* Frame-based fitting remains independent of title length. Motion occurs inside
+   the vector's reserved bounds; labels are separate, legible screen-space UI. */
+.meridian-scene .ms-canvas-open{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:72px;height:72px;min-width:72px;min-height:72px;padding:0;margin:0;flex:none;align-self:center;border:0;border-radius:50%;background:transparent;color:#fff;line-height:1;vertical-align:middle;cursor:pointer;pointer-events:auto}
+.meridian-scene .ms-canvas-open:hover,.meridian-scene .ms-canvas-open:focus-visible{background:transparent;border:0}
+.meridian-scene .ms-canvas-open:focus-visible{outline:2px solid var(--ms-portal-color,var(--ms-accent,#72e6a0));outline-offset:2px}
+.ms-portal-approach{display:block;width:100%;height:100%;pointer-events:none;transform:scale(1);transition:transform .65s cubic-bezier(.18,.7,.2,1),filter .65s ease}
+.ms-canvas-open svg{display:block;width:100%;height:100%;pointer-events:none}
+.ms-canvas-open[data-portal-active=true] .ms-portal-approach{transform:scale(1.18);filter:drop-shadow(0 0 2px var(--ms-portal-glow,#a7eddb22))}
+.portal-art--doorway,.portal-art--passage{overflow:visible;isolation:isolate}
+.architectural-depth{transform-box:view-box;transform-origin:80px 80px}
+.portal-art--doorway path,.portal-art--passage path{stroke-linecap:round;stroke-linejoin:round}
+.organic-portal{overflow:visible;isolation:isolate;shape-rendering:geometricPrecision}
+.organic-portal [data-portal-motion]{transform-box:view-box;transform-origin:80px 80px}
+.organic-portal .organic-depth{opacity:0}
+.organic-wormhole .organic-depth{transform-origin:93px 67px}
+.organic-portal .organic-filaments{opacity:.85}
+.organic-vortex .organic-vortex-arms{opacity:.94}
+.ms-canvas-portal-tooltip{position:fixed;z-index:2147483000;pointer-events:none;box-sizing:border-box;max-width:calc(100vw - 24px);padding:6px 10px;border:1px solid #688f8377;border-radius:4px;background:#12231ff5;color:#e6f5ed;box-shadow:0 3px 12px #0005;font-size:14px;font-weight:500;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transform:translate(-50%,-100%)}
+.ms-canvas-portal-tooltip[data-below=true]{transform:translate(-50%,0)}
+.ms-canvas-launch-copy{display:flex;flex-direction:column;align-items:stretch;gap:var(--ms-content-gap,5px);box-sizing:border-box;pointer-events:none}
+.ms-canvas-launch-copy :is(a,button,input,[data-editable-node-id],[contenteditable]){pointer-events:auto}
+@media(prefers-reduced-motion:reduce){.ms-portal-approach{transition:none}.ms-canvas-open[data-portal-active=true] .ms-portal-approach{transform:none;filter:drop-shadow(0 0 2px var(--ms-portal-glow,#a7eddb44))}.organic-portal .organic-static-depth{opacity:.8}}

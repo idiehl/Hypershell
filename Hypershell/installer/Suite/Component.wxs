@@ -1,0 +1,52 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <?if $(var.ComponentName) = Authoring ?>
+    <?define ComponentTitle = "Hyperlib and Hyperpage Studio" ?>
+    <?define ComponentUpgradeCode = "7F0FE4B6-9062-4FA8-9406-9EA42BF9BFEA" ?>
+  <?elseif $(var.ComponentName) = Meridian ?>
+    <?define ComponentTitle = "Atlas Meridian" ?>
+    <?define ComponentUpgradeCode = "0C758068-837A-41F9-B52E-0AC7B737A727" ?>
+  <?else ?>
+    <?error Unsupported Hypershell component ?>
+  <?endif ?>
+  <Package Name="$(var.ComponentTitle)" Manufacturer="Atlas Universalis"
+           Version="$(var.ProductVersion)" UpgradeCode="$(var.ComponentUpgradeCode)"
+           Scope="perMachine" InstallerVersion="500">
+    <SummaryInformation Description="$(var.ComponentTitle) component for Hypershell Complete" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of this Hypershell component is already installed." />
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="HypershellFolder" Name="Hypershell">
+        <Directory Id="ComponentsFolder" Name="Components">
+          <Directory Id="COMPONENTFOLDER" Name="$(var.ComponentName)">
+            <Component Id="ComponentRegistration" Guid="*">
+              <RegistryValue Root="HKLM" Key="SOFTWARE\AtlasUniversalis\Hypershell\Components\$(var.ComponentName)"
+                  Name="Path" Type="string" Value="[COMPONENTFOLDER]" KeyPath="yes" />
+              <RegistryValue Root="HKLM" Key="SOFTWARE\AtlasUniversalis\Hypershell\Components\$(var.ComponentName)"
+                  Name="Version" Type="string" Value="$(var.ProductVersion)" />
+            </Component>
+            <Component Id="ComponentShortcut" Guid="*">
+              <RegistryValue Root="HKCU" Key="SOFTWARE\AtlasUniversalis\Hypershell\Shortcuts"
+                  Name="$(var.ComponentName)" Type="integer" Value="1" KeyPath="yes" />
+              <?if $(var.ComponentName) = Authoring ?>
+                <Shortcut Id="StudioShortcut" Directory="ApplicationProgramsFolder" Name="Hyperpage Studio"
+                    Target="[COMPONENTFOLDER]studio\Hypershell.exe" Arguments="--hyperpage-studio" WorkingDirectory="COMPONENTFOLDER" />
+              <?else ?>
+                <Shortcut Id="MeridianShortcut" Directory="ApplicationProgramsFolder" Name="Atlas Meridian"
+                    Target="[HypershellFolder]Hypershell.exe" Arguments="--meridian" WorkingDirectory="HypershellFolder" />
+              <?endif ?>
+              <RemoveFolder Id="RemoveComponentMenuFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="Hypershell" />
+    </StandardDirectory>
+    <Feature Id="ComponentFeature" Title="$(var.ComponentTitle)" Level="1">
+      <ComponentGroupRef Id="ComponentFiles" />
+      <ComponentRef Id="ComponentRegistration" />
+      <ComponentRef Id="ComponentShortcut" />
+    </Feature>
+  </Package>
+</Wix>

@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "boost-popular",
+  "guides": [
+    {
+      "entryId": "boost-popular.trim-string",
+      "definition": "Uses Boost.StringAlgo to remove leading and trailing whitespace. Project dependency only: configure the required Boost headers and libraries in a C++ project; the isolated snippet runner does not resolve external packages.",
+      "parameters": [
+        {
+          "name": "variable",
+          "displayName": "Variable name",
+          "placeholder": "variable",
+          "description": "Name of the std::string to create and trim.",
+          "typeName": "C++ identifier",
+          "defaultValue": "input",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Initial value",
+          "placeholder": "value",
+          "description": "String expression containing optional surrounding whitespace.",
+          "typeName": "C++ expression",
+          "defaultValue": "\"  Atlas  \"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Trim user input",
+          "code": "#include <boost/algorithm/string/trim.hpp>\n#include <string>\n\nstd::string input = \"  Atlas  \";\nboost::algorithm::trim(input);",
+          "explanation": "trim mutates the supplied string; trim_copy is available when the original should be retained."
+        }
+      ]
+    },
+    {
+      "entryId": "boost-popular.asio-timer",
+      "definition": "Creates a Boost.Asio steady timer and runs its completion handler on an io_context. Project dependency only: configure the required Boost headers and libraries in a C++ project; the isolated snippet runner does not resolve external packages.",
+      "parameters": [
+        {
+          "name": "seconds",
+          "displayName": "Delay seconds",
+          "placeholder": "seconds",
+          "description": "Number of seconds before the timer becomes ready.",
+          "typeName": "integer",
+          "defaultValue": "1",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "message",
+          "displayName": "Message expression",
+          "placeholder": "message",
+          "description": "Value written when the timer completes successfully.",
+          "typeName": "C++ string expression",
+          "defaultValue": "\"ready\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Wait one second",
+          "code": "#include <boost/asio.hpp>\n#include <chrono>\n#include <iostream>\n\nboost::asio::io_context io;\nboost::asio::steady_timer timer(io, std::chrono::seconds(1));\ntimer.async_wait([](const boost::system::error_code& error) {\n    if (!error) std::cout << \"ready\" << '\\n';\n});\nio.run();",
+          "explanation": "The io_context drives asynchronous completion; the handler checks cancellation or other timer errors before using the result."
+        }
+      ]
+    },
+    {
+      "entryId": "boost-popular.program-options",
+      "definition": "Declares a Boost.Program_options description and parses the process arguments. Project dependency only: configure the required Boost headers and libraries in a C++ project; the isolated snippet runner does not resolve external packages.",
+      "parameters": [
+        {
+          "name": "caption",
+          "displayName": "Caption",
+          "placeholder": "caption",
+          "description": "Heading displayed with the option list.",
+          "typeName": "C++ string expression",
+          "defaultValue": "\"Options\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "optionName",
+          "displayName": "Option name",
+          "placeholder": "optionName",
+          "description": "Long command-line option name without leading dashes.",
+          "typeName": "option name",
+          "defaultValue": "output",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "defaultValue",
+          "displayName": "Default value",
+          "placeholder": "defaultValue",
+          "description": "Default string value when the option is omitted.",
+          "typeName": "C++ string expression",
+          "defaultValue": "\"result.txt\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "description",
+          "displayName": "Description",
+          "placeholder": "description",
+          "description": "Help text for the option.",
+          "typeName": "C++ string expression",
+          "defaultValue": "\"output path\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse an output option",
+          "code": "#include <boost/program_options.hpp>\n#include <string>\n\nnamespace po = boost::program_options;\npo::options_description options(\"Options\");\noptions.add_options()\n    (\"help,h\", \"show help\")\n    (\"output\", po::value<std::string>()->default_value(\"result.txt\"), \"output path\");\npo::variables_map values;\npo::store(po::parse_command_line(argc, argv, options), values);\npo::notify(values);",
+          "explanation": "The option description owns names, value types, defaults, and help text; notify performs semantic conversion and validation."
+        }
+      ]
+    }
+  ]
+}

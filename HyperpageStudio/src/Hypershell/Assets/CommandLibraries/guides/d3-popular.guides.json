@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "d3-popular",
+  "guides": [
+    {
+      "entryId": "d3-popular.bind-list",
+      "definition": "Uses D3's data join to create one list item per value. Browser/editor content: import D3 in the target page or bundle; Hypershell's Web APIs surface is intentionally editor-only.",
+      "parameters": [
+        {
+          "name": "selector",
+          "displayName": "Container selector",
+          "placeholder": "selector",
+          "description": "CSS selector for the parent element.",
+          "typeName": "JavaScript string",
+          "defaultValue": "\"#projects\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "element",
+          "displayName": "Child element",
+          "placeholder": "element",
+          "description": "Element selector and tag passed to join.",
+          "typeName": "JavaScript string",
+          "defaultValue": "\"li\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "data",
+          "displayName": "Data",
+          "placeholder": "data",
+          "description": "Array bound to child elements.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "projects",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "labelExpression",
+          "displayName": "Label expression",
+          "placeholder": "labelExpression",
+          "description": "Text returned for each data value.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "value.name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Render project names",
+          "code": "import * as d3 from \"d3\";\n\nd3.select(\"#projects\")\n  .selectAll(\"li\")\n  .data(projects)\n  .join(\"li\")\n  .text(project => project.name);",
+          "explanation": "join handles entering, updating, and exiting elements for the current data array."
+        }
+      ]
+    },
+    {
+      "entryId": "d3-popular.linear-scale",
+      "definition": "Maps a numeric data domain into a visual range and enables clamping. Browser/editor content: import D3 in the target page or bundle; Hypershell's Web APIs surface is intentionally editor-only.",
+      "parameters": [
+        {
+          "name": "variable",
+          "displayName": "Scale name",
+          "placeholder": "variable",
+          "description": "Identifier for the scale function.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "x",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "domain",
+          "displayName": "Domain",
+          "placeholder": "domain",
+          "description": "Input extent.",
+          "typeName": "number[]",
+          "defaultValue": "[0, 100]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "range",
+          "displayName": "Range",
+          "placeholder": "range",
+          "description": "Output extent.",
+          "typeName": "number[]",
+          "defaultValue": "[0, 640]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Map scores to pixels",
+          "code": "import { scaleLinear } from \"d3\";\n\nconst x = scaleLinear()\n  .domain([0, 100])\n  .range([0, 640])\n  .clamp(true);",
+          "explanation": "The domain describes data values and the range describes output values; clamping keeps outliers within the visual extent."
+        }
+      ]
+    },
+    {
+      "entryId": "d3-popular.responsive-bars",
+      "definition": "Creates rectangular SVG bars from data using D3 scales. Browser/editor content: import D3 in the target page or bundle; Hypershell's Web APIs surface is intentionally editor-only.",
+      "parameters": [
+        {
+          "name": "width",
+          "displayName": "Chart width",
+          "placeholder": "width",
+          "description": "SVG viewBox and scale width.",
+          "typeName": "number",
+          "defaultValue": "640",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "height",
+          "displayName": "Chart height",
+          "placeholder": "height",
+          "description": "SVG viewBox and scale height.",
+          "typeName": "number",
+          "defaultValue": "320",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "selector",
+          "displayName": "SVG selector",
+          "placeholder": "selector",
+          "description": "CSS selector for the SVG element.",
+          "typeName": "JavaScript string",
+          "defaultValue": "\"#chart\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "data",
+          "displayName": "Data",
+          "placeholder": "data",
+          "description": "Array containing label and numeric value properties.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "data",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "labelProperty",
+          "displayName": "Label property",
+          "placeholder": "labelProperty",
+          "description": "Categorical property.",
+          "typeName": "JavaScript property",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "valueProperty",
+          "displayName": "Value property",
+          "placeholder": "valueProperty",
+          "description": "Numeric property.",
+          "typeName": "JavaScript property",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Render category values",
+          "code": "import * as d3 from \"d3\";\n\nconst width = 640;\nconst height = 320;\nconst svg = d3.select(\"#chart\").attr(\"viewBox\", [0, 0, width, height].join(\" \"));\nconst x = d3.scaleBand().domain(data.map(item => item.name)).range([0, width]).padding(0.1);\nconst y = d3.scaleLinear().domain([0, d3.max(data, item => item.value) ?? 0]).nice().range([height, 0]);\n\nsvg.selectAll(\"rect\")\n  .data(data)\n  .join(\"rect\")\n  .attr(\"x\", item => x(item.name) ?? 0)\n  .attr(\"y\", item => y(item.value))\n  .attr(\"width\", x.bandwidth())\n  .attr(\"height\", item => height - y(item.value));",
+          "explanation": "Band scales allocate categorical positions while the inverted linear range maps larger values higher in SVG coordinates."
+        }
+      ]
+    }
+  ]
+}

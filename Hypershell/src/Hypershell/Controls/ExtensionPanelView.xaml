@@ -1,0 +1,103 @@
+<UserControl x:Class="Hypershell.Controls.ExtensionPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:webView="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+             Background="{StaticResource PanelBrush}"
+             Focusable="False">
+  <Border Background="{StaticResource PanelBrush}"
+          BorderBrush="{StaticResource BorderBrush}"
+          BorderThickness="1">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="38" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Border x:Name="PanelHeaderBorder"
+              Background="{StaticResource PanelBrush}"
+              BorderBrush="{StaticResource BorderBrush}"
+              BorderThickness="0,0,0,1">
+        <Grid Margin="10,0,4,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="34" />
+          </Grid.ColumnDefinitions>
+          <Grid x:Name="PanelDragSurface"
+                Grid.ColumnSpan="2"
+                Background="Transparent"
+                PreviewMouseLeftButtonDown="PanelDragSurfacePreviewMouseLeftButtonDown"
+                PreviewMouseMove="PanelDragSurfacePreviewMouseMove"
+                PreviewMouseLeftButtonUp="PanelDragSurfacePreviewMouseLeftButtonUp">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="DragHandleText"
+                       Grid.Column="0"
+                       Text="⋮⋮"
+                       Visibility="Collapsed"
+                       VerticalAlignment="Center"
+                       Foreground="{StaticResource SecondaryVividBrush}"
+                       FontFamily="Segoe UI Symbol"
+                       FontSize="15"
+                       FontWeight="Bold"
+                       Margin="0,0,8,0"
+                       ToolTip="Drag this panel to another workspace host" />
+            <TextBlock x:Name="PanelTitleText"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       FontWeight="SemiBold"
+                       TextTrimming="CharacterEllipsis" />
+          </Grid>
+          <Border Grid.Column="2"
+                  Background="{StaticResource SecondaryTintBrush}"
+                  CornerRadius="3"
+                  Padding="6,2"
+                  Margin="8,0">
+            <TextBlock x:Name="SecurityBadgeText"
+                       Text="LOCAL WEB PANEL"
+                       Foreground="{StaticResource SecondaryVividBrush}"
+                       FontSize="8"
+                       FontWeight="Bold" />
+          </Border>
+          <Button Grid.Column="3"
+                  Content="×"
+                  Click="CloseClick"
+                  Style="{StaticResource HeaderIconButtonStyle}"
+                  Width="30"
+                  Height="30"
+                  FontSize="18"
+                  ToolTip="Close extension panel" />
+        </Grid>
+      </Border>
+
+      <Grid Grid.Row="1" Background="#0D1117">
+        <webView:WebView2 x:Name="PanelWebView"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch" />
+        <Border x:Name="StatusOverlay"
+                Background="#0D1117"
+                Padding="24">
+          <StackPanel HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      MaxWidth="440">
+            <TextBlock Text="EXT"
+                       FontFamily="{StaticResource CodeFontFamily}"
+                       Foreground="{StaticResource SecondaryBrush}"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center" />
+            <TextBlock x:Name="StatusText"
+                       Text="Starting approved local panel…"
+                       Foreground="{StaticResource MutedForegroundBrush}"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"
+                       Margin="0,10,0,0" />
+          </StackPanel>
+        </Border>
+      </Grid>
+    </Grid>
+  </Border>
+</UserControl>

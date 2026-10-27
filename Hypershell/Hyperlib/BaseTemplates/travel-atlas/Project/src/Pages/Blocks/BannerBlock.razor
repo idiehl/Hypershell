@@ -1,0 +1,17 @@
+@using HyperLib.Core
+<header class="hl-banner @(string.IsNullOrWhiteSpace(Context.Text("src")) ? "hl-banner-text-only" : "")">
+    <div class="hl-banner-copy">
+        <p class="hl-kicker" data-field="eyebrow" data-placeholder="Eyebrow">@Context.Text("eyebrow")</p>
+        <h1 data-field="title" data-placeholder="Banner title">@Context.Text("title")</h1>
+        <p class="hl-deck" data-field="text" data-placeholder="Banner introduction">@Context.Text("text")</p>
+        @if (!string.IsNullOrWhiteSpace(Context.Text("url")) && TemplateValidator.IsSafeUrl(Context.Text("url")))
+        {
+            <a class="hl-button" href="@Context.Text("url")" target="_blank" rel="noopener noreferrer"><span data-field="label">@Context.Text("label", "Explore")</span><span aria-hidden="true"> ↗</span></a>
+        }
+    </div>
+    @if (!string.IsNullOrWhiteSpace(Context.Text("src")) && TemplateValidator.IsSafeUrl(Context.Text("src")))
+    {
+        <img class="hl-banner-image" src="@Context.Text("src")" alt="@Context.Text("alt")" />
+    }
+</header>
+@code { [Parameter, EditorRequired] public BlockContext Context { get; set; } = new(); }

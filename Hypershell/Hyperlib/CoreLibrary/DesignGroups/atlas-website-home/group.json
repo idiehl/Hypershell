@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "atlas-website-home",
+  "title": "Atlas \u00B7 Home \u0026 identity",
+  "description": "The current Atlas home: understated navigation, celestial hero, core principles and shared identity.",
+  "category": "Atlas website",
+  "sourceTemplateId": "atlas.website.v1"
+}

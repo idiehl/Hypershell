@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Hyperpage Studio</title>
+    <script>
+      if (window === window.top && window.__hyperlibNativeChrome === true)
+        document.documentElement.classList.add("hyperlib-native-chrome");
+    </script>
+    <link rel="icon" href="/favicon.svg?v=work-sites-2" type="image/svg+xml" />
+    <link rel="stylesheet" href="./app.css?v=studio-library-1" />
+    <link rel="stylesheet" href="./studio.css?v=studio-work-landing-1" />
+  </head>
+  <body class="editing studio-authoring">
+    <header class="topbar" hidden aria-hidden="true">
+      <nav class="history-controls" aria-label="History navigation">
+        <button id="history-back" class="icon-button" title="Back" aria-label="Back" disabled><span data-icon="back"></span></button>
+        <button id="history-forward" class="icon-button" title="Forward" aria-label="Forward" disabled><span data-icon="arrow"></span></button>
+      </nav>
+      <a class="brand" href="#library" aria-label="HyperLib home"
+        ><img src="/hyperlib-logo.svg?v=work-sites-2" alt="" aria-hidden="true" />
+        <span>HyperLib</span></a
+      >
+      <div class="header-actions">
+        <button
+          id="edit-toggle"
+          class="edit-toggle"
+          aria-pressed="false"
+          title="Switch between reading and editing"
+          disabled
+        >
+          <span>Edit Mode</span
+          ><span class="switch-track"><span></span></span>
+        </button>
+      </div>
+    </header>
+    <div id="app-layout" class="app-layout">
+      <aside id="navigation" class="navigation" aria-label="Project contents">
+        <div class="studio-panel-heading" hidden>
+          <select id="studio-left-panel-selector" aria-label="Left workspace panel"></select>
+        </div>
+        <button type="button" id="studio-left-panel-collapse" class="studio-panel-edge studio-panel-edge-left" aria-label="Collapse left panel" title="Collapse left panel" hidden><span data-icon="back"></span></button>
+        <div class="nav-head">
+          <div class="studio-left-tabs" role="tablist" aria-label="Project panels">
+            <button type="button" data-left-panel="contents" class="active" role="tab" aria-selected="true" aria-controls="studio-contents">Contents</button>
+            <button type="button" data-left-panel="inspector" role="tab" aria-selected="false" aria-controls="properties-content">Properties</button>
+          </div><button
+            id="nav-collapse"
+            class="icon-button"
+            title="Collapse navigation"
+            aria-label="Collapse navigation"
+          >
+            <span data-icon="panel"></span>
+          </button>
+        </div>
+        <div id="studio-contents" role="tabpanel" aria-label="Contents">
+        <button class="nav-home" data-navigate="library">
+          <span data-icon="book"></span>Work overview
+        </button>
+        <button id="studio-landing" class="nav-home" hidden><span data-icon="page"></span>Landing page</button>
+        <button id="studio-create-page" class="nav-home"><span data-icon="plus"></span>New Page</button>
+        <button id="studio-add-item" class="nav-home"><span data-icon="folder"></span>Add item</button>
+        <div id="nav-tree"></div>
+        <div class="nav-footer">
+          <button id="studio-save-page-template" class="quiet-button" title="Save the current Page as a reusable template"><span data-icon="grid"></span>Save Page as template</button>
+          <button id="studio-new-work" class="quiet-button" title="Create another Work project"><span data-icon="plus"></span>New Work project</button>
+          <span class="local-dot"></span>Saved in this project<span
+            id="library-count"
+          ></span>
+        </div>
+        </div>
+        <div id="properties-content" role="tabpanel" aria-label="Properties" hidden></div>
+      </aside>
+      <div
+        id="nav-resizer"
+        class="nav-resizer"
+        role="separator"
+        tabindex="0"
+        aria-label="Resize library navigation"
+        aria-orientation="vertical"
+        aria-controls="navigation"
+        title="Drag to resize navigation. Double-click to reset."
+      ></div>
+      <button
+        id="nav-expand"
+        class="icon-button nav-expand"
+        title="Expand navigation"
+        aria-label="Expand navigation"
+        hidden
+      >
+        <span data-icon="panel"></span>
+      </button>
+      <main id="main" tabindex="-1">
+        <div id="studio-workspace-tabs" class="studio-workspace-tabs" hidden></div>
+        <div class="content-topline">
+          <div class="content-context">
+            <nav id="breadcrumbs" aria-label="Breadcrumb"></nav>
+            <span id="save-status" class="save-status" role="status" aria-live="polite">Saved locally</span>
+            <span id="studio-template-context" class="studio-template-context" hidden></span>
+          </div>
+          <div class="view-actions">
+            <button id="studio-save" class="icon-button" title="Save content (Ctrl+S)" aria-label="Save content"><span data-icon="check"></span></button>
+            <button id="studio-page-templates" class="icon-button" title="Page templates" aria-label="Page templates"><span data-icon="grid"></span></button>
+            <button id="studio-inspector-toggle" class="icon-button" title="Show template and element library" aria-label="Show template and element library" aria-pressed="true"><span data-icon="panel"></span></button>
+            <button id="studio-publish" class="icon-button" title="Publish this Work to Hyperlib" aria-label="Publish this Work to Hyperlib"><span data-icon="upload"></span></button>
+            <button id="archives-button" class="quiet-button author-only" title="Publish this branch to Archives" aria-label="Publish to Archives" hidden>
+              <span data-icon="upload"></span>Publish to Archives
+            </button>
+            <button id="studio-button" class="quiet-button" hidden>
+              <span data-icon="code"></span>Open in Studio
+            </button>
+            <button id="undo-button" class="icon-button author-only" title="Undo (Ctrl+Z)" aria-label="Undo">
+              <span data-icon="undo"></span>
+            </button>
+            <button id="redo-button" class="icon-button author-only" title="Redo (Ctrl+Shift+Z)" aria-label="Redo">
+              <span data-icon="redo"></span>
+            </button>
+            <button
+              id="appearance-button"
+              class="icon-button author-only"
+              title="Appearance"
+              aria-label="Appearance"
+            >
+              <span data-icon="palette"></span></button
+            ><button
+              id="more-button"
+              class="icon-button author-only"
+              title="Organize this item"
+              aria-label="Organize this item"
+            >
+              <span data-icon="more"></span>
+            </button>
+          </div>
+        </div>
+        <div
+          id="runtime-notice"
+          class="runtime-notice"
+          role="status"
+          hidden
+        ></div>
+        <section id="studio-library-preview" aria-labelledby="studio-library-preview-title" hidden>
+          <div class="studio-preview-heading"><h2 id="studio-library-preview-title">Template preview</h2><button type="button" id="studio-library-preview-close" class="icon-button" aria-label="Return to Page" title="Return to Page (Esc)"><span data-icon="close"></span></button></div>
+          <p id="studio-library-preview-status" role="status">Preparing preview…</p>
+          <iframe id="studio-library-preview-frame" title="Template preview" sandbox="allow-scripts allow-same-origin" hidden></iframe>
+          <p id="studio-library-preview-message" class="panel-intro" hidden></p>
+        </section>
+        <section id="landing" class="landing"></section>
+        <section id="work-view" class="work-view" hidden>
+          <iframe id="work-frame" title="Work" class="work-frame" scrolling="no"></iframe>
+          <div id="work-fallback" hidden></div>
+        </section>
+        <section id="page-view" class="page-view" hidden>
+          <iframe id="page-frame" title="Page canvas" class="page-frame" scrolling="no"></iframe>
+          <div id="page-fallback" hidden></div>
+        </section>
+        <footer class="main-footer" hidden>
+          <span>A space for everything you’re curious about.</span
+          ><span>HYPERLIB <span class="footer-version">/ 01</span></span>
+        </footer>
+      </main>
+      <aside
+        id="editor-panel"
+        class="editor-panel author-only"
+        aria-label="Authoring panel"
+      >
+        <div id="studio-workspace-tools" class="studio-workspace-tools" aria-label="Project tools" hidden></div>
+        <div class="studio-panel-heading" hidden>
+          <select id="studio-right-panel-selector" aria-label="Right workspace panel"></select>
+        </div>
+        <button type="button" id="studio-right-panel-collapse" class="studio-panel-edge studio-panel-edge-right" aria-label="Collapse right panel" title="Collapse right panel" hidden><span data-icon="arrow"></span></button>
+        <div class="editor-tabs">
+          <button data-panel="templates" class="active">Template</button
+          ><button data-panel="elements">Elements</button
+          >
+        </div>
+        <div id="panel-content"></div>
+      </aside>
+    </div>
+    <div id="toast" class="toast" role="status" hidden></div>
+    <dialog id="dialog">
+      <form id="dialog-form">
+        <div class="dialog-heading">
+          <h2 id="dialog-title"></h2>
+          <button
+            type="button"
+            id="dialog-close"
+            class="icon-button"
+            aria-label="Close"
+          >
+            <span data-icon="close"></span>
+          </button>
+        </div>
+        <div id="dialog-body"></div>
+        <p id="dialog-error" class="error-message" role="alert"></p>
+        <div class="dialog-actions">
+          <button type="button" id="dialog-cancel" class="quiet-button">
+            Cancel</button
+          ><button type="submit" id="dialog-submit" class="primary-button">
+            Create
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="archives-dialog" class="archives-dialog" aria-labelledby="archives-title">
+      <div class="dialog-heading">
+        <div><span class="eyebrow">PUBLISHING REVIEW</span><h2 id="archives-title">Publish to Archives</h2></div>
+        <button type="button" id="archives-close" class="icon-button" aria-label="Close publishing review"><span data-icon="close"></span></button>
+      </div>
+      <p class="panel-intro">Choose what to share from this branch. Includes the selected Works’ elements, styles and scripts. Your Pages stay in Hyperlib. Only checked items are updated; unchecked items already in Archives stay unchanged.</p>
+      <div class="archives-target"><span data-icon="book"></span><div><strong id="archives-target-title">Atlas Archives</strong><p id="archives-target-status">Checking connection…</p></div></div>
+      <div class="archives-review-toolbar"><div><strong id="archives-summary">Loading review…</strong><p id="archives-save-status" role="status"></p></div><button type="button" id="archives-refresh" class="quiet-button">Refresh review</button></div>
+      <p id="archives-stale" class="archives-notice" hidden>The library changed since this review. Refresh to check the latest content. New items start unchecked.</p>
+      <p id="archives-error" class="error-message" role="alert"></p>
+      <div id="archives-receipt" class="archives-receipt" role="status" hidden></div>
+      <div id="archives-tree" class="archives-tree" aria-label="Items to publish"></div>
+      <div class="dialog-actions archives-actions"><span>Review saved on this computer</span><button type="button" id="archives-done" class="quiet-button">Close</button><button type="button" id="archives-sync" class="primary-button" disabled>Sync to Archives</button></div>
+    </dialog>
+    <script src="./element-editor.js?v=studio-elements-1"></script>
+    <script type="module" src="./app.js?v=studio-elements-1"></script>
+  </body>
+</html>

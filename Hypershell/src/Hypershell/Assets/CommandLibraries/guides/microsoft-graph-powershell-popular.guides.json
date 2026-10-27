@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "microsoft-graph-powershell-popular",
+  "guides": [
+    {
+      "entryId": "microsoft-graph-powershell-popular.connect-scoped",
+      "definition": "Starts an interactive Microsoft Graph session with an explicit least-privilege scope list. Requires the relevant Microsoft.Graph modules plus an authorized Microsoft 365 sign-in; Hypershell does not install or authenticate them.",
+      "parameters": [
+        {
+          "name": "scopes",
+          "displayName": "Scopes",
+          "placeholder": "scopes",
+          "description": "Quoted scope or comma-separated quoted scopes required by the task.",
+          "typeName": "String[]",
+          "defaultValue": "'User.Read.All'",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Connect for read-only user access",
+          "code": "Connect-MgGraph -Scopes 'User.Read.All' -NoWelcome",
+          "explanation": "Explicit scopes make the requested permissions visible before authentication and consent."
+        }
+      ]
+    },
+    {
+      "entryId": "microsoft-graph-powershell-popular.query-users",
+      "definition": "Uses server-side filtering and requests only the user properties needed by the result. Requires the relevant Microsoft.Graph modules plus an authorized Microsoft 365 sign-in; Hypershell does not install or authenticate them.",
+      "parameters": [
+        {
+          "name": "filter",
+          "displayName": "OData filter",
+          "placeholder": "filter",
+          "description": "Quoted OData filter supported by the endpoint.",
+          "typeName": "PowerShell string",
+          "defaultValue": "\"accountEnabled eq true\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "top",
+          "displayName": "Maximum users",
+          "placeholder": "top",
+          "description": "Maximum number of users requested for this page.",
+          "typeName": "Int32",
+          "defaultValue": "25",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "properties",
+          "displayName": "Properties",
+          "placeholder": "properties",
+          "description": "Comma-separated properties to request.",
+          "typeName": "String[]",
+          "defaultValue": "Id,DisplayName,UserPrincipalName",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find enabled users",
+          "code": "Get-MgUser -Filter \"accountEnabled eq true\" -Top 25 -Property Id,DisplayName,UserPrincipalName",
+          "explanation": "Filtering and property projection reduce response volume; the signed-in identity still needs the matching Graph permission."
+        }
+      ]
+    },
+    {
+      "entryId": "microsoft-graph-powershell-popular.invoke-request",
+      "definition": "Issues a direct authenticated request through the Microsoft Graph PowerShell session. Requires the relevant Microsoft.Graph modules plus an authorized Microsoft 365 sign-in; Hypershell does not install or authenticate them.",
+      "parameters": [
+        {
+          "name": "method",
+          "displayName": "HTTP method",
+          "placeholder": "method",
+          "description": "Graph request method such as GET or POST.",
+          "typeName": "HttpMethod",
+          "defaultValue": "GET",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "uri",
+          "displayName": "Graph URI",
+          "placeholder": "uri",
+          "description": "Quoted absolute Microsoft Graph endpoint.",
+          "typeName": "Uri",
+          "defaultValue": "'https://graph.microsoft.com/v1.0/organization'",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read organization details",
+          "code": "Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/v1.0/organization'",
+          "explanation": "Invoke-MgGraphRequest is useful when an SDK cmdlet does not yet expose an endpoint; validate the URI and permissions first."
+        }
+      ]
+    }
+  ]
+}

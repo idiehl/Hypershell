@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "bootstrap-html-popular",
+  "guides": [
+    {
+      "entryId": "bootstrap-html-popular.responsive-navbar",
+      "definition": "Creates a Bootstrap navbar that collapses behind a menu button on smaller screens. Editor-only markup: include Bootstrap 5.3 CSS (and its JavaScript bundle for interactive components) in the target page.",
+      "parameters": [
+        {
+          "name": "homeUrl",
+          "displayName": "Home URL",
+          "placeholder": "homeUrl",
+          "description": "Quoted link target used by the brand and Home item.",
+          "typeName": "HTML attribute",
+          "defaultValue": "\"/\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "brand",
+          "displayName": "Brand text",
+          "placeholder": "brand",
+          "description": "Visible brand label.",
+          "typeName": "HTML text",
+          "defaultValue": "Atlas",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "collapseId",
+          "displayName": "Collapse id",
+          "placeholder": "collapseId",
+          "description": "Shared id without # for the collapsible menu.",
+          "typeName": "HTML id",
+          "defaultValue": "mainNav",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create an Atlas navbar",
+          "code": "<nav class=\"navbar navbar-expand-lg bg-body-tertiary\">\n  <div class=\"container-fluid\">\n    <a class=\"navbar-brand\" href=\"/\">Atlas</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#mainNav\" aria-controls=\"mainNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"mainNav\">\n      <div class=\"navbar-nav\"><a class=\"nav-link active\" href=\"/\">Home</a></div>\n    </div>\n  </div>\n</nav>",
+          "explanation": "The button target and collapse id must match; the interactive collapse behavior requires the Bootstrap JavaScript bundle."
+        }
+      ]
+    },
+    {
+      "entryId": "bootstrap-html-popular.content-card",
+      "definition": "Creates a Bootstrap card with a title, body, and action. Editor-only markup: include Bootstrap 5.3 CSS (and its JavaScript bundle for interactive components) in the target page.",
+      "parameters": [
+        {
+          "name": "maximumWidth",
+          "displayName": "Maximum width",
+          "placeholder": "maximumWidth",
+          "description": "Inline maximum card width.",
+          "typeName": "CSS length",
+          "defaultValue": "24rem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "title",
+          "displayName": "Title",
+          "placeholder": "title",
+          "description": "Card heading text.",
+          "typeName": "HTML text",
+          "defaultValue": "Network Observatory",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "body",
+          "displayName": "Body",
+          "placeholder": "body",
+          "description": "Card description.",
+          "typeName": "HTML text",
+          "defaultValue": "Review local interfaces and routes.",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "actionUrl",
+          "displayName": "Action URL",
+          "placeholder": "actionUrl",
+          "description": "Quoted action link target.",
+          "typeName": "HTML attribute",
+          "defaultValue": "\"/observatory\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "actionLabel",
+          "displayName": "Action label",
+          "placeholder": "actionLabel",
+          "description": "Visible action text.",
+          "typeName": "HTML text",
+          "defaultValue": "Open",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a project card",
+          "code": "<article class=\"card\" style=\"max-width: 24rem;\">\n  <div class=\"card-body\">\n    <h2 class=\"card-title h5\">Network Observatory</h2>\n    <p class=\"card-text\">Review local interfaces and routes.</p>\n    <a class=\"btn btn-primary\" href=\"/observatory\">Open</a>\n  </div>\n</article>",
+          "explanation": "Semantic article and heading elements preserve document structure while Bootstrap classes provide the visual treatment."
+        }
+      ]
+    },
+    {
+      "entryId": "bootstrap-html-popular.validated-form-field",
+      "definition": "Creates an accessible Bootstrap input with help text. Editor-only markup: include Bootstrap 5.3 CSS (and its JavaScript bundle for interactive components) in the target page.",
+      "parameters": [
+        {
+          "name": "inputId",
+          "displayName": "Input id",
+          "placeholder": "inputId",
+          "description": "Unique id shared by label and help references.",
+          "typeName": "HTML id",
+          "defaultValue": "email",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "label",
+          "displayName": "Label",
+          "placeholder": "label",
+          "description": "Visible field label.",
+          "typeName": "HTML text",
+          "defaultValue": "Email address",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "inputName",
+          "displayName": "Input name",
+          "placeholder": "inputName",
+          "description": "Name submitted with the form.",
+          "typeName": "HTML name",
+          "defaultValue": "email",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "inputType",
+          "displayName": "Input type",
+          "placeholder": "inputType",
+          "description": "Native input type such as text, email, or password.",
+          "typeName": "HTML input type",
+          "defaultValue": "email",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "helpText",
+          "displayName": "Help text",
+          "placeholder": "helpText",
+          "description": "Supplemental field guidance.",
+          "typeName": "HTML text",
+          "defaultValue": "We use this for account notices.",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Add an email field",
+          "code": "<div class=\"mb-3\">\n  <label class=\"form-label\" for=\"email\">Email address</label>\n  <input class=\"form-control\" id=\"email\" name=\"email\" type=\"email\" aria-describedby=\"emailHelp\">\n  <div class=\"form-text\" id=\"emailHelp\">We use this for account notices.</div>\n</div>",
+          "explanation": "Matching label, input, and description ids give assistive technology the same context as the visual layout."
+        }
+      ]
+    }
+  ]
+}

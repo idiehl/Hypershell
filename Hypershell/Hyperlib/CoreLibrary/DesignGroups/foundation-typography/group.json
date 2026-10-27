@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "foundation-typography",
+  "title": "Typography essentials",
+  "description": "Editable typography modules. Native controls and local C# interactions; no third-party service required.",
+  "category": "Typography",
+  "sourceTemplateId": "foundation-typography"
+}

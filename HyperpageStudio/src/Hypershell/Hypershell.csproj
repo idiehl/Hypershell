@@ -1,0 +1,111 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Hypershell</AssemblyName>
+    <RootNamespace>Hypershell</RootNamespace>
+    <ApplicationIcon>Assets\Brand\hypershell.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hypershell.ProfileProtocol\Hypershell.ProfileProtocol.csproj" />
+    <ProjectReference Include="../../Hyperlib/src/HyperLib.Core/HyperLib.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Hypershell.CSharpVerifier" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Profiles\ProfileSyncContracts.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Keep the embedded PowerShell engine on its supported LTS line. -->
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.4.18" />
+    <!-- Host Monaco and future isolated web panels inside the native WPF shell. -->
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4078.44" />
+    <!-- Render validated Markdown and create standards-based Word exports. -->
+    <PackageReference Include="Markdig.Signed" Version="1.3.2" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.5.1" />
+    <!-- Inspect .NET reference assemblies without loading implementation
+         binaries into the application process. -->
+    <PackageReference Include="System.Reflection.MetadataLoadContext" Version="10.0.0" />
+    <!-- Maintained managed SSH/SFTP transport for linked workspaces. -->
+    <PackageReference Include="SSH.NET" Version="2026.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Models\HyperlibWorkProjectDefinition.cs" LogicalName="StudioPipeline.HyperlibWorkProjectDefinition.cs" />
+    <EmbeddedResource Include="Services\HyperlibProjectPipelineService.cs" LogicalName="StudioPipeline.HyperlibProjectPipelineService.cs" />
+    <EmbeddedResource Include="Services\HyperlibBackgroundDesigns.cs" LogicalName="StudioPipeline.HyperlibBackgroundDesigns.cs" />
+    <EmbeddedResource Include="Services\HyperlibHeaderLayouts.cs" LogicalName="StudioPipeline.HyperlibHeaderLayouts.cs" />
+    <EmbeddedResource Include="Services\HyperlibNavigationLayouts.cs" LogicalName="StudioPipeline.HyperlibNavigationLayouts.cs" />
+    <Content Include="Assets\HyperlibHeaders\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\HyperlibBackgrounds\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\StudioHyperlibAuthoring\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\HyperlibCatalog\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\CommandLibraries\README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\CommandLibraries\**\*.json"
+             Exclude="Assets\CommandLibraries\csharp.json;Assets\CommandLibraries\csharp-language.json;Assets\CommandLibraries\csharp-streams.json;Assets\CommandLibraries\csharp-runtime.json;Assets\CommandLibraries\csharp-concurrency.json;Assets\CommandLibraries\csharp-networking.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\CommandGuides\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\CommandGuides\*.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\CSharp\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\tools\catalog-sources\css-properties-2.31.0.json"
+             Link="Assets\Hyperpage\css-properties-2.31.0.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\tools\catalog-sources\ecmascript-2024-declarations.json"
+             Link="Assets\Hyperpage\ecmascript-2024-declarations.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\tools\catalog-sources\web-platform-declarations.json"
+             Link="Assets\Hyperpage\web-platform-declarations.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\EditorHost\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Release\trusted-signers.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Brand\hypershell.ico" />
+    <Content Include="Assets\Brand\hypershell.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Resource Include="Assets\Brand\hypershell-spiral-shell.png" />
+    <Resource Include="Assets\Brand\hypershell-spiral-shell.svg" />
+    <Resource Include="Assets\Fonts\*.ttf" />
+    <Content Include="Assets\Fonts\OFL-*.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

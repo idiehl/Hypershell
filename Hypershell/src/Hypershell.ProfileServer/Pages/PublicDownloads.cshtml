@@ -1,0 +1,101 @@
+@page "/downloads"
+@model PublicDownloadsModel
+@using Hypershell.Profiles
+@{
+    Layout = null;
+    var current = Model.Releases.FirstOrDefault();
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Download Hypershell Complete with Hyperlib, Hyperpage Studio and Atlas Meridian, or choose Hypershell Core." />
+    <title>Download Hypershell — Atlas Universalis</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/css/downloads.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="download-header">
+        <a href="https://atlasuniversalis.com" class="brand"><img src="/atlas-admin-mark.svg" width="32" height="32" alt="" />Atlas Universalis</a>
+        <a href="https://atlasuniversalis.com/ProjectLab">Project Lab</a>
+    </header>
+    <main>
+        <section class="intro">
+            <p class="eyebrow">HYPERSHELL FOR WINDOWS</p>
+            <h1>Your workspace.<br />Your way.</h1>
+            <p class="lead">Start with the complete collection of Atlas tools, or keep it focused with Hypershell Core.</p>
+            @if (current is not null)
+            {
+                <p class="release-meta">Version @current.Core.Summary.Version · Windows x64 · Published @current.Core.Summary.PublishedAtUtc.ToString("MMMM d, yyyy")</p>
+            }
+        </section>
+        <section class="editions" aria-label="Choose your edition">
+            <article class="edition recommended">
+                <span class="badge">Recommended</span>
+                <h2>Hypershell Complete</h2>
+                <p>The shell, your library, and a full creative workspace in one installation.</p>
+                <ul>
+                    <li>Hypershell and MyNet</li>
+                    <li>Hyperlib and Hyperpage Studio</li>
+                    <li>Atlas Meridian</li>
+                    <li>Included starter content</li>
+                </ul>
+                @if (current is not null)
+                {
+                    <a class="download-button" href="@PublicDownloadsModel.DownloadPath(current.Core.Summary.Version, "complete")">Download Complete <span>@PublicDownloadsModel.SizeOf(current.Complete)</span></a>
+                    <a class="manifest-link" href="@PublicDownloadsModel.DownloadPath(current.Core.Summary.Version, "complete", "manifest")">Signed release manifest</a>
+                }
+                else
+                {
+                    <p class="unavailable">The first signed release is being prepared.</p>
+                }
+            </article>
+            <article class="edition">
+                <span class="badge neutral">The essentials</span>
+                <h2>Hypershell Core</h2>
+                <p>A focused installation of the shell and desktop app host.</p>
+                <ul>
+                    <li>Hypershell workspace</li>
+                    <li>MyNet desktop app host</li>
+                    <li>Add companion applications later</li>
+                </ul>
+                @if (current is not null)
+                {
+                    <a class="download-button secondary" href="@PublicDownloadsModel.DownloadPath(current.Core.Summary.Version, "core")">Download Core <span>@PublicDownloadsModel.SizeOf(current.Core)</span></a>
+                    <a class="manifest-link" href="@PublicDownloadsModel.DownloadPath(current.Core.Summary.Version, "core", "manifest")">Signed release manifest</a>
+                }
+                else
+                {
+                    <p class="unavailable">The first signed release is being prepared.</p>
+                }
+            </article>
+        </section>
+        <section class="details">
+            <h2>Choose what you need</h2>
+            <p>Complete brings the applications together in one download. Core gives you the shell and MyNet. Both editions use the same coordinated release.</p>
+            <p>Studio's design and preview tools require the .NET 10 SDK. Setup checks the authoring prerequisites before installation.</p>
+            @if (current is not null)
+            {
+                <h2>What's new in @current.Core.Summary.Version</h2>
+                <p class="release-notes">@current.Core.Summary.ReleaseNotes</p>
+                @if (current.Core.Summary.Artifacts.Any(a => a.Kind == HypershellReleaseArtifactKind.Portable))
+                {
+                    <a href="@PublicDownloadsModel.DownloadPath(current.Core.Summary.Version, "core", "portable")">Download the Core portable archive</a>
+                }
+            }
+        </section>
+        @if (Model.Releases.Count > 1)
+        {
+            <section class="details previous">
+                <h2>Previous releases</h2>
+                @foreach (var release in Model.Releases.Skip(1))
+                {
+                    <p><strong>@release.Core.Summary.Version</strong> <a href="@PublicDownloadsModel.DownloadPath(release.Core.Summary.Version, "complete")">Complete</a> <a href="@PublicDownloadsModel.DownloadPath(release.Core.Summary.Version, "core")">Core</a></p>
+                }
+            </section>
+        }
+    </main>
+    <footer>Atlas Universalis · Hypershell</footer>
+</body>
+</html>

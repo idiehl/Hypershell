@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "rxjs-popular",
+  "guides": [
+    {
+      "entryId": "rxjs-popular.pipe-operators",
+      "definition": "Creates an observable and applies map and filter operators before subscribing. Requires RxJS in the active TypeScript/Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "Comma-separated values emitted by of.",
+          "typeName": "TypeScript expressions",
+          "defaultValue": "1, 2, 3, 4",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "mapping",
+          "displayName": "Map expression",
+          "placeholder": "mapping",
+          "description": "Expression returned for each source value.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value * 2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "predicate",
+          "displayName": "Filter predicate",
+          "placeholder": "predicate",
+          "description": "Boolean expression deciding which mapped values continue.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value >= 6",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Double and keep large values",
+          "code": "import { filter, map, of } from \"rxjs\";\n\nof(1, 2, 3, 4).pipe(\n  map(value => value * 2),\n  filter(value => value >= 6),\n).subscribe(value => console.log(value));",
+          "explanation": "pipe composes operators without mutating the source observable; subscribe starts this cold sequence."
+        }
+      ]
+    },
+    {
+      "entryId": "rxjs-popular.debounced-search",
+      "definition": "Debounces input, removes duplicates, and cancels stale asynchronous searches. Requires RxJS in the active TypeScript/Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "queryStream",
+          "displayName": "Query observable",
+          "placeholder": "queryStream",
+          "description": "Observable that emits user-entered query strings.",
+          "typeName": "Observable<string>",
+          "defaultValue": "query$",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "milliseconds",
+          "displayName": "Debounce milliseconds",
+          "placeholder": "milliseconds",
+          "description": "Quiet period before a query continues.",
+          "typeName": "number",
+          "defaultValue": "250",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "searchFunction",
+          "displayName": "Search function",
+          "placeholder": "searchFunction",
+          "description": "Function returning an observable for one query.",
+          "typeName": "TypeScript function",
+          "defaultValue": "searchUsers",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a type-ahead result stream",
+          "code": "import { debounceTime, distinctUntilChanged, switchMap } from \"rxjs\";\n\nconst results$ = query$.pipe(\n  debounceTime(250),\n  distinctUntilChanged(),\n  switchMap(query => searchUsers(query)),\n);",
+          "explanation": "switchMap unsubscribes from the prior inner observable when a newer query arrives, preventing stale results from winning."
+        }
+      ]
+    },
+    {
+      "entryId": "rxjs-popular.combine-latest",
+      "definition": "Combines the most recent values from two observables into a typed projection. Requires RxJS in the active TypeScript/Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "left",
+          "displayName": "First observable",
+          "placeholder": "left",
+          "description": "First source observable.",
+          "typeName": "Observable",
+          "defaultValue": "items$",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "right",
+          "displayName": "Second observable",
+          "placeholder": "right",
+          "description": "Second source observable.",
+          "typeName": "Observable",
+          "defaultValue": "filter$",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "projection",
+          "displayName": "Projection",
+          "placeholder": "projection",
+          "description": "Expression returned for the latest value pair.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "leftValue.filter(item => item.name.includes(rightValue))",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a filtered view model",
+          "code": "import { combineLatest, map } from \"rxjs\";\n\nconst combined$ = combineLatest([items$, filter$]).pipe(\n  map(([items, filter]) => items.filter(item => item.name.includes(filter))),\n);",
+          "explanation": "combineLatest waits until every source has emitted once, then recomputes the projection whenever either source changes."
+        }
+      ]
+    }
+  ]
+}

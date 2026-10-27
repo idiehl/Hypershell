@@ -1,0 +1,109 @@
+@page "/page/{PageId}"
+@rendermode InteractiveServer
+@implements IAsyncDisposable
+@inject RendererOptions Options
+@inject RendererContentClient Content
+@inject IJSRuntime JS
+
+<main class="hl-document @(_site is null ? "" : "hl-work-site") @Options.VariantClass(_state, _pageNode ?? _work)" style="@AppearanceStyle"
+      data-hyperlib-work-id="@_site?.Work.Id"
+      data-hyperlib-work-home="@(_site is { } siteHome ? WorkSiteModel.Href(Options, siteHome.Work) : null)"
+      data-hyperlib-library-id="@_site?.LibraryTarget?.Id"
+      data-hyperlib-library-href="@(_site?.LibraryTarget is { } libraryTarget ? WorkSiteModel.LibraryHref(Options, libraryTarget) : null)">
+    @if (_error is not null)
+    {
+        <p role="alert" class="hl-error">@_error</p>
+    }
+    else if (_page is not null)
+    {
+        @if (!HasAtlasNavigation) { <WorkNavigation Site="_site" /> }
+        @if (Options.ShellComponent is { } shell) { <DynamicComponent Type="shell" /> }
+        @if (!_page.UsesEditableChrome && !_page.Blocks.Any(block => Options.Template.Blocks.Single(definition => definition.Id == block.Type).Component.Split('.').Last() is "HeaderBlock" or "BannerBlock" or "CatalogEntryBlock"))
+        {
+            <header class="hl-page-heading"><p class="hl-kicker">@_work?.Title</p><h1>@_page.Title</h1></header>
+        }
+        @foreach (var region in Options.Template.Regions)
+        {
+            <section class="hl-region" data-region="@region.Id" aria-label="@region.Title">
+                @foreach (var block in _page.Blocks.Where(b => b.Region == region.Id))
+                {
+                    var effectiveBlock = Options.WithFieldDefaults(block);
+                    <section @key="block.Id" class="hl-block @Options.BlockTypeClass(block) @RendererOptions.BlockSpanClass(effectiveBlock)" style="@RendererOptions.BlockStyle(effectiveBlock)" data-block-id="@block.Id" data-block-type="@block.Type" aria-label="@BlockTitle(block)">
+                        <ErrorBoundary @key="(block.Id, _page.Revision)">
+                            <ChildContent><DynamicComponent Type="Options.Resolve(block.Type)" Parameters="Parameters(effectiveBlock)" /></ChildContent>
+                            <ErrorContent Context="error"><p role="alert">This component could not render: @error.Message</p></ErrorContent>
+                        </ErrorBoundary>
+                    </section>
+                }
+            </section>
+        }
+        @if (_page.Sources.Count > 0)
+        {
+            <aside class="hl-sources"><h2>Sources</h2><ol>@foreach (var source in _page.Sources) { <li><a href="@source.Url" target="_blank" rel="noopener noreferrer">@source.Title</a></li> }</ol></aside>
+        }
+        @if (!HasAtlasPagination && _site is { } site && (site.Previous is not null || site.Next is not null))
+        {
+            <nav class="hl-work-pagination" aria-label="Reading navigation">
+                @if (site.Previous is { } previous)
+                {
+                    <a class="hl-work-previous" href="@WorkSiteModel.Href(Options, previous)" data-hyperlib-navigate="@previous.Id" rel="prev">
+                        <span class="hl-work-pagination-label">← Previous</span><span>@previous.Title</span>
+                    </a>
+                }
+                @if (site.Next is { } next)
+                {
+                    <a class="hl-work-next" href="@WorkSiteModel.Href(Options, next)" data-hyperlib-navigate="@next.Id" rel="next">
+                        <span class="hl-work-pagination-label">Next →</span><span>@next.Title</span>
+                    </a>
+                }
+            </nav>
+        }
+    }
+    else { <p class="hl-loading">Opening page…</p> }
+</main>
+
+@code {
+    [Parameter] public string PageId { get; set; } = "";
+    [SupplyParameterFromQuery(Name = "edit")] public string? Edit { get; set; }
+    private PageDocument? _page;
+    private LibraryState? _state;
+    private LibraryNode? _work;
+    private LibraryNode? _pageNode;
+    private WorkSiteModel? _site;
+    private string? _error;
+    private DotNetObjectReference<DynamicPage>? _reference;
+    private bool _refreshBridge = true;
+    private bool Editing => !Options.ReadOnly && Edit == "1";
+    private string AppearanceStyle => Options.AppearanceStyle(_state, _pageNode ?? _work);
+    private bool HasAtlasNavigation => _page?.Blocks.Any(block => HasSavedClass(block, "atlas-nav")) == true;
+    private bool HasAtlasPagination => _page?.Blocks.Any(block => HasSavedClass(block, "chapter-pagination")) == true;
+    private static bool HasSavedClass(PageBlock block, string className)
+    {
+        if (block.Type != "atlas-section" || !block.Values.TryGetValue("html", out var value)
+            || value.ValueKind != System.Text.Json.JsonValueKind.String) return false;
+        return System.Text.RegularExpressions.Regex.Matches(value.GetString() ?? "", "\\bclass\\s*=\\s*([\"'])(.*?)\\1",
+                System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline)
+            .Any(match => match.Groups[2].Value.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries).Contains(className, StringComparer.Ordinal));
+    }
+    protected override async Task OnParametersSetAsync() => await LoadAsync();
+    private async Task LoadAsync()
+    {
+        try { _page = await Content.GetPageAsync(PageId); TemplateValidator.ValidatePage(Options.Template, _page); _state = await Content.GetStateAsync(); _work = _state.Nodes.FirstOrDefault(n => n.Id == _page.WorkId); _pageNode = _state.Nodes.FirstOrDefault(n=>n.Id==PageId); _site = WorkSiteModel.Create(_state, _pageNode ?? _work); _error = null; }
+        catch (Exception ex) { _error = ex.Message; }
+        _refreshBridge = true;
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!_refreshBridge) return;
+        _refreshBridge = false;
+        _reference ??= DotNetObjectReference.Create(this);
+        await JS.InvokeVoidAsync("hyperlibRenderer.connect", _reference, Editing, PageId, Options.GenerationId);
+    }
+    [JSInvokable] public async Task Refresh() { await LoadAsync(); await InvokeAsync(StateHasChanged); }
+    private string BlockTitle(PageBlock block) => Options.Template.Blocks.FirstOrDefault(b => b.Id == block.Type)?.Title ?? block.Type;
+    private IDictionary<string, object> Parameters(PageBlock block)
+    {
+        return new Dictionary<string, object> { ["Context"] = new BlockContext { Id = block.Id, Editing = Editing, Values = block.Values } };
+    }
+    public async ValueTask DisposeAsync() { _reference?.Dispose(); await Task.CompletedTask; }
+}

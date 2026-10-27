@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "product-launch",
+  "title": "Product Launch",
+  "description": "A product-led hero, three benefits, a demo area, comparison note, and clear call to action.",
+  "category": "Product",
+  "sourceTemplateId": "product-launch"
+}

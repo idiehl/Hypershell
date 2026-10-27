@@ -1,0 +1,16 @@
+[Unit]
+Description=Create a consistent Hypershell backup and DigitalOcean volume snapshot
+Wants=network-online.target docker.service
+After=network-online.target docker.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/opt/hypershell/profile-server/deploy/hypershell-server/verify-digitalocean-volume.sh
+ExecStartPre=/opt/hypershell/profile-server/deploy/hypershell-server/backup-profile-server.sh /srv/hypershell/backups
+ExecStartPre=/bin/sync -f /srv/hypershell
+ExecStart=/opt/hypershell/profile-server/deploy/hypershell-server/snapshot-digitalocean-volume.sh
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+PrivateTmp=true
+NoNewPrivileges=true

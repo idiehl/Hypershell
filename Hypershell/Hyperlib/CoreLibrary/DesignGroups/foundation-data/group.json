@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "foundation-data",
+  "title": "Data essentials",
+  "description": "Editable data modules. Native controls and local C# interactions; no third-party service required.",
+  "category": "Data",
+  "sourceTemplateId": "foundation-data"
+}

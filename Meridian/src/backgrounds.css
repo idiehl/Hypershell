@@ -1,0 +1,8 @@
+/* Backgrounds are inert paint behind the shared editor/viewer scene. */
+.ms-canvas-background{position:absolute;inset:0;pointer-events:none;z-index:0}
+.ms-world{z-index:1}
+.ms-node-background{position:absolute;inset:0;pointer-events:none;z-index:0;border-radius:inherit}
+.ms-node[data-shape]>.ms-node-background{inset:calc(var(--ms-shape-inset-y,0px) + var(--ms-border-width,1px)) calc(var(--ms-shape-inset-x,0px) + var(--ms-border-width,1px));clip-path:var(--ms-shape-clip);border-radius:var(--ms-shape-radius)}
+.ms-node[data-shape=none]>.ms-node-background,.ms-node.ms-label>.ms-node-background{display:none}
+.ms-gallery-item{position:relative;isolation:isolate}
+.ms-gallery-item>.ms-node-background{border-radius:6px;z-index:-1}

@@ -1,0 +1,54 @@
+@* Source: core.accessible.table.v1 (Core essentials). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-12523126cf03" data-vp-id="12523126cf0398529cf3c30ce89dae72">
+    <table class="vp-e2bdf824d6c4" data-vp-id="e2bdf824d6c4f9a3ba45490f96e66615">
+        <caption class="vp-879ac1a74cce" data-field="text-2" data-vp-id="879ac1a74ccef2c0ddc3b66abbdf1fe1">
+            @(Context.Text("text-2"))
+        </caption>
+        <thead class="vp-5de85e1dc050" data-vp-id="5de85e1dc050b9655880b9d47cbec217">
+            <tr class="vp-807e3f25f623" data-vp-id="807e3f25f6234aae535f30086c11166c">
+                <th class="vp-fdc56d088044" data-field="text-5" data-vp-id="fdc56d0880443a7ba28f35dd16de667b" scope="col">
+                    @(Context.Text("text-5"))
+                </th>
+                <th class="vp-825e0af3625e" data-field="text-6" data-vp-id="825e0af3625ecae002f8e304c0081f69" scope="col">
+                    @(Context.Text("text-6"))
+                </th>
+                <th class="vp-5c15b17b37e9" data-field="text-7" data-vp-id="5c15b17b37e9322aec075ab982575bb7" scope="col">
+                    @(Context.Text("text-7"))
+                </th>
+            </tr>
+        </thead>
+        <tbody class="vp-a752e25530a9" data-vp-id="a752e25530a98e628622dfc3f6c1000c">
+            <tr class="vp-fccefad29ec5" data-vp-id="fccefad29ec571d9d8b3a59cde8e073c">
+                <td class="vp-109c553f0d8e" data-field="text-10" data-vp-id="109c553f0d8e8fb687bdf8b3e3caa647">
+                    @(Context.Text("text-10"))
+                </td>
+                <td class="vp-ff9c9e8e6964" data-field="text-11" data-vp-id="ff9c9e8e696474675afdb54e154f9d95">
+                    @(Context.Text("text-11"))
+                </td>
+                <td class="vp-07127ae2765c" data-field="text-12" data-vp-id="07127ae2765c94561284ce1daff4fb39">
+                    @(Context.Text("text-12"))
+                </td>
+            </tr>
+            <tr class="vp-cc67711de014" data-vp-id="cc67711de014547752640b540ea7e1bf">
+                <td class="vp-155e6d3a2e72" data-field="text-14" data-vp-id="155e6d3a2e721fb7272460573b1d7c9f">
+                    @(Context.Text("text-14"))
+                </td>
+                <td class="vp-50120e1aa6fa" data-field="text-15" data-vp-id="50120e1aa6fa11b67203aec5b99ff226">
+                    @(Context.Text("text-15"))
+                </td>
+                <td class="vp-29352ef344b2" data-field="text-16" data-vp-id="29352ef344b269cad4005249355693fa">
+                    @(Context.Text("text-16"))
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

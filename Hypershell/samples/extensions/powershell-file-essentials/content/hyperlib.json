@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "id": "filesystemEssentials",
+  "displayName": "PowerShell File Essentials",
+  "description": "Guided, searchable examples for inspecting paths and working safely with files and folders in PowerShell.",
+  "language": "PowerShell",
+  "kind": "Module",
+  "isExecutionSupported": true,
+  "createStandaloneProfile": true,
+  "keywords": ["files", "folders", "paths", "filesystem", "beginner"],
+  "executionTarget": "PowerShell",
+  "actionDescriptions": {
+    "Get": "Read or enumerate existing file-system content without changing it.",
+    "Test": "Evaluate a path condition and return a Boolean result.",
+    "New": "Create a new file-system item at a deliberate location."
+  },
+  "objectDescriptions": {
+    "ChildItem": "Files, folders, and other children beneath a provider path.",
+    "Content": "The text or data stored inside a file.",
+    "Path": "A file-system or provider location whose existence can be checked.",
+    "Item": "A file, folder, registry key, or another provider-backed object."
+  },
+  "commands": [
+    {
+      "id": "getChildItem",
+      "name": "Get-ChildItem",
+      "displayName": "Get-ChildItem",
+      "description": "List files and folders at a selected path.",
+      "definition": "Enumerates child items from a PowerShell provider location. With the FileSystem provider, the returned objects retain metadata such as name, full path, size, and modification time for later pipeline operations.",
+      "moduleName": "Microsoft.PowerShell.Management",
+      "commandType": "Cmdlet",
+      "preferredShellKind": "PowerShell",
+      "action": "Get",
+      "object": "ChildItem",
+      "template": "Get-ChildItem",
+      "documentationUrl": "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem",
+      "keywords": ["list", "directory", "enumerate", "ls"],
+      "compositionMode": "Pipeline",
+      "parameters": [
+        {
+          "name": "Path",
+          "displayName": "-Path",
+          "description": "The directory or provider path to enumerate.",
+          "typeName": "String",
+          "isRequired": false
+        },
+        {
+          "name": "Recurse",
+          "displayName": "-Recurse",
+          "description": "Include descendants beneath the selected path.",
+          "typeName": "SwitchParameter",
+          "isSwitch": true,
+          "isRequired": false
+        }
+      ],
+      "examples": [
+        {
+          "title": "List PowerShell files recursively",
+          "code": "Get-ChildItem -Path . -Filter *.ps1 -Recurse",
+          "explanation": "The command starts at the current directory, descends into child folders, and returns only files matching the .ps1 filter. No file-system content is modified."
+        }
+      ]
+    },
+    {
+      "id": "getContent",
+      "name": "Get-Content",
+      "displayName": "Get-Content",
+      "description": "Read file content into the PowerShell pipeline.",
+      "definition": "Reads content from a provider item. Text files normally produce one string per line, allowing downstream commands to filter, transform, count, or export the data without first writing a custom parser.",
+      "moduleName": "Microsoft.PowerShell.Management",
+      "commandType": "Cmdlet",
+      "preferredShellKind": "PowerShell",
+      "action": "Get",
+      "object": "Content",
+      "template": "Get-Content",
+      "documentationUrl": "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content",
+      "keywords": ["read", "text", "lines", "file"],
+      "compositionMode": "Pipeline",
+      "parameters": [
+        {
+          "name": "Path",
+          "displayName": "-Path",
+          "description": "The file whose content should be read.",
+          "typeName": "String",
+          "isRequired": true
+        },
+        {
+          "name": "Raw",
+          "displayName": "-Raw",
+          "description": "Return the entire file as one string instead of one object per line.",
+          "typeName": "SwitchParameter",
+          "isSwitch": true,
+          "isRequired": false
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a JSON document as one string",
+          "code": "$json = Get-Content -Path .\\settings.json -Raw\n$json | ConvertFrom-Json",
+          "explanation": "Raw mode preserves the document as a single string, which can then be passed directly to ConvertFrom-Json for structured access."
+        }
+      ]
+    },
+    {
+      "id": "testPath",
+      "name": "Test-Path",
+      "displayName": "Test-Path",
+      "description": "Check whether a path exists before using it.",
+      "definition": "Evaluates a provider path and returns True or False. It is useful for guard conditions before reading, copying, moving, or creating content, and can distinguish containers from leaf items with PathType.",
+      "moduleName": "Microsoft.PowerShell.Management",
+      "commandType": "Cmdlet",
+      "preferredShellKind": "PowerShell",
+      "action": "Test",
+      "object": "Path",
+      "template": "Test-Path",
+      "documentationUrl": "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-path",
+      "keywords": ["exists", "validate", "guard", "boolean"],
+      "compositionMode": "Pipeline",
+      "parameters": [
+        {
+          "name": "Path",
+          "displayName": "-Path",
+          "description": "The provider path to evaluate.",
+          "typeName": "String",
+          "isRequired": true
+        },
+        {
+          "name": "PathType",
+          "displayName": "-PathType",
+          "description": "Optionally require Any, Container, or Leaf semantics.",
+          "typeName": "TestPathType",
+          "isRequired": false
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a configuration only when present",
+          "code": "if (Test-Path -Path .\\settings.json -PathType Leaf) {\n    Get-Content -Path .\\settings.json -Raw\n}",
+          "explanation": "The condition confirms that settings.json exists as a file before Get-Content attempts to read it, avoiding a predictable missing-path error."
+        }
+      ]
+    },
+    {
+      "id": "newItem",
+      "name": "New-Item",
+      "displayName": "New-Item",
+      "description": "Create a new file or folder at a selected path.",
+      "definition": "Creates a provider-backed item. In the FileSystem provider, ItemType controls whether the result is a file or directory. Existing destinations require an explicit conflict decision rather than being silently replaced by this guide.",
+      "moduleName": "Microsoft.PowerShell.Management",
+      "commandType": "Cmdlet",
+      "preferredShellKind": "PowerShell",
+      "action": "New",
+      "object": "Item",
+      "template": "New-Item",
+      "documentationUrl": "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-item",
+      "keywords": ["create", "file", "folder", "directory"],
+      "compositionMode": "Pipeline",
+      "parameters": [
+        {
+          "name": "Path",
+          "displayName": "-Path",
+          "description": "The full path of the new item.",
+          "typeName": "String",
+          "isRequired": true
+        },
+        {
+          "name": "ItemType",
+          "displayName": "-ItemType",
+          "description": "The item kind, commonly File or Directory for file-system paths.",
+          "typeName": "String",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a project output directory",
+          "code": "if (-not (Test-Path -Path .\\output -PathType Container)) {\n    New-Item -Path .\\output -ItemType Directory\n}",
+          "explanation": "The guard prevents a conflict when the directory already exists; New-Item runs only when the output folder is absent."
+        }
+      ]
+    }
+  ]
+}

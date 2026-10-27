@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "html-core",
+  "displayName": "HTML Core",
+  "description": "The HTML language surface organized by canonical element and attribute categories.",
+  "language": "HTML",
+  "category": "Language core",
+  "kind": "Core",
+  "canonicalName": "HTML Standard",
+  "ecosystem": "Web Platform",
+  "targetVersion": "Living Standard inventory",
+  "sourceVersion": "WHATWG HTML Living Standard index · indices 96f70aa6a8461b19c8ae25e80370cce01523255a447dec1d583967a442237b87",
+  "sourceUrl": "https://html.spec.whatwg.org/",
+  "license": "WHATWG Living Standard",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "HTML entries insert into compatible editor documents; HTML is not a terminal runtime.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "html",
+    "core",
+    "elements",
+    "attributes",
+    "standard"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 296,
+  "declaredIndexedCount": 286,
+  "declaredGuidedCount": 10,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/html-core.entries.json"
+  ],
+  "declaredGuideCount": 10,
+  "guideFiles": [
+    "guides/html-core.guides.json"
+  ],
+  "legacyIds": [
+    "html-essentials"
+  ]
+}

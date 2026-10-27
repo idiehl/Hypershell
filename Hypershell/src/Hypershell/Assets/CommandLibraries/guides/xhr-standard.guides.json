@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "xhr-standard",
+  "guides": [
+    {
+      "entryId": "web.form-data",
+      "definition": "Constructing FormData with a form captures its successful controls as entries. preventDefault can keep the browser from performing the form's normal navigation.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Form variable",
+          "placeholder": "name",
+          "description": "The selected form binding.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "form",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "selector",
+          "displayName": "Selector",
+          "placeholder": "selector",
+          "description": "A selector locating the form.",
+          "typeName": "CSS selector",
+          "defaultValue": "#profile",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "field",
+          "displayName": "Field",
+          "placeholder": "field",
+          "description": "The name of the form control to read.",
+          "typeName": "Form field name",
+          "defaultValue": "displayName",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a profile name",
+          "code": "const form = document.querySelector(\"#profile\");\nform?.addEventListener(\"submit\", (event) => {\n  event.preventDefault();\n  const data = new FormData(form);\n  console.log(data.get(\"displayName\"));\n});",
+          "explanation": "The native submit event preserves keyboard submission behavior while FormData reads the named control."
+        }
+      ]
+    }
+  ]
+}

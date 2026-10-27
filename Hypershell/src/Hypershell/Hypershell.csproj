@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Hypershell</AssemblyName>
+    <RootNamespace>Hypershell</RootNamespace>
+    <ApplicationIcon>Assets\Brand\hypershell.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hypershell.ProfileProtocol\Hypershell.ProfileProtocol.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Hypershell.CSharpVerifier" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Profiles\ProfileSyncContracts.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Keep the embedded PowerShell engine on its supported LTS line. -->
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.4.18" />
+    <!-- Host Monaco and future isolated web panels inside the native WPF shell. -->
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4078.44" />
+    <!-- Render validated Markdown and create standards-based Word exports. -->
+    <PackageReference Include="Markdig.Signed" Version="1.3.2" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.5.1" />
+    <!-- Inspect .NET reference assemblies without loading implementation
+         binaries into the application process. -->
+    <PackageReference Include="System.Reflection.MetadataLoadContext" Version="10.0.0" />
+    <!-- Maintained managed SSH/SFTP transport for linked workspaces. -->
+    <PackageReference Include="SSH.NET" Version="2026.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\CommandLibraries\README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\CommandLibraries\**\*.json"
+             Exclude="Assets\CommandLibraries\csharp.json;Assets\CommandLibraries\csharp-language.json;Assets\CommandLibraries\csharp-streams.json;Assets\CommandLibraries\csharp-runtime.json;Assets\CommandLibraries\csharp-concurrency.json;Assets\CommandLibraries\csharp-networking.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\CommandGuides\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\CommandGuides\*.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\CSharp\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\EditorHost\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Release\trusted-signers.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\MyNet\*.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Brand\hypershell.ico" />
+    <Resource Include="Assets\Brand\hypershell-spiral-shell.png" />
+    <Resource Include="Assets\Brand\hypershell-spiral-shell.svg" />
+    <Resource Include="Assets\Fonts\*.ttf" />
+    <Content Include="Assets\Fonts\OFL-*.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

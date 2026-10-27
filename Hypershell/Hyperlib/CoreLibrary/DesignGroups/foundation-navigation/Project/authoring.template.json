@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 1,
+  "templateId": "foundation-navigation",
+  "title": "Navigation essentials",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Main content",
+      "allowedBlocks": []
+    }
+  ],
+  "blocks": [
+    {
+      "id": "breadcrumbs",
+      "title": "Breadcrumbs",
+      "component": "FoundationBreadcrumbsBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Breadcrumbs",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Show where a page sits in a larger library.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Library\nField studies\nWoodland",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-BREADCRUMBS",
+      "category": "Navigation",
+      "description": "Show where a page sits in a larger library.",
+      "sourceTemplateId": "foundation-navigation",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "table-of-contents",
+      "title": "Table of contents",
+      "component": "FoundationTableOfContentsBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Table of contents",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A numbered list of section anchors for a long page.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "The question|01\nObservations|02\nWhat we learned|03",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-TABLE-OF-CONTENTS",
+      "category": "Navigation",
+      "description": "A numbered list of section anchors for a long page.",
+      "sourceTemplateId": "foundation-navigation",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "section-navigation",
+      "title": "Section navigation",
+      "component": "FoundationSectionNavigationBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Section navigation",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A compact row of links between related sections.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Overview\nResearch\nExamples\nResources",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-SECTION-NAVIGATION",
+      "category": "Navigation",
+      "description": "A compact row of links between related sections.",
+      "sourceTemplateId": "foundation-navigation",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "pagination",
+      "title": "Pagination",
+      "component": "FoundationPaginationBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Pagination",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A page selector with a clear current-page state.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-PAGINATION",
+      "category": "Navigation",
+      "description": "A page selector with a clear current-page state.",
+      "sourceTemplateId": "foundation-navigation",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "process-steps",
+      "title": "Process steps",
+      "component": "FoundationProcessStepsBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Process steps",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Explain a short workflow with a visible ordered progression.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Collect|Gather useful references\nCompose|Make a first version\nReview|Refine the details\nPublish|Share the result",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-PROCESS-STEPS",
+      "category": "Navigation",
+      "description": "Explain a short workflow with a visible ordered progression.",
+      "sourceTemplateId": "foundation-navigation",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "link-directory",
+      "title": "Link directory",
+      "component": "FoundationLinkDirectoryBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Link directory",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A useful destination list with descriptions and large click targets.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Start here|An introduction to the project\nBrowse the archive|Explore earlier editions\nMeet the team|People behind the work",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-LINK-DIRECTORY",
+      "category": "Navigation",
+      "description": "A useful destination list with descriptions and large click targets.",
+      "sourceTemplateId": "foundation-navigation",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "alphabet-index",
+      "title": "Alphabet index",
+      "component": "FoundationAlphabetIndexBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Alphabet index",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Jump between alphabetically organized sections.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-ALPHABET-INDEX",
+      "category": "Navigation",
+      "description": "Jump between alphabetically organized sections.",
+      "sourceTemplateId": "foundation-navigation",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "previous-next",
+      "title": "Previous and next",
+      "component": "FoundationPreviousNextBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Previous and next",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Continue through a chapter sequence without losing context.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "The introduction\nFurther reading",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-PREVIOUS-NEXT",
+      "category": "Navigation",
+      "description": "Continue through a chapter sequence without losing context.",
+      "sourceTemplateId": "foundation-navigation",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "disclosure-menu",
+      "title": "Disclosure menu",
+      "component": "FoundationDisclosureMenuBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Disclosure menu",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "A compact navigation menu using a native keyboard-accessible disclosure.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "First item|A useful detail\nSecond item|Another useful detail\nThird item|One more detail",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-DISCLOSURE-MENU",
+      "category": "Navigation",
+      "description": "A compact navigation menu using a native keyboard-accessible disclosure.",
+      "sourceTemplateId": "foundation-navigation",
+      "sourceLibrary": "Hyperlib Foundations"
+    },
+    {
+      "id": "search-directory",
+      "title": "Filterable directory",
+      "component": "FoundationSearchDirectoryBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Heading",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Filterable directory",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Description",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Filter a small list locally. Filtering becomes active in an interactive Work.",
+          "options": []
+        },
+        {
+          "id": "items",
+          "title": "Items (one per line; separate columns with |)",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Atlas|Maps and geography\nBotany|Plants and habitats\nChemistry|Matter and reactions\nDesign|Objects and systems",
+          "options": []
+        },
+        {
+          "id": "url",
+          "title": "Destination",
+          "type": "url",
+          "required": false,
+          "defaultValue": "/",
+          "options": []
+        },
+        {
+          "id": "label",
+          "title": "Link or action label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Explore more",
+          "options": []
+        }
+      ],
+      "catalogId": "HLC-FOUNDATION-SEARCH-DIRECTORY",
+      "category": "Navigation",
+      "description": "Filter a small list locally. Filtering becomes active in an interactive Work.",
+      "sourceTemplateId": "foundation-navigation",
+      "sourceLibrary": "Hyperlib Foundations"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#376954",
+      "options": []
+    },
+    {
+      "id": "background",
+      "title": "Full page background",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#f5f3ed",
+      "options": []
+    },
+    {
+      "id": "ink",
+      "title": "Text color",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#202b26",
+      "options": []
+    },
+    {
+      "id": "surface",
+      "title": "Panels",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#ffffff",
+      "options": []
+    },
+    {
+      "id": "muted",
+      "title": "Secondary text",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#647069",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Body font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "system",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "headingFont",
+      "title": "Heading font",
+      "type": "select",
+      "required": false,
+      "defaultValue": "serif",
+      "options": [
+        "system",
+        "serif",
+        "monospace",
+        "humanist",
+        "geometric"
+      ]
+    },
+    {
+      "id": "fontSize",
+      "title": "Text size (px)",
+      "type": "number",
+      "required": false,
+      "defaultValue": 18,
+      "options": [],
+      "min": 12,
+      "max": 32
+    },
+    {
+      "id": "variant",
+      "title": "Layout design",
+      "type": "select",
+      "required": false,
+      "defaultValue": "woodland-editorial",
+      "options": [
+        "woodland-editorial",
+        "wave-laboratory",
+        "portfolio-grid",
+        "field-journal",
+        "architecture-studio",
+        "course-notebook",
+        "recipe-kitchen",
+        "event-poster",
+        "travel-atlas",
+        "product-launch",
+        "podcast-studio",
+        "gallery-wall",
+        "documentation-desk",
+        "nonprofit-story",
+        "wellness-retreat",
+        "maker-workbench",
+        "insight-dashboard"
+      ]
+    }
+  ],
+  "defaultBlocks": [],
+  "emptyPageDefault": true
+}

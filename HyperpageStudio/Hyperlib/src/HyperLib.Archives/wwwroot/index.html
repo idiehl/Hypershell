@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore the public library of Atlas Universalis. Collections, Works and Pages created in Hyperlib.">
+  <meta name="theme-color" content="#070d1a">
+  <title>Archives · Atlas Universalis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@300;400;500;600&display=swap">
+  <link rel="icon" type="image/x-icon" href="/Archives/assets/favicon.ico?v=atlas-20261001">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Archives/assets/favicon-32.png?v=atlas-20261001">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Archives/assets/favicon-16.png?v=atlas-20261001">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Archives/assets/apple-touch-icon.png?v=atlas-20261001">
+  <link rel="manifest" href="/Archives/assets/site.webmanifest?v=atlas-20261001">
+  <link rel="stylesheet" href="/Archives/assets/archives.css?v=atlas-20261001">
+  <script defer src="/Archives/assets/archives.js?v=atlas-20260930"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="/">
+        <img class="brand-logo-mark" src="/Archives/assets/atlas-emblem-96.png?v=atlas-20261001" width="32" height="32" alt="">
+        <span class="brand-text">Atlas Universalis</span>
+      </a>
+      <nav class="header-nav" aria-label="Primary">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/#principles">Principles</a>
+        <a class="nav-link" href="/Services">Services</a>
+        <a class="nav-link" href="/Bio">Bio</a>
+        <a class="nav-link" href="/ProjectLab">Project Lab</a>
+        <a class="nav-link nav-link--active" href="/Archives" aria-current="page">Archives</a>
+      </nav>
+    </div>
+  </header>
+  <div class="archive-shell">
+    <div class="archive-toolbar">
+      <nav id="breadcrumbs" aria-label="Breadcrumb"></nav>
+      <button id="toggle-tree" type="button" aria-controls="sidebar" aria-expanded="true">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3" width="15" height="14" rx="2"/><path d="M7.5 3v14"/></svg>
+        Library
+      </button>
+    </div>
+    <div class="workspace">
+      <aside id="sidebar">
+        <p class="eyebrow">Explore the Archives</p>
+        <label class="search">
+          <span class="sr-only">Find a collection, Work or Page</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg>
+          <input id="search" type="search" placeholder="Search the library…">
+        </label>
+        <nav id="tree" aria-label="Archives hierarchy"></nav>
+      </aside>
+      <main id="main" tabindex="-1">
+        <div id="heading"><p class="eyebrow">Public library</p><h1>Curiosity, collected.</h1><p class="intro">Collections, Works and Pages from Hyperlib.</p></div>
+        <p id="status" role="status">Loading the Archives…</p>
+        <iframe id="page" title="Published page" hidden></iframe>
+        <div id="cards"></div>
+      </main>
+    </div>
+    <footer><span>Atlas Universalis · Archives</span><span>Created in Hyperlib. Shared with the world.</span></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.ms-window-viewport{position:absolute;overflow:auto;overscroll-behavior:contain;scrollbar-width:none;box-sizing:border-box;z-index:3;isolation:isolate;outline:none}
+.ms-window-viewport::-webkit-scrollbar{display:none}
+.ms-window-viewport:focus-visible{outline:1px solid var(--ms-accent,#78ddc1);outline-offset:2px}
+.ms-window-content{position:relative;box-sizing:border-box;min-width:0;min-height:0}
+.ms-window-content>.ms-node{position:absolute}
+.ms-node-border{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.ms-node-border path{fill:none;stroke:var(--ms-border,#34475b)}
+.ms-node.ms-pattern-border[data-shape]::before{background:transparent}
+.ms-node.ms-pattern-border[data-shape]::after{inset:var(--ms-shape-inset-y,0px) var(--ms-shape-inset-x,0px)}

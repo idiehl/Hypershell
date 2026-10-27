@@ -1,0 +1,2 @@
+<aside class="hl-callout"><p data-field="text">@Context.Text("text")</p><a href="@Context.Text("url")" rel="noopener noreferrer" target="_blank">@Context.Text("title", "Source")</a></aside>
+@code { [Parameter, EditorRequired] public BlockContext Context { get; set; } = new(); }

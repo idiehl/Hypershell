@@ -1,0 +1,103 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "A Garden for Everyone",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "story-hero",
+      "type": "banner",
+      "region": "main",
+      "values": {
+        "eyebrow": "GROWING A COMMON PLACE",
+        "title": "A Garden for Everyone",
+        "text": "A neighborhood project built one shared afternoon at a time.",
+        "src": "/media/base-templates/nonprofit-story.svg",
+        "alt": "A garden for everyone",
+        "span": "full"
+      }
+    },
+    {
+      "id": "impact-one",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "A place to meet",
+        "text": "Create a welcoming space for everyday connection.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "impact-two",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "A chance to learn",
+        "text": "Share practical skills across ages and experience.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "impact-three",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Something to care for",
+        "text": "Make a small, visible contribution together.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "story",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Small actions, shared ownership\n\nThe garden starts with listening: what does the neighborhood need, and who wants to help?\n\nEach session leaves room for learning, conversation, and a task that can be completed together.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "invitation",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "You can take part",
+        "text": "Bring an idea, lend a hand, or simply come and meet the group.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "project-map",
+      "type": "map",
+      "region": "main",
+      "values": {
+        "title": "The neighborhood",
+        "latitude": 45.52,
+        "longitude": -122.68,
+        "zoom": 12,
+        "caption": "Replace these example coordinates with your project location.",
+        "span": "full"
+      }
+    },
+    {
+      "id": "volunteer",
+      "type": "form",
+      "region": "main",
+      "values": {
+        "title": "Join a work day",
+        "description": "Volunteer form demonstration; this preview does not contact an organization."
+      }
+    },
+    {
+      "id": "community-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "An illustrative community project / Replace example claims with verified details"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

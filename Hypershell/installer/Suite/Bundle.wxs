@@ -1,0 +1,45 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal"
+     xmlns:util="http://wixtoolset.org/schemas/v4/wxs/util"
+     xmlns:netfx="http://wixtoolset.org/schemas/v4/wxs/netfx">
+  <Bundle Name="Hypershell Complete" Manufacturer="Atlas Universalis"
+          Version="$(var.ProductVersion)" UpgradeCode="938DDC87-FB1C-49EF-A53F-C204DA9A73B2"
+          Compressed="yes" AboutUrl="https://atlasuniversalis.com">
+    <BootstrapperApplication>
+      <bal:WixStandardBootstrapperApplication Theme="hyperlinkLicense" LicenseUrl=""
+          ThemeFile="$(sys.SOURCEFILEDIR)Theme.xml" ShowVersion="yes" />
+    </BootstrapperApplication>
+    <Variable Name="InstallAuthoring" Type="numeric" Value="1" Persisted="yes" bal:Overridable="yes" />
+    <Variable Name="InstallMeridian" Type="numeric" Value="1" Persisted="yes" bal:Overridable="yes" />
+    <util:RegistrySearch Id="FindMachineWebView2" Root="HKLM" Bitness="always32"
+        Key="SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}"
+        Value="pv" Variable="MachineWebView2Version" Result="value" />
+    <util:RegistrySearch Id="FindUserWebView2" Root="HKCU" Bitness="always32"
+        Key="SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}"
+        Value="pv" Variable="UserWebView2Version" Result="value" />
+    <netfx:DotNetCoreSdkSearch Id="FindAuthoringSdk" Variable="AuthoringSdkVersion" MajorVersion="10" Platform="x64" />
+    <Chain>
+      <!-- Shared Microsoft prerequisites are retained when the suite is removed. -->
+      <ExePackage Id="WebView2Runtime" SourceFile="$(var.WebView2InstallerPath)"
+          DetectCondition="MachineWebView2Version &gt; v0.0.0.0 OR UserWebView2Version &gt; v0.0.0.0"
+          InstallArguments="/silent /install" PerMachine="yes" Permanent="yes" Vital="yes" Compressed="yes">
+        <ExitCode Value="0" Behavior="success" />
+        <ExitCode Value="3010" Behavior="scheduleReboot" />
+        <ExitCode Behavior="error" />
+      </ExePackage>
+      <ExePackage Id="AuthoringSdk" SourceFile="$(var.DotNetSdkInstallerPath)"
+          DetectCondition="AuthoringSdkVersion &gt;= v$(var.DotNetSdkMinimumVersion)"
+          InstallCondition="InstallAuthoring = 1" InstallArguments="/install /quiet /norestart"
+          PerMachine="yes" Permanent="yes" Vital="yes" Compressed="yes">
+        <ExitCode Value="0" Behavior="success" />
+        <ExitCode Value="3010" Behavior="scheduleReboot" />
+        <ExitCode Behavior="error" />
+      </ExePackage>
+      <MsiPackage Id="HypershellCore" SourceFile="$(var.CoreInstallerPath)" Vital="yes" Compressed="yes" Visible="yes" />
+      <MsiPackage Id="HypershellAuthoring" SourceFile="$(var.AuthoringInstallerPath)"
+          InstallCondition="InstallAuthoring = 1" Vital="yes" Compressed="yes" Visible="no" />
+      <MsiPackage Id="AtlasMeridian" SourceFile="$(var.MeridianInstallerPath)"
+          InstallCondition="InstallMeridian = 1" Vital="yes" Compressed="yes" Visible="no" />
+    </Chain>
+  </Bundle>
+</Wix>

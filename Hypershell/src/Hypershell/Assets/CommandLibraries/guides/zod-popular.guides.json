@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "zod-popular",
+  "guides": [
+    {
+      "entryId": "zod-popular.object-schema",
+      "definition": "Creates a Zod object schema and derives its TypeScript type. Requires Zod in the active TypeScript/Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "schemaName",
+          "displayName": "Schema name",
+          "placeholder": "schemaName",
+          "description": "Identifier for the Zod schema.",
+          "typeName": "TypeScript identifier",
+          "defaultValue": "UserSchema",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fieldName",
+          "displayName": "Field name",
+          "placeholder": "fieldName",
+          "description": "Required string property.",
+          "typeName": "TypeScript property",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "minimumLength",
+          "displayName": "Minimum length",
+          "placeholder": "minimumLength",
+          "description": "Smallest accepted string length.",
+          "typeName": "number",
+          "defaultValue": "1",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "typeName",
+          "displayName": "Type name",
+          "placeholder": "typeName",
+          "description": "Type alias inferred from the schema.",
+          "typeName": "TypeScript type",
+          "defaultValue": "User",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Define a user schema",
+          "code": "import { z } from \"zod\";\n\nconst UserSchema = z.object({\n  name: z.string().min(1),\n});\n\ntype User = z.infer<typeof UserSchema>;",
+          "explanation": "Inferring the type keeps runtime validation and compile-time shape anchored to one schema definition."
+        }
+      ]
+    },
+    {
+      "entryId": "zod-popular.safe-parse",
+      "definition": "Uses safeParse and branches on the discriminated result. Requires Zod in the active TypeScript/Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "schemaName",
+          "displayName": "Schema name",
+          "placeholder": "schemaName",
+          "description": "Zod schema used for validation.",
+          "typeName": "TypeScript identifier",
+          "defaultValue": "UserSchema",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "input",
+          "displayName": "Input expression",
+          "placeholder": "input",
+          "description": "Unknown value to validate.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "requestBody",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate request data",
+          "code": "const result = UserSchema.safeParse(requestBody);\nif (!result.success) {\n  console.error(result.error.flatten());\n} else {\n  const value = result.data;\n}",
+          "explanation": "safeParse keeps expected validation failures in normal control flow and narrows result.data to the inferred schema type."
+        }
+      ]
+    },
+    {
+      "entryId": "zod-popular.coerce-environment",
+      "definition": "Validates environment strings and coerces a port to a bounded integer. Requires Zod in the active TypeScript/Node.js project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "nameKey",
+          "displayName": "Name variable",
+          "placeholder": "nameKey",
+          "description": "Environment variable containing a required service name.",
+          "typeName": "environment key",
+          "defaultValue": "SERVICE_NAME",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "portKey",
+          "displayName": "Port variable",
+          "placeholder": "portKey",
+          "description": "Environment variable containing the TCP port.",
+          "typeName": "environment key",
+          "defaultValue": "PORT",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse service settings",
+          "code": "const env = z.object({\n  SERVICE_NAME: z.string().min(1),\n  PORT: z.coerce.number().int().min(1).max(65535),\n}).parse(process.env);",
+          "explanation": "Coercion converts the environment string before numeric constraints run; parse throws at startup when configuration is invalid."
+        }
+      ]
+    }
+  ]
+}

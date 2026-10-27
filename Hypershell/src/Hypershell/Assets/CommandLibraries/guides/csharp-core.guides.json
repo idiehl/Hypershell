@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "csharp-core",
+  "guides": [
+    {
+      "entryId": "csharp.core.variable",
+      "definition": "A var local receives a compile-time type from its initializer; it is not dynamically typed.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable name",
+          "placeholder": "name",
+          "description": "The local identifier.",
+          "typeName": "C# identifier",
+          "defaultValue": "answer",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Initializer",
+          "placeholder": "value",
+          "description": "A C# expression that determines the local type.",
+          "typeName": "C# expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Declare an inferred local",
+          "code": "var answer = 42;",
+          "explanation": "A var local receives a compile-time type from its initializer; it is not dynamically typed."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.constant",
+      "definition": "A const local is evaluated at compile time and cannot be assigned after declaration.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Constant name",
+          "placeholder": "name",
+          "description": "The constant identifier.",
+          "typeName": "C# identifier",
+          "defaultValue": "Answer",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Constant value",
+          "placeholder": "value",
+          "description": "A compile-time integer expression.",
+          "typeName": "C# expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Declare a constant",
+          "code": "const int Answer = 42;",
+          "explanation": "A const local is evaluated at compile time and cannot be assigned after declaration."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.if",
+      "definition": "An if statement executes one branch when its Boolean condition is true and an optional else branch otherwise.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Branch with if",
+          "code": "var value = 42;\nif (value > 0)\n{\n    value++;\n}\nelse\n{\n    value = 0;\n}",
+          "explanation": "An if statement executes one branch when its Boolean condition is true and an optional else branch otherwise."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.switch-expression",
+      "definition": "A switch expression evaluates ordered patterns and produces one result value.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Map a value with switch",
+          "code": "var code = 2;\nvar label = code switch\n{\n    1 => \"one\",\n    2 => \"two\",\n    _ => \"other\"\n};",
+          "explanation": "A switch expression evaluates ordered patterns and produces one result value."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.foreach",
+      "definition": "A foreach statement binds each element exposed by an enumerable or enumerator pattern.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Iterate a sequence",
+          "code": "var total = 0;\nforeach (var value in new[] { 1, 2, 3 })\n{\n    total += value;\n}",
+          "explanation": "A foreach statement binds each element exposed by an enumerable or enumerator pattern."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.for",
+      "definition": "A for statement combines initialization, a continuation condition, and iteration expressions.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Run a counted loop",
+          "code": "var total = 0;\nfor (var index = 0; index < 4; index++)\n{\n    total += index;\n}",
+          "explanation": "A for statement combines initialization, a continuation condition, and iteration expressions."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.while",
+      "definition": "A while statement tests its Boolean condition before each iteration.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Repeat while a condition holds",
+          "code": "var remaining = 3;\nwhile (remaining > 0)\n{\n    remaining--;\n}",
+          "explanation": "A while statement tests its Boolean condition before each iteration."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.try-catch",
+      "definition": "A try statement transfers control to a matching catch clause when an exception escapes its body.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Handle an exception",
+          "code": "try\n{\n    throw new InvalidOperationException(\"example\");\n}\ncatch (InvalidOperationException)\n{\n    // Handle the expected failure.\n}",
+          "explanation": "A try statement transfers control to a matching catch clause when an exception escapes its body."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.local-function",
+      "definition": "A local function is a named method-like declaration scoped to its containing member.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Declare a local function",
+          "code": "static int Double(int value) => value * 2;\nvar answer = Double(21);",
+          "explanation": "A local function is a named method-like declaration scoped to its containing member."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.lambda",
+      "definition": "A lambda expression creates an anonymous function that converts to a compatible delegate or expression-tree type.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Create a lambda",
+          "code": "Func<int, int> doubleValue = value => value * 2;\nvar answer = doubleValue(21);",
+          "explanation": "A lambda expression creates an anonymous function that converts to a compatible delegate or expression-tree type."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.tuple",
+      "definition": "Tuple syntax groups a fixed number of values and supports positional or named deconstruction.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Create and deconstruct a tuple",
+          "code": "var point = (X: 20, Y: 22);\nvar (x, y) = point;\nvar answer = x + y;",
+          "explanation": "Tuple syntax groups a fixed number of values and supports positional or named deconstruction."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.property-pattern",
+      "definition": "A property pattern applies nested patterns to accessible properties of a non-null input value.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Match object properties",
+          "code": "var item = new { Status = \"ready\", Count = 42 };\nvar isReady = item is { Status: \"ready\", Count: > 0 };",
+          "explanation": "A property pattern applies nested patterns to accessible properties of a non-null input value."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.collection-expression",
+      "definition": "A collection expression uses bracket syntax and spread elements to construct a compatible collection target.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Create a collection value",
+          "code": "int[] first = [1, 2];\nint[] combined = [.. first, 3, 4];",
+          "explanation": "A collection expression uses bracket syntax and spread elements to construct a compatible collection target."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.null-coalescing",
+      "definition": "The ?? operator evaluates its right operand only when the left operand is null.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Provide a null fallback",
+          "code": "string? value = null;\nvar result = value ?? \"fallback\";",
+          "explanation": "The ?? operator evaluates its right operand only when the left operand is null."
+        }
+      ]
+    },
+    {
+      "entryId": "csharp.core.range",
+      "definition": "Range syntax selects an interval whose start is inclusive and end is exclusive.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Slice with a range",
+          "code": "int[] values = [1, 2, 3, 4];\nvar middle = values[1..^1];",
+          "explanation": "Range syntax selects an interval whose start is inclusive and end is exclusive."
+        }
+      ]
+    }
+  ]
+}

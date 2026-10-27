@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "sass-popular",
+  "guides": [
+    {
+      "entryId": "sass-popular.module-variables",
+      "definition": "Uses the Sass module system and overrides variables marked with !default. Editor/build-tool content: insert into an SCSS document and compile with Dart Sass; Hypershell does not run a Sass compiler.",
+      "parameters": [
+        {
+          "name": "modulePath",
+          "displayName": "Module path",
+          "placeholder": "modulePath",
+          "description": "Quoted Sass module path.",
+          "typeName": "Sass string",
+          "defaultValue": "\"theme\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "variableName",
+          "displayName": "Variable name",
+          "placeholder": "variableName",
+          "description": "Variable name without the leading $.",
+          "typeName": "Sass variable",
+          "defaultValue": "brand-color",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "Configured Sass value.",
+          "typeName": "Sass value",
+          "defaultValue": "#3b82f6",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Configure a theme module",
+          "code": "@use \"theme\" with (\n  $brand-color: #3b82f6\n);",
+          "explanation": "@use loads a module once and namespaces its members; with applies configuration before the module is evaluated."
+        }
+      ]
+    },
+    {
+      "entryId": "sass-popular.mixin",
+      "definition": "Creates a parameterized Sass mixin and applies it to a selector. Editor/build-tool content: insert into an SCSS document and compile with Dart Sass; Hypershell does not run a Sass compiler.",
+      "parameters": [
+        {
+          "name": "mixinName",
+          "displayName": "Mixin name",
+          "placeholder": "mixinName",
+          "description": "Mixin identifier.",
+          "typeName": "Sass identifier",
+          "defaultValue": "rounded",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterName",
+          "displayName": "Parameter name",
+          "placeholder": "parameterName",
+          "description": "Parameter name without $.",
+          "typeName": "Sass variable",
+          "defaultValue": "radius",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "defaultValue",
+          "displayName": "Default value",
+          "placeholder": "defaultValue",
+          "description": "Fallback parameter value.",
+          "typeName": "Sass value",
+          "defaultValue": "0.5rem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "CSS property",
+          "placeholder": "property",
+          "description": "Declaration produced by the mixin.",
+          "typeName": "CSS property",
+          "defaultValue": "border-radius",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "selector",
+          "displayName": "Selector",
+          "placeholder": "selector",
+          "description": "Selector that includes the mixin.",
+          "typeName": "CSS selector",
+          "defaultValue": ".card",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "argument",
+          "displayName": "Argument",
+          "placeholder": "argument",
+          "description": "Value passed to the mixin.",
+          "typeName": "Sass value",
+          "defaultValue": "0.75rem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a rounded mixin",
+          "code": "@mixin rounded($radius: 0.5rem) {\n  border-radius: $radius;\n}\n\n.card {\n  @include rounded(0.75rem);\n}",
+          "explanation": "Mixins reuse related declarations and may accept arguments; avoid hiding simple one-property rules behind unnecessary abstraction."
+        }
+      ]
+    },
+    {
+      "entryId": "sass-popular.nested-state",
+      "definition": "Uses the Sass parent selector to keep hover and focus-visible states beside a component rule. Editor/build-tool content: insert into an SCSS document and compile with Dart Sass; Hypershell does not run a Sass compiler.",
+      "parameters": [
+        {
+          "name": "selector",
+          "displayName": "Selector",
+          "placeholder": "selector",
+          "description": "Component selector.",
+          "typeName": "CSS selector",
+          "defaultValue": ".button",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Base property",
+          "placeholder": "property",
+          "description": "Property set in the base rule.",
+          "typeName": "CSS property",
+          "defaultValue": "background",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Base value",
+          "placeholder": "value",
+          "description": "Base property value.",
+          "typeName": "CSS value",
+          "defaultValue": "#2563eb",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "stateProperty",
+          "displayName": "State property",
+          "placeholder": "stateProperty",
+          "description": "Property changed on hover and focus.",
+          "typeName": "CSS property",
+          "defaultValue": "background",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "stateValue",
+          "displayName": "State value",
+          "placeholder": "stateValue",
+          "description": "Interactive-state value.",
+          "typeName": "CSS value",
+          "defaultValue": "#1d4ed8",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Style an interactive button",
+          "code": ".button {\n  background: #2563eb;\n\n  &:hover,\n  &:focus-visible {\n    background: #1d4ed8;\n  }\n}",
+          "explanation": "The parent selector keeps closely related states readable; avoid deep nesting that produces overly specific selectors."
+        }
+      ]
+    }
+  ]
+}

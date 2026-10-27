@@ -1,0 +1,28 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Overview";
+}
+
+<section class="page-heading">
+    <p class="eyebrow">SIGNED IN AS @Model.AccountId.ToUpperInvariant()</p>
+    <h1>Hypershell control room</h1>
+    <p class="muted">Downloads, devices, profiles, storage, and recovery from one private endpoint.</p>
+</section>
+
+<section class="status-strip">
+    <div><span>API</span><strong>v1 + v2</strong></div>
+    <div><span>Metadata</span><strong>Schema @Model.Storage.MetadataSchemaVersion</strong></div>
+    <div><span>Storage</span><strong>@Model.AvailableGiB GiB free</strong></div>
+</section>
+
+<section class="card-grid">
+@foreach (var item in Model.Sections)
+{
+    <a class="module-card" href="/Admin/@item.Slug">
+        <span class="module-icon">@item.Icon</span>
+        <h2>@item.Title</h2>
+        <p>@item.Description</p>
+    </a>
+}
+</section>

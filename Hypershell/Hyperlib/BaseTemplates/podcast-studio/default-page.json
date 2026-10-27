@@ -1,0 +1,88 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "Small Signals / Episode 07",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "episode-art",
+      "type": "image",
+      "region": "main",
+      "values": {
+        "src": "/media/base-templates/podcast-studio.svg",
+        "alt": "Small Signals episode artwork",
+        "caption": "EPISODE 07",
+        "width": 100,
+        "span": "third"
+      }
+    },
+    {
+      "id": "episode-title",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "SMALL SIGNALS / CONVERSATIONS ABOUT MAKING",
+        "title": "Small Signals / Episode 07",
+        "text": "A thoughtful conversation about prototypes, uncertainty, and learning in public.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "episode-audio",
+      "type": "audio",
+      "region": "main",
+      "values": {
+        "src": "/media/sample-tone.wav",
+        "caption": "Audio-player demonstration using a short reference tone, not a recorded episode."
+      }
+    },
+    {
+      "id": "show-notes",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## In this episode\n\n- Why an unfinished model can start a useful conversation.\n- How constraints make the next step clearer.\n- What to keep when an experiment changes direction.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "episode-credit",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "At the microphone",
+        "text": "Host / Add a name\nGuest / Add a name\nRecorded / Add a date",
+        "span": "third"
+      }
+    },
+    {
+      "id": "transcript-label",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "TRANSCRIPT PREVIEW",
+        "style": "line"
+      }
+    },
+    {
+      "id": "transcript",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "**Host:** What makes a first attempt useful?\n\n**Guest:** It gives us something concrete to learn from. We can stop imagining every possibility and notice what actually happens.",
+        "span": "full"
+      }
+    },
+    {
+      "id": "podcast-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Small Signals / A podcast page demonstration"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

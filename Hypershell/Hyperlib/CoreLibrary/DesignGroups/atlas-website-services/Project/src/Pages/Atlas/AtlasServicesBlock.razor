@@ -1,0 +1,12 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<section id="services" class="content-section"><h2 data-field="title">@T("title")</h2><div class="two-grid">@foreach(var line in Lines("items")) { <article class="service-card"><h3>@Part(line,0)</h3><p>@Part(line,1)</p></article> }</div></section>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "jackson-databind-popular",
+  "guides": [
+    {
+      "entryId": "jackson-databind-popular.serialize-object",
+      "definition": "Uses a reusable Jackson ObjectMapper to create formatted JSON text. Project dependency only: add Jackson Databind to a Maven or Gradle project; the isolated Java runner does not resolve external dependencies.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value expression",
+          "placeholder": "value",
+          "description": "Object to serialize.",
+          "typeName": "Java expression",
+          "defaultValue": "new User(42, \"Atlas\")",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Serialize a record",
+          "code": "import com.fasterxml.jackson.databind.ObjectMapper;\nimport com.fasterxml.jackson.databind.SerializationFeature;\n\nObjectMapper mapper = new ObjectMapper()\n    .enable(SerializationFeature.INDENT_OUTPUT);\nString json = mapper.writeValueAsString(new User(42, \"Atlas\"));",
+          "explanation": "ObjectMapper instances are thread-safe after configuration and are normally reused rather than constructed for every operation."
+        }
+      ]
+    },
+    {
+      "entryId": "jackson-databind-popular.deserialize-object",
+      "definition": "Reads JSON text into the selected Java type with ObjectMapper. Project dependency only: add Jackson Databind to a Maven or Gradle project; the isolated Java runner does not resolve external dependencies.",
+      "parameters": [
+        {
+          "name": "typeName",
+          "displayName": "Target type",
+          "placeholder": "typeName",
+          "description": "Class or record used for deserialization.",
+          "typeName": "Java type",
+          "defaultValue": "User",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "jsonText",
+          "displayName": "JSON expression",
+          "placeholder": "jsonText",
+          "description": "String expression containing JSON.",
+          "typeName": "Java string expression",
+          "defaultValue": "jsonText",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Deserialize a user",
+          "code": "ObjectMapper mapper = new ObjectMapper();\nUser value = mapper.readValue(jsonText, User.class);",
+          "explanation": "The target class or record defines property names and conversion rules; configure unknown-property handling deliberately for external inputs."
+        }
+      ]
+    },
+    {
+      "entryId": "jackson-databind-popular.read-tree",
+      "definition": "Parses JSON into JsonNode and reads a nested value without defining a model type. Project dependency only: add Jackson Databind to a Maven or Gradle project; the isolated Java runner does not resolve external dependencies.",
+      "parameters": [
+        {
+          "name": "jsonText",
+          "displayName": "JSON expression",
+          "placeholder": "jsonText",
+          "description": "String expression containing JSON.",
+          "typeName": "Java string expression",
+          "defaultValue": "jsonText",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fieldName",
+          "displayName": "Field name",
+          "placeholder": "fieldName",
+          "description": "Object field to read.",
+          "typeName": "Java string",
+          "defaultValue": "\"status\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fallback",
+          "displayName": "Fallback",
+          "placeholder": "fallback",
+          "description": "Value used when the node has no text value.",
+          "typeName": "Java string",
+          "defaultValue": "\"unknown\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read an optional status",
+          "code": "import com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\n\nJsonNode root = new ObjectMapper().readTree(jsonText);\nString value = root.path(\"status\").asText(\"unknown\");",
+          "explanation": "path returns a missing node instead of null for an absent field; asText supplies an explicit fallback."
+        }
+      ]
+    }
+  ]
+}

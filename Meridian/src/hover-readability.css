@@ -1,0 +1,6 @@
+/* Enlarging the genuine card keeps its native links, controls and media usable.
+   The transform exists only while reading; authored geometry and link routes
+   never participate in this temporary presentation state. */
+.ms-node.ms-readability-expanded{isolation:isolate;box-shadow:0 0 0 1px var(--ms-accent,#9fe8da),0 10px 28px #0007;will-change:scale,translate}
+@media(prefers-reduced-motion:no-preference){.ms-node.ms-readability-expanded{transition:scale 120ms ease-out,translate 120ms ease-out}}
+@media(prefers-reduced-motion:reduce){.ms-node.ms-readability-expanded{transition:none!important}}

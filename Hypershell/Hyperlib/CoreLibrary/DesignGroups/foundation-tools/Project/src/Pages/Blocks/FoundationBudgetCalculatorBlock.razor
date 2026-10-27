@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-budget-calculator">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><div class="parallel"><label>Budget<input type="number" min="0" @bind="budget" /></label><label>Spent<input type="number" min="0" @bind="spent" /></label></div><output class="tool-result">@(budget-spent) remaining</output><meter min="0" max="@Math.Max(1,budget)" value="@Math.Clamp(spent,0,Math.Max(1,budget))">@spent of @budget</meter>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private decimal budget=1000,spent=375;
+}

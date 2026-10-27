@@ -1,0 +1,32 @@
+@* Source: core.contact.form.v1 (Core essentials). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-79581b0fb1df" data-vp-id="79581b0fb1df3dd5ae89773404a4f99e">
+    <form @onsubmit:preventDefault aria-label="Contact form" class="vp-911ace3f138d" data-vp-id="911ace3f138daab924fcd76237b7d389" method="post">
+        <h2 class="vp-a27a6b638ad0" data-field="text-2">
+            @(Context.Text("text-2"))
+        </h2>
+        <label class="vp-2b6e0e6da7e0" data-field="text-3" data-vp-id="2b6e0e6da7e09b32ca90955d9dbbf2d1" for="@(LocalIds("contact-name"))">
+            @(Context.Text("text-3"))
+        </label>
+        <input aria-label="Name" autocomplete="name" class="vp-76ed1ed138ba" data-vp-id="76ed1ed138ba832208c37a7d021bd798" name="name" required type="text" id="@(LocalIds("contact-name"))" />
+        <label class="vp-99ffd3b7771e" data-field="text-5" data-vp-id="99ffd3b7771ef284257d6fbb78806897" for="@(LocalIds("contact-email"))">
+            @(Context.Text("text-5"))
+        </label>
+        <input aria-label="Email" autocomplete="email" class="vp-5ed87e9f1642" data-vp-id="5ed87e9f1642abeec1b478525237b293" name="email" required type="email" id="@(LocalIds("contact-email"))" />
+        <label class="vp-049a38f1dc14" data-field="text-7" data-vp-id="049a38f1dc1422456c5ce36c9507c8e1" for="@(LocalIds("contact-message"))">
+            @(Context.Text("text-7"))
+        </label>
+        <textarea aria-label="Message" class="vp-e9c16700af3a" data-vp-id="e9c16700af3ae9f10e9c2444c3b8f2cc" name="message" required rows="6" id="@(LocalIds("contact-message"))"></textarea>
+        <button class="vp-4282887dc4c6" data-field="text-9" data-vp-id="4282887dc4c61de9fcd3115076da3872" type="submit">
+            @(Context.Text("text-9"))
+        </button>
+    </form>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

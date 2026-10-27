@@ -1,0 +1,37 @@
+@page "/Admin/backups"
+@model BackupsModel
+@{
+    ViewData["Title"] = "Backups";
+}
+
+<section class="page-heading compact">
+    <a class="back-link" href="/">← Overview</a>
+    <h1>Backups</h1>
+    <p class="muted">GPG-encrypted recovery bundles generated outside the web process.</p>
+</section>
+
+<p class="notice">@Model.Inventory.StatusMessage</p>
+<section class="inventory-section">
+@if (Model.Inventory.Exports.Count == 0)
+{
+    <p class="muted">No encrypted export has been published to the portal mount.</p>
+}
+else
+{
+    @foreach (var export in Model.Inventory.Exports)
+    {
+        <article class="inventory-row">
+            <div>
+                <h3>@export.CreatedAtUtc.ToLocalTime().ToString("g")</h3>
+                <p>@Model.FormatBytes(export.ByteLength) · SHA-256 @export.Sha256[..12]</p>
+                <small>@(export.RestoreValidatedAtUtc is null ? "Restore not yet evidenced" : $"Restore verified {export.RestoreValidatedAtUtc.Value.ToLocalTime():g}")@(string.IsNullOrWhiteSpace(export.SnapshotId) ? "" : $" · snapshot {export.SnapshotId}")</small>
+            </div>
+            <a class="icon-button download-icon"
+               asp-page-handler="Download"
+               asp-route-id="@export.Id"
+               title="Download encrypted recovery bundle"
+               aria-label="Download encrypted recovery bundle">↓</a>
+        </article>
+    }
+}
+</section>

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "dom-standard",
+  "displayName": "DOM Standard",
+  "description": "DOM Standard interfaces and browser-platform operations.",
+  "language": "Web APIs",
+  "category": "Official reference",
+  "kind": "PlatformApi",
+  "canonicalName": "DOM Standard",
+  "ecosystem": "Web Platform",
+  "targetVersion": "Living Standard inventory",
+  "sourceVersion": "Web declarations from TypeScript 5.9.3 · 080941d9f9ff/6d08cde2bfb6",
+  "sourceUrl": "https://dom.spec.whatwg.org/",
+  "license": "WHATWG Living Standard",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Web API entries target compatible JavaScript or TypeScript editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "web api",
+    "browser",
+    "DOM Standard"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 527,
+  "declaredIndexedCount": 523,
+  "declaredGuidedCount": 4,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/dom-standard.entries.json"
+  ],
+  "declaredGuideCount": 4,
+  "guideFiles": [
+    "guides/dom-standard.guides.json"
+  ],
+  "legacyIds": [
+    "web-api-essentials"
+  ]
+}

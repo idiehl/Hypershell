@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-statistics">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><dl class="statistics">@foreach(var row in Rows){<div><dt>@Cell(row,1)</dt><dd>@Cell(row,0)</dd><small>@Cell(row,2)</small></div>}</dl>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

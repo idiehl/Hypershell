@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "html-navigation",
+  "displayName": "HTML Navigation and History",
+  "description": "HTML Navigation and History interfaces and browser-platform operations.",
+  "language": "Web APIs",
+  "category": "Official reference",
+  "kind": "PlatformApi",
+  "canonicalName": "HTML Navigation and History",
+  "ecosystem": "Web Platform",
+  "targetVersion": "Living Standard inventory",
+  "sourceVersion": "Web declarations from TypeScript 5.9.3 · 080941d9f9ff/6d08cde2bfb6",
+  "sourceUrl": "https://html.spec.whatwg.org/multipage/nav-history-apis.html",
+  "license": "WHATWG Living Standard",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Web API entries target compatible JavaScript or TypeScript editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "web api",
+    "browser",
+    "HTML Navigation and History"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 28,
+  "declaredIndexedCount": 27,
+  "declaredGuidedCount": 1,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/html-navigation.entries.json"
+  ],
+  "declaredGuideCount": 1,
+  "guideFiles": [
+    "guides/html-navigation.guides.json"
+  ],
+  "legacyIds": []
+}

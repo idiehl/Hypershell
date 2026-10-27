@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "serilog-popular",
+  "guides": [
+    {
+      "entryId": "serilog-popular.configure-console",
+      "definition": "Creates a Serilog logger with a minimum level and console sink. Project dependency only: add Serilog and the desired sinks to a project; the isolated C# runner does not restore packages.",
+      "parameters": [
+        {
+          "name": "minimumLevel",
+          "displayName": "Minimum level",
+          "placeholder": "minimumLevel",
+          "description": "LoggerConfiguration minimum-level method such as Debug or Information.",
+          "typeName": "Serilog level method",
+          "defaultValue": "Information",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Configure informational console logs",
+          "code": "Log.Logger = new LoggerConfiguration()\n    .MinimumLevel.Information()\n    .WriteTo.Console()\n    .CreateLogger();",
+          "explanation": "The fluent configuration establishes the event threshold and one output sink before application logging begins."
+        }
+      ]
+    },
+    {
+      "entryId": "serilog-popular.write-structured-event",
+      "definition": "Records a message template whose named property remains queryable by structured sinks. Project dependency only: add Serilog and the desired sinks to a project; the isolated C# runner does not restore packages.",
+      "parameters": [
+        {
+          "name": "messageTemplate",
+          "displayName": "Message template",
+          "placeholder": "messageTemplate",
+          "description": "Quoted Serilog message template with a named property.",
+          "typeName": "C# string",
+          "defaultValue": "\"Processed job {JobId}\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Property value",
+          "placeholder": "value",
+          "description": "Value captured for the template property.",
+          "typeName": "C# expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Record a completed job",
+          "code": "Log.Information(\"Processed job {JobId}\", 42);",
+          "explanation": "Message-template properties preserve semantic data instead of flattening everything into one formatted string."
+        }
+      ]
+    },
+    {
+      "entryId": "serilog-popular.log-exception",
+      "definition": "Captures an exception object and a structured operation identifier. Project dependency only: add Serilog and the desired sinks to a project; the isolated C# runner does not restore packages.",
+      "parameters": [
+        {
+          "name": "messageTemplate",
+          "displayName": "Message template",
+          "placeholder": "messageTemplate",
+          "description": "Quoted message template describing the failed operation.",
+          "typeName": "C# string",
+          "defaultValue": "\"Import {ImportId} failed\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "operationId",
+          "displayName": "Operation identifier",
+          "placeholder": "operationId",
+          "description": "Context value captured with the exception.",
+          "typeName": "C# expression",
+          "defaultValue": "importId",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Log and rethrow a failed import",
+          "code": "catch (Exception exception)\n{\n    Log.Error(exception, \"Import {ImportId} failed\", importId);\n    throw;\n}",
+          "explanation": "Passing the exception separately retains its type and stack trace; rethrow preserves the original failure semantics."
+        }
+      ]
+    }
+  ]
+}

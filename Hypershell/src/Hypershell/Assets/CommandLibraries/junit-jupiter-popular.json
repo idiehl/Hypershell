@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "junit-jupiter-popular",
+  "displayName": "JUnit Jupiter",
+  "description": "Curated JUnit Jupiter starter recipes for the Java Command Builder. The dependency is referenced, not bundled.",
+  "language": "Java",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "JUnit Jupiter",
+  "ecosystem": "Maven / Gradle",
+  "targetVersion": "6.1",
+  "sourceVersion": "6.1 documentation · curated 2026-08-17",
+  "sourceUrl": "https://docs.junit.org/current/user-guide/",
+  "license": "EPL-2.0",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Test-project dependency only: configure JUnit Jupiter in Maven, Gradle, or the IDE; the isolated Java runner does not resolve test engines.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "java",
+    "popular library",
+    "org.junit.jupiter:junit-jupiter",
+    "test",
+    "assertion",
+    "parameterized test",
+    "junit"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/junit-jupiter-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/junit-jupiter-popular.guides.json"
+  ],
+  "legacyIds": []
+}

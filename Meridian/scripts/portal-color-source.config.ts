@@ -1,0 +1,2 @@
+import { defineConfig } from '@playwright/test';
+export default defineConfig({ testDir: '../tests', testMatch: ['portal-color-scene.browser.ts', 'door-launcher.browser.ts'], workers: 1, timeout: 45000, expect: { timeout: 8000 }, use: { viewport: { width: 1500, height: 1100 } }, projects: [{ name: 'chromium', use: { browserName: 'chromium' } }], outputDir: '../output/portal-color-20261018/source-qa' });

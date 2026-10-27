@@ -1,0 +1,12 @@
+node_modules/
+dist/
+output/
+src/host/bin/
+src/host/obj/
+**/bin/
+**/obj/
+test-results/
+playwright-report/
+.test-data/
+.cache/
+*.log

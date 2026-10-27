@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "recipe-kitchen",
+  "title": "Recipe Kitchen",
+  "description": "A recipe card with a wide hero, ingredient sidebar, method column, and useful kitchen timer.",
+  "category": "Food",
+  "sourceTemplateId": "recipe-kitchen"
+}

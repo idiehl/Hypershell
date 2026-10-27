@@ -1,0 +1,88 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "Build a Useful Component",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "guide-title",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "REFERENCE / START HERE",
+        "title": "Build a Useful Component",
+        "text": "A short guide from a clear contract to a working example."
+      }
+    },
+    {
+      "id": "overview",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "The contract",
+        "text": "Inputs are explicit. Outputs are predictable. Content stays separate from presentation.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "prerequisites",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Before you begin",
+        "text": "A project\nA small use case\nA way to test the result",
+        "span": "third"
+      }
+    },
+    {
+      "id": "quick-start",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Quick start\n\n1. Name the thing the component does.\n2. Define the fields it needs.\n3. Render a useful empty state.\n4. Try representative content.\n5. Keep the contract stable.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "review",
+      "type": "tool",
+      "region": "main",
+      "values": {
+        "title": "Review checklist",
+        "mode": "checklist",
+        "initial": 0,
+        "items": "Fields have clear names\nEmpty values render safely\nKeyboard use works\nContent survives an edit",
+        "span": "third"
+      }
+    },
+    {
+      "id": "reference-label",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "FIELD REFERENCE",
+        "style": "line"
+      }
+    },
+    {
+      "id": "reference",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Example fields\n\n**title** \u2014 A short, meaningful heading.\n\n**text** \u2014 The body content in plain text or supported Markdown.\n\n**url** \u2014 An optional safe link.\n\nKeep examples close to the rules they explain.",
+        "span": "full"
+      }
+    },
+    {
+      "id": "guide-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Documentation Desk / Replace this guide with your own project reference"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

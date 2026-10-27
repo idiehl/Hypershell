@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "pester-popular",
+  "displayName": "Pester",
+  "description": "Curated Pester starter recipes for the PowerShell Command Builder. The dependency is referenced, not bundled.",
+  "language": "PowerShell",
+  "category": "Popular libraries",
+  "kind": "Module",
+  "canonicalName": "Pester",
+  "ecosystem": "PowerShell Gallery",
+  "targetVersion": "5.8.0",
+  "sourceVersion": "5.8.0 documentation · curated 2026-08-17",
+  "sourceUrl": "https://pester.dev/docs/quick-start",
+  "license": "Apache-2.0",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Requires the Pester module in the active PowerShell environment; Hypershell does not install it.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "powershell",
+    "popular library",
+    "pester",
+    "test",
+    "assertion",
+    "mock",
+    "powershell gallery"
+  ],
+  "executionTarget": "PowerShell",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/pester-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/pester-popular.guides.json"
+  ],
+  "legacyIds": []
+}

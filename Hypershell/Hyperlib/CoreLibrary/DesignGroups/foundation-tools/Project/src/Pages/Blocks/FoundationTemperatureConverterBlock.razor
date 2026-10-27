@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-temperature-converter">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><label>Celsius<input type="number" step="0.1" @bind="celsius" @bind:event="oninput" /></label><output class="tool-result">@((celsius*9/5+32).ToString("0.#")) °F</output>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private decimal celsius=20;
+}

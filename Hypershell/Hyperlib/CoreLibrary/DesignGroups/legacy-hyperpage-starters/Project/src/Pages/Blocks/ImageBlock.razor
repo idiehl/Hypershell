@@ -1,0 +1,2 @@
+<figure style="width:@(Math.Clamp(Context.Number("width",100),40,100).ToString(System.Globalization.CultureInfo.InvariantCulture))%;margin-inline:auto"><img src="@Context.Text("src")" alt="@Context.Text("alt")" loading="lazy" /><figcaption data-field="caption">@Context.Text("caption")</figcaption></figure>
+@code { [Parameter, EditorRequired] public BlockContext Context { get; set; } = new(); }

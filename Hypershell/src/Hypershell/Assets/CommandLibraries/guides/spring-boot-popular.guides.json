@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "spring-boot-popular",
+  "guides": [
+    {
+      "entryId": "spring-boot-popular.application-entry",
+      "definition": "Defines the application class and starts the Spring container. Project dependency only: use a configured Spring Boot Maven or Gradle project; the isolated Java runner does not resolve external dependencies.",
+      "parameters": [
+        {
+          "name": "className",
+          "displayName": "Application class",
+          "placeholder": "className",
+          "description": "Public application class name matching its source file.",
+          "typeName": "Java class",
+          "defaultValue": "AtlasApplication",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Start an Atlas service",
+          "code": "import org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\n\n@SpringBootApplication\npublic class AtlasApplication {\n    public static void main(String[] args) {\n        SpringApplication.run(AtlasApplication.class, args);\n    }\n}",
+          "explanation": "@SpringBootApplication enables configuration, component scanning, and auto-configuration from one conventional root class."
+        }
+      ]
+    },
+    {
+      "entryId": "spring-boot-popular.rest-controller",
+      "definition": "Defines a Spring MVC controller with one GET endpoint. Project dependency only: use a configured Spring Boot Maven or Gradle project; the isolated Java runner does not resolve external dependencies.",
+      "parameters": [
+        {
+          "name": "basePath",
+          "displayName": "Base path",
+          "placeholder": "basePath",
+          "description": "Path shared by every controller method.",
+          "typeName": "Java string",
+          "defaultValue": "\"/api\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "className",
+          "displayName": "Controller class",
+          "placeholder": "className",
+          "description": "Public controller class name.",
+          "typeName": "Java class",
+          "defaultValue": "HealthController",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "route",
+          "displayName": "Route",
+          "placeholder": "route",
+          "description": "GET route relative to the base path.",
+          "typeName": "Java string",
+          "defaultValue": "\"/health\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "returnType",
+          "displayName": "Return type",
+          "placeholder": "returnType",
+          "description": "Method return type serialized into the response.",
+          "typeName": "Java type",
+          "defaultValue": "String",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "returnValue",
+          "displayName": "Return expression",
+          "placeholder": "returnValue",
+          "description": "Value returned by the endpoint.",
+          "typeName": "Java expression",
+          "defaultValue": "\"ok\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Expose a health endpoint",
+          "code": "import org.springframework.web.bind.annotation.GetMapping;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.RestController;\n\n@RestController\n@RequestMapping(\"/api\")\npublic class HealthController {\n    @GetMapping(\"/health\")\n    public String get() {\n        return \"ok\";\n    }\n}",
+          "explanation": "@RestController serializes return values into the response; keep transport validation and domain behavior separated as endpoints grow."
+        }
+      ]
+    },
+    {
+      "entryId": "spring-boot-popular.configuration-properties",
+      "definition": "Binds a configuration prefix to an immutable Java record. Project dependency only: use a configured Spring Boot Maven or Gradle project; the isolated Java runner does not resolve external dependencies.",
+      "parameters": [
+        {
+          "name": "prefix",
+          "displayName": "Property prefix",
+          "placeholder": "prefix",
+          "description": "Dot-separated configuration prefix.",
+          "typeName": "Java string",
+          "defaultValue": "\"atlas.client\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "recordName",
+          "displayName": "Record name",
+          "placeholder": "recordName",
+          "description": "Immutable configuration type name.",
+          "typeName": "Java record",
+          "defaultValue": "AtlasClientProperties",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fields",
+          "displayName": "Record fields",
+          "placeholder": "fields",
+          "description": "Comma-separated configuration components.",
+          "typeName": "Java parameters",
+          "defaultValue": "String baseUrl, int timeoutSeconds",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Bind client settings",
+          "code": "import org.springframework.boot.context.properties.ConfigurationProperties;\n\n@ConfigurationProperties(\"atlas.client\")\npublic record AtlasClientProperties(String baseUrl, int timeoutSeconds) { }",
+          "explanation": "Typed configuration makes expected keys and value types explicit; register the record through configuration-properties scanning or enablement."
+        }
+      ]
+    }
+  ]
+}

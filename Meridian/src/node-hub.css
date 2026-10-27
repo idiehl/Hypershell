@@ -1,0 +1,29 @@
+.node-hub{display:flex;flex-direction:column;overflow:hidden!important;color:#dce7ed}
+.nh-header{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:52px;padding:8px 16px;border-bottom:1px solid #2e3d4a;flex:none}
+.nh-header h2{font-size:13px;font-weight:650;color:#c9dedf;letter-spacing:.02em}
+.nh-inherited{font-size:10px;color:#8fb2b1;margin-left:auto}
+.nh-body{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:12px 16px 20px}
+.nh-body>.field{margin:4px 0 12px}.nh-show-title{margin:8px 0 16px;font-size:12px}
+.nh-stack{display:flex;flex-direction:column;gap:12px;min-width:0}
+.nh-content-section{min-width:0;border:1px solid #344552;border-radius:7px;background:#14212b;overflow:hidden}
+.nh-content-section.is-display-slot{border-color:#527b70;background:#172b30}
+.nh-item-header{display:flex;align-items:center;gap:6px;min-height:38px;padding:5px 8px;border-bottom:1px solid #2a3b46}
+.nh-item-name{min-width:0;flex:1;font-size:12px;font-weight:550;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nh-display-badge{flex:none;font-size:9px;font-weight:650;text-transform:uppercase;letter-spacing:.06em;color:#a4ddc9}
+.nh-icon{display:inline-flex;align-items:center;justify-content:center;min-width:28px;width:28px;height:28px;padding:5px;border:1px solid transparent;border-radius:5px;color:#a5bbc7;font-size:16px;line-height:1}
+.nh-icon:hover{background:#2b4049;color:#e6f1f2}.nh-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.nh-drag{cursor:grab;touch-action:none}.nh-drag:active{cursor:grabbing}
+.nh-item-preview{min-height:56px;padding:10px 12px;font-size:13px;line-height:1.55}
+.nh-text-preview{overflow-wrap:anywhere}.nh-item-preview .mdv-viewer{padding:0}
+.nh-item-actions{display:flex;justify-content:flex-end;gap:3px;padding:4px 6px;border-top:1px solid #2a3b46;background:#101d2540}
+.nh-item-actions .nh-icon:disabled{opacity:.28}.nh-item-actions .nh-icon:last-child:hover{color:#f4acac;background:#533038}
+.nh-content-section.is-dragging{opacity:.42}.nh-content-section.is-drop-target{outline:2px solid #8bd8bf;outline-offset:2px}
+.nh-add{display:flex;align-items:center;justify-content:center;width:100%;height:40px;margin-top:12px;font-size:26px;font-weight:300;line-height:1;border:1px dashed #3a5860;border-radius:7px;color:#a1d4c4;background:#172b2c50}
+.nh-add:hover{background:#26443e;border-color:#7bbb9f;color:#d2f5df}
+.nh-dialog{width:min(640px,94vw)}.nh-dialog[open]{display:flex;flex-direction:column}
+.nh-dialog>form{display:flex;flex-direction:column;min-height:0}.nh-dialog .modal-body{overflow:auto;max-height:calc(88dvh - 156px)}
+.nh-dialog .modal-footer{flex-wrap:wrap;flex:none}.nh-dialog .creation-error{flex:1;min-width:160px;overflow-wrap:anywhere;font-size:12px}
+.nh-dialog textarea{font-size:13px;min-height:150px}.nh-dialog input[type=file]{font-size:12px;padding:8px}
+.nh-content-form>.quiet{font-size:12px;padding-left:0}.nh-link-preview{overflow-wrap:anywhere}
+.nh-popout .nh-item-preview{max-height:78dvh}.nh-popout .nh-text-preview{font-size:16px;line-height:1.7;max-width:850px;margin:auto;padding:12px}
+@media(max-width:1000px){.node-hub .nh-header{min-height:48px}.nh-body{padding:10px 12px 18px}}

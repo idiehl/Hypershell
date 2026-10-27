@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "portfolio-grid",
+  "title": "Portfolio Grid",
+  "description": "A typographic introduction, paired project cards, a three-column capabilities row, and contact form.",
+  "category": "Creative",
+  "sourceTemplateId": "portfolio-grid"
+}

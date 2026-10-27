@@ -1,0 +1,105 @@
+<UserControl x:Class="Hypershell.PdfDocumentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+             Background="#FF0D1117">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="44" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Border Grid.Row="0"
+            Background="#FF161B22"
+            BorderBrush="#FF30363D"
+            BorderThickness="0,0,0,1">
+      <Grid Margin="10,0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel VerticalAlignment="Center">
+          <TextBlock Text="{Binding DisplayTitle}"
+                     Foreground="{StaticResource ForegroundBrush}"
+                     FontSize="12"
+                     FontWeight="SemiBold"
+                     TextTrimming="CharacterEllipsis" />
+          <TextBlock Text="{Binding FilePath}"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     FontSize="9"
+                     TextTrimming="CharacterEllipsis" />
+        </StackPanel>
+
+        <Border Grid.Column="1"
+                Margin="10,0,8,0"
+                Padding="8,3"
+                VerticalAlignment="Center"
+                Background="#FF21262D"
+                BorderBrush="#FF30363D"
+                BorderThickness="1"
+                CornerRadius="4">
+          <TextBlock Text="PDF · READ ONLY"
+                     Foreground="{StaticResource SecondaryBrush}"
+                     FontSize="10"
+                     FontWeight="SemiBold" />
+        </Border>
+
+        <Button Grid.Column="2"
+                Click="OpenDocumentMenuClick"
+                Style="{StaticResource HeaderIconButtonStyle}"
+                Width="Auto"
+                Height="32"
+                Padding="10,0"
+                ToolTip="PDF document actions">
+          <Button.ContextMenu>
+            <ContextMenu>
+              <MenuItem Header="Refresh"
+                        Click="RefreshPdfClick" />
+              <Separator />
+              <MenuItem Header="In"
+                        Click="ZoomInClick" />
+              <MenuItem Header="Actual"
+                        Click="ActualSizeClick" />
+              <MenuItem Header="Out"
+                        Click="ZoomOutClick" />
+              <Separator />
+              <MenuItem Header="Open"
+                        Click="OpenExternallyClick" />
+              <MenuItem Header="Reveal"
+                        Click="ShowInExplorerClick" />
+            </ContextMenu>
+          </Button.ContextMenu>
+          <TextBlock Text="DOCUMENT  ▾"
+                     Foreground="{StaticResource ForegroundBrush}"
+                     FontSize="10"
+                     FontWeight="Bold" />
+        </Button>
+      </Grid>
+    </Border>
+
+    <Grid Grid.Row="1">
+      <wv2:WebView2 x:Name="PdfWebView"
+                    DefaultBackgroundColor="#0D1117" />
+      <Border Background="#F20D1117"
+              Visibility="{Binding HasError, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    MaxWidth="620"
+                    Margin="30">
+          <TextBlock Text="PDF unavailable"
+                     Foreground="{StaticResource ForegroundBrush}"
+                     FontSize="18"
+                     FontWeight="SemiBold"
+                     HorizontalAlignment="Center" />
+          <TextBlock Text="{Binding ErrorMessage}"
+                     Foreground="{StaticResource MutedForegroundBrush}"
+                     TextWrapping="Wrap"
+                     TextAlignment="Center"
+                     Margin="0,8,0,0" />
+        </StackPanel>
+      </Border>
+    </Grid>
+  </Grid>
+</UserControl>

@@ -1,0 +1,95 @@
+@* Source: common.page.contact.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-c50085865994" data-vp-id="c500858659943e5ab994bd26471d1d7e">
+    <header class="vp-ec8f07b810c2" data-vp-id="ec8f07b810c2750928b62cbbc4ac248e">
+        <a aria-label="Home" class="vp-cc8f304bf4e0" data-field="text-2" data-vp-id="cc8f304bf4e012b5d368e58882c21824" href="@(Link(Context.Text("href-2")))">
+            @(Context.Text("text-2"))
+        </a>
+        <nav aria-label="Primary navigation" class="vp-4146e20e48f7" data-vp-id="4146e20e48f7f222c5f5b2123b46aafb">
+            <a class="vp-a19340e4a0ce" data-field="text-4" data-vp-id="a19340e4a0ce8d74b21144ab9d99d969" href="@(Link(Context.Text("href-4")))">
+                @(Context.Text("text-4"))
+            </a>
+            <a class="vp-80c06d73eddf" data-field="text-5" data-vp-id="80c06d73eddf583a5aca6b42088f749f" href="@(Link(Context.Text("href-5")))">
+                @(Context.Text("text-5"))
+            </a>
+            <a class="vp-faeb0bab4e60" data-field="text-6" data-vp-id="faeb0bab4e6068e77d944c9c3a611a49" href="@(Link(Context.Text("href-6")))">
+                @(Context.Text("text-6"))
+            </a>
+            <button class="vp-2a25373c4ec5" data-field="text-7" data-vp-id="2a25373c4ec57efeca8dea5fc582fba2">
+                @(Context.Text("text-7"))
+            </button>
+        </nav>
+    </header>
+    <section class="vp-b2d32350f3e3" data-vp-id="b2d32350f3e3ce85b3c82c9b525d42eb">
+        <h1 class="vp-6984ac6f3d44" data-field="text-9">
+            @(Context.Text("text-9"))
+        </h1>
+        <p class="vp-497bec822aea" data-field="text-10" data-vp-id="497bec822aea1e32511ebce83143a131">
+            @(Context.Text("text-10"))
+        </p>
+    </section>
+    <section class="vp-37c7cf23fb0a" data-vp-id="37c7cf23fb0a6d6cd8bbbd4dce7877d6">
+        <div class="vp-a48dd9ebd9db" data-vp-id="a48dd9ebd9db2d68cb570046814dc039">
+            <h2 class="vp-28435e1bd66d" data-field="text-13">
+                @(Context.Text("text-13"))
+            </h2>
+            <p class="vp-0b0c12af2b46" data-field="text-14" data-vp-id="0b0c12af2b4660b8f2aeeedb777702b2">
+                @(Context.Text("text-14"))
+            </p>
+            <a class="vp-fd88058a99ae" data-field="text-15" data-vp-id="fd88058a99ae73efcb8a26b8fdb61969" href="@(Link(Context.Text("href-15")))">
+                @(Context.Text("text-15"))
+            </a>
+            <p class="vp-3e11dc042784" data-field="text-16" data-vp-id="3e11dc04278482e892517f2317a3131a">
+                @(Context.Text("text-16"))
+            </p>
+        </div>
+        <form @onsubmit:preventDefault aria-label="Inquiry form" class="vp-6853d4a9d7d3" data-vp-id="6853d4a9d7d35275af40fdd421a99146" method="post">
+            <h2 class="vp-fd07def37466" data-field="text-18">
+                @(Context.Text("text-18"))
+            </h2>
+            <div class="vp-2513aae8778a" data-vp-id="2513aae8778a09ddf2c4497ffea734c3">
+                <label class="vp-778572088a27" data-field="text-20" data-vp-id="778572088a272e9d29e61c9e02497f2b" for="@(LocalIds("contact-name"))">
+                    @(Context.Text("text-20"))
+                </label>
+                <input aria-label="Name" autocomplete="name" class="vp-f309860cdae0" data-vp-id="f309860cdae09ff058bdd33fbf1a1028" name="name" required id="@(LocalIds("contact-name"))" />
+            </div>
+            <div class="vp-d165df68f352" data-vp-id="d165df68f352970925c160eee2ed60bc">
+                <label class="vp-b7c67ac46530" data-field="text-23" data-vp-id="b7c67ac46530902c2d82df5d58980378" for="@(LocalIds("contact-email"))">
+                    @(Context.Text("text-23"))
+                </label>
+                <input aria-label="Email" autocomplete="email" class="vp-571b14700484" data-vp-id="571b14700484dba208abe96148ab1cb0" name="email" required id="@(LocalIds("contact-email"))" />
+            </div>
+            <label class="vp-0f70d0770d85" data-field="text-25" data-vp-id="0f70d0770d853ea6cb6ff5d091849d63" for="@(LocalIds("contact-message"))">
+                @(Context.Text("text-25"))
+            </label>
+            <textarea aria-label="Message" class="vp-71121bacc852" data-vp-id="71121bacc852b4690f33e92c6b857246" name="message" required rows="6" id="@(LocalIds("contact-message"))"></textarea>
+            <button class="vp-b13743c8255e" data-field="text-27" data-vp-id="b13743c8255e587c7e62d24c41fb4f42" type="submit">
+                @(Context.Text("text-27"))
+            </button>
+        </form>
+    </section>
+    <div aria-label="Site footer" class="vp-d15bb6c600ce" data-vp-id="d15bb6c600ced8830649339e8ecc4a59" role="contentinfo">
+        <p class="vp-e4e567733c9e" data-field="text-29" data-vp-id="e4e567733c9ee0da08588eec495d3a6d">
+            @(Context.Text("text-29"))
+        </p>
+        <nav aria-label="Footer navigation" class="vp-f07d8ccfe02b" data-vp-id="f07d8ccfe02b8d00e516d619f74e124f">
+            <a class="vp-4c725bc9afb0" data-field="text-31" data-vp-id="4c725bc9afb0a88725023f66ea0a42f0" href="@(Link(Context.Text("href-31")))">
+                @(Context.Text("text-31"))
+            </a>
+            <a class="vp-a5bc969a7b14" data-field="text-32" data-vp-id="a5bc969a7b14a7b918a0ed6a22052b02" href="@(Link(Context.Text("href-32")))">
+                @(Context.Text("text-32"))
+            </a>
+            <a class="vp-c7ff3ed3eb22" data-field="text-33" data-vp-id="c7ff3ed3eb22eec460dbfd7b45f95233" href="@(Link(Context.Text("href-33")))">
+                @(Context.Text("text-33"))
+            </a>
+        </nav>
+    </div>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

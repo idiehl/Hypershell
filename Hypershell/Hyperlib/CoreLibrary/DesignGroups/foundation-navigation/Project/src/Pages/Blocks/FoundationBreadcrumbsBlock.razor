@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-breadcrumbs">
+<nav aria-label="Breadcrumb"><ol class="breadcrumbs">@for(var i=0;i<Rows.Length;i++){<li>@if(i<Rows.Length-1){<a href="@Context.Text("url")">@Rows[i]</a><span aria-hidden="true"> / </span>}else{<span aria-current="page">@Rows[i]</span>}</li>}</ol></nav>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

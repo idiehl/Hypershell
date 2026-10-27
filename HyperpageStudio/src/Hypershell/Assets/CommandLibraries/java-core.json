@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "java-core",
+  "displayName": "Java Core",
+  "description": "Java syntax, primitives, control flow, declarations, records, and intrinsic language constructs.",
+  "language": "Java",
+  "category": "Language core",
+  "kind": "Core",
+  "canonicalName": "Java Language Core",
+  "ecosystem": "Java",
+  "targetVersion": "Java 25",
+  "sourceVersion": "Java Language Specification SE 25 lexical inventory · 9a835319864be87f7c62df04a2e1a937291d18b3aa10b25fface0751efd6bd59",
+  "sourceUrl": "https://docs.oracle.com/javase/specs/",
+  "license": "Oracle documentation terms",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Runs through the matching installed Hypershell terminal adapter.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "java",
+    "core",
+    "language",
+    "syntax"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 115,
+  "declaredIndexedCount": 109,
+  "declaredGuidedCount": 0,
+  "declaredVerifiedCount": 6,
+  "entryFiles": [
+    "entries/java-core.entries.json"
+  ],
+  "declaredGuideCount": 6,
+  "guideFiles": [
+    "guides/java-core.guides.json"
+  ],
+  "legacyIds": [
+    "java-essentials"
+  ]
+}

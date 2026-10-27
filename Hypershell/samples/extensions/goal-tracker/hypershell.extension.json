@@ -1,0 +1,39 @@
+{
+  "$schema": "../../../doc/schemas/hypershell-extension.schema.json",
+  "schemaVersion": 1,
+  "id": "community.goal-tracker",
+  "displayName": "Project Goal Tracker",
+  "publisher": "Hypershell Community Sample",
+  "version": "0.2.0",
+  "description": "Persists project stages through the allowlisted panel host and displays safe workspace context.",
+  "runtime": "WebView",
+  "entryPoint": "panel/index.html",
+  "requestedCapabilities": [
+    "WorkspacePanel",
+    "WorkspaceMetadata"
+  ],
+  "contributions": {
+    "panels": [
+      {
+        "id": "goalTracker",
+        "displayName": "Goal Tracker",
+        "viewResource": "panel/index.html",
+        "messageApiVersion": 1,
+        "placement": {
+          "preferredSlot": "Left",
+          "allowedSlots": ["Left", "Right", "Bottom", "Floating"],
+          "mayReplace": ["FileExplorer", "CommandBuilder"],
+          "minimumWidth": 240,
+          "preferredWidth": 320,
+          "maximumWidth": 560,
+          "minimumHeight": 220,
+          "preferredHeight": 320,
+          "maximumHeight": 640,
+          "allowUserMove": true,
+          "allowUserResize": true,
+          "allowFloating": true
+        }
+      }
+    ]
+  }
+}

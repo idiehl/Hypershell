@@ -1,0 +1,30 @@
+@* Source: common.section.testimonials.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-b2986b62cef7" data-vp-id="b2986b62cef7a53cf07f00062fce7b4f">
+    <section class="vp-a1605957ed85" data-vp-id="a1605957ed85393a29dceb40c2a061a9">
+        <div class="vp-dac2adba2817" data-vp-id="dac2adba28175b36bb98b4575a236fb0">
+            <blockquote class="vp-5a8d7ceb4cb3" data-field="text-3" data-vp-id="5a8d7ceb4cb3b935e94bd996f2722549">
+                @(Context.Text("text-3"))
+            </blockquote>
+            <p class="vp-da4fe4cf399c" data-field="text-4" data-vp-id="da4fe4cf399c72ba7b16a852e8be7d92">
+                @(Context.Text("text-4"))
+            </p>
+        </div>
+        <div class="vp-db480ee7138b" data-vp-id="db480ee7138bab9ef420f1f11f9b41fd">
+            <blockquote class="vp-fdf247c2545a" data-field="text-6" data-vp-id="fdf247c2545a4e93262894d41c18cc0f">
+                @(Context.Text("text-6"))
+            </blockquote>
+            <p class="vp-e95f80ddd241" data-field="text-7" data-vp-id="e95f80ddd241bf1503b877b33e442df7">
+                @(Context.Text("text-7"))
+            </p>
+        </div>
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

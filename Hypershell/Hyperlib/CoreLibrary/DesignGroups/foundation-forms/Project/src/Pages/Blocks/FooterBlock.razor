@@ -1,0 +1,9 @@
+@using HyperLib.Core
+<footer class="hl-footer">
+    <p data-field="text" data-placeholder="Footer text">@Context.Text("text")</p>
+    @if (!string.IsNullOrWhiteSpace(Context.Text("url")) && TemplateValidator.IsSafeUrl(Context.Text("url")))
+    {
+        <a href="@Context.Text("url")" target="_blank" rel="noopener noreferrer"><span data-field="label">@Context.Text("label", "Read more")</span><span aria-hidden="true"> ↗</span></a>
+    }
+</footer>
+@code { [Parameter, EditorRequired] public BlockContext Context { get; set; } = new(); }

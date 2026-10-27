@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-preferences">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><fieldset><legend>Reading experience</legend><label class="inline"><input type="checkbox" checked /> Show reading progress</label><label class="inline"><input type="checkbox" /> Reduce motion</label><label>Density<select><option>Comfortable</option><option>Compact</option></select></label><label>Text scale<input type="range" min="80" max="140" value="100" /></label></fieldset>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

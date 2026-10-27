@@ -1,0 +1,32 @@
+/* Native MyNet supplies the first row; browsers use the same quiet menu strip. */
+.workspace{--application-bar-height:0px;--workspace-header-height:76px;grid-template-rows:var(--application-bar-height) var(--workspace-header-height) minmax(0,1fr)}
+.workspace:has(.application-menubar){--application-bar-height:36px}
+.application-menubar{grid-column:1/-1;grid-row:1;display:flex;align-items:center;gap:2px;padding:0 6px;background:#151d27;border-bottom:1px solid #28313a}
+.application-menubar button{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:4px;height:28px;padding:0 8px;color:#bdcbd3;font-size:12px}
+.application-menubar button:hover{background:#283744;color:#e3f2f4}
+.application-menubar button:disabled{opacity:.35}
+.application-menubar button:focus-visible{outline:1px solid #80cbb8;outline-offset:0}
+.application-navigation svg{width:17px;height:17px;display:block}
+.application-file{margin-left:4px;min-width:40px}
+.application-menubar .application-file,.application-menubar .application-tools{color:#fff}
+.workspace>.app-header{grid-row:2;gap:14px;padding:0 18px}
+.workspace>.canvas-column,.workspace>.inspector{grid-row:3}
+.workspace .brand-mark{width:44px;height:44px;background:transparent;border:0;border-radius:6px;flex:none}
+.workspace .brand-mark img{width:42px;height:42px;object-fit:contain;display:block}
+.workspace .brand-mark:hover{background:#24363b}
+.application-title{margin:0;font-size:18px;font-weight:600;line-height:1.25;letter-spacing:.02em;color:#dce5ed;white-space:nowrap}
+.workspace>.app-header>.save-state{margin-left:10px}
+.workspace .canvas-toolbar .workspace-tools{margin:0;padding:0;border:0;gap:4px}
+.workspace .workspace-tools+.history-tools{padding-left:12px;margin-left:0;border-left:1px solid #344453}
+.workspace .canvas-panel-tools{display:flex;align-items:center;margin-left:auto}
+.workspace .inspector-divider{top:calc(var(--application-bar-height) + var(--workspace-header-height))}
+.canvas-status [data-current-canvas]{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:760px){
+  .workspace{--workspace-header-height:68px}
+  .workspace>.app-header{gap:10px;padding:0 12px}
+  .application-title{font-size:16px}
+  .workspace>.app-header>.save-state{margin-left:auto;font-size:10px}
+  .workspace>.inspector.is-open{top:calc(var(--application-bar-height) + var(--workspace-header-height))}
+  .workspace .canvas-toolbar .workspace-tools{gap:2px}
+  .workspace .workspace-tools+.history-tools{padding-left:7px}
+}

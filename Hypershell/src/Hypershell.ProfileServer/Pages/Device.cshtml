@@ -1,0 +1,36 @@
+@page
+@model DeviceModel
+@{
+    ViewData["Title"] = "Complete Hypershell sign-in";
+}
+
+<section class="page-heading compact">
+    <a class="back-link" href="/">← Overview</a>
+    <p class="eyebrow">HYPERSHELL SIGN-IN</p>
+    <h1>Complete sign-in</h1>
+    <p class="muted">Your password and authenticator complete the desktop sign-in.</p>
+</section>
+
+@if (Model.Approved is not null)
+{
+        <section class="authorization-card result-card">
+            <span class="result-icon success">✓</span>
+        <h2>Hypershell is signed in</h2>
+        <p class="muted">Return to @Model.Approved.DisplayName. This browser window can now be closed.</p>
+    </section>
+}
+else
+{
+    <section class="authorization-card">
+        <form method="post" asp-page-handler="Lookup">
+            <div asp-validation-summary="ModelOnly" class="validation"></div>
+            <p class="muted">If Hypershell could not open this page automatically, enter its one-time fallback code.</p>
+            <label asp-for="UserCode">One-time fallback code</label>
+            <div class="code-entry-row">
+                <input asp-for="UserCode" autocomplete="one-time-code" placeholder="ABCD-EFGH" autofocus />
+                <button class="primary compact-button" type="submit">Complete sign-in</button>
+            </div>
+            <span asp-validation-for="UserCode" class="validation"></span>
+        </form>
+    </section>
+}

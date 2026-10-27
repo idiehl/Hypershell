@@ -1,0 +1,16 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<header class="site-header" data-atlas-header>
+  <a class="brand" href="@Link(T("home"))"><img src="./_content/HyperLib.Work/atlas/atlas-emblem-96.png" width="32" height="32" alt="" /><span data-field="title">@T("title")</span></a>
+  <nav class="desktop-nav" aria-label="Primary">@foreach(var line in Lines("links")) { <a href="@Link(Part(line,1))">@Part(line,0)</a> }</nav>
+  <details class="mobile-nav"><summary>Menu</summary><nav aria-label="Primary">@foreach(var line in Lines("links")) { <a href="@Link(Part(line,1))">@Part(line,0)</a> }</nav></details>
+</header>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+
+}

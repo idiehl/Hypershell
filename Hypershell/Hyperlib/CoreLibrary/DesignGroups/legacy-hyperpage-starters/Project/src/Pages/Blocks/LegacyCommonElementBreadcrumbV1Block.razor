@@ -1,0 +1,29 @@
+@* Source: common.element.breadcrumb.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-aeed46d9b16b" data-vp-id="aeed46d9b16b743c5c73f942c2fa9e52">
+    <nav aria-label="Breadcrumb" class="vp-762202708470" data-vp-id="762202708470343ed3a16f2842d527bb">
+        <a class="vp-8d30c0df426b" data-field="text-2" data-vp-id="8d30c0df426b36cc2dc6d6379e15ed60" href="@(Link(Context.Text("href-2")))">
+            @(Context.Text("text-2"))
+        </a>
+        <span class="vp-d2d681ac51ac" data-field="text-3" data-vp-id="d2d681ac51ac0f8ec8f9f9afc91b5dbd">
+            @(Context.Text("text-3"))
+        </span>
+        <a class="vp-b4271481b10d" data-field="text-4" data-vp-id="b4271481b10d85912cd09961a25ebfd5" href="@(Link(Context.Text("href-4")))">
+            @(Context.Text("text-4"))
+        </a>
+        <span class="vp-1b645d62a45b" data-field="text-5" data-vp-id="1b645d62a45bc2891a148959a084f50f">
+            @(Context.Text("text-5"))
+        </span>
+        <span class="vp-09c6291d29d5" data-field="text-6" data-vp-id="09c6291d29d59bbd7ffa40fc40d698b2">
+            @(Context.Text("text-6"))
+        </span>
+    </nav>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

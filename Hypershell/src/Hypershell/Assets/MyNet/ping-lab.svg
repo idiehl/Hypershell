@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ping Lab">
+  <rect width="64" height="64" rx="8" fill="#071823"/>
+  <path d="M32 7l4 10-4 6-4-6z" fill="#57CFAE"/>
+  <path d="M57 32l-10 4-6-4 6-4zM32 57l-4-10 4-6 4 6zM7 32l10-4 6 4-6 4z" fill="#2BB8D3"/>
+  <circle cx="32" cy="32" r="4" fill="#2BB8D3"/>
+  <path d="M22 20a15 15 0 0 0-2 2M42 20a15 15 0 0 1 2 2M44 42a15 15 0 0 1-2 2M20 42a15 15 0 0 0 2 2" fill="none" stroke="#57CFAE" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

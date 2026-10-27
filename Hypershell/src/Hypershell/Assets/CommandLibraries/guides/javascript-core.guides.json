@@ -1,0 +1,1529 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "javascript-core",
+  "guides": [
+    {
+      "entryId": "javascript.template-literal",
+      "definition": "A template literal uses backticks and evaluates expressions inside dollar-brace placeholders when the string is created.",
+      "parameters": [
+        {
+          "name": "label",
+          "displayName": "Label",
+          "placeholder": "label",
+          "description": "Text placed before the expression.",
+          "typeName": "Text without quotes",
+          "defaultValue": "Result",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Expression",
+          "placeholder": "expression",
+          "description": "A JavaScript expression evaluated inside the template.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "6 * 7",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Embed a calculation",
+          "code": "console.log(`Result: ${6 * 7}`);",
+          "explanation": "JavaScript evaluates the expression and inserts 42 into the resulting string."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.const",
+      "definition": "const declares a block-scoped binding. The referenced value may still be mutable, but the binding itself cannot be assigned again.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Name",
+          "placeholder": "name",
+          "description": "The identifier bound by the declaration.",
+          "typeName": "Identifier",
+          "defaultValue": "answer",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The expression assigned to the binding.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Bind an answer",
+          "code": "const answer = 42;\nconsole.log(answer);",
+          "explanation": "answer becomes a block-scoped binding whose value is then logged."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.array-map",
+      "definition": "Array.prototype.map calls a callback for each array element and returns a new array containing each callback result.",
+      "parameters": [
+        {
+          "name": "array",
+          "displayName": "Array",
+          "placeholder": "array",
+          "description": "The array expression to transform.",
+          "typeName": "Array expression",
+          "defaultValue": "[1, 2, 3, 4]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The callback parameter for each value.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Output expression",
+          "placeholder": "expression",
+          "description": "The value returned for each item.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "number * number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Square each number",
+          "code": "const result = [1, 2, 3, 4].map((number) => number * number);\nconsole.log(result);",
+          "explanation": "map leaves the input array unchanged and returns a new array containing the squares."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.array-filter",
+      "definition": "Array.prototype.filter calls a predicate for each element and returns a shallow copy containing elements whose predicate result is truthy.",
+      "parameters": [
+        {
+          "name": "array",
+          "displayName": "Array",
+          "placeholder": "array",
+          "description": "The array expression to filter.",
+          "typeName": "Array expression",
+          "defaultValue": "[1, 2, 3, 4, 5, 6]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The predicate parameter for each value.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "condition",
+          "displayName": "Condition",
+          "placeholder": "condition",
+          "description": "A truthy expression for values that should be kept.",
+          "typeName": "Boolean expression",
+          "defaultValue": "number % 2 === 0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Keep even numbers",
+          "code": "const result = [1, 2, 3, 4, 5, 6].filter((number) => number % 2 === 0);\nconsole.log(result);",
+          "explanation": "Only numbers whose remainder is zero pass the predicate and appear in the result."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.destructure-object",
+      "definition": "Object destructuring matches property names from an object value and binds them to local variables in one declaration.",
+      "parameters": [
+        {
+          "name": "properties",
+          "displayName": "Properties",
+          "placeholder": "properties",
+          "description": "Comma-separated property names to bind.",
+          "typeName": "Property list",
+          "defaultValue": "name, role",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "object",
+          "displayName": "Object",
+          "placeholder": "object",
+          "description": "The object expression supplying the properties.",
+          "typeName": "Object expression",
+          "defaultValue": "{ name: \"Ada\", role: \"Programmer\" }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Extract two properties",
+          "code": "const { name, role } = { name: \"Ada\", role: \"Programmer\" };\nconsole.log(name, role);",
+          "explanation": "The declaration creates name and role bindings from properties with the same names."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.function",
+      "definition": "A function declaration binds a named function in its surrounding scope and may return a value to its caller.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Function name",
+          "placeholder": "name",
+          "description": "The identifier bound to the function.",
+          "typeName": "Identifier",
+          "defaultValue": "double",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "argument",
+          "displayName": "Argument name",
+          "placeholder": "argument",
+          "description": "The parameter accepted by the function.",
+          "typeName": "Identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Return expression",
+          "placeholder": "expression",
+          "description": "The expression returned to the caller.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "value * 2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample input",
+          "placeholder": "sample",
+          "description": "A value used to call the function.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "21",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Define and call double",
+          "code": "function double(value) {\n  return value * 2;\n}\nconsole.log(double(21));",
+          "explanation": "The call passes 21 to value; the function returns 42 and console.log displays it."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.class",
+      "definition": "A class declaration defines a constructor and methods shared through the class prototype. new creates an initialized instance.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Class name",
+          "placeholder": "name",
+          "description": "The class identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "Task",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "field",
+          "displayName": "Field name",
+          "placeholder": "field",
+          "description": "The constructor parameter and instance property.",
+          "typeName": "Identifier",
+          "defaultValue": "title",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value passed to the constructor.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "\"Ship Hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a Task instance",
+          "code": "class Task {\n  constructor(title) {\n    this.title = title;\n  }\n\n  describe() {\n    return `${this.title}`;\n  }\n}\nconsole.log(new Task(\"Ship Hypershell\").describe());",
+          "explanation": "new calls the constructor, stores the title, and the instance method returns it."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.promise-all",
+      "definition": "Promise.all returns a promise fulfilled with an array of results when every input fulfills, or rejected when the first input rejects.",
+      "parameters": [
+        {
+          "name": "promises",
+          "displayName": "Promises",
+          "placeholder": "promises",
+          "description": "An iterable of promises or plain values.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[Promise.resolve(1), Promise.resolve(2)]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Collect two results",
+          "code": "void (async () => {\n  const values = await Promise.all([Promise.resolve(1), Promise.resolve(2)]);\n  console.log(values);\n})();",
+          "explanation": "Both promises fulfill, so Promise.all produces the ordered result array [1, 2]."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.json-parse",
+      "definition": "JSON.parse reads one JSON text and returns the corresponding JavaScript value, throwing SyntaxError for invalid input.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "JSON text",
+          "placeholder": "text",
+          "description": "A JavaScript string containing one JSON document.",
+          "typeName": "String expression",
+          "defaultValue": "'{\"status\":\"ready\"}'",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Key",
+          "placeholder": "key",
+          "description": "A JavaScript string key read from the parsed object.",
+          "typeName": "String expression",
+          "defaultValue": "\"status\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a JSON property",
+          "code": "const data = JSON.parse('{\"status\":\"ready\"}');\nconsole.log(data[\"status\"]);",
+          "explanation": "The JSON object becomes a JavaScript object and its status property is logged."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.try-catch",
+      "definition": "A try statement runs its block and transfers control to catch when the block throws. finally may be added for unconditional cleanup.",
+      "parameters": [
+        {
+          "name": "expression",
+          "displayName": "Expression",
+          "placeholder": "expression",
+          "description": "The operation that may throw.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "JSON.parse(\"not json\")",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Handle invalid JSON",
+          "code": "try {\n  const result = JSON.parse(\"not json\");\n  console.log(result);\n} catch (error) {\n  console.error(`Unable to complete operation: ${error.message}`);\n}",
+          "explanation": "JSON.parse throws SyntaxError, and catch reports the message without terminating the Node.js session."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.array-reduce.34837213a26e",
+      "definition": "Array.prototype.reduce invokes a reducer for each element in order. Supplying an initial value makes the accumulator type and empty-array behavior explicit.",
+      "parameters": [
+        {
+          "name": "array",
+          "displayName": "Array",
+          "placeholder": "array",
+          "description": "The array expression to reduce.",
+          "typeName": "Array expression",
+          "defaultValue": "[10, 20, 12]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "accumulator",
+          "displayName": "Accumulator name",
+          "placeholder": "accumulator",
+          "description": "The reducer parameter holding the current result.",
+          "typeName": "Identifier",
+          "defaultValue": "total",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The reducer parameter holding the current element.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Reducer expression",
+          "placeholder": "expression",
+          "description": "The next accumulated value.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "total + number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "initial",
+          "displayName": "Initial value",
+          "placeholder": "initial",
+          "description": "The accumulator value before the first element.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Total numeric values",
+          "code": "const total = [10, 20, 12].reduce((sum, number) => sum + number, 0);\nconsole.log(total);",
+          "explanation": "The reducer starts at zero and adds each number to produce 42."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.array-find.ea94773243ee",
+      "definition": "Array.prototype.find evaluates elements in order and returns the first value whose predicate is truthy, or undefined when no value matches.",
+      "parameters": [
+        {
+          "name": "array",
+          "displayName": "Array",
+          "placeholder": "array",
+          "description": "The array expression to search.",
+          "typeName": "Array expression",
+          "defaultValue": "[12, 42, 7]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The predicate parameter.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "condition",
+          "displayName": "Condition",
+          "placeholder": "condition",
+          "description": "The matching predicate expression.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "number > 40",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find a value above a threshold",
+          "code": "console.log([12, 42, 7].find((number) => number > 40));",
+          "explanation": "The search stops at 42, the first value greater than 40."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.array-some.ef6523582f9e",
+      "definition": "Array.prototype.some short-circuits at the first truthy predicate result and returns false for an empty array.",
+      "parameters": [
+        {
+          "name": "array",
+          "displayName": "Array",
+          "placeholder": "array",
+          "description": "The values to test.",
+          "typeName": "Array expression",
+          "defaultValue": "[12, 42, 7]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The predicate parameter.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "condition",
+          "displayName": "Condition",
+          "placeholder": "condition",
+          "description": "The predicate expression.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "number > 40",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Detect a matching value",
+          "code": "console.log([12, 42, 7].some((number) => number > 40));",
+          "explanation": "42 satisfies the condition, so some returns true without testing later values."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.array-every.e06ff0e0c5c3",
+      "definition": "Array.prototype.every short-circuits at the first false predicate result and returns true for an empty array.",
+      "parameters": [
+        {
+          "name": "array",
+          "displayName": "Array",
+          "placeholder": "array",
+          "description": "The values to test.",
+          "typeName": "Array expression",
+          "defaultValue": "[3, 7, 42]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The predicate parameter.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "condition",
+          "displayName": "Condition",
+          "placeholder": "condition",
+          "description": "The predicate expression.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "number > 0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate all values",
+          "code": "console.log([3, 7, 42].every((number) => number > 0));",
+          "explanation": "Every number is positive, so every returns true."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.array-flatmap.bb578d6a3715",
+      "definition": "Array.prototype.flatMap behaves like map followed by flat with depth one, while allowing each input item to produce zero, one, or several output values.",
+      "parameters": [
+        {
+          "name": "array",
+          "displayName": "Array",
+          "placeholder": "array",
+          "description": "The source array.",
+          "typeName": "Array expression",
+          "defaultValue": "[1, 2, 3]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The callback parameter.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Mapped value",
+          "placeholder": "expression",
+          "description": "An item or array returned for each source value.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "[number, number * 10]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Expand every value",
+          "code": "console.log([1, 2, 3].flatMap((number) => [number, number * 10]));",
+          "explanation": "Each input produces two values and flatMap joins them into one array."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.array-includes.040e526698f6",
+      "definition": "Array.prototype.includes uses SameValueZero comparison, so it can find NaN and treats positive and negative zero as equal.",
+      "parameters": [
+        {
+          "name": "array",
+          "displayName": "Array",
+          "placeholder": "array",
+          "description": "The array to inspect.",
+          "typeName": "Array expression",
+          "defaultValue": "[12, 42, 7]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The value to locate.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Check for a value",
+          "code": "console.log([12, 42, 7].includes(42));",
+          "explanation": "The array contains 42, so includes returns true."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.array-sort.5574a67d6651",
+      "definition": "Array.prototype.sort mutates and returns the same array. A numeric comparison function is required for numeric ordering because the default compares string forms.",
+      "parameters": [
+        {
+          "name": "array",
+          "displayName": "Array",
+          "placeholder": "array",
+          "description": "The array expression to sort.",
+          "typeName": "Array expression",
+          "defaultValue": "[12, 3, 42]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "left",
+          "displayName": "Left item",
+          "placeholder": "left",
+          "description": "The first comparison parameter.",
+          "typeName": "Identifier",
+          "defaultValue": "a",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "right",
+          "displayName": "Right item",
+          "placeholder": "right",
+          "description": "The second comparison parameter.",
+          "typeName": "Identifier",
+          "defaultValue": "b",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "comparison",
+          "displayName": "Comparison",
+          "placeholder": "comparison",
+          "description": "A negative, zero, or positive ordering result.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "a - b",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Sort numbers ascending",
+          "code": "const values = [12, 3, 42];\nvalues.sort((a, b) => a - b);\nconsole.log(values);",
+          "explanation": "The numeric comparator orders the values as 3, 12, and 42."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.object-keys.70ceec5ffc0b",
+      "definition": "Object.keys excludes inherited, symbol-keyed, and non-enumerable properties. Its ordering follows the language's property-order rules.",
+      "parameters": [
+        {
+          "name": "object",
+          "displayName": "Object",
+          "placeholder": "object",
+          "description": "The object whose keys are returned.",
+          "typeName": "Object expression",
+          "defaultValue": "{ alpha: 1, beta: 2 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "List object keys",
+          "code": "console.log(Object.keys({ alpha: 1, beta: 2 }));",
+          "explanation": "The two own enumerable keys are returned as strings."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.object-entries.8998e9fa5bc0",
+      "definition": "Object.entries returns each property as a two-item key-value array and excludes inherited, symbol-keyed, and non-enumerable properties.",
+      "parameters": [
+        {
+          "name": "object",
+          "displayName": "Object",
+          "placeholder": "object",
+          "description": "The object to enumerate.",
+          "typeName": "Object expression",
+          "defaultValue": "{ answer: 42 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read key-value pairs",
+          "code": "for (const [key, value] of Object.entries({ answer: 42 })) {\n  console.log(key, value);\n}",
+          "explanation": "Destructuring reads the key and value from each returned pair."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.object-fromentries.a15eafc47ccd",
+      "definition": "Object.fromEntries consumes two-item entries and assigns each key and value to a new ordinary object. Later duplicate keys replace earlier values.",
+      "parameters": [
+        {
+          "name": "entries",
+          "displayName": "Entries",
+          "placeholder": "entries",
+          "description": "An iterable of key-value pairs.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[[\"answer\", 42]]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build an object from pairs",
+          "code": "console.log(Object.fromEntries([[\"answer\", 42], [\"ready\", true]]));",
+          "explanation": "Each pair becomes one own property on the new object."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.object-assign.3a398c69f289",
+      "definition": "Object.assign mutates and returns the target. Source properties are processed from left to right, so later sources overwrite the same keys.",
+      "parameters": [
+        {
+          "name": "target",
+          "displayName": "Target",
+          "placeholder": "target",
+          "description": "The object that receives properties.",
+          "typeName": "Object expression",
+          "defaultValue": "{}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "source",
+          "displayName": "Source",
+          "placeholder": "source",
+          "description": "An object supplying enumerable properties.",
+          "typeName": "Object expression",
+          "defaultValue": "{ answer: 42 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Merge settings onto a target",
+          "code": "console.log(Object.assign({ theme: \"dark\" }, { answer: 42 }));",
+          "explanation": "answer is copied onto the existing target object."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.object-hasown.2dd0955c2976",
+      "definition": "Object.hasOwn safely checks own properties even when an object has no prototype or defines a property named hasOwnProperty.",
+      "parameters": [
+        {
+          "name": "object",
+          "displayName": "Object",
+          "placeholder": "object",
+          "description": "The object to inspect.",
+          "typeName": "Object expression",
+          "defaultValue": "{ answer: 42 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Property key",
+          "placeholder": "key",
+          "description": "The string or symbol property key.",
+          "typeName": "Property-key expression",
+          "defaultValue": "\"answer\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Check an object's own property",
+          "code": "console.log(Object.hasOwn({ answer: 42 }, \"answer\"));",
+          "explanation": "answer exists directly on the object, so the result is true."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.map-set.32d0a1be36b3",
+      "definition": "Map.prototype.set stores a value under a key using SameValueZero key comparison. Returning the map enables chained set calls.",
+      "parameters": [
+        {
+          "name": "key",
+          "displayName": "Key",
+          "placeholder": "key",
+          "description": "The map key expression.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "\"answer\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The value stored under the key.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Store a keyed value",
+          "code": "const values = new Map();\nvalues.set(\"answer\", 42);\nconsole.log(values.get(\"answer\"));",
+          "explanation": "set creates the entry and get retrieves its value."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.map-get.c5283af5bf7f",
+      "definition": "Map.prototype.get retrieves the value associated with a key without changing the map. Use has when undefined could itself be a stored value.",
+      "parameters": [
+        {
+          "name": "entries",
+          "displayName": "Entries",
+          "placeholder": "entries",
+          "description": "Initial key-value pairs.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[[\"answer\", 42]]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Key",
+          "placeholder": "key",
+          "description": "The key to retrieve.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "\"answer\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Retrieve a keyed value",
+          "code": "const values = new Map([[\"answer\", 42]]);\nconsole.log(values.get(\"answer\"));",
+          "explanation": "get returns the value stored under answer."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.map-has.d9cc25357a39",
+      "definition": "Map.prototype.has checks key presence independently of the stored value and does not modify the map.",
+      "parameters": [
+        {
+          "name": "entries",
+          "displayName": "Entries",
+          "placeholder": "entries",
+          "description": "Initial key-value pairs.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[[\"answer\", 42]]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Key",
+          "placeholder": "key",
+          "description": "The key to locate.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "\"answer\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Check key presence",
+          "code": "console.log(new Map([[\"answer\", 42]]).has(\"answer\"));",
+          "explanation": "The map contains the key even if its value is not inspected."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.set-add.4255a2a4a57d",
+      "definition": "Set.prototype.add inserts a value using SameValueZero equality. Adding an existing value leaves the set unchanged.",
+      "parameters": [
+        {
+          "name": "values",
+          "displayName": "Initial values",
+          "placeholder": "values",
+          "description": "An iterable used to initialize the set.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[12, 7]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The value to add.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Add one unique value",
+          "code": "const values = new Set([12, 7]);\nvalues.add(42);\nconsole.log([...values]);",
+          "explanation": "42 is added once and the spread operator exposes the set values as an array."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.set-has.5d0fa977bbee",
+      "definition": "Set.prototype.has performs a SameValueZero membership test without changing the set.",
+      "parameters": [
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "An iterable used to initialize the set.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[12, 42, 7]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The value to locate.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Check set membership",
+          "code": "console.log(new Set([12, 42, 7]).has(42));",
+          "explanation": "42 is present, so has returns true."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.string-includes.4afda507339c",
+      "definition": "String.prototype.includes performs a case-sensitive search from an optional starting position and rejects regular expressions.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The string expression to search.",
+          "typeName": "String expression",
+          "defaultValue": "\"Hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "search",
+          "displayName": "Search text",
+          "placeholder": "search",
+          "description": "The substring to locate.",
+          "typeName": "String expression",
+          "defaultValue": "\"shell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find a substring",
+          "code": "console.log(\"Hypershell\".includes(\"shell\"));",
+          "explanation": "The exact lowercase substring appears at the end of the string."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.string-split.512021fce5cb",
+      "definition": "String.prototype.split accepts a string or regular-expression separator and an optional result limit. The original string is unchanged.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The string expression to divide.",
+          "typeName": "String expression",
+          "defaultValue": "\"alpha,beta,gamma\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "separator",
+          "displayName": "Separator",
+          "placeholder": "separator",
+          "description": "A string or regular expression identifying boundaries.",
+          "typeName": "String or RegExp expression",
+          "defaultValue": "\",\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Split comma-separated text",
+          "code": "console.log(\"alpha,beta,gamma\".split(\",\"));",
+          "explanation": "Each comma becomes a boundary between returned strings."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.string-replaceall.b25c941ed2e2",
+      "definition": "String.prototype.replaceAll leaves the source unchanged. A regular-expression search value must use the global flag.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The source string expression.",
+          "typeName": "String expression",
+          "defaultValue": "\"red blue red\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "search",
+          "displayName": "Search value",
+          "placeholder": "search",
+          "description": "The string or global regular expression to replace.",
+          "typeName": "String or RegExp expression",
+          "defaultValue": "\"red\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "replacement",
+          "displayName": "Replacement",
+          "placeholder": "replacement",
+          "description": "The replacement string.",
+          "typeName": "String expression",
+          "defaultValue": "\"orange\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Replace repeated text",
+          "code": "console.log(\"red blue red\".replaceAll(\"red\", \"orange\"));",
+          "explanation": "Both occurrences are replaced in the returned string."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.string-matchall.da9935545a75",
+      "definition": "String.prototype.matchAll exposes each match array, capture group, index, and input without mutating the supplied regular expression's lastIndex.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The string expression to search.",
+          "typeName": "String expression",
+          "defaultValue": "\"A1 B22\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "pattern",
+          "displayName": "Pattern",
+          "placeholder": "pattern",
+          "description": "A global regular expression.",
+          "typeName": "RegExp expression",
+          "defaultValue": "/\\d+/g",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Collect every number",
+          "code": "const matches = [...\"A1 B22\".matchAll(/\\d+/g)];\nconsole.log(matches.map((match) => match[0]));",
+          "explanation": "The iterator yields match records for 1 and 22."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.number-isfinite.34da2e8d6546",
+      "definition": "Number.isFinite performs no string coercion, unlike the legacy global isFinite function.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The value to test.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate a finite number",
+          "code": "console.log(Number.isFinite(42), Number.isFinite(Infinity));",
+          "explanation": "42 is finite while positive infinity is not."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.promise-allsettled.9aa5cac01078",
+      "definition": "Promise.allSettled never rejects because an input rejects. It preserves input order and reports each outcome with a fulfilled or rejected status.",
+      "parameters": [
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "An iterable of values or promises.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[Promise.resolve(42), Promise.reject(new Error(\"nope\"))]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect mixed promise outcomes",
+          "code": "void (async () => {\n  const outcomes = await Promise.allSettled([Promise.resolve(42), Promise.reject(new Error(\"nope\"))]);\n  console.log(outcomes.map((outcome) => outcome.status));\n})();",
+          "explanation": "The result records one fulfilled and one rejected input without rejecting the outer promise."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.promise-race.b2f669b2f542",
+      "definition": "Promise.race settles asynchronously with the first fulfillment or rejection. Other operations continue unless separately cancelled.",
+      "parameters": [
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "An iterable of values or promises.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[Promise.resolve(42), new Promise((resolve) => setTimeout(() => resolve(7), 10))]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Select the immediate result",
+          "code": "void (async () => {\n  const result = await Promise.race([Promise.resolve(42), new Promise((resolve) => setTimeout(() => resolve(7), 10))]);\n  console.log(result);\n})();",
+          "explanation": "The already-resolved promise wins the race and supplies 42."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.global-parseint.8c13a95bb098",
+      "definition": "parseInt reads valid digits from the beginning of a string and stops at the first invalid character. Supplying the radix avoids ambiguous intent.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The string expression to parse.",
+          "typeName": "String expression",
+          "defaultValue": "\"2a\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "radix",
+          "displayName": "Radix",
+          "placeholder": "radix",
+          "description": "The integer base from 2 through 36.",
+          "typeName": "Integer expression",
+          "defaultValue": "16",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse a hexadecimal value",
+          "code": "console.log(parseInt(\"2a\", 16));",
+          "explanation": "2a in base 16 equals 42 in decimal."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.optional-chaining",
+      "definition": "The optional-chaining operator returns undefined instead of throwing when its left operand is nullish. It does not suppress errors from later non-optional operations.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The object expression that may be nullish.",
+          "typeName": "Object expression",
+          "defaultValue": "{ profile: { name: \"Ada\" } }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property path",
+          "placeholder": "property",
+          "description": "The property path followed after the optional operator.",
+          "typeName": "Property path",
+          "defaultValue": "profile.name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a missing nested value safely",
+          "code": "const user = null;\nconsole.log(user?.profile?.name);",
+          "explanation": "Evaluation stops at the null user and returns undefined."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.nullish-coalescing",
+      "definition": "The nullish-coalescing operator preserves valid falsy values such as zero, false, and an empty string, unlike logical OR.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The expression checked for null or undefined.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "null",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fallback",
+          "displayName": "Fallback",
+          "placeholder": "fallback",
+          "description": "The expression evaluated only when the value is nullish.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Preserve zero while defaulting null",
+          "code": "console.log(0 ?? 42, null ?? 42);",
+          "explanation": "Zero is retained, while null selects the fallback."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.spread-syntax",
+      "definition": "Spread syntax is context-sensitive: arrays and calls consume iterables, while object literals copy own enumerable properties into a new object.",
+      "parameters": [
+        {
+          "name": "left",
+          "displayName": "First iterable",
+          "placeholder": "left",
+          "description": "Values placed first in the result.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[1, 2]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "right",
+          "displayName": "Second iterable",
+          "placeholder": "right",
+          "description": "Values placed after the first iterable.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[3, 42]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Combine two arrays",
+          "code": "console.log([... [1, 2], ... [3, 42]]);",
+          "explanation": "Both iterables are expanded into one new array."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.for-of",
+      "definition": "for...of uses the iterable protocol and binds each produced value. It differs from for...in, which enumerates property keys.",
+      "parameters": [
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The binding for each yielded value.",
+          "typeName": "Identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "The iterable expression to consume.",
+          "typeName": "Iterable expression",
+          "defaultValue": "[12, 42]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Iterate array values",
+          "code": "for (const value of [12, 42]) {\n  console.log(value);\n}",
+          "explanation": "The loop receives each array value in order."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.async-await",
+      "definition": "An async function always returns a promise. await resumes the function after fulfillment or throws the rejection reason inside the async function.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Function name",
+          "placeholder": "name",
+          "description": "The async function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "main",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "promise",
+          "displayName": "Promise",
+          "placeholder": "promise",
+          "description": "The promise or value to await.",
+          "typeName": "Promise expression",
+          "defaultValue": "Promise.resolve(42)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Await a resolved value",
+          "code": "async function main() {\n  console.log(await Promise.resolve(42));\n}\nvoid main();",
+          "explanation": "The async function resumes with the fulfilled value and logs 42."
+        }
+      ]
+    },
+    {
+      "entryId": "javascript.core.generator-function",
+      "definition": "Calling a generator function returns an iterator without executing the body immediately. Each next call resumes execution through the next yield or return.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Function name",
+          "placeholder": "name",
+          "description": "The generator function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "values",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "first",
+          "displayName": "First value",
+          "placeholder": "first",
+          "description": "The first yielded expression.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "12",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "second",
+          "displayName": "Second value",
+          "placeholder": "second",
+          "description": "The second yielded expression.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Yield two values",
+          "code": "function* values() {\n  yield 12;\n  yield 42;\n}\nconsole.log([...values()]);",
+          "explanation": "Spreading the generator consumes both yielded values."
+        }
+      ]
+    }
+  ]
+}

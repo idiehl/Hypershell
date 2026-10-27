@@ -1,0 +1,25 @@
+services:
+  profile-server:
+    build:
+      context: ../..
+      dockerfile: src/Hypershell.ProfileServer/Dockerfile
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_HTTP_PORTS: "8080"
+      HYPERSHELL_PROFILE_SERVER_DATA: /var/lib/hypershell-profile-server
+      HYPERSHELL_PROFILE_SESSION_MINUTES: "30"
+      HYPERSHELL_PROFILE_ACCOUNT_STORAGE_MIB: "512"
+    volumes:
+      - hypershell-profile-data:/var/lib/hypershell-profile-server
+    ports:
+      - "127.0.0.1:5088:8080"
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  hypershell-profile-data:

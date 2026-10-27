@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Hypershell.ProfileProtocol</AssemblyName>
+    <RootNamespace>Hypershell.Profiles</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Hypershell\Profiles\ProfileSyncContracts.cs"
+             Link="ProfileSyncContracts.cs" />
+  </ItemGroup>
+</Project>

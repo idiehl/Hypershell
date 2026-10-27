@@ -1,0 +1,104 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "Exploring a Wave",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "page-header",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "SCIENCE LAB / EXPERIMENT",
+        "title": "Exploring a Wave",
+        "text": "A small experiment in patterns, motion, and sound."
+      }
+    },
+    {
+      "id": "wave-intro",
+      "type": "text",
+      "region": "main",
+      "values": {
+        "text": "A wave describes a repeating disturbance. Amplitude controls the size of the variation; frequency describes how often it repeats. This simplified experiment lets you change both and inspect the shape. It is a visual model, not an audio synthesizer."
+      }
+    },
+    {
+      "id": "wave-experiment",
+      "type": "wave",
+      "region": "main",
+      "values": {
+        "frequency": 2,
+        "amplitude": 0.7
+      }
+    },
+    {
+      "id": "wave-note",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Change one thing at a time",
+        "text": "Keep amplitude fixed and increase frequency. Then restore frequency and change amplitude. Describe the difference in your own words."
+      }
+    },
+    {
+      "id": "wave-audio",
+      "type": "audio",
+      "region": "main",
+      "values": {
+        "src": "/media/sample-tone.wav",
+        "caption": "A short reference tone. Use the player to listen when you are ready."
+      }
+    },
+    {
+      "id": "wave-video",
+      "type": "video",
+      "region": "main",
+      "values": {
+        "src": "/media/sample-motion.webm",
+        "caption": "A short motion study: follow the repeating shape."
+      }
+    },
+    {
+      "id": "wave-citation",
+      "type": "citation",
+      "region": "main",
+      "values": {
+        "url": "https://openstax.org/books/college-physics-2e/pages/16-9-waves",
+        "title": "OpenStax: Waves",
+        "text": "A starting reference for further reading; this seeded reference has not been fetched by the research assistant."
+      }
+    },
+    {
+      "id": "page-divider",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "",
+        "style": "line"
+      }
+    },
+    {
+      "id": "page-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Wave Laboratory / Observe, adjust, compare"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "wave-reference",
+      "url": "https://openstax.org/books/college-physics-2e/pages/16-9-waves",
+      "title": "OpenStax: Waves",
+      "retrievedAt": "2026-09-26T00:00:00+00:00",
+      "provider": "starter-reference",
+      "verified": false,
+      "blockIds": [
+        "wave-intro"
+      ]
+    }
+  ],
+  "revision": 0
+}

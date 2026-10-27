@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-feedback-form">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><form @onsubmit="Confirm" @onsubmit:preventDefault><label>Topic<select><option>Suggestion</option><option>Problem</option><option>Question</option></select></label><label>Your feedback<textarea required rows="4" @bind="message"></textarea></label><button>Preview feedback</button><output aria-live="polite">@result</output></form>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private string message="",result=""; private void Confirm()=>result=$"Your {message.Length}-character draft is ready. Nothing was sent.";
+}

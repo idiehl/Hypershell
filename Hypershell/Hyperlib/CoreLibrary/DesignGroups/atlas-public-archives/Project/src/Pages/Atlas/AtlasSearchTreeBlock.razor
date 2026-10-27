@@ -1,0 +1,12 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<aside class="panel"><p class="eyebrow" data-field="title">@T("title")</p><label class="search-field">Find a title<input type="search" @bind="_query" @bind:event="oninput" placeholder="Search the library…" /></label><nav class="archive-tree" aria-label="Library hierarchy">@foreach(var group in Lines("items").GroupBy(line => Part(line,0))) { var matching = group.Where(line => line.Contains(_query, StringComparison.OrdinalIgnoreCase)).ToArray(); if(matching.Length > 0) { <details open><summary>@group.Key</summary>@foreach(var line in matching) { <a href="@Link(Part(line,2))">@Part(line,1)</a> }</details> } }@if(!Lines("items").Any(line => line.Contains(_query, StringComparison.OrdinalIgnoreCase))) { <p role="status">No matching titles.</p> }</nav></aside>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+private string _query = string.Empty;
+}

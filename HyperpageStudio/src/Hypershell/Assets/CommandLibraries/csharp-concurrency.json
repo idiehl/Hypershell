@@ -1,0 +1,971 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "id": "csharp-concurrency",
+  "displayName": ".NET concurrency and coordination",
+  "description": "Dependency-free .NET 8 APIs for cancellation, task boundaries, bounded parallelism, synchronization, concurrent collections, channels, atomics, and timers.",
+  "language": "C#",
+  "category": "Concurrency",
+  "kind": "Extension",
+  "parentLibraryId": "csharp-dotnet-8",
+  "frameworkName": ".NET",
+  "frameworkVersion": "8",
+  "targetFramework": "net8.0",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Compatible with the built-in .NET 10 C# runner; authored against .NET 8.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "csharp",
+    "dotnet",
+    "net8",
+    "async",
+    "parallel",
+    "threading",
+    "channels",
+    "synchronization"
+  ],
+  "executionTarget": "CSharp",
+  "actionDescriptions": {
+    "Add": "Adds a value, item, header, or contribution to an existing object.",
+    "Cancel": "Requests that cooperative asynchronous or concurrent work stop.",
+    "Compare": "Compares values and reports their ordering or equality relationship.",
+    "Create": "Constructs a new object, resource, or language structure.",
+    "Get": "Retrieves information without intentionally changing the source.",
+    "Read": "Reads text, bytes, messages, or values from a source.",
+    "Release": "Returns or frees a resource previously acquired by the program.",
+    "Run": "Starts work and waits for or observes its outcome.",
+    "Synchronize": "Coordinates access or progress across concurrent operations.",
+    "Wait": "Asynchronously or synchronously pauses until a condition is met.",
+    "Write": "Writes text, bytes, messages, or values to a destination."
+  },
+  "objectDescriptions": {
+    "Cancellation source": "A CancellationTokenSource owns a cooperative cancellation signal observed through one or more CancellationToken values.",
+    "Channel": "A Channel<T> is an asynchronous producer-consumer queue with separate reader and writer interfaces and optional backpressure.",
+    "Concurrent dictionary": "ConcurrentDictionary<TKey,TValue> provides thread-safe key-value operations, including compound atomic updates.",
+    "Concurrent queue": "ConcurrentQueue<T> is a thread-safe first-in, first-out collection.",
+    "Lazy value": "Lazy<T> defers value construction until first access and then caches the result.",
+    "Parallel loop": "A parallel loop processes several source elements concurrently while respecting configured resource and cancellation limits.",
+    "Periodic timer": "PeriodicTimer provides an asynchronous stream of time-based ticks to a single consumer.",
+    "Semaphore": "SemaphoreSlim controls how many concurrent operations may hold a permit to enter a protected or throttled region.",
+    "Shared value": "A shared value is storage accessed by more than one thread or task and therefore requires atomic or synchronized updates.",
+    "Task": "A Task represents asynchronous work that eventually completes successfully, fails, or is canceled."
+  },
+  "commands": [
+    {
+      "name": "CancellationTokenSource.CancelAfter",
+      "displayName": "CancellationTokenSource.CancelAfter",
+      "description": "Schedule a cooperative cancellation request after a delay.",
+      "definition": "Starts or resets a timer that calls Cancel on the source after the requested duration. Work must observe the associated token for cancellation to take effect.",
+      "moduleName": "System.Threading",
+      "action": "Cancel",
+      "object": "Cancellation source",
+      "namespaceName": "System.Threading",
+      "typeName": "CancellationTokenSource",
+      "memberName": "CancelAfter",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{source}.CancelAfter({delay});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtokensource.cancelafter",
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "A CancellationTokenSource instance.",
+          "typeName": "CancellationTokenSource",
+          "isRequired": true
+        },
+        {
+          "name": "delay",
+          "displayName": "delay",
+          "placeholder": "delay",
+          "description": "The delay before cancellation is requested.",
+          "typeName": "TimeSpan",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Apply a two-second operation budget",
+          "code": "using var cancellation = new CancellationTokenSource();\ncancellation.CancelAfter(TimeSpan.FromSeconds(2));\ntry\n{\n    await Task.Delay(TimeSpan.FromSeconds(10), cancellation.Token);\n}\ncatch (OperationCanceledException)\n{\n    Console.WriteLine(\"Operation budget expired.\");\n}",
+          "explanation": "The delay observes the token and throws after the source's timer requests cancellation."
+        }
+      ],
+      "keywords": [
+        "cancellation",
+        "timeout",
+        "token",
+        "CancelAfter"
+      ]
+    },
+    {
+      "name": "CancellationTokenSource.CreateLinkedTokenSource",
+      "displayName": "CancellationTokenSource.CreateLinkedTokenSource",
+      "description": "Create a token canceled when any source token is canceled.",
+      "definition": "Creates a new source linked to one or more existing tokens. Its token observes cancellation from any linked source and can also be canceled independently.",
+      "moduleName": "System.Threading",
+      "action": "Create",
+      "object": "Cancellation source",
+      "namespaceName": "System.Threading",
+      "typeName": "CancellationTokenSource",
+      "memberName": "CreateLinkedTokenSource",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "using var linked = CancellationTokenSource.CreateLinkedTokenSource({tokens});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtokensource.createlinkedtokensource",
+      "parameters": [
+        {
+          "name": "tokens",
+          "displayName": "tokens",
+          "placeholder": "tokens",
+          "description": "One or more CancellationToken values.",
+          "typeName": "CancellationToken[]",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Combine caller cancellation and a local timeout",
+          "code": "using var caller = new CancellationTokenSource();\nusing var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(1));\nusing var linked = CancellationTokenSource.CreateLinkedTokenSource(\n    caller.Token,\n    timeout.Token);\ntry\n{\n    await Task.Delay(TimeSpan.FromSeconds(5), linked.Token);\n}\ncatch (OperationCanceledException)\n{\n    Console.WriteLine(\"Caller canceled or timeout expired.\");\n}",
+          "explanation": "The linked token is canceled by whichever source requests cancellation first."
+        }
+      ],
+      "keywords": [
+        "cancellation",
+        "linked token",
+        "timeout"
+      ]
+    },
+    {
+      "name": "Task.WaitAsync",
+      "displayName": "Task.WaitAsync",
+      "description": "Wait for a task with a timeout or cancellation boundary.",
+      "definition": "Returns a task that mirrors the original operation when it completes in time, but throws TimeoutException or OperationCanceledException when the selected boundary wins.",
+      "moduleName": "System.Threading.Tasks",
+      "action": "Wait",
+      "object": "Task",
+      "namespaceName": "System.Threading.Tasks",
+      "typeName": "Task",
+      "memberName": "WaitAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var result = await {task}.WaitAsync({timeout});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task.waitasync",
+      "parameters": [
+        {
+          "name": "task",
+          "displayName": "task",
+          "placeholder": "task",
+          "description": "The Task<T> to await.",
+          "typeName": "Task<T>",
+          "isRequired": true
+        },
+        {
+          "name": "timeout",
+          "displayName": "timeout",
+          "placeholder": "timeout",
+          "description": "The maximum wait duration.",
+          "typeName": "TimeSpan",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Bound an asynchronous operation",
+          "code": "var operation = Task.Run(async () =>\n{\n    await Task.Delay(25);\n    return \"ready\";\n});\nvar result = await operation.WaitAsync(TimeSpan.FromSeconds(1));\nConsole.WriteLine(result);",
+          "explanation": "The original task completes before the one-second boundary, so its result is returned."
+        }
+      ],
+      "keywords": [
+        "Task",
+        "timeout",
+        "cancellation",
+        "await"
+      ]
+    },
+    {
+      "name": "Parallel.ForEachAsync",
+      "displayName": "Parallel.ForEachAsync",
+      "description": "Process sequence elements concurrently with bounded parallelism.",
+      "definition": "Invokes an asynchronous delegate for each source element while respecting ParallelOptions such as MaxDegreeOfParallelism and CancellationToken.",
+      "moduleName": "System.Threading.Tasks.Parallel",
+      "action": "Run",
+      "object": "Parallel loop",
+      "namespaceName": "System.Threading.Tasks",
+      "typeName": "Parallel",
+      "memberName": "ForEachAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await Parallel.ForEachAsync({source}, {options}, async ({item}, cancellationToken) =>\n{\n    {body}\n});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.tasks.parallel.foreachasync",
+      "parameters": [
+        {
+          "name": "source",
+          "displayName": "source",
+          "placeholder": "source",
+          "description": "The sequence to process.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "options",
+          "displayName": "options",
+          "placeholder": "options",
+          "description": "Parallelism and cancellation settings.",
+          "typeName": "ParallelOptions",
+          "isRequired": true
+        },
+        {
+          "name": "item",
+          "displayName": "item",
+          "placeholder": "item",
+          "description": "The current-element identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "body",
+          "displayName": "body",
+          "placeholder": "body",
+          "description": "Asynchronous statements for one element.",
+          "typeName": "C# statements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Run a bounded set of simulated requests",
+          "code": "var options = new ParallelOptions\n{\n    MaxDegreeOfParallelism = 3\n};\nawait Parallel.ForEachAsync(\n    Enumerable.Range(1, 8),\n    options,\n    async (item, cancellationToken) =>\n    {\n        await Task.Delay(20, cancellationToken);\n        Console.WriteLine($\"Completed {item}\");\n    });",
+          "explanation": "At most three delegate bodies run at the same time while every input is eventually processed."
+        }
+      ],
+      "keywords": [
+        "parallel",
+        "foreach",
+        "async",
+        "bounded concurrency"
+      ]
+    },
+    {
+      "name": "SemaphoreSlim.WaitAsync",
+      "displayName": "SemaphoreSlim.WaitAsync",
+      "description": "Asynchronously acquire one semaphore permit.",
+      "definition": "Waits until the semaphore count is positive, then atomically decrements it. Successful acquisition must be paired with Release, normally in a finally block.",
+      "moduleName": "System.Threading.SemaphoreSlim",
+      "action": "Synchronize",
+      "object": "Semaphore",
+      "namespaceName": "System.Threading",
+      "typeName": "SemaphoreSlim",
+      "memberName": "WaitAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await {semaphore}.WaitAsync({cancellationToken});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.semaphoreslim.waitasync",
+      "parameters": [
+        {
+          "name": "semaphore",
+          "displayName": "semaphore",
+          "placeholder": "semaphore",
+          "description": "The SemaphoreSlim to acquire.",
+          "typeName": "SemaphoreSlim",
+          "isRequired": true
+        },
+        {
+          "name": "cancellationToken",
+          "displayName": "cancellationToken",
+          "placeholder": "cancellationToken",
+          "description": "A token that can cancel the wait.",
+          "typeName": "CancellationToken",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Protect a bounded asynchronous section",
+          "code": "using var semaphore = new SemaphoreSlim(1, 1);\nawait semaphore.WaitAsync();\ntry\n{\n    await Task.Delay(20);\n    Console.WriteLine(\"Exclusive section completed.\");\n}\nfinally\n{\n    semaphore.Release();\n}",
+          "explanation": "The permit is always returned even if the protected operation throws."
+        }
+      ],
+      "keywords": [
+        "semaphore",
+        "lock",
+        "async",
+        "throttle"
+      ]
+    },
+    {
+      "name": "SemaphoreSlim.Release",
+      "displayName": "SemaphoreSlim.Release",
+      "description": "Return one or more permits to a semaphore.",
+      "definition": "Increases the semaphore count and allows waiting operations to acquire newly available permits. Releasing beyond the configured maximum throws SemaphoreFullException.",
+      "moduleName": "System.Threading.SemaphoreSlim",
+      "action": "Release",
+      "object": "Semaphore",
+      "namespaceName": "System.Threading",
+      "typeName": "SemaphoreSlim",
+      "memberName": "Release",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{semaphore}.Release();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.semaphoreslim.release",
+      "parameters": [
+        {
+          "name": "semaphore",
+          "displayName": "semaphore",
+          "placeholder": "semaphore",
+          "description": "A previously acquired SemaphoreSlim.",
+          "typeName": "SemaphoreSlim",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Pair release with successful acquisition",
+          "code": "using var gate = new SemaphoreSlim(2, 2);\nawait gate.WaitAsync();\ntry\n{\n    Console.WriteLine($\"Permits while held: {gate.CurrentCount}\");\n}\nfinally\n{\n    gate.Release();\n}",
+          "explanation": "Release occurs exactly once after WaitAsync succeeds."
+        }
+      ],
+      "keywords": [
+        "semaphore",
+        "release",
+        "permit",
+        "throttle"
+      ]
+    },
+    {
+      "name": "ConcurrentDictionary<TKey,TValue>.GetOrAdd",
+      "displayName": "ConcurrentDictionary<TKey,TValue>.GetOrAdd",
+      "description": "Get an existing value or atomically publish a generated value.",
+      "definition": "Returns the value already associated with a key or invokes a factory and attempts to add its result. Under contention, the factory may run more than once even though only one value is stored.",
+      "moduleName": "System.Collections.Concurrent",
+      "action": "Get",
+      "object": "Concurrent dictionary",
+      "namespaceName": "System.Collections.Concurrent",
+      "typeName": "ConcurrentDictionary<TKey,TValue>",
+      "memberName": "GetOrAdd",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var value = {dictionary}.GetOrAdd({key}, {valueFactory});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.getoradd",
+      "parameters": [
+        {
+          "name": "dictionary",
+          "displayName": "dictionary",
+          "placeholder": "dictionary",
+          "description": "A ConcurrentDictionary<TKey,TValue>.",
+          "typeName": "ConcurrentDictionary<TKey,TValue>",
+          "isRequired": true
+        },
+        {
+          "name": "key",
+          "displayName": "key",
+          "placeholder": "key",
+          "description": "The lookup key.",
+          "typeName": "TKey",
+          "isRequired": true
+        },
+        {
+          "name": "valueFactory",
+          "displayName": "valueFactory",
+          "placeholder": "valueFactory",
+          "description": "A function that creates a candidate value.",
+          "typeName": "Func<TKey,TValue>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Cache a computed label",
+          "code": "var cache = new ConcurrentDictionary<int, string>();\nvar value = cache.GetOrAdd(42, key => $\"item-{key}\");\nConsole.WriteLine(value);",
+          "explanation": "The key receives one published value while GetOrAdd returns that value to the caller."
+        }
+      ],
+      "keywords": [
+        "ConcurrentDictionary",
+        "cache",
+        "atomic",
+        "GetOrAdd"
+      ]
+    },
+    {
+      "name": "ConcurrentDictionary<TKey,TValue>.AddOrUpdate",
+      "displayName": "ConcurrentDictionary<TKey,TValue>.AddOrUpdate",
+      "description": "Atomically add a new value or update the current value.",
+      "definition": "Uses one factory for a missing key and another for an existing key, retrying when concurrent changes invalidate an attempted update. Factories may execute multiple times.",
+      "moduleName": "System.Collections.Concurrent",
+      "action": "Add",
+      "object": "Concurrent dictionary",
+      "namespaceName": "System.Collections.Concurrent",
+      "typeName": "ConcurrentDictionary<TKey,TValue>",
+      "memberName": "AddOrUpdate",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var value = {dictionary}.AddOrUpdate({key}, {addValueFactory}, {updateValueFactory});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.addorupdate",
+      "parameters": [
+        {
+          "name": "dictionary",
+          "displayName": "dictionary",
+          "placeholder": "dictionary",
+          "description": "A ConcurrentDictionary<TKey,TValue>.",
+          "typeName": "ConcurrentDictionary<TKey,TValue>",
+          "isRequired": true
+        },
+        {
+          "name": "key",
+          "displayName": "key",
+          "placeholder": "key",
+          "description": "The key to add or update.",
+          "typeName": "TKey",
+          "isRequired": true
+        },
+        {
+          "name": "addValueFactory",
+          "displayName": "addValueFactory",
+          "placeholder": "addValueFactory",
+          "description": "A factory for a missing key.",
+          "typeName": "Func<TKey,TValue>",
+          "isRequired": true
+        },
+        {
+          "name": "updateValueFactory",
+          "displayName": "updateValueFactory",
+          "placeholder": "updateValueFactory",
+          "description": "A factory receiving the key and current value.",
+          "typeName": "Func<TKey,TValue,TValue>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Increment a concurrent counter",
+          "code": "var counts = new ConcurrentDictionary<string, int>();\nforeach (var name in new[] { \"build\", \"test\", \"build\" })\n{\n    counts.AddOrUpdate(name, 1, (_, current) => current + 1);\n}\nConsole.WriteLine(counts[\"build\"]);",
+          "explanation": "The add path starts a key at one, while the update path increments its current value."
+        }
+      ],
+      "keywords": [
+        "ConcurrentDictionary",
+        "atomic",
+        "counter",
+        "AddOrUpdate"
+      ]
+    },
+    {
+      "name": "ConcurrentDictionary<TKey,TValue>.TryRemove",
+      "displayName": "ConcurrentDictionary<TKey,TValue>.TryRemove",
+      "description": "Atomically remove a key and retrieve its value.",
+      "definition": "Attempts to remove the key-value pair visible at the time of the operation, returning false when the key is absent.",
+      "moduleName": "System.Collections.Concurrent",
+      "action": "Release",
+      "object": "Concurrent dictionary",
+      "namespaceName": "System.Collections.Concurrent",
+      "typeName": "ConcurrentDictionary<TKey,TValue>",
+      "memberName": "TryRemove",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var removed = {dictionary}.TryRemove({key}, out var value);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.tryremove",
+      "parameters": [
+        {
+          "name": "dictionary",
+          "displayName": "dictionary",
+          "placeholder": "dictionary",
+          "description": "A ConcurrentDictionary<TKey,TValue>.",
+          "typeName": "ConcurrentDictionary<TKey,TValue>",
+          "isRequired": true
+        },
+        {
+          "name": "key",
+          "displayName": "key",
+          "placeholder": "key",
+          "description": "The key to remove.",
+          "typeName": "TKey",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Consume a pending work item",
+          "code": "var pending = new ConcurrentDictionary<int, string>(\n    new[] { new KeyValuePair<int, string>(7, \"package\") });\nif (pending.TryRemove(7, out var step))\n{\n    Console.WriteLine(step);\n}",
+          "explanation": "The successful operation removes and returns the same key-value pair atomically."
+        }
+      ],
+      "keywords": [
+        "ConcurrentDictionary",
+        "remove",
+        "atomic"
+      ]
+    },
+    {
+      "name": "ConcurrentQueue<T>.Enqueue",
+      "displayName": "ConcurrentQueue<T>.Enqueue",
+      "description": "Add an item to a thread-safe FIFO queue.",
+      "definition": "Places an item at the tail of a ConcurrentQueue<T> without requiring caller-managed locking.",
+      "moduleName": "System.Collections.Concurrent",
+      "action": "Add",
+      "object": "Concurrent queue",
+      "namespaceName": "System.Collections.Concurrent",
+      "typeName": "ConcurrentQueue<T>",
+      "memberName": "Enqueue",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{queue}.Enqueue({item});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentqueue-1.enqueue",
+      "parameters": [
+        {
+          "name": "queue",
+          "displayName": "queue",
+          "placeholder": "queue",
+          "description": "A ConcurrentQueue<T> instance.",
+          "typeName": "ConcurrentQueue<T>",
+          "isRequired": true
+        },
+        {
+          "name": "item",
+          "displayName": "item",
+          "placeholder": "item",
+          "description": "The item to append.",
+          "typeName": "T",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Queue work from several tasks",
+          "code": "var queue = new ConcurrentQueue<int>();\nawait Task.WhenAll(\n    Enumerable.Range(1, 4)\n        .Select(value => Task.Run(() => queue.Enqueue(value))));\nConsole.WriteLine($\"Queued: {queue.Count}\");",
+          "explanation": "ConcurrentQueue accepts additions from multiple tasks without an external lock."
+        }
+      ],
+      "keywords": [
+        "ConcurrentQueue",
+        "FIFO",
+        "enqueue",
+        "thread safe"
+      ]
+    },
+    {
+      "name": "ConcurrentQueue<T>.TryDequeue",
+      "displayName": "ConcurrentQueue<T>.TryDequeue",
+      "description": "Try to remove the oldest item from a thread-safe queue.",
+      "definition": "Atomically removes and returns the head item when available, or returns false when the queue is empty.",
+      "moduleName": "System.Collections.Concurrent",
+      "action": "Get",
+      "object": "Concurrent queue",
+      "namespaceName": "System.Collections.Concurrent",
+      "typeName": "ConcurrentQueue<T>",
+      "memberName": "TryDequeue",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var available = {queue}.TryDequeue(out var item);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentqueue-1.trydequeue",
+      "parameters": [
+        {
+          "name": "queue",
+          "displayName": "queue",
+          "placeholder": "queue",
+          "description": "A ConcurrentQueue<T> instance.",
+          "typeName": "ConcurrentQueue<T>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Drain queued work",
+          "code": "var queue = new ConcurrentQueue<string>(\n    new[] { \"build\", \"test\", \"package\" });\nwhile (queue.TryDequeue(out var step))\n{\n    Console.WriteLine(step);\n}",
+          "explanation": "Each successful call removes the oldest remaining value until the queue is empty."
+        }
+      ],
+      "keywords": [
+        "ConcurrentQueue",
+        "FIFO",
+        "dequeue",
+        "thread safe"
+      ]
+    },
+    {
+      "name": "Channel.CreateBounded<T>",
+      "displayName": "Channel.CreateBounded<T>",
+      "description": "Create an asynchronous producer-consumer channel with capacity.",
+      "definition": "Creates a channel whose buffer obeys a maximum capacity and configured full-mode behavior, enabling backpressure between producers and consumers.",
+      "moduleName": "System.Threading.Channels",
+      "action": "Create",
+      "object": "Channel",
+      "namespaceName": "System.Threading.Channels",
+      "typeName": "Channel",
+      "memberName": "CreateBounded",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var channel = Channel.CreateBounded<{type}>({capacity});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.channels.channel.createbounded",
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "The message type.",
+          "typeName": "type name",
+          "isRequired": true
+        },
+        {
+          "name": "capacity",
+          "displayName": "capacity",
+          "placeholder": "capacity",
+          "description": "The maximum buffered item count.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a small backpressure buffer",
+          "code": "var channel = Channel.CreateBounded<string>(2);\nawait channel.Writer.WriteAsync(\"build\");\nawait channel.Writer.WriteAsync(\"test\");\nConsole.WriteLine(await channel.Reader.ReadAsync());",
+          "explanation": "The channel holds at most two unread strings, so additional producers wait once it is full."
+        }
+      ],
+      "keywords": [
+        "channel",
+        "producer consumer",
+        "backpressure",
+        "queue"
+      ]
+    },
+    {
+      "name": "ChannelWriter<T>.WriteAsync",
+      "displayName": "ChannelWriter<T>.WriteAsync",
+      "description": "Asynchronously write an item to a channel.",
+      "definition": "Waits for capacity when required, then writes one item unless the channel has completed or cancellation is requested.",
+      "moduleName": "System.Threading.Channels",
+      "action": "Write",
+      "object": "Channel",
+      "namespaceName": "System.Threading.Channels",
+      "typeName": "ChannelWriter<T>",
+      "memberName": "WriteAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await {writer}.WriteAsync({item}, {cancellationToken});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.channels.channelwriter-1.writeasync",
+      "parameters": [
+        {
+          "name": "writer",
+          "displayName": "writer",
+          "placeholder": "writer",
+          "description": "A ChannelWriter<T>.",
+          "typeName": "ChannelWriter<T>",
+          "isRequired": true
+        },
+        {
+          "name": "item",
+          "displayName": "item",
+          "placeholder": "item",
+          "description": "The item to publish.",
+          "typeName": "T",
+          "isRequired": true
+        },
+        {
+          "name": "cancellationToken",
+          "displayName": "cancellationToken",
+          "placeholder": "cancellationToken",
+          "description": "A token that can cancel the wait.",
+          "typeName": "CancellationToken",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Publish and complete a channel",
+          "code": "var channel = Channel.CreateUnbounded<int>();\nawait channel.Writer.WriteAsync(42);\nchannel.Writer.Complete();\nConsole.WriteLine(await channel.Reader.ReadAsync());",
+          "explanation": "The writer publishes one value and then signals that no later values will arrive."
+        }
+      ],
+      "keywords": [
+        "channel",
+        "writer",
+        "producer",
+        "async"
+      ]
+    },
+    {
+      "name": "ChannelReader<T>.ReadAllAsync",
+      "displayName": "ChannelReader<T>.ReadAllAsync",
+      "description": "Asynchronously enumerate channel items until completion.",
+      "definition": "Returns an IAsyncEnumerable<T> that waits for new items and ends after the writer completes and every buffered item has been consumed.",
+      "moduleName": "System.Threading.Channels",
+      "action": "Read",
+      "object": "Channel",
+      "namespaceName": "System.Threading.Channels",
+      "typeName": "ChannelReader<T>",
+      "memberName": "ReadAllAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await foreach (var item in {reader}.ReadAllAsync({cancellationToken}))\n{\n    {body}\n}",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.channels.channelreader-1.readallasync",
+      "parameters": [
+        {
+          "name": "reader",
+          "displayName": "reader",
+          "placeholder": "reader",
+          "description": "A ChannelReader<T>.",
+          "typeName": "ChannelReader<T>",
+          "isRequired": true
+        },
+        {
+          "name": "cancellationToken",
+          "displayName": "cancellationToken",
+          "placeholder": "cancellationToken",
+          "description": "A token that can cancel enumeration.",
+          "typeName": "CancellationToken",
+          "isRequired": true
+        },
+        {
+          "name": "body",
+          "displayName": "body",
+          "placeholder": "body",
+          "description": "Statements that process each item.",
+          "typeName": "C# statements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Consume every published value",
+          "code": "var channel = Channel.CreateUnbounded<string>();\nawait channel.Writer.WriteAsync(\"build\");\nawait channel.Writer.WriteAsync(\"test\");\nchannel.Writer.Complete();\nawait foreach (var step in channel.Reader.ReadAllAsync())\n{\n    Console.WriteLine(step);\n}",
+          "explanation": "Enumeration ends naturally after completion because every buffered item has been read."
+        }
+      ],
+      "keywords": [
+        "channel",
+        "reader",
+        "consumer",
+        "IAsyncEnumerable"
+      ]
+    },
+    {
+      "name": "Interlocked.Increment",
+      "displayName": "Interlocked.Increment",
+      "description": "Atomically increment a shared integer.",
+      "definition": "Adds one to a variable as a single atomic operation and returns the new value, preventing lost updates between threads.",
+      "moduleName": "System.Threading.Interlocked",
+      "action": "Synchronize",
+      "object": "Shared value",
+      "namespaceName": "System.Threading",
+      "typeName": "Interlocked",
+      "memberName": "Increment",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var updated = Interlocked.Increment(ref {location});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.interlocked.increment",
+      "parameters": [
+        {
+          "name": "location",
+          "displayName": "location",
+          "placeholder": "location",
+          "description": "The int or long storage location to update.",
+          "typeName": "ref int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Count completions across tasks",
+          "code": "var completed = 0;\nawait Task.WhenAll(\n    Enumerable.Range(1, 100)\n        .Select(_ => Task.Run(() => Interlocked.Increment(ref completed))));\nConsole.WriteLine(completed);",
+          "explanation": "All one hundred increments are retained even though several tasks update the same variable concurrently."
+        }
+      ],
+      "keywords": [
+        "Interlocked",
+        "atomic",
+        "increment",
+        "counter"
+      ]
+    },
+    {
+      "name": "Interlocked.Exchange",
+      "displayName": "Interlocked.Exchange",
+      "description": "Atomically replace a shared value.",
+      "definition": "Stores a new value in a location as one atomic operation and returns the value that was previously present.",
+      "moduleName": "System.Threading.Interlocked",
+      "action": "Synchronize",
+      "object": "Shared value",
+      "namespaceName": "System.Threading",
+      "typeName": "Interlocked",
+      "memberName": "Exchange",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var previous = Interlocked.Exchange(ref {location}, {value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.interlocked.exchange",
+      "parameters": [
+        {
+          "name": "location",
+          "displayName": "location",
+          "placeholder": "location",
+          "description": "The shared storage location.",
+          "typeName": "ref T",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The replacement value.",
+          "typeName": "T",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Publish a one-time state change",
+          "code": "var state = 0;\nvar previous = Interlocked.Exchange(ref state, 1);\nConsole.WriteLine($\"Previous={previous}; Current={state}\");",
+          "explanation": "The caller receives the old value while the shared location changes atomically."
+        }
+      ],
+      "keywords": [
+        "Interlocked",
+        "atomic",
+        "exchange",
+        "state"
+      ]
+    },
+    {
+      "name": "Interlocked.CompareExchange",
+      "displayName": "Interlocked.CompareExchange",
+      "description": "Atomically replace a value only when it matches an expected value.",
+      "definition": "Compares a shared location with a comparand and stores a replacement only when equal, returning the location's original value either way.",
+      "moduleName": "System.Threading.Interlocked",
+      "action": "Compare",
+      "object": "Shared value",
+      "namespaceName": "System.Threading",
+      "typeName": "Interlocked",
+      "memberName": "CompareExchange",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var observed = Interlocked.CompareExchange(ref {location}, {value}, {comparand});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.interlocked.compareexchange",
+      "parameters": [
+        {
+          "name": "location",
+          "displayName": "location",
+          "placeholder": "location",
+          "description": "The shared storage location.",
+          "typeName": "ref T",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The replacement value.",
+          "typeName": "T",
+          "isRequired": true
+        },
+        {
+          "name": "comparand",
+          "displayName": "comparand",
+          "placeholder": "comparand",
+          "description": "The expected current value.",
+          "typeName": "T",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Perform a one-time initialization transition",
+          "code": "var state = 0;\nvar observed = Interlocked.CompareExchange(\n    ref state,\n    value: 1,\n    comparand: 0);\nConsole.WriteLine(observed == 0 ? \"Won initialization\" : \"Already initialized\");",
+          "explanation": "Only a caller observing state zero can atomically change it to one."
+        }
+      ],
+      "keywords": [
+        "Interlocked",
+        "atomic",
+        "compare exchange",
+        "CAS"
+      ]
+    },
+    {
+      "name": "PeriodicTimer.WaitForNextTickAsync",
+      "displayName": "PeriodicTimer.WaitForNextTickAsync",
+      "description": "Asynchronously wait for the next periodic timer tick.",
+      "definition": "Waits until the next timer period, cancellation, or disposal. Only one consumer may wait on a PeriodicTimer at a time.",
+      "moduleName": "System.Threading.PeriodicTimer",
+      "action": "Wait",
+      "object": "Periodic timer",
+      "namespaceName": "System.Threading",
+      "typeName": "PeriodicTimer",
+      "memberName": "WaitForNextTickAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var ticked = await {timer}.WaitForNextTickAsync({cancellationToken});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.threading.periodictimer.waitfornexttickasync",
+      "parameters": [
+        {
+          "name": "timer",
+          "displayName": "timer",
+          "placeholder": "timer",
+          "description": "A PeriodicTimer instance.",
+          "typeName": "PeriodicTimer",
+          "isRequired": true
+        },
+        {
+          "name": "cancellationToken",
+          "displayName": "cancellationToken",
+          "placeholder": "cancellationToken",
+          "description": "A token that can cancel the wait.",
+          "typeName": "CancellationToken",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Run three short periodic ticks",
+          "code": "using var timer = new PeriodicTimer(TimeSpan.FromMilliseconds(20));\nfor (var tick = 1; tick <= 3; tick++)\n{\n    if (!await timer.WaitForNextTickAsync()) break;\n    Console.WriteLine($\"Tick {tick}\");\n}",
+          "explanation": "Each iteration waits asynchronously for the next period and stops early if the timer is disposed."
+        }
+      ],
+      "keywords": [
+        "timer",
+        "periodic",
+        "tick",
+        "async"
+      ]
+    },
+    {
+      "name": "Lazy<T>.Value",
+      "displayName": "Lazy<T>.Value",
+      "description": "Get a lazily initialized value.",
+      "definition": "Returns the cached value, invoking the configured value factory on first access according to the selected thread-safety mode.",
+      "moduleName": "System.Lazy<T>",
+      "action": "Get",
+      "object": "Lazy value",
+      "namespaceName": "System",
+      "typeName": "Lazy<T>",
+      "memberName": "Value",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var value = {lazy}.Value;",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.lazy-1.value",
+      "parameters": [
+        {
+          "name": "lazy",
+          "displayName": "lazy",
+          "placeholder": "lazy",
+          "description": "A Lazy<T> instance.",
+          "typeName": "Lazy<T>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Initialize expensive data on demand",
+          "code": "var lazyValue = new Lazy<string>(() =>\n{\n    Console.WriteLine(\"Factory ran.\");\n    return string.Join(\",\", Enumerable.Range(1, 5));\n});\nConsole.WriteLine(\"Before access.\");\nConsole.WriteLine(lazyValue.Value);\nConsole.WriteLine(lazyValue.Value);",
+          "explanation": "The factory runs during the first Value access and its result is reused by the second."
+        }
+      ],
+      "keywords": [
+        "Lazy",
+        "deferred",
+        "initialization",
+        "cache"
+      ]
+    }
+  ]
+}

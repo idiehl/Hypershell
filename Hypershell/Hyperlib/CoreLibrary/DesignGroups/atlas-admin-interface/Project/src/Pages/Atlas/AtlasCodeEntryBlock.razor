@@ -1,0 +1,12 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<section class="panel"><h3 data-field="title">@T("title")</h3><p data-field="text">@T("text")</p><form class="code-entry" @onsubmit="Check" @onsubmit:preventDefault><label>Sample code<input @bind="_code" maxlength="9" placeholder="ABCD-EFGH" autocomplete="off" /></label><button class="secondary" type="submit">Check format</button></form><p role="status">@_message</p></section>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+private string _code = "", _message = ""; private void Check() => _message = System.Text.RegularExpressions.Regex.IsMatch(_code, "^[A-Za-z]{4}-[A-Za-z]{4}$") ? "Code format is valid." : "Use four letters, a hyphen, then four letters.";
+}

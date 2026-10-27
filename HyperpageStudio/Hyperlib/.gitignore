@@ -1,0 +1,8 @@
+**/bin/
+**/obj/
+.hyperlib/runtime/
+.hyperlib/journal/
+.hyperlib/lock
+.hyperlib/*.tmp
+.hyperlib/*.log
+app/

@@ -1,0 +1,1145 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "id": "csharp-language",
+  "displayName": "C# language patterns",
+  "description": "Runnable templates for C# values, branching, iteration, functions, types, patterns, nullability, and asynchronous flow.",
+  "language": "C#",
+  "category": "Language foundations",
+  "kind": "Language",
+  "parentLibraryId": "",
+  "frameworkName": ".NET",
+  "frameworkVersion": "8",
+  "targetFramework": "net8.0",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Compatible with the built-in .NET 10 C# runner; authored against .NET 8.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "csharp",
+    "dotnet",
+    "net8",
+    "syntax",
+    "statements",
+    "patterns",
+    "learning"
+  ],
+  "executionTarget": "CSharp",
+  "actionDescriptions": {
+    "Access": "Retrieves a value exposed through a language or runtime feature without intentionally changing it.",
+    "Create": "Constructs a new object, resource, or language structure.",
+    "Enumerate": "Traverses a sequence of values or members one item at a time.",
+    "Protect": "Applies a security-sensitive transformation or comparison.",
+    "Run": "Starts work and waits for or observes its outcome.",
+    "Select": "Chooses one branch, value, or subset from the available alternatives.",
+    "Slice": "Creates a bounded view over part of an existing value or memory region.",
+    "Test": "Evaluates a condition and returns whether it is satisfied.",
+    "Transform": "Produces a new value by applying a language or library operation.",
+    "Wait": "Asynchronously or synchronously pauses until a condition is met."
+  },
+  "objectDescriptions": {
+    "Alternative": "An alternative is one of two mutually exclusive statement branches selected by a Boolean condition.",
+    "Awaitable operation": "An awaitable operation exposes a completion protocol that C# can suspend for without blocking the current thread.",
+    "Branch": "A branch is a block of statements whose execution depends on a condition.",
+    "Collection": "A collection stores a sequence or set of values under one strongly typed object.",
+    "Constant": "A constant is a named value fixed at compile time and unavailable for later assignment.",
+    "Conditional loop": "A conditional loop repeats while a Boolean condition remains true.",
+    "Counted loop": "A counted loop exposes explicit initialization, continuation, and update expressions.",
+    "Disposable resource": "A disposable resource owns cleanup-sensitive state such as a file handle, stream, lock, or native object.",
+    "Fallback value": "A fallback value substitutes for a nullable expression only when that expression is null.",
+    "Lambda": "A lambda is an anonymous function that can be converted to a delegate or expression tree.",
+    "Local function": "A local function is a named function declared inside another member or a top-level program.",
+    "Nullable member": "A nullable member access may produce no result when its receiver is null.",
+    "Operation": "An operation is a block of work that may complete normally or raise an exception.",
+    "Property pattern": "A property pattern tests an object's type, shape, and nested property values.",
+    "Range": "A range identifies a contiguous, end-exclusive portion of a range-capable value.",
+    "Record": "A record is a data-focused C# type with synthesized value equality and nondestructive mutation support.",
+    "Sequence": "A sequence exposes values one at a time through C# enumeration.",
+    "Switch expression": "A switch expression maps an input value to an output by testing ordered patterns.",
+    "Tuple": "A value tuple groups a fixed number of strongly typed elements without requiring a dedicated type declaration.",
+    "Variable": "A variable is a named, strongly typed storage location whose value can be read and usually reassigned."
+  },
+  "commands": [
+    {
+      "name": "Language.Variable",
+      "displayName": "Language.Variable",
+      "description": "Declare a local variable whose type is inferred.",
+      "definition": "The var keyword asks the compiler to infer the local variable's static type from its initializer. The variable remains strongly typed; var is not a dynamic value.",
+      "moduleName": "C# language · Values",
+      "action": "Create",
+      "object": "Variable",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "Variable",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "var {name} = {value};",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/statements/declarations",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "name",
+          "placeholder": "name",
+          "description": "A valid local variable identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The expression used to initialize the variable.",
+          "typeName": "C# expression",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Infer a string variable",
+          "code": "var projectName = \"Hypershell\";\nConsole.WriteLine(projectName);",
+          "explanation": "The compiler infers string from the initializer while retaining compile-time type checking."
+        }
+      ],
+      "keywords": [
+        "var",
+        "local",
+        "declaration",
+        "inference"
+      ]
+    },
+    {
+      "name": "Language.Constant",
+      "displayName": "Language.Constant",
+      "description": "Declare a compile-time constant.",
+      "definition": "A const local or field must be initialized with a compile-time constant expression and cannot be assigned again. Constants are appropriate for values that are truly fixed by the program.",
+      "moduleName": "C# language · Values",
+      "action": "Create",
+      "object": "Constant",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "Constant",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "const {type} {name} = {value};",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/const",
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "The constant's C# type.",
+          "typeName": "type name",
+          "isRequired": true
+        },
+        {
+          "name": "name",
+          "displayName": "name",
+          "placeholder": "name",
+          "description": "A valid constant identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "A compile-time constant expression.",
+          "typeName": "C# expression",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Define a retry limit",
+          "code": "const int MaxAttempts = 3;\nConsole.WriteLine($\"Retry limit: {MaxAttempts}\");",
+          "explanation": "MaxAttempts is embedded as a compile-time constant and cannot be reassigned."
+        }
+      ],
+      "keywords": [
+        "const",
+        "readonly",
+        "fixed value"
+      ]
+    },
+    {
+      "name": "Language.If",
+      "displayName": "Language.If",
+      "description": "Run a block only when a condition is true.",
+      "definition": "An if statement evaluates a Boolean expression and executes its body only when that expression is true.",
+      "moduleName": "C# language · Branching",
+      "action": "Select",
+      "object": "Branch",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "If",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "if ({condition})\n{\n    {body}\n}",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/statements/selection-statements",
+      "parameters": [
+        {
+          "name": "condition",
+          "displayName": "condition",
+          "placeholder": "condition",
+          "description": "A Boolean expression.",
+          "typeName": "bool expression",
+          "isRequired": true
+        },
+        {
+          "name": "body",
+          "displayName": "body",
+          "placeholder": "body",
+          "description": "One or more statements to run when the condition is true.",
+          "typeName": "C# statements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate a file before reading",
+          "code": "var path = \"settings.json\";\nif (File.Exists(path))\n{\n    Console.WriteLine(File.ReadAllText(path));\n}",
+          "explanation": "The file is opened only when the existence check succeeds."
+        }
+      ],
+      "keywords": [
+        "if",
+        "condition",
+        "branch",
+        "boolean"
+      ]
+    },
+    {
+      "name": "Language.IfElse",
+      "displayName": "Language.IfElse",
+      "description": "Choose between two statement blocks.",
+      "definition": "An if-else statement runs exactly one of two branches according to the result of a Boolean condition.",
+      "moduleName": "C# language · Branching",
+      "action": "Select",
+      "object": "Alternative",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "IfElse",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "if ({condition})\n{\n    {whenTrue}\n}\nelse\n{\n    {whenFalse}\n}",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/statements/selection-statements",
+      "parameters": [
+        {
+          "name": "condition",
+          "displayName": "condition",
+          "placeholder": "condition",
+          "description": "A Boolean expression.",
+          "typeName": "bool expression",
+          "isRequired": true
+        },
+        {
+          "name": "whenTrue",
+          "displayName": "whenTrue",
+          "placeholder": "whenTrue",
+          "description": "Statements for the true branch.",
+          "typeName": "C# statements",
+          "isRequired": true
+        },
+        {
+          "name": "whenFalse",
+          "displayName": "whenFalse",
+          "placeholder": "whenFalse",
+          "description": "Statements for the false branch.",
+          "typeName": "C# statements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Report an input result",
+          "code": "var input = \"42\";\nif (int.TryParse(input, out var number))\n{\n    Console.WriteLine($\"Parsed {number}\");\n}\nelse\n{\n    Console.WriteLine(\"Input is not an integer.\");\n}",
+          "explanation": "TryParse controls which branch runs without throwing for invalid input."
+        }
+      ],
+      "keywords": [
+        "if",
+        "else",
+        "condition",
+        "branch"
+      ]
+    },
+    {
+      "name": "Language.SwitchExpression",
+      "displayName": "Language.SwitchExpression",
+      "description": "Map one input value to one result expression.",
+      "definition": "A switch expression compares an input against ordered patterns and returns the expression associated with the first matching arm. A discard arm commonly supplies the fallback.",
+      "moduleName": "C# language · Branching",
+      "action": "Transform",
+      "object": "Switch expression",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "SwitchExpression",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "var {resultName} = {value} switch\n{\n    {arms}\n};",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/operators/switch-expression",
+      "parameters": [
+        {
+          "name": "resultName",
+          "displayName": "resultName",
+          "placeholder": "resultName",
+          "description": "The result variable identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The expression to match.",
+          "typeName": "C# expression",
+          "isRequired": true
+        },
+        {
+          "name": "arms",
+          "displayName": "arms",
+          "placeholder": "arms",
+          "description": "Comma-separated pattern arms, including a fallback when needed.",
+          "typeName": "switch arms",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Classify an HTTP status",
+          "code": "var statusCode = 404;\nvar category = statusCode switch\n{\n    >= 200 and < 300 => \"Success\",\n    >= 400 and < 500 => \"Client error\",\n    >= 500 => \"Server error\",\n    _ => \"Other\"\n};\nConsole.WriteLine(category);",
+          "explanation": "Relational and logical patterns turn a numeric status into a descriptive category."
+        }
+      ],
+      "keywords": [
+        "switch",
+        "expression",
+        "pattern",
+        "mapping"
+      ]
+    },
+    {
+      "name": "Language.ForEach",
+      "displayName": "Language.ForEach",
+      "description": "Run a block once for each value in a sequence.",
+      "definition": "A foreach statement obtains an enumerator from a sequence and executes its body for each element. It is the usual loop for IEnumerable<T> values.",
+      "moduleName": "C# language · Iteration",
+      "action": "Enumerate",
+      "object": "Sequence",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "ForEach",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "foreach (var {itemName} in {sequence})\n{\n    {body}\n}",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/statements/iteration-statements",
+      "parameters": [
+        {
+          "name": "itemName",
+          "displayName": "itemName",
+          "placeholder": "itemName",
+          "description": "The identifier for the current element.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "sequence",
+          "displayName": "sequence",
+          "placeholder": "sequence",
+          "description": "An enumerable expression.",
+          "typeName": "IEnumerable<T>",
+          "isRequired": true
+        },
+        {
+          "name": "body",
+          "displayName": "body",
+          "placeholder": "body",
+          "description": "Statements to run for each element.",
+          "typeName": "C# statements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Print normalized names",
+          "code": "var names = new[] { \" alpha \", \" beta \", \" gamma \" };\nforeach (var name in names)\n{\n    Console.WriteLine(name.Trim().ToUpperInvariant());\n}",
+          "explanation": "The loop visits each array element in order and works with one strongly typed value at a time."
+        }
+      ],
+      "keywords": [
+        "foreach",
+        "loop",
+        "enumerable",
+        "iteration"
+      ]
+    },
+    {
+      "name": "Language.For",
+      "displayName": "Language.For",
+      "description": "Repeat a block with explicit initialization, condition, and update.",
+      "definition": "A for statement combines loop initialization, a continuation condition, and an iterator expression. It is useful when an index or exact iteration count matters.",
+      "moduleName": "C# language · Iteration",
+      "action": "Run",
+      "object": "Counted loop",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "For",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "for ({initializer}; {condition}; {iterator})\n{\n    {body}\n}",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/statements/iteration-statements",
+      "parameters": [
+        {
+          "name": "initializer",
+          "displayName": "initializer",
+          "placeholder": "initializer",
+          "description": "The loop initializer, such as int index = 0.",
+          "typeName": "C# statement fragment",
+          "isRequired": true
+        },
+        {
+          "name": "condition",
+          "displayName": "condition",
+          "placeholder": "condition",
+          "description": "The Boolean continuation condition.",
+          "typeName": "bool expression",
+          "isRequired": true
+        },
+        {
+          "name": "iterator",
+          "displayName": "iterator",
+          "placeholder": "iterator",
+          "description": "The update performed after each iteration.",
+          "typeName": "C# expression",
+          "isRequired": true
+        },
+        {
+          "name": "body",
+          "displayName": "body",
+          "placeholder": "body",
+          "description": "Statements to run in each iteration.",
+          "typeName": "C# statements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Print valid list indexes",
+          "code": "var colors = new[] { \"blue\", \"orange\", \"green\" };\nfor (var index = 0; index < colors.Length; index++)\n{\n    Console.WriteLine($\"{index}: {colors[index]}\");\n}",
+          "explanation": "The condition keeps every array access within the valid zero-based index range."
+        }
+      ],
+      "keywords": [
+        "for",
+        "loop",
+        "index",
+        "iteration"
+      ]
+    },
+    {
+      "name": "Language.While",
+      "displayName": "Language.While",
+      "description": "Repeat a block while a condition remains true.",
+      "definition": "A while statement checks its Boolean condition before each iteration. Its body may execute zero times when the initial condition is false.",
+      "moduleName": "C# language · Iteration",
+      "action": "Run",
+      "object": "Conditional loop",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "While",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "while ({condition})\n{\n    {body}\n}",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/statements/iteration-statements",
+      "parameters": [
+        {
+          "name": "condition",
+          "displayName": "condition",
+          "placeholder": "condition",
+          "description": "The Boolean continuation condition.",
+          "typeName": "bool expression",
+          "isRequired": true
+        },
+        {
+          "name": "body",
+          "displayName": "body",
+          "placeholder": "body",
+          "description": "Statements that make progress toward ending the loop.",
+          "typeName": "C# statements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Process a queue",
+          "code": "var pending = new Queue<string>(new[] { \"build\", \"test\", \"package\" });\nwhile (pending.TryDequeue(out var step))\n{\n    Console.WriteLine($\"Running {step}\");\n}",
+          "explanation": "TryDequeue both tests for an item and removes it, so the loop ends when the queue is empty."
+        }
+      ],
+      "keywords": [
+        "while",
+        "loop",
+        "condition",
+        "iteration"
+      ]
+    },
+    {
+      "name": "Language.TryCatch",
+      "displayName": "Language.TryCatch",
+      "description": "Handle a selected exception from a protected block.",
+      "definition": "A try statement runs protected code. A matching catch clause handles an exception, and an optional finally clause performs cleanup regardless of success or failure.",
+      "moduleName": "C# language · Errors",
+      "action": "Protect",
+      "object": "Operation",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "TryCatch",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "try\n{\n    {body}\n}\ncatch ({exceptionType} exception)\n{\n    {handler}\n}",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/statements/exception-handling-statements",
+      "parameters": [
+        {
+          "name": "body",
+          "displayName": "body",
+          "placeholder": "body",
+          "description": "Statements that may throw.",
+          "typeName": "C# statements",
+          "isRequired": true
+        },
+        {
+          "name": "exceptionType",
+          "displayName": "exceptionType",
+          "placeholder": "exceptionType",
+          "description": "The exception type to handle.",
+          "typeName": "exception type",
+          "isRequired": true
+        },
+        {
+          "name": "handler",
+          "displayName": "handler",
+          "placeholder": "handler",
+          "description": "Statements that respond to the exception.",
+          "typeName": "C# statements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Handle malformed JSON",
+          "code": "try\n{\n    using var document = JsonDocument.Parse(\"{ invalid json }\");\n}\ncatch (JsonException exception)\n{\n    Console.WriteLine($\"JSON error: {exception.Message}\");\n}",
+          "explanation": "Only JSON parsing failures are caught; unrelated exceptions are not silently swallowed."
+        }
+      ],
+      "keywords": [
+        "try",
+        "catch",
+        "finally",
+        "exception",
+        "error handling"
+      ]
+    },
+    {
+      "name": "Language.UsingDeclaration",
+      "displayName": "Language.UsingDeclaration",
+      "description": "Dispose a resource automatically when its scope ends.",
+      "definition": "A using declaration registers an IDisposable or IAsyncDisposable value for deterministic cleanup at the end of the current scope, including when an exception leaves that scope.",
+      "moduleName": "C# language · Resources",
+      "action": "Protect",
+      "object": "Disposable resource",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "UsingDeclaration",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "using var {name} = {resource};",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/statements/using",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "name",
+          "placeholder": "name",
+          "description": "The local resource identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "resource",
+          "displayName": "resource",
+          "placeholder": "resource",
+          "description": "An expression returning an IDisposable value.",
+          "typeName": "IDisposable",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Close a file stream reliably",
+          "code": "using var stream = File.OpenRead(\"input.bin\");\nConsole.WriteLine($\"Length: {stream.Length:N0} bytes\");",
+          "explanation": "The stream is disposed automatically when the enclosing top-level scope completes."
+        }
+      ],
+      "keywords": [
+        "using",
+        "dispose",
+        "resource",
+        "IDisposable"
+      ]
+    },
+    {
+      "name": "Language.LocalFunction",
+      "displayName": "Language.LocalFunction",
+      "description": "Declare a named function inside the current member or top-level program.",
+      "definition": "A local function packages reusable logic within its containing scope. It can capture surrounding variables and can be generic, recursive, asynchronous, or an iterator.",
+      "moduleName": "C# language · Functions",
+      "action": "Create",
+      "object": "Local function",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "LocalFunction",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "{returnType} {name}({parameters})\n{\n    {body}\n}",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/local-functions",
+      "parameters": [
+        {
+          "name": "returnType",
+          "displayName": "returnType",
+          "placeholder": "returnType",
+          "description": "The function's return type.",
+          "typeName": "type name",
+          "isRequired": true
+        },
+        {
+          "name": "name",
+          "displayName": "name",
+          "placeholder": "name",
+          "description": "A valid function identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "parameters",
+          "displayName": "parameters",
+          "placeholder": "parameters",
+          "description": "A comma-separated parameter declaration list.",
+          "typeName": "parameter declarations",
+          "isRequired": true
+        },
+        {
+          "name": "body",
+          "displayName": "body",
+          "placeholder": "body",
+          "description": "The function body statements.",
+          "typeName": "C# statements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Normalize a reusable label",
+          "code": "string NormalizeLabel(string value)\n{\n    return value.Trim().ToLowerInvariant().Replace(' ', '-');\n}\n\nConsole.WriteLine(NormalizeLabel(\"  Release Candidate  \"));",
+          "explanation": "The helper stays scoped to this program and can be called like any other strongly typed method."
+        }
+      ],
+      "keywords": [
+        "function",
+        "method",
+        "local",
+        "reusable"
+      ]
+    },
+    {
+      "name": "Language.Lambda",
+      "displayName": "Language.Lambda",
+      "description": "Create an inline anonymous function.",
+      "definition": "A lambda expression creates a delegate or expression-tree value from parameters and an expression or statement body. Lambdas can capture variables from the enclosing scope.",
+      "moduleName": "C# language · Functions",
+      "action": "Create",
+      "object": "Lambda",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "Lambda",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "var {name} = ({parameters}) => {body};",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/operators/lambda-expressions",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "name",
+          "placeholder": "name",
+          "description": "The delegate variable identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "parameters",
+          "displayName": "parameters",
+          "placeholder": "parameters",
+          "description": "Lambda parameter declarations or identifiers.",
+          "typeName": "lambda parameters",
+          "isRequired": true
+        },
+        {
+          "name": "body",
+          "displayName": "body",
+          "placeholder": "body",
+          "description": "The expression returned by the lambda.",
+          "typeName": "C# expression",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a reusable predicate",
+          "code": "Func<string, bool> isMarkdown =\n    name => name.EndsWith(\".md\", StringComparison.OrdinalIgnoreCase);\n\nConsole.WriteLine(isMarkdown(\"README.MD\"));",
+          "explanation": "The lambda is converted to Func<string, bool> and can be passed to filtering APIs."
+        }
+      ],
+      "keywords": [
+        "lambda",
+        "delegate",
+        "anonymous function",
+        "Func",
+        "Action"
+      ]
+    },
+    {
+      "name": "Language.Tuple",
+      "displayName": "Language.Tuple",
+      "description": "Group several named values without declaring a dedicated type.",
+      "definition": "A value tuple stores a fixed number of strongly typed elements. Element names improve readability but do not change the tuple's runtime type identity.",
+      "moduleName": "C# language · Values",
+      "action": "Create",
+      "object": "Tuple",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "Tuple",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "var {name} = ({elements});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/value-tuples",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "name",
+          "placeholder": "name",
+          "description": "The tuple variable identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "elements",
+          "displayName": "elements",
+          "placeholder": "elements",
+          "description": "Comma-separated named or unnamed values.",
+          "typeName": "tuple elements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Return a compact result",
+          "code": "var result = (Files: 12, Errors: 1);\nConsole.WriteLine($\"Files={result.Files}; Errors={result.Errors}\");",
+          "explanation": "Named elements make the two integer values self-describing without a separate class."
+        }
+      ],
+      "keywords": [
+        "tuple",
+        "value tuple",
+        "deconstruct",
+        "multiple values"
+      ]
+    },
+    {
+      "name": "Language.Record",
+      "displayName": "Language.Record",
+      "description": "Declare an immutable-oriented data type with value equality.",
+      "definition": "A record is a reference or value type designed for data models. Positional records synthesize properties, value equality, deconstruction, and a readable string representation.",
+      "moduleName": "C# language · Types",
+      "action": "Create",
+      "object": "Record",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "Record",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "var {variable} = new {recordName}({arguments});\nConsole.WriteLine({variable});\n\nrecord {recordName}({parameters});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/record",
+      "parameters": [
+        {
+          "name": "variable",
+          "displayName": "variable",
+          "placeholder": "variable",
+          "description": "The local instance identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "recordName",
+          "displayName": "recordName",
+          "placeholder": "recordName",
+          "description": "The record type name.",
+          "typeName": "type identifier",
+          "isRequired": true
+        },
+        {
+          "name": "arguments",
+          "displayName": "arguments",
+          "placeholder": "arguments",
+          "description": "Constructor argument expressions.",
+          "typeName": "argument list",
+          "isRequired": true
+        },
+        {
+          "name": "parameters",
+          "displayName": "parameters",
+          "placeholder": "parameters",
+          "description": "Positional property declarations.",
+          "typeName": "parameter declarations",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Model an immutable project",
+          "code": "var project = new Project(\"Hypershell\", \"Active\");\nvar archived = project with { Status = \"Archived\" };\nConsole.WriteLine(archived);\n\nrecord Project(string Name, string Status);",
+          "explanation": "The with expression creates a copy with one changed property while value-based formatting displays both fields."
+        }
+      ],
+      "keywords": [
+        "record",
+        "immutable",
+        "value equality",
+        "with expression"
+      ]
+    },
+    {
+      "name": "Language.PropertyPattern",
+      "displayName": "Language.PropertyPattern",
+      "description": "Test an object's shape and property values.",
+      "definition": "A property pattern recursively matches accessible properties and can introduce a typed variable when the input satisfies the requested shape.",
+      "moduleName": "C# language · Patterns",
+      "action": "Test",
+      "object": "Property pattern",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "PropertyPattern",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "var {result} = {value} is {pattern};",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/operators/patterns",
+      "parameters": [
+        {
+          "name": "result",
+          "displayName": "result",
+          "placeholder": "result",
+          "description": "The Boolean result identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The expression to test.",
+          "typeName": "C# expression",
+          "isRequired": true
+        },
+        {
+          "name": "pattern",
+          "displayName": "pattern",
+          "placeholder": "pattern",
+          "description": "A type and/or property pattern.",
+          "typeName": "C# pattern",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Recognize a successful response shape",
+          "code": "var response = new { StatusCode = 204, Body = \"\" };\nvar succeeded = response is { StatusCode: >= 200 and < 300 };\nConsole.WriteLine(succeeded);",
+          "explanation": "The property pattern tests the status range without separately extracting StatusCode."
+        }
+      ],
+      "keywords": [
+        "pattern",
+        "property",
+        "is",
+        "matching"
+      ]
+    },
+    {
+      "name": "Language.CollectionExpression",
+      "displayName": "Language.CollectionExpression",
+      "description": "Create a collection using compact bracket syntax.",
+      "definition": "A collection expression uses bracket syntax and optional spread elements to initialize a compatible collection type. The target type determines the resulting representation.",
+      "moduleName": "C# language · Values",
+      "action": "Create",
+      "object": "Collection",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "CollectionExpression",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "{type} {name} = [{items}];",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/operators/collection-expressions",
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "A collection-expression target type.",
+          "typeName": "type name",
+          "isRequired": true
+        },
+        {
+          "name": "name",
+          "displayName": "name",
+          "placeholder": "name",
+          "description": "The collection variable identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "items",
+          "displayName": "items",
+          "placeholder": "items",
+          "description": "Comma-separated elements and optional spread elements.",
+          "typeName": "collection elements",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Combine fixed and spread elements",
+          "code": "string[] core = [\"build\", \"test\"];\nstring[] pipeline = [\"clean\", .. core, \"package\"];\nConsole.WriteLine(string.Join(\" -> \", pipeline));",
+          "explanation": "The spread element inserts every value from core between the fixed first and last entries."
+        }
+      ],
+      "keywords": [
+        "collection expression",
+        "spread",
+        "array",
+        "list"
+      ]
+    },
+    {
+      "name": "Language.NullCoalescing",
+      "displayName": "Language.NullCoalescing",
+      "description": "Use a fallback when a nullable value is null.",
+      "definition": "The null-coalescing operator returns its left operand when non-null and otherwise evaluates and returns its right operand. The right side is not evaluated unnecessarily.",
+      "moduleName": "C# language · Nullability",
+      "action": "Select",
+      "object": "Fallback value",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "NullCoalescing",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "var {result} = {nullableValue} ?? {fallback};",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/operators/null-coalescing-operator",
+      "parameters": [
+        {
+          "name": "result",
+          "displayName": "result",
+          "placeholder": "result",
+          "description": "The result variable identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "nullableValue",
+          "displayName": "nullableValue",
+          "placeholder": "nullableValue",
+          "description": "A nullable expression.",
+          "typeName": "nullable value",
+          "isRequired": true
+        },
+        {
+          "name": "fallback",
+          "displayName": "fallback",
+          "placeholder": "fallback",
+          "description": "The value used only when the left side is null.",
+          "typeName": "C# expression",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Default a missing environment value",
+          "code": "var mode =\n    Environment.GetEnvironmentVariable(\"APP_MODE\")\n    ?? \"Production\";\nConsole.WriteLine(mode);",
+          "explanation": "Production is used only when APP_MODE is absent, not when it contains an empty string."
+        }
+      ],
+      "keywords": [
+        "null",
+        "coalescing",
+        "fallback",
+        "nullable",
+        "??"
+      ]
+    },
+    {
+      "name": "Language.NullConditional",
+      "displayName": "Language.NullConditional",
+      "description": "Access a member only when its receiver is non-null.",
+      "definition": "The null-conditional operator short-circuits member or element access when the receiver is null and produces null instead of throwing NullReferenceException.",
+      "moduleName": "C# language · Nullability",
+      "action": "Access",
+      "object": "Nullable member",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "NullConditional",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "var {result} = {value}?.{member};",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/operators/member-access-operators",
+      "parameters": [
+        {
+          "name": "result",
+          "displayName": "result",
+          "placeholder": "result",
+          "description": "The nullable result variable identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "A possibly null receiver expression.",
+          "typeName": "nullable value",
+          "isRequired": true
+        },
+        {
+          "name": "member",
+          "displayName": "member",
+          "placeholder": "member",
+          "description": "The member access or invocation after ?..",
+          "typeName": "member expression",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read an optional string length",
+          "code": "string? label = null;\nint? length = label?.Trim().Length;\nConsole.WriteLine(length?.ToString() ?? \"No label\");",
+          "explanation": "The chained calls are skipped when label is null, and the nullable length remains null."
+        }
+      ],
+      "keywords": [
+        "null conditional",
+        "nullable",
+        "safe navigation",
+        "?.",
+        "?[]"
+      ]
+    },
+    {
+      "name": "Language.RangeSlice",
+      "displayName": "Language.RangeSlice",
+      "description": "Select a contiguous range by index.",
+      "definition": "Range and index expressions describe a start and end boundary. The end is exclusive, and the ^ operator counts backward from the end of the sequence.",
+      "moduleName": "C# language · Values",
+      "action": "Slice",
+      "object": "Range",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "RangeSlice",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "var {result} = {value}[{range}];",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/operators/member-access-operators",
+      "parameters": [
+        {
+          "name": "result",
+          "displayName": "result",
+          "placeholder": "result",
+          "description": "The sliced value identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "A range-capable value such as a string or array.",
+          "typeName": "range-capable value",
+          "isRequired": true
+        },
+        {
+          "name": "range",
+          "displayName": "range",
+          "placeholder": "range",
+          "description": "A range expression such as 1..^1.",
+          "typeName": "Range",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Remove the first and last characters",
+          "code": "var wrapped = \"[Hypershell]\";\nvar content = wrapped[1..^1];\nConsole.WriteLine(content);",
+          "explanation": "Index 1 skips the opening bracket and ^1 identifies the position immediately before the final bracket."
+        }
+      ],
+      "keywords": [
+        "range",
+        "index",
+        "slice",
+        "..",
+        "from end"
+      ]
+    },
+    {
+      "name": "Language.Await",
+      "displayName": "Language.Await",
+      "description": "Asynchronously wait for an operation without blocking its thread.",
+      "definition": "The await operator suspends the current asynchronous flow until its awaitable completes, then retrieves the result or propagates its exception.",
+      "moduleName": "C# language · Asynchrony",
+      "action": "Wait",
+      "object": "Awaitable operation",
+      "namespaceName": "",
+      "typeName": "",
+      "memberName": "Await",
+      "memberKind": "Language pattern",
+      "overloadSignature": "",
+      "template": "var {result} = await {operation};",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/csharp/language-reference/operators/await",
+      "parameters": [
+        {
+          "name": "result",
+          "displayName": "result",
+          "placeholder": "result",
+          "description": "The completed result variable identifier.",
+          "typeName": "identifier",
+          "isRequired": true
+        },
+        {
+          "name": "operation",
+          "displayName": "operation",
+          "placeholder": "operation",
+          "description": "A Task<T>, ValueTask<T>, or other awaitable expression.",
+          "typeName": "awaitable",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Await asynchronous file I/O",
+          "code": "var text = await File.ReadAllTextAsync(\"README.md\");\nConsole.WriteLine($\"Characters: {text.Length:N0}\");",
+          "explanation": "The generated top-level C# program supports await directly and resumes with the file contents."
+        }
+      ],
+      "keywords": [
+        "await",
+        "async",
+        "Task",
+        "ValueTask",
+        "nonblocking"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "css-grid-layout",
+  "displayName": "CSS Grid Layout",
+  "description": "CSS Grid Layout properties, values, and composition patterns.",
+  "language": "CSS",
+  "category": "Official reference",
+  "kind": "Specification",
+  "canonicalName": "CSS Grid Layout",
+  "ecosystem": "CSS",
+  "targetVersion": "Living specification inventory",
+  "sourceVersion": "mdn-data 2.31.0 · properties 004ebcb0d571b2e1cf42c4793e05c99de19c2b1bddae739638acbcb855721f8e",
+  "sourceUrl": "https://www.w3.org/TR/css-grid-2/",
+  "license": "W3C document license",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "CSS specification entries insert into compatible editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "css",
+    "specification",
+    "CSS Grid Layout"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 16,
+  "declaredIndexedCount": 15,
+  "declaredGuidedCount": 1,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/css-grid-layout.entries.json"
+  ],
+  "declaredGuideCount": 1,
+  "guideFiles": [
+    "guides/css-grid-layout.guides.json"
+  ],
+  "legacyIds": []
+}

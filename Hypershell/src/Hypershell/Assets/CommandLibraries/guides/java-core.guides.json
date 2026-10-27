@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "java-core",
+  "guides": [
+    {
+      "entryId": "java.local-variable",
+      "definition": "Local-variable type inference lets javac derive the static type from the initializer. var is restricted to local declarations and does not make Java dynamically typed.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "A valid Java local variable name.",
+          "typeName": "Java identifier",
+          "defaultValue": "answer",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Initializer",
+          "placeholder": "value",
+          "description": "The expression whose static type is inferred.",
+          "typeName": "Java expression",
+          "defaultValue": "6 * 7",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Infer an integer",
+          "code": "var answer = 6 * 7;\nSystem.out.println(answer);",
+          "explanation": "javac infers int and the program prints 42."
+        }
+      ]
+    },
+    {
+      "entryId": "java.enhanced-for",
+      "definition": "The enhanced for statement obtains each element from an array or Iterable without exposing index or iterator bookkeeping.",
+      "parameters": [
+        {
+          "name": "item",
+          "displayName": "Item variable",
+          "placeholder": "item",
+          "description": "The local name bound to each value.",
+          "typeName": "Java identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "Comma-separated compatible expressions.",
+          "typeName": "Java expressions",
+          "defaultValue": "1, 2, 3",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "statement",
+          "displayName": "Loop body",
+          "placeholder": "statement",
+          "description": "A Java statement executed for each item.",
+          "typeName": "Java statement",
+          "defaultValue": "System.out.println(number * number);",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Print three squares",
+          "code": "for (var number : List.of(1, 2, 3)) {\n    System.out.println(number * number);\n}",
+          "explanation": "The loop prints 1, 4, and 9."
+        }
+      ]
+    },
+    {
+      "entryId": "java.switch-expression",
+      "definition": "A switch expression evaluates to a value. Arrow labels do not fall through, and the cases must cover every possible selector value or provide default.",
+      "parameters": [
+        {
+          "name": "selector",
+          "displayName": "Selector",
+          "placeholder": "selector",
+          "description": "The variable tested by switch.",
+          "typeName": "Java identifier",
+          "defaultValue": "status",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Selector value",
+          "placeholder": "value",
+          "description": "The initial selector expression.",
+          "typeName": "Java expression",
+          "defaultValue": "\"ready\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "result",
+          "displayName": "Result variable",
+          "placeholder": "result",
+          "description": "The variable receiving the switch value.",
+          "typeName": "Java identifier",
+          "defaultValue": "message",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstCase",
+          "displayName": "First case",
+          "placeholder": "firstCase",
+          "description": "The first compatible case constant.",
+          "typeName": "Java case constant",
+          "defaultValue": "\"ready\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstResult",
+          "displayName": "First result",
+          "placeholder": "firstResult",
+          "description": "The expression returned by the first case.",
+          "typeName": "Java expression",
+          "defaultValue": "\"Ship it\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondCase",
+          "displayName": "Second case",
+          "placeholder": "secondCase",
+          "description": "The second compatible case constant.",
+          "typeName": "Java case constant",
+          "defaultValue": "\"blocked\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondResult",
+          "displayName": "Second result",
+          "placeholder": "secondResult",
+          "description": "The expression returned by the second case.",
+          "typeName": "Java expression",
+          "defaultValue": "\"Investigate\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "defaultResult",
+          "displayName": "Default result",
+          "placeholder": "defaultResult",
+          "description": "The fallback expression.",
+          "typeName": "Java expression",
+          "defaultValue": "\"Unknown\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Map status to a message",
+          "code": "var status = \"ready\";\nvar message = switch (status) {\n    case \"ready\" -> \"Ship it\";\n    case \"blocked\" -> \"Investigate\";\n    default -> \"Unknown\";\n};\nSystem.out.println(message);",
+          "explanation": "The ready case evaluates to Ship it without fall-through."
+        }
+      ]
+    },
+    {
+      "entryId": "java.local-record",
+      "definition": "A record declaration defines final component fields, accessors, a canonical constructor, and value-based Object methods from a compact header.",
+      "parameters": [
+        {
+          "name": "typeName",
+          "displayName": "Record name",
+          "placeholder": "typeName",
+          "description": "The local record type name.",
+          "typeName": "Java type identifier",
+          "defaultValue": "WorkItem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "componentType",
+          "displayName": "Component type",
+          "placeholder": "componentType",
+          "description": "The record component type.",
+          "typeName": "Java type",
+          "defaultValue": "String",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "componentName",
+          "displayName": "Component name",
+          "placeholder": "componentName",
+          "description": "The record component and accessor name.",
+          "typeName": "Java identifier",
+          "defaultValue": "title",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The record instance variable.",
+          "typeName": "Java identifier",
+          "defaultValue": "item",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The constructor value.",
+          "typeName": "Java expression",
+          "defaultValue": "\"Build Java support\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a work item",
+          "code": "record WorkItem(String title) {}\nvar item = new WorkItem(\"Build Java support\");\nSystem.out.println(item.title());",
+          "explanation": "The generated title accessor returns the immutable component value."
+        }
+      ]
+    },
+    {
+      "entryId": "java.text-block",
+      "definition": "A text block is a String literal delimited by triple quotation marks. Java removes incidental indentation based on the closing delimiter.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The text variable name.",
+          "typeName": "Java identifier",
+          "defaultValue": "message",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstLine",
+          "displayName": "First line",
+          "placeholder": "firstLine",
+          "description": "Literal text for the first line.",
+          "typeName": "Text",
+          "defaultValue": "Hello",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondLine",
+          "displayName": "Second line",
+          "placeholder": "secondLine",
+          "description": "Literal text for the second line.",
+          "typeName": "Text",
+          "defaultValue": "Hypershell",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a two-line message",
+          "code": "var message = \"\"\"\nHello\nHypershell\n\"\"\";\nSystem.out.println(message);",
+          "explanation": "The resulting string contains both lines and a trailing newline."
+        }
+      ]
+    },
+    {
+      "entryId": "java.try-catch",
+      "definition": "A catch clause handles a compatible exception thrown by the try block. More specific exception types preserve clearer recovery behavior.",
+      "parameters": [
+        {
+          "name": "statement",
+          "displayName": "Try body",
+          "placeholder": "statement",
+          "description": "A Java statement that may throw.",
+          "typeName": "Java statement",
+          "defaultValue": "Integer.parseInt(\"not-a-number\");",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "exceptionType",
+          "displayName": "Exception type",
+          "placeholder": "exceptionType",
+          "description": "The compatible exception class.",
+          "typeName": "Java exception type",
+          "defaultValue": "NumberFormatException",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "exceptionName",
+          "displayName": "Exception variable",
+          "placeholder": "exceptionName",
+          "description": "The caught exception variable.",
+          "typeName": "Java identifier",
+          "defaultValue": "exception",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "handler",
+          "displayName": "Handler",
+          "placeholder": "handler",
+          "description": "The recovery statement.",
+          "typeName": "Java statement",
+          "defaultValue": "System.out.println(exception.getClass().getSimpleName());",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Handle invalid integer text",
+          "code": "try {\n    Integer.parseInt(\"not-a-number\");\n} catch (NumberFormatException exception) {\n    System.out.println(exception.getClass().getSimpleName());\n}",
+          "explanation": "The invalid parse is handled and reports NumberFormatException."
+        }
+      ]
+    }
+  ]
+}

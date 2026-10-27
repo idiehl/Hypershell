@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "css-fonts",
+  "displayName": "CSS Fonts",
+  "description": "CSS Fonts properties, values, and composition patterns.",
+  "language": "CSS",
+  "category": "Official reference",
+  "kind": "Specification",
+  "canonicalName": "CSS Fonts",
+  "ecosystem": "CSS",
+  "targetVersion": "Living specification inventory",
+  "sourceVersion": "mdn-data 2.31.0 · properties 004ebcb0d571b2e1cf42c4793e05c99de19c2b1bddae739638acbcb855721f8e",
+  "sourceUrl": "https://www.w3.org/TR/css-fonts-4/",
+  "license": "W3C document license",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "CSS specification entries insert into compatible editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "css",
+    "specification",
+    "CSS Fonts"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 27,
+  "declaredIndexedCount": 26,
+  "declaredGuidedCount": 1,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/css-fonts.entries.json"
+  ],
+  "declaredGuideCount": 1,
+  "guideFiles": [
+    "guides/css-fonts.guides.json"
+  ],
+  "legacyIds": []
+}

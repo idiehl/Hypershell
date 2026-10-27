@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-connection-status">
+<div class="connection-status panel"><span class="status-dot" aria-hidden="true"></span><div><strong>@Context.Text("title")</strong><p>@Context.Text("text")</p></div><small>@Cell(Rows.FirstOrDefault() ?? "Checked just now",0)</small></div>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

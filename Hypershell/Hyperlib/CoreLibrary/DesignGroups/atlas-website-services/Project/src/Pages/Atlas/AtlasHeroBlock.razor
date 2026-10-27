@@ -1,0 +1,16 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<section class="landing-hero">
+  <div class="hero-background" aria-hidden="true"><div class="starfield"></div><div class="map-grid"></div><img class="hero-emblem" src="./_content/HyperLib.Work/atlas/atlas-emblem-512.png" alt="" /></div>
+  <div class="hero-content"><h1 data-field="title">@T("title")</h1><div class="star-divider" aria-hidden="true">✦</div><p class="eyebrow" data-field="kicker">@T("kicker")</p><p class="lede" data-field="text">@T("text")</p></div>
+  <a class="scroll-cue" href="@Link(T("href"))" aria-label="Continue to page content">↓</a>
+</section>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+
+}

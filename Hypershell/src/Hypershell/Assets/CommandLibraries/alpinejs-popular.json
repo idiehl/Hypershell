@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "alpinejs-popular",
+  "displayName": "Alpine.js",
+  "description": "Curated Alpine.js starter recipes for the HTML Command Builder. The dependency is referenced, not bundled.",
+  "language": "HTML",
+  "category": "Popular libraries",
+  "kind": "Framework",
+  "canonicalName": "Alpine.js",
+  "ecosystem": "Web",
+  "targetVersion": "3",
+  "sourceVersion": "3 documentation · curated 2026-08-17",
+  "sourceUrl": "https://alpinejs.dev/start-here",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Editor-only markup: include Alpine.js 3 in the target page before using x-data directives.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "html",
+    "popular library",
+    "alpinejs",
+    "reactive",
+    "html directives",
+    "lightweight",
+    "frontend"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/alpinejs-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/alpinejs-popular.guides.json"
+  ],
+  "legacyIds": []
+}

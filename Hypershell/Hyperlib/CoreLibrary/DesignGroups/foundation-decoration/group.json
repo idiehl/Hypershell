@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "foundation-decoration",
+  "title": "Decoration essentials",
+  "description": "Editable decoration modules. Native controls and local C# interactions; no third-party service required.",
+  "category": "Decoration",
+  "sourceTemplateId": "foundation-decoration"
+}

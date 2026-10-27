@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "nodejs-standard-library",
+  "displayName": "Node.js Standard Library",
+  "description": "Modules distributed with Node.js, separated from ECMAScript and browser APIs.",
+  "language": "JavaScript",
+  "category": "Official reference",
+  "kind": "StandardLibrary",
+  "canonicalName": "Node.js API",
+  "ecosystem": "Node.js",
+  "targetVersion": "Node.js 24",
+  "sourceVersion": "Node.js 24.14.0 · all.json 86e61677edfa7f87e91fb01a8b2746c83b1408872c33fc76f7c462624508d5f3",
+  "sourceUrl": "https://nodejs.org/api/",
+  "license": "MIT",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Runs through the matching installed Hypershell terminal adapter.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "node.js",
+    "standard library",
+    "modules"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 1789,
+  "declaredIndexedCount": 1747,
+  "declaredGuidedCount": 0,
+  "declaredVerifiedCount": 42,
+  "entryFiles": [
+    "entries/nodejs-standard-library.entries.json"
+  ],
+  "declaredGuideCount": 42,
+  "guideFiles": [
+    "guides/nodejs-standard-library.guides.json"
+  ],
+  "legacyIds": []
+}

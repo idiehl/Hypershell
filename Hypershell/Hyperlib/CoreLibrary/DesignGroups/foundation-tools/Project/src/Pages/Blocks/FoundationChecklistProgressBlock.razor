@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-checklist-progress">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><div>@for(var i=0;i<Rows.Length;i++){var index=i;<label class="inline"><input type="checkbox" checked="@done.Contains(index)" @onchange="()=>Toggle(index)" /> @Cell(Rows[i],0)</label>}</div><progress value="@done.Count" max="@Math.Max(1,Rows.Length)">@done.Count</progress><output>@done.Count of @Rows.Length complete</output>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private HashSet<int> done=[]; private void Toggle(int i){if(!done.Add(i))done.Remove(i);}
+}

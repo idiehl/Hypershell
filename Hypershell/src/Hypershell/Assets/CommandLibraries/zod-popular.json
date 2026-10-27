@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "zod-popular",
+  "displayName": "Zod",
+  "description": "Curated Zod starter recipes for the TypeScript Command Builder. The dependency is referenced, not bundled.",
+  "language": "TypeScript",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "Zod",
+  "ecosystem": "npm",
+  "targetVersion": "4.4",
+  "sourceVersion": "4.4 documentation · curated 2026-08-17",
+  "sourceUrl": "https://zod.dev/",
+  "license": "MIT",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Requires Zod in the active TypeScript/Node.js project; Hypershell does not install it.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "typescript",
+    "popular library",
+    "zod",
+    "schema",
+    "validation",
+    "types",
+    "parsing"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/zod-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/zod-popular.guides.json"
+  ],
+  "legacyIds": []
+}

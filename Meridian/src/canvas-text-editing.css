@@ -1,0 +1,14 @@
+.canvas-inline-text{user-select:text!important;-webkit-user-select:text!important;cursor:text!important;outline:none;caret-color:var(--ms-text-color,#e5edf6);touch-action:auto}
+.canvas-inline-text::selection,.canvas-inline-text ::selection{background:#327163;color:#fff}
+.canvas-inline-toolbar{position:fixed;z-index:1000;display:flex;flex-wrap:wrap;align-items:center;gap:4px;max-width:calc(100vw - 16px);margin:0;padding:4px;border:1px solid #47615f;border-radius:7px;background:#14242af5;box-shadow:0 5px 18px #0008;overflow:visible;font:12px/1.3 "Segoe UI",system-ui,sans-serif;box-sizing:border-box}
+.canvas-inline-toolbar[hidden]{display:none}
+.canvas-inline-toolbar .rich-text-toolbar{display:grid;grid-template-columns:132px 47px 27px;gap:4px;align-items:center;padding:0}
+.canvas-inline-toolbar .rich-text-toolbar .font-picker-control{font-size:11px;min-height:28px;height:28px;padding:3px 6px}
+.canvas-inline-toolbar .rich-text-toolbar input{height:28px;font:12px/1.2 "Segoe UI",system-ui,sans-serif;padding:3px}
+.canvas-inline-toolbar .rich-text-toolbar input[type=color]{padding:2px}
+.canvas-inline-toolbar .rich-text-actions{padding:0 0 0 4px;border:0;border-left:1px solid #425657;gap:1px;flex:none}
+.canvas-inline-toolbar .rich-text-actions button{height:28px;min-width:25px;padding:3px 5px;font-size:13px}
+.canvas-inline-toolbar .rich-text-actions button[aria-label="Undo text edit"],.canvas-inline-toolbar .rich-text-actions button[aria-label="Redo text edit"],.canvas-inline-toolbar .rich-text-action-space,.canvas-inline-toolbar .rich-text-footer{display:none}
+.canvas-inline-toolbar:has(.rich-text-status.is-error){flex-wrap:wrap}
+.canvas-inline-toolbar:has(.rich-text-status.is-error) .rich-text-footer{display:block;flex-basis:100%;border:0;padding:3px 2px 0}
+@media(max-width:430px){.canvas-inline-toolbar{flex-wrap:wrap}.canvas-inline-toolbar .rich-text-toolbar{grid-template-columns:minmax(95px,1fr) 47px 27px;flex:1}.canvas-inline-toolbar .rich-text-actions{border-left:0;padding-left:0}}

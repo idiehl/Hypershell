@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "pandas-popular",
+  "guides": [
+    {
+      "entryId": "pandas-popular.read-and-filter",
+      "definition": "Loads selected CSV columns into a DataFrame and filters rows with a boolean condition. Requires pandas and any file-format engine used by the snippet in the selected Python environment; Hypershell does not install them.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "CSV path",
+          "placeholder": "path",
+          "description": "CSV file path expression.",
+          "typeName": "Python string",
+          "defaultValue": "\"users.csv\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "columns",
+          "displayName": "Columns",
+          "placeholder": "columns",
+          "description": "Columns to load from the file.",
+          "typeName": "list[str]",
+          "defaultValue": "[\"id\", \"name\", \"active\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "filterColumn",
+          "displayName": "Filter column",
+          "placeholder": "filterColumn",
+          "description": "Column used by the row condition.",
+          "typeName": "Python string",
+          "defaultValue": "\"active\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "comparison",
+          "displayName": "Comparison",
+          "placeholder": "comparison",
+          "description": "Comparison operator for the condition.",
+          "typeName": "Python operator",
+          "defaultValue": "==",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "filterValue",
+          "displayName": "Filter value",
+          "placeholder": "filterValue",
+          "description": "Value compared with the selected column.",
+          "typeName": "Python expression",
+          "defaultValue": "True",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load active users",
+          "code": "import pandas as pd\n\nframe = pd.read_csv(\"users.csv\", usecols=[\"id\", \"name\", \"active\"])\nfiltered = frame.loc[frame[\"active\"] == True]",
+          "explanation": "usecols avoids loading unused data; loc keeps the row-filter operation explicit and chainable."
+        }
+      ]
+    },
+    {
+      "entryId": "pandas-popular.group-and-aggregate",
+      "definition": "Groups a DataFrame by one column and computes a named aggregate for another. Requires pandas and any file-format engine used by the snippet in the selected Python environment; Hypershell does not install them.",
+      "parameters": [
+        {
+          "name": "groupColumn",
+          "displayName": "Group column",
+          "placeholder": "groupColumn",
+          "description": "Column whose distinct values define groups.",
+          "typeName": "Python string",
+          "defaultValue": "\"region\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "outputColumn",
+          "displayName": "Output column",
+          "placeholder": "outputColumn",
+          "description": "Name for the aggregated result column.",
+          "typeName": "Python identifier",
+          "defaultValue": "total_sales",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "valueColumn",
+          "displayName": "Value column",
+          "placeholder": "valueColumn",
+          "description": "Column whose values are aggregated.",
+          "typeName": "Python string",
+          "defaultValue": "\"amount\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "aggregate",
+          "displayName": "Aggregate",
+          "placeholder": "aggregate",
+          "description": "Aggregate name such as sum, mean, or count.",
+          "typeName": "pandas aggregate",
+          "defaultValue": "\"sum\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Total sales by region",
+          "code": "summary = (\n    frame.groupby(\"region\", as_index=False)\n    .agg(total_sales=(\"amount\", \"sum\"))\n)",
+          "explanation": "Named aggregation gives the result column a stable name while making the source column and operation visible."
+        }
+      ]
+    },
+    {
+      "entryId": "pandas-popular.merge-frames",
+      "definition": "Merges two DataFrames on a named key with an explicit join strategy. Requires pandas and any file-format engine used by the snippet in the selected Python environment; Hypershell does not install them.",
+      "parameters": [
+        {
+          "name": "key",
+          "displayName": "Join key",
+          "placeholder": "key",
+          "description": "Column present in both DataFrames.",
+          "typeName": "Python string",
+          "defaultValue": "\"department_id\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "joinType",
+          "displayName": "Join type",
+          "placeholder": "joinType",
+          "description": "Merge strategy such as inner, left, right, or outer.",
+          "typeName": "Python string",
+          "defaultValue": "\"left\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "validation",
+          "displayName": "Cardinality",
+          "placeholder": "validation",
+          "description": "Expected key relationship checked by pandas.",
+          "typeName": "Python string",
+          "defaultValue": "\"many_to_one\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Join users to departments",
+          "code": "combined = users.merge(departments, on=\"department_id\", how=\"left\", validate=\"many_to_one\")",
+          "explanation": "validate turns an expected key cardinality into a runtime invariant instead of silently accepting duplicated matches."
+        }
+      ]
+    }
+  ]
+}

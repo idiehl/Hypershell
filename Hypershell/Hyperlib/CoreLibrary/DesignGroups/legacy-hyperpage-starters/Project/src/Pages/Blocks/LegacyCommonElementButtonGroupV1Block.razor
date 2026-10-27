@@ -1,0 +1,20 @@
+@* Source: common.element.button-group.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-14114890402e" data-vp-id="14114890402e3930f3d330b9764c0029">
+    <div aria-label="Page actions" class="vp-400b431ed4bc" data-vp-id="400b431ed4bc3eb22ebb33b94f762e03" role="group">
+        <button class="vp-e29f8daa5ad0" data-field="text-2" data-vp-id="e29f8daa5ad07f986dec06d541d06c50">
+            @(Context.Text("text-2"))
+        </button>
+        <a class="vp-dd7af39f7082" data-field="text-3" data-vp-id="dd7af39f708262ca25673bd876340fb3" href="@(Link(Context.Text("href-3")))">
+            @(Context.Text("text-3"))
+        </a>
+    </div>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

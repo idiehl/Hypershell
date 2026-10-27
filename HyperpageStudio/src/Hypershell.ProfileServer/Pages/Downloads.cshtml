@@ -1,0 +1,41 @@
+@page "/Admin/downloads"
+@model DownloadsModel
+@{
+    ViewData["Title"] = "Downloads";
+}
+
+<section class="page-heading compact">
+    <a class="back-link" href="/">← Overview</a>
+    <h1>Downloads</h1>
+    <p class="muted">Signed Windows installers and portable recovery builds.</p>
+</section>
+
+@if (Model.Releases.Count == 0)
+{
+    <section class="empty-state">
+        <span>↓</span>
+        <h2>No release published</h2>
+        <p>The release pipeline has not imported a trusted stable build yet.</p>
+    </section>
+}
+else
+{
+    <section class="card-grid">
+    @foreach (var release in Model.Releases)
+    {
+        <article class="module-card">
+            <span class="module-icon">⬡</span>
+            <h2>Hypershell @release.Version</h2>
+            <p>@release.Channel.ToUpperInvariant() · @release.PublishedAtUtc.ToLocalTime().ToString("g")</p>
+            <p>@release.ReleaseNotes</p>
+            @foreach (var artifact in release.Artifacts)
+            {
+                <a class="button-link"
+                   asp-page-handler="Artifact"
+                   asp-route-version="@release.Version"
+                   asp-route-kind="@artifact.Kind">@artifact.Kind · @Model.FormatBytes(artifact.ByteLength)</a>
+            }
+        </article>
+    }
+    </section>
+}

@@ -1,0 +1,12 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<section class="panel"><p class="eyebrow" data-field="kicker">@T("kicker")</p><h3 data-field="title">@T("title")</h3><p data-field="text">@T("text")</p><div class="device-request"><span class="module-icon" aria-hidden="true">◇</span><div><strong data-field="subject">@T("subject")</strong><p data-field="detail">@T("detail")</p></div></div><div class="actions"><button type="button" class="primary" @onclick="() => _decision = true">Approve locally</button><button type="button" class="secondary" @onclick="() => _decision = false">Decline</button><button type="button" class="quiet" @onclick="() => _decision = null">Reset</button></div>@if(_decision.HasValue) { <p class="notice" role="status">@(_decision.Value ? "Approved in this page." : "Declined in this page.")</p> }</section>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+private bool? _decision;
+}

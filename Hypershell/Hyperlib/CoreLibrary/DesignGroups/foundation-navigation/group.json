@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "foundation-navigation",
+  "title": "Navigation essentials",
+  "description": "Editable navigation modules. Native controls and local C# interactions; no third-party service required.",
+  "category": "Navigation",
+  "sourceTemplateId": "foundation-navigation"
+}

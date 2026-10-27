@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "psscriptanalyzer-popular",
+  "guides": [
+    {
+      "entryId": "psscriptanalyzer-popular.analyze-path",
+      "definition": "Runs PSScriptAnalyzer recursively and limits results to the selected severities. Requires PSScriptAnalyzer in the active PowerShell environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "Quoted file or directory path to analyze.",
+          "typeName": "PowerShell path",
+          "defaultValue": "'.\\src'",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "severity",
+          "displayName": "Severity",
+          "placeholder": "severity",
+          "description": "Comma-separated severity values to include.",
+          "typeName": "Severity[]",
+          "defaultValue": "Error,Warning",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Analyze the current source tree",
+          "code": "Invoke-ScriptAnalyzer -Path '.\\src' -Recurse -Severity Error,Warning",
+          "explanation": "Recursive analysis applies the installed rules to every supported PowerShell file under the path."
+        }
+      ]
+    },
+    {
+      "entryId": "psscriptanalyzer-popular.analyze-script-definition",
+      "definition": "Checks a script definition without writing it to disk and selects named rules. Requires PSScriptAnalyzer in the active PowerShell environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "script",
+          "displayName": "Script definition",
+          "placeholder": "script",
+          "description": "Quoted PowerShell source to analyze.",
+          "typeName": "PowerShell string",
+          "defaultValue": "'param([string]$Name)'",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "rules",
+          "displayName": "Included rules",
+          "placeholder": "rules",
+          "description": "Rule name or comma-separated rule names.",
+          "typeName": "String[]",
+          "defaultValue": "PSAvoidUsingPlainTextForPassword",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Check an unsafe credential parameter",
+          "code": "Invoke-ScriptAnalyzer -ScriptDefinition 'param([string]$Password)' -IncludeRule PSAvoidUsingPlainTextForPassword",
+          "explanation": "ScriptDefinition is useful for generated snippets and tests; IncludeRule keeps the result focused."
+        }
+      ]
+    },
+    {
+      "entryId": "psscriptanalyzer-popular.format-results",
+      "definition": "Captures PSScriptAnalyzer findings and displays the most useful review columns. Requires PSScriptAnalyzer in the active PowerShell environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "Quoted script or module path to analyze.",
+          "typeName": "PowerShell path",
+          "defaultValue": "'.\\Module.psm1'",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Review one module",
+          "code": "$results = Invoke-ScriptAnalyzer -Path '.\\Module.psm1'\n$results | Format-Table RuleName, Severity, Line, Message -AutoSize",
+          "explanation": "Capturing results keeps them available for filtering, export, or build-gate logic after the table view."
+        }
+      ]
+    }
+  ]
+}

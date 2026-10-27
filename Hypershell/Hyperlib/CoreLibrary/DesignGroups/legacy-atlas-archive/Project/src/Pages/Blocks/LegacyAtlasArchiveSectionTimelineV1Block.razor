@@ -1,0 +1,60 @@
+@* Source: atlas.archive.section.timeline.v1 (Atlas Archive). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-d67f65a4426a" data-vp-id="d67f65a4426a32a88f18aaebf057fe58">
+    <section aria-label="Chronology" class="vp-f4a32c79a566" data-vp-id="f4a32c79a5666396e1db57a470df0e90" id="@(LocalIds("chronology"))">
+        <div class="vp-f45501ac584d" data-vp-id="f45501ac584d27004d177e847ae69f1e">
+            <p class="vp-b6e4c6348e37" data-field="text-3" data-vp-id="b6e4c6348e37b177f9e1da9baa59736d">
+                @(Context.Text("text-3"))
+            </p>
+            <h2 class="vp-4d0aec4e0210" data-field="text-4">
+                @(Context.Text("text-4"))
+            </h2>
+            <p class="vp-94d6a869d115" data-field="text-5" data-vp-id="94d6a869d115f1eb261e468eda5ceab7">
+                @(Context.Text("text-5"))
+            </p>
+        </div>
+        <ol class="vp-fc56152314a1" data-vp-id="fc56152314a1b25fd184e2559a963d3d">
+            <li class="vp-5af34b50f8e3" data-vp-id="5af34b50f8e31aad7f8e9a14ff622bae">
+                <time class="vp-d2869691bee1" data-field="text-8" data-vp-id="d2869691bee16c4448458ade81777cc0">
+                    @(Context.Text("text-8"))
+                </time>
+                <h3 class="vp-2458c4c51fac" data-field="text-9">
+                    @(Context.Text("text-9"))
+                </h3>
+                <p class="vp-ed0ba2666b13" data-field="text-10" data-vp-id="ed0ba2666b13eb4e794d5cd79d8a1371">
+                    @(Context.Text("text-10"))
+                </p>
+            </li>
+            <li class="vp-ec44b3420f88" data-vp-id="ec44b3420f8807bff9c627e4db9cbd4f">
+                <time class="vp-20dc1fb91eb6" data-field="text-12" data-vp-id="20dc1fb91eb6a9c2e9b80101365708fd">
+                    @(Context.Text("text-12"))
+                </time>
+                <h3 class="vp-1b35dd63542c" data-field="text-13">
+                    @(Context.Text("text-13"))
+                </h3>
+                <p class="vp-5d79df6221b8" data-field="text-14" data-vp-id="5d79df6221b8b5f98f8ed32d102f4d9b">
+                    @(Context.Text("text-14"))
+                </p>
+            </li>
+            <li class="vp-b005c276ebe7" data-vp-id="b005c276ebe7be5f3cbf9b8823669579">
+                <time class="vp-ac01e09d64b9" data-field="text-16" data-vp-id="ac01e09d64b9d1d4c4513294f6e8fd1d">
+                    @(Context.Text("text-16"))
+                </time>
+                <h3 class="vp-ee28d20c1a01" data-field="text-17">
+                    @(Context.Text("text-17"))
+                </h3>
+                <p class="vp-3bcdffa778ae" data-field="text-18" data-vp-id="3bcdffa778ae5733c48a164c38f9df67">
+                    @(Context.Text("text-18"))
+                </p>
+            </li>
+        </ol>
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

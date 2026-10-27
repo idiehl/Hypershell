@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "url-standard",
+  "guides": [
+    {
+      "entryId": "web.url-search-params",
+      "definition": "URLSearchParams represents the ordered query parameter list of a URL. get returns the first matching value or null.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Variable",
+          "placeholder": "name",
+          "description": "The binding that receives the query value.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "mode",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Parameter",
+          "placeholder": "key",
+          "description": "The query parameter name.",
+          "typeName": "String",
+          "defaultValue": "mode",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fallback",
+          "displayName": "Fallback",
+          "placeholder": "fallback",
+          "description": "The value used when the parameter is absent.",
+          "typeName": "String",
+          "defaultValue": "default",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a mode parameter",
+          "code": "const params = new URLSearchParams(window.location.search);\nconst mode = params.get(\"mode\") ?? \"default\";\nconsole.log(mode);",
+          "explanation": "The current query string is parsed according to URL rules and a missing mode receives an explicit fallback."
+        }
+      ]
+    }
+  ]
+}

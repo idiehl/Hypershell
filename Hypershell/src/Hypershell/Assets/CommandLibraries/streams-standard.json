@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "streams-standard",
+  "displayName": "Streams Standard",
+  "description": "Streams Standard interfaces and browser-platform operations.",
+  "language": "Web APIs",
+  "category": "Official reference",
+  "kind": "PlatformApi",
+  "canonicalName": "Streams Standard",
+  "ecosystem": "Web Platform",
+  "targetVersion": "Living Standard inventory",
+  "sourceVersion": "Web declarations from TypeScript 5.9.3 · 080941d9f9ff/6d08cde2bfb6",
+  "sourceUrl": "https://streams.spec.whatwg.org/",
+  "license": "WHATWG Living Standard",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Web API entries target compatible JavaScript or TypeScript editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "web api",
+    "browser",
+    "Streams Standard"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 63,
+  "declaredIndexedCount": 63,
+  "declaredGuidedCount": 0,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/streams-standard.entries.json"
+  ],
+  "declaredGuideCount": 0,
+  "guideFiles": [],
+  "legacyIds": []
+}

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "foundation-commerce",
+  "title": "Commerce essentials",
+  "description": "Editable commerce modules. Native controls and local C# interactions; no third-party service required.",
+  "category": "Commerce",
+  "sourceTemplateId": "foundation-commerce"
+}

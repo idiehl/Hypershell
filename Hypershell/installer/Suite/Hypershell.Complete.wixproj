@@ -1,0 +1,24 @@
+<Project Sdk="WixToolset.Sdk/4.0.6">
+  <PropertyGroup>
+    <OutputType>Bundle</OutputType>
+    <Platform>x64</Platform>
+    <ProductVersion Condition="'$(ProductVersion)' == ''">0.1.0</ProductVersion>
+    <OutputName>Hypershell-Complete-$(ProductVersion)-win-x64</OutputName>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <DotNetSdkMinimumVersion Condition="'$(DotNetSdkMinimumVersion)' == ''">10.0.100</DotNetSdkMinimumVersion>
+    <DefineConstants>ProductVersion=$(ProductVersion);CoreInstallerPath=$(CoreInstallerPath);AuthoringInstallerPath=$(AuthoringInstallerPath);MeridianInstallerPath=$(MeridianInstallerPath);WebView2InstallerPath=$(WebView2InstallerPath);DotNetSdkInstallerPath=$(DotNetSdkInstallerPath);DotNetSdkMinimumVersion=$(DotNetSdkMinimumVersion)</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Bundle.wxs" />
+    <PackageReference Include="WixToolset.Bal.wixext" Version="4.0.6" />
+    <PackageReference Include="WixToolset.Util.wixext" Version="4.0.6" />
+    <PackageReference Include="WixToolset.Netfx.wixext" Version="4.0.6" />
+  </ItemGroup>
+  <Target Name="ValidateSuiteInputs" BeforeTargets="BeforeBuild">
+    <Error Condition="!Exists('$(CoreInstallerPath)')" Text="The signed Core MSI is required." />
+    <Error Condition="!Exists('$(AuthoringInstallerPath)')" Text="The signed Hyperlib and Studio component MSI is required." />
+    <Error Condition="!Exists('$(MeridianInstallerPath)')" Text="The signed Meridian component MSI is required." />
+    <Error Condition="!Exists('$(WebView2InstallerPath)')" Text="The offline Microsoft WebView2 installer is required. A bootstrapper that downloads at install time is not an offline payload." />
+    <Error Condition="!Exists('$(DotNetSdkInstallerPath)')" Text="The offline .NET 10 SDK x64 installer is required for Studio authoring." />
+  </Target>
+</Project>

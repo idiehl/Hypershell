@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "fmt-popular",
+  "guides": [
+    {
+      "entryId": "fmt-popular.print-formatted",
+      "definition": "Writes a type-safe formatted line with fmt::print. Project dependency only: link fmt or configure its header-only mode in a C++ project; the isolated snippet runner does not resolve external packages.",
+      "parameters": [
+        {
+          "name": "formatString",
+          "displayName": "Format string",
+          "placeholder": "formatString",
+          "description": "C++ string literal containing fmt replacement fields.",
+          "typeName": "fmt format string",
+          "defaultValue": "\"items: {}\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value expression",
+          "placeholder": "value",
+          "description": "Value inserted into the replacement field.",
+          "typeName": "C++ expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Print a labeled count",
+          "code": "#include <fmt/base.h>\n\nfmt::println(\"items: {}\", 42);",
+          "explanation": "fmt checks a literal format string against its arguments at compile time when supported."
+        }
+      ]
+    },
+    {
+      "entryId": "fmt-popular.format-string",
+      "definition": "Builds an std::string with fmt::format without writing to an output stream. Project dependency only: link fmt or configure its header-only mode in a C++ project; the isolated snippet runner does not resolve external packages.",
+      "parameters": [
+        {
+          "name": "variable",
+          "displayName": "Variable name",
+          "placeholder": "variable",
+          "description": "Name for the resulting std::string.",
+          "typeName": "C++ identifier",
+          "defaultValue": "message",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "formatString",
+          "displayName": "Format string",
+          "placeholder": "formatString",
+          "description": "C++ string literal containing replacement fields.",
+          "typeName": "fmt format string",
+          "defaultValue": "\"status={}\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value expression",
+          "placeholder": "value",
+          "description": "Value inserted into the replacement field.",
+          "typeName": "C++ expression",
+          "defaultValue": "200",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a status message",
+          "code": "#include <fmt/format.h>\n\nauto message = fmt::format(\"status={}\", 200);",
+          "explanation": "fmt::format returns the completed string and preserves the type-aware formatting rules used by fmt::print."
+        }
+      ]
+    },
+    {
+      "entryId": "fmt-popular.join-range",
+      "definition": "Formats every item in a range with a separator using fmt::join. Project dependency only: link fmt or configure its header-only mode in a C++ project; the isolated snippet runner does not resolve external packages.",
+      "parameters": [
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "Comma-separated integer expressions for the vector.",
+          "typeName": "C++ initializer list",
+          "defaultValue": "1, 2, 3",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "separator",
+          "displayName": "Separator",
+          "placeholder": "separator",
+          "description": "Text placed between formatted values.",
+          "typeName": "C++ string expression",
+          "defaultValue": "\", \"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Print comma-separated values",
+          "code": "#include <fmt/ranges.h>\n#include <vector>\n\nstd::vector<int> values{ 1, 2, 3 };\nfmt::println(\"{}\", fmt::join(values, \", \"));",
+          "explanation": "fmt::join presents a range lazily to the formatter, avoiding a manual loop solely for display."
+        }
+      ]
+    }
+  ]
+}

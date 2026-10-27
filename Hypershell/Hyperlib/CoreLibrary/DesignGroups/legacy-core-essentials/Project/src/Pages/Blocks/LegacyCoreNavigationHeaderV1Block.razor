@@ -1,0 +1,28 @@
+@* Source: core.navigation.header.v1 (Core essentials). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-66834796524f" data-vp-id="66834796524f3283a9b3527305af176f">
+    <header class="vp-42de73ee6876" data-vp-id="42de73ee6876bd34897a770dde4848af">
+        <a aria-label="Home" class="vp-72e5c9568927" data-field="text-2" data-vp-id="72e5c95689276f308f137dee3b39840e" href="@(Link(Context.Text("href-2")))">
+            @(Context.Text("text-2"))
+        </a>
+        <nav aria-label="Primary navigation" class="vp-b50fdd17a8c9" data-vp-id="b50fdd17a8c97805cdd03ef5e7f1f60e">
+            <a class="vp-526ada80aaee" data-field="text-4" data-vp-id="526ada80aaee9c89a18ac9450171a8eb" href="@(Link(Context.Text("href-4")))">
+                @(Context.Text("text-4"))
+            </a>
+            <a class="vp-cf25915fd4d4" data-field="text-5" data-vp-id="cf25915fd4d45d29f8a30b8d16d12676" href="@(Link(Context.Text("href-5")))">
+                @(Context.Text("text-5"))
+            </a>
+            <a class="vp-4988abdd9b9c" data-field="text-6" data-vp-id="4988abdd9b9c71ce0e13c87b7738bc35" href="@(Link(Context.Text("href-6")))">
+                @(Context.Text("text-6"))
+            </a>
+        </nav>
+    </header>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

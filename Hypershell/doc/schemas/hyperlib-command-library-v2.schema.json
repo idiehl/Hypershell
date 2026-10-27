@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hypershell:schema:hyperlib-command-library:2",
+  "title": "Hypershell Hyperlib taxonomy library v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "contentVersion",
+    "id",
+    "displayName",
+    "description",
+    "language",
+    "kind",
+    "canonicalName",
+    "ecosystem",
+    "isExecutionSupported",
+    "createStandaloneProfile",
+    "executionTarget",
+    "declaredEntryCount"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "contentVersion": { "$ref": "#/$defs/semanticVersion" },
+    "id": { "$ref": "#/$defs/localId" },
+    "displayName": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+    "language": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "category": { "type": "string", "maxLength": 120 },
+    "kind": {
+      "enum": [
+        "Content",
+        "Core",
+        "StandardLibrary",
+        "Specification",
+        "PlatformApi",
+        "Runtime",
+        "Framework",
+        "Sdk",
+        "CommandLineTool",
+        "Module",
+        "Package",
+        "Extension"
+      ]
+    },
+    "canonicalName": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "ecosystem": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "targetVersion": { "type": "string", "maxLength": 80 },
+    "sourceVersion": { "type": "string", "maxLength": 120 },
+    "sourceUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "maxLength": 500
+    },
+    "license": { "type": "string", "maxLength": 160 },
+    "parentLibraryId": { "type": "string", "maxLength": 128 },
+    "frameworkName": { "type": "string", "maxLength": 120 },
+    "frameworkVersion": { "type": "string", "maxLength": 80 },
+    "targetFramework": { "type": "string", "maxLength": 80 },
+    "isExecutionSupported": { "type": "boolean" },
+    "executionSupportMessage": { "type": "string", "maxLength": 500 },
+    "referenceAssemblyCount": { "type": "integer", "minimum": 0 },
+    "isStarterLibrary": { "type": "boolean" },
+    "createStandaloneProfile": { "type": "boolean" },
+    "keywords": { "$ref": "#/$defs/stringSet" },
+    "executionTarget": { "enum": ["PowerShell", "CSharp", "External"] },
+    "actionDescriptions": { "$ref": "#/$defs/textMap" },
+    "objectDescriptions": { "$ref": "#/$defs/textMap" },
+    "declaredEntryCount": { "type": "integer", "minimum": 1 },
+    "declaredIndexedCount": { "type": "integer", "minimum": 0 },
+    "declaredGuidedCount": { "type": "integer", "minimum": 0 },
+    "declaredVerifiedCount": { "type": "integer", "minimum": 0 },
+    "entryFiles": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/relativeJsonPath" }
+    },
+    "declaredGuideCount": { "type": "integer", "minimum": 0 },
+    "guideFiles": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/relativeJsonPath" }
+    },
+    "legacyIds": { "$ref": "#/$defs/stringSet" },
+    "commands": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "oneOf": [
+    {
+      "required": ["entryFiles"],
+      "not": { "required": ["commands"] }
+    },
+    {
+      "required": ["commands"],
+      "not": { "required": ["entryFiles"] }
+    }
+  ],
+  "$defs": {
+    "semanticVersion": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "localId": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z][A-Za-z0-9._-]+$"
+    },
+    "stringSet": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 160 }
+    },
+    "textMap": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2000
+      }
+    },
+    "relativeJsonPath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![A-Za-z]:)(?![/\\\\])(?!.*(?:^|[/\\\\])\\.\\.(?:[/\\\\]|$)).+\\.json$"
+    },
+    "browseSegment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "name"],
+      "properties": {
+        "kind": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "name": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "displayName": { "type": "string", "maxLength": 300 }
+      }
+    },
+    "parameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "displayName", "description"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "displayName": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "placeholder": { "type": "string", "maxLength": 120 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "typeName": { "type": "string", "maxLength": 160 },
+        "defaultValue": { "type": "string", "maxLength": 1000 },
+        "isRequired": { "type": "boolean" },
+        "isSwitch": { "type": "boolean" },
+        "includeByDefault": { "type": "boolean" }
+      }
+    },
+    "example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "code", "explanation"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "code": { "type": "string", "minLength": 1, "maxLength": 65536 },
+        "explanation": { "type": "string", "minLength": 1, "maxLength": 6000 },
+        "imagePath": { "type": "string", "maxLength": 500 },
+        "imageAltText": { "type": "string", "maxLength": 500 }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "displayName",
+        "description",
+        "definition",
+        "symbolKind",
+        "coverageTier",
+        "browsePath",
+        "template",
+        "examples"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/localId" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "displayName": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "definition": { "type": "string", "minLength": 1, "maxLength": 6000 },
+        "moduleName": { "type": "string", "maxLength": 300 },
+        "commandType": { "type": "string", "maxLength": 80 },
+        "preferredShellKind": { "type": "string", "maxLength": 80 },
+        "action": { "type": "string", "maxLength": 120 },
+        "actionDescription": { "type": "string", "maxLength": 2000 },
+        "object": { "type": "string", "maxLength": 120 },
+        "objectDescription": { "type": "string", "maxLength": 2000 },
+        "namespaceName": { "type": "string", "maxLength": 300 },
+        "typeName": { "type": "string", "maxLength": 300 },
+        "memberName": { "type": "string", "maxLength": 300 },
+        "memberKind": { "type": "string", "maxLength": 120 },
+        "overloadSignature": { "type": "string", "maxLength": 1000 },
+        "documentationUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://",
+          "maxLength": 500
+        },
+        "keywords": { "$ref": "#/$defs/stringSet" },
+        "symbolKind": {
+          "enum": [
+            "Syntax", "Keyword", "Operator", "Literal", "Statement",
+            "BuiltIn", "Command", "Function", "Class", "Struct",
+            "Interface", "Enum", "Constructor", "Method", "Property",
+            "Field", "Constant", "Macro", "Element", "Attribute",
+            "Selector", "AtRule", "Api", "Overload", "Event", "Other"
+          ]
+        },
+        "coverageTier": { "enum": ["Indexed", "Guided", "Verified"] },
+        "browsePath": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": { "$ref": "#/$defs/browseSegment" }
+        },
+        "legacyIds": { "$ref": "#/$defs/stringSet" },
+        "guideFile": { "$ref": "#/$defs/relativeJsonPath" },
+        "template": { "type": "string", "minLength": 1, "maxLength": 6000 },
+        "compositionMode": { "enum": ["Auto", "Pipeline", "Statement"] },
+        "parameters": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "$ref": "#/$defs/parameter" }
+        },
+        "examples": {
+          "type": "array",
+          "maxItems": 10,
+          "items": { "$ref": "#/$defs/example" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Goal Tracker</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <main class="tracker" aria-labelledby="tracker-title">
+    <header>
+      <p class="eyebrow">CURRENT PROJECT</p>
+      <h1 id="tracker-title">Connecting to Hypershell…</h1>
+      <p class="summary" id="progress-summary">2 of 4 stages complete</p>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-valuenow="2">
+        <span id="progress-fill"></span>
+      </div>
+    </header>
+
+    <ol class="stages" id="stage-list">
+      <li data-state="complete">
+        <button type="button" aria-label="Extension foundation, complete">
+          <span class="marker">✓</span>
+          <span><strong>Extension foundation</strong><small>Stable IDs, validation, and hash-bound approval</small></span>
+        </button>
+      </li>
+      <li data-state="complete">
+        <button type="button" aria-label="Safe panel messaging, complete">
+          <span class="marker">✓</span>
+          <span><strong>Safe panel messaging</strong><small>Allowlisted host API and device-local state</small></span>
+        </button>
+      </li>
+      <li data-state="active">
+        <button type="button" aria-label="Editor productivity, active">
+          <span class="marker">3</span>
+          <span><strong>Editor productivity</strong><small>Formatting, recovery, and richer navigation</small></span>
+        </button>
+      </li>
+      <li data-state="pending">
+        <button type="button" aria-label="Profile sync, pending">
+          <span class="marker">4</span>
+          <span><strong>Profile sync</strong><small>Portable settings, libraries, and documents</small></span>
+        </button>
+      </li>
+    </ol>
+
+    <section class="context" aria-live="polite">
+      <span>ACTIVE TAB</span>
+      <strong id="active-tab">Waiting for host context</strong>
+    </section>
+
+    <footer>
+      <span class="signal" data-state="pending" aria-hidden="true"></span>
+      <span id="host-status">Connecting to host API v1…</span>
+    </footer>
+  </main>
+  <script src="panel.js"></script>
+</body>
+</html>

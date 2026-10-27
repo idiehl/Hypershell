@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "d3-popular",
+  "displayName": "D3",
+  "description": "Curated D3 starter recipes for the Web APIs Command Builder. The dependency is referenced, not bundled.",
+  "language": "Web APIs",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "D3",
+  "ecosystem": "npm / Browser",
+  "targetVersion": "7",
+  "sourceVersion": "7 documentation · curated 2026-08-17",
+  "sourceUrl": "https://d3js.org/getting-started",
+  "license": "ISC",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Browser/editor content: import D3 in the target page or bundle; Hypershell's Web APIs surface is intentionally editor-only.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "web apis",
+    "popular library",
+    "d3",
+    "visualization",
+    "svg",
+    "data binding",
+    "scale"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/d3-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/d3-popular.guides.json"
+  ],
+  "legacyIds": []
+}

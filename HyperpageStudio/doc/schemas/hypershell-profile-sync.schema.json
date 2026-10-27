@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hypershell.dev/schemas/profile-sync-v1.json",
+  "title": "Hypershell profile sync metadata v1",
+  "oneOf": [
+    { "$ref": "#/$defs/listDocument" },
+    { "$ref": "#/$defs/mutationReceipt" }
+  ],
+  "$defs": {
+    "listDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protocolVersion", "profiles"],
+      "properties": {
+        "protocolVersion": { "const": 1 },
+        "profiles": {
+          "type": "array",
+          "maxItems": 1000,
+          "items": { "$ref": "#/$defs/remoteProfile" }
+        }
+      }
+    },
+    "mutationReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protocolVersion", "profile"],
+      "properties": {
+        "protocolVersion": { "const": 1 },
+        "profile": { "$ref": "#/$defs/remoteProfile" }
+      }
+    },
+    "remoteProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "displayName",
+        "serverRevision",
+        "profileRevision",
+        "updatedAtUtc",
+        "profileSha256",
+        "etag",
+        "isDeleted"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "serverRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "profileRevision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "updatedAtUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "profileSha256": {
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{64}$"
+        },
+        "etag": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 258,
+          "pattern": "^\"[^\\r\\n]+\"$"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

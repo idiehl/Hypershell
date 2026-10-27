@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "bulma-popular",
+  "guides": [
+    {
+      "entryId": "bulma-popular.configure-sass",
+      "definition": "Loads the Bulma Sass module with selected theme variables. Editor/build-tool content: include Bulma CSS or compile its Sass modules in the target project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "primaryColor",
+          "displayName": "Primary color",
+          "placeholder": "primaryColor",
+          "description": "Project primary color.",
+          "typeName": "Sass color",
+          "defaultValue": "#2563eb",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fontFamily",
+          "displayName": "Font family",
+          "placeholder": "fontFamily",
+          "description": "Sass font-family list.",
+          "typeName": "Sass list",
+          "defaultValue": "(\"Inter\", sans-serif)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Configure Atlas colors and type",
+          "code": "@use \"bulma/sass\" with (\n  $primary: #2563eb,\n  $family-primary: (\"Inter\", sans-serif)\n);",
+          "explanation": "Bulma v1 exposes Sass configuration and CSS variables; define project tokens once rather than overriding many generated selectors."
+        }
+      ]
+    },
+    {
+      "entryId": "bulma-popular.theme-variables",
+      "definition": "Defines Bulma theme variables in a scoped data-theme selector. Editor/build-tool content: include Bulma CSS or compile its Sass modules in the target project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "themeName",
+          "displayName": "Theme name",
+          "placeholder": "themeName",
+          "description": "Value used by the data-theme attribute.",
+          "typeName": "CSS identifier",
+          "defaultValue": "atlas",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "hue",
+          "displayName": "Hue",
+          "placeholder": "hue",
+          "description": "Primary color hue.",
+          "typeName": "CSS angle",
+          "defaultValue": "217deg",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "saturation",
+          "displayName": "Saturation",
+          "placeholder": "saturation",
+          "description": "Primary color saturation.",
+          "typeName": "CSS percentage",
+          "defaultValue": "91%",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "lightness",
+          "displayName": "Lightness",
+          "placeholder": "lightness",
+          "description": "Primary color lightness.",
+          "typeName": "CSS percentage",
+          "defaultValue": "60%",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Define an Atlas theme",
+          "code": "[data-theme=atlas] {\n  --bulma-primary-h: 217deg;\n  --bulma-primary-s: 91%;\n  --bulma-primary-l: 60%;\n}",
+          "explanation": "Scoping variables under data-theme allows explicit theme selection without recompiling the framework."
+        }
+      ]
+    },
+    {
+      "entryId": "bulma-popular.component-adjustment",
+      "definition": "Adds a narrowly scoped project rule on top of a Bulma component class. Editor/build-tool content: include Bulma CSS or compile its Sass modules in the target project; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "scope",
+          "displayName": "Project scope",
+          "placeholder": "scope",
+          "description": "Ancestor selector limiting the override.",
+          "typeName": "CSS selector",
+          "defaultValue": ".dashboard",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "componentClass",
+          "displayName": "Bulma class",
+          "placeholder": "componentClass",
+          "description": "Bulma class name without the leading dot.",
+          "typeName": "CSS class",
+          "defaultValue": "card",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "CSS property to adjust.",
+          "typeName": "CSS property",
+          "defaultValue": "border-radius",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "Replacement property value.",
+          "typeName": "CSS value",
+          "defaultValue": "0.75rem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Adjust cards inside a dashboard",
+          "code": ".dashboard .card {\n  border-radius: 0.75rem;\n}",
+          "explanation": "A project scope limits unintended global changes while retaining Bulma's component structure and variables."
+        }
+      ]
+    }
+  ]
+}

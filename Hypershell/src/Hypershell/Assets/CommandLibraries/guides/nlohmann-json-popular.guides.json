@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "nlohmann-json-popular",
+  "guides": [
+    {
+      "entryId": "nlohmann-json-popular.parse-json",
+      "definition": "Parses a JSON string into nlohmann::json and leaves parse errors explicit. Project dependency only: add the nlohmann/json headers to a C++ project; the isolated snippet runner does not resolve external packages.",
+      "parameters": [
+        {
+          "name": "jsonText",
+          "displayName": "JSON expression",
+          "placeholder": "jsonText",
+          "description": "String or string-view expression containing JSON text.",
+          "typeName": "C++ string expression",
+          "defaultValue": "R\"({\"id\":42})\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Parse a small object",
+          "code": "#include <nlohmann/json.hpp>\n\nconst auto document = nlohmann::json::parse(R\"({\"id\":42,\"name\":\"Atlas\"})\");",
+          "explanation": "json::parse validates the full input and throws parse_error for malformed JSON unless a non-throwing mode is selected."
+        }
+      ]
+    },
+    {
+      "entryId": "nlohmann-json-popular.construct-object",
+      "definition": "Creates a nlohmann::json object from nested initializer lists. Project dependency only: add the nlohmann/json headers to a C++ project; the isolated snippet runner does not resolve external packages.",
+      "parameters": [
+        {
+          "name": "propertyName",
+          "displayName": "Property name",
+          "placeholder": "propertyName",
+          "description": "Property name without surrounding quotes.",
+          "typeName": "JSON property",
+          "defaultValue": "jobId",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "propertyValue",
+          "displayName": "Property value",
+          "placeholder": "propertyValue",
+          "description": "C++ value convertible to JSON.",
+          "typeName": "C++ expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a job document",
+          "code": "#include <nlohmann/json.hpp>\n\nnlohmann::json document = {\n    {\"jobId\", 42},\n    {\"enabled\", true}\n};",
+          "explanation": "Pairs in the outer initializer list become object properties; nested lists can represent arrays or child objects."
+        }
+      ]
+    },
+    {
+      "entryId": "nlohmann-json-popular.read-value",
+      "definition": "Reads a typed JSON property and returns a default when it is absent. Project dependency only: add the nlohmann/json headers to a C++ project; the isolated snippet runner does not resolve external packages.",
+      "parameters": [
+        {
+          "name": "variable",
+          "displayName": "Variable name",
+          "placeholder": "variable",
+          "description": "Name for the extracted value.",
+          "typeName": "C++ identifier",
+          "defaultValue": "retries",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "propertyName",
+          "displayName": "Property name",
+          "placeholder": "propertyName",
+          "description": "JSON object key to read.",
+          "typeName": "C++ string expression",
+          "defaultValue": "\"retries\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fallback",
+          "displayName": "Fallback",
+          "placeholder": "fallback",
+          "description": "Value returned when the key is absent.",
+          "typeName": "C++ expression",
+          "defaultValue": "3",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read an optional retry count",
+          "code": "const auto retries = document.value(\"retries\", 3);",
+          "explanation": "value avoids an out_of_range exception for a missing key; its fallback type influences conversion of the result."
+        }
+      ]
+    }
+  ]
+}

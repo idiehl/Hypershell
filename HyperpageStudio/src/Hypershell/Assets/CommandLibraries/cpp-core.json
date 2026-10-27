@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "cpp-core",
+  "displayName": "C++ Core",
+  "description": "C++ syntax, declarations, control flow, types, lambdas, structured bindings, and exception constructs that do not belong to a header library.",
+  "language": "C++",
+  "category": "Language core",
+  "kind": "Core",
+  "canonicalName": "ISO C++ Language Core",
+  "ecosystem": "ISO C++",
+  "targetVersion": "C++20",
+  "sourceVersion": "cppreference C++20 language and keyword inventory · 1af2a15b01d2dbf69175b58a775d19b7b2b772e0848e90e5c634113a875c7cee",
+  "sourceUrl": "https://isocpp.org/std/the-standard",
+  "license": "ISO copyright; Hypershell summaries are original",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Runs through the matching installed Hypershell terminal adapter.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "c++",
+    "core",
+    "syntax",
+    "language"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 281,
+  "declaredIndexedCount": 271,
+  "declaredGuidedCount": 10,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/cpp-core.entries.json"
+  ],
+  "declaredGuideCount": 10,
+  "guideFiles": [
+    "guides/cpp-core.guides.json"
+  ],
+  "legacyIds": []
+}

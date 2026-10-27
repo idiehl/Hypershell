@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-word-count">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><label>Draft<textarea rows="6" @bind="draft" @bind:event="oninput"></textarea></label><output>@Words words · @draft.Length characters · @Math.Max(1,(int)Math.Ceiling(Words/200d)) minute read</output>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private string draft="Begin with a thought worth sharing."; private int Words=>draft.Split((char[]?)null,StringSplitOptions.RemoveEmptyEntries).Length;
+}

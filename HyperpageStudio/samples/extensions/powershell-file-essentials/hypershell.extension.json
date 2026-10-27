@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../doc/schemas/hypershell-extension.schema.json",
+  "schemaVersion": 1,
+  "id": "community.powershell-file-essentials",
+  "displayName": "PowerShell File Essentials",
+  "publisher": "Hypershell Community Sample",
+  "version": "1.0.0",
+  "description": "A static Hyperlib teaching pack for common PowerShell file and folder operations.",
+  "runtime": "ContentOnly",
+  "requestedCapabilities": [
+    "LibraryContent"
+  ],
+  "contributions": {
+    "libraries": [
+      {
+        "id": "filesystemEssentials",
+        "displayName": "PowerShell File Essentials",
+        "contentPath": "content",
+        "languageIds": ["powershell"],
+        "contentOrigin": "HumanAuthored",
+        "reviewState": "Reviewed",
+        "provenance": "Authored from the documented Microsoft.PowerShell.Management command surface and reviewed as a Hypershell schema-v1 sample.",
+        "reviewedBy": "Hypershell sample maintainers",
+        "sourceUrl": "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/"
+      }
+    ]
+  }
+}

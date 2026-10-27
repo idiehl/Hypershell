@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "numpy-popular",
+  "guides": [
+    {
+      "entryId": "numpy-popular.array-statistics",
+      "definition": "Creates a numeric array and calculates its mean and standard deviation. Requires NumPy in the selected Python environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "Numeric sequence used to create the array.",
+          "typeName": "Python sequence",
+          "defaultValue": "[10, 12, 9, 11]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Summarize measurements",
+          "code": "import numpy as np\n\nvalues = np.array([10, 12, 9, 11], dtype=float)\nmean = values.mean()\nstandard_deviation = values.std()",
+          "explanation": "NumPy performs vectorized numeric reductions; choose ddof=1 for the conventional sample standard deviation."
+        }
+      ]
+    },
+    {
+      "entryId": "numpy-popular.boolean-filter",
+      "definition": "Builds a boolean mask and selects matching NumPy array values. Requires NumPy in the selected Python environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "Sequence used to create the array.",
+          "typeName": "Python sequence",
+          "defaultValue": "[4, 10, 12, 3]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "comparison",
+          "displayName": "Comparison",
+          "placeholder": "comparison",
+          "description": "Vectorized comparison operator.",
+          "typeName": "Python operator",
+          "defaultValue": ">=",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "threshold",
+          "displayName": "Threshold",
+          "placeholder": "threshold",
+          "description": "Value compared with every array element.",
+          "typeName": "Python expression",
+          "defaultValue": "10",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Select values at least ten",
+          "code": "import numpy as np\n\nvalues = np.array([4, 10, 12, 3])\nselected = values[values >= 10]",
+          "explanation": "The comparison produces one boolean per element; indexing with that mask returns only matching values."
+        }
+      ]
+    },
+    {
+      "entryId": "numpy-popular.solve-linear-system",
+      "definition": "Uses NumPy linear algebra to solve Ax = b. Requires NumPy in the selected Python environment; Hypershell does not install it.",
+      "parameters": [
+        {
+          "name": "matrix",
+          "displayName": "Coefficient matrix",
+          "placeholder": "matrix",
+          "description": "Square nested sequence representing A.",
+          "typeName": "Python sequence",
+          "defaultValue": "[[3, 1], [1, 2]]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "vector",
+          "displayName": "Result vector",
+          "placeholder": "vector",
+          "description": "Sequence representing b.",
+          "typeName": "Python sequence",
+          "defaultValue": "[9, 8]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Solve two equations",
+          "code": "import numpy as np\n\nmatrix = np.array([[3, 1], [1, 2]], dtype=float)\nvector = np.array([9, 8], dtype=float)\nsolution = np.linalg.solve(matrix, vector)",
+          "explanation": "solve requires a square, non-singular coefficient matrix and returns the vector satisfying the system within floating-point precision."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1016 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "id": "csharp-networking",
+  "displayName": ".NET networking and HTTP",
+  "description": "Dependency-free .NET 8 APIs for URIs, encoding, DNS, IP addresses, HTTP messages and content, TCP streams, and cookies.",
+  "language": "C#",
+  "category": "Networking",
+  "kind": "Extension",
+  "parentLibraryId": "csharp-dotnet-8",
+  "frameworkName": ".NET",
+  "frameworkVersion": "8",
+  "targetFramework": "net8.0",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Compatible with the built-in .NET 10 C# runner; authored against .NET 8.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "csharp",
+    "dotnet",
+    "net8",
+    "network",
+    "HTTP",
+    "TCP",
+    "DNS",
+    "URI"
+  ],
+  "executionTarget": "CSharp",
+  "actionDescriptions": {
+    "Add": "Adds a value, item, header, or contribution to an existing object.",
+    "Build": "Constructs a value or operation from smaller pieces.",
+    "Create": "Constructs a new object, resource, or language structure.",
+    "Decode": "Converts an encoded representation back into its original form.",
+    "Encode": "Converts data into a representation suitable for storage or transport.",
+    "Get": "Retrieves information without intentionally changing the source.",
+    "Parse": "Interprets text or bytes as a structured value.",
+    "Read": "Reads text, bytes, messages, or values from a source.",
+    "Resolve": "Translates a name or identifier into a concrete runtime or network value.",
+    "Send": "Transmits a request, message, or bytes to another component.",
+    "Write": "Writes text, bytes, messages, or values to a destination."
+  },
+  "objectDescriptions": {
+    "Host name": "A host name is a DNS label or fully qualified name resolved to one or more network addresses.",
+    "HTML text": "HTML text is character data intended for a markup document; safe encoding depends on its exact HTML context.",
+    "HTTP content": "HttpContent represents an HTTP request or response body plus its content headers.",
+    "HTTP cookie": "An HTTP cookie is a small name-value record scoped by host, path, security, expiry, and related request rules.",
+    "HTTP form content": "Form URL-encoded content represents key-value fields using the application/x-www-form-urlencoded media type.",
+    "HTTP header": "An HTTP header is a named metadata field associated with a request, response, or content body.",
+    "HTTP JSON content": "HTTP JSON content is an HTTP body encoded as JSON and described by content headers.",
+    "HTTP JSON request": "An HTTP JSON request combines a method and URI with a JSON-serialized request body.",
+    "HTTP request": "An HttpRequestMessage describes one outbound HTTP operation, including its method, URI, headers, content, and version policy.",
+    "HTTP stream": "An HTTP stream exposes response-body bytes incrementally rather than buffering the entire body.",
+    "IP address": "An IPAddress represents an IPv4 or IPv6 network address without DNS naming or transport-port information.",
+    "TCP connection": "A TCP connection is a reliable ordered byte stream between a local and remote network endpoint.",
+    "TCP stream": "A NetworkStream reads and writes bytes through a connected stream-oriented socket.",
+    "URI": "A URI is a structured identifier containing components such as scheme, authority, path, query, and fragment.",
+    "URL component": "A URL component is one structural portion of a URL whose reserved characters require context-appropriate encoding."
+  },
+  "commands": [
+    {
+      "name": "Uri.TryCreate",
+      "displayName": "Uri.TryCreate",
+      "description": "Try to parse and validate a URI.",
+      "definition": "Attempts to create a Uri with the requested relative or absolute form and returns false instead of throwing when the text is not valid for that form.",
+      "moduleName": "System.Uri",
+      "action": "Parse",
+      "object": "URI",
+      "namespaceName": "System",
+      "typeName": "Uri",
+      "memberName": "TryCreate",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var valid = Uri.TryCreate({text}, {uriKind}, out var uri);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.uri.trycreate",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The candidate URI text.",
+          "typeName": "string?",
+          "isRequired": true
+        },
+        {
+          "name": "uriKind",
+          "displayName": "uriKind",
+          "placeholder": "uriKind",
+          "description": "UriKind.Absolute, Relative, or RelativeOrAbsolute.",
+          "typeName": "UriKind",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Require an HTTPS address",
+          "code": "var input = \"https://example.com/api\";\nvar valid = Uri.TryCreate(input, UriKind.Absolute, out var uri)\n    && uri.Scheme == Uri.UriSchemeHttps;\nConsole.WriteLine(valid);",
+          "explanation": "Parsing and the explicit scheme check together reject relative and non-HTTPS values."
+        }
+      ],
+      "keywords": [
+        "URI",
+        "URL",
+        "parse",
+        "address"
+      ]
+    },
+    {
+      "name": "UriBuilder.Create",
+      "displayName": "UriBuilder.Create",
+      "description": "Build or modify a URI by components.",
+      "definition": "UriBuilder exposes scheme, host, port, path, query, and fragment as mutable components and produces a correctly assembled Uri.",
+      "moduleName": "System.UriBuilder",
+      "action": "Build",
+      "object": "URI",
+      "namespaceName": "System",
+      "typeName": "UriBuilder",
+      "memberName": "Create",
+      "memberKind": "Constructor",
+      "overloadSignature": "",
+      "template": "var builder = new UriBuilder({baseUri})\n{\n    Path = {path},\n    Query = {query}\n};\nvar uri = builder.Uri;",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.uribuilder",
+      "parameters": [
+        {
+          "name": "baseUri",
+          "displayName": "baseUri",
+          "placeholder": "baseUri",
+          "description": "An absolute base URI.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "path",
+          "displayName": "path",
+          "placeholder": "path",
+          "description": "The path component.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "query",
+          "displayName": "query",
+          "placeholder": "query",
+          "description": "The query text without a leading question mark.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Compose an API endpoint",
+          "code": "var builder = new UriBuilder(\"https://example.com\")\n{\n    Path = \"api/projects\",\n    Query = \"status=active&page=2\"\n};\nConsole.WriteLine(builder.Uri);",
+          "explanation": "UriBuilder adds separators between the scheme, host, path, and query components."
+        }
+      ],
+      "keywords": [
+        "URI",
+        "URL",
+        "builder",
+        "query",
+        "endpoint"
+      ]
+    },
+    {
+      "name": "WebUtility.UrlEncode",
+      "displayName": "WebUtility.UrlEncode",
+      "description": "Percent-encode text for use in a URL component.",
+      "definition": "Converts characters that are unsafe in a URL component into percent-encoded UTF-8 bytes. It does not by itself assemble or validate a complete URI.",
+      "moduleName": "System.Net.WebUtility",
+      "action": "Encode",
+      "object": "URL component",
+      "namespaceName": "System.Net",
+      "typeName": "WebUtility",
+      "memberName": "UrlEncode",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var encoded = WebUtility.UrlEncode({value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.webutility.urlencode",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The component text to encode.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Encode a query value",
+          "code": "var value = WebUtility.UrlEncode(\"C# streams & files\");\nvar uri = new Uri($\"https://example.com/search?q={value}\");\nConsole.WriteLine(uri);",
+          "explanation": "Spaces, the hash sign, and ampersand are encoded so they remain part of the q value."
+        }
+      ],
+      "keywords": [
+        "URL",
+        "percent encoding",
+        "query",
+        "escape"
+      ]
+    },
+    {
+      "name": "WebUtility.UrlDecode",
+      "displayName": "WebUtility.UrlDecode",
+      "description": "Decode percent-encoded URL component text.",
+      "definition": "Replaces percent-encoded byte sequences with their decoded characters and converts plus signs according to form-style URL encoding rules.",
+      "moduleName": "System.Net.WebUtility",
+      "action": "Decode",
+      "object": "URL component",
+      "namespaceName": "System.Net",
+      "typeName": "WebUtility",
+      "memberName": "UrlDecode",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var decoded = WebUtility.UrlDecode({value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.webutility.urldecode",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The encoded component text.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Decode a query value",
+          "code": "var decoded = WebUtility.UrlDecode(\"C%23+streams+%26+files\");\nConsole.WriteLine(decoded);",
+          "explanation": "The encoded sequence becomes readable C# streams & files text."
+        }
+      ],
+      "keywords": [
+        "URL",
+        "percent encoding",
+        "decode",
+        "unescape"
+      ]
+    },
+    {
+      "name": "WebUtility.HtmlEncode",
+      "displayName": "WebUtility.HtmlEncode",
+      "description": "Encode text for safe placement in HTML text content.",
+      "definition": "Replaces characters with special HTML meaning with entity references. Context-specific encoding is still required for attributes, scripts, styles, and URLs.",
+      "moduleName": "System.Net.WebUtility",
+      "action": "Encode",
+      "object": "HTML text",
+      "namespaceName": "System.Net",
+      "typeName": "WebUtility",
+      "memberName": "HtmlEncode",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var encoded = WebUtility.HtmlEncode({value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.webutility.htmlencode",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "Untrusted or literal text.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Encode a display label",
+          "code": "var encoded = WebUtility.HtmlEncode(\"<admin> & guests\");\nConsole.WriteLine($\"<p>{encoded}</p>\");",
+          "explanation": "Angle brackets and the ampersand are represented as text rather than being interpreted as markup."
+        }
+      ],
+      "keywords": [
+        "HTML",
+        "encode",
+        "escape",
+        "XSS"
+      ]
+    },
+    {
+      "name": "WebUtility.HtmlDecode",
+      "displayName": "WebUtility.HtmlDecode",
+      "description": "Decode HTML entity references into text.",
+      "definition": "Converts recognized named and numeric HTML entities back to their character values. Decoding does not sanitize untrusted markup.",
+      "moduleName": "System.Net.WebUtility",
+      "action": "Decode",
+      "object": "HTML text",
+      "namespaceName": "System.Net",
+      "typeName": "WebUtility",
+      "memberName": "HtmlDecode",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var decoded = WebUtility.HtmlDecode({value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.webutility.htmldecode",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "HTML-encoded text.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Restore encoded display text",
+          "code": "var decoded = WebUtility.HtmlDecode(\n    \"&lt;admin&gt; &amp; guests\");\nConsole.WriteLine(decoded);",
+          "explanation": "Entity references become literal characters in the returned .NET string."
+        }
+      ],
+      "keywords": [
+        "HTML",
+        "decode",
+        "entities",
+        "unescape"
+      ]
+    },
+    {
+      "name": "Dns.GetHostAddressesAsync",
+      "displayName": "Dns.GetHostAddressesAsync",
+      "description": "Resolve a DNS host name to IP addresses asynchronously.",
+      "definition": "Queries configured name-resolution services and returns the IPv4 and/or IPv6 addresses associated with a host name.",
+      "moduleName": "System.Net.Dns",
+      "action": "Resolve",
+      "object": "Host name",
+      "namespaceName": "System.Net",
+      "typeName": "Dns",
+      "memberName": "GetHostAddressesAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var addresses = await Dns.GetHostAddressesAsync({hostName});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.dns.gethostaddressesasync",
+      "parameters": [
+        {
+          "name": "hostName",
+          "displayName": "hostName",
+          "placeholder": "hostName",
+          "description": "The DNS host name to resolve.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Resolve a service host",
+          "code": "var addresses = await Dns.GetHostAddressesAsync(\"example.com\");\nforeach (var address in addresses)\n{\n    Console.WriteLine($\"{address.AddressFamily}: {address}\");\n}",
+          "explanation": "The result may contain several IPv4 and IPv6 addresses and can change across networks or calls."
+        }
+      ],
+      "keywords": [
+        "DNS",
+        "host",
+        "IP address",
+        "resolve"
+      ]
+    },
+    {
+      "name": "Dns.GetHostEntryAsync",
+      "displayName": "Dns.GetHostEntryAsync",
+      "description": "Resolve a host and retrieve canonical name information.",
+      "definition": "Returns an IPHostEntry containing the canonical host name, aliases, and resolved IP addresses available from the configured resolver.",
+      "moduleName": "System.Net.Dns",
+      "action": "Resolve",
+      "object": "Host name",
+      "namespaceName": "System.Net",
+      "typeName": "Dns",
+      "memberName": "GetHostEntryAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var entry = await Dns.GetHostEntryAsync({hostName});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.dns.gethostentryasync",
+      "parameters": [
+        {
+          "name": "hostName",
+          "displayName": "hostName",
+          "placeholder": "hostName",
+          "description": "The DNS name or textual IP address.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect a host entry",
+          "code": "var entry = await Dns.GetHostEntryAsync(\"localhost\");\nConsole.WriteLine(entry.HostName);\nConsole.WriteLine(string.Join(\", \", entry.AddressList.Select(address => address.ToString())));",
+          "explanation": "The resolver returns canonical naming and every address it associates with localhost."
+        }
+      ],
+      "keywords": [
+        "DNS",
+        "host entry",
+        "canonical name",
+        "resolve"
+      ]
+    },
+    {
+      "name": "IPAddress.TryParse",
+      "displayName": "IPAddress.TryParse",
+      "description": "Try to parse IPv4 or IPv6 address text.",
+      "definition": "Attempts to interpret text as an IPAddress and returns false instead of throwing when the representation is invalid.",
+      "moduleName": "System.Net.IPAddress",
+      "action": "Parse",
+      "object": "IP address",
+      "namespaceName": "System.Net",
+      "typeName": "IPAddress",
+      "memberName": "TryParse",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var valid = IPAddress.TryParse({text}, out var address);",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.ipaddress.tryparse",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "text",
+          "placeholder": "text",
+          "description": "The candidate IPv4 or IPv6 text.",
+          "typeName": "string?",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate a literal address",
+          "code": "if (IPAddress.TryParse(\"2001:db8::1\", out var address))\n{\n    Console.WriteLine($\"{address.AddressFamily}: {address}\");\n}",
+          "explanation": "The parsed value reports its address family without requiring DNS."
+        }
+      ],
+      "keywords": [
+        "IP",
+        "IPv4",
+        "IPv6",
+        "parse"
+      ]
+    },
+    {
+      "name": "HttpClient.GetStreamAsync",
+      "displayName": "HttpClient.GetStreamAsync",
+      "description": "Open an HTTP response body as a readable stream.",
+      "definition": "Sends a GET request, ensures a successful status, and returns the response body stream without first buffering the entire content.",
+      "moduleName": "System.Net.Http",
+      "action": "Read",
+      "object": "HTTP stream",
+      "namespaceName": "System.Net.Http",
+      "typeName": "HttpClient",
+      "memberName": "GetStreamAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await using var stream = await {client}.GetStreamAsync({requestUri});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.httpclient.getstreamasync",
+      "parameters": [
+        {
+          "name": "client",
+          "displayName": "client",
+          "placeholder": "client",
+          "description": "A reusable HttpClient.",
+          "typeName": "HttpClient",
+          "isRequired": true
+        },
+        {
+          "name": "requestUri",
+          "displayName": "requestUri",
+          "placeholder": "requestUri",
+          "description": "The absolute or base-relative request URI.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Stream an HTTP body into a file",
+          "code": "using var client = new HttpClient();\nawait using var responseStream =\n    await client.GetStreamAsync(\"https://example.com/\");\nawait using var file = File.Create(\"example.html\");\nawait responseStream.CopyToAsync(file);",
+          "explanation": "The body is copied incrementally instead of being materialized as one string or byte array."
+        }
+      ],
+      "keywords": [
+        "HTTP",
+        "GET",
+        "stream",
+        "download"
+      ]
+    },
+    {
+      "name": "HttpClient.PutAsJsonAsync",
+      "displayName": "HttpClient.PutAsJsonAsync",
+      "description": "Send a JSON-encoded HTTP PUT request.",
+      "definition": "Serializes a value as JSON, sends it in an HTTP PUT request, and returns the response. The caller remains responsible for status handling and HttpClient lifetime.",
+      "moduleName": "System.Net.Http.Json",
+      "action": "Send",
+      "object": "HTTP JSON request",
+      "namespaceName": "System.Net.Http.Json",
+      "typeName": "HttpClient",
+      "memberName": "PutAsJsonAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "using var response = await {client}.PutAsJsonAsync({requestUri}, {value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.json.httpclientjsonextensions.putasjsonasync",
+      "parameters": [
+        {
+          "name": "client",
+          "displayName": "client",
+          "placeholder": "client",
+          "description": "A reusable HttpClient.",
+          "typeName": "HttpClient",
+          "isRequired": true
+        },
+        {
+          "name": "requestUri",
+          "displayName": "requestUri",
+          "placeholder": "requestUri",
+          "description": "The target URI.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The value to serialize as JSON.",
+          "typeName": "object",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Replace an API resource",
+          "code": "using var client = new HttpClient();\nvar project = new { name = \"Hypershell\", status = \"active\" };\nusing var response = await client.PutAsJsonAsync(\n    \"https://api.example.com/projects/42\",\n    project);\nConsole.WriteLine(response.StatusCode);",
+          "explanation": "The anonymous object becomes a JSON request body; production code should validate the returned status."
+        }
+      ],
+      "keywords": [
+        "HTTP",
+        "PUT",
+        "JSON",
+        "REST"
+      ]
+    },
+    {
+      "name": "HttpClient.DeleteAsync",
+      "displayName": "HttpClient.DeleteAsync",
+      "description": "Send an HTTP DELETE request.",
+      "definition": "Sends a DELETE request to the selected URI and returns the complete response metadata and content handle.",
+      "moduleName": "System.Net.Http",
+      "action": "Send",
+      "object": "HTTP request",
+      "namespaceName": "System.Net.Http",
+      "typeName": "HttpClient",
+      "memberName": "DeleteAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "using var response = await {client}.DeleteAsync({requestUri});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.httpclient.deleteasync",
+      "parameters": [
+        {
+          "name": "client",
+          "displayName": "client",
+          "placeholder": "client",
+          "description": "A reusable HttpClient.",
+          "typeName": "HttpClient",
+          "isRequired": true
+        },
+        {
+          "name": "requestUri",
+          "displayName": "requestUri",
+          "placeholder": "requestUri",
+          "description": "The target URI.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Delete an API resource",
+          "code": "using var client = new HttpClient();\nusing var response = await client.DeleteAsync(\n    \"https://api.example.com/projects/42\");\nresponse.EnsureSuccessStatusCode();",
+          "explanation": "EnsureSuccessStatusCode turns a non-success response into an exception after the request completes."
+        }
+      ],
+      "keywords": [
+        "HTTP",
+        "DELETE",
+        "REST"
+      ]
+    },
+    {
+      "name": "HttpContent.ReadAsStringAsync",
+      "displayName": "HttpContent.ReadAsStringAsync",
+      "description": "Read an HTTP content body as text.",
+      "definition": "Buffers the content bytes, selects an encoding from the content headers when available, and returns the decoded string.",
+      "moduleName": "System.Net.Http",
+      "action": "Read",
+      "object": "HTTP content",
+      "namespaceName": "System.Net.Http",
+      "typeName": "HttpContent",
+      "memberName": "ReadAsStringAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var text = await {content}.ReadAsStringAsync();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.httpcontent.readasstringasync",
+      "parameters": [
+        {
+          "name": "content",
+          "displayName": "content",
+          "placeholder": "content",
+          "description": "An HttpContent response or request body.",
+          "typeName": "HttpContent",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect an unsuccessful response body",
+          "code": "using var response = new HttpResponseMessage(\n    HttpStatusCode.BadRequest)\n{\n    Content = new StringContent(\"Project name is required.\")\n};\nvar details = await response.Content.ReadAsStringAsync();\nConsole.WriteLine($\"{response.StatusCode}: {details}\");",
+          "explanation": "The content is decoded independently of whether the HTTP status represents success."
+        }
+      ],
+      "keywords": [
+        "HTTP",
+        "content",
+        "body",
+        "text"
+      ]
+    },
+    {
+      "name": "HttpContent.ReadFromJsonAsync<T>",
+      "displayName": "HttpContent.ReadFromJsonAsync<T>",
+      "description": "Deserialize an HTTP content body from JSON.",
+      "definition": "Reads content as a JSON document and deserializes it into the requested .NET type using web-oriented serializer defaults unless options are supplied.",
+      "moduleName": "System.Net.Http.Json",
+      "action": "Read",
+      "object": "HTTP JSON content",
+      "namespaceName": "System.Net.Http.Json",
+      "typeName": "HttpContent",
+      "memberName": "ReadFromJsonAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var value = await {content}.ReadFromJsonAsync<{type}>();",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.json.httpcontentjsonextensions.readfromjsonasync",
+      "parameters": [
+        {
+          "name": "content",
+          "displayName": "content",
+          "placeholder": "content",
+          "description": "The JSON HttpContent body.",
+          "typeName": "HttpContent",
+          "isRequired": true
+        },
+        {
+          "name": "type",
+          "displayName": "type",
+          "placeholder": "type",
+          "description": "The target .NET type.",
+          "typeName": "type name",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a JSON dictionary",
+          "code": "using var content = JsonContent.Create(\n    new Dictionary<string, string>\n    {\n        [\"name\"] = \"Hypershell\",\n        [\"status\"] = \"active\"\n    });\nvar value = await content.ReadFromJsonAsync<Dictionary<string, string>>();\nConsole.WriteLine(value?[\"name\"]);",
+          "explanation": "The in-memory JSON content is deserialized into a strongly typed dictionary."
+        }
+      ],
+      "keywords": [
+        "HTTP",
+        "JSON",
+        "deserialize",
+        "content"
+      ]
+    },
+    {
+      "name": "HttpRequestMessage.Create",
+      "displayName": "HttpRequestMessage.Create",
+      "description": "Create a configurable HTTP request message.",
+      "definition": "Combines an HTTP method, URI, headers, options, version policy, and optional content into a message that HttpClient.SendAsync can transmit.",
+      "moduleName": "System.Net.Http",
+      "action": "Create",
+      "object": "HTTP request",
+      "namespaceName": "System.Net.Http",
+      "typeName": "HttpRequestMessage",
+      "memberName": "Create",
+      "memberKind": "Constructor",
+      "overloadSignature": "",
+      "template": "using var request = new HttpRequestMessage({method}, {requestUri});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.httprequestmessage",
+      "parameters": [
+        {
+          "name": "method",
+          "displayName": "method",
+          "placeholder": "method",
+          "description": "An HttpMethod such as HttpMethod.Get.",
+          "typeName": "HttpMethod",
+          "isRequired": true
+        },
+        {
+          "name": "requestUri",
+          "displayName": "requestUri",
+          "placeholder": "requestUri",
+          "description": "The target URI.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a conditional GET request",
+          "code": "using var request = new HttpRequestMessage(\n    HttpMethod.Get,\n    \"https://example.com/catalog.json\");\nrequest.Headers.IfNoneMatch.ParseAdd(\"\\\"catalog-v2\\\"\");\nusing var client = new HttpClient();\nusing var response = await client.SendAsync(request);\nConsole.WriteLine(response.StatusCode);",
+          "explanation": "A request object allows conditional headers to be configured before sending."
+        }
+      ],
+      "keywords": [
+        "HTTP",
+        "request",
+        "headers",
+        "method"
+      ]
+    },
+    {
+      "name": "HttpHeaders.TryAddWithoutValidation",
+      "displayName": "HttpHeaders.TryAddWithoutValidation",
+      "description": "Try to add a raw HTTP header value.",
+      "definition": "Adds a header without parsing the value against the known header grammar. It should be reserved for compatibility cases; untrusted values still require policy and injection safeguards.",
+      "moduleName": "System.Net.Http.Headers",
+      "action": "Add",
+      "object": "HTTP header",
+      "namespaceName": "System.Net.Http.Headers",
+      "typeName": "HttpHeaders",
+      "memberName": "TryAddWithoutValidation",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var added = {headers}.TryAddWithoutValidation({name}, {value});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.headers.httpheaders.tryaddwithoutvalidation",
+      "parameters": [
+        {
+          "name": "headers",
+          "displayName": "headers",
+          "placeholder": "headers",
+          "description": "An HttpHeaders collection.",
+          "typeName": "HttpHeaders",
+          "isRequired": true
+        },
+        {
+          "name": "name",
+          "displayName": "name",
+          "placeholder": "name",
+          "description": "The header field name.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "value",
+          "displayName": "value",
+          "placeholder": "value",
+          "description": "The raw header field value.",
+          "typeName": "string",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Add a vendor compatibility header",
+          "code": "using var request = new HttpRequestMessage(\n    HttpMethod.Get,\n    \"https://example.com\");\nvar added = request.Headers.TryAddWithoutValidation(\n    \"X-Vendor-Mode\",\n    \"compat-v1\");\nConsole.WriteLine(added);",
+          "explanation": "The custom header is accepted without a registered parser; standard strongly typed header properties remain preferable."
+        }
+      ],
+      "keywords": [
+        "HTTP",
+        "headers",
+        "raw",
+        "compatibility"
+      ]
+    },
+    {
+      "name": "FormUrlEncodedContent.Create",
+      "displayName": "FormUrlEncodedContent.Create",
+      "description": "Create an application/x-www-form-urlencoded HTTP body.",
+      "definition": "Encodes key-value pairs using HTML form URL-encoding rules and exposes them as HttpContent with the appropriate media type.",
+      "moduleName": "System.Net.Http",
+      "action": "Create",
+      "object": "HTTP form content",
+      "namespaceName": "System.Net.Http",
+      "typeName": "FormUrlEncodedContent",
+      "memberName": "Create",
+      "memberKind": "Constructor",
+      "overloadSignature": "",
+      "template": "using var content = new FormUrlEncodedContent({values});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.http.formurlencodedcontent",
+      "parameters": [
+        {
+          "name": "values",
+          "displayName": "values",
+          "placeholder": "values",
+          "description": "The form key-value pairs.",
+          "typeName": "IEnumerable<KeyValuePair<string,string>>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build a form request body",
+          "code": "using var content = new FormUrlEncodedContent(\n    new Dictionary<string, string>\n    {\n        [\"grant_type\"] = \"client_credentials\",\n        [\"scope\"] = \"catalog.read\"\n    });\nConsole.WriteLine(await content.ReadAsStringAsync());",
+          "explanation": "Keys and values are percent-encoded and joined into a standard form body."
+        }
+      ],
+      "keywords": [
+        "HTTP",
+        "form",
+        "urlencoded",
+        "content"
+      ]
+    },
+    {
+      "name": "TcpClient.ConnectAsync",
+      "displayName": "TcpClient.ConnectAsync",
+      "description": "Asynchronously connect a TCP client to a remote endpoint.",
+      "definition": "Resolves the host when necessary and attempts a TCP connection to the requested port, honoring an optional cancellation token.",
+      "moduleName": "System.Net.Sockets.TcpClient",
+      "action": "Send",
+      "object": "TCP connection",
+      "namespaceName": "System.Net.Sockets",
+      "typeName": "TcpClient",
+      "memberName": "ConnectAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await {client}.ConnectAsync({host}, {port});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.sockets.tcpclient.connectasync",
+      "parameters": [
+        {
+          "name": "client",
+          "displayName": "client",
+          "placeholder": "client",
+          "description": "A TcpClient instance.",
+          "typeName": "TcpClient",
+          "isRequired": true
+        },
+        {
+          "name": "host",
+          "displayName": "host",
+          "placeholder": "host",
+          "description": "A DNS name or textual IP address.",
+          "typeName": "string",
+          "isRequired": true
+        },
+        {
+          "name": "port",
+          "displayName": "port",
+          "placeholder": "port",
+          "description": "The remote TCP port.",
+          "typeName": "int",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Connect to a local ephemeral listener",
+          "code": "var listener = new TcpListener(IPAddress.Loopback, 0);\nlistener.Start();\nvar port = ((IPEndPoint)listener.LocalEndpoint).Port;\nusing var client = new TcpClient();\nvar acceptedTask = listener.AcceptTcpClientAsync();\nawait client.ConnectAsync(IPAddress.Loopback, port);\nusing var accepted = await acceptedTask;\nConsole.WriteLine(client.Connected);\nlistener.Stop();",
+          "explanation": "An ephemeral loopback listener verifies the client connection without contacting an external service."
+        }
+      ],
+      "keywords": [
+        "TCP",
+        "socket",
+        "connect",
+        "client"
+      ]
+    },
+    {
+      "name": "NetworkStream.WriteAsync",
+      "displayName": "NetworkStream.WriteAsync",
+      "description": "Asynchronously write bytes to a connected network stream.",
+      "definition": "Writes bytes to the underlying connected socket and completes after the supplied buffer has been accepted for transmission or an error occurs.",
+      "moduleName": "System.Net.Sockets.NetworkStream",
+      "action": "Write",
+      "object": "TCP stream",
+      "namespaceName": "System.Net.Sockets",
+      "typeName": "NetworkStream",
+      "memberName": "WriteAsync",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "await {stream}.WriteAsync({buffer});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.sockets.networkstream.writeasync",
+      "parameters": [
+        {
+          "name": "stream",
+          "displayName": "stream",
+          "placeholder": "stream",
+          "description": "A writable connected NetworkStream.",
+          "typeName": "NetworkStream",
+          "isRequired": true
+        },
+        {
+          "name": "buffer",
+          "displayName": "buffer",
+          "placeholder": "buffer",
+          "description": "The bytes to transmit.",
+          "typeName": "ReadOnlyMemory<byte>",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Exchange a loopback message",
+          "code": "var listener = new TcpListener(IPAddress.Loopback, 0);\nlistener.Start();\nvar endpoint = (IPEndPoint)listener.LocalEndpoint;\nusing var client = new TcpClient();\nvar acceptTask = listener.AcceptTcpClientAsync();\nawait client.ConnectAsync(endpoint.Address, endpoint.Port);\nusing var server = await acceptTask;\nvar message = Encoding.UTF8.GetBytes(\"ping\");\nawait client.GetStream().WriteAsync(message);\nvar received = new byte[message.Length];\nawait server.GetStream().ReadExactlyAsync(received);\nConsole.WriteLine(Encoding.UTF8.GetString(received));\nlistener.Stop();",
+          "explanation": "The local client writes four bytes and the accepted server connection reads exactly those bytes."
+        }
+      ],
+      "keywords": [
+        "TCP",
+        "NetworkStream",
+        "write",
+        "socket"
+      ]
+    },
+    {
+      "name": "CookieContainer.Add",
+      "displayName": "CookieContainer.Add",
+      "description": "Store a cookie for a URI.",
+      "definition": "Adds a Cookie under a URI-derived domain and path scope. CookieContainer enforces capacity and cookie-format rules.",
+      "moduleName": "System.Net.CookieContainer",
+      "action": "Add",
+      "object": "HTTP cookie",
+      "namespaceName": "System.Net",
+      "typeName": "CookieContainer",
+      "memberName": "Add",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "{container}.Add({uri}, {cookie});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.cookiecontainer.add",
+      "parameters": [
+        {
+          "name": "container",
+          "displayName": "container",
+          "placeholder": "container",
+          "description": "A CookieContainer instance.",
+          "typeName": "CookieContainer",
+          "isRequired": true
+        },
+        {
+          "name": "uri",
+          "displayName": "uri",
+          "placeholder": "uri",
+          "description": "The URI that supplies cookie scope.",
+          "typeName": "Uri",
+          "isRequired": true
+        },
+        {
+          "name": "cookie",
+          "displayName": "cookie",
+          "placeholder": "cookie",
+          "description": "The Cookie to store.",
+          "typeName": "Cookie",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Store a scoped preference cookie",
+          "code": "var container = new CookieContainer();\nvar uri = new Uri(\"https://example.com/app/\");\ncontainer.Add(uri, new Cookie(\"theme\", \"dark\"));\nConsole.WriteLine(container.GetCookieHeader(uri));",
+          "explanation": "The cookie is scoped to the URI's host and default path rules."
+        }
+      ],
+      "keywords": [
+        "cookie",
+        "HTTP",
+        "session",
+        "state"
+      ]
+    },
+    {
+      "name": "CookieContainer.GetCookies",
+      "displayName": "CookieContainer.GetCookies",
+      "description": "Get cookies applicable to a URI.",
+      "definition": "Returns the non-expired cookies whose domain, path, port, and secure rules allow them to be sent to the selected URI.",
+      "moduleName": "System.Net.CookieContainer",
+      "action": "Get",
+      "object": "HTTP cookie",
+      "namespaceName": "System.Net",
+      "typeName": "CookieContainer",
+      "memberName": "GetCookies",
+      "memberKind": "Method",
+      "overloadSignature": "",
+      "template": "var cookies = {container}.GetCookies({uri});",
+      "documentationUrl": "https://learn.microsoft.com/dotnet/api/system.net.cookiecontainer.getcookies",
+      "parameters": [
+        {
+          "name": "container",
+          "displayName": "container",
+          "placeholder": "container",
+          "description": "A CookieContainer instance.",
+          "typeName": "CookieContainer",
+          "isRequired": true
+        },
+        {
+          "name": "uri",
+          "displayName": "uri",
+          "placeholder": "uri",
+          "description": "The request URI used for cookie matching.",
+          "typeName": "Uri",
+          "isRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Inspect cookies for one path",
+          "code": "var container = new CookieContainer();\nvar uri = new Uri(\"https://example.com/app/\");\ncontainer.Add(uri, new Cookie(\"theme\", \"dark\"));\nforeach (Cookie cookie in container.GetCookies(uri))\n{\n    Console.WriteLine($\"{cookie.Name}={cookie.Value}\");\n}",
+          "explanation": "Only cookies applicable to the requested host, path, and scheme are returned."
+        }
+      ],
+      "keywords": [
+        "cookie",
+        "HTTP",
+        "scope",
+        "state"
+      ]
+    }
+  ]
+}

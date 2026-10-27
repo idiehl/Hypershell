@@ -1,0 +1,2648 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "typescript-core",
+  "guides": [
+    {
+      "entryId": "typescript.typed-binding",
+      "definition": "A variable annotation follows the binding name and is checked statically. The annotation is erased before JavaScript executes.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Binding name",
+          "placeholder": "name",
+          "description": "The identifier receiving the value.",
+          "typeName": "Identifier",
+          "defaultValue": "answer",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "type",
+          "displayName": "Type",
+          "placeholder": "type",
+          "description": "The TypeScript type annotation.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "A runtime expression assignable to the selected type.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Annotate a number",
+          "code": "const answer: number = 42;\nconsole.log(answer);",
+          "explanation": "TypeScript checks that 42 is assignable to number, then Node.js executes the emitted JavaScript value."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.typed-function",
+      "definition": "Function annotations document and check what callers may pass and what the function promises to return.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Function name",
+          "placeholder": "name",
+          "description": "The function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "double",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "argument",
+          "displayName": "Parameter name",
+          "placeholder": "argument",
+          "description": "The function parameter identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "argumentType",
+          "displayName": "Parameter type",
+          "placeholder": "argumentType",
+          "description": "The type accepted by the function.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "returnType",
+          "displayName": "Return type",
+          "placeholder": "returnType",
+          "description": "The type produced by the function.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Return expression",
+          "placeholder": "expression",
+          "description": "An expression assignable to the return type.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value * 2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample input",
+          "placeholder": "sample",
+          "description": "A value used for the example call.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "21",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Type a numeric function",
+          "code": "function double(value: number): number {\n  return value * 2;\n}\nconsole.log(double(21));",
+          "explanation": "The function accepts and returns numbers, so the call produces 42."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.interface",
+      "definition": "An interface names a required object shape. TypeScript uses structural compatibility, so a value matches when it supplies the required members.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Interface name",
+          "placeholder": "name",
+          "description": "The contract identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "User",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "A required property name.",
+          "typeName": "Identifier",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "propertyType",
+          "displayName": "Property type",
+          "placeholder": "propertyType",
+          "description": "The permitted property type.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value assignable to the property type.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"Ada\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Describe a user",
+          "code": "interface User {\n  name: string;\n}\nconst value: User = { name: \"Ada\" };\nconsole.log(value.name);",
+          "explanation": "The object satisfies User because it contains the required string property."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.type-alias",
+      "definition": "A type alias can name primitives, object shapes, unions, tuples, and other type expressions. It exists only during type analysis.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Alias name",
+          "placeholder": "name",
+          "description": "The reusable type name.",
+          "typeName": "Identifier",
+          "defaultValue": "Identifier",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "type",
+          "displayName": "Type expression",
+          "placeholder": "type",
+          "description": "The type assigned to the alias.",
+          "typeName": "Type expression",
+          "defaultValue": "string | number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value assignable to the alias.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Name an identifier type",
+          "code": "type Identifier = string | number;\nconst value: Identifier = 42;\nconsole.log(value);",
+          "explanation": "Identifier can hold either a string or number, and the sample uses its number member."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.union",
+      "definition": "A union joins member types with the vertical bar. Code may use only behavior common to every member until it narrows the value.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Union name",
+          "placeholder": "name",
+          "description": "The alias for the union.",
+          "typeName": "Identifier",
+          "defaultValue": "Result",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "members",
+          "displayName": "Member types",
+          "placeholder": "members",
+          "description": "Types joined with a vertical bar.",
+          "typeName": "Union type",
+          "defaultValue": "string | number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value matching one union member.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"ready\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Allow text or numbers",
+          "code": "type Result = string | number;\nconst value: Result = \"ready\";\nconsole.log(value);",
+          "explanation": "The string literal is valid because string is one member of Result."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.typeof-narrowing",
+      "definition": "Control-flow analysis narrows a union inside branches whose runtime checks prove which member is present.",
+      "parameters": [
+        {
+          "name": "sample",
+          "displayName": "Sample",
+          "placeholder": "sample",
+          "description": "A string or number expression to narrow.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Narrow a number",
+          "code": "function describe(value: string | number): string {\n  if (typeof value === \"string\") return value.toUpperCase();\n  return value.toFixed(2);\n}\nconsole.log(describe(42));",
+          "explanation": "The false branch knows value is a number and safely calls toFixed."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.generic-function",
+      "definition": "A type parameter acts as a placeholder chosen by each call. Returning the same parameter preserves the caller's exact type.",
+      "parameters": [
+        {
+          "name": "type",
+          "displayName": "Type argument",
+          "placeholder": "type",
+          "description": "The concrete type supplied for T.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value assignable to the type argument.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"typed\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Preserve a string type",
+          "code": "function identity<T>(value: T): T {\n  return value;\n}\nconst result = identity<string>(\"typed\");\nconsole.log(result);",
+          "explanation": "T is string for this call, so the return value remains a string."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.readonly-property",
+      "definition": "A readonly modifier protects a property from reassignment in TypeScript. It does not freeze the JavaScript object at runtime.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Interface name",
+          "placeholder": "name",
+          "description": "The containing object contract.",
+          "typeName": "Identifier",
+          "defaultValue": "Configuration",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "The readonly property identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "mode",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "type",
+          "displayName": "Property type",
+          "placeholder": "type",
+          "description": "The property's static type.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "An initial property value.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"safe\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Protect a configuration mode",
+          "code": "interface Configuration {\n  readonly mode: string;\n}\nconst value: Configuration = { mode: \"safe\" };\nconsole.log(value.mode);",
+          "explanation": "The initial value is valid, while later assignment to mode would be a type error."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.optional-property",
+      "definition": "A question mark makes a property optional. Reading it produces the declared type combined with undefined, so optional chaining or narrowing is appropriate.",
+      "parameters": [
+        {
+          "name": "property",
+          "displayName": "Optional property",
+          "placeholder": "property",
+          "description": "The property that may be absent.",
+          "typeName": "Identifier",
+          "defaultValue": "nickname",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Object contents",
+          "placeholder": "sample",
+          "description": "Properties placed inside the sample object.",
+          "typeName": "Object expression",
+          "defaultValue": "{}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fallback",
+          "displayName": "Fallback",
+          "placeholder": "fallback",
+          "description": "A string expression used when the property is absent.",
+          "typeName": "String expression",
+          "defaultValue": "\"No nickname\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Handle an absent nickname",
+          "code": "interface User {\n  nickname?: string;\n}\nconst user: User = {};\nconsole.log(user.nickname?.toUpperCase() ?? \"No nickname\");",
+          "explanation": "Optional chaining returns undefined for the missing property and nullish coalescing supplies the fallback."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.discriminated-union",
+      "definition": "A discriminated union gives each object variant a common property with a distinct literal value. Checking that property narrows the remaining fields.",
+      "parameters": [
+        {
+          "name": "sample",
+          "displayName": "Variant",
+          "placeholder": "sample",
+          "description": "An object matching one Result variant.",
+          "typeName": "Object expression",
+          "defaultValue": "{ kind: \"success\", value: 42 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Handle a success state",
+          "code": "type Result =\n  | { kind: \"success\"; value: number }\n  | { kind: \"error\"; message: string };\nfunction summarize(result: Result): string {\n  return result.kind === \"success\" ? `Value: ${result.value}` : `Error: ${result.message}`;\n}\nconst result: Result = { kind: \"success\", value: 42 };\nconsole.log(summarize(result));",
+          "explanation": "Checking kind narrows result to the success variant before reading value."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.class-implements",
+      "definition": "An implements clause checks a class against a structural contract. The class still needs explicit property and method annotations where desired.",
+      "parameters": [
+        {
+          "name": "className",
+          "displayName": "Class name",
+          "placeholder": "className",
+          "description": "The implementing class identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "Person",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Name value",
+          "placeholder": "sample",
+          "description": "A string passed to the constructor.",
+          "typeName": "String expression",
+          "defaultValue": "\"Ada\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Implement Named",
+          "code": "interface Named {\n  name: string;\n}\nclass Person implements Named {\n  name: string;\n  constructor(name: string) {\n    this.name = name;\n  }\n  describe(): string {\n    return this.name;\n  }\n}\nconsole.log(new Person(\"Ada\").describe());",
+          "explanation": "Person supplies the required name property and adds a typed describe method."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.satisfies",
+      "definition": "The satisfies operator checks that an expression is assignable to a type while preserving the expression's more specific inferred properties.",
+      "parameters": [
+        {
+          "name": "channel",
+          "displayName": "Channel",
+          "placeholder": "channel",
+          "description": "A string literal accepted by Channel.",
+          "typeName": "String literal",
+          "defaultValue": "\"stable\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "retries",
+          "displayName": "Retries",
+          "placeholder": "retries",
+          "description": "A numeric retry count.",
+          "typeName": "Number expression",
+          "defaultValue": "3",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate configuration",
+          "code": "type Channel = \"stable\" | \"preview\";\nconst config = { channel: \"stable\", retries: 3 } satisfies { channel: Channel; retries: number };\nconsole.log(config.channel);",
+          "explanation": "The object is checked against the contract while config.channel retains its specific literal information."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.keyof",
+      "definition": "keyof produces a union of known property names. Combining it with indexed access lets a generic function return the exact type associated with a selected key.",
+      "parameters": [
+        {
+          "name": "key",
+          "displayName": "Property key",
+          "placeholder": "key",
+          "description": "A string literal key from the sample object.",
+          "typeName": "String literal",
+          "defaultValue": "\"theme\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read the theme",
+          "code": "function getProperty<T, K extends keyof T>(object: T, key: K): T[K] {\n  return object[key];\n}\nconst settings = { theme: \"dark\", fontSize: 16 };\nconsole.log(getProperty(settings, \"theme\"));",
+          "explanation": "The key is constrained to theme or fontSize, and the selected theme value is inferred as string."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.const-assertion",
+      "definition": "A const assertion prevents widening of literal values and gives arrays or object properties readonly inferred types. It does not freeze the runtime value.",
+      "parameters": [
+        {
+          "name": "method",
+          "displayName": "Method",
+          "placeholder": "method",
+          "description": "A string literal HTTP method.",
+          "typeName": "String literal",
+          "defaultValue": "\"GET\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "path",
+          "displayName": "Path",
+          "placeholder": "path",
+          "description": "A string literal route path.",
+          "typeName": "String literal",
+          "defaultValue": "\"/status\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Preserve route literals",
+          "code": "const route = { method: \"GET\", path: \"/status\" } as const;\nconsole.log(route.method, route.path);",
+          "explanation": "The inferred method and path remain their exact literal values rather than widening to string."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.async-promise",
+      "definition": "An async function returns a Promise whose type argument describes the eventual value. await unwraps that value inside another async operation.",
+      "parameters": [
+        {
+          "name": "sample",
+          "displayName": "Value",
+          "placeholder": "sample",
+          "description": "A numeric value resolved by the promise.",
+          "typeName": "Number expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Await a number",
+          "code": "async function resolveValue(value: number): Promise<number> {\n  return value;\n}\n(async (): Promise<void> => {\n  const value: number = await resolveValue(42);\n  console.log(value);\n})()",
+          "explanation": "The promise resolves to number, and await produces a number inside the async function."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.intersection-type",
+      "definition": "An intersection joins types with ampersands. The resulting type contains the compatible requirements of every member and is useful for composing orthogonal capabilities.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Type name",
+          "placeholder": "name",
+          "description": "The name of the combined contract.",
+          "typeName": "Identifier",
+          "defaultValue": "Identified",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "left",
+          "displayName": "Left type",
+          "placeholder": "left",
+          "description": "The first member type.",
+          "typeName": "Type expression",
+          "defaultValue": "{ id: number }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "right",
+          "displayName": "Right type",
+          "placeholder": "right",
+          "description": "The second member type.",
+          "typeName": "Type expression",
+          "defaultValue": "{ name: string }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value satisfying both types.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ id: 42, name: \"Ada\" }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Combine identity and display data",
+          "code": "type Identified = { id: number } & { name: string };\nconst value: Identified = { id: 42, name: \"Ada\" };\nconsole.log(value.name);",
+          "explanation": "The object contains the required members from both sides of the intersection."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.literal-union",
+      "definition": "Literal types preserve exact values in the type system. Joining them in a union creates an enumerable domain that editors can autocomplete and the checker can exhaustively analyze.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Type name",
+          "placeholder": "name",
+          "description": "The literal-union alias.",
+          "typeName": "Identifier",
+          "defaultValue": "Direction",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "members",
+          "displayName": "Members",
+          "placeholder": "members",
+          "description": "Literal types joined with vertical bars.",
+          "typeName": "Type expression",
+          "defaultValue": "\"left\" | \"right\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "One permitted literal value.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"left\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Represent a direction",
+          "code": "type Direction = \"left\" | \"right\";\nconst value: Direction = \"left\";\nconsole.log(value);",
+          "explanation": "Direction accepts only its two declared string literals."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.tuple-type",
+      "definition": "A tuple is an array type with a known sequence of element types. Labels improve readability without changing runtime behavior.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Tuple name",
+          "placeholder": "name",
+          "description": "The tuple alias.",
+          "typeName": "Identifier",
+          "defaultValue": "Coordinate",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstLabel",
+          "displayName": "First label",
+          "placeholder": "firstLabel",
+          "description": "The first position label.",
+          "typeName": "Identifier",
+          "defaultValue": "x",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstType",
+          "displayName": "First type",
+          "placeholder": "firstType",
+          "description": "The first position type.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondLabel",
+          "displayName": "Second label",
+          "placeholder": "secondLabel",
+          "description": "The second position label.",
+          "typeName": "Identifier",
+          "defaultValue": "y",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondType",
+          "displayName": "Second type",
+          "placeholder": "secondType",
+          "description": "The second position type.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstValue",
+          "displayName": "First value",
+          "placeholder": "firstValue",
+          "description": "A value for the first position.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "10",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondValue",
+          "displayName": "Second value",
+          "placeholder": "secondValue",
+          "description": "A value for the second position.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "20",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a coordinate tuple",
+          "code": "type Coordinate = [x: number, y: number];\nconst point: Coordinate = [10, 20];\nconsole.log(point[0] + point[1]);",
+          "explanation": "Each tuple position is checked independently while the runtime value remains an array."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.readonly-tuple",
+      "definition": "The readonly modifier prevents mutating methods and indexed assignment during type checking. It does not freeze the runtime array.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Tuple name",
+          "placeholder": "name",
+          "description": "The readonly tuple alias.",
+          "typeName": "Identifier",
+          "defaultValue": "Pair",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstType",
+          "displayName": "First type",
+          "placeholder": "firstType",
+          "description": "The first position type.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondType",
+          "displayName": "Second type",
+          "placeholder": "secondType",
+          "description": "The second position type.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstValue",
+          "displayName": "First value",
+          "placeholder": "firstValue",
+          "description": "A value for the first position.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"age\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondValue",
+          "displayName": "Second value",
+          "placeholder": "secondValue",
+          "description": "A value for the second position.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Declare a readonly pair",
+          "code": "type Pair = readonly [string, number];\nconst pair: Pair = [\"age\", 42];\nconsole.log(pair[1]);",
+          "explanation": "The pair can be read normally, but assignment to either indexed position would fail type checking."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.generic-constraint",
+      "definition": "An extends clause on a type parameter limits accepted types. Code inside the generic declaration may safely use members guaranteed by that constraint.",
+      "parameters": [
+        {
+          "name": "functionName",
+          "displayName": "Function name",
+          "placeholder": "functionName",
+          "description": "The generic function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "measure",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "constraint",
+          "displayName": "Constraint",
+          "placeholder": "constraint",
+          "description": "The minimum object shape required of T.",
+          "typeName": "Type expression",
+          "defaultValue": "{ length: number }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "A member guaranteed by the constraint.",
+          "typeName": "Identifier",
+          "defaultValue": "length",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value satisfying the constraint.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"typed\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Accept any value with a length",
+          "code": "function measure<T extends { length: number }>(value: T): number {\n  return value.length;\n}\nconsole.log(measure(\"typed\"));",
+          "explanation": "The constraint permits length access while retaining the caller's concrete string type for T."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.default-type-parameter",
+      "definition": "A default type parameter follows an equals sign and makes that type argument optional when inference cannot select a more specific type.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Generic type",
+          "placeholder": "name",
+          "description": "The generic alias name.",
+          "typeName": "Identifier",
+          "defaultValue": "Container",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "defaultType",
+          "displayName": "Default type",
+          "placeholder": "defaultType",
+          "description": "The type used when no argument is provided.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "shape",
+          "displayName": "Type body",
+          "placeholder": "shape",
+          "description": "A type expression using T.",
+          "typeName": "Type expression",
+          "defaultValue": "{ value: T }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value matching the default instantiation.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ value: \"ready\" }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Default a container to strings",
+          "code": "type Container<T = string> = { value: T };\nconst value: Container = { value: \"ready\" };\nconsole.log(value.value);",
+          "explanation": "Omitting the type argument makes this Container equivalent to Container<string>."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.indexed-access-type",
+      "definition": "Indexed access uses bracket notation in a type position. A union of keys produces the union of their corresponding property types.",
+      "parameters": [
+        {
+          "name": "objectType",
+          "displayName": "Object type",
+          "placeholder": "objectType",
+          "description": "The source object type name.",
+          "typeName": "Identifier",
+          "defaultValue": "User",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "shape",
+          "displayName": "Object shape",
+          "placeholder": "shape",
+          "description": "The properties available for selection.",
+          "typeName": "Type expression",
+          "defaultValue": "{ id: number; name: string }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "resultType",
+          "displayName": "Result type",
+          "placeholder": "resultType",
+          "description": "The alias for the selected property type.",
+          "typeName": "Identifier",
+          "defaultValue": "UserId",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "keyType",
+          "displayName": "Key type",
+          "placeholder": "keyType",
+          "description": "A property-name literal or key union.",
+          "typeName": "Type expression",
+          "defaultValue": "\"id\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value assignable to the selected type.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Extract an identifier property type",
+          "code": "type User = { id: number; name: string };\ntype UserId = User[\"id\"];\nconst value: UserId = 42;\nconsole.log(value);",
+          "explanation": "User[\"id\"] resolves to number without duplicating the property's declaration."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.typeof-type-query",
+      "definition": "TypeScript's typeof type operator refers to the checker-known type of a value. It is distinct from JavaScript's runtime typeof expression.",
+      "parameters": [
+        {
+          "name": "sourceName",
+          "displayName": "Source binding",
+          "placeholder": "sourceName",
+          "description": "The value whose type is captured.",
+          "typeName": "Identifier",
+          "defaultValue": "defaults",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sourceValue",
+          "displayName": "Source value",
+          "placeholder": "sourceValue",
+          "description": "The value used for inference.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ retries: 3, mode: \"safe\" }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "typeName",
+          "displayName": "Type name",
+          "placeholder": "typeName",
+          "description": "The alias receiving the inferred type.",
+          "typeName": "Identifier",
+          "defaultValue": "Configuration",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value matching the captured type.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ retries: 1, mode: \"fast\" }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Reuse an inferred configuration shape",
+          "code": "const defaults = { retries: 3, mode: \"safe\" };\ntype Configuration = typeof defaults;\nconst value: Configuration = { retries: 1, mode: \"fast\" };\nconsole.log(value.mode);",
+          "explanation": "Configuration stays synchronized with the shape inferred for defaults."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.conditional-type",
+      "definition": "A conditional type has the form T extends U ? X : Y. When T is a naked type parameter, unions may distribute through the condition member by member.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Type name",
+          "placeholder": "name",
+          "description": "The conditional type alias.",
+          "typeName": "Identifier",
+          "defaultValue": "Label",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "condition",
+          "displayName": "Condition type",
+          "placeholder": "condition",
+          "description": "The type T is tested against.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "trueType",
+          "displayName": "True result",
+          "placeholder": "trueType",
+          "description": "The type selected when T is assignable.",
+          "typeName": "Type expression",
+          "defaultValue": "\"text\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "falseType",
+          "displayName": "False result",
+          "placeholder": "falseType",
+          "description": "The alternate result type.",
+          "typeName": "Type expression",
+          "defaultValue": "\"other\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sampleInput",
+          "displayName": "Sample input type",
+          "placeholder": "sampleInput",
+          "description": "The type used to instantiate T.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sampleValue",
+          "displayName": "Sample value",
+          "placeholder": "sampleValue",
+          "description": "A value matching the selected result.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"text\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Classify a type",
+          "code": "type Label<T> = T extends string ? \"text\" : \"other\";\nconst value: Label<string> = \"text\";\nconsole.log(value);",
+          "explanation": "Because string extends string, the conditional type selects the text literal."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.infer-type",
+      "definition": "The infer keyword declares a type variable in the true branch's match pattern. It is commonly used to extract function results, promise values, and tuple elements.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Extractor name",
+          "placeholder": "name",
+          "description": "The conditional type alias.",
+          "typeName": "Identifier",
+          "defaultValue": "ResultOf",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "functionName",
+          "displayName": "Function",
+          "placeholder": "functionName",
+          "description": "A declared function whose result is extracted.",
+          "typeName": "Identifier",
+          "defaultValue": "createValue",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Extract a function return type",
+          "code": "function createValue() { return { id: 42 }; }\ntype ResultOf<T> = T extends (...args: never[]) => infer R ? R : never;\ntype Result = ResultOf<typeof createValue>;\nconst value: Result = createValue();\nconsole.log(value.id);",
+          "explanation": "infer captures the return component of the function type as R."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.mapped-type",
+      "definition": "A mapped type uses an in clause over a key union, commonly keyof T. Modifiers can be added or removed while each property's value type is retained or transformed.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Mapped type",
+          "placeholder": "name",
+          "description": "The mapped type alias.",
+          "typeName": "Identifier",
+          "defaultValue": "Boxed",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "wrapper",
+          "displayName": "Wrapper type",
+          "placeholder": "wrapper",
+          "description": "A generic wrapper applied to each property.",
+          "typeName": "Type identifier",
+          "defaultValue": "Promise",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "source",
+          "displayName": "Source type",
+          "placeholder": "source",
+          "description": "The object type to transform.",
+          "typeName": "Type expression",
+          "defaultValue": "{ id: number }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value matching the mapped result.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ id: Promise.resolve(42) }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Make every property a promise",
+          "code": "type Promised<T> = { [K in keyof T]: Promise<T[K]> };\ntype Result = Promised<{ id: number }>;\nconst value: Result = { id: Promise.resolve(42) };\nvoid value.id.then(result => console.log(result));",
+          "explanation": "The mapped type preserves the id key while wrapping its number value type in Promise."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.key-remapping",
+      "definition": "Mapped key remapping combines keyof, template literal types, and an as clause. Mapping a key to never removes that property.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Mapped type",
+          "placeholder": "name",
+          "description": "The remapping type alias.",
+          "typeName": "Identifier",
+          "defaultValue": "Getters",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "prefix",
+          "displayName": "Prefix",
+          "placeholder": "prefix",
+          "description": "Text prepended to each generated key.",
+          "typeName": "Identifier fragment",
+          "defaultValue": "get",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "source",
+          "displayName": "Source type",
+          "placeholder": "source",
+          "description": "The object keys and values to remap.",
+          "typeName": "Type expression",
+          "defaultValue": "{ name: string }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value using the remapped key.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ getName: \"Ada\" }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Generate getter-style keys",
+          "code": "type Getters<T> = { [K in keyof T as `get${Capitalize<string & K>}`]: T[K] };\ntype Result = Getters<{ name: string }>;\nconst value: Result = { getName: \"Ada\" };\nconsole.log(value.getName);",
+          "explanation": "The name key is remapped to getName and retains its string value type."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.template-literal-type",
+      "definition": "Template literal types use the runtime template-literal shape in type positions. Union interpolation forms the cross-product of possible strings.",
+      "parameters": [
+        {
+          "name": "sourceName",
+          "displayName": "Source type",
+          "placeholder": "sourceName",
+          "description": "The literal union to interpolate.",
+          "typeName": "Identifier",
+          "defaultValue": "Field",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "members",
+          "displayName": "Literal members",
+          "placeholder": "members",
+          "description": "String literals joined in a union.",
+          "typeName": "Type expression",
+          "defaultValue": "\"name\" | \"age\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "resultName",
+          "displayName": "Result type",
+          "placeholder": "resultName",
+          "description": "The generated string type alias.",
+          "typeName": "Identifier",
+          "defaultValue": "EventName",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "prefix",
+          "displayName": "Prefix",
+          "placeholder": "prefix",
+          "description": "Text placed before each interpolated member.",
+          "typeName": "String fragment",
+          "defaultValue": "on",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "suffix",
+          "displayName": "Suffix",
+          "placeholder": "suffix",
+          "description": "Text placed after each interpolated member.",
+          "typeName": "String fragment",
+          "defaultValue": "Changed",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "One generated literal value.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"onNameChanged\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Generate change event names",
+          "code": "type Field = \"name\" | \"age\";\ntype EventName = `on${Capitalize<Field>}Changed`;\nconst value: EventName = \"onNameChanged\";\nconsole.log(value);",
+          "explanation": "Interpolation and Capitalize generate one event-name literal for each Field member."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.type-predicate",
+      "definition": "A return type such as value is string is a type predicate. Callers narrow the tested value when the function returns true.",
+      "parameters": [
+        {
+          "name": "functionName",
+          "displayName": "Guard name",
+          "placeholder": "functionName",
+          "description": "The predicate function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "isString",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "targetType",
+          "displayName": "Narrowed type",
+          "placeholder": "targetType",
+          "description": "The type proven by a true result.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "condition",
+          "displayName": "Runtime check",
+          "placeholder": "condition",
+          "description": "A boolean expression that validates the value.",
+          "typeName": "Boolean expression",
+          "defaultValue": "typeof value === \"string\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "An unknown value to inspect.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"typed\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "use",
+          "displayName": "Narrowed use",
+          "placeholder": "use",
+          "description": "An expression valid for the narrowed type.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value.toUpperCase()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Narrow an unknown value to string",
+          "code": "function isString(value: unknown): value is string {\n  return typeof value === \"string\";\n}\nconst value: unknown = \"typed\";\nif (isString(value)) console.log(value.toUpperCase());",
+          "explanation": "Inside the branch, the predicate narrows value from unknown to string."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.assertion-function",
+      "definition": "An asserts return type models a function that cannot return normally unless its stated condition holds. Assertions are useful at validation boundaries.",
+      "parameters": [
+        {
+          "name": "functionName",
+          "displayName": "Assertion name",
+          "placeholder": "functionName",
+          "description": "The assertion function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "assertString",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "targetType",
+          "displayName": "Asserted type",
+          "placeholder": "targetType",
+          "description": "The type established after a successful call.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "condition",
+          "displayName": "Runtime check",
+          "placeholder": "condition",
+          "description": "The condition that validates the value.",
+          "typeName": "Boolean expression",
+          "defaultValue": "typeof value === \"string\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "message",
+          "displayName": "Error message",
+          "placeholder": "message",
+          "description": "The expression used for the thrown error.",
+          "typeName": "String expression",
+          "defaultValue": "\"Expected text\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value to validate.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"typed\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "use",
+          "displayName": "Narrowed use",
+          "placeholder": "use",
+          "description": "An expression valid after the assertion.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value.toUpperCase()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Assert that input is text",
+          "code": "function assertString(value: unknown): asserts value is string {\n  if (typeof value !== \"string\") throw new TypeError(\"Expected text\");\n}\nconst value: unknown = \"typed\";\nassertString(value);\nconsole.log(value.toUpperCase());",
+          "explanation": "A normal return proves value is string for all following statements in the scope."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.in-narrowing",
+      "definition": "When the left operand is a property-name literal, TypeScript narrows the right operand to union members that may contain that property.",
+      "parameters": [
+        {
+          "name": "leftType",
+          "displayName": "First member",
+          "placeholder": "leftType",
+          "description": "The union member containing the tested property.",
+          "typeName": "Type expression",
+          "defaultValue": "{ path: string }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "rightType",
+          "displayName": "Second member",
+          "placeholder": "rightType",
+          "description": "The alternate union member.",
+          "typeName": "Type expression",
+          "defaultValue": "{ url: string }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property literal",
+          "placeholder": "property",
+          "description": "The property name checked with in.",
+          "typeName": "String literal",
+          "defaultValue": "\"path\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "leftUse",
+          "displayName": "First branch",
+          "placeholder": "leftUse",
+          "description": "An expression valid for the first member.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value.path",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "rightUse",
+          "displayName": "Second branch",
+          "placeholder": "rightUse",
+          "description": "An expression valid for the alternate member.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value.url",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value matching one union member.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ path: \"index.ts\" }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Distinguish a path from a URL",
+          "code": "type Value = { path: string } | { url: string };\nfunction describe(value: Value): string {\n  if (\"path\" in value) return value.path;\n  return value.url;\n}\nconsole.log(describe({ path: \"index.ts\" }));",
+          "explanation": "The property test narrows the first branch to the object containing path."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.instanceof-narrowing",
+      "definition": "An instanceof expression checks an object's prototype chain. TypeScript uses a successful check to narrow the value to the constructor's instance type.",
+      "parameters": [
+        {
+          "name": "leftType",
+          "displayName": "Checked class",
+          "placeholder": "leftType",
+          "description": "The constructor used by instanceof.",
+          "typeName": "Class identifier",
+          "defaultValue": "Date",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "rightType",
+          "displayName": "Alternate type",
+          "placeholder": "rightType",
+          "description": "The other possible value type.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A value matching one branch.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "new Date(0)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "leftUse",
+          "displayName": "Class use",
+          "placeholder": "leftUse",
+          "description": "An expression valid for the class instance.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value.toISOString()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "rightUse",
+          "displayName": "Alternate use",
+          "placeholder": "rightUse",
+          "description": "An expression valid for the other member.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value.toUpperCase()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Distinguish a Date from text",
+          "code": "const value: Date | string = new Date(0);\nif (value instanceof Date) console.log(value.toISOString());\nelse console.log(value.toUpperCase());",
+          "explanation": "The true branch knows value is a Date and exposes Date methods."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.unknown-type",
+      "definition": "unknown accepts every value like any, but disallows arbitrary operations until control-flow analysis or an assertion establishes a narrower type.",
+      "parameters": [
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "The value entering an untrusted boundary.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"typed\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "condition",
+          "displayName": "Narrowing condition",
+          "placeholder": "condition",
+          "description": "A runtime check proving a useful type.",
+          "typeName": "Boolean expression",
+          "defaultValue": "typeof value === \"string\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "use",
+          "displayName": "Narrowed use",
+          "placeholder": "use",
+          "description": "An expression valid after the check.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value.toUpperCase()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Safely inspect unknown input",
+          "code": "const value: unknown = \"typed\";\nif (typeof value === \"string\") console.log(value.toUpperCase());",
+          "explanation": "The runtime check is required before string behavior is available."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.never-exhaustive",
+      "definition": "never represents values that cannot occur. Assigning a switch remainder to never verifies that earlier cases handled every discriminant member.",
+      "parameters": [
+        {
+          "name": "members",
+          "displayName": "Union members",
+          "placeholder": "members",
+          "description": "Literal types handled by the switch.",
+          "typeName": "Type expression",
+          "defaultValue": "\"ready\" | \"done\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "cases",
+          "displayName": "Cases",
+          "placeholder": "cases",
+          "description": "A case for every declared member.",
+          "typeName": "Switch cases",
+          "defaultValue": "case \"ready\": return \"Ready\";\n    case \"done\": return \"Done\";",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "One union member to describe.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"ready\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Require every state case",
+          "code": "type State = \"ready\" | \"done\";\nfunction describe(state: State): string {\n  switch (state) {\n    case \"ready\": return \"Ready\";\n    case \"done\": return \"Done\";\n    default: { const unreachable: never = state; return unreachable; }\n  }\n}\nconsole.log(describe(\"ready\"));",
+          "explanation": "If State gains another member, the default assignment stops compiling until that member is handled."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.function-overloads",
+      "definition": "Overload signatures are visible to callers but erased from output. The implementation signature must accommodate every overload and is not itself callable from the outside.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Function name",
+          "placeholder": "name",
+          "description": "The overloaded function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "normalize",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstType",
+          "displayName": "First input",
+          "placeholder": "firstType",
+          "description": "The first overload's parameter type.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstResult",
+          "displayName": "First result",
+          "placeholder": "firstResult",
+          "description": "The first overload's result type.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondType",
+          "displayName": "Second input",
+          "placeholder": "secondType",
+          "description": "The second overload's parameter type.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondResult",
+          "displayName": "Second result",
+          "placeholder": "secondResult",
+          "description": "The second overload's result type.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "implementation",
+          "displayName": "Implementation",
+          "placeholder": "implementation",
+          "description": "An expression compatible with both results.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample call",
+          "placeholder": "sample",
+          "description": "An argument matching one overload.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"ready\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Overload an identity normalizer",
+          "code": "function normalize(value: string): string;\nfunction normalize(value: number): number;\nfunction normalize(value: string | number): string | number { return value; }\nconsole.log(normalize(\"ready\"));",
+          "explanation": "Callers receive a precise result type for each accepted input shape."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.call-signature",
+      "definition": "A call signature is written without an arrow inside an object type. It is useful for JavaScript functions that carry configuration or metadata properties.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Interface name",
+          "placeholder": "name",
+          "description": "The callable contract name.",
+          "typeName": "Identifier",
+          "defaultValue": "Formatter",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterName",
+          "displayName": "Parameter",
+          "placeholder": "parameterName",
+          "description": "The call parameter identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterType",
+          "displayName": "Parameter type",
+          "placeholder": "parameterType",
+          "description": "The accepted argument type.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "returnType",
+          "displayName": "Return type",
+          "placeholder": "returnType",
+          "description": "The call result type.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "A property carried by the function value.",
+          "typeName": "Identifier",
+          "defaultValue": "label",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "propertyType",
+          "displayName": "Property type",
+          "placeholder": "propertyType",
+          "description": "The carried property's type.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Function body",
+          "placeholder": "expression",
+          "description": "The expression returned by the function.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "value.toUpperCase()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "propertyValue",
+          "displayName": "Property value",
+          "placeholder": "propertyValue",
+          "description": "The metadata value assigned to the callable.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"upper\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample argument",
+          "placeholder": "sample",
+          "description": "A value accepted by the call signature.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"typed\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a labeled formatter",
+          "code": "interface Formatter { (value: string): string; label: string; }\nconst formatter = ((value: string) => value.toUpperCase()) as Formatter;\nformatter.label = \"upper\";\nconsole.log(formatter(\"typed\"), formatter.label);",
+          "explanation": "The function satisfies both the callable signature and the label property requirement."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.construct-signature",
+      "definition": "A construct signature begins with new and describes constructor parameters plus the resulting instance type. It enables factories that accept class-like values.",
+      "parameters": [
+        {
+          "name": "constructorType",
+          "displayName": "Constructor contract",
+          "placeholder": "constructorType",
+          "description": "The construct-signature interface.",
+          "typeName": "Identifier",
+          "defaultValue": "CreatesItem",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameter",
+          "displayName": "Constructor parameter",
+          "placeholder": "parameter",
+          "description": "The instance value initialized by the constructor.",
+          "typeName": "Identifier",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameterType",
+          "displayName": "Parameter type",
+          "placeholder": "parameterType",
+          "description": "The type accepted by the constructor.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "instanceType",
+          "displayName": "Instance type",
+          "placeholder": "instanceType",
+          "description": "The type returned by new.",
+          "typeName": "Type expression",
+          "defaultValue": "Item",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "className",
+          "displayName": "Class name",
+          "placeholder": "className",
+          "description": "A concrete class satisfying the signature.",
+          "typeName": "Identifier",
+          "defaultValue": "Item",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample argument",
+          "placeholder": "sample",
+          "description": "A value passed to the constructor.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"typed\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Accept a class in a factory",
+          "code": "interface CreatesItem { new (name: string): Item; }\nclass Item { name: string; constructor(name: string) { this.name = name; } }\nfunction create(ctor: CreatesItem, value: string): Item { return new ctor(value); }\nconsole.log(create(Item, \"typed\").name);",
+          "explanation": "Item's constructor matches the construct signature and can be passed as a value to the factory."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.index-signature",
+      "definition": "An index signature constrains property values accessed by string, number, symbol, or a permitted template-pattern key type.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Interface name",
+          "placeholder": "name",
+          "description": "The indexed object contract.",
+          "typeName": "Identifier",
+          "defaultValue": "Scores",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "keyName",
+          "displayName": "Key name",
+          "placeholder": "keyName",
+          "description": "The index parameter identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "keyType",
+          "displayName": "Key type",
+          "placeholder": "keyType",
+          "description": "The permitted key domain.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "valueType",
+          "displayName": "Value type",
+          "placeholder": "valueType",
+          "description": "The value returned for each key.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample object",
+          "placeholder": "sample",
+          "description": "An object satisfying the index signature.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ alpha: 10, beta: 20 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sampleKey",
+          "displayName": "Sample key",
+          "placeholder": "sampleKey",
+          "description": "A key used to read the object.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"beta\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Map names to numeric scores",
+          "code": "interface Scores { [name: string]: number; }\nconst scores: Scores = { alpha: 10, beta: 20 };\nconsole.log(scores[\"beta\"]);",
+          "explanation": "Every string-named property in Scores must hold a number."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.interface-merging",
+      "definition": "Interface declarations participate in TypeScript declaration merging. Non-function members must be unique or have matching types, while overload groups are combined.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Interface name",
+          "placeholder": "name",
+          "description": "The repeated declaration name.",
+          "typeName": "Identifier",
+          "defaultValue": "Dimensions",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstProperty",
+          "displayName": "First property",
+          "placeholder": "firstProperty",
+          "description": "A member from the first declaration.",
+          "typeName": "Identifier",
+          "defaultValue": "width",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstType",
+          "displayName": "First type",
+          "placeholder": "firstType",
+          "description": "The first member's type.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondProperty",
+          "displayName": "Second property",
+          "placeholder": "secondProperty",
+          "description": "A member from the second declaration.",
+          "typeName": "Identifier",
+          "defaultValue": "height",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondType",
+          "displayName": "Second type",
+          "placeholder": "secondType",
+          "description": "The second member's type.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "An object satisfying the merged interface.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ width: 10, height: 20 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Merge dimension members",
+          "code": "interface Dimensions { width: number; }\ninterface Dimensions { height: number; }\nconst value: Dimensions = { width: 10, height: 20 };\nconsole.log(value.width * value.height);",
+          "explanation": "The merged Dimensions contract requires both width and height."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.generic-interface",
+      "definition": "A generic interface declares type parameters after its name. Each instantiation substitutes concrete types throughout the interface's members.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Interface name",
+          "placeholder": "name",
+          "description": "The generic contract identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "Box",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "type",
+          "displayName": "Type argument",
+          "placeholder": "type",
+          "description": "The concrete value type for this instance.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "An object satisfying the generic interface.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ value: 42, map(transform) { return { value: transform(this.value), map: this.map }; } }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a typed box",
+          "code": "interface Box<T> { value: T; }\nconst value: Box<number> = { value: 42 };\nconsole.log(value.value);",
+          "explanation": "Instantiating Box<number> makes its value member a number."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.this-parameter",
+      "definition": "A fake first parameter named this exists only for checking. It prevents a function from being called with an incompatible receiver.",
+      "parameters": [
+        {
+          "name": "contextType",
+          "displayName": "Context type",
+          "placeholder": "contextType",
+          "description": "The required receiver contract.",
+          "typeName": "Identifier",
+          "defaultValue": "Counter",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "A member used through this.",
+          "typeName": "Identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "propertyType",
+          "displayName": "Property type",
+          "placeholder": "propertyType",
+          "description": "The receiver member's type.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "name",
+          "displayName": "Function name",
+          "placeholder": "name",
+          "description": "The receiver-aware function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "read",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "returnType",
+          "displayName": "Return type",
+          "placeholder": "returnType",
+          "description": "The function's result type.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Return expression",
+          "placeholder": "expression",
+          "description": "An expression using the typed receiver.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "this.value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample receiver",
+          "placeholder": "sample",
+          "description": "An object satisfying the receiver contract.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "{ value: 42 }",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Require a counter receiver",
+          "code": "interface Counter { value: number; }\nfunction read(this: Counter): number { return this.value; }\nconsole.log(read.call({ value: 42 }));",
+          "explanation": "The this parameter is erased, but call must provide a receiver with a numeric value."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.optional-parameter",
+      "definition": "A question mark after a parameter name adds undefined to its effective type. Optional parameters must follow required parameters unless a default handles omission.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Function name",
+          "placeholder": "name",
+          "description": "The function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "greet",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "parameter",
+          "displayName": "Parameter",
+          "placeholder": "parameter",
+          "description": "The optional argument name.",
+          "typeName": "Identifier",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "type",
+          "displayName": "Parameter type",
+          "placeholder": "type",
+          "description": "The type accepted when supplied.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Return expression",
+          "placeholder": "expression",
+          "description": "An expression that handles omission.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "`Hello, ${name ?? \"there\"}`",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample argument",
+          "placeholder": "sample",
+          "description": "An optional call argument.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"Ada\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Greet with an optional name",
+          "code": "function greet(name?: string): string {\n  return `Hello, ${name ?? \"there\"}`;\n}\nconsole.log(greet(\"Ada\"));",
+          "explanation": "The function accepts a string or omission and explicitly handles the undefined case."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.rest-tuple-parameters",
+      "definition": "A rest parameter may use a tuple type, including optional and named elements. Calls are checked as though the tuple elements were separate parameters.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Function name",
+          "placeholder": "name",
+          "description": "The variadic function identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "format",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstLabel",
+          "displayName": "First label",
+          "placeholder": "firstLabel",
+          "description": "The first rest-tuple parameter label.",
+          "typeName": "Identifier",
+          "defaultValue": "label",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstType",
+          "displayName": "First type",
+          "placeholder": "firstType",
+          "description": "The first argument type.",
+          "typeName": "Type expression",
+          "defaultValue": "string",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondLabel",
+          "displayName": "Second label",
+          "placeholder": "secondLabel",
+          "description": "The second rest-tuple parameter label.",
+          "typeName": "Identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondType",
+          "displayName": "Second type",
+          "placeholder": "secondType",
+          "description": "The second argument type.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Return expression",
+          "placeholder": "expression",
+          "description": "An expression using the tuple arguments.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "`${args[0]}: ${args[1]}`",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstValue",
+          "displayName": "First value",
+          "placeholder": "firstValue",
+          "description": "The first call argument.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "\"Answer\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondValue",
+          "displayName": "Second value",
+          "placeholder": "secondValue",
+          "description": "The second call argument.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Format a labeled value",
+          "code": "function format(...args: [label: string, value: number]): string {\n  return `${args[0]}: ${args[1]}`;\n}\nconsole.log(format(\"Answer\", 42));",
+          "explanation": "The rest array retains a fixed two-position tuple type at the call site and in the body."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.variadic-tuple",
+      "definition": "Variadic tuple types allow generic spreads in tuple positions. They model operations such as concatenation, partial application, and argument forwarding precisely.",
+      "parameters": [
+        {
+          "name": "left",
+          "displayName": "Left tuple",
+          "placeholder": "left",
+          "description": "The first tuple expression.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "[\"answer\", 42]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "right",
+          "displayName": "Right tuple",
+          "placeholder": "right",
+          "description": "The tuple appended after the first.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "[true]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Concatenate two typed tuples",
+          "code": "function concat<A extends unknown[], B extends unknown[]>(left: [...A], right: [...B]): [...A, ...B] {\n  return [...left, ...right];\n}\nconst value = concat([\"answer\", 42], [true]);\nconsole.log(value);",
+          "explanation": "The result retains the ordered string, number, and boolean element types."
+        }
+      ]
+    },
+    {
+      "entryId": "typescript.core.branded-type",
+      "definition": "A brand is a TypeScript modeling convention rather than a runtime feature. A unique marker property makes otherwise identical structural types incompatible after validation or construction.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Branded type",
+          "placeholder": "name",
+          "description": "The distinct domain type name.",
+          "typeName": "Identifier",
+          "defaultValue": "UserId",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "baseType",
+          "displayName": "Base type",
+          "placeholder": "baseType",
+          "description": "The runtime representation.",
+          "typeName": "Type expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "brandLiteral",
+          "displayName": "Brand",
+          "placeholder": "brandLiteral",
+          "description": "A unique literal used only by the checker.",
+          "typeName": "Literal type",
+          "defaultValue": "\"UserId\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "A validated runtime value.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Brand a numeric user identifier",
+          "code": "type UserId = number & { readonly __brand: \"UserId\" };\nfunction createUserId(value: number): UserId { return value as UserId; }\nconst value = createUserId(42);\nconsole.log(value);",
+          "explanation": "The brand exists only in the type system while the runtime value remains a number."
+        }
+      ]
+    }
+  ]
+}

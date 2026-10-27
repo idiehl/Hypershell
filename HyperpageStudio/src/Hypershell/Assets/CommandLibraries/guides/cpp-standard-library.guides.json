@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "cpp-standard-library",
+  "guides": [
+    {
+      "entryId": "cpp.std.iostream.cout",
+      "definition": "Writes values to the standard output stream through the formatted insertion operator.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Write to standard output",
+          "code": "#include <iostream>\nstd::cout << \"Hello from Hypershell\" << '\\n';",
+          "explanation": "Writes values to the standard output stream through the formatted insertion operator."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.std.vector",
+      "definition": "std::vector owns a contiguous, dynamically sized sequence of elements.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Create a dynamic array",
+          "code": "#include <vector>\nstd::vector<int> values{1, 2, 3};\nvolatile auto count = values.size();",
+          "explanation": "std::vector owns a contiguous, dynamically sized sequence of elements."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.std.string.find",
+      "definition": "std::string::find returns the first matching position or std::string::npos.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Find text in a string",
+          "code": "#include <string>\nstd::string text = \"Hypershell\";\nvolatile auto position = text.find(\"shell\");",
+          "explanation": "std::string::find returns the first matching position or std::string::npos."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.std.algorithm.sort",
+      "definition": "std::sort orders a random-access range using an optional comparison function.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Sort a range",
+          "code": "#include <algorithm>\n#include <vector>\nstd::vector<int> values{3, 1, 2};\nstd::sort(values.begin(), values.end());",
+          "explanation": "std::sort orders a random-access range using an optional comparison function."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.std.unordered-map",
+      "definition": "std::unordered_map stores unique keys in an average constant-time hash table.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Store key-value pairs",
+          "code": "#include <string>\n#include <unordered_map>\nstd::unordered_map<std::string, int> counts{{\"ready\", 42}};\nvolatile int answer = counts[\"ready\"];",
+          "explanation": "std::unordered_map stores unique keys in an average constant-time hash table."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.std.filesystem.path",
+      "definition": "std::filesystem::path represents a native filesystem pathname without performing I/O by itself.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Represent a filesystem path",
+          "code": "#include <filesystem>\nstd::filesystem::path path{\"README.md\"};\nvolatile bool empty = path.empty();",
+          "explanation": "std::filesystem::path represents a native filesystem pathname without performing I/O by itself."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.std.optional",
+      "definition": "std::optional stores either one value or an explicit empty state.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Represent an optional value",
+          "code": "#include <optional>\nstd::optional<int> value = 42;\nvolatile int answer = value.value_or(0);",
+          "explanation": "std::optional stores either one value or an explicit empty state."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.std.unique-ptr",
+      "definition": "std::unique_ptr provides exclusive RAII ownership and destroys its object automatically.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Own an object uniquely",
+          "code": "#include <memory>\nauto value = std::make_unique<int>(42);\nvolatile int answer = *value;",
+          "explanation": "std::unique_ptr provides exclusive RAII ownership and destroys its object automatically."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.std.tuple",
+      "definition": "std::tuple groups a fixed number of values whose element types may differ.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Create a heterogeneous tuple",
+          "code": "#include <tuple>\nauto value = std::make_tuple(20, 22);\nvolatile int answer = std::get<0>(value) + std::get<1>(value);",
+          "explanation": "std::tuple groups a fixed number of values whose element types may differ."
+        }
+      ]
+    },
+    {
+      "entryId": "cpp.std.chrono.duration",
+      "definition": "std::chrono durations store a tick count and a compile-time period.",
+      "parameters": [],
+      "examples": [
+        {
+          "title": "Represent a duration",
+          "code": "#include <chrono>\nauto duration = std::chrono::milliseconds{42};\nvolatile auto count = duration.count();",
+          "explanation": "std::chrono durations store a tick count and a compile-time period."
+        }
+      ]
+    }
+  ]
+}

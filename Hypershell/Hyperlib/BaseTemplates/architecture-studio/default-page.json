@@ -1,0 +1,99 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "House Between the Pines",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "project-header",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "STUDIO NORTH / RESIDENTIAL",
+        "title": "House Between the Pines",
+        "text": "A study in light, shelter, and the space between rooms."
+      }
+    },
+    {
+      "id": "project-hero",
+      "type": "image",
+      "region": "main",
+      "values": {
+        "src": "/media/base-templates/architecture-studio.svg",
+        "alt": "Architectural massing and material study",
+        "caption": "A conceptual project study, shown as an abstract illustration.",
+        "width": 100,
+        "span": "full"
+      }
+    },
+    {
+      "id": "project-story",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## Built around a clearing\n\nThe plan gathers shared spaces around a protected outdoor room. A long roofline connects them while allowing the landscape to remain visible.\n\nMaterials are restrained: timber, pale mineral surfaces, and a dark protective edge.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "project-facts",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Project notes",
+        "text": "Concept study\nResidential / Small footprint\nLight / Threshold / Landscape",
+        "span": "third"
+      }
+    },
+    {
+      "id": "specifications",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "DETAILS / 01\u201303",
+        "style": "line"
+      }
+    },
+    {
+      "id": "light",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "01 / Light",
+        "text": "Openings frame one useful view at a time.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "material",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "02 / Material",
+        "text": "A short palette supports a coherent whole.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "threshold",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "03 / Threshold",
+        "text": "The transition is part of the room.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "project-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Studio North / Concept portfolio"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

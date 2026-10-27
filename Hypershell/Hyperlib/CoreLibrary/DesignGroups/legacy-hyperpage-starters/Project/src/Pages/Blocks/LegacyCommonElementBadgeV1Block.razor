@@ -1,0 +1,15 @@
+@* Source: common.element.badge.v1 (Hyperpage starters). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-d81ece195b64" data-vp-id="d81ece195b6491d60b9b5f1306b77a35">
+    <span class="vp-ecae9e25efab" data-field="text-1" data-vp-id="ecae9e25efab02813e8d9000230d09e6">
+        @(Context.Text("text-1"))
+    </span>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

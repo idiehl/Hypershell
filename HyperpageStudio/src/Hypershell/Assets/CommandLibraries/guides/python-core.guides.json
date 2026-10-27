@@ -1,0 +1,1239 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "python-core",
+  "guides": [
+    {
+      "entryId": "python.print",
+      "definition": "print evaluates its arguments, converts them to text, separates them with sep, and writes the result followed by end.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "A Python expression to display.",
+          "typeName": "Python expression",
+          "defaultValue": "\"Hello from Hypershell\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Display a greeting",
+          "code": "print(\"Hello from Hypershell\")",
+          "explanation": "The string literal is evaluated and written to the Python terminal."
+        }
+      ]
+    },
+    {
+      "entryId": "python.f-string",
+      "definition": "An f-string prefixes a string with f and evaluates expressions inside braces when the string is created.",
+      "parameters": [
+        {
+          "name": "label",
+          "displayName": "Label",
+          "placeholder": "label",
+          "description": "Text placed before the expression.",
+          "typeName": "Text without quotes",
+          "defaultValue": "Result",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Expression",
+          "placeholder": "expression",
+          "description": "A Python expression evaluated inside the f-string.",
+          "typeName": "Python expression",
+          "defaultValue": "6 * 7",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Embed a calculation",
+          "code": "print(f\"Result: {6 * 7}\")",
+          "explanation": "Python evaluates the expression between braces and inserts 42 into the string."
+        }
+      ]
+    },
+    {
+      "entryId": "python.list-comprehension",
+      "definition": "A list comprehension combines an output expression with a for clause and optional filters inside square brackets.",
+      "parameters": [
+        {
+          "name": "expression",
+          "displayName": "Output expression",
+          "placeholder": "expression",
+          "description": "The value produced for each input item.",
+          "typeName": "Python expression",
+          "defaultValue": "number * number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The loop variable used by the expression.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "The values to transform.",
+          "typeName": "Python iterable",
+          "defaultValue": "range(1, 6)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Square a range",
+          "code": "squares = [number * number for number in range(1, 6)]\nprint(squares)",
+          "explanation": "The comprehension visits numbers 1 through 5 and stores each square in a new list."
+        }
+      ]
+    },
+    {
+      "entryId": "python.enumerate-loop",
+      "definition": "enumerate returns pairs containing a counter and each value from an iterable, avoiding a manually managed index variable.",
+      "parameters": [
+        {
+          "name": "index",
+          "displayName": "Index name",
+          "placeholder": "index",
+          "description": "The variable that receives the counter.",
+          "typeName": "Identifier",
+          "defaultValue": "index",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The variable that receives each value.",
+          "typeName": "Identifier",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "The values to visit.",
+          "typeName": "Python iterable",
+          "defaultValue": "[\"Ada\", \"Grace\", \"Linus\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "start",
+          "displayName": "Starting index",
+          "placeholder": "start",
+          "description": "The first counter value.",
+          "typeName": "Integer expression",
+          "defaultValue": "1",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Number a list",
+          "code": "for index, name in enumerate([\"Ada\", \"Grace\", \"Linus\"], start=1):\n    print(index, name)",
+          "explanation": "enumerate supplies a one-based counter alongside each name without mutating the list."
+        }
+      ]
+    },
+    {
+      "entryId": "python.function",
+      "definition": "A def statement binds a function object to a name. Its indented body runs each time the function is called.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Function name",
+          "placeholder": "name",
+          "description": "The identifier bound to the function.",
+          "typeName": "Identifier",
+          "defaultValue": "double",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "argument",
+          "displayName": "Argument name",
+          "placeholder": "argument",
+          "description": "The parameter accepted by the function.",
+          "typeName": "Identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Return expression",
+          "placeholder": "expression",
+          "description": "The expression returned by the function.",
+          "typeName": "Python expression",
+          "defaultValue": "value * 2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample input",
+          "placeholder": "sample",
+          "description": "A value used to call the function.",
+          "typeName": "Python expression",
+          "defaultValue": "21",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Define and call double",
+          "code": "def double(value):\n    return value * 2\n\nprint(double(21))",
+          "explanation": "The call passes 21 to value; the function returns 42 and print displays it."
+        }
+      ]
+    },
+    {
+      "entryId": "python.try-except",
+      "definition": "A try statement executes its suite and transfers control to the first matching except clause when an exception is raised.",
+      "parameters": [
+        {
+          "name": "expression",
+          "displayName": "Expression",
+          "placeholder": "expression",
+          "description": "The operation that may raise the expected exception.",
+          "typeName": "Python expression",
+          "defaultValue": "int(\"not-a-number\")",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "exception",
+          "displayName": "Exception type",
+          "placeholder": "exception",
+          "description": "The exception class to handle.",
+          "typeName": "Exception type",
+          "defaultValue": "ValueError",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Handle invalid integer text",
+          "code": "try:\n    result = int(\"not-a-number\")\nexcept ValueError as error:\n    print(f\"Unable to complete operation: {error}\")\nelse:\n    print(result)",
+          "explanation": "int raises ValueError for invalid numeric text, and the matching handler reports it without terminating the session."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.len.function",
+      "definition": "len calls an object's length protocol and returns a non-negative integer. It works with built-in sequences, collections, and custom objects that implement __len__.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "A sized Python object.",
+          "typeName": "Python expression",
+          "defaultValue": "[\"alpha\", \"beta\", \"gamma\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Count list items",
+          "code": "values = [\"alpha\", \"beta\", \"gamma\"]\nprint(len(values))",
+          "explanation": "The list exposes three elements, so len returns 3."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.range.class",
+      "definition": "range represents an arithmetic progression without storing every integer. The stop value is exclusive, and a custom step may be positive or negative.",
+      "parameters": [
+        {
+          "name": "start",
+          "displayName": "Start",
+          "placeholder": "start",
+          "description": "The first generated integer.",
+          "typeName": "Integer expression",
+          "defaultValue": "2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "stop",
+          "displayName": "Stop",
+          "placeholder": "stop",
+          "description": "The exclusive upper or lower bound.",
+          "typeName": "Integer expression",
+          "defaultValue": "8",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "step",
+          "displayName": "Step",
+          "placeholder": "step",
+          "description": "The non-zero difference between values.",
+          "typeName": "Integer expression",
+          "defaultValue": "2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Generate even values",
+          "code": "print(list(range(2, 8, 2)))",
+          "explanation": "The progression starts at 2, advances by 2, and stops before 8."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.zip.function",
+      "definition": "zip returns an iterator of tuples. By default it stops with the shortest iterable; strict=True instead raises ValueError when lengths differ.",
+      "parameters": [
+        {
+          "name": "left",
+          "displayName": "First iterable",
+          "placeholder": "left",
+          "description": "Values placed first in each tuple.",
+          "typeName": "Python iterable",
+          "defaultValue": "[\"Ada\", \"Grace\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "right",
+          "displayName": "Second iterable",
+          "placeholder": "right",
+          "description": "Values placed second in each tuple.",
+          "typeName": "Python iterable",
+          "defaultValue": "[36, 37]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "strict",
+          "displayName": "Require equal lengths",
+          "placeholder": "strict",
+          "description": "Raise ValueError when the iterable lengths differ.",
+          "typeName": "Boolean expression",
+          "defaultValue": "True",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Pair names and scores",
+          "code": "pairs = list(zip([\"Ada\", \"Grace\"], [36, 37], strict=True))\nprint(pairs)",
+          "explanation": "Each tuple contains values at the same position from the two equal-length lists."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.sorted.function",
+      "definition": "sorted performs a stable sort and leaves the input object unchanged. key computes one comparison key per item, while reverse changes the direction.",
+      "parameters": [
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "Values to order.",
+          "typeName": "Python iterable",
+          "defaultValue": "[\"Grace\", \"ada\", \"Linus\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Key function",
+          "placeholder": "key",
+          "description": "A callable that returns each comparison key.",
+          "typeName": "Callable expression",
+          "defaultValue": "str.casefold",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "reverse",
+          "displayName": "Descending",
+          "placeholder": "reverse",
+          "description": "Use descending order when true.",
+          "typeName": "Boolean expression",
+          "defaultValue": "False",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Sort names without case sensitivity",
+          "code": "names = [\"Grace\", \"ada\", \"Linus\"]\nprint(sorted(names, key=str.casefold))",
+          "explanation": "casefold supplies normalized comparison keys without changing the original strings."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.any.function",
+      "definition": "any short-circuits at the first truthy item and returns False for an empty iterable.",
+      "parameters": [
+        {
+          "name": "expression",
+          "displayName": "Condition",
+          "placeholder": "expression",
+          "description": "The Boolean expression tested for each item.",
+          "typeName": "Python expression",
+          "defaultValue": "number > 40",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The generator variable.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "Values to inspect.",
+          "typeName": "Python iterable",
+          "defaultValue": "[12, 42, 7]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find a value above a threshold",
+          "code": "print(any(number > 40 for number in [12, 42, 7]))",
+          "explanation": "Evaluation stops when 42 satisfies the condition."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.all.function",
+      "definition": "all short-circuits at the first false item and returns True for an empty iterable.",
+      "parameters": [
+        {
+          "name": "expression",
+          "displayName": "Condition",
+          "placeholder": "expression",
+          "description": "The Boolean expression tested for each item.",
+          "typeName": "Python expression",
+          "defaultValue": "number > 0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The generator variable.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "Values to inspect.",
+          "typeName": "Python iterable",
+          "defaultValue": "[3, 7, 42]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Validate positive values",
+          "code": "print(all(number > 0 for number in [3, 7, 42]))",
+          "explanation": "Every number is positive, so all returns True."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.sum.function",
+      "definition": "sum accumulates items from left to right. It is intended for numeric addition; join should be used for strings.",
+      "parameters": [
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "Numeric values to add.",
+          "typeName": "Numeric iterable",
+          "defaultValue": "[10, 20, 12]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "start",
+          "displayName": "Starting value",
+          "placeholder": "start",
+          "description": "A value added before the iterable items.",
+          "typeName": "Numeric expression",
+          "defaultValue": "0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Total a list",
+          "code": "print(sum([10, 20, 12]))",
+          "explanation": "The three integers add to 42."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.min.function",
+      "definition": "min compares iterable values and returns the first minimal item. default supplies a result for an empty iterable.",
+      "parameters": [
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "Comparable values to inspect.",
+          "typeName": "Python iterable",
+          "defaultValue": "[\"delta\", \"pi\", \"hypershell\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Key function",
+          "placeholder": "key",
+          "description": "A callable producing comparison keys.",
+          "typeName": "Callable expression",
+          "defaultValue": "len",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find the shortest word",
+          "code": "print(min([\"delta\", \"pi\", \"hypershell\"], key=len))",
+          "explanation": "The key function compares word lengths, making pi the minimum."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.max.function",
+      "definition": "max compares iterable values and returns the first maximal item. default supplies a result for an empty iterable.",
+      "parameters": [
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "Comparable values to inspect.",
+          "typeName": "Python iterable",
+          "defaultValue": "[\"delta\", \"pi\", \"hypershell\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Key function",
+          "placeholder": "key",
+          "description": "A callable producing comparison keys.",
+          "typeName": "Callable expression",
+          "defaultValue": "len",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Find the longest word",
+          "code": "print(max([\"delta\", \"pi\", \"hypershell\"], key=len))",
+          "explanation": "The key function compares word lengths, making hypershell the maximum."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.isinstance.function",
+      "definition": "isinstance accounts for inheritance and registered abstract base classes, making it preferable to comparing type(value) directly in most runtime checks.",
+      "parameters": [
+        {
+          "name": "value",
+          "displayName": "Value",
+          "placeholder": "value",
+          "description": "The object to inspect.",
+          "typeName": "Python expression",
+          "defaultValue": "42",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "types",
+          "displayName": "Type or tuple",
+          "placeholder": "types",
+          "description": "An accepted type or tuple of types.",
+          "typeName": "Type expression",
+          "defaultValue": "(int, float)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Accept numeric scalar types",
+          "code": "print(isinstance(42, (int, float)))",
+          "explanation": "The integer value is an instance of one of the accepted types."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.dict.get.method",
+      "definition": "dict.get looks up a key and returns default when the key is absent. It does not insert the fallback into the dictionary.",
+      "parameters": [
+        {
+          "name": "mapping",
+          "displayName": "Dictionary",
+          "placeholder": "mapping",
+          "description": "The dictionary expression.",
+          "typeName": "Dictionary expression",
+          "defaultValue": "{\"status\": \"ready\"}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Key",
+          "placeholder": "key",
+          "description": "The key to find.",
+          "typeName": "Python expression",
+          "defaultValue": "\"status\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "default",
+          "displayName": "Fallback",
+          "placeholder": "default",
+          "description": "The value returned when the key is absent.",
+          "typeName": "Python expression",
+          "defaultValue": "\"unknown\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a status with a fallback",
+          "code": "settings = {\"status\": \"ready\"}\nprint(settings.get(\"status\", \"unknown\"))",
+          "explanation": "Because status exists, get returns ready rather than the fallback."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.dict.setdefault.method",
+      "definition": "dict.setdefault performs one lookup. If the key is absent, it stores default before returning it; mutable defaults should be created deliberately.",
+      "parameters": [
+        {
+          "name": "mapping",
+          "displayName": "Dictionary",
+          "placeholder": "mapping",
+          "description": "The dictionary expression.",
+          "typeName": "Dictionary expression",
+          "defaultValue": "{}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "key",
+          "displayName": "Key",
+          "placeholder": "key",
+          "description": "The key to find or insert.",
+          "typeName": "Python expression",
+          "defaultValue": "\"attempts\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "default",
+          "displayName": "Default",
+          "placeholder": "default",
+          "description": "The value inserted when the key is absent.",
+          "typeName": "Python expression",
+          "defaultValue": "0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Initialize a counter",
+          "code": "state = {}\nprint(state.setdefault(\"attempts\", 0))\nprint(state)",
+          "explanation": "The missing attempts key is inserted with value 0 and that value is returned."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.set.union.method",
+      "definition": "set.union combines membership without mutating the receiver. The | operator provides equivalent behavior when both operands are sets.",
+      "parameters": [
+        {
+          "name": "left",
+          "displayName": "First set",
+          "placeholder": "left",
+          "description": "The receiving set.",
+          "typeName": "Set expression",
+          "defaultValue": "{1, 2, 3}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "right",
+          "displayName": "Additional values",
+          "placeholder": "right",
+          "description": "A set or iterable to combine.",
+          "typeName": "Iterable expression",
+          "defaultValue": "{3, 4}",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Merge overlapping sets",
+          "code": "print(sorted({1, 2, 3}.union({3, 4})))",
+          "explanation": "The duplicate 3 appears once in the combined set."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.str.join.method",
+      "definition": "str.join consumes an iterable of strings and inserts the receiving string between adjacent items. Non-string values must be converted first.",
+      "parameters": [
+        {
+          "name": "separator",
+          "displayName": "Separator",
+          "placeholder": "separator",
+          "description": "A string placed between values.",
+          "typeName": "String expression",
+          "defaultValue": "\", \"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "values",
+          "displayName": "Values",
+          "placeholder": "values",
+          "description": "An iterable containing only strings.",
+          "typeName": "String iterable",
+          "defaultValue": "[\"alpha\", \"beta\", \"gamma\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Build comma-separated text",
+          "code": "print(\", \".join([\"alpha\", \"beta\", \"gamma\"]))",
+          "explanation": "join inserts a comma and space between each list item."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.str.split.method",
+      "definition": "str.split returns substrings separated by sep. With sep omitted, runs of whitespace are treated as one separator and leading or trailing whitespace is ignored.",
+      "parameters": [
+        {
+          "name": "text",
+          "displayName": "Text",
+          "placeholder": "text",
+          "description": "The string to divide.",
+          "typeName": "String expression",
+          "defaultValue": "\"alpha,beta,gamma\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "separator",
+          "displayName": "Separator",
+          "placeholder": "separator",
+          "description": "The delimiter string.",
+          "typeName": "String expression",
+          "defaultValue": "\",\"",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "limit",
+          "displayName": "Maximum splits",
+          "placeholder": "limit",
+          "description": "At most this many splits are performed.",
+          "typeName": "Integer expression",
+          "defaultValue": "1",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Split once at a delimiter",
+          "code": "print(\"alpha,beta,gamma\".split(\",\", maxsplit=1))",
+          "explanation": "Only the first comma is split, leaving the rest in the second field."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.dict-comprehension",
+      "definition": "A dictionary comprehension combines key and value expressions with a for clause and optional filters inside braces.",
+      "parameters": [
+        {
+          "name": "key",
+          "displayName": "Key expression",
+          "placeholder": "key",
+          "description": "The key produced for each item.",
+          "typeName": "Python expression",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value expression",
+          "placeholder": "value",
+          "description": "The value produced for each item.",
+          "typeName": "Python expression",
+          "defaultValue": "number * number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The loop variable.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "Values to transform.",
+          "typeName": "Python iterable",
+          "defaultValue": "range(1, 4)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Map numbers to squares",
+          "code": "squares = {number: number * number for number in range(1, 4)}\nprint(squares)",
+          "explanation": "Each number becomes a key whose value is its square."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.set-comprehension",
+      "definition": "A set comprehension evaluates one expression per accepted item and automatically removes duplicate results.",
+      "parameters": [
+        {
+          "name": "expression",
+          "displayName": "Output expression",
+          "placeholder": "expression",
+          "description": "The value produced for each item.",
+          "typeName": "Python expression",
+          "defaultValue": "word.casefold()",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The loop variable.",
+          "typeName": "Identifier",
+          "defaultValue": "word",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "Values to transform.",
+          "typeName": "Python iterable",
+          "defaultValue": "[\"Ada\", \"ADA\", \"Grace\"]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Normalize unique names",
+          "code": "names = {word.casefold() for word in [\"Ada\", \"ADA\", \"Grace\"]}\nprint(sorted(names))",
+          "explanation": "Both Ada spellings normalize to one set member."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.generator-expression",
+      "definition": "A generator expression uses comprehension syntax inside parentheses and evaluates each result only when the iterator advances.",
+      "parameters": [
+        {
+          "name": "expression",
+          "displayName": "Output expression",
+          "placeholder": "expression",
+          "description": "The lazily produced value.",
+          "typeName": "Python expression",
+          "defaultValue": "number * 2",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "item",
+          "displayName": "Item name",
+          "placeholder": "item",
+          "description": "The loop variable.",
+          "typeName": "Identifier",
+          "defaultValue": "number",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "Values consumed on demand.",
+          "typeName": "Python iterable",
+          "defaultValue": "range(3)",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Double values lazily",
+          "code": "values = (number * 2 for number in range(3))\nprint(list(values))",
+          "explanation": "The generator computes each doubled value only while list consumes it."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.match-statement",
+      "definition": "A match statement evaluates its subject once and tries cases from top to bottom. The wildcard pattern _ provides a fallback.",
+      "parameters": [
+        {
+          "name": "subject",
+          "displayName": "Subject",
+          "placeholder": "subject",
+          "description": "The value matched once.",
+          "typeName": "Python expression",
+          "defaultValue": "status",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "pattern",
+          "displayName": "Pattern",
+          "placeholder": "pattern",
+          "description": "The first structural pattern.",
+          "typeName": "Python expression",
+          "defaultValue": "200",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "statement",
+          "displayName": "Matching body",
+          "placeholder": "statement",
+          "description": "Code for a successful match.",
+          "typeName": "Python statement",
+          "defaultValue": "print(\"ok\")",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "fallback",
+          "displayName": "Fallback body",
+          "placeholder": "fallback",
+          "description": "Code used when no earlier case matches.",
+          "typeName": "Python statement",
+          "defaultValue": "print(\"other\")",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Classify a status code",
+          "code": "status = 200\nmatch status:\n    case 200:\n        print(\"ok\")\n    case _:\n        print(\"other\")",
+          "explanation": "The literal pattern 200 matches and executes the first case body."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.with-statement",
+      "definition": "A with statement calls the context manager's enter and exit methods, including when the body raises an exception.",
+      "parameters": [
+        {
+          "name": "context",
+          "displayName": "Context manager",
+          "placeholder": "context",
+          "description": "An expression implementing the context-manager protocol.",
+          "typeName": "Python expression",
+          "defaultValue": "StringIO(\"Hypershell\")",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "name",
+          "displayName": "Bound name",
+          "placeholder": "name",
+          "description": "The value returned while entering the context.",
+          "typeName": "Identifier",
+          "defaultValue": "stream",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "statement",
+          "displayName": "Body",
+          "placeholder": "statement",
+          "description": "Code executed inside the managed context.",
+          "typeName": "Python statement",
+          "defaultValue": "print(stream.read())",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Read a managed in-memory stream",
+          "code": "from io import StringIO\n\nwith StringIO(\"Hypershell\") as stream:\n    print(stream.read())",
+          "explanation": "The stream is available in the body and closes automatically when the block ends."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.class-declaration",
+      "definition": "A class statement executes its body in a new namespace and creates a class object. Instance methods receive the instance through their first parameter by convention named self.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Class name",
+          "placeholder": "name",
+          "description": "The new type's identifier.",
+          "typeName": "Identifier",
+          "defaultValue": "Counter",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "field",
+          "displayName": "Field name",
+          "placeholder": "field",
+          "description": "An initialized instance attribute.",
+          "typeName": "Identifier",
+          "defaultValue": "value",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "method",
+          "displayName": "Method name",
+          "placeholder": "method",
+          "description": "A method invoked by the example.",
+          "typeName": "Identifier",
+          "defaultValue": "increment",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "expression",
+          "displayName": "Return expression",
+          "placeholder": "expression",
+          "description": "The method result expression.",
+          "typeName": "Python expression",
+          "defaultValue": "self.value + 1",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "sample",
+          "displayName": "Sample value",
+          "placeholder": "sample",
+          "description": "The constructor argument.",
+          "typeName": "Python expression",
+          "defaultValue": "41",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create and use a counter",
+          "code": "class Counter:\n    def __init__(self, value):\n        self.value = value\n\n    def increment(self):\n        return self.value + 1\n\nprint(Counter(41).increment())",
+          "explanation": "Construction stores 41 and the instance method returns 42."
+        }
+      ]
+    },
+    {
+      "entryId": "python.core.sequence-unpacking",
+      "definition": "Unpacking requires the target shape to match the iterable, unless one starred target collects the remaining values into a list.",
+      "parameters": [
+        {
+          "name": "first",
+          "displayName": "First target",
+          "placeholder": "first",
+          "description": "Receives the first item.",
+          "typeName": "Identifier",
+          "defaultValue": "first",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "middle",
+          "displayName": "Starred target",
+          "placeholder": "middle",
+          "description": "Collects the middle items as a list.",
+          "typeName": "Identifier",
+          "defaultValue": "middle",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "last",
+          "displayName": "Last target",
+          "placeholder": "last",
+          "description": "Receives the final item.",
+          "typeName": "Identifier",
+          "defaultValue": "last",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "iterable",
+          "displayName": "Iterable",
+          "placeholder": "iterable",
+          "description": "The values to unpack.",
+          "typeName": "Python iterable",
+          "defaultValue": "[1, 2, 3, 4]",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Capture endpoints and middle values",
+          "code": "first, *middle, last = [1, 2, 3, 4]\nprint(first, middle, last)",
+          "explanation": "The starred target receives the two values between the endpoints."
+        }
+      ]
+    }
+  ]
+}

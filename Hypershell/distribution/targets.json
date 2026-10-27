@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "githubOwner": "idiehl",
+  "githubRepository": "hypershell-releases",
+  "githubPublicationMode": "draft",
+  "websiteUrl": "https://atlasuniversalis.com/Downloads",
+  "downloadServiceUrl": "https://hypershell.atlasuniversalis.com/downloads",
+  "architecture": "win-x64",
+  "defaultEdition": "Complete"
+}

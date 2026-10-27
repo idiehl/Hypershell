@@ -1,0 +1,167 @@
+@page "/Admin/{Section}"
+@model AdminSectionModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="page-heading compact">
+    <a class="back-link" href="/">← Overview</a>
+    <h1>@Model.Title</h1>
+    <p class="muted">@Model.Description</p>
+</section>
+
+@if (Model.IsLinkedHosts)
+{
+    @if (!string.IsNullOrWhiteSpace(Model.Notice))
+    {
+        <p class="notice">@Model.Notice</p>
+    }
+    <div asp-validation-summary="ModelOnly" class="validation"></div>
+
+    <section class="admin-grid">
+        <article class="admin-card">
+            <p class="eyebrow">CREDENTIAL VAULT</p>
+            <h2>Add SSH key</h2>
+            <form method="post" enctype="multipart/form-data" asp-page-handler="AddCredential" asp-route-section="linked-hosts">
+                <label asp-for="Credential.DisplayName">Label</label>
+                <input asp-for="Credential.DisplayName" />
+                <label asp-for="Credential.PrivateKey">Private-key file</label>
+                <input asp-for="Credential.PrivateKey" type="file" accept=".pem,.key,*/*" />
+                <label asp-for="Credential.Passphrase">Passphrase (optional)</label>
+                <input asp-for="Credential.Passphrase" autocomplete="off" />
+                <button class="primary" type="submit">Encrypt and store</button>
+            </form>
+        </article>
+
+        <article class="admin-card">
+            <p class="eyebrow">REMOTE HOST</p>
+            <h2>Link SSH device</h2>
+            <form method="post" asp-page-handler="AddHost" asp-route-section="linked-hosts">
+                <label asp-for="Host.DisplayName">Label</label>
+                <input asp-for="Host.DisplayName" />
+                <div class="field-pair">
+                    <div>
+                        <label asp-for="Host.HostName">Hostname or IP</label>
+                        <input asp-for="Host.HostName" />
+                    </div>
+                    <div>
+                        <label asp-for="Host.Port">Port</label>
+                        <input asp-for="Host.Port" />
+                    </div>
+                </div>
+                <label asp-for="Host.UserName">Username</label>
+                <input asp-for="Host.UserName" />
+                <label asp-for="Host.OperatingSystem">Expected OS</label>
+                <select asp-for="Host.OperatingSystem" asp-items="Html.GetEnumSelectList<Hypershell.Profiles.RemoteHostOperatingSystem>()"></select>
+                <label asp-for="Host.DefaultRoot">Default remote root</label>
+                <input asp-for="Host.DefaultRoot" />
+                <label asp-for="Host.CredentialId">Credential</label>
+                <select asp-for="Host.CredentialId">
+                    <option value="">No credential</option>
+                    @foreach (var credential in Model.Credentials.Where(item => !item.IsRevoked))
+                    {
+                        <option value="@credential.Id">@credential.DisplayName · v@credential.KeyVersion</option>
+                    }
+                </select>
+                <label asp-for="Host.Notes">Connection notes</label>
+                <textarea asp-for="Host.Notes"></textarea>
+                <button class="primary" type="submit">Link host</button>
+            </form>
+        </article>
+    </section>
+
+    <section class="inventory-section">
+        <p class="eyebrow">LINKED HOSTS</p>
+        @if (Model.Hosts.Count == 0)
+        {
+            <p class="muted">No SSH host is linked to this account.</p>
+        }
+        else
+        {
+            @foreach (var host in Model.Hosts)
+            {
+                <article class="inventory-row @(host.IsDisabled ? "disabled" : "")">
+                    <div>
+                        <h3>@host.DisplayName</h3>
+                        <p>@host.UserName@@@host.HostName:@host.Port · @host.OperatingSystem · @host.DefaultRoot</p>
+                        <small>Revision @host.Revision · @(host.HasCredential ? "credential ready" : "no active credential")</small>
+                        @if (!string.IsNullOrWhiteSpace(host.HostKeyFingerprint))
+                        {
+                            <code>@host.HostKeyAlgorithm @host.HostKeyFingerprint</code>
+                        }
+                    </div>
+                    @if (!host.IsDisabled)
+                    {
+                        <form method="post" asp-page-handler="DisableHost" asp-route-section="linked-hosts" asp-route-hostId="@host.Id">
+                            <button class="icon-button danger-icon" type="submit" title="Disable host" aria-label="Disable host">×</button>
+                        </form>
+                    }
+                </article>
+                @if (!host.IsDisabled)
+                {
+                    <details class="inline-editor">
+                        <summary>Pin or deliberately replace host key</summary>
+                        <form method="post" asp-page-handler="PinHostKey" asp-route-section="linked-hosts">
+                            <input asp-for="HostKey.HostId" type="hidden" value="@host.Id" />
+                            <input asp-for="HostKey.ExpectedCurrentFingerprint" type="hidden" value="@host.HostKeyFingerprint" />
+                            <div class="field-pair">
+                                <input asp-for="HostKey.Algorithm" value="@(host.HostKeyAlgorithm ?? "ssh-ed25519")" aria-label="Host-key algorithm" />
+                                <input asp-for="HostKey.Fingerprint" placeholder="SHA256:..." aria-label="Observed host-key fingerprint" />
+                            </div>
+                            <button class="secondary" type="submit">Compare and save</button>
+                        </form>
+                    </details>
+                }
+            }
+        }
+    </section>
+
+    <section class="inventory-section">
+        <p class="eyebrow">SSH CREDENTIALS</p>
+        @if (Model.Credentials.Count == 0)
+        {
+            <p class="muted">No private key is stored in the encrypted vault.</p>
+        }
+        else
+        {
+            @foreach (var credential in Model.Credentials)
+            {
+                <article class="inventory-row @(credential.IsRevoked ? "disabled" : "")">
+                    <div>
+                        <h3>@credential.DisplayName</h3>
+                        <code>@credential.PublicKeyFingerprint</code>
+                        <small>Key version @credential.KeyVersion · updated @credential.UpdatedAtUtc.ToLocalTime().ToString("g")</small>
+                    </div>
+                    @if (!credential.IsRevoked)
+                    {
+                        <form method="post" asp-page-handler="RevokeCredential" asp-route-section="linked-hosts" asp-route-credentialId="@credential.Id">
+                            <button class="icon-button danger-icon" type="submit" title="Revoke credential" aria-label="Revoke credential">×</button>
+                        </form>
+                    }
+                </article>
+                @if (!credential.IsRevoked)
+                {
+                    <details class="inline-editor">
+                        <summary>Rotate credential</summary>
+                        <form method="post" enctype="multipart/form-data" asp-page-handler="AddCredential" asp-route-section="linked-hosts">
+                            <input asp-for="Credential.CredentialId" type="hidden" value="@credential.Id" />
+                            <input asp-for="Credential.ExpectedKeyVersion" type="hidden" value="@credential.KeyVersion" />
+                            <input asp-for="Credential.DisplayName" value="@credential.DisplayName" aria-label="Credential label" />
+                            <input asp-for="Credential.PrivateKey" type="file" accept=".pem,.key,*/*" aria-label="Replacement private-key file" />
+                            <input asp-for="Credential.Passphrase" autocomplete="off" placeholder="Passphrase (optional)" aria-label="Replacement key passphrase" />
+                            <button class="secondary" type="submit">Rotate</button>
+                        </form>
+                    </details>
+                }
+            }
+        }
+    </section>
+}
+else
+{
+    <section class="empty-state">
+        <span>@Model.Icon</span>
+        <h2>@Model.Status</h2>
+        <p>@Model.Detail</p>
+    </section>
+}

@@ -1,0 +1,25 @@
+@using System.Net.Mail
+<section class="hl-form-panel">
+    <h2 data-field="title">@Context.Text("title", "Start a conversation")</h2>
+    <p data-field="description">@Context.Text("description")</p>
+    <form class="hl-form" @onsubmit="Submit" @onsubmit:preventDefault="true">
+        <label><span data-field="nameLabel">@Context.Text("nameLabel", "Name")</span><input name="name" autocomplete="name" required maxlength="120" @bind="_name" /></label>
+        <label><span data-field="emailLabel">@Context.Text("emailLabel", "Email")</span><input name="email" type="email" autocomplete="email" required maxlength="254" @bind="_email" /></label>
+        <label class="hl-form-message"><span data-field="messageLabel">@Context.Text("messageLabel", "Message")</span><textarea name="message" required maxlength="4000" rows="4" @bind="_message"></textarea></label>
+        <button class="hl-button" type="submit"><span data-field="submitLabel">@Context.Text("submitLabel", "Preview submission")</span></button>
+    </form>
+    <p class="hl-note">Local preview — this form validates your entry without sending or storing it.</p>
+    @if (_receipt is not null) { <p class="hl-form-receipt" role="status">@_receipt</p> }
+</section>
+@code {
+    [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+    private string _name = "", _email = "", _message = "";
+    private string? _receipt;
+    private void Submit()
+    {
+        if (string.IsNullOrWhiteSpace(_name) || _name.Length > 120 || string.IsNullOrWhiteSpace(_message) || _message.Length > 4000
+            || _email.Length > 254 || !MailAddress.TryCreate(_email, out var address) || address.Address != _email.Trim())
+        { _receipt = "Enter your name, a valid email address and a message."; return; }
+        _receipt = $"Thanks, {_name.Trim()}. Your message passes validation. This is a local preview; nothing was sent.";
+    }
+}

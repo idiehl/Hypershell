@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "workbox-popular",
+  "displayName": "Workbox",
+  "description": "Curated Workbox starter recipes for the Web APIs Command Builder. The dependency is referenced, not bundled.",
+  "language": "Web APIs",
+  "category": "Popular libraries",
+  "kind": "Framework",
+  "canonicalName": "Workbox",
+  "ecosystem": "npm / Service Worker",
+  "targetVersion": "7",
+  "sourceVersion": "7 documentation · curated 2026-08-17",
+  "sourceUrl": "https://developer.chrome.com/docs/workbox/what-is-workbox/",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Browser/build-tool content: configure Workbox in a service worker or build pipeline and serve over a secure context; the Web APIs surface is editor-only.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "web apis",
+    "popular library",
+    "workbox-*",
+    "service worker",
+    "offline",
+    "cache",
+    "pwa"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/workbox-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/workbox-popular.guides.json"
+  ],
+  "legacyIds": []
+}

@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "templateId": "standard",
+  "title": "HyperLib presentation",
+  "regions": [
+    {
+      "id": "main",
+      "title": "Page content",
+      "allowedBlocks": [
+        "text",
+        "richtext",
+        "image",
+        "gallery",
+        "audio",
+        "video",
+        "wave",
+        "callout",
+        "counter",
+        "citation"
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "text",
+      "title": "Text",
+      "component": "TextBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text",
+          "title": "Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Write something worth exploring.",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "richtext",
+      "title": "Rich text",
+      "component": "RichTextBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "text",
+          "title": "Markdown",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Write **something** worth exploring.",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "image",
+      "title": "Image",
+      "component": "ImageBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "src",
+          "title": "Image",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "alt",
+          "title": "Description",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "caption",
+          "title": "Caption",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "width",
+          "title": "Width (%)",
+          "type": "number",
+          "required": false,
+          "defaultValue": 100,
+          "options": [],
+          "min": 40,
+          "max": 100
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "title": "Gallery",
+      "component": "GalleryBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "src1",
+          "title": "First image",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "src2",
+          "title": "Second image",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "caption",
+          "title": "Caption",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "title": "Audio",
+      "component": "AudioBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "src",
+          "title": "Audio",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "caption",
+          "title": "Caption",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "title": "Video",
+      "component": "VideoBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "src",
+          "title": "Video",
+          "type": "media",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "caption",
+          "title": "Caption",
+          "type": "string",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "wave",
+      "title": "Wave experiment",
+      "component": "WaveBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "frequency",
+          "title": "Frequency",
+          "type": "number",
+          "required": false,
+          "defaultValue": 2,
+          "options": [],
+          "min": 0.1,
+          "max": 10
+        },
+        {
+          "id": "amplitude",
+          "title": "Amplitude",
+          "type": "number",
+          "required": false,
+          "defaultValue": 0.7,
+          "options": [],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "callout",
+      "title": "Callout",
+      "component": "CalloutBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "title",
+          "title": "Title",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Worth noticing",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Text",
+          "type": "text",
+          "required": false,
+          "defaultValue": "Add a useful observation.",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "counter",
+      "title": "Interactive counter",
+      "component": "CounterBlock",
+      "kind": "javascript",
+      "fields": [
+        {
+          "id": "label",
+          "title": "Label",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Observations",
+          "options": []
+        },
+        {
+          "id": "start",
+          "title": "Starting value",
+          "type": "number",
+          "required": false,
+          "defaultValue": 0,
+          "options": [],
+          "min": -1000000,
+          "max": 1000000
+        }
+      ]
+    },
+    {
+      "id": "citation",
+      "title": "Source citation",
+      "component": "CitationBlock",
+      "kind": "razor",
+      "fields": [
+        {
+          "id": "url",
+          "title": "Source URL",
+          "type": "url",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        },
+        {
+          "id": "title",
+          "title": "Source title",
+          "type": "string",
+          "required": false,
+          "defaultValue": "Source",
+          "options": []
+        },
+        {
+          "id": "text",
+          "title": "Note",
+          "type": "text",
+          "required": false,
+          "defaultValue": "",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "appearance": [
+    {
+      "id": "accent",
+      "title": "Accent",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#65a88e",
+      "options": []
+    },
+    {
+      "id": "background",
+      "title": "Background",
+      "type": "color",
+      "required": false,
+      "defaultValue": "#101a21",
+      "options": []
+    },
+    {
+      "id": "subtitle",
+      "title": "Introduction",
+      "type": "text",
+      "required": false,
+      "defaultValue": "Collect ideas, follow connections, and make something of your own.",
+      "options": []
+    },
+    {
+      "id": "font",
+      "title": "Typography",
+      "type": "select",
+      "required": false,
+      "defaultValue": "Georgia, serif",
+      "options": [
+        "Georgia, serif",
+        "system-ui, sans-serif"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "projectId": "507d60af7f874ce9918c460a23c1da6e",
+  "pageId": "1becfc1d131a4b2d9a906913af83450c",
+  "name": "Presentation",
+  "componentName": "WorkPage",
+  "route": "/presentation",
+  "slug": "presentation",
+  "fileType": "RazorPage",
+  "title": "Maker Workbench",
+  "description": "Studio-owned presentation shell. Author page content in HyperLib.",
+  "revision": "",
+  "generatorVersion": "1.0.0",
+  "root": {
+    "elementId": "bd36c9dc8fcf4c2c8bf040472bc24463",
+    "descriptorId": "core.page",
+    "name": "Page shell",
+    "children": []
+  },
+  "generatedFiles": [
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.razor",
+      "sha256": "88bf3b937b4ac6712c86f83e0eb8116fe00bc50e3bb8b81d92a884d4c0b93a0d"
+    },
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.razor.css",
+      "sha256": "4d9d56b89496b41363a18282c19a576ed64ff2093f3846b9ddf2543405d4e649"
+    },
+    {
+      "relativePath": "src/Pages/Generated/WorkPage.designer.g.cs",
+      "sha256": "898257adf51112f60e6d880501234d03d09fcd7187ff6fdcfc86e94cbd8c8ab6"
+    },
+    {
+      "relativePath": "src/Pages/wwwroot/visual-page-theme.css",
+      "sha256": "546a0f4a9c49690f265d7abac7ee191bdba19f88f954c8b2f5a2fc66fb4be144"
+    }
+  ]
+}

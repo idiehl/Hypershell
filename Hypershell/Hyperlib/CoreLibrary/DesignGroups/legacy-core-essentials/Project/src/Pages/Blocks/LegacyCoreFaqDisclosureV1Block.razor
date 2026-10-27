@@ -1,0 +1,41 @@
+@* Source: core.faq.disclosure.v1 (Core essentials). Editable fields preserve the original Hyperpage design. *@
+@namespace HyperLib.Work.Blocks
+
+<main class="vp-4934d99a62ea" data-vp-id="4934d99a62ea7c0c4f0b9d27cbaffd75">
+    <section aria-label="Frequently asked questions" class="vp-fa47dc879795" data-vp-id="fa47dc879795cd8dc6acf098d912e2dd">
+        <h2 class="vp-7deaf5322319" data-field="text-2">
+            @(Context.Text("text-2"))
+        </h2>
+        <details class="vp-514dc3f5b8dc" data-vp-id="514dc3f5b8dc9925f2468f168191111d">
+            <summary class="vp-41345b3512e9" data-field="text-4" data-vp-id="41345b3512e93d3df40319169f62e5d0">
+                @(Context.Text("text-4"))
+            </summary>
+            <p class="vp-a4f69a97c35f" data-field="text-5" data-vp-id="a4f69a97c35f54e2e6c67973d5b61907">
+                @(Context.Text("text-5"))
+            </p>
+        </details>
+        <details class="vp-d807c1f60e4e" data-vp-id="d807c1f60e4ee66115adc7205b5a750b">
+            <summary class="vp-f0f7bbe7111f" data-field="text-7" data-vp-id="f0f7bbe7111f9c95fc98a29130150ddc">
+                @(Context.Text("text-7"))
+            </summary>
+            <p class="vp-a32d4718a71e" data-field="text-8" data-vp-id="a32d4718a71e6fbd6ec58e78b6e5bc02">
+                @(Context.Text("text-8"))
+            </p>
+        </details>
+        <details class="vp-e5a160688397" data-vp-id="e5a16068839731d3f1f7fa2502b3f3f2">
+            <summary class="vp-642874bf94d0" data-field="text-10" data-vp-id="642874bf94d0aa05b6bf24ebbfa65898">
+                @(Context.Text("text-10"))
+            </summary>
+            <p class="vp-e95d5f99dea1" data-field="text-11" data-vp-id="e95d5f99dea104a1cac867aa00059d26">
+                @(Context.Text("text-11"))
+            </p>
+        </details>
+    </section>
+</main>
+
+@code {
+    [Parameter, EditorRequired] public HyperLib.Runtime.BlockContext Context { get; set; } = new();
+    private string LocalIds(string value) => string.Join(" ", value.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(id => Context.Id + "-" + id));
+    private string Link(string value) => value.StartsWith('#') ? "#" + Context.Id + "-" + value[1..] : Asset(value);
+    private static string Asset(string value) => value.StartsWith("/_content/", StringComparison.Ordinal) ? "." + value : HyperLib.Core.TemplateValidator.IsSafeUrl(value) ? value : "";
+}

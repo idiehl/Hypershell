@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-metric-trend">
+<div class="metric"><small>@Context.Text("title")</small><strong>@Cell(Rows.FirstOrDefault() ?? "128",0)</strong><p><span class="badge">↗ @Cell(Rows.FirstOrDefault() ?? "128|12%",1)</span> @Context.Text("text")</p></div>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+
+}

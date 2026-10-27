@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "css-animations",
+  "guides": [
+    {
+      "entryId": "css.keyframes",
+      "definition": "@keyframes describes property values at points in an animation timeline. animation applies the named sequence with duration, timing, and iteration settings.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Animation name",
+          "placeholder": "name",
+          "description": "The identifier shared by @keyframes and animation.",
+          "typeName": "CSS identifier",
+          "defaultValue": "fade-in",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "property",
+          "displayName": "Property",
+          "placeholder": "property",
+          "description": "The animatable property controlled by the keyframes.",
+          "typeName": "CSS property",
+          "defaultValue": "opacity",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "from",
+          "displayName": "Starting value",
+          "placeholder": "from",
+          "description": "The value at the beginning.",
+          "typeName": "CSS value",
+          "defaultValue": "0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "to",
+          "displayName": "Ending value",
+          "placeholder": "to",
+          "description": "The value at the end.",
+          "typeName": "CSS value",
+          "defaultValue": "1",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "className",
+          "displayName": "Class",
+          "placeholder": "className",
+          "description": "The class receiving the animation.",
+          "typeName": "CSS identifier",
+          "defaultValue": "notice",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "duration",
+          "displayName": "Duration",
+          "placeholder": "duration",
+          "description": "How long one animation cycle takes.",
+          "typeName": "Time",
+          "defaultValue": "220ms",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "timing",
+          "displayName": "Timing",
+          "placeholder": "timing",
+          "description": "The animation timing function.",
+          "typeName": "Timing function",
+          "defaultValue": "ease-out",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Fade in a notice",
+          "code": "@keyframes fade-in {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}\n\n.notice {\n  animation: fade-in 220ms ease-out;\n}",
+          "explanation": "The notice interpolates opacity from transparent to opaque once when it appears."
+        }
+      ]
+    }
+  ]
+}

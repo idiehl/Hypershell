@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "foundation-status",
+  "title": "Status essentials",
+  "description": "Editable status modules. Native controls and local C# interactions; no third-party service required.",
+  "category": "Status",
+  "sourceTemplateId": "foundation-status"
+}

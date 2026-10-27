@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "foundation-learning",
+  "title": "Learning essentials",
+  "description": "Editable learning modules. Native controls and local C# interactions; no third-party service required.",
+  "category": "Learning",
+  "sourceTemplateId": "foundation-learning"
+}

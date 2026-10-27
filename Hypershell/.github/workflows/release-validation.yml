@@ -1,0 +1,73 @@
+name: Release tooling validation
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/release-validation.yml'
+      - 'installer/**'
+      - 'tools/*Release*.ps1'
+      - 'tools/GitHubRelease.psm1'
+      - 'tools/Hypershell.ReleaseTool/**'
+      - 'tools/Hypershell.DistributionVerifier/**'
+      - 'tools/Hypershell.SuiteVerifier/**'
+      - 'tools/*Suite*.ps1'
+      - 'src/Hypershell.ProfileProtocol/**'
+      - 'src/Hypershell.ProfileServer/**'
+      - 'src/Hypershell/Services/InstalledSuiteComponents.cs'
+      - 'src/Hypershell/Services/AtlasMyNetAppStore.cs'
+      - 'src/Hypershell/Services/ApplicationUpdateService.cs'
+      - 'src/Hypershell/Models/AtlasMyNetModels.cs'
+      - 'deploy/hypershell-server/publish-profile-release.sh'
+      - 'tools/Test-HypershellServerReleasePublisher.sh'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build release manifest verifier
+        shell: pwsh
+        run: dotnet build tools/Hypershell.ReleaseTool/Hypershell.ReleaseTool.csproj -c Release --nologo
+      - name: Verify GitHub draft publication behavior offline
+        shell: pwsh
+        run: ./tools/Test-HypershellGitHubRelease.ps1
+      - name: Verify coordinated release distribution
+        shell: pwsh
+        run: dotnet run --project tools/Hypershell.DistributionVerifier -c Release
+      - name: Verify installed suite discovery and data boundaries
+        shell: pwsh
+        run: dotnet run --project tools/Hypershell.SuiteVerifier -c Release
+      - name: Verify suite payload provenance and tamper rejection
+        shell: pwsh
+        run: ./tools/Test-HypershellSuitePayloadValidation.ps1
+      - name: Build and inspect fixture Core and Complete installers
+        shell: pwsh
+        run: ./installer/Suite/Test-SuiteInstaller.ps1 -Build
+
+# This workflow deliberately has no signing credentials or publication step.
+# Signed releases are prepared on the release workstation and uploaded as drafts
+# using Publish-HypershellGitHubRelease.ps1 with an explicit destination commit.
+
+  server-publisher:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Verify server publication in a disposable container
+        run: docker run --rm -e HYPERSHELL_PUBLISHER_FIXTURE_CONTAINER=1 --mount type=bind,source="$GITHUB_WORKSPACE",target=/repo,readonly ubuntu:24.04 bash /repo/tools/Test-HypershellServerReleasePublisher.sh

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "course-notebook",
+  "title": "Course Notebook",
+  "description": "A lesson opener followed by objectives, a guided exercise, a checklist, and a reflection form.",
+  "category": "Learning",
+  "sourceTemplateId": "course-notebook"
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "typescript-compiler-api",
+  "displayName": "TypeScript Compiler API",
+  "description": "The Microsoft-supported TypeScript 6 compatibility API for TypeScript 7 projects, separated from the current language and type-system surface.",
+  "language": "TypeScript",
+  "category": "Official reference",
+  "kind": "PlatformApi",
+  "canonicalName": "TypeScript Compiler API",
+  "ecosystem": "npm / TypeScript",
+  "targetVersion": "TypeScript 6.0.3 compatibility API",
+  "sourceVersion": "TypeScript 6.0.3 public compiler declarations · c967e03c8dbb4770f7e2f0b71b5d13593de679a41cc2b60266c4b69f1342a263",
+  "sourceUrl": "https://unpkg.com/@typescript/typescript6@6.0.2/package.json",
+  "license": "Apache-2.0",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Install @typescript/typescript6@6.0.2 and retain the project lockfile before executing Compiler API code; this catalog targets its current TypeScript 6.0.3 API dependency.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "typescript",
+    "compiler api",
+    "typescript6",
+    "ast",
+    "package"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 6779,
+  "declaredIndexedCount": 6746,
+  "declaredGuidedCount": 33,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/typescript-compiler-api.001.entries.json",
+    "entries/typescript-compiler-api.002.entries.json"
+  ],
+  "declaredGuideCount": 33,
+  "guideFiles": [
+    "guides/typescript-compiler-api.guides.json"
+  ],
+  "legacyIds": []
+}

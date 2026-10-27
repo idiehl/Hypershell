@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "react-popular",
+  "displayName": "React",
+  "description": "Curated React starter recipes for the JavaScript Command Builder. The dependency is referenced, not bundled.",
+  "language": "JavaScript",
+  "category": "Popular libraries",
+  "kind": "Framework",
+  "canonicalName": "React",
+  "ecosystem": "npm",
+  "targetVersion": "19.2",
+  "sourceVersion": "19.2 documentation · curated 2026-08-17",
+  "sourceUrl": "https://react.dev/learn",
+  "license": "MIT",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Editor/project dependency only: React JSX requires a configured application toolchain; the plain Node.js runner does not transform JSX.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "javascript",
+    "popular library",
+    "react",
+    "ui",
+    "component",
+    "jsx",
+    "frontend"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/react-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/react-popular.guides.json"
+  ],
+  "legacyIds": []
+}

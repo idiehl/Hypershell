@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "fetch-standard",
+  "guides": [
+    {
+      "entryId": "web.fetch-json",
+      "definition": "fetch returns a promise for a Response. HTTP error statuses still produce responses, so code should check ok before consuming and trusting the body.",
+      "parameters": [
+        {
+          "name": "name",
+          "displayName": "Function name",
+          "placeholder": "name",
+          "description": "The async function that performs the request.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "loadStatus",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "url",
+          "displayName": "URL",
+          "placeholder": "url",
+          "description": "The request URL, relative or absolute.",
+          "typeName": "URL",
+          "defaultValue": "/api/status",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load an API status",
+          "code": "async function loadStatus() {\n  const response = await fetch(\"/api/status\");\n  if (!response.ok) throw new Error(`HTTP ${response.status}`);\n  return response.json();\n}\n\nloadStatus().then(console.log).catch(console.error);",
+          "explanation": "The function rejects non-success HTTP responses and returns the promise produced by parsing a successful JSON body."
+        }
+      ]
+    }
+  ]
+}

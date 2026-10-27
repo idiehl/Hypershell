@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "python-core",
+  "displayName": "Python Core",
+  "description": "Python syntax, control flow, literals, declarations, and language-defined built-ins that require no import.",
+  "language": "Python",
+  "category": "Language core",
+  "kind": "Core",
+  "canonicalName": "Python Language Core",
+  "ecosystem": "Python",
+  "targetVersion": "Python 3.14",
+  "sourceVersion": "Python 3.14 · objects.inv c6936c1ffd2369bd1bfe5083055962e9fa66ccee104debb21f499d3255b4fcdf",
+  "sourceUrl": "https://docs.python.org/3/reference/",
+  "license": "Python Software Foundation License",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Runs through the matching installed Hypershell terminal adapter.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "python",
+    "core",
+    "syntax",
+    "built-ins"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 438,
+  "declaredIndexedCount": 410,
+  "declaredGuidedCount": 0,
+  "declaredVerifiedCount": 28,
+  "entryFiles": [
+    "entries/python-core.entries.json"
+  ],
+  "declaredGuideCount": 28,
+  "guideFiles": [
+    "guides/python-core.guides.json"
+  ],
+  "legacyIds": [
+    "python-essentials"
+  ]
+}

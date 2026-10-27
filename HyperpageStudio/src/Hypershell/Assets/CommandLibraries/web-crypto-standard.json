@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "web-crypto-standard",
+  "displayName": "Web Cryptography API",
+  "description": "Web Cryptography API interfaces and browser-platform operations.",
+  "language": "Web APIs",
+  "category": "Official reference",
+  "kind": "PlatformApi",
+  "canonicalName": "Web Cryptography API",
+  "ecosystem": "Web Platform",
+  "targetVersion": "Living Standard inventory",
+  "sourceVersion": "Web declarations from TypeScript 5.9.3 · 080941d9f9ff/6d08cde2bfb6",
+  "sourceUrl": "https://www.w3.org/TR/WebCryptoAPI/",
+  "license": "W3C document license",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "Web API entries target compatible JavaScript or TypeScript editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "web api",
+    "browser",
+    "Web Cryptography API"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 28,
+  "declaredIndexedCount": 28,
+  "declaredGuidedCount": 0,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/web-crypto-standard.entries.json"
+  ],
+  "declaredGuideCount": 0,
+  "guideFiles": [],
+  "legacyIds": []
+}

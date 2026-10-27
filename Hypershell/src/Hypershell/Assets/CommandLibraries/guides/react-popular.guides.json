@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "react-popular",
+  "guides": [
+    {
+      "entryId": "react-popular.stateful-component",
+      "definition": "Defines a React function component with local state and a functional update. Editor/project dependency only: React JSX requires a configured application toolchain; the plain Node.js runner does not transform JSX.",
+      "parameters": [
+        {
+          "name": "componentName",
+          "displayName": "Component name",
+          "placeholder": "componentName",
+          "description": "PascalCase component function name.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "Counter",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "stateName",
+          "displayName": "State name",
+          "placeholder": "stateName",
+          "description": "Local state variable name.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "count",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "setterSuffix",
+          "displayName": "Setter suffix",
+          "placeholder": "setterSuffix",
+          "description": "PascalCase suffix used after set.",
+          "typeName": "JavaScript identifier fragment",
+          "defaultValue": "Count",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "initialValue",
+          "displayName": "Initial value",
+          "placeholder": "initialValue",
+          "description": "Initial state expression.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "0",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "label",
+          "displayName": "Button label",
+          "placeholder": "label",
+          "description": "Visible label before the state value.",
+          "typeName": "JSX text",
+          "defaultValue": "Count",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create a counter",
+          "code": "import { useState } from \"react\";\n\nexport function Counter() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <button onClick={() => setCount(value => value + 1)}>\n      Count: {count}\n    </button>\n  );\n}",
+          "explanation": "A functional state update uses the previous value safely when React batches multiple updates."
+        }
+      ]
+    },
+    {
+      "entryId": "react-popular.render-list",
+      "definition": "Maps data to JSX elements with stable keys. Editor/project dependency only: React JSX requires a configured application toolchain; the plain Node.js runner does not transform JSX.",
+      "parameters": [
+        {
+          "name": "componentName",
+          "displayName": "Component name",
+          "placeholder": "componentName",
+          "description": "PascalCase component function name.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "UserList",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "propName",
+          "displayName": "Collection prop",
+          "placeholder": "propName",
+          "description": "Array prop destructured by the component.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "users",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "keyProperty",
+          "displayName": "Key property",
+          "placeholder": "keyProperty",
+          "description": "Stable unique property used as the React key.",
+          "typeName": "JavaScript property",
+          "defaultValue": "id",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "labelProperty",
+          "displayName": "Label property",
+          "placeholder": "labelProperty",
+          "description": "Property rendered as list content.",
+          "typeName": "JavaScript property",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Render users",
+          "code": "export function UserList({ users }) {\n  return (\n    <ul>\n      {users.map(user => (\n        <li key={user.id}>{user.name}</li>\n      ))}\n    </ul>\n  );\n}",
+          "explanation": "Keys let React match items across renders; use a stable data identifier instead of an array index when possible."
+        }
+      ]
+    },
+    {
+      "entryId": "react-popular.effect-fetch",
+      "definition": "Fetches JSON when a dependency changes and ignores stale completion after cleanup. Editor/project dependency only: React JSX requires a configured application toolchain; the plain Node.js runner does not transform JSX.",
+      "parameters": [
+        {
+          "name": "url",
+          "displayName": "URL expression",
+          "placeholder": "url",
+          "description": "Fetch URL string or template literal.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "`/api/users/${userId}`",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "dependency",
+          "displayName": "Effect dependency",
+          "placeholder": "dependency",
+          "description": "Value that should trigger a reload when it changes.",
+          "typeName": "JavaScript expression",
+          "defaultValue": "userId",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load one user's profile",
+          "code": "import { useEffect, useState } from \"react\";\n\nconst [data, setData] = useState(null);\n\nuseEffect(() => {\n  let ignore = false;\n\n  fetch(`/api/users/${userId}`)\n    .then(response => {\n      if (!response.ok) throw new Error(`HTTP ${response.status}`);\n      return response.json();\n    })\n    .then(value => { if (!ignore) setData(value); });\n\n  return () => { ignore = true; };\n}, [userId]);",
+          "explanation": "The cleanup flag prevents an older request from replacing state after the dependency has changed or the component has unmounted."
+        }
+      ]
+    }
+  ]
+}

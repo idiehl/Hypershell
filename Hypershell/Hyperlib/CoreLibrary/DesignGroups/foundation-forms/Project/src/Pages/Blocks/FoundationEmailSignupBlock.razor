@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-email-signup">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><form @onsubmit="Confirm" @onsubmit:preventDefault><label>Email address<input type="email" required autocomplete="email" placeholder="you@example.com" /></label><label class="inline"><input type="checkbox" required /> I agree to receive updates</label><button type="submit">Preview signup</button><output aria-live="polite">@result</output></form>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private string result=""; private void Confirm()=>result="Email validated locally. No signup was sent.";
+}

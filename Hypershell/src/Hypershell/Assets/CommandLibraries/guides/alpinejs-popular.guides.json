@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "alpinejs-popular",
+  "guides": [
+    {
+      "entryId": "alpinejs-popular.toggle-region",
+      "definition": "Creates local Alpine state and toggles an associated region with accessible button state. Editor-only markup: include Alpine.js 3 in the target page before using x-data directives.",
+      "parameters": [
+        {
+          "name": "stateName",
+          "displayName": "State name",
+          "placeholder": "stateName",
+          "description": "Boolean state property used by the directives.",
+          "typeName": "JavaScript identifier",
+          "defaultValue": "open",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "initialValue",
+          "displayName": "Initial value",
+          "placeholder": "initialValue",
+          "description": "Initial visibility state.",
+          "typeName": "JavaScript boolean",
+          "defaultValue": "false",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "label",
+          "displayName": "Button label",
+          "placeholder": "label",
+          "description": "Visible toggle label.",
+          "typeName": "HTML text",
+          "defaultValue": "Details",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "content",
+          "displayName": "Region content",
+          "placeholder": "content",
+          "description": "Content shown while state is true.",
+          "typeName": "HTML content",
+          "defaultValue": "Additional project details.",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Toggle details",
+          "code": "<section x-data=\"{ open: false }\">\n  <button type=\"button\" @click=\"open = !open\" :aria-expanded=\"open\">\n    Details\n  </button>\n  <div x-show=\"open\" x-cloak>Additional project details.</div>\n</section>",
+          "explanation": "x-data scopes the state to the section; x-cloak prevents the initially hidden content from flashing before Alpine starts."
+        }
+      ]
+    },
+    {
+      "entryId": "alpinejs-popular.tabs",
+      "definition": "Uses Alpine state to select one of two labeled tab panels. Editor-only markup: include Alpine.js 3 in the target page before using x-data directives.",
+      "parameters": [
+        {
+          "name": "firstId",
+          "displayName": "First tab id",
+          "placeholder": "firstId",
+          "description": "Identifier stored for the first tab.",
+          "typeName": "JavaScript string content",
+          "defaultValue": "overview",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstLabel",
+          "displayName": "First label",
+          "placeholder": "firstLabel",
+          "description": "Visible label for the first tab.",
+          "typeName": "HTML text",
+          "defaultValue": "Overview",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "firstContent",
+          "displayName": "First content",
+          "placeholder": "firstContent",
+          "description": "First panel content.",
+          "typeName": "HTML content",
+          "defaultValue": "Project overview.",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondId",
+          "displayName": "Second tab id",
+          "placeholder": "secondId",
+          "description": "Identifier stored for the second tab.",
+          "typeName": "JavaScript string content",
+          "defaultValue": "activity",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondLabel",
+          "displayName": "Second label",
+          "placeholder": "secondLabel",
+          "description": "Visible label for the second tab.",
+          "typeName": "HTML text",
+          "defaultValue": "Activity",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "secondContent",
+          "displayName": "Second content",
+          "placeholder": "secondContent",
+          "description": "Second panel content.",
+          "typeName": "HTML content",
+          "defaultValue": "Recent activity.",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Switch between overview and activity",
+          "code": "<div x-data=\"{ tab: 'overview' }\">\n  <div role=\"tablist\">\n    <button role=\"tab\" @click=\"tab = 'overview'\" :aria-selected=\"tab === 'overview'\">Overview</button>\n    <button role=\"tab\" @click=\"tab = 'activity'\" :aria-selected=\"tab === 'activity'\">Activity</button>\n  </div>\n  <section x-show=\"tab === 'overview'\" role=\"tabpanel\">Project overview.</section>\n  <section x-show=\"tab === 'activity'\" role=\"tabpanel\">Recent activity.</section>\n</div>",
+          "explanation": "This establishes selection and panel visibility; a production tab widget should also implement keyboard focus movement from the ARIA pattern."
+        }
+      ]
+    },
+    {
+      "entryId": "alpinejs-popular.load-data",
+      "definition": "Defines Alpine component state and loads remote JSON during initialization. Editor-only markup: include Alpine.js 3 in the target page before using x-data directives.",
+      "parameters": [
+        {
+          "name": "url",
+          "displayName": "URL",
+          "placeholder": "url",
+          "description": "URL inserted inside the quoted fetch call.",
+          "typeName": "URL text",
+          "defaultValue": "/api/projects",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "loadingText",
+          "displayName": "Loading text",
+          "placeholder": "loadingText",
+          "description": "Visible content while the request is pending.",
+          "typeName": "HTML text",
+          "defaultValue": "Loading projects…",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "keyProperty",
+          "displayName": "Key property",
+          "placeholder": "keyProperty",
+          "description": "Stable unique property for x-for.",
+          "typeName": "JavaScript property",
+          "defaultValue": "id",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "labelProperty",
+          "displayName": "Label property",
+          "placeholder": "labelProperty",
+          "description": "Property rendered as text.",
+          "typeName": "JavaScript property",
+          "defaultValue": "name",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load project names",
+          "code": "<section x-data=\"{ items: [], loading: true, async init() { const response = await fetch('/api/projects'); if (!response.ok) throw new Error(`HTTP ${response.status}`); this.items = await response.json(); this.loading = false; } }\">\n  <p x-show=\"loading\">Loading projects…</p>\n  <template x-for=\"item in items\" :key=\"item.id\">\n    <p x-text=\"item.name\"></p>\n  </template>\n</section>",
+          "explanation": "Alpine automatically calls init; real interfaces should add a visible error state and cancellation behavior when navigation can interrupt the request."
+        }
+      ]
+    }
+  ]
+}

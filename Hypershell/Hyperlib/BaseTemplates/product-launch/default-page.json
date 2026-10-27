@@ -1,0 +1,101 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "Meet Orbit Desk",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "product-hero",
+      "type": "banner",
+      "region": "main",
+      "values": {
+        "eyebrow": "A SMALLER WORKSPACE FOR BIG IDEAS",
+        "title": "Meet Orbit Desk",
+        "text": "Keep the important pieces close. Give everything else some space.",
+        "src": "/media/base-templates/product-launch.svg",
+        "alt": "Abstract product workspace illustration",
+        "align": "center"
+      }
+    },
+    {
+      "id": "benefit-focus",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "One clear view",
+        "text": "Bring the next useful action into focus.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "benefit-flex",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Room to adapt",
+        "text": "Arrange the workspace around the way you think.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "benefit-local",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "A place of your own",
+        "text": "Keep your project notes connected to the work.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "demo-heading",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "SEE THE IDEA",
+        "style": "line"
+      }
+    },
+    {
+      "id": "product-demo",
+      "type": "embed",
+      "region": "main",
+      "values": {
+        "url": "",
+        "title": "Add a product walkthrough",
+        "caption": "Set a supported external video URL to show a demo. External content requires a click.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "product-details",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Designed to stay simple",
+        "text": "A focused starting point. Replace this example copy with concrete features and a clear audience.",
+        "span": "third"
+      }
+    },
+    {
+      "id": "interest",
+      "type": "form",
+      "region": "main",
+      "values": {
+        "title": "Stay in the loop",
+        "description": "Interest form preview; no email is sent or saved by this demonstration."
+      }
+    },
+    {
+      "id": "product-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "Orbit Desk / Example product concept"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

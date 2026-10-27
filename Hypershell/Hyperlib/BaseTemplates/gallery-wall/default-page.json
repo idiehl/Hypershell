@@ -1,0 +1,80 @@
+{
+  "id": "example-page",
+  "workId": "example-work",
+  "title": "Studies in Light and Form",
+  "templateId": "standard",
+  "usesEditableChrome": true,
+  "blocks": [
+    {
+      "id": "exhibition-label",
+      "type": "header",
+      "region": "main",
+      "values": {
+        "eyebrow": "STUDIO EXHIBITION / 01",
+        "title": "Studies in Light and Form",
+        "text": "A small collection of arrangements, pauses, and changing perspectives.",
+        "align": "center"
+      }
+    },
+    {
+      "id": "pair",
+      "type": "gallery",
+      "region": "main",
+      "values": {
+        "src1": "/media/base-templates/gallery-wall.svg",
+        "src2": "/media/base-templates/gallery-wall.svg",
+        "caption": "Two positions within the same visual study."
+      }
+    },
+    {
+      "id": "work-label",
+      "type": "callout",
+      "region": "main",
+      "values": {
+        "title": "Study 01",
+        "text": "Digital composition\nShape, balance, and negative space",
+        "span": "third"
+      }
+    },
+    {
+      "id": "artist-note",
+      "type": "richtext",
+      "region": "main",
+      "values": {
+        "text": "## A note from the studio\n\nThese studies begin with a small number of forms. Their relationships matter more than their individual complexity.\n\nMove closer, then step back. Notice what changes.",
+        "span": "two-thirds"
+      }
+    },
+    {
+      "id": "pause",
+      "type": "divider",
+      "region": "main",
+      "values": {
+        "label": "",
+        "style": "space"
+      }
+    },
+    {
+      "id": "final-study",
+      "type": "image",
+      "region": "main",
+      "values": {
+        "src": "/media/base-templates/gallery-wall.svg",
+        "alt": "A final composition study",
+        "caption": "Study 02 / A different way of holding the same space.",
+        "width": 100,
+        "span": "full"
+      }
+    },
+    {
+      "id": "gallery-footer",
+      "type": "footer",
+      "region": "main",
+      "values": {
+        "text": "An example exhibition / Images are editable template illustrations"
+      }
+    }
+  ],
+  "sources": [],
+  "revision": 0
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "1.0.0",
+  "id": "requests-popular",
+  "displayName": "Requests",
+  "description": "Curated Requests starter recipes for the Python Command Builder. The dependency is referenced, not bundled.",
+  "language": "Python",
+  "category": "Popular libraries",
+  "kind": "Package",
+  "canonicalName": "Requests",
+  "ecosystem": "PyPI",
+  "targetVersion": "2.34.2",
+  "sourceVersion": "2.34.2 documentation · curated 2026-08-17",
+  "sourceUrl": "https://requests.readthedocs.io/en/latest/",
+  "license": "Apache-2.0",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Requires requests in the selected Python environment; Hypershell does not install it.",
+  "isStarterLibrary": true,
+  "createStandaloneProfile": false,
+  "keywords": [
+    "python",
+    "popular library",
+    "requests",
+    "http",
+    "rest",
+    "client",
+    "pypi"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 3,
+  "declaredIndexedCount": 0,
+  "declaredGuidedCount": 3,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/requests-popular.entries.json"
+  ],
+  "declaredGuideCount": 3,
+  "guideFiles": [
+    "guides/requests-popular.guides.json"
+  ],
+  "legacyIds": []
+}

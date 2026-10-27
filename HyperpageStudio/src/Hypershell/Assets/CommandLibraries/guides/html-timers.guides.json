@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "html-timers",
+  "guides": [
+    {
+      "entryId": "web.set-timeout",
+      "definition": "setTimeout schedules a timer task. The delay is a minimum rather than a guarantee because the callback waits for the event loop to run it.",
+      "parameters": [
+        {
+          "name": "statement",
+          "displayName": "Callback body",
+          "placeholder": "statement",
+          "description": "Browser JavaScript run by the timer task.",
+          "typeName": "JavaScript statement",
+          "defaultValue": "console.log(\"Ready\");",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "delay",
+          "displayName": "Delay",
+          "placeholder": "delay",
+          "description": "The minimum delay in milliseconds.",
+          "typeName": "Non-negative number",
+          "defaultValue": "500",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Report readiness after a delay",
+          "code": "const timerId = window.setTimeout(() => {\n  console.log(\"Ready\");\n}, 500);\n\n// Call window.clearTimeout(timerId) before it runs to cancel it.",
+          "explanation": "The identifier can cancel the pending task, while the callback runs no earlier than the requested half-second delay."
+        }
+      ]
+    }
+  ]
+}

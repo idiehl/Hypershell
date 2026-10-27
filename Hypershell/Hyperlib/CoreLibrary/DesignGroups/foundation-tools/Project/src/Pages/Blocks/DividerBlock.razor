@@ -1,0 +1,5 @@
+<div class="hl-divider hl-divider-@Style" role="separator"><span data-field="label" data-placeholder="Section label">@Context.Text("label")</span></div>
+@code {
+    [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+    private string Style => Context.Text("style") is "space" or "dots" ? Context.Text("style") : "line";
+}

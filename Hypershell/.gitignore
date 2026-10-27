@@ -1,0 +1,56 @@
+# .NET and Visual Studio build state
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+TestResults/
+artifacts/
+
+# JavaScript dependencies and generated editor-host staging
+**/node_modules/
+src/Hypershell.EditorHost/dist/
+
+# Hypershell validation and scratch output
+.codex-test/
+tmp/
+output/
+
+# Local IDE state
+.idea/
+.vscode/
+*.code-workspace
+
+# Local logs, dumps, and transient packages
+*.log
+*.dmp
+*.tmp
+*.bak
+*.cache
+*.nupkg
+*.snupkg
+
+# Local secrets and signing material
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.pem
+*.key
+*.cer
+*.crt
+secrets.json
+appsettings.Local.json
+
+# Release output is generated from a clean tagged commit
+/release/
+/releases/
+/installer-output/
+
+# OS metadata
+Thumbs.db
+Desktop.ini
+.DS_Store

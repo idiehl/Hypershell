@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "libraryId": "prisma-orm-popular",
+  "guides": [
+    {
+      "entryId": "prisma-orm-popular.create-client",
+      "definition": "Creates a PrismaClient and guarantees disconnection after asynchronous work. Generated-project dependency only: configure a Prisma schema, database, and generated client in a project before using these snippets.",
+      "parameters": [
+        {
+          "name": "operation",
+          "displayName": "Operation",
+          "placeholder": "operation",
+          "description": "Prisma operation performed while the client is active.",
+          "typeName": "TypeScript statements",
+          "defaultValue": "const count = await prisma.user.count();",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Count users and disconnect",
+          "code": "import { PrismaClient } from \"@prisma/client\";\n\nconst prisma = new PrismaClient();\n\ntry {\n  const count = await prisma.user.count();\n  console.log(count);\n} finally {\n  await prisma.$disconnect();\n}",
+          "explanation": "A long-lived server usually reuses one client, while a short-lived script should disconnect in a finally block."
+        }
+      ]
+    },
+    {
+      "entryId": "prisma-orm-popular.find-many",
+      "definition": "Queries a generated Prisma model with a filter, projection, and result limit. Generated-project dependency only: configure a Prisma schema, database, and generated client in a project before using these snippets.",
+      "parameters": [
+        {
+          "name": "model",
+          "displayName": "Model delegate",
+          "placeholder": "model",
+          "description": "Generated lowercase model property on PrismaClient.",
+          "typeName": "Prisma model delegate",
+          "defaultValue": "user",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "filter",
+          "displayName": "Where fields",
+          "placeholder": "filter",
+          "description": "Fields placed inside the where object.",
+          "typeName": "TypeScript object fields",
+          "defaultValue": "active: true",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "projection",
+          "displayName": "Selected fields",
+          "placeholder": "projection",
+          "description": "Fields placed inside the select object.",
+          "typeName": "TypeScript object fields",
+          "defaultValue": "id: true, name: true",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "limit",
+          "displayName": "Maximum records",
+          "placeholder": "limit",
+          "description": "Maximum number of records returned.",
+          "typeName": "number",
+          "defaultValue": "25",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Load enabled user summaries",
+          "code": "const records = await prisma.user.findMany({\n  where: { active: true },\n  select: { id: true, name: true },\n  take: 25,\n});",
+          "explanation": "select reduces transferred columns and makes the result type match exactly what downstream code receives."
+        }
+      ]
+    },
+    {
+      "entryId": "prisma-orm-popular.transaction",
+      "definition": "Uses an interactive Prisma transaction so related operations commit or roll back together. Generated-project dependency only: configure a Prisma schema, database, and generated client in a project before using these snippets.",
+      "parameters": [
+        {
+          "name": "operations",
+          "displayName": "Operations",
+          "placeholder": "operations",
+          "description": "Statements executed with the transaction client.",
+          "typeName": "TypeScript statements",
+          "defaultValue": "const account = await transaction.account.create({ data: accountData });",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        },
+        {
+          "name": "result",
+          "displayName": "Return expression",
+          "placeholder": "result",
+          "description": "Value returned after all operations succeed.",
+          "typeName": "TypeScript expression",
+          "defaultValue": "account",
+          "isRequired": true,
+          "isSwitch": false,
+          "includeByDefault": true
+        }
+      ],
+      "examples": [
+        {
+          "title": "Create an account and audit event",
+          "code": "const result = await prisma.$transaction(async transaction => {\n  const account = await transaction.account.create({ data: accountData });\n  await transaction.auditEvent.create({ data: { accountId: account.id, action: \"created\" } });\n  return account;\n});",
+          "explanation": "Use the transaction client for every database operation inside the callback so they share one transaction boundary."
+        }
+      ]
+    }
+  ]
+}

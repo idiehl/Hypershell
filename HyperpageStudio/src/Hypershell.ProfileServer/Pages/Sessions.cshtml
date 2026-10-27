@@ -1,0 +1,39 @@
+@page "/Admin/sessions"
+@model SessionsModel
+@{
+    ViewData["Title"] = "Sessions";
+}
+
+<section class="page-heading compact">
+    <a class="back-link" href="/">← Overview</a>
+    <h1>Sessions</h1>
+    <p class="muted">Active desktop API access tokens. Browser authorization remains protected by its own secure cookie.</p>
+</section>
+
+@if (!string.IsNullOrWhiteSpace(Model.Notice))
+{
+    <p class="notice">@Model.Notice</p>
+}
+
+<section class="inventory-section">
+@if (Model.Sessions.Count == 0)
+{
+    <p class="muted">No active desktop API session is held in this service process.</p>
+}
+else
+{
+    @foreach (var session in Model.Sessions)
+    {
+        <article class="inventory-row">
+            <div>
+                <h3>@(string.IsNullOrWhiteSpace(session.ClientDeviceId) ? "Legacy desktop session" : "Authorized client session")</h3>
+                <p>Expires @session.ExpiresAtUtc.ToLocalTime().ToString("g")</p>
+                <small>@(string.IsNullOrWhiteSpace(session.ClientDeviceId) ? session.Id[..12] : session.ClientDeviceId)</small>
+            </div>
+            <form method="post" asp-page-handler="Revoke" asp-route-sessionId="@session.Id">
+                <button class="icon-button danger-icon" type="submit" title="Revoke session" aria-label="Revoke session">×</button>
+            </form>
+        </article>
+    }
+}
+</section>

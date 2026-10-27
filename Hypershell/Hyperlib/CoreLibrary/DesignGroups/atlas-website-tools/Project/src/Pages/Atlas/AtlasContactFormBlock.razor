@@ -1,0 +1,12 @@
+@namespace HyperLib.Work.Atlas
+<AtlasSurface>
+<section id="contact" class="panel"><h2 data-field="title">@T("title")</h2><p data-field="text">@T("text")</p><form class="form-stack" @onsubmit="Preview" @onsubmit:preventDefault><label>Name<input required @bind="_name" autocomplete="name" /></label><label>Email<input required type="email" @bind="_email" autocomplete="email" /></label><label>Message<textarea required @bind="_message"></textarea></label><button class="primary" type="submit">Preview inquiry</button></form>@if(_ready) { <div class="notice" role="status"><strong>Draft ready for @_name</strong><p>@_message</p><small>Reply address: @_email. This draft stays in the page.</small></div> }</section>
+</AtlasSurface>
+@code {
+[Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+private string T(string name, string fallback = "") => Context.Text(name, fallback);
+private string[] Lines(string name) => T(name).Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Take(100).ToArray();
+private static string Part(string value, int index) { var parts = value.Split('|', StringSplitOptions.TrimEntries); return parts.Length > index ? parts[index] : string.Empty; }
+private static string Link(string value) => value.StartsWith('#') || value.StartsWith("./", StringComparison.Ordinal) || (value.StartsWith('/') && !value.StartsWith("//", StringComparison.Ordinal)) || (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is "http" or "https" or "mailto") ? value : "#";
+private string _name = "", _email = "", _message = ""; private bool _ready; private void Preview() => _ready = !string.IsNullOrWhiteSpace(_name) && !string.IsNullOrWhiteSpace(_email) && !string.IsNullOrWhiteSpace(_message);
+}

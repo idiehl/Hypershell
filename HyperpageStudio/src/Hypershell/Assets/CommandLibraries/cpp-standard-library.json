@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "cpp-standard-library",
+  "displayName": "C++ Standard Library",
+  "description": "The C++ Standard Library organized by header, namespace, type or function, member, and overload.",
+  "language": "C++",
+  "category": "Official reference",
+  "kind": "StandardLibrary",
+  "canonicalName": "ISO C++ Standard Library",
+  "ecosystem": "ISO C++",
+  "targetVersion": "C++20",
+  "sourceVersion": "cppreference C++20 header inventory · a1da709f596c1740d67e5ecb8f63edf7ddebbc88ee65cced4889a238e31bd654",
+  "sourceUrl": "https://isocpp.org/std/the-standard",
+  "license": "CC-BY-SA-3.0 inventory; ISO copyright; Hypershell guides original",
+  "isExecutionSupported": true,
+  "executionSupportMessage": "Runs through the matching installed Hypershell terminal adapter.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "c++",
+    "standard library",
+    "headers",
+    "std"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 1748,
+  "declaredIndexedCount": 1738,
+  "declaredGuidedCount": 10,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/cpp-standard-library.entries.json"
+  ],
+  "declaredGuideCount": 10,
+  "guideFiles": [
+    "guides/cpp-standard-library.guides.json"
+  ],
+  "legacyIds": []
+}

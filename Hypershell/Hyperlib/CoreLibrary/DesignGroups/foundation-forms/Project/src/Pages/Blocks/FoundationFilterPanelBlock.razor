@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-filter-panel">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><fieldset><legend>Refine results</legend><label>Keyword<input type="search" /></label>@foreach(var row in Rows){<label class="inline"><input type="checkbox" /> @Cell(row,0)</label>}<label>Maximum price <input type="range" min="0" max="100" @bind="price" @bind:event="oninput" /></label><output>Up to @price</output></fieldset>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private int price=60;
+}

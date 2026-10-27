@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "insight-dashboard",
+  "title": "Insight Dashboard",
+  "description": "A compact operational workspace with three metric cards, comparison panels, and a planning checklist.",
+  "category": "Dashboard",
+  "sourceTemplateId": "insight-dashboard"
+}

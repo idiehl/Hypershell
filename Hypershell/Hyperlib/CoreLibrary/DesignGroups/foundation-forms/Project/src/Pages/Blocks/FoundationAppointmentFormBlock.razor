@@ -1,0 +1,11 @@
+@namespace HyperLib.Work
+@using System.Globalization
+<section class="catalog-module module-appointment-form">
+<header><h2>@Context.Text("title")</h2><p>@Context.Text("text")</p></header><form @onsubmit="()=>ready=true" @onsubmit:preventDefault><div class="parallel"><label>Date<input type="date" required /></label><label>Time<input type="time" required /></label></div><label>Email<input type="email" required autocomplete="email" /></label><button>Review request</button>@if(ready){<output role="status">Request details are valid. No appointment has been booked.</output>}</form>
+</section>
+@code {
+ [Parameter, EditorRequired] public BlockContext Context { get; set; } = new();
+ private string[] Rows => Context.Text("items").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+ private static string Cell(string row, int index) => row.Split('|').ElementAtOrDefault(index)?.Trim() ?? "";
+private bool ready;
+}

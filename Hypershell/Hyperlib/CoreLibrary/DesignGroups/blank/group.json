@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "blank",
+  "title": "Blank",
+  "description": "Start with an empty page and the standard elements.",
+  "category": "Essentials",
+  "sourceTemplateId": "blank"
+}

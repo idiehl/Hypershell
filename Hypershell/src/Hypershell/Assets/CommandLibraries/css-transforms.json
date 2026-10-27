@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2.0.0",
+  "id": "css-transforms",
+  "displayName": "CSS Transforms",
+  "description": "CSS Transforms properties, values, and composition patterns.",
+  "language": "CSS",
+  "category": "Official reference",
+  "kind": "Specification",
+  "canonicalName": "CSS Transforms",
+  "ecosystem": "CSS",
+  "targetVersion": "Living specification inventory",
+  "sourceVersion": "mdn-data 2.31.0 · properties 004ebcb0d571b2e1cf42c4793e05c99de19c2b1bddae739638acbcb855721f8e",
+  "sourceUrl": "https://www.w3.org/TR/css-transforms-2/",
+  "license": "W3C document license",
+  "isExecutionSupported": false,
+  "executionSupportMessage": "CSS specification entries insert into compatible editor documents.",
+  "isStarterLibrary": false,
+  "createStandaloneProfile": true,
+  "keywords": [
+    "css",
+    "specification",
+    "CSS Transforms"
+  ],
+  "executionTarget": "External",
+  "declaredEntryCount": 16,
+  "declaredIndexedCount": 16,
+  "declaredGuidedCount": 0,
+  "declaredVerifiedCount": 0,
+  "entryFiles": [
+    "entries/css-transforms.entries.json"
+  ],
+  "declaredGuideCount": 0,
+  "guideFiles": [],
+  "legacyIds": []
+}
